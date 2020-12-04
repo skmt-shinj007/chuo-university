@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    container_name: test_web
+    container_name: chuo_web
     build: ./docker/web
     volumes:
       - ./src:/var/www/html
@@ -16,19 +16,19 @@ services:
       - app
       - db
   app:
-    container_name: test_app
+    container_name: chuo_app
     build: ./docker/app
     volumes:
       - ./src:/var/www/html
     depends_on:
       - db
   db:
-    container_name: test_db
+    container_name: chuo_db
     build: ./docker/db
     ports:
       - "33306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: nJVxSSDw8rmuWPuV
-      MYSQL_DATABASE: testdb
-      MYSQL_USER: testuser
-      MYSQL_PASSWORD: testpass
+      MYSQL_DATABASE: chuodb
+      MYSQL_USER: chuo-user
+      MYSQL_PASSWORD: chuo-pass
