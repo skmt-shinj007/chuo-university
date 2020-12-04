@@ -1,6 +1,6 @@
 <template>
 <div class="c-policy">
-  <span class="c-policy__subTitle" v-if="windowWidth > 992">{{ policySubTitle }}</span>  <!-- tablet以下非表示 -->
+  <span class="c-policy__subTitle" v-if="windowWidth > pcWidth">{{ policySubTitle }}</span>  <!-- tablet以下非表示 -->
   <span class="c-policy__title">{{ policyTitle }}</span>
   <p class="c-policy__text">{{ policyContent }}</p>
 </div>
@@ -20,22 +20,6 @@ export default {
     policyContent: {
       type: String,
       default: '内容が入ります。'
-    },
-  },
-  data() {
-    return {
-      windowWidth: window.innerWidth, // 現在の画面幅
-    }
-  },
-  mounted() {
-    window.addEventListener('resize', this.WindowWidthResize);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.WindowWidthResize);
-  },
-  methods: {
-    WindowWidthResize() {
-      this.windowWidth = window.innerWidth;
     },
   },
 }

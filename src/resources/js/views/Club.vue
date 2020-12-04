@@ -31,12 +31,16 @@
       <google-map-component/>
     </div>
 
-    <div class="p-club__practice-imageSlider">
+    <!-- 画面幅992px以下で表示（tablet以下） -->
+    <div class="p-club__practice-imageSlider" v-if="windowWidth < pcWidth">
       <contents-image-slider-component :images="courtImages"/>
     </div>
 
-    <div class="p-club__practice-schedule">
-
+    <!-- 画面幅993pxから表示（pcから） -->
+    <div class="p-club__practice-rowImages" v-if="windowWidth >= pcWidth">
+      <div class="p-club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
+        <arrange-image-component :imageUrl="`/image/${image.path}`" :art="image.name" :barText="image.text"/>
+      </div>
     </div>
   </section>
 </div>
@@ -50,6 +54,7 @@ import PolicyCardComponent from '../components/modules/PolicyCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
+import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
 
 export default {
   components: {
@@ -59,6 +64,7 @@ export default {
     TableComponent,
     GoogleMapComponent,
     ContentsImageSliderComponent,
+    ArrangeImageComponent,
   },
   data() {
     return {
@@ -68,6 +74,7 @@ export default {
       courtImages: [],
     }
   },
+
   beforeMount() {
     // TODO: 以下テストデータ生成
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
@@ -77,6 +84,7 @@ export default {
     console.log('マウント前');
     console.log(this.$data.messages);
   },
+
   mounted() {
     console.log('マウント後');
     console.log(this.$data.messages);
@@ -209,7 +217,23 @@ const practiceData =[
       padding-top: interval(8);
       width: 90%;
       margin: 0 auto;
+
+      // tab
+      @include mq(sm) {
+        width: 70%;
+      };
+
     }
+
+    &-rowImages {
+      @include flex($justify-content: space-around);
+      margin-top: interval(10);
+
+      &-item {
+        width: 30%;
+      }
+    }
+
   }
 }
 </style>

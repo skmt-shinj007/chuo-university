@@ -10,18 +10,6 @@ export default {
     return {
       hello: 'Hello,World',
       display: true,
-      windowWidth: window.innerWidth,
-    }
-  },
-  mounted() {
-    window.addEventListener('resize', this.WindowWidthResize);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.WindowWidthResize);
-  },
-  methods: {
-    WindowWidthResize() {
-      this.windowWidth = window.innerWidth;
     }
   },
 }

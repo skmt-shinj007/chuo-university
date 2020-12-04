@@ -1,10 +1,10 @@
 <template>
-  <div class="c-imageSlider">
+  <div class="image-slider">
     <swiper ref="contentsImageSwiper" :options="params">
       <swiper-slide v-for="(image, n) in images" :key="n">
-        <figure class="c-imageSlider__container">
-          <img class="c-imageSlider__image" :src="`/image/${image.path}`" :alt="image.name">
-          <figcaption class="c-imageSlider__image-caption">
+        <figure class="image-slider__container">
+          <img class="image-slider__image" :src="`/image/${image.path}`" :alt="image.name">
+          <figcaption class="image-slider__caption">
             {{ image.text }}
           </figcaption>
         </figure>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-imageSlider {
+.image-slider {
 
   &__container {
     @include trimming(aspect(rectangle));
@@ -63,23 +63,23 @@ export default {
 
   &__image {
     border-radius: radius(normal);
+  }
 
-    &-caption {
-      width: 90%;
-      background-color: rgba($color: color(white), $alpha: .6);
-      border-radius: radius(normal);
-      padding: interval(.5) interval(2);
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: font(sm);
+  &__caption {
+    width: 90%;
+    background-color: rgba($color: color(white), $alpha: .6);
+    border-radius: radius(normal);
+    padding: interval(.5) interval(2);
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: font(sm);
 
-      // tab style
-      @include mq(sm) {
-        line-height: 2;
-      };
-    }
+    // tab style
+    @include mq(sm) {
+      line-height: 2;
+    };
   }
 }
 </style>
