@@ -34,14 +34,8 @@ export default {
 
   &__image {
     width: 100%;
-    height: 250px;
     opacity: 0.7;
     box-shadow: 0 0 8px 2px color(shadow);
-
-    // pc style
-    @include mq(md) {
-      height: 200px;
-    };
   }
 
   &__button {

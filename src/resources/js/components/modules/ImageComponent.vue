@@ -31,6 +31,7 @@ export default {
 <style lang="scss" scoped>
 .c-image {
   width: 100%;
+  @include trimming(aspect(rectangle));
 
   &__image {
     width: 100%;

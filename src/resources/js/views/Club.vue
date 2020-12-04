@@ -38,7 +38,7 @@
 
     <!-- 画面幅992px以下で表示（tablet以下） -->
     <div class="p-club__practice-schedule" v-if="windowWidth >= pcWidth">
-      aaa
+      <image-component/>
     </div>
   </section>
 </div>
@@ -52,6 +52,7 @@ import PolicyCardComponent from '../components/modules/PolicyCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
+import ImageComponent from '../components/modules/ImageComponent';
 
 export default {
   components: {
@@ -61,6 +62,7 @@ export default {
     TableComponent,
     GoogleMapComponent,
     ContentsImageSliderComponent,
+    ImageComponent,
   },
   data() {
     return {

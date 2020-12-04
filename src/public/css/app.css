@@ -376,6 +376,21 @@ import用ファイル
  */
 .c-image[data-v-27ade895] {
   width: 100%;
+  position: relative;
+}
+.c-image[data-v-27ade895]::before {
+  content: "";
+  display: block;
+  padding-bottom: 66.7%;
+}
+.c-image > img[data-v-27ade895] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .c-image__image[data-v-27ade895] {
   width: 100%;
@@ -415,14 +430,8 @@ import用ファイル
  */
 .c-menuPanel__image[data-v-481a74cb] {
   width: 100%;
-  height: 250px;
   opacity: 0.7;
   box-shadow: 0 0 8px 2px #e6e6e6;
-}
-@media screen and (min-width: 992px) {
-.c-menuPanel__image[data-v-481a74cb] {
-    height: 200px;
-}
 }
 .c-menuPanel__button[data-v-481a74cb] {
   transform: translateY(-120%);
