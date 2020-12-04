@@ -3,19 +3,16 @@
     <figure class="c-menuPanel__figure">
       <img class="c-menuPanel__image" :src="panelImageUrl" :alt="imageAlt">
     </figure>
-    <!-- <image-component class="c-menuPanel__image" :imageUrl="panelImageUrl" :alt="imageAlt" :radius="imageRadius"/> -->
     <view-all-button-component class="c-menuPanel__button" :name="buttonName" :buttonSize="buttonSize"/>
   </div>
 </template>
 
 <script>
 // component import
-import ImageComponent from './ImageComponent';
 import ViewAllButtonComponent from './button/ViewAllButtonComponent';
 
 export default {
   components: {
-    ImageComponent,
     ViewAllButtonComponent,
   },
   props: {

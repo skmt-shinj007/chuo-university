@@ -37,8 +37,10 @@
     </div>
 
     <!-- 画面幅993pxから表示（pcから） -->
-    <div class="p-club__practice-schedule" v-if="windowWidth >= pcWidth">
-      <image-component/>
+    <div class="p-club__practice-rowImages" v-if="windowWidth >= pcWidth">
+      <div class="p-club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
+        <arrange-image-component :imageUrl="`/image/${image.path}`" :art="image.name" :barText="image.text"/>
+      </div>
     </div>
   </section>
 </div>
@@ -52,7 +54,7 @@ import PolicyCardComponent from '../components/modules/PolicyCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import ImageComponent from '../components/modules/ImageComponent';
+import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
 
 export default {
   components: {
@@ -62,7 +64,7 @@ export default {
     TableComponent,
     GoogleMapComponent,
     ContentsImageSliderComponent,
-    ImageComponent,
+    ArrangeImageComponent,
   },
   data() {
     return {
@@ -222,6 +224,16 @@ const practiceData =[
       };
 
     }
+
+    &-rowImages {
+      @include flex($justify-content: space-around);
+      margin-top: interval(10);
+
+      &-item {
+        width: 30%;
+      }
+    }
+
   }
 }
 </style>

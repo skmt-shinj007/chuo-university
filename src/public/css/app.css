@@ -374,54 +374,6 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-image[data-v-27ade895] {
-  width: 100%;
-  position: relative;
-}
-.c-image[data-v-27ade895]::before {
-  content: "";
-  display: block;
-  padding-bottom: 66.7%;
-}
-.c-image > img[data-v-27ade895] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.c-image__image-radius[data-v-27ade895] {
-  border-radius: 2px;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
 .c-menuPanel__figure[data-v-481a74cb] {
   width: 100%;
   position: relative;
@@ -798,16 +750,16 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-imageSlider__container[data-v-6cd5e234] {
+.image-slider__container[data-v-6cd5e234] {
   position: relative;
   position: relative;
 }
-.c-imageSlider__container[data-v-6cd5e234]::before {
+.image-slider__container[data-v-6cd5e234]::before {
   content: "";
   display: block;
   padding-bottom: 66.7%;
 }
-.c-imageSlider__container > img[data-v-6cd5e234] {
+.image-slider__container > img[data-v-6cd5e234] {
   position: absolute;
   top: 0;
   left: 0;
@@ -816,10 +768,10 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.c-imageSlider__image[data-v-6cd5e234] {
+.image-slider__image[data-v-6cd5e234] {
   border-radius: 4px;
 }
-.c-imageSlider__image-caption[data-v-6cd5e234] {
+.image-slider__caption[data-v-6cd5e234] {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
@@ -831,7 +783,7 @@ import用ファイル
   font-size: 12px;
 }
 @media screen and (min-width: 560px) {
-.c-imageSlider__image-caption[data-v-6cd5e234] {
+.image-slider__caption[data-v-6cd5e234] {
     line-height: 2;
 }
 }@charset "UTF-8";
@@ -969,6 +921,69 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+.arrange-image[data-v-7f82b6cb] {
+  width: 100%;
+  margin-bottom: 100px;
+  position: relative;
+}
+.arrange-image[data-v-7f82b6cb]::before {
+  content: "";
+  display: block;
+  padding-bottom: 66.7%;
+}
+.arrange-image > img[data-v-7f82b6cb] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.arrange-image__image[data-v-7f82b6cb] {
+  border-radius: 2px;
+  box-shadow: 0 0 6px #b3b3b3;
+}
+.arrange-image__bar[data-v-7f82b6cb] {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  padding: 0.25rem 1rem;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.arrange-image__text[data-v-7f82b6cb] {
+  font-size: 10px;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
 .p-club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
   height: 100vh;
@@ -1008,6 +1023,16 @@ import用ファイル
 .p-club__practice-imageSlider[data-v-357d3955] {
     width: 70%;
 }
+}
+.p-club__practice-rowImages[data-v-357d3955] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 5rem;
+}
+.p-club__practice-rowImages-item[data-v-357d3955] {
+  width: 30%;
 }@charset "UTF-8";
 /*
 import用ファイル
