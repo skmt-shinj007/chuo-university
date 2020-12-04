@@ -9,23 +9,22 @@ export default {
   data() {
     return {
       messages: Messages,
-      windowWidth: window.innerWidth,
       tabletWidth: 560,
       pcWidth: 992,
+      windowWidth: null,
     }
   },
 
-  mounted() {
-    window.addEventListener('resize', this.WindowWidthResize);
+  created() {
+    this.windowWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+    });
   },
 
   beforeDestroy() {
-    window.removeEventListener('resize', this.WindowWidthResize);
-  },
-
-  methods: {
-    WindowWidthResize() {
+    window.removeEventListener('resize', () => {
       this.windowWidth = window.innerWidth;
-    },
+    });
   },
 }

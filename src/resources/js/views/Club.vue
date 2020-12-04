@@ -31,14 +31,14 @@
       <google-map-component/>
     </div>
 
-    <!-- 画面幅993pxから表示（pcから） -->
+    <!-- 画面幅992px以下で表示（tablet以下） -->
     <div class="p-club__practice-imageSlider" v-if="windowWidth < pcWidth">
       <contents-image-slider-component :images="courtImages"/>
     </div>
 
-    <!-- 画面幅992px以下で表示（tablet以下） -->
+    <!-- 画面幅993pxから表示（pcから） -->
     <div class="p-club__practice-schedule" v-if="windowWidth >= pcWidth">
-      <image-component/>
+      aaaa
     </div>
   </section>
 </div>
