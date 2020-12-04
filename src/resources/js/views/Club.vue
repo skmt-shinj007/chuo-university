@@ -38,7 +38,7 @@
 
     <!-- 画面幅993pxから表示（pcから） -->
     <div class="p-club__practice-schedule" v-if="windowWidth >= pcWidth">
-      aaaa
+      <image-component/>
     </div>
   </section>
 </div>

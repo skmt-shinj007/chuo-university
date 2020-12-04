@@ -1,6 +1,9 @@
 <template>
   <div class="c-menuPanel">
-    <image-component class="c-menuPanel__image" :imageUrl="panelImageUrl" :alt="imageAlt" :radius="imageRadius"/>
+    <figure class="c-menuPanel__figure">
+      <img class="c-menuPanel__image" :src="panelImageUrl" :alt="imageAlt">
+    </figure>
+    <!-- <image-component class="c-menuPanel__image" :imageUrl="panelImageUrl" :alt="imageAlt" :radius="imageRadius"/> -->
     <view-all-button-component class="c-menuPanel__button" :name="buttonName" :buttonSize="buttonSize"/>
   </div>
 </template>
@@ -32,9 +35,15 @@ export default {
 <style lang="scss" scoped>
 .c-menuPanel {
 
+  &__figure {
+    width: 100%;
+    @include trimming(aspect(rectangle));
+  }
+
   &__image {
     width: 100%;
-    opacity: 0.7;
+    border-radius: radius(soft);
+    opacity: 0.8;
     box-shadow: 0 0 8px 2px color(shadow);
   }
 

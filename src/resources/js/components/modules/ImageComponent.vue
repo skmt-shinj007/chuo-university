@@ -5,9 +5,9 @@
 */
 
 <template>
-<div class="c-image">
+<figure class="c-image">
   <img class="c-image__image" :src="imageUrl" :alt="alt" :class="radiusClass">
-</div>
+</figure>
 </template>
 
 <script>
@@ -34,9 +34,6 @@ export default {
   @include trimming(aspect(rectangle));
 
   &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 
     &-radius {
       border-radius: radius(soft);
