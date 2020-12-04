@@ -23,7 +23,7 @@ services:
     depends_on:
       - db
   db:
-    container_name: test_db
+    container_name: chuo_db
     build: ./docker/db
     ports:
       - "33306:3306"
