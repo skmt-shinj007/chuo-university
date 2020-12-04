@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const VueLoader = require('vue-loader');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,6 +13,11 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({
+        processCssUrls: false,
+        extractVueStyles: true,
+        globalVueStyles: 'resources/sass/_imports.scss',  // Vueコンポーネント内で sass変数,mixin を使用するために拡張。
+    })
+    .sourceMaps(false)
+    .version();
