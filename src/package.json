@@ -14,10 +14,21 @@
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.19",
-        "resolve-url-loader": "^3.1.0"
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.29.0",
+        "sass-loader": "^10.1.0"
     },
     "name": "html",
     "version": "1.0.0",
     "main": "index.js",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "sass-resources-loader": "^2.1.1",
+        "swiper": "5.4.5",
+        "vue": "2.6.12",
+        "vue-awesome-swiper": "^4.1.1",
+        "vue-loader": "^15.9.5",
+        "vue-router": "^3.4.9",
+        "vue-template-compiler": "^2.6.12"
+    }
 }
