@@ -31,12 +31,12 @@
       <google-map-component/>
     </div>
 
-    <div class="p-club__practice-imageSlider">
+    <div class="p-club__practice-imageSlider" v-if="windowWidth < pcWidth">
       <contents-image-slider-component :images="courtImages"/>
     </div>
 
-    <div class="p-club__practice-schedule">
-
+    <div class="p-club__practice-schedule" v-if="windowWidth >= pcWidth">
+      aaa
     </div>
   </section>
 </div>
@@ -68,6 +68,7 @@ export default {
       courtImages: [],
     }
   },
+
   beforeMount() {
     // TODO: 以下テストデータ生成
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
@@ -77,6 +78,7 @@ export default {
     console.log('マウント前');
     console.log(this.$data.messages);
   },
+
   mounted() {
     console.log('マウント後');
     console.log(this.$data.messages);
@@ -209,6 +211,12 @@ const practiceData =[
       padding-top: interval(8);
       width: 90%;
       margin: 0 auto;
+
+      // tab
+      @include mq(sm) {
+        width: 70%;
+      };
+
     }
   }
 }

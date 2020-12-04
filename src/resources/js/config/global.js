@@ -10,6 +10,8 @@ export default {
     return {
       messages: Messages,
       windowWidth: window.innerWidth,
+      tabletWidth: 560,
+      pcWidth: 992,
     }
   },
 
