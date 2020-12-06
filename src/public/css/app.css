@@ -433,152 +433,181 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.l-top[data-v-bae950f4] {
+.top[data-v-bae950f4] {
   position: relative;
 }
-.l-top__news[data-v-bae950f4] {
+.top__news[data-v-bae950f4] {
   transform: translateY(-50px);
   max-width: 800px;
   margin: 0 auto;
 }
 @media screen and (min-width: 992px) {
-.l-top__news[data-v-bae950f4] {
+.top__news[data-v-bae950f4] {
     transform: none;
     margin-top: 7.5rem;
     margin-bottom: 5rem;
 }
 }
 @media screen and (min-width: 992px) {
-.l-top__team[data-v-bae950f4] {
+.top__team[data-v-bae950f4] {
     position: relative;
-    padding-bottom: 10rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: stretch;
 }
 }
-.l-top__team-background[data-v-bae950f4] {
-  background-image: url("/image/group-photo_toutoSpring2017.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+.top__team-img[data-v-bae950f4] {
+  width: 100%;
+  border-top: 5px solid #091e2f;
+  border-bottom: 5px solid #091e2f;
+  box-shadow: 0px -5px 8px 3px #e6e6e6;
+  position: relative;
 }
-.l-top__team-contentsCard[data-v-bae950f4] {
+.top__team-img[data-v-bae950f4]::before {
+  content: "";
+  display: block;
+  padding-bottom: 61.8%;
+}
+.top__team-img > img[data-v-bae950f4] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 992px) {
+.top__team-img[data-v-bae950f4] {
+    width: 70%;
+}
+}
+.top__team-contentsCard[data-v-bae950f4] {
   transform: translateY(-50px);
 }
 @media screen and (min-width: 992px) {
-.l-top__team-contentsCard[data-v-bae950f4] {
+.top__team-contentsCard[data-v-bae950f4] {
     position: absolute;
     top: 50%;
     right: 0;
 }
 }
 @media screen and (min-width: 992px) {
-.l-top__hakumonkai[data-v-bae950f4] {
+.top__hakumonkai[data-v-bae950f4] {
     position: relative;
-    padding-bottom: 10rem;
+    margin-top: 20rem;
     display: flex;
     flex-flow: row-reverse nowrap;
     justify-content: flex-start;
     align-items: stretch;
 }
 }
-.l-top__hakumonkai-background[data-v-bae950f4] {
-  background-image: url("/image/hakumon.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+.top__hakumonkai-img[data-v-bae950f4] {
+  width: 100%;
+  border-top: 5px solid #091e2f;
+  border-bottom: 5px solid #091e2f;
+  box-shadow: 0px -5px 8px 3px #e6e6e6;
+  position: relative;
 }
-.l-top__hakumonkai-contentsCard[data-v-bae950f4] {
+.top__hakumonkai-img[data-v-bae950f4]::before {
+  content: "";
+  display: block;
+  padding-bottom: 61.8%;
+}
+.top__hakumonkai-img > img[data-v-bae950f4] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 992px) {
+.top__hakumonkai-img[data-v-bae950f4] {
+    width: 70%;
+}
+}
+.top__hakumonkai-contentsCard[data-v-bae950f4] {
   transform: translateY(-50px);
 }
 @media screen and (min-width: 992px) {
-.l-top__hakumonkai-contentsCard[data-v-bae950f4] {
+.top__hakumonkai-contentsCard[data-v-bae950f4] {
     position: absolute;
     top: 50%;
     left: 0;
 }
 }
-.l-top__backgroundImage[data-v-bae950f4] {
-  width: 100%;
-  height: 300px;
-  border-top: 5px solid #091e2f;
-  border-bottom: 5px solid #091e2f;
-  box-shadow: 0px -5px 8px 3px #e6e6e6;
-}
-@media screen and (min-width: 560px) {
-.l-top__backgroundImage[data-v-bae950f4] {
-    height: 500px;
-}
+.top__menuPanel[data-v-bae950f4] {
+  margin-top: 20rem;
 }
 @media screen and (min-width: 992px) {
-.l-top__backgroundImage[data-v-bae950f4] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__menuPanel[data-v-bae950f4] {
+.top__menuPanel[data-v-bae950f4] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
 }
 }
-.l-top__menuPanel-item[data-v-bae950f4] {
+.top__menuPanel-item[data-v-bae950f4] {
   max-width: 500px;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.l-top__menuPanel-item[data-v-bae950f4] {
+.top__menuPanel-item[data-v-bae950f4] {
     width: 70%;
 }
 }
 @media screen and (min-width: 992px) {
-.l-top__menuPanel-item[data-v-bae950f4] {
+.top__menuPanel-item[data-v-bae950f4] {
     padding: 0.25rem;
     max-width: 340px;
 }
 }
-.l-top__support[data-v-bae950f4] {
+.top__support[data-v-bae950f4] {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.top__support-textaria[data-v-bae950f4] {
+  width: 80%;
+  margin: 2.5rem auto 0 auto;
+}
+@media screen and (min-width: 560px) {
+.top__support-textaria[data-v-bae950f4] {
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.top__support-textaria[data-v-bae950f4] {
+    width: 60%;
+}
+}
+.top .background-image[data-v-bae950f4] {
   width: 100%;
   height: 100vh;
-  color: #ffffff;
   background-image: url("/image/player09.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
 @media screen and (min-width: 560px) {
-.l-top__support[data-v-bae950f4] {
+.top .background-image[data-v-bae950f4] {
     background-image: url("/image/player11.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 }
-.l-top__support-background[data-v-bae950f4] {
+.top .background-darkblue[data-v-bae950f4] {
   width: 100%;
   height: 100%;
   background-color: rgba(9, 30, 47, 0.8);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.l-top__support-textaria[data-v-bae950f4] {
-  width: 80%;
-  margin: 2.5rem auto 0 auto;
-}
-@media screen and (min-width: 560px) {
-.l-top__support-textaria[data-v-bae950f4] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__support-textaria[data-v-bae950f4] {
-    width: 60%;
-}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -984,23 +1013,19 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.p-club__mainVisualSlider[data-v-357d3955] {
+.club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
   height: 100vh;
 }
-.p-club__policy-bg[data-v-357d3955] {
-  background-color: #091e2f;
-  margin-top: 0;
-}
-.p-club__policy[data-v-357d3955] {
+.club__policy[data-v-357d3955] {
   padding: 5rem 0;
   margin-top: 0;
 }
-.p-club__policy-cards[data-v-357d3955] {
+.club__policy-cards[data-v-357d3955] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.p-club__policy-cards[data-v-357d3955] {
+.club__policy-cards[data-v-357d3955] {
     margin: 5rem 1.5rem 0 1.5rem;
     display: flex;
     flex-flow: row nowrap;
@@ -1008,30 +1033,30 @@ import用ファイル
     align-items: stretch;
 }
 }
-.p-club__practice-table[data-v-357d3955] {
+.club__practice-table[data-v-357d3955] {
   margin-top: 2.5rem;
 }
-.p-club__practice-map[data-v-357d3955] {
+.club__practice-map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
-.p-club__practice-imageSlider[data-v-357d3955] {
+.club__practice-imageSlider[data-v-357d3955] {
   padding-top: 4rem;
   width: 90%;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.p-club__practice-imageSlider[data-v-357d3955] {
+.club__practice-imageSlider[data-v-357d3955] {
     width: 70%;
 }
 }
-.p-club__practice-rowImages[data-v-357d3955] {
+.club__practice-rowImages[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: stretch;
   margin-top: 5rem;
 }
-.p-club__practice-rowImages-item[data-v-357d3955] {
+.club__practice-rowImages-item[data-v-357d3955] {
   width: 30%;
 }@charset "UTF-8";
 /*
@@ -2664,6 +2689,11 @@ p {
     font-size: 14px;
     line-height: 2;
   }
+}
+
+.background-darkblue {
+  background-color: #091e2f;
+  margin-top: 0;
 }
 
 .section-container {
