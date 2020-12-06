@@ -1,4 +1,5 @@
 /node_modules
+# public配下をgit監視対象から除外。レビュー時の差分を見やすくするため。
 /public/
 /storage/*.key
 /vendor
