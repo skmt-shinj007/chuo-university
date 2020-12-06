@@ -1,0 +1,102 @@
+/**
+ * サイトで使用するマップを定義します
+ */
+
+// color map
+$color: (
+	darkblue:      #091e2f,
+	lightDarkblue: #10334e,
+	deepDarkblue:  #030A10,
+  orange:        #e56c2c,
+  lightGray:     #f2f2f2,
+  white:         #ffffff,
+
+  shadow:      #e6e6e6,
+  darkShadow:  darken(#e6e6e6, 20%),
+  lightShadow: lighten(#e6e6e6, 10%),
+
+  lightGreen: #56b145,
+
+  // bootstrap color
+  primary:    #007bff,
+  successful: #28a745,
+  danger:     #dc3545,
+  warning:    #ffc107,
+  info:       #17a2b8,
+  light:      #f8f9fa,
+  dark:       #343a40,
+) !default;
+
+// breakpoint map
+$breakpoints: (
+  xs: 'screen and (min-width: 320px)',
+  sm: 'screen and (min-width: 560px)',
+	md: 'screen and (min-width: 992px)',
+	lg: 'screen and (min-width: 1200px)',
+) !default;
+
+// font size map
+$font: (
+  xs:   10px,
+  sm:   12px,
+  base: 14px,
+  md:   16px,
+  lg:   18px,
+  xl:   22px,
+
+  heading:       32px,
+  lg-heading:    50px,
+  mainVisual:    48px,
+  mainVisual-lg: 80px,
+) !default;
+
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+$base-pixel: 1rem / 2;
+
+/**
+ * button size
+ */
+$button: (
+  xs-width: 200px,
+  xs-height: 45px,
+
+  sm-width: 240px,
+  sm-height: 50px,
+
+  lg-width: 300px,
+  lg-height: 60px,
+);
+
+/**
+ * google map size
+ */
+$googleMap: (
+	sp-height: 300px,
+	pc-height: 400px,
+);
+$map-width: map-get($map: $googleMap, $key: width);
+$map-height-sp: map-get($map: $googleMap, $key: sp-height);
+$map-height-pc: map-get($map: $googleMap, $key: pc-height);
+
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+$aspectRatio: (
+  square: 100%,       // 1:1
+  rectangle: 66.7%,   // 3:2
+  golden: 61.8%,      // 1:1.618
+);
+
+/**
+ * radius
+ */
+$radius: (
+  soft: 2px,
+  normal: 4px,
+  hard: 8px,
+
+  circle: 100%
+);

@@ -1,0 +1,187 @@
+// breakpoint
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// bangers指定するときに使用。
+@mixin bangers($size: font(md), $letterSpacing: 1px, $weight: bold) {
+  font-family: 'Bangers', cursive;
+  font-size: $size;
+  letter-spacing: $letterSpacing;
+  font-weight: $weight;
+}
+
+// よく使うflexレイアウト
+@mixin flex($flow: row nowrap, $justify-content: flex-start, $align-items: stretch) {
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+// グラデーション
+@mixin gradient($start-color: #091e2f, $end-color: #030A10, $orientation: default){
+  background: $start-color;
+  // 垂直グラデーションの場合
+  @if $orientation == vertical{
+    background: -moz-linear-gradient(top,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(top,  $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(top,  $start-color 0%,$end-color 100%);
+    background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+  }
+  // 水平グラデーションの場合
+  @else if $orientation == horizontal{
+    background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+  }
+  @else{
+    background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+  }
+}
+
+// view all button hover
+@mixin button-hover() {
+  border: none;
+
+  .c-viewAll__button {
+    transform: none;
+    border: none;
+    background-color: color(orange);
+    color: color(white);
+  }
+}
+
+// header button hover animation style
+@mixin header-button-hover($width: 40px, $height: 40px, $time: .5s) {
+  &::before {
+    position: absolute;
+    content: '';
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: $time all ease-in-out;
+  }
+
+  &:hover {
+    background-color: color(white);
+    color: color(darkblue);
+    transform: scale(1.1);
+
+    &::before {
+      border-color: color(darkblue);
+    }
+
+    .c-icon {
+      transform: rotateZ(360deg);
+    }
+  }
+}
+
+// link decoration -text middle line
+@mixin text-before-line($width, $height, $bg-color) {
+  &::before {
+    display: block;
+    content: '';
+    width: $width;
+    height: $height;
+    background-color: $bg-color;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+// background image
+@mixin background-image($url, $position) {
+  background-image: url($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: $position;
+}
+
+// image画像の縁を斜線で囲むレイアウト （多分使わないけど一旦保存しとく）
+@mixin imageFlame {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+    border-image-source: repeating-linear-gradient(45deg, color(white), color(white) 3px, color(darkblue) 0, color(darkblue) 6px);
+    border-image-slice: 10;
+    border-image-repeat: round;
+    border-style: solid;
+    border-width: 10px;
+  }
+}
+
+// テニスボール
+@mixin ball {
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(0deg, darken(#fff, 60%), darken(#fff, 10%), #fff);
+  border-radius: radius(circle);
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: darken($color: blue, $amount: 10%);
+    border-radius: radius(circle);
+  }
+
+  &::after {
+    display: block;
+    content: 'CHUO UNIVERSITY';
+    color: darken($color: red, $amount: .4);
+    font-weight: bold;
+    font-size: font(sm);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// image トリミング
+@mixin trimming($aspect) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: $aspect;
+  }
+
+  & > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
