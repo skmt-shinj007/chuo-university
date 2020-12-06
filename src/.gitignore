@@ -1,8 +1,6 @@
 /node_modules
-/public/hot
-/public/storage
-/public/mix-manifest.json
-/.DS_store
+# public配下を追跡対象外に設定。（レビューしやすいように）
+/public/
 /storage/*.key
 /vendor
 .env
@@ -12,3 +10,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.DS_store
