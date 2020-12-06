@@ -121,7 +121,6 @@ export default {
     // pc style
     @include mq(md) {
       position: relative;
-      padding-bottom: interval(20);
       @include flex();
     };
 
@@ -156,7 +155,7 @@ export default {
     // pc style
     @include mq(md) {
       position: relative;
-      padding-bottom: interval(20);
+      margin-top: interval(40);
       @include flex(
         $flow: row-reverse nowrap
       );
@@ -189,6 +188,7 @@ export default {
   }
 
   &__menuPanel {
+    margin-top: interval(40);
 
     // pc style
     @include mq(md) {

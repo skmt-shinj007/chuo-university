@@ -451,7 +451,6 @@ import用ファイル
 @media screen and (min-width: 992px) {
 .top__team[data-v-bae950f4] {
     position: relative;
-    padding-bottom: 10rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -497,7 +496,7 @@ import用ファイル
 @media screen and (min-width: 992px) {
 .top__hakumonkai[data-v-bae950f4] {
     position: relative;
-    padding-bottom: 10rem;
+    margin-top: 20rem;
     display: flex;
     flex-flow: row-reverse nowrap;
     justify-content: flex-start;
@@ -539,6 +538,9 @@ import用ファイル
     top: 50%;
     left: 0;
 }
+}
+.top__menuPanel[data-v-bae950f4] {
+  margin-top: 20rem;
 }
 @media screen and (min-width: 992px) {
 .top__menuPanel[data-v-bae950f4] {
