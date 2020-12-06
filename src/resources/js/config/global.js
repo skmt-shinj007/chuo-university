@@ -21,10 +21,4 @@ export default {
       this.windowWidth = window.innerWidth;
     });
   },
-
-  beforeDestroy() {
-    window.removeEventListener('resize', () => {
-      this.windowWidth = window.innerWidth;
-    });
-  },
 }
