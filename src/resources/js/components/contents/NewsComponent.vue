@@ -1,8 +1,8 @@
 <template>
-<div class="p-news">
-  <div class="card-container">
+<div class="news">
+  <div class="card-inner-margin">
     <contents-title-component :title="contentsTitle" :subTitle="contentsSubTitle"/>  <!-- :color="white" 記述でテキストを白に -->
-    <div class="p-news__list">
+    <div class="news__list">
       <text-list-component/>
     </div>
   </div>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p-news {
+.news {
   width: 80%;
   background-color: color(white);
   box-shadow: 0px 6px 8px color(shadow);

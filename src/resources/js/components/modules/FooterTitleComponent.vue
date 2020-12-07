@@ -1,6 +1,6 @@
 <template>
-  <div class="c-footerTitle">
-    <h3 class="c-footerTitle__title">{{ footerTitle }}</h3>
+  <div class="footer-title">
+    <h3 class="footer-title__title">{{ footerTitle }}</h3>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-footerTitle {
+.footer-title {
   text-align: center;
 
   &__title {

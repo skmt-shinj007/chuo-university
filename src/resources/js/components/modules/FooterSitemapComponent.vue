@@ -1,7 +1,7 @@
 <template>
-  <ul class="c-sitemap p-footer__wrap">
-    <li class="c-sitemap__list p-footer__list" v-for="siteMapMenu in siteMapMenus" :title="siteMapMenu.name" :key="siteMapMenu.routeName">
-      <router-link class="c-sitemap__item p-footer__list-item" :to="siteMapMenu.routeName">{{ siteMapMenu.name }}</router-link>
+  <ul class="site-map">
+    <li class="site-map__list" v-for="siteMapMenu in siteMapMenus" :title="siteMapMenu.name" :key="siteMapMenu.routeName">
+      <router-link class="site-map__item" :to="siteMapMenu.routeName">{{ siteMapMenu.name }}</router-link>
     </li>
   </ul>
 </template>
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-sitemap {
+.site-map {
   width: 60%;
   max-width: 300px;
   margin: 0 auto;

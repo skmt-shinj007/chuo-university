@@ -1,8 +1,8 @@
 <template>
   <!-- 呼び出し元の親コンポーネントに color="white" を付与することで色を変える -->
-  <div class="c-contentsTitle" :class="colorChange">
-    <span class="c-contentsTitle__assistance">{{ subTitle }}</span>
-    <h2 class="c-contentsTitle__primary">{{ title }}</h2>
+  <div class="contents-title" :class="colorChange">
+    <span class="contents-title__assistance">{{ subTitle }}</span>
+    <h2 class="contents-title__primary">{{ title }}</h2>
   </div>
 </template>
 
@@ -29,14 +29,14 @@ export default {
   },
   computed: {
     colorChange() {
-      return (this.color) ? `c-contentsTitle-${this.color}` : null;
+      return (this.color) ? `contents-title-${this.color}` : null;
     }
   },
 }
 </script>
 
 <style lang="scss">
-.c-contentsTitle {
+.contents-title {
   @include flex(
     $flow: column nowrap,
     $justify-content: center,
@@ -62,7 +62,7 @@ export default {
     position: relative;
 
     &::after {
-      .c-contentsTitle.c-contentsTitle-white & {
+      .contents-title.contents-title-white & {
         background-color: color(white);
       }
       content: "";

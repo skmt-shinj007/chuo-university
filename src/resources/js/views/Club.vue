@@ -49,8 +49,8 @@
 <script>
 // component import
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import GoogleMapComponent from '../components/modules/googleMapComponent';
-import PolicyCardComponent from '../components/modules/PolicyCardComponent';
+import GoogleMapComponent from '../components/modules/GoogleMapComponent';
+import PolicyCardComponent from '../components/modules/card/PolicyCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';

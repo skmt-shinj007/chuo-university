@@ -1,6 +1,6 @@
 <template>
-<div class="p-mainVisual">
-  <span class="p-mainVisual__title">CHUO<br>UNIVERSITY<br>SOFT<br>TENNIS</span>
+<div class="main-visual">
+  <span class="main-visual__title">CHUO<br>UNIVERSITY<br>SOFT<br>TENNIS</span>
 </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p-mainVisual{
+.main-visual{
   width: 100%;
   height: 100vh;
   @include gradient(color(deepDarkblue), color(darkblue), horizontal);
