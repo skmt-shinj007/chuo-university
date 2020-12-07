@@ -44,6 +44,7 @@
     </div>
 
     <div class="club__practice-schedule">
+      <h3 class="club__practice-schedule-title">{{ messages.Practice.ScheduleTitle }}</h3>
       <table-component :tableItems="schedule"/>
     </div>
   </section>
@@ -189,7 +190,7 @@ const scheduleData = [
   },
   {
     key: '2月',
-    value: 'オフ/練習開始'
+    value: 'オフ / 練習開始'
   },
   {
     key: '3月',
@@ -229,7 +230,7 @@ const scheduleData = [
   },
   {
     key: '12月',
-    value: 'オフ/納会'
+    value: 'オフ / 納会'
   },
 ]
 </script>
@@ -285,6 +286,26 @@ const scheduleData = [
       &-item {
         width: 30%;
       }
+    }
+
+    &-schedule {
+      margin-top: interval(10);
+    }
+
+    &-schedule-title {
+      width: 90%;
+      margin: 0 auto interval(2) auto;
+      padding-left: interval(3);
+      position: relative;
+      @include text-before-line(interval(2), 1px, color(darkblue));
+
+      @include mq(sm) {
+        width: 80%;
+      };
+
+      @include mq(md) {
+        width: 70%;
+      };
     }
 
   }
