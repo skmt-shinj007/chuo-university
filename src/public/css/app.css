@@ -1999,35 +1999,35 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-externalLink {
+.external-link {
   width: 60%;
   max-width: 300px;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.c-externalLink {
+.external-link {
     width: 100%;
     max-width: none;
 }
 }
-.c-externalLink__list {
+.external-link__list {
   margin-bottom: 0.5rem;
   line-height: 2;
 }
 @media screen and (min-width: 560px) {
-.c-externalLink__list {
+.external-link__list {
     margin-bottom: 0.25rem;
 }
 }
-.c-externalLink__list:last-child {
+.external-link__list:last-child {
   margin: 0;
 }
-.c-externalLink__item {
+.external-link__item {
   padding: 0.25rem 1rem;
   position: relative;
   font-size: 12px;
 }
-.c-externalLink__item::before {
+.external-link__item::before {
   display: block;
   content: "";
   width: 8px;
