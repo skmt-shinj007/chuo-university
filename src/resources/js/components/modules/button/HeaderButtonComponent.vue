@@ -48,7 +48,7 @@ export default {
     margin: 0;
   }
 
-  .icon {
+  .header-icon {
     width: 20px;
     height: 20px;
     transition: .3s all ease;

@@ -1711,14 +1711,14 @@ import用ファイル
 .header-button:hover::before {
     border-color: #091e2f;
 }
-.header-button:hover .icon {
+.header-button:hover .header-icon {
     transform: rotateZ(360deg);
 }
 }
 .header-button:last-child {
   margin: 0;
 }
-.header-button .icon {
+.header-button .header-icon {
   width: 20px;
   height: 20px;
   transition: 0.3s all ease;
@@ -1750,7 +1750,7 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.l-header[data-v-6832e7cf] {
+.header[data-v-6832e7cf] {
   width: 100%;
   height: 60px;
   position: fixed;
@@ -1760,7 +1760,7 @@ import用ファイル
   box-shadow: 0px 2px 6px #e6e6e6;
 }
 @media screen and (min-width: 992px) {
-.l-header[data-v-6832e7cf] {
+.header[data-v-6832e7cf] {
     width: 10%;
     height: 100vh;
     position: fixed;
@@ -1768,7 +1768,7 @@ import用ファイル
     box-shadow: 2px 0px 6px #e6e6e6;
 }
 }
-.p-header__navbar[data-v-6832e7cf] {
+.header__navbar[data-v-6832e7cf] {
   height: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -1776,14 +1776,14 @@ import用ファイル
   align-items: center;
 }
 @media screen and (min-width: 992px) {
-.p-header__navbar[data-v-6832e7cf] {
+.header__navbar[data-v-6832e7cf] {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
 }
 }
-.p-header__navbar-title[data-v-6832e7cf] {
+.header__title[data-v-6832e7cf] {
   cursor: pointer;
   display: flex;
   flex-flow: row nowrap;
@@ -1791,34 +1791,34 @@ import用ファイル
   align-items: center;
 }
 @media screen and (min-width: 992px) {
-.p-header__navbar-title[data-v-6832e7cf] {
+.header__title[data-v-6832e7cf] {
     padding: 1.5rem;
     margin: 0 auto;
     -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
 }
 }
-.p-header__navbar-title-main[data-v-6832e7cf] {
+.header__title-main[data-v-6832e7cf] {
   font-family: "Bangers", cursive;
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: bold;
 }
 @media screen and (min-width: 560px) {
-.p-header__navbar-title-main[data-v-6832e7cf] {
+.header__title-main[data-v-6832e7cf] {
     font-size: 18px;
 }
 }
 @media screen and (min-width: 992px) {
-.p-header__navbar-title-main[data-v-6832e7cf] {
+.header__title-main[data-v-6832e7cf] {
     margin-bottom: 3.5rem;
 }
 }
-.p-header__navbar-title-assistance[data-v-6832e7cf] {
+.header__title-assistance[data-v-6832e7cf] {
   display: none;
 }
 @media screen and (min-width: 560px) {
-.p-header__navbar-title-assistance[data-v-6832e7cf] {
+.header__title-assistance[data-v-6832e7cf] {
     margin-left: 1.5rem;
     font-size: 10px;
     letter-spacing: 1.1px;
@@ -1827,16 +1827,16 @@ import用ファイル
 }
 }
 @media screen and (min-width: 992px) {
-.p-header__navbar-title-assistance[data-v-6832e7cf] {
+.header__title-assistance[data-v-6832e7cf] {
     margin: 0;
     font-size: 12px;
 }
 }
-.p-header__navbar-title-assistance[data-v-6832e7cf]::before {
+.header__title-assistance[data-v-6832e7cf]::before {
   display: none;
 }
 @media screen and (min-width: 992px) {
-.p-header__navbar-title-assistance[data-v-6832e7cf]::before {
+.header__title-assistance[data-v-6832e7cf]::before {
     content: "";
     display: block;
     width: 1px;
@@ -1848,14 +1848,14 @@ import用ファイル
     transform: translateX(-50%);
 }
 }
-.p-header__navbar-menus[data-v-6832e7cf] {
+.header__menus[data-v-6832e7cf] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: stretch;
 }
 @media screen and (min-width: 992px) {
-.p-header__navbar-menus[data-v-6832e7cf] {
+.header__menus[data-v-6832e7cf] {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;

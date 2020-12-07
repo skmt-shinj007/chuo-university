@@ -1,24 +1,26 @@
 <template>
 
-<header class="l-header p-header">
-  <div class="p-header__navbar">
-    <div class="p-header__navbar-title">
-      <span class="p-header__navbar-title-main">
-        {{ messages.Header.MainTitle }}
-      </span>
+<header class="header">
+  <div class="header__navbar">
+    <router-link to="/">
+      <div class="header__title">
+        <span class="header__title-main">
+          {{ messages.Header.MainTitle }}
+        </span>
 
-      <span class="p-header__navbar-title-assistance">
-        {{ messages.Header.AssistanceTitle }}
-      </span>
-    </div>
+        <span class="header__title-assistance">
+          {{ messages.Header.AssistanceTitle }}
+        </span>
+      </div>
+    </router-link>
 
-    <div class="p-header__navbar-menus">
+    <div class="header__menus">
       <header-button-component>
-        <i class="fas fa-bars icon"></i>
+        <i class="fas fa-bars header-icon"></i>
       </header-button-component>
 
       <header-button-component>
-        <i class="fab fa-twitter icon"></i>
+        <i class="fab fa-twitter header-icon"></i>
       </header-button-component>
     </div>
   </div>
@@ -41,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 
 // layout style
-.l-header {
+.header {
   width: 100%;
   height: 60px;
   position: fixed;
@@ -58,25 +60,25 @@ export default {
     left: 0;
     box-shadow: 2px 0px 6px color(shadow);
   };
-}
 
-.p-header__navbar {
-  height: 100%;
-  @include flex(
-    $justify-content:space-around,
-    $align-items:center
-  );
-
-  // pc style
-  @include mq(md) {
+  &__navbar {
+    height: 100%;
     @include flex(
-      $flow: column nowrap,
       $justify-content:space-around,
       $align-items:center
     );
-  };
 
-  &-title {
+    // pc style
+    @include mq(md) {
+      @include flex(
+        $flow: column nowrap,
+        $justify-content:space-around,
+        $align-items:center
+      );
+    };
+  }
+
+  &__title {
     cursor: pointer;
     @include flex($justify-content:center, $align-items:center);
 
@@ -138,7 +140,7 @@ export default {
     }
   }
 
-  &-menus {
+  &__menus {
     @include flex(
       $justify-content: space-around,
     );
