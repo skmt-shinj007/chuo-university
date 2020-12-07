@@ -843,14 +843,14 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-sliderMainVisual[data-v-30380e08] {
+.main-visual-alider[data-v-30380e08] {
   height: 100%;
   position: relative;
 }
-.c-sliderMainVisual .swiper-slider[data-v-30380e08] {
+.main-visual-alider .swiper-slider[data-v-30380e08] {
   overflow: hidden;
 }
-.c-sliderMainVisual__image[data-v-30380e08] {
+.main-visual-alider__image[data-v-30380e08] {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
@@ -858,7 +858,7 @@ import用ファイル
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
 }
-.c-sliderMainVisual__text[data-v-30380e08] {
+.main-visual-alider__text[data-v-30380e08] {
   position: absolute;
   top: 50%;
   left: 0;
