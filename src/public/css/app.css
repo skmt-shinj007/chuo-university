@@ -323,28 +323,28 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.p-contentsCard {
+.lead-text {
   width: 80%;
   background-color: #ffffff;
   box-shadow: 0px 6px 8px #e6e6e6;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.p-contentsCard {
+.lead-text {
     width: 70%;
 }
 }
 @media screen and (min-width: 992px) {
-.p-contentsCard {
+.lead-text {
     width: 50%;
     background-color: rgba(255, 255, 255, 0.8);
 }
 }
-.p-contentsCard__lead {
+.lead-text__inner {
   margin-top: 1.5rem;
   padding: 0.5rem;
 }
-.p-contentsCard__viewAll {
+.lead-text__viewAll {
   margin-top: 1rem;
 }@charset "UTF-8";
 /*
