@@ -49,7 +49,7 @@
 <script>
 // component import
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import GoogleMapComponent from '../components/modules/googleMapComponent';
+import GoogleMapComponent from '../components/modules/GoogleMapComponent';
 import PolicyCardComponent from '../components/modules/PolicyCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
