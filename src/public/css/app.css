@@ -895,31 +895,31 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-table {
+.common-table {
   width: 90%;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.c-table {
+.common-table {
     width: 80%;
 }
 }
 @media screen and (min-width: 992px) {
-.c-table {
+.common-table {
     width: 70%;
 }
 }
-.c-table__record {
+.common-table__record {
   width: 100%;
   border: 1px solid #f2f2f2;
 }
-.c-table__key {
+.common-table__key {
   width: 30%;
   background-color: #f8f9fa;
   text-align: center;
   vertical-align: middle;
 }
-.c-table__value {
+.common-table__value {
   width: 70%;
   white-space: pre-wrap;
 }@charset "UTF-8";
