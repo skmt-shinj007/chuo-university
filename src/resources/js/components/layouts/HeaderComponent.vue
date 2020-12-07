@@ -14,11 +14,11 @@
 
     <div class="p-header__navbar-menus">
       <header-button-component>
-        <i class="fas fa-bars c-icon"></i>
+        <i class="fas fa-bars icon"></i>
       </header-button-component>
 
       <header-button-component>
-        <i class="fab fa-twitter c-icon"></i>
+        <i class="fab fa-twitter icon"></i>
       </header-button-component>
     </div>
   </div>

@@ -1668,7 +1668,7 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-headerButton {
+.header-button {
   background-color: #091e2f;
   color: #ffffff;
   width: 40px;
@@ -1683,18 +1683,18 @@ import用ファイル
   align-items: center;
 }
 @media screen and (min-width: 560px) {
-.c-headerButton {
+.header-button {
     margin-right: 1rem;
 }
 }
 @media screen and (min-width: 992px) {
-.c-headerButton {
+.header-button {
     margin-right: 0;
     margin-bottom: 1rem;
     position: relative;
     transition: 0.5s all ease-in-out;
 }
-.c-headerButton::before {
+.header-button::before {
     position: absolute;
     content: "";
     width: 40px;
@@ -1703,22 +1703,22 @@ import用ファイル
     border: 2px solid transparent;
     transition: 0.5s all ease-in-out;
 }
-.c-headerButton:hover {
+.header-button:hover {
     background-color: #ffffff;
     color: #091e2f;
     transform: scale(1.1);
 }
-.c-headerButton:hover::before {
+.header-button:hover::before {
     border-color: #091e2f;
 }
-.c-headerButton:hover .c-icon {
+.header-button:hover .icon {
     transform: rotateZ(360deg);
 }
 }
-.c-headerButton:last-child {
+.header-button:last-child {
   margin: 0;
 }
-.c-headerButton .c-icon {
+.header-button .icon {
   width: 20px;
   height: 20px;
   transition: 0.3s all ease;

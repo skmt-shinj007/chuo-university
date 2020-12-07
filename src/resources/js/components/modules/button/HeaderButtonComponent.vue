@@ -1,5 +1,5 @@
 <template>
-  <button class="c-headerButton" :type="buttonType">
+  <button class="header-button" :type="buttonType">
     <slot></slot>
   </button>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-headerButton {
+.header-button {
   background-color: color(darkblue);
   color: color(white);
   width: 40px;
@@ -48,7 +48,7 @@ export default {
     margin: 0;
   }
 
-  .c-icon {
+  .icon {
     width: 20px;
     height: 20px;
     transition: .3s all ease;
