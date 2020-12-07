@@ -1928,35 +1928,35 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-sitemap {
+.site-map {
   width: 60%;
   max-width: 300px;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.c-sitemap {
+.site-map {
     width: 100%;
     max-width: none;
 }
 }
-.c-sitemap__list {
+.site-map__list {
   margin-bottom: 0.5rem;
   line-height: 2;
 }
 @media screen and (min-width: 560px) {
-.c-sitemap__list {
+.site-map__list {
     line-height: 1.5;
 }
 }
-.c-sitemap__list:last-child {
+.site-map__list:last-child {
   margin: 0;
 }
-.c-sitemap__item {
+.site-map__item {
   padding: 0.25rem 1rem;
   position: relative;
   font-size: 16px;
 }
-.c-sitemap__item::before {
+.site-map__item::before {
   display: block;
   content: "";
   width: 8px;
@@ -1968,7 +1968,7 @@ import用ファイル
   transform: translateY(-50%);
 }
 @media screen and (min-width: 560px) {
-.c-sitemap__item {
+.site-map__item {
     font-size: 12px;
 }
 }@charset "UTF-8";
