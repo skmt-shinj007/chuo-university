@@ -1889,15 +1889,15 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-footerTitle[data-v-6d5a9373] {
+.footer-title[data-v-6d5a9373] {
   text-align: center;
 }
-.c-footerTitle__title[data-v-6d5a9373] {
+.footer-title__title[data-v-6d5a9373] {
   font-size: 32px;
   letter-spacing: 3px;
 }
 @media screen and (min-width: 560px) {
-.c-footerTitle__title[data-v-6d5a9373] {
+.footer-title__title[data-v-6d5a9373] {
     font-size: 22px;
 }
 }@charset "UTF-8";
