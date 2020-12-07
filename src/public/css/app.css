@@ -81,29 +81,29 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.c-contentsTitle {
+.contents-title {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
-.c-contentsTitle-white {
+.contents-title-white {
   color: #ffffff;
 }
-.c-contentsTitle__assistance {
+.contents-title__assistance {
   font-size: 10px;
 }
 @media screen and (min-width: 992px) {
-.c-contentsTitle__assistance {
+.contents-title__assistance {
     font-size: 12px;
 }
 }
-.c-contentsTitle__primary {
+.contents-title__primary {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   position: relative;
 }
-.c-contentsTitle__primary::after {
+.contents-title__primary::after {
   content: "";
   display: block;
   width: 50px;
@@ -114,7 +114,7 @@ import用ファイル
   transform: translateX(-50%);
   background-color: #091e2f;
 }
-.c-contentsTitle.c-contentsTitle-white .c-contentsTitle__primary::after {
+.contents-title.contents-title-white .contents-title__primary::after {
   background-color: #ffffff;
 }@charset "UTF-8";
 /*
