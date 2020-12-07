@@ -26,7 +26,7 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.p-mainVisual[data-v-3ff6fe5a] {
+.main-visual[data-v-3ff6fe5a] {
   width: 100%;
   height: 100vh;
   background: #030A10;
@@ -36,7 +36,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.p-mainVisual__title[data-v-3ff6fe5a] {
+.main-visual__title[data-v-3ff6fe5a] {
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 48px;
@@ -44,12 +44,12 @@ import用ファイル
   text-shadow: 3px 3px 0px #e56c2c;
 }
 @media screen and (min-width: 560px) {
-.p-mainVisual__title[data-v-3ff6fe5a] {
+.main-visual__title[data-v-3ff6fe5a] {
     font-size: 80px;
 }
 }
 @media screen and (min-width: 992px) {
-.p-mainVisual__title[data-v-3ff6fe5a] {
+.main-visual__title[data-v-3ff6fe5a] {
     line-height: 1.2;
     font-size: 80px;
 }
