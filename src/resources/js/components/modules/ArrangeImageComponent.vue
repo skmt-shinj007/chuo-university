@@ -28,7 +28,6 @@ export default {
 <style lang="scss" scoped>
 .arrange-image {
   width: 100%;
-  margin-bottom: 100px;
   @include trimming(aspect(rectangle));
 
   &__image {

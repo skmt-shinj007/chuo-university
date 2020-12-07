@@ -952,7 +952,6 @@ import用ファイル
  */
 .arrange-image[data-v-7f82b6cb] {
   width: 100%;
-  margin-bottom: 100px;
   position: relative;
 }
 .arrange-image[data-v-7f82b6cb]::before {
@@ -1058,6 +1057,36 @@ import用ファイル
 }
 .club__practice-rowImages-item[data-v-357d3955] {
   width: 30%;
+}
+.club__practice-schedule[data-v-357d3955] {
+  margin-top: 5rem;
+}
+.club__practice-schedule-title[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto 1rem auto;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.club__practice-schedule-title[data-v-357d3955]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #091e2f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 560px) {
+.club__practice-schedule-title[data-v-357d3955] {
+    width: 80%;
+}
+}
+@media screen and (min-width: 992px) {
+.club__practice-schedule-title[data-v-357d3955] {
+    width: 70%;
+}
 }@charset "UTF-8";
 /*
 import用ファイル

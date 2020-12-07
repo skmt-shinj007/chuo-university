@@ -88,7 +88,7 @@
   }
 }
 
-// link decoration -text middle line
+// text decoration (- text) テキストの前に線を入れる装飾
 @mixin text-before-line($width, $height, $bg-color) {
   &::before {
     display: block;
