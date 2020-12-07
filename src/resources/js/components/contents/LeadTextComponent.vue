@@ -1,5 +1,5 @@
 <template>
-<div class="lead-text card-container">
+<div class="lead-text card-inner-margin">
   <div class="p-contentsCrad__title">
     <contents-title-component :title="title" :subTitle="subTitle" :color="titleColor"/>
   </div>

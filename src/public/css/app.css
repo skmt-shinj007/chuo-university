@@ -200,13 +200,13 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.p-news[data-v-9b317ac0] {
+.news[data-v-9b317ac0] {
   width: 80%;
   background-color: #ffffff;
   box-shadow: 0px 6px 8px #e6e6e6;
   margin: 0 auto;
 }
-.p-news__list[data-v-9b317ac0] {
+.news__list[data-v-9b317ac0] {
   margin: 1.5rem 1rem;
 }@charset "UTF-8";
 /*
@@ -2711,11 +2711,11 @@ p {
   padding: 5rem 0;
 }
 
-.card-container {
+.card-inner-margin {
   padding: 1rem;
 }
 @media screen and (min-width: 992px) {
-  .card-container {
+  .card-inner-margin {
     padding: 1.5rem;
   }
 }
