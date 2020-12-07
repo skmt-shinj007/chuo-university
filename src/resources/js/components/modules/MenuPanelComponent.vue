@@ -1,9 +1,9 @@
 <template>
-  <div class="c-menuPanel">
-    <figure class="c-menuPanel__figure">
-      <img class="c-menuPanel__image" :src="panelImageUrl" :alt="imageAlt">
+  <div class="menu-panel">
+    <figure class="menu-panel__figure">
+      <img class="menu-panel__image" :src="panelImageUrl" :alt="imageAlt">
     </figure>
-    <view-all-button-component class="c-menuPanel__button" :name="buttonName" :buttonSize="buttonSize"/>
+    <view-all-button-component class="menu-panel__button" :name="buttonName" :buttonSize="buttonSize"/>
   </div>
 </template>
 
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-menuPanel {
+.menu-panel {
 
   &__figure {
     width: 100%;
