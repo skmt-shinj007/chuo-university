@@ -42,6 +42,10 @@
         <arrange-image-component :imageUrl="`/image/${image.path}`" :art="image.name" :barText="image.text"/>
       </div>
     </div>
+
+    <div class="club__practice-schedule">
+      <table-component :tableItems="schedule"/>
+    </div>
   </section>
 </div>
 </template>
@@ -72,6 +76,7 @@ export default {
       mainVisualImages: [],
       practiceInformations: [],
       courtImages: [],
+      schedule: [],
     }
   },
 
@@ -81,8 +86,7 @@ export default {
     policiesData.forEach(element => this.policies.push(element));
     practiceData.forEach(element => this.practiceInformations.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
-    console.log('マウント前');
-    console.log(this.$data.messages);
+    scheduleData.forEach(element => this.schedule.push(element));
   },
 
   mounted() {
@@ -156,7 +160,7 @@ const policiesData = [
 /**
  * test data : 練習情報
  */
-const practiceData =[
+const practiceData = [
   {
     key: '練習時間',
     value: '9:00 ~ 12:00（全体練習）',
@@ -174,6 +178,60 @@ const practiceData =[
     value: '〒192-0393\n東京都八王子市東中野742-1\n中央大学多摩キャンパス第二体育館ソフトテニスコート',
   }
 ];
+
+/**
+ * test data : 年間スケジュール
+ */
+const scheduleData = [
+  {
+    key: '1月',
+    value: 'オフ'
+  },
+  {
+    key: '2月',
+    value: 'オフ/練習開始'
+  },
+  {
+    key: '3月',
+    value: '春合宿'
+  },
+  {
+    key: '4月',
+    value: '東都リーグ（春）'
+  },
+  {
+    key: '5月',
+    value: '関東リーグ（春）'
+  },
+  {
+    key: '6月',
+    value: '定期戦（立命館大学）'
+  },
+  {
+    key: '7月',
+    value: '東日本インカレ'
+  },
+  {
+    key: '8月',
+    value: 'インカレ'
+  },
+  {
+    key: '9月',
+    value: '東都リーグ（秋）'
+  },
+  {
+    key: '10月',
+    value: '関東リーグ（秋）'
+  },
+  {
+    key: '11月',
+    value: '大学対抗'
+  },
+  {
+    key: '12月',
+    value: 'オフ/納会'
+  },
+]
 </script>
 
 <style lang="scss" scoped>
