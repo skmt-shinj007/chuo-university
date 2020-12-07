@@ -26,6 +26,98 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+.policy-card[data-v-b056e422] {
+  width: 160px;
+  height: 160px;
+  border: 3px solid #ffffff;
+  border-radius: 4px;
+  margin: 2.5rem auto 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #10334e;
+  background: linear-gradient(to right, #10334e 0%, #030A10 100%);
+}
+@media screen and (min-width: 560px) {
+.policy-card[data-v-b056e422] {
+    margin: 0;
+}
+}
+@media screen and (min-width: 992px) {
+.policy-card[data-v-b056e422] {
+    position: relative;
+}
+.policy-card__title[data-v-b056e422], .policy-card__subTitle[data-v-b056e422] {
+    transition: all 0.5s ease-in-out;
+}
+.policy-card:hover .policy-card__title[data-v-b056e422],
+.policy-card:hover .policy-card__subTitle[data-v-b056e422] {
+    opacity: 0;
+}
+.policy-card:hover .policy-card__text[data-v-b056e422] {
+    opacity: 1;
+}
+}
+.policy-card[data-v-b056e422]:first-child {
+  margin-top: 0;
+}
+.policy-card__subTitle[data-v-b056e422] {
+  font-size: 10px;
+  color: #ffffff;
+}
+.policy-card__title[data-v-b056e422] {
+  color: #ffffff;
+  font-family: "Bangers", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.policy-card__text[data-v-b056e422] {
+  color: #ffffff;
+  padding: 0.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+.policy-card__text[data-v-b056e422] {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
 .p-mainVisual[data-v-3ff6fe5a] {
   width: 100%;
   height: 100vh;
@@ -658,98 +750,6 @@ import用ファイル
     text-align: end;
     width: 100%;
     padding: 0 0.5rem;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-policy[data-v-5c858898] {
-  width: 160px;
-  height: 160px;
-  border: 3px solid #ffffff;
-  border-radius: 4px;
-  margin: 2.5rem auto 0 auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  background: #10334e;
-  background: linear-gradient(to right, #10334e 0%, #030A10 100%);
-}
-@media screen and (min-width: 560px) {
-.c-policy[data-v-5c858898] {
-    margin: 0;
-}
-}
-@media screen and (min-width: 992px) {
-.c-policy[data-v-5c858898] {
-    position: relative;
-}
-.c-policy__title[data-v-5c858898], .c-policy__subTitle[data-v-5c858898] {
-    transition: all 0.5s ease-in-out;
-}
-.c-policy:hover .c-policy__title[data-v-5c858898],
-.c-policy:hover .c-policy__subTitle[data-v-5c858898] {
-    opacity: 0;
-}
-.c-policy:hover .c-policy__text[data-v-5c858898] {
-    opacity: 1;
-}
-}
-.c-policy[data-v-5c858898]:first-child {
-  margin-top: 0;
-}
-.c-policy__subTitle[data-v-5c858898] {
-  font-size: 10px;
-  color: #ffffff;
-}
-.c-policy__title[data-v-5c858898] {
-  color: #ffffff;
-  font-family: "Bangers", cursive;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-.c-policy__text[data-v-5c858898] {
-  color: #ffffff;
-  padding: 0.5rem;
-  text-align: center;
-}
-@media screen and (min-width: 992px) {
-.c-policy__text[data-v-5c858898] {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    font-size: 12px;
-    font-weight: bold;
-    transition: all 0.5s ease-in-out;
 }
 }@charset "UTF-8";
 /*
