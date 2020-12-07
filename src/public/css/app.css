@@ -2065,70 +2065,70 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.l-footer[data-v-060e08fe] {
+.footer[data-v-060e08fe] {
   background-color: #091e2f;
   color: #ffffff;
   font-weight: bold;
 }
-.p-footer__mainContents[data-v-060e08fe] {
+.footer__main-contents[data-v-060e08fe] {
   margin-bottom: 1.5rem;
 }
 @media screen and (min-width: 560px) {
-.p-footer__mainContents[data-v-060e08fe] {
+.footer__main-contents[data-v-060e08fe] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
 }
 }
-.p-footer__mainContents-title[data-v-060e08fe] {
+.footer__titles[data-v-060e08fe] {
   margin-bottom: 1.5rem;
 }
-.p-footer__mainContents-sitemap[data-v-060e08fe] {
+.footer__sitemap[data-v-060e08fe] {
   padding-top: 5rem;
 }
 @media screen and (min-width: 560px) {
-.p-footer__mainContents-sitemap[data-v-060e08fe] {
+.footer__sitemap[data-v-060e08fe] {
     padding-top: 0;
     margin-top: 2.5rem;
     padding: 0 1rem;
 }
 }
-.p-footer__mainContents-externalLink[data-v-060e08fe] {
+.footer__external-link[data-v-060e08fe] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.p-footer__mainContents-externalLink[data-v-060e08fe] {
+.footer__external-link[data-v-060e08fe] {
     padding: 0 1rem;
 }
 }
-.p-footer__mainContents-information[data-v-060e08fe] {
+.footer__information[data-v-060e08fe] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.p-footer__mainContents-information[data-v-060e08fe] {
+.footer__information[data-v-060e08fe] {
     padding: 0 1rem;
 }
 }
-.p-footer__mainContents-information-wrap[data-v-060e08fe] {
+.footer__information-list[data-v-060e08fe] {
   width: 50%;
   max-width: 300px;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.p-footer__mainContents-information-wrap[data-v-060e08fe] {
+.footer__information-list[data-v-060e08fe] {
     width: 100%;
     max-width: none;
 }
 }
-.p-footer__mainContents-information-list[data-v-060e08fe] {
+.footer__information-list-item[data-v-060e08fe] {
   margin-bottom: 0.25rem;
   font-size: 10px;
 }
-.p-footer__mainContents-information-list[data-v-060e08fe]:last-child {
+.footer__information-list-item[data-v-060e08fe]:last-child {
   margin-bottom: 0;
 }
-.p-footer__endText[data-v-060e08fe] {
+.footer__end[data-v-060e08fe] {
   padding: 1.5rem 0;
   text-align: center;
   font-weight: normal;
