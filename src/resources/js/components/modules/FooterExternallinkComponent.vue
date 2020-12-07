@@ -1,7 +1,7 @@
 <template>
-  <ul class="c-externalLink">
-    <li class="c-externalLink__list" v-for="externalLink in externalLinks" :title="externalLink.name" :key="externalLink.linkUrl">
-      <a class="c-externalLink__item" :href="externalLink.linkUrl">{{ externalLink.name }}</a>
+  <ul class="external-link">
+    <li class="external-link__list" v-for="externalLink in externalLinks" :title="externalLink.name" :key="externalLink.linkUrl">
+      <a class="external-link__item" :href="externalLink.linkUrl">{{ externalLink.name }}</a>
     </li>
   </ul>
 </template>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-externalLink {
+.external-link {
   width: 60%;
   max-width: 300px;
   margin: 0 auto;

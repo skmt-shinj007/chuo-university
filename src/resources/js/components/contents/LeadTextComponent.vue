@@ -1,14 +1,14 @@
 <template>
-<div class="p-contentsCard card-container">
+<div class="lead-text card-inner-margin">
   <div class="p-contentsCrad__title">
     <contents-title-component :title="title" :subTitle="subTitle" :color="titleColor"/>
   </div>
-  <div class="p-contentsCard__lead">
-    <p class="p-contentsCard__lead-text">
+  <div class="lead-text__inner">
+    <p class="lead-text__text">
       {{ contentsText }}
     </p>
   </div>
-  <div class="p-contentsCard__viewAll">
+  <div class="lead-text__viewAll">
     <view-all-button-component :name="buttonName" :buttonSize="buttonSize"/>
   </div>
 </div>
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss">
-.p-contentsCard {
+.lead-text {
   width: 80%;
   background-color: color(white);
   box-shadow: 0px 6px 8px color(shadow);
@@ -56,7 +56,7 @@ export default {
     background-color: rgba($color: color(white), $alpha: .8);
   };
 
-  &__lead {
+  &__inner {
     margin-top: interval(3);
     padding: interval(1);
   }

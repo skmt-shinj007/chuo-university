@@ -1,13 +1,13 @@
 <template>
-  <ul class="c-textList">
-    <li class="c-textList__item">  <!-- v-for="list in lists" :key="list.title" -->
-      <a class="c-textList__item-link" href="#">ここにニュースが入ります。ここにニュースが入ります。ここにニュースが入ります。ここにニュースが入ります。</a>
+  <ul class="text-list">
+    <li class="text-list__item">  <!-- v-for="list in lists" :key="list.title" -->
+      <a class="text-list__item-link" href="#">ここにニュースが入ります。ここにニュースが入ります。ここにニュースが入ります。ここにニュースが入ります。</a>
     </li>
-    <li class="c-textList__item">  <!-- v-for="list in lists" :key="list.title" -->
-      <a class="c-textList__item-link" href="#">ここにニュースが入ります。ここにニュースが入ります。</a>
+    <li class="text-list__item">  <!-- v-for="list in lists" :key="list.title" -->
+      <a class="text-list__item-link" href="#">ここにニュースが入ります。ここにニュースが入ります。</a>
     </li>
-    <li class="c-textList__item">  <!-- v-for="list in lists" :key="list.title" -->
-      <a class="c-textList__item-link" href="#">ここにニュースが入ります。ここにニュースが入ります。</a>
+    <li class="text-list__item">  <!-- v-for="list in lists" :key="list.title" -->
+      <a class="text-list__item-link" href="#">ここにニュースが入ります。ここにニュースが入ります。</a>
     </li>
   </ul>
 </template>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-textList {
+.text-list {
   width: 100%;
   list-style: disc;
   padding-left: interval(3);

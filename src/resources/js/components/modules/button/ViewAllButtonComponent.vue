@@ -1,8 +1,8 @@
 <template>
-<div class="c-viewAll" :class="changeSizing">
-  <button class="c-viewAll__button" :type="buttonType">
+<div class="view-all-button" :class="changeSizing">
+  <button class="view-all-button__button" :type="buttonType">
     {{ name }}
-    <i class="fas fa-angle-right fa-2x c-viewAll__button-icon"></i>
+    <i class="fas fa-angle-right fa-2x view-all-button__icon"></i>
   </button>
 </div>
 
@@ -12,8 +12,8 @@
   例）<view-all-button-component name="メンバーを見る" buttonType="submit"/>
 
   ボタンサイズの可変は、クラスの指定で行う。(親コンポーネントで buttonSize を指定)
-  1. c-viewAll-xs
-  2. c-viewAll-sm
+  1. view-all-button-xs
+  2. view-all-button-sm
 -->
 </template>
 
@@ -35,14 +35,14 @@ export default {
   },
   computed: {
     changeSizing() {
-      return (this.buttonSize) ? `c-viewAll-${this.buttonSize}` : null;
+      return (this.buttonSize) ? `view-all-button-${this.buttonSize}` : null;
     }
   },
 }
 </script>
 
 <style lang="scss">
-.c-viewAll {
+.view-all-button {
   width: 80%;
   max-width: btn-size(sm-width);
   height: btn-size(sm-height);
@@ -92,13 +92,13 @@ export default {
     @include mq(md) {
       background-color: rgba($color: color(white), $alpha: .6);
     };
+  }
 
-    &-icon {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-    }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
   }
 }
 </style>

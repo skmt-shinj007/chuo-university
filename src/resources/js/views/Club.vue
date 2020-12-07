@@ -1,15 +1,15 @@
 <template>
-<div class="l-club p-club">
+<div class="club">
 
-  <section class="p-club__mainVisualSlider">
+  <section class="club__mainVisualSlider">
     <main-visual-slider-component :images="mainVisualImages"/>
   </section>
 
-  <div class="p-club__policy-bg">
-    <section class="p-club__policy section-container">
+  <div class="background-darkblue">
+    <section class="club__policy section-container">
       <contents-title-component title="team policy" subTitle="方針" color="white"/>
 
-      <div class="p-club__policy-cards">
+      <div class="club__policy-cards">
         <policy-card-component
         v-for="policy in policies"
         :key="policy.id"
@@ -20,25 +20,25 @@
     </section>
   </div>
 
-  <section class="p-club__practice section-container">
+  <section class="club__practice section-container">
     <contents-title-component title="practice" subTitle="練習"/>
 
-    <div class="p-club__practice-table">
+    <div class="club__practice-table">
       <table-component :tableItems="practiceInformations"/>
     </div>
 
-    <div class="p-club__practice-map">
+    <div class="club__practice-map">
       <google-map-component/>
     </div>
 
     <!-- 画面幅992px以下で表示（tablet以下） -->
-    <div class="p-club__practice-imageSlider" v-if="windowWidth < pcWidth">
+    <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
       <contents-image-slider-component :images="courtImages"/>
     </div>
 
     <!-- 画面幅993pxから表示（pcから） -->
-    <div class="p-club__practice-rowImages" v-if="windowWidth >= pcWidth">
-      <div class="p-club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
+    <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
+      <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
         <arrange-image-component :imageUrl="`/image/${image.path}`" :art="image.name" :barText="image.text"/>
       </div>
     </div>
@@ -49,8 +49,8 @@
 <script>
 // component import
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import GoogleMapComponent from '../components/modules/googleMapComponent';
-import PolicyCardComponent from '../components/modules/PolicyCardComponent';
+import GoogleMapComponent from '../components/modules/GoogleMapComponent';
+import PolicyCardComponent from '../components/modules/card/PolicyCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
@@ -177,15 +177,10 @@ const practiceData =[
 </script>
 
 <style lang="scss" scoped>
-.p-club {
+.club {
   &__mainVisualSlider {
     width: 100%;
     height: 100vh;
-  }
-
-  &__policy-bg {
-    background-color: color(darkblue);
-    margin-top: 0;
   }
 
   &__policy {
