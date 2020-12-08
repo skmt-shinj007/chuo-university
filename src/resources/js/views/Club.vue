@@ -54,6 +54,9 @@
     <div class="club__dormitory-lead-wrap">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
+    <div class="club__dormitory-cards">
+      <dormitory-card-component/>
+    </div>
   </section>
 </div>
 </template>
@@ -67,6 +70,7 @@ import ContentsImageSliderComponent from '../components/modules/slider/contentsI
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
 import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
+import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 
 export default {
   components: {
@@ -77,6 +81,7 @@ export default {
     GoogleMapComponent,
     ContentsImageSliderComponent,
     ArrangeImageComponent,
+    DormitoryCardComponent,
   },
   data() {
     return {
@@ -85,6 +90,7 @@ export default {
       practiceInformations: [],
       courtImages: [],
       schedule: [],
+      dormitoryObjects: [],
     }
   },
 
@@ -95,6 +101,7 @@ export default {
     practiceData.forEach(element => this.practiceInformations.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
     scheduleData.forEach(element => this.schedule.push(element));
+    dormitoryData.forEach(element => this.dormitoryObjects.push(element));
   },
 
   mounted() {
@@ -239,7 +246,33 @@ const scheduleData = [
     key: '12月',
     value: 'オフ / 納会'
   },
-]
+];
+
+/**
+ * test data : 寮のデータ
+ */
+const dormitoryData = [
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: '食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。',
+  },
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n\n入浴可能時間：6:00 - 9:30、12:00 - 14:00、16:30 - 23:00',
+  },
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: 'ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。',
+  },
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: '洗濯機は、ソフトテニス部の部屋がある階に4台ございます。',
+  }
+];
 </script>
 
 <style lang="scss" scoped>

@@ -14,6 +14,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -68,6 +71,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -139,6 +145,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -195,6 +204,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -229,6 +241,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -318,6 +333,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -369,6 +387,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -428,6 +449,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -631,6 +655,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -680,6 +707,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -774,6 +804,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -838,6 +871,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -888,6 +924,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -943,6 +982,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -1005,6 +1047,72 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.dormitory-card[data-v-2a1efbb8] {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.dormitory-card[data-v-2a1efbb8] {
+    width: 50%;
+}
+}
+.dormitory-card__icon-wrap[data-v-2a1efbb8] {
+  border: 2px solid #091e2f;
+  border-radius: 100%;
+  padding: 0.75rem;
+  margin-right: 0.5rem;
+}
+.dormitory-card__icon[data-v-2a1efbb8] {
+  width: 32px;
+  height: 32px;
+  fill: #e56c2c;
+}
+.dormitory-card__text-wrap[data-v-2a1efbb8] {
+  padding: 0.5rem;
+}
+.dormitory-card__text[data-v-2a1efbb8] {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -1116,6 +1224,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -1700,6 +1811,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -1780,6 +1894,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -1921,6 +2038,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -1958,6 +2078,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -2031,6 +2154,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -2095,6 +2221,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -2199,6 +2328,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
