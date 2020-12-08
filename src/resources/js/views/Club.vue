@@ -52,7 +52,7 @@
   <section class="club__dormitory section-container">
     <contents-title-component :title="messages.Club.Dormitory.Title" :subTitle="messages.Club.Dormitory.SubTitle"/>
     <div class="club__dormitory-lead-wrap">
-      <p class="club__dormitory-lead-text nl2br" v-text="messages.Club.Dormitory.LeadText"/>
+      <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
   </section>
 </div>
@@ -320,10 +320,10 @@ const scheduleData = [
       @include mq(sm) {
         width: 80%;
       };
-    }
 
-    &-lead-text {
-
+      @include mq(md) {
+        text-align: center;
+      };
     }
   }
 }

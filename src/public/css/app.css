@@ -1097,6 +1097,11 @@ import用ファイル
 .club__dormitory-lead-wrap[data-v-357d3955] {
     width: 80%;
 }
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-lead-wrap[data-v-357d3955] {
+    text-align: center;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
