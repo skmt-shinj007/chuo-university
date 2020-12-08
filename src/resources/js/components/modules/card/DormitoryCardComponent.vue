@@ -5,6 +5,15 @@
   </div>
   <div class="dormitory-card__text-wrap">
     <p class="dormitory-card__text nl2br" v-text="content"/>
+
+    <div class="dormitory-card__tag" v-if="washPrice">
+      <span class="dormitory-card__laundry-price" v-text="washPrice"></span>
+      <span class="dormitory-card__laundry-price" v-text="dryPrice"></span>
+    </div>
+
+    <div class="dormitory-card__tag" v-if="bathTime">
+      <span class="dormitory-card__bath-time" v-text="bathTime"/>
+    </div>
   </div>
 </div>
 </template>
@@ -23,6 +32,18 @@ export default {
     content: {
       type: String,
       default: "aa"
+    },
+    washPrice: {
+      type: String,
+      default: '',
+    },
+    dryPrice: {
+      type: String,
+      default: '',
+    },
+    bathTime: {
+      type: String,
+      default: '',
     }
   },
 }
@@ -33,14 +54,19 @@ export default {
   width: 90%;
   margin: 0 auto interval(2) auto;
   padding: interval(1);
-  @include flex($justify-content: center, $align-items: center);
+  @include flex($align-items: center);
 
   &:last-child {
     margin-bottom: 0;
   }
 
   @include mq(sm) {
+    width: 70%;
+  };
+
+  @include mq(md) {
     width: 50%;
+    max-width: 500px;
   };
 
   &__icon-wrap {
@@ -61,6 +87,23 @@ export default {
   }
 
   &__text {
+    font-size: font(sm);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__tag {
+    margin-top: interval(0.5);
+  }
+
+  &__laundry-price {
+    display: block;
+    font-size: font(sm);
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  &__bath-time {
     font-size: font(sm);
     font-weight: bold;
     line-height: 1.5;

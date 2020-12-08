@@ -263,7 +263,8 @@ const dormitoryData = [
   {
     srcUrl: 'restaurant.svg',
     alt: 'アイコンのaltが入ります',
-    content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n\n入浴可能時間：6:00 - 9:30、12:00 - 14:00、16:30 - 23:00',
+    content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n',
+    bathTime: '入浴可能時間：6:00 - 9:30 / 12:00 - 14:00 / 16:30 - 23:00',
   },
   {
     srcUrl: 'restaurant.svg',
@@ -274,6 +275,8 @@ const dormitoryData = [
     srcUrl: 'restaurant.svg',
     alt: 'アイコンのaltが入ります',
     content: '洗濯機は、ソフトテニス部の部屋がある階に4台ございます。',
+    washPrice: '洗濯機：無料',
+    dryPrice: '乾燥機：24分 / 100円'
   }
 ];
 </script>
@@ -359,6 +362,15 @@ const dormitoryData = [
 
       @include mq(md) {
         text-align: center;
+      };
+    }
+
+    &-cards {
+      margin-top: interval(4);
+
+      @include mq(md) {
+        @include flex(row wrap);
+        margin-top: interval(7);
       };
     }
   }
