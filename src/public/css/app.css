@@ -1065,7 +1065,7 @@ import用ファイル
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
 .dormitory-card[data-v-2a1efbb8] {
-  width: 90%;
+  width: 100%;
   margin: 0 auto 1rem auto;
   padding: 0.5rem;
   display: flex;
@@ -1075,17 +1075,6 @@ import用ファイル
 }
 .dormitory-card[data-v-2a1efbb8]:last-child {
   margin-bottom: 0;
-}
-@media screen and (min-width: 560px) {
-.dormitory-card[data-v-2a1efbb8] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.dormitory-card[data-v-2a1efbb8] {
-    width: 50%;
-    max-width: 500px;
-}
 }
 .dormitory-card__icon-wrap[data-v-2a1efbb8] {
   border: 2px solid #091e2f;
@@ -1243,7 +1232,21 @@ import用ファイル
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: stretch;
-    margin-top: 3.5rem;
+}
+}
+.club__dormitory-card-item[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.club__dormitory-card-item[data-v-357d3955] {
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-card-item[data-v-357d3955] {
+    width: 50%;
+    max-width: 500px;
 }
 }@charset "UTF-8";
 /*

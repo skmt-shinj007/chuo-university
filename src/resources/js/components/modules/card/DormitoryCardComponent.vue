@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss" scoped>
 .dormitory-card {
-  width: 90%;
+  width: 100%;
   margin: 0 auto interval(2) auto;
   padding: interval(1);
   @include flex($align-items: center);
@@ -59,15 +59,6 @@ export default {
   &:last-child {
     margin-bottom: 0;
   }
-
-  @include mq(sm) {
-    width: 70%;
-  };
-
-  @include mq(md) {
-    width: 50%;
-    max-width: 500px;
-  };
 
   &__icon-wrap {
     border: 2px solid color(darkblue);

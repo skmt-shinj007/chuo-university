@@ -55,11 +55,11 @@
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
     <div class="club__dormitory-cards">
-      <dormitory-card-component
-      v-for="(dormitoryObject, n) in dormitoryObjects"
-      :key="n"
-      v-bind="dormitoryObject"/>
+      <div class="club__dormitory-card-item" v-for="(dormitoryObject, n) in dormitoryObjects" :key="n">
+        <dormitory-card-component v-bind="dormitoryObject"/>
+      </div>
     </div>
+
   </section>
 </div>
 </template>
@@ -370,7 +370,20 @@ const dormitoryData = [
 
       @include mq(md) {
         @include flex(row wrap);
-        margin-top: interval(7);
+      };
+    }
+
+    &-card-item {
+      width: 90%;
+      margin: 0 auto;
+
+      @include mq(sm) {
+        width: 70%;
+      };
+
+      @include mq(md) {
+        width: 50%;
+        max-width: 500px;
       };
     }
   }
