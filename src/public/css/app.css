@@ -540,15 +540,13 @@ import用ファイル
     left: 0;
 }
 }
-.top__menuPanel[data-v-bae950f4] {
-  margin-top: 20rem;
-}
 @media screen and (min-width: 992px) {
 .top__menuPanel[data-v-bae950f4] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
+    margin-top: 20rem;
 }
 }
 .top__menuPanel-item[data-v-bae950f4] {

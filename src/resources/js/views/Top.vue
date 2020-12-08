@@ -188,11 +188,11 @@ export default {
   }
 
   &__menuPanel {
-    margin-top: interval(40);
 
     // pc style
     @include mq(md) {
       @include flex($justify-content: center);
+      margin-top: interval(40);
     };
 
     &-item {
