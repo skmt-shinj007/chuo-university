@@ -4,9 +4,7 @@
     <contents-title-component :title="title" :subTitle="subTitle" :color="titleColor"/>
   </div>
   <div class="lead-text__inner">
-    <p class="lead-text__text">
-      {{ contentsText }}
-    </p>
+    <p class="nl2br" v-text="contentsText"></p>
   </div>
   <div class="lead-text__viewAll">
     <view-all-button-component :name="buttonName" :buttonSize="buttonSize"/>

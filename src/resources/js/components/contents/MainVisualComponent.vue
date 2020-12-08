@@ -1,6 +1,6 @@
 <template>
 <div class="main-visual">
-  <span class="main-visual__title">CHUO<br>UNIVERSITY<br>SOFT<br>TENNIS</span>
+  <span class="main-visual__title" v-text="messages.Top.MainVisualTitle"></span>
 </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
 
   &__title {
     color: color(white);
+    white-space: pre-wrap;
     font-family: Arial, Helvetica, sans-serif;
     font-size: font(mainVisual);
     font-weight: bold;

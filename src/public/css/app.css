@@ -38,6 +38,7 @@ import用ファイル
 }
 .main-visual__title[data-v-3ff6fe5a] {
   color: #ffffff;
+  white-space: pre-wrap;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 48px;
   font-weight: bold;
@@ -539,15 +540,13 @@ import用ファイル
     left: 0;
 }
 }
-.top__menuPanel[data-v-bae950f4] {
-  margin-top: 20rem;
-}
 @media screen and (min-width: 992px) {
 .top__menuPanel[data-v-bae950f4] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: stretch;
+    margin-top: 20rem;
 }
 }
 .top__menuPanel-item[data-v-bae950f4] {
@@ -2747,6 +2746,15 @@ p {
   .card-inner-margin {
     padding: 1.5rem;
   }
+}
+
+/**
+ * 改行したい文字列に指定。
+ * 大抵 <p> のクラスに指定。（他タグでも問題ない）
+ * 前提：messages.jsonの対象の文字列に改行コード（\n）を入れる。
+ */
+.nl2br {
+  white-space: pre-wrap;
 }
 
 tr {

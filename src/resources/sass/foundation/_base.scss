@@ -81,6 +81,14 @@ p {
     padding: interval(3);
   };
 }
+/**
+ * 改行したい文字列に指定。
+ * 大抵 <p> のクラスに指定。（他タグでも問題ない）
+ * 前提：messages.jsonの対象の文字列に改行コード（\n）を入れる。
+ */
+.nl2br {
+  white-space: pre-wrap;
+}
 
 tr {
   font-size: font(sm);

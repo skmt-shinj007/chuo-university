@@ -7,7 +7,7 @@
 
   <div class="background-darkblue">
     <section class="club__policy section-container">
-      <contents-title-component title="team policy" subTitle="方針" color="white"/>
+      <contents-title-component :title="messages.Club.Policy.Title" :subTitle="messages.Club.Policy.SubTitle" color="white"/>
 
       <div class="club__policy-cards">
         <policy-card-component
@@ -21,7 +21,7 @@
   </div>
 
   <section class="club__practice section-container">
-    <contents-title-component title="practice" subTitle="練習"/>
+    <contents-title-component :title="messages.Club.Practice.Title" :subTitle="messages.Club.Practice.SubTitle"/>
 
     <div class="club__practice-table">
       <table-component :tableItems="practiceInformations"/>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="club__practice-schedule">
-      <h3 class="club__practice-schedule-title">{{ messages.Practice.ScheduleTitle }}</h3>
+      <h3 class="club__practice-schedule-title">{{ messages.Club.Practice.ScheduleTitle }}</h3>
       <table-component :tableItems="schedule"/>
     </div>
   </section>

@@ -15,7 +15,7 @@
         title="team"
         subTitle="チーム紹介"
         buttonName="メンバーを見る"
-        :contentsText="messages.TeamDescription"/>
+        :contentsText="messages.Top.TeamDescription"/>
     </section>
 
     <section class="top__hakumonkai section-container">
@@ -27,7 +27,7 @@
         title="hakumonkai"
         subTitle="白門会"
         buttonName="白門会を知る"
-        :contentsText="messages.HakumonkaiDescription"/>
+        :contentsText="messages.Top.HakumonkaiDescription"/>
     </section>
 
     <section class="top__menuPanel section-container">
@@ -46,7 +46,7 @@
         <section class="top__support section-container">
           <contents-title-component title="support" subTitle="サポート" color="white"/>
           <div class="top__support-textaria">
-            <p>{{ messages.Support }}</p>
+            <p class="nl2br" v-text="messages.Top.Support"/>
           </div>
         </section>
       </div>
@@ -188,11 +188,11 @@ export default {
   }
 
   &__menuPanel {
-    margin-top: interval(40);
 
     // pc style
     @include mq(md) {
       @include flex($justify-content: center);
+      margin-top: interval(40);
     };
 
     &-item {
