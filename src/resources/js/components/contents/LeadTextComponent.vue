@@ -1,8 +1,6 @@
 <template>
 <div class="lead-text card-inner-margin">
-  <div class="p-contentsCrad__title">
-    <contents-title-component :title="title" :subTitle="subTitle" :color="titleColor"/>
-  </div>
+  <contents-title-component class="lead-text__title" :title="title" :subTitle="subTitle" :color="titleColor"/>
   <div class="lead-text__inner">
     <p class="nl2br" v-text="contentsText"></p>
   </div>
@@ -53,6 +51,11 @@ export default {
     width: 50%;
     background-color: rgba($color: color(white), $alpha: .8);
   };
+
+  &__title {
+    // コンテンツタイトルの下余白を上書き
+    padding-bottom: interval(3);
+  }
 
   &__inner {
     padding: 0 interval(1);
