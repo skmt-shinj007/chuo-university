@@ -1,7 +1,7 @@
 <template>
 <div class="dormitory-card">
   <div class="dormitory-card__icon-wrap">
-    <img class="dormitory-card__icon" :src="`/image/${iconSrc}`" :alt="iconAlt">
+    <img class="dormitory-card__icon" :src="`/image/${srcUrl}`" :alt="alt">
   </div>
   <div class="dormitory-card__text-wrap">
     <p class="dormitory-card__text nl2br" v-text="content"/>
@@ -12,11 +12,11 @@
 <script>
 export default {
   props: {
-    iconSrc: {
+    srcUrl: {
       type: String,
       default: "restaurant.svg"
     },
-    iconAlt: {
+    alt: {
       type: String,
       default: "aa"
     },
@@ -30,10 +30,14 @@ export default {
 
 <style lang="scss" scoped>
 .dormitory-card {
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 0 auto interval(2) auto;
   padding: interval(1);
   @include flex($justify-content: center, $align-items: center);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include mq(sm) {
     width: 50%;

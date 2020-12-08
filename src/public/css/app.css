@@ -1065,13 +1065,16 @@ import用ファイル
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
 .dormitory-card[data-v-2a1efbb8] {
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 0 auto 1rem auto;
   padding: 0.5rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+}
+.dormitory-card[data-v-2a1efbb8]:last-child {
+  margin-bottom: 0;
 }
 @media screen and (min-width: 560px) {
 .dormitory-card[data-v-2a1efbb8] {

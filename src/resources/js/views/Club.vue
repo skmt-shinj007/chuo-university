@@ -55,7 +55,10 @@
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
     <div class="club__dormitory-cards">
-      <dormitory-card-component/>
+      <dormitory-card-component
+      v-for="(dormitoryObject, n) in dormitoryObjects"
+      :key="n"
+      v-bind="dormitoryObject"/>
     </div>
   </section>
 </div>
