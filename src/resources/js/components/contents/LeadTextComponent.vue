@@ -55,8 +55,7 @@ export default {
   };
 
   &__inner {
-    margin-top: interval(3);
-    padding: interval(1);
+    padding: 0 interval(1);
   }
 
   &__viewAll{

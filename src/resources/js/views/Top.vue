@@ -220,7 +220,7 @@ export default {
 
     &-textaria {
       width: 80%;
-      margin: interval(5) auto 0 auto;
+      margin: 0 auto;
 
       // tablet style
       @include mq(sm) {

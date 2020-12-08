@@ -36,7 +36,7 @@ export default {
   margin: 0 auto;
 
   &__list {
-    margin: interval(3) interval(2);
+    margin: 0 interval(2);
   }
 }
 </style>

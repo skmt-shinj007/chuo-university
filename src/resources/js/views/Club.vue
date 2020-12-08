@@ -48,6 +48,13 @@
       <table-component :tableItems="schedule"/>
     </div>
   </section>
+
+  <section class="club__dormitory section-container">
+    <contents-title-component :title="messages.Club.Dormitory.Title" :subTitle="messages.Club.Dormitory.SubTitle"/>
+    <div class="club__dormitory-lead-wrap">
+      <p class="club__dormitory-lead-text nl2br" v-text="messages.Club.Dormitory.LeadText"/>
+    </div>
+  </section>
 </div>
 </template>
 
@@ -247,21 +254,16 @@ const scheduleData = [
     margin-top: 0;
 
     &-cards {
-      margin-top: interval(5);
 
       // tablet style
       @include mq(sm) {
-        margin: interval(10) interval(3) 0 interval(3);
+        margin: 0 interval(3);
         @include flex($justify-content: space-around);
       };
     }
   }
 
   &__practice {
-
-    &-table {
-      margin-top: interval(5);
-    }
 
     &-map {
       padding-top: interval(5);
@@ -307,7 +309,22 @@ const scheduleData = [
         width: 70%;
       };
     }
+  }
 
+  &__dormitory {
+
+    &-lead-wrap {
+      width: 90%;
+      margin: 0 auto;
+
+      @include mq(sm) {
+        width: 80%;
+      };
+    }
+
+    &-lead-text {
+
+    }
   }
 }
 </style>

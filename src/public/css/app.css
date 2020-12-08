@@ -83,10 +83,16 @@ import用ファイル
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
 .contents-title {
+  padding-bottom: 2.5rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 992px) {
+.contents-title {
+    padding-bottom: 3.5rem;
+}
 }
 .contents-title-white {
   color: #ffffff;
@@ -208,7 +214,7 @@ import用ファイル
   margin: 0 auto;
 }
 .news__list[data-v-9b317ac0] {
-  margin: 1.5rem 1rem;
+  margin: 0 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -342,8 +348,7 @@ import用ファイル
 }
 }
 .lead-text__inner {
-  margin-top: 1.5rem;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 .lead-text__viewAll {
   margin-top: 1rem;
@@ -575,7 +580,7 @@ import用ファイル
 }
 .top__support-textaria[data-v-bae950f4] {
   width: 80%;
-  margin: 2.5rem auto 0 auto;
+  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .top__support-textaria[data-v-bae950f4] {
@@ -1019,20 +1024,14 @@ import用ファイル
   padding: 5rem 0;
   margin-top: 0;
 }
-.club__policy-cards[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
 @media screen and (min-width: 560px) {
 .club__policy-cards[data-v-357d3955] {
-    margin: 5rem 1.5rem 0 1.5rem;
+    margin: 0 1.5rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: stretch;
 }
-}
-.club__practice-table[data-v-357d3955] {
-  margin-top: 2.5rem;
 }
 .club__practice-map[data-v-357d3955] {
   padding-top: 2.5rem;
@@ -1085,6 +1084,15 @@ import用ファイル
 @media screen and (min-width: 992px) {
 .club__practice-schedule-title[data-v-357d3955] {
     width: 70%;
+}
+}
+.club__dormitory-lead-wrap[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.club__dormitory-lead-wrap[data-v-357d3955] {
+    width: 80%;
 }
 }@charset "UTF-8";
 /*
