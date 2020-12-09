@@ -83,6 +83,8 @@
         </template>
       </slider-frame-component>
 
+      <player-card-component/>
+
     </section>
   </div>
 </div>
@@ -99,6 +101,7 @@ import TableComponent from '../components/modules/table/TableComponent';
 import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 import SliderFrameComponent from '../components/modules/slider/SliderFrameComponent';
+import PlayerCardComponent from '../components/modules/card/PlayerCardComponent.vue';
 
 export default {
   components: {
@@ -111,6 +114,7 @@ export default {
     ArrangeImageComponent,
     DormitoryCardComponent,
     SliderFrameComponent,
+    PlayerCardComponent,
   },
   data() {
     return {

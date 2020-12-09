@@ -1150,6 +1150,74 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+.player-card[data-v-3f25cc20] {
+  width: 50%;
+}
+.player-card__figure[data-v-3f25cc20] {
+  position: relative;
+}
+.player-card__figure[data-v-3f25cc20]::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.player-card__figure > img[data-v-3f25cc20] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.player-card__information[data-v-3f25cc20] {
+  background-color: #f2f2f2;
+  padding: 0.5rem;
+}
+.player-card__information-name-wrap[data-v-3f25cc20] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.player-card__information-name[data-v-3f25cc20] {
+  font-size: 12px;
+  font-weight: bold;
+}
+.player-card__information-name-english[data-v-3f25cc20] {
+  font-weight: bold;
+  font-size: 10px;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
 .club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
   height: 100vh;

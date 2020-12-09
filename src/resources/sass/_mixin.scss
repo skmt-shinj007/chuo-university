@@ -166,7 +166,7 @@
   }
 }
 
-// image トリミング
+// image トリミング (imgタグの一つ親のタグに指定する)
 @mixin trimming($aspect) {
   position: relative;
 
