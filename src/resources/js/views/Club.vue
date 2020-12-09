@@ -77,7 +77,12 @@
     <section class="club__member section-container">
       <contents-title-component :title="messages.Club.Member.Title" :subTitle="messages.Club.Member.SubTitle" color="white"/>
 
-      <player-card-slider-component/>
+      <slider-frame-component>
+        <template #sliderElement>
+          hogehoge
+        </template>
+      </slider-frame-component>
+
     </section>
   </div>
 </div>
@@ -93,7 +98,7 @@ import MainVisualSliderComponent from '../components/modules/slider/MainVisualSl
 import TableComponent from '../components/modules/table/TableComponent';
 import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
-import PlayerCardSliderComponent from '../components/modules/slider/PlayerCardSliderComponent';
+import SliderFrameComponent from '../components/modules/slider/SliderFrameComponent';
 
 export default {
   components: {
@@ -105,7 +110,7 @@ export default {
     ContentsImageSliderComponent,
     ArrangeImageComponent,
     DormitoryCardComponent,
-    PlayerCardSliderComponent,
+    SliderFrameComponent,
   },
   data() {
     return {
