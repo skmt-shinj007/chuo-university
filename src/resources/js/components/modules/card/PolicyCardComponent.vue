@@ -1,8 +1,8 @@
 <template>
-<div class="c-policy">
-  <span class="c-policy__subTitle" v-if="windowWidth > 992">{{ policySubTitle }}</span>  <!-- tablet以下非表示 -->
-  <span class="c-policy__title">{{ policyTitle }}</span>
-  <p class="c-policy__text">{{ policyContent }}</p>
+<div class="policy-card">
+  <span class="policy-card__subTitle" v-if="windowWidth > pcWidth">{{ policySubTitle }}</span>  <!-- tablet以下非表示 -->
+  <span class="policy-card__title">{{ policyTitle }}</span>
+  <p class="policy-card__text">{{ policyContent }}</p>
 </div>
 </template>
 
@@ -22,27 +22,11 @@ export default {
       default: '内容が入ります。'
     },
   },
-  data() {
-    return {
-      windowWidth: window.innerWidth, // 現在の画面幅
-    }
-  },
-  mounted() {
-    window.addEventListener('resize', this.WindowWidthResize);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.WindowWidthResize);
-  },
-  methods: {
-    WindowWidthResize() {
-      this.windowWidth = window.innerWidth;
-    },
-  },
 }
 </script>
 
 <style lang="scss" scoped>
-.c-policy {
+.policy-card {
   width: 160px;
   height: 160px;
   border: 3px solid color(white);
@@ -70,12 +54,12 @@ export default {
     }
 
     &:hover {
-      .c-policy__title,
-      .c-policy__subTitle {
+      .policy-card__title,
+      .policy-card__subTitle {
         opacity: 0;
       }
 
-      .c-policy__text {
+      .policy-card__text {
         opacity: 1;
       }
     }

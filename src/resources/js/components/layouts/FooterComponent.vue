@@ -1,29 +1,29 @@
 <template>
-<footer class="l-footer p-footer">
-  <div class="p-footer__mainContents">
-    <div class="p-footer__mainContents-sitemap">
-      <footer-title-component class="p-footer__mainContents-title" footerTitle="SITE MAP"/>
+<footer class="footer">
+  <div class="footer__main-contents">
+    <div class="footer__sitemap">
+      <footer-title-component class="footer__titles" footerTitle="SITE MAP"/>
       <footer-sitemap-component/>
     </div>
 
-    <div class="p-footer__mainContents-externalLink">
-      <footer-title-component class="p-footer__mainContents-title" footerTitle="EXTERNAL LINK"/>
+    <div class="footer__external-link">
+      <footer-title-component class="footer__titles" footerTitle="EXTERNAL LINK"/>
       <footer-externallink-component/>
     </div>
 
-    <div class="p-footer__mainContents-information">
-      <footer-title-component class="p-footer__mainContents-title" footerTitle="INFORMATION"/>
-      <ul class="p-footer__mainContents-information-wrap">
-        <li class="p-footer__mainContents-information-list">{{ messages.Footer.Information.ClubName }}</li>
-        <li class="p-footer__mainContents-information-list">{{ messages.Footer.Information.Address }}</li>
-        <li class="p-footer__mainContents-information-list">{{ messages.Footer.Information.TelephoneNumber }}</li>
-        <li class="p-footer__mainContents-information-list">{{ messages.Footer.Information.MailAddress }}</li>
-        <li class="p-footer__mainContents-information-list">{{ messages.Footer.Information.Caretaker }}</li>
+    <div class="footer__information">
+      <footer-title-component class="footer__titles" footerTitle="INFORMATION"/>
+      <ul class="footer__information-list">
+        <li class="footer__information-list-item">{{ messages.Footer.Information.ClubName }}</li>
+        <li class="footer__information-list-item">{{ messages.Footer.Information.Address }}</li>
+        <li class="footer__information-list-item">{{ messages.Footer.Information.TelephoneNumber }}</li>
+        <li class="footer__information-list-item">{{ messages.Footer.Information.MailAddress }}</li>
+        <li class="footer__information-list-item">{{ messages.Footer.Information.Caretaker }}</li>
       </ul>
     </div>
   </div>
 
-  <div class="p-footer__endText">
+  <div class="footer__end">
     {{ messages.Footer.EndText }}
   </div>
 </footer>
@@ -45,25 +45,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-footer {
+.footer {
   background-color: color(darkblue);
   color: color(white);
   font-weight: bold;
-}
 
-.p-footer__mainContents {
-  margin-bottom: interval(3);
+  &__main-contents {
+    margin-bottom: interval(3);
 
-  // tablet style
-  @include mq(sm) {
-    @include flex($justify-content: center);
-  };
+    // tablet style
+    @include mq(sm) {
+      @include flex($justify-content: center);
+    };
+  }
 
-  &-title {
+  &__titles {
     margin-bottom: interval(3);
   }
 
-  &-sitemap {
+  &__sitemap {
     padding-top: interval(10);
 
     // tablet style
@@ -74,7 +74,7 @@ export default {
     };
   }
 
-  &-externalLink {
+  &__external-link {
     margin-top: interval(5);
 
     // tablet style
@@ -83,7 +83,7 @@ export default {
     };
   }
 
-  &-information {
+  &__information {
     margin-top: interval(5);
 
     // tablet style
@@ -91,7 +91,7 @@ export default {
       padding: 0 interval(2);
     };
 
-    &-wrap {
+    &-list {
       width: 50%;
       max-width: 300px;
       margin: 0 auto;
@@ -103,7 +103,7 @@ export default {
       };
     }
 
-    &-list {
+    &-list-item {
       margin-bottom: interval(0.5);
       font-size: font(xs);
 
@@ -112,12 +112,12 @@ export default {
       }
     }
   }
-}
 
-.p-footer__endText {
-  padding: interval(3) 0;
-  text-align: center;
-  font-weight: normal;
-  font-size: font(xs);
+  &__end {
+    padding: interval(3) 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: font(xs);
+  }
 }
 </style>

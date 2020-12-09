@@ -9,8 +9,22 @@ export default {
   data() {
     return {
       messages: Messages,
+      tabletWidth: 560,
+      pcWidth: 992,
+      windowWidth: null,
     }
   },
-  methods: {
-  }
+
+  created() {
+    this.windowWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+    });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+    });
+  },
 }

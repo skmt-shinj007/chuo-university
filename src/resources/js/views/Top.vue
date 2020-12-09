@@ -1,34 +1,38 @@
 <template>
-  <div class="l-top">
+  <div class="top">
     <main-visual-component/>
 
-    <section class="l-top__news">
+    <section class="top__news">
       <news-component/>
     </section>
 
-    <section class="l-top__team section-container">
-      <div class="l-top__backgroundImage l-top__team-background"/>
+    <section class="top__team section-container">
+      <figure class="top__team-img">
+        <img src="/image/group-photo_toutoSpring2017.jpg" alt="2017年東都春季リーグ戦の集合写真">
+      </figure>
       <lead-text-component
-        class="l-top__team-contentsCard"
+        class="top__team-contentsCard"
         title="team"
         subTitle="チーム紹介"
         buttonName="メンバーを見る"
-        :contentsText="messages.TeamDescription"/>
+        :contentsText="messages.Top.TeamDescription"/>
     </section>
 
-    <section class="l-top__hakumonkai section-container">
-      <div class="l-top__backgroundImage l-top__hakumonkai-background"/>
+    <section class="top__hakumonkai section-container">
+      <figure class="top__team-img">
+        <img src="/image/hakumon.jpg" alt="中央大学多摩キャンパス白門の画像">
+      </figure>
       <lead-text-component
-        class="l-top__hakumonkai-contentsCard"
+        class="top__hakumonkai-contentsCard"
         title="hakumonkai"
         subTitle="白門会"
         buttonName="白門会を知る"
-        :contentsText="messages.HakumonkaiDescription"/>
+        :contentsText="messages.Top.HakumonkaiDescription"/>
     </section>
 
-    <section class="l-top__menuPanel section-container">
+    <section class="top__menuPanel section-container">
       <menu-panel-component
-        class="l-top__menuPanel-item"
+        class="top__menuPanel-item"
         v-for="menuPanel in menuPanels"
         :key="menuPanel.panelImageUrl"
         :panelImageUrl="menuPanel.panelImageUrl"
@@ -37,14 +41,16 @@
         :buttonSize="menuPanel.buttonSize"/>
     </section>
 
-    <section class="l-top__support section-container">
-      <div class="l-top__support-background">
-        <contents-title-component title="support" subTitle="サポート" color="white"/>
-        <div class="l-top__support-textaria">
-          <p>{{ messages.Support }}</p>
-        </div>
+    <div class="background-image">
+      <div class="background-darkblue">
+        <section class="top__support section-container">
+          <contents-title-component title="support" subTitle="サポート" color="white"/>
+          <div class="top__support-textaria">
+            <p class="nl2br" v-text="messages.Top.Support"/>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
 
   </div>
 </template>
@@ -94,7 +100,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.l-top {
+.top {
   position: relative;
 
   &__news {
@@ -115,15 +121,21 @@ export default {
     // pc style
     @include mq(md) {
       position: relative;
-      padding-bottom: interval(20);
       @include flex();
     };
 
-    &-background {
-      @include background-image(
-        $url: "/image/group-photo_toutoSpring2017.jpg",
-        $position: center center
-      );
+    &-img {
+      width: 100%;
+      border-top: 5px solid color(darkblue);
+      border-bottom: 5px solid color(darkblue);
+      box-shadow: 0px -5px 8px 3px color(shadow);
+      // @include imageFlame;
+      @include trimming(aspect(golden));
+
+      // pc style
+      @include mq(md) {
+        width: 70%;
+      };
     }
 
     &-contentsCard {
@@ -143,17 +155,24 @@ export default {
     // pc style
     @include mq(md) {
       position: relative;
-      padding-bottom: interval(20);
+      margin-top: interval(40);
       @include flex(
         $flow: row-reverse nowrap
       );
     }
 
-    &-background {
-      @include background-image(
-        $url: "/image/hakumon.jpg",
-        $position: center center
-      );
+    &-img {
+      width: 100%;
+      border-top: 5px solid color(darkblue);
+      border-bottom: 5px solid color(darkblue);
+      box-shadow: 0px -5px 8px 3px color(shadow);
+      // @include imageFlame;
+      @include trimming(aspect(golden));
+
+      // pc style
+      @include mq(md) {
+        width: 70%;
+      };
     }
 
     &-contentsCard {
@@ -168,30 +187,12 @@ export default {
     }
   }
 
-  &__backgroundImage {
-    width: 100%;
-    height: 300px;
-    border-top: 5px solid color(darkblue);
-    border-bottom: 5px solid color(darkblue);
-    box-shadow: 0px -5px 8px 3px color(shadow);
-    // @include imageFlame;
-
-    // tablet style
-    @include mq(sm) {
-      height: 500px;
-    }
-
-    // pc style
-    @include mq(md) {
-      width: 70%;
-    };
-  }
-
   &__menuPanel {
 
     // pc style
     @include mq(md) {
       @include flex($justify-content: center);
+      margin-top: interval(40);
     };
 
     &-item {
@@ -213,8 +214,29 @@ export default {
 
   &__support {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     color: color(white);
+    @include flex(column nowrap, center, center);
+
+    &-textaria {
+      width: 80%;
+      margin: 0 auto;
+
+      // tablet style
+      @include mq(sm) {
+        width: 70%;
+      };
+
+      // pc style
+      @include mq(md) {
+        width: 60%;
+      };
+    }
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100vh;
     @include background-image(
       $url: "/image/player09.jpg",
       $position: center center
@@ -227,32 +249,12 @@ export default {
       $position: center center
       );
     };
+  }
 
-    &-background {
-      width: 100%;
-      height: 100%;
-      background-color: rgba($color: color(darkblue), $alpha: .8);
-      @include flex(
-        $flow: column nowrap,
-        $justify-content: center,
-        $align-items: center
-      );
-    }
-
-    &-textaria {
-      width: 80%;
-      margin: interval(5) auto 0 auto;
-
-      // tablet style
-      @include mq(sm) {
-        width: 70%;
-      };
-
-      // pc style
-      @include mq(md) {
-        width: 60%;
-      };
-    }
+  .background-darkblue {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: color(darkblue), $alpha: .8);
   }
 }
 </style>

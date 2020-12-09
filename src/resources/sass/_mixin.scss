@@ -53,7 +53,7 @@
 @mixin button-hover() {
   border: none;
 
-  .c-viewAll__button {
+  .view-all-button__button {
     transform: none;
     border: none;
     background-color: color(orange);
@@ -82,13 +82,13 @@
       border-color: color(darkblue);
     }
 
-    .c-icon {
+    .header-icon {
       transform: rotateZ(360deg);
     }
   }
 }
 
-// link decoration -text middle line
+// text decoration (- text) テキストの前に線を入れる装飾
 @mixin text-before-line($width, $height, $bg-color) {
   &::before {
     display: block;

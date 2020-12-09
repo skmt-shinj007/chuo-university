@@ -1,8 +1,8 @@
 <template>
-  <table class="c-table">
-    <tr class="c-table__record" v-for="(tableItem, n) in tableItems" :key="n">
-      <th class="c-table__cell c-table__key">{{ tableItem.key }}</th>
-      <td class="c-table__cell c-table__value">{{ tableItem.value }}</td>
+  <table class="common-table">
+    <tr class="common-table__record" v-for="(tableItem, n) in tableItems" :key="n">
+      <th class="common-table__key">{{ tableItem.key }}</th>
+      <td class="common-table__value">{{ tableItem.value }}</td>
     </tr>
   </table>
 </template>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-table {
+.common-table {
   width: 90%;
   margin: 0 auto;
 
