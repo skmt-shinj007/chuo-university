@@ -71,8 +71,14 @@
         <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
-
   </section>
+
+  <div class="club__member-bg">
+    <section class="club__member section-container">
+      <contents-title-component :title="messages.Club.Member.Title" :subTitle="messages.Club.Member.SubTitle" color="white"/>
+
+    </section>
+  </div>
 </div>
 </template>
 
@@ -429,6 +435,16 @@ const dormitoryData = [
     &-images-item {
       width: 30%;
     }
+  }
+
+  &__member {
+    padding-top: interval(5);
+
+    &-bg {
+      @include gradient();
+    }
+
+
   }
 }
 </style>

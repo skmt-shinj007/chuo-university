@@ -1269,6 +1269,13 @@ import用ファイル
 }
 .club__dormitory-images-item[data-v-357d3955] {
   width: 30%;
+}
+.club__member[data-v-357d3955] {
+  padding-top: 2.5rem;
+}
+.club__member-bg[data-v-357d3955] {
+  background: #091e2f;
+  background: radial-gradient(ellipse at center, #091e2f 0%, #030A10 100%);
 }@charset "UTF-8";
 /*
 import用ファイル
