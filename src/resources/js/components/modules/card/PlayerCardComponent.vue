@@ -1,21 +1,21 @@
 <template>
-  <div class="player-card">
-    <figure class="player-card__figure">
-      <img src="/image/player01.jpg" alt="">
-    </figure>
+<div class="player-card">
+  <figure class="player-card__figure">
+    <img :src="`/image/${imagePath}`" :alt="imageAlt">
+  </figure>
 
-    <div class="player-card__information">
-      <div class="player-card__information-name-wrap">
-        <span class="player-card__information-name">坂本 信治</span>
-        <span class="player-card__information-name-english">sakamoto shinji</span>
-      </div>
+  <div class="player-card__information">
+    <div class="player-card__information-name-wrap">
+      <span class="player-card__information-name">{{ name }}</span>
+      <span class="player-card__information-name-english">{{ englishName }}</span>
+    </div>
 
-      <div class="player-card__information-tags">
-        <tag-component tagType="position" position="前衛"/>
-        <tag-component tagType="grade" grade="4年生"/>
-      </div>
+    <div class="player-card__information-tags">
+      <tag-component tagType="position" :position="position"/>
+      <tag-component tagType="grade" :grade="grade"/>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -27,14 +27,38 @@ export default {
     TagComponent,
   },
   props: {
-    playerInfo: Array,
+    name: {
+      type: String,
+      default: '中央 太郎'
+    },
+    englishName: {
+      type: String,
+      default: 'chuo taro'
+    },
+    imagePath: {
+      type: String,
+      default: 'player01.jpg',
+    },
+    imageAlt: {
+      type: String,
+      default: 'イメージの補足テキストが入ります',
+    },
+    position: {
+      type: String,
+      default: '後衛',
+    },
+    grade: {
+      type: String,
+      default: '4年生',
+    },
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .player-card {
   width: 60%;
+  margin: 0 auto;
 
   @include mq(sm) {
     width: 30%;

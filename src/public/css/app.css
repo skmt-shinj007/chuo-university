@@ -1218,30 +1218,31 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.player-card[data-v-3f25cc20] {
+.player-card {
   width: 60%;
+  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.player-card[data-v-3f25cc20] {
+.player-card {
     width: 30%;
 }
 }
 @media screen and (min-width: 992px) {
-.player-card[data-v-3f25cc20] {
+.player-card {
     width: 20%;
     max-width: 12rem;
 }
 }
-.player-card__figure[data-v-3f25cc20] {
+.player-card__figure {
   position: relative;
   border-bottom: 2px solid #091e2f;
 }
-.player-card__figure[data-v-3f25cc20]::before {
+.player-card__figure::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.player-card__figure > img[data-v-3f25cc20] {
+.player-card__figure > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -1250,25 +1251,60 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.player-card__information[data-v-3f25cc20] {
+.player-card__information {
   background-color: #f2f2f2;
   padding: 0.5rem;
 }
-.player-card__information-name[data-v-3f25cc20] {
+.player-card__information-name {
   font-size: 12px;
   font-weight: bold;
   margin-right: 0.5rem;
 }
-.player-card__information-name-english[data-v-3f25cc20] {
+.player-card__information-name-english {
   font-weight: bold;
   font-size: 10px;
 }
-.player-card__information-tags[data-v-3f25cc20] {
+.player-card__information-tags {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
   margin: 0.25rem 0 0.5rem 0;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+@media screen and (min-width: 560px) {
+.slider .player-card[data-v-53189f00] {
+    width: 60%;
+}
 }@charset "UTF-8";
 /*
 import用ファイル

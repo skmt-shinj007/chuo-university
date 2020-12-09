@@ -77,13 +77,7 @@
     <section class="club__member section-container">
       <contents-title-component :title="messages.Club.Member.Title" :subTitle="messages.Club.Member.SubTitle" color="white"/>
 
-      <slider-frame-component>
-        <template #sliderElement>
-          hogehoge
-        </template>
-      </slider-frame-component>
-
-      <player-card-component/>
+      <player-slider-component :playerInformations="playerInformations"/>
 
     </section>
   </div>
@@ -100,8 +94,7 @@ import MainVisualSliderComponent from '../components/modules/slider/MainVisualSl
 import TableComponent from '../components/modules/table/TableComponent';
 import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
-import SliderFrameComponent from '../components/modules/slider/SliderFrameComponent';
-import PlayerCardComponent from '../components/modules/card/PlayerCardComponent.vue';
+import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
 
 export default {
   components: {
@@ -113,8 +106,7 @@ export default {
     ContentsImageSliderComponent,
     ArrangeImageComponent,
     DormitoryCardComponent,
-    SliderFrameComponent,
-    PlayerCardComponent,
+    PlayerSliderComponent,
   },
   data() {
     return {
@@ -125,6 +117,7 @@ export default {
       schedule: [],
       dormitoryInformations: [],
       dormitoryImages: [],
+      playerInformations: [],
     }
   },
 
@@ -137,6 +130,7 @@ export default {
     scheduleData.forEach(element => this.schedule.push(element));
     dormitoryData.forEach(element => this.dormitoryInformations.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
+    playerData.forEach(element => this.playerInformations.push(element));
   },
 
   mounted() {
@@ -330,6 +324,77 @@ const dormitoryData = [
     washPrice: '洗濯機：無料',
     dryPrice: '乾燥機：24分 / 100円'
   }
+];
+
+/**
+ * test data : 選手情報のテストデータ
+ */
+const playerData = [
+  {
+    name: '坂本 信治',
+    englishName: 'sakamoto shinji',
+    imagePath: 'player01.jpg',
+    imageAlt: '坂本 信治の写真',
+    position: '前衛',
+    grade: '4年生',
+    undergraduate: '経済学部',
+    birthplace: '北海道',
+    almaMater: '北海道科学大学高等学校',
+    record: '2016年インターハイ ベスト16',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '宮崎 悠登',
+    englishName: 'miyazaki yuto',
+    imagePath: 'player01.jpg',
+    imageAlt: '宮崎 悠登の写真',
+    position: '後衛',
+    grade: '4年生',
+    undergraduate: '経済学部',
+    birthplace: '山形県',
+    almaMater: '山形県羽黒高等学校',
+    record: '2016年ハイスクールジャパンカップ ダブルス準優勝',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '田邊 雅人',
+    englishName: 'tanabe masato',
+    imagePath: 'player01.jpg',
+    imageAlt: '田邊 雅人の写真',
+    position: '前衛',
+    grade: '4年生',
+    undergraduate: '法学部',
+    birthplace: '福島県',
+    almaMater: '三重高等学校',
+    record: '2016年国民体育大会 少年の部 優勝',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '斎藤 利貴',
+    englishName: 'saito riki',
+    imagePath: 'player01.jpg',
+    imageAlt: '斎藤 利貴の写真',
+    position: '後衛',
+    grade: '4年生',
+    undergraduate: '経済学部',
+    birthplace: '千葉県',
+    almaMater: '千葉県昭和学院高等学校',
+    record: '2016年ハイスクールジャパンカップ ベスト8',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '丸山 章',
+    englishName: 'maruyama akira',
+    imagePath: 'player01.jpg',
+    imageAlt: '丸山 章の写真',
+    position: '後衛',
+    grade: '3年生',
+    undergraduate: '文学部',
+    birthplace: '広島県',
+    almaMater: '尾道高等学校',
+    record: '2016年ハイスクールジャパンカップ ベスト8',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
 ];
 </script>
 
