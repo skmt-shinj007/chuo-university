@@ -36,7 +36,14 @@ export default {
 .player-card {
   width: 60%;
 
+  @include mq(sm) {
+    width: 30%;
+  }
 
+  @include mq(md) {
+    width: 20%;
+    max-width: interval(24);  // 192px
+  }
 
   &__figure {
     @include trimming(aspect(square));
