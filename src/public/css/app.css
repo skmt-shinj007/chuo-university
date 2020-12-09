@@ -1220,7 +1220,6 @@ import用ファイル
  */
 .player-card {
   width: 60%;
-  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .player-card {
@@ -1301,6 +1300,9 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+.slider .player-card[data-v-53189f00] {
+  margin: 0 auto;
+}
 @media screen and (min-width: 560px) {
 .slider .player-card[data-v-53189f00] {
     width: 60%;

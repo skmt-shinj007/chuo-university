@@ -72,6 +72,8 @@ export default {
 
   // slider の際のスタイルを指定
   .player-card {
+    margin: 0 auto;
+
     @include mq(sm){
       width: 60%;
     }

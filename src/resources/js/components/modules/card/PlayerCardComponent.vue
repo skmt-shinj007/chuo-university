@@ -58,7 +58,6 @@ export default {
 <style lang="scss">
 .player-card {
   width: 60%;
-  margin: 0 auto;
 
   @include mq(sm) {
     width: 30%;
