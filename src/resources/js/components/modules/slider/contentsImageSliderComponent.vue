@@ -3,10 +3,18 @@
     <swiper ref="contentsImageSwiper" :options="params">
       <swiper-slide v-for="(image, n) in images" :key="n">
         <figure class="image-slider__container">
+
           <img class="image-slider__image" :src="`/image/${image.path}`" :alt="image.name">
-          <figcaption class="image-slider__caption">
-            {{ image.text }}
+
+          <figcaption v-if="image.caption" class="image-slider__caption">
+            <span class="image-slider__caption-content">{{ image.caption }}</span>
           </figcaption>
+
+          <figcaption v-if="image.capacity" class="image-slider__caption">
+            <span class="image-slider__capacity-number">{{ image.capacity }}</span>
+            <span class="image-slider__secondary-caption">人部屋</span>
+          </figcaption>
+
         </figure>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -80,6 +88,15 @@ export default {
     @include mq(sm) {
       line-height: 2;
     };
+  }
+
+  &__secondary-caption {
+    font-size: font(xs);
+  }
+
+  &__capacity-number {
+    font-size: font(md);
+    font-weight: bold;
   }
 }
 </style>

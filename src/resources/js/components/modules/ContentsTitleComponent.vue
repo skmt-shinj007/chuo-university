@@ -37,11 +37,12 @@ export default {
 
 <style lang="scss">
 .contents-title {
-  @include flex(
-    $flow: column nowrap,
-    $justify-content: center,
-    $align-items: center
-  );
+  padding-bottom: interval(5);
+  @include flex(column nowrap, center, center);
+
+  @include mq(md) {
+    padding-bottom: interval(7);
+  }
 
   &-white {
     color: color(white);

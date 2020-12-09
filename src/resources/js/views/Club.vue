@@ -39,7 +39,7 @@
     <!-- 画面幅993pxから表示（pcから） -->
     <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
       <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :art="image.name" :barText="image.text"/>
+        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
     </div>
 
@@ -47,6 +47,31 @@
       <h3 class="club__practice-schedule-title">{{ messages.Club.Practice.ScheduleTitle }}</h3>
       <table-component :tableItems="schedule"/>
     </div>
+  </section>
+
+  <section class="club__dormitory section-container">
+    <contents-title-component :title="messages.Club.Dormitory.Title" :subTitle="messages.Club.Dormitory.SubTitle"/>
+
+    <div class="club__dormitory-lead-wrap">
+      <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
+    </div>
+
+    <div class="club__dormitory-cards">
+      <div class="club__dormitory-card-item" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
+        <dormitory-card-component v-bind="dormitoryInformation"/>
+      </div>
+    </div>
+
+    <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
+      <contents-image-slider-component :images="dormitoryImages"/>
+    </div>
+
+    <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
+      <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
+        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+      </div>
+    </div>
+
   </section>
 </div>
 </template>
@@ -60,6 +85,7 @@ import ContentsImageSliderComponent from '../components/modules/slider/contentsI
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
 import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
+import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 
 export default {
   components: {
@@ -70,6 +96,7 @@ export default {
     GoogleMapComponent,
     ContentsImageSliderComponent,
     ArrangeImageComponent,
+    DormitoryCardComponent,
   },
   data() {
     return {
@@ -78,6 +105,8 @@ export default {
       practiceInformations: [],
       courtImages: [],
       schedule: [],
+      dormitoryInformations: [],
+      dormitoryImages: [],
     }
   },
 
@@ -88,6 +117,8 @@ export default {
     practiceData.forEach(element => this.practiceInformations.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
     scheduleData.forEach(element => this.schedule.push(element));
+    dormitoryData.forEach(element => this.dormitoryInformations.push(element));
+    dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
   },
 
   mounted() {
@@ -117,20 +148,40 @@ const mainVisualApiResponse = [
  */
 const courtImageApiResponse = [
   {
-    // path: 'tennis_court-in_chuoUniv-01.jpg',
     path: 'tennis_court-in_chuoUniv-01.jpg',
     name: '中央大学ソフトテニスコートの画像',
-    text: '多摩校舎ソフトテニスコート（第二体育館）',
+    caption: '多摩校舎ソフトテニスコート（第二体育館）',
   },
   {
     path: 'tennis_court-in_chuoUniv-03.jpg',
     name: '中央大学ソフトテニスコートの画像',
-    text: 'ソフトテニスコート（1,2,3）',
+    caption: 'ソフトテニスコート（1,2,3）',
   },
   {
     path: 'tennis_court-in_chuoUniv-02.jpg',
     name: '中央大学ソフトテニスコートの画像',
-    text: 'ソフトテニスコート（4,5,6）',
+    caption: 'ソフトテニスコート（4,5,6）',
+  }
+];
+
+/**
+ * test api response : 寮の写真
+ */
+const dormitoryImageApiResponse = [
+  {
+    path: 'dormitory-02.jpg',
+    name: '中央大学南平寮の3人部屋',
+    capacity: 3,
+  },
+  {
+    path: 'dormitory-01.jpg',
+    name: '中央大学南平寮の4人部屋',
+    capacity: 4,
+  },
+  {
+    path: 'dormitory-03.jpg',
+    name: '中央大学南平寮の4人部屋',
+    capacity: 4,
   }
 ];
 
@@ -232,7 +283,36 @@ const scheduleData = [
     key: '12月',
     value: 'オフ / 納会'
   },
-]
+];
+
+/**
+ * test data : 寮のデータ
+ */
+const dormitoryData = [
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: '食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。',
+  },
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n',
+    bathTime: '入浴可能時間：6:00 - 9:30 / 12:00 - 14:00 / 16:30 - 23:00',
+  },
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: 'ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。',
+  },
+  {
+    srcUrl: 'restaurant.svg',
+    alt: 'アイコンのaltが入ります',
+    content: '洗濯機は、ソフトテニス部の部屋がある階に4台ございます。',
+    washPrice: '洗濯機：無料',
+    dryPrice: '乾燥機：24分 / 100円'
+  }
+];
 </script>
 
 <style lang="scss" scoped>
@@ -247,21 +327,16 @@ const scheduleData = [
     margin-top: 0;
 
     &-cards {
-      margin-top: interval(5);
 
       // tablet style
       @include mq(sm) {
-        margin: interval(10) interval(3) 0 interval(3);
+        margin: 0 interval(3);
         @include flex($justify-content: space-around);
       };
     }
   }
 
   &__practice {
-
-    &-table {
-      margin-top: interval(5);
-    }
 
     &-map {
       padding-top: interval(5);
@@ -307,7 +382,53 @@ const scheduleData = [
         width: 70%;
       };
     }
+  }
 
+  &__dormitory {
+
+    &-lead-wrap {
+      width: 90%;
+      margin: 0 auto;
+
+      @include mq(sm) {
+        width: 80%;
+      };
+
+      @include mq(md) {
+        text-align: center;
+      };
+    }
+
+    &-cards {
+      margin-top: interval(4);
+
+      @include mq(md) {
+        @include flex(row wrap);
+      };
+    }
+
+    &-card-item {
+      width: 90%;
+      margin: 0 auto;
+
+      @include mq(sm) {
+        width: 70%;
+      };
+
+      @include mq(md) {
+        width: 50%;
+        max-width: 500px;
+      };
+    }
+
+    &-images {
+      @include flex($justify-content: space-around);
+      margin-top: interval(10);
+    }
+
+    &-images-item {
+      width: 30%;
+    }
   }
 }
 </style>

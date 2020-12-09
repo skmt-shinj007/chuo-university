@@ -2,7 +2,13 @@
 <figure class="arrange-image">
   <img class="arrange-image__image" :src="imageUrl" :alt="alt" :class="radiusClass">
   <figcaption class="arrange-image__bar">
-    <span class="arrange-image__text">{{ barText }}</span>
+
+    <!-- デフォルトのbar -->
+    <span v-if="barCaption" class="arrange-image__caption">{{ barCaption }}</span>
+
+    <!-- 寮の写真でのbarTextが特殊だったので追加。 -->
+    <span v-if="capacityNum" class="arrange-image__capacity-number">{{ capacityNum }}</span>
+    <span v-if="capacityNum" class="arrange-image__secondary-caption">人部屋</span>
   </figcaption>
 </figure>
 </template>
@@ -12,9 +18,13 @@ export default {
   props: {
     imageUrl: String,
     alt: String,
-    barText: {
+    barCaption: {
       type: String,
-      default: '写真の補足テキストが入ります。',
+      default: '',
+    },
+    capacityNum: {
+      type: Number,
+      default: 0,
     },
   },
   computed: {
@@ -46,8 +56,14 @@ export default {
     transform: translateX(-50%);
   }
 
-  &__text {
+  &__caption,
+  &__secondary-caption {
     font-size: font(xs);
+  }
+
+  &__capacity-number {
+    font-size: font(md);
+    font-weight: bold;
   }
 }
 </style>

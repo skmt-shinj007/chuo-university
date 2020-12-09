@@ -49,8 +49,8 @@ export default {
   }
 
   .header-icon {
-    width: 20px;
-    height: 20px;
+    width: icon(normal);
+    height: icon(normal);
     transition: .3s all ease;
   }
 }

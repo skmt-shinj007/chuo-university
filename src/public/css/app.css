@@ -14,6 +14,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -70,6 +73,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -83,10 +89,16 @@ import用ファイル
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
 .contents-title {
+  padding-bottom: 2.5rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 992px) {
+.contents-title {
+    padding-bottom: 3.5rem;
+}
 }
 .contents-title-white {
   color: #ffffff;
@@ -131,6 +143,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -189,6 +204,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -208,7 +226,7 @@ import用ファイル
   margin: 0 auto;
 }
 .news__list[data-v-9b317ac0] {
-  margin: 1.5rem 1rem;
+  margin: 0 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -223,6 +241,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -312,6 +333,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -341,9 +365,11 @@ import用ファイル
     background-color: rgba(255, 255, 255, 0.8);
 }
 }
+.lead-text__title {
+  padding-bottom: 1.5rem;
+}
 .lead-text__inner {
-  margin-top: 1.5rem;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
 }
 .lead-text__viewAll {
   margin-top: 1rem;
@@ -361,6 +387,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -420,6 +449,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -575,7 +607,7 @@ import用ファイル
 }
 .top__support-textaria[data-v-bae950f4] {
   width: 80%;
-  margin: 2.5rem auto 0 auto;
+  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .top__support-textaria[data-v-bae950f4] {
@@ -621,6 +653,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -672,6 +707,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -766,6 +804,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -814,6 +855,13 @@ import用ファイル
 .image-slider__caption[data-v-6cd5e234] {
     line-height: 2;
 }
+}
+.image-slider__secondary-caption[data-v-6cd5e234] {
+  font-size: 10px;
+}
+.image-slider__capacity-number[data-v-6cd5e234] {
+  font-size: 16px;
+  font-weight: bold;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -828,6 +876,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -880,6 +931,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -937,6 +991,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -981,8 +1038,12 @@ import用ファイル
   left: 50%;
   transform: translateX(-50%);
 }
-.arrange-image__text[data-v-7f82b6cb] {
+.arrange-image__caption[data-v-7f82b6cb], .arrange-image__secondary-caption[data-v-7f82b6cb] {
   font-size: 10px;
+}
+.arrange-image__capacity-number[data-v-7f82b6cb] {
+  font-size: 16px;
+  font-weight: bold;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -997,6 +1058,84 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.dormitory-card[data-v-2a1efbb8] {
+  width: 100%;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dormitory-card[data-v-2a1efbb8]:last-child {
+  margin-bottom: 0;
+}
+.dormitory-card__icon-wrap[data-v-2a1efbb8] {
+  border: 2px solid #091e2f;
+  border-radius: 100%;
+  padding: 0.75rem;
+  margin-right: 0.5rem;
+}
+.dormitory-card__icon[data-v-2a1efbb8] {
+  width: 32px;
+  height: 32px;
+  fill: #e56c2c;
+}
+.dormitory-card__text-wrap[data-v-2a1efbb8] {
+  padding: 0.5rem;
+}
+.dormitory-card__text[data-v-2a1efbb8] {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.dormitory-card__tag[data-v-2a1efbb8] {
+  margin-top: 0.25rem;
+}
+.dormitory-card__laundry-price[data-v-2a1efbb8] {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.dormitory-card__bath-time[data-v-2a1efbb8] {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -1019,20 +1158,14 @@ import用ファイル
   padding: 5rem 0;
   margin-top: 0;
 }
-.club__policy-cards[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
 @media screen and (min-width: 560px) {
 .club__policy-cards[data-v-357d3955] {
-    margin: 5rem 1.5rem 0 1.5rem;
+    margin: 0 1.5rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: stretch;
 }
-}
-.club__practice-table[data-v-357d3955] {
-  margin-top: 2.5rem;
 }
 .club__practice-map[data-v-357d3955] {
   padding-top: 2.5rem;
@@ -1086,6 +1219,56 @@ import用ファイル
 .club__practice-schedule-title[data-v-357d3955] {
     width: 70%;
 }
+}
+.club__dormitory-lead-wrap[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.club__dormitory-lead-wrap[data-v-357d3955] {
+    width: 80%;
+}
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-lead-wrap[data-v-357d3955] {
+    text-align: center;
+}
+}
+.club__dormitory-cards[data-v-357d3955] {
+  margin-top: 2rem;
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-cards[data-v-357d3955] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+}
+.club__dormitory-card-item[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.club__dormitory-card-item[data-v-357d3955] {
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-card-item[data-v-357d3955] {
+    width: 50%;
+    max-width: 500px;
+}
+}
+.club__dormitory-images[data-v-357d3955] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 5rem;
+}
+.club__dormitory-images-item[data-v-357d3955] {
+  width: 30%;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1100,6 +1283,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -1121,12 +1307,14 @@ span[data-v-b28ce99e] {
   font-size: 1.2rem;
 }
 .wrap[data-v-b28ce99e] {
+  width: 500px;
+  margin: 0 auto;
   position: relative;
 }
 .wrap[data-v-b28ce99e]::before {
   content: "";
   display: block;
-  padding-bottom: 100%;
+  padding-bottom: 61.8%;
 }
 .wrap > img[data-v-b28ce99e] {
   position: absolute;
@@ -1684,6 +1872,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -1764,6 +1955,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -1905,6 +2099,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -1942,6 +2139,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -2015,6 +2215,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -2079,6 +2282,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
@@ -2183,6 +2389,9 @@ import用ファイル
  */
 /**
  * button size
+ */
+/**
+ * icon size
  */
 /**
  * google map size
