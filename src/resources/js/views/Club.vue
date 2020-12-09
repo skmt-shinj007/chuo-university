@@ -62,7 +62,11 @@
       </div>
     </div>
 
-    <div class="club__dormitory-images">
+    <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
+      <contents-image-slider-component :images="dormitoryImages"/>
+    </div>
+
+    <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
       <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
         <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>

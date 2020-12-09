@@ -855,6 +855,13 @@ import用ファイル
 .image-slider__caption[data-v-6cd5e234] {
     line-height: 2;
 }
+}
+.image-slider__secondary-caption[data-v-6cd5e234] {
+  font-size: 10px;
+}
+.image-slider__capacity-number[data-v-6cd5e234] {
+  font-size: 16px;
+  font-weight: bold;
 }@charset "UTF-8";
 /*
 import用ファイル
