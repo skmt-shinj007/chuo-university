@@ -39,7 +39,7 @@
     <!-- 画面幅993pxから表示（pcから） -->
     <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
       <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :art="image.name" :barText="image.text"/>
+        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
     </div>
 
@@ -51,12 +51,20 @@
 
   <section class="club__dormitory section-container">
     <contents-title-component :title="messages.Club.Dormitory.Title" :subTitle="messages.Club.Dormitory.SubTitle"/>
+
     <div class="club__dormitory-lead-wrap">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
+
     <div class="club__dormitory-cards">
-      <div class="club__dormitory-card-item" v-for="(dormitoryObject, n) in dormitoryObjects" :key="n">
-        <dormitory-card-component v-bind="dormitoryObject"/>
+      <div class="club__dormitory-card-item" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
+        <dormitory-card-component v-bind="dormitoryInformation"/>
+      </div>
+    </div>
+
+    <div class="club__dormitory-images">
+      <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
+        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
 
@@ -93,7 +101,8 @@ export default {
       practiceInformations: [],
       courtImages: [],
       schedule: [],
-      dormitoryObjects: [],
+      dormitoryInformations: [],
+      dormitoryImages: [],
     }
   },
 
@@ -104,7 +113,8 @@ export default {
     practiceData.forEach(element => this.practiceInformations.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
     scheduleData.forEach(element => this.schedule.push(element));
-    dormitoryData.forEach(element => this.dormitoryObjects.push(element));
+    dormitoryData.forEach(element => this.dormitoryInformations.push(element));
+    dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
   },
 
   mounted() {
@@ -134,20 +144,40 @@ const mainVisualApiResponse = [
  */
 const courtImageApiResponse = [
   {
-    // path: 'tennis_court-in_chuoUniv-01.jpg',
     path: 'tennis_court-in_chuoUniv-01.jpg',
     name: '中央大学ソフトテニスコートの画像',
-    text: '多摩校舎ソフトテニスコート（第二体育館）',
+    caption: '多摩校舎ソフトテニスコート（第二体育館）',
   },
   {
     path: 'tennis_court-in_chuoUniv-03.jpg',
     name: '中央大学ソフトテニスコートの画像',
-    text: 'ソフトテニスコート（1,2,3）',
+    caption: 'ソフトテニスコート（1,2,3）',
   },
   {
     path: 'tennis_court-in_chuoUniv-02.jpg',
     name: '中央大学ソフトテニスコートの画像',
-    text: 'ソフトテニスコート（4,5,6）',
+    caption: 'ソフトテニスコート（4,5,6）',
+  }
+];
+
+/**
+ * test api response : 寮の写真
+ */
+const dormitoryImageApiResponse = [
+  {
+    path: 'dormitory-02.jpg',
+    name: '中央大学南平寮の3人部屋',
+    capacity: 3,
+  },
+  {
+    path: 'dormitory-01.jpg',
+    name: '中央大学南平寮の4人部屋',
+    capacity: 4,
+  },
+  {
+    path: 'dormitory-03.jpg',
+    name: '中央大学南平寮の4人部屋',
+    capacity: 4,
   }
 ];
 
@@ -385,6 +415,15 @@ const dormitoryData = [
         width: 50%;
         max-width: 500px;
       };
+    }
+
+    &-images {
+      @include flex($justify-content: space-around);
+      margin-top: interval(10);
+    }
+
+    &-images-item {
+      width: 30%;
     }
   }
 }

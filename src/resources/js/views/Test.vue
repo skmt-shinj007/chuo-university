@@ -5,7 +5,7 @@
   </div>
 
   <figure class="wrap">
-    <img src="/image/player15.jpeg" alt="">
+    <img src="/image/dormitory-01.jpg" alt="">
   </figure>
 </div>
 </template>
@@ -45,6 +45,8 @@ span {
 
 // image トリミング
 .wrap {
-  @include trimming(aspect(square));
+  width: 500px;
+  margin: 0 auto;
+  @include trimming(aspect(golden));
 }
 </style>

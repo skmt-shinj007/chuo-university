@@ -1031,8 +1031,12 @@ import用ファイル
   left: 50%;
   transform: translateX(-50%);
 }
-.arrange-image__text[data-v-7f82b6cb] {
+.arrange-image__caption[data-v-7f82b6cb], .arrange-image__secondary-caption[data-v-7f82b6cb] {
   font-size: 10px;
+}
+.arrange-image__capacity-number[data-v-7f82b6cb] {
+  font-size: 16px;
+  font-weight: bold;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1248,6 +1252,16 @@ import用ファイル
     width: 50%;
     max-width: 500px;
 }
+}
+.club__dormitory-images[data-v-357d3955] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 5rem;
+}
+.club__dormitory-images-item[data-v-357d3955] {
+  width: 30%;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1286,12 +1300,14 @@ span[data-v-b28ce99e] {
   font-size: 1.2rem;
 }
 .wrap[data-v-b28ce99e] {
+  width: 500px;
+  margin: 0 auto;
   position: relative;
 }
 .wrap[data-v-b28ce99e]::before {
   content: "";
   display: block;
-  padding-bottom: 100%;
+  padding-bottom: 61.8%;
 }
 .wrap > img[data-v-b28ce99e] {
   position: absolute;
