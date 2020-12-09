@@ -35,7 +35,7 @@ export default {
 
   &__record {
     width: 100%;
-    border: 1px solid color(lightGray);
+    border: 1px solid color(lightgray);
   }
 
   &__key {

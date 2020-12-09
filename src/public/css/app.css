@@ -1150,11 +1150,80 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+.tag[data-v-3df5bb76] {
+  width: 3.5rem;
+  margin-right: 0.5rem;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  font-weight: bold;
+  line-height: 1.9;
+}
+.tag[data-v-3df5bb76]:last-child {
+  margin: 0;
+}
+.tag--lg[data-v-3df5bb76] {
+  width: 5rem;
+  font-size: 16px;
+  line-height: 2;
+}
+.tag__color[data-v-3df5bb76] {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: #091e2f;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tag__color--lightgreen[data-v-3df5bb76] {
+  background-color: #56b145;
+}
+.tag__color--orange[data-v-3df5bb76] {
+  background-color: #e56c2c;
+}
+.tag__grade[data-v-3df5bb76] {
+  font-size: 10px;
+  line-height: 2.3;
+  letter-spacing: 1.5px;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
 .player-card[data-v-3f25cc20] {
-  width: 50%;
+  width: 60%;
 }
 .player-card__figure[data-v-3f25cc20] {
   position: relative;
+  border-bottom: 2px solid #091e2f;
 }
 .player-card__figure[data-v-3f25cc20]::before {
   content: "";
@@ -1174,19 +1243,21 @@ import用ファイル
   background-color: #f2f2f2;
   padding: 0.5rem;
 }
-.player-card__information-name-wrap[data-v-3f25cc20] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: flex-end;
-}
 .player-card__information-name[data-v-3f25cc20] {
   font-size: 12px;
   font-weight: bold;
+  margin-right: 0.5rem;
 }
 .player-card__information-name-english[data-v-3f25cc20] {
   font-weight: bold;
   font-size: 10px;
+}
+.player-card__information-tags[data-v-3f25cc20] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.25rem 0 0.5rem 0;
 }@charset "UTF-8";
 /*
 import用ファイル
