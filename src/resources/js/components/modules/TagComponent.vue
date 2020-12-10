@@ -8,10 +8,10 @@
 
     <!-- tagType="grade" （年次）の場合 -->
     <div v-else-if="tagType === 'grade'" class="tag__color" :class="gradeClass">
-      <span class="tag__content">{{ grade }}</span>
+      <span class="tag__content">{{ grade }}年生</span>
     </div>
 
-    <!-- tagType が position 以外の場合こっちのdivが読まれる -->
+    <!-- tagType が position/grade 以外の場合こっちのdivが読まれる -->
     <div v-else class="tag__color" :class="colorClass">
       <span class="tag__content">{{ content }}</span>
     </div>
@@ -33,8 +33,8 @@ export default {
     },
     // tagType -> "grade"
     grade: {
-      type: String,
-      default: '',
+      type: Number,
+      default: 0,
     },
     // else
     size: {
@@ -69,8 +69,8 @@ export default {
 
 <style lang="scss" scoped>
 .tag {
-  width: interval(7);
   margin-right: interval(1);
+  padding-top: interval(1);
   color: color(white);
   font-size: font(sm);
   letter-spacing: 1.8px;
@@ -88,8 +88,7 @@ export default {
   }
 
   &__color {
-    width: 100%;
-    height: 100%;
+    padding: 0 interval(1.5);
     border-radius: radius(normal);
     background-color: color(darkblue);
     @include flex(row wrap, center, center);

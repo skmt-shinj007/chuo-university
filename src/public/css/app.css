@@ -1151,8 +1151,8 @@ import用ファイル
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
 .tag[data-v-3df5bb76] {
-  width: 3.5rem;
   margin-right: 0.5rem;
+  padding-top: 0.5rem;
   color: #ffffff;
   font-size: 12px;
   letter-spacing: 1.8px;
@@ -1168,8 +1168,7 @@ import用ファイル
   line-height: 2;
 }
 .tag__color[data-v-3df5bb76] {
-  width: 100%;
-  height: 100%;
+  padding: 0 0.75rem;
   border-radius: 4px;
   background-color: #091e2f;
   display: flex;
@@ -1267,8 +1266,9 @@ import用ファイル
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: center;
-  margin: 0.25rem 0 0.5rem 0;
+  align-items: stretch;
+  align-content: space-around;
+  padding-bottom: 0.5rem;
 }@charset "UTF-8";
 /*
 import用ファイル

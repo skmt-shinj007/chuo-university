@@ -13,6 +13,7 @@
     <div class="player-card__information-tags">
       <tag-component tagType="position" :position="position"/>
       <tag-component tagType="grade" :grade="grade"/>
+      <tag-component :content="post"/>
     </div>
   </div>
 </div>
@@ -48,8 +49,12 @@ export default {
       default: '後衛',
     },
     grade: {
+      type: Number,
+      default: 0,
+    },
+    post: {
       type: String,
-      default: '4年生',
+      default: '',
     },
   }
 }
@@ -89,8 +94,9 @@ export default {
     }
 
     &-tags {
-      @include flex($flow: row wrap , $align-items: center);
-      margin: interval(.5) 0 interval(1) 0;
+      @include flex($flow: row wrap);
+      align-content: space-around;
+      padding-bottom: interval(1);
     }
   }
 }
