@@ -79,6 +79,15 @@
 
       <player-slider-component :playerInformations="playerInformations"/>
 
+      <div class="club__member-number">
+        <h3 class="club__member-number-title">{{ messages.Club.Member.NumbersText }}</h3>
+        <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+      </div>
+
+      <div class="club__member-button">
+        <view-all-button-component/>
+      </div>
+
     </section>
   </div>
 </div>
@@ -95,6 +104,7 @@ import TableComponent from '../components/modules/table/TableComponent';
 import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
+import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
 
 export default {
   components: {
@@ -107,6 +117,7 @@ export default {
     ArrangeImageComponent,
     DormitoryCardComponent,
     PlayerSliderComponent,
+    ViewAllButtonComponent,
   },
   data() {
     return {
@@ -118,6 +129,7 @@ export default {
       dormitoryInformations: [],
       dormitoryImages: [],
       playerInformations: [],
+      memberNumber: [],
     }
   },
 
@@ -131,6 +143,7 @@ export default {
     dormitoryData.forEach(element => this.dormitoryInformations.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
     playerData.forEach(element => this.playerInformations.push(element));
+    memberNumberData.forEach(element => this.memberNumber.push(element));
   },
 
   mounted() {
@@ -333,7 +346,7 @@ const playerData = [
   {
     name: '坂本 信治',
     englishName: 'sakamoto shinji',
-    imagePath: 'player01.jpg',
+    imagePath: 'player15.jpeg',
     imageAlt: '坂本 信治の写真',
     position: '前衛',
     grade: 4,
@@ -361,7 +374,7 @@ const playerData = [
   {
     name: '田邊 雅人',
     englishName: 'tanabe masato',
-    imagePath: 'player01.jpg',
+    imagePath: 'player09.jpg',
     imageAlt: '田邊 雅人の写真',
     position: '前衛',
     grade: 4,
@@ -375,7 +388,7 @@ const playerData = [
   {
     name: '斎藤 利貴',
     englishName: 'saito riki',
-    imagePath: 'player01.jpg',
+    imagePath: 'player03.jpg',
     imageAlt: '斎藤 利貴の写真',
     position: '後衛',
     grade: 4,
@@ -387,19 +400,41 @@ const playerData = [
     ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
   },
   {
-    name: '丸山 章',
-    englishName: 'maruyama akira',
-    imagePath: 'player01.jpg',
-    imageAlt: '丸山 章の写真',
+    name: '佐藤 辰哉',
+    englishName: 'sato shinya',
+    imagePath: 'player16.jpg',
+    imageAlt: '佐藤 辰哉の写真',
     position: '後衛',
     grade: 3,
-    post: '会計',
+    post: '副主将',
     undergraduate: '文学部',
     birthplace: '広島県',
     almaMater: '尾道高等学校',
-    record: '2016年ハイスクールジャパンカップ ベスト8',
+    record: '2016年ハイスクールジャパンカップ ダブルス ベスト4',
     ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
   },
+];
+
+/**
+ * test data : 部員数のデータ
+ */
+const memberNumberData = [
+  {
+    key: 4,    // 年次
+    value: 4,  // 人数
+  },
+  {
+    key: 3,
+    value: 7,
+  },
+  {
+    key: 2,
+    value: 5,
+  },
+  {
+    key: 1,
+    value: 6,
+  }
 ];
 </script>
 
@@ -526,7 +561,30 @@ const playerData = [
       @include gradient();
     }
 
+    &-number {
+      margin-top: interval(10);
+    }
 
+    &-number-title {
+      width: 90%;
+      color: color(white);
+      margin: 0 auto interval(2) auto;
+      padding-left: interval(3);
+      position: relative;
+      @include text-before-line(interval(2), 1px, color(white));
+
+      @include mq(sm) {
+        width: 80%;
+      };
+
+      @include mq(md) {
+        width: 70%;
+      };
+    }
+
+    &-button {
+      margin-top: interval(5);
+    }
   }
 }
 </style>

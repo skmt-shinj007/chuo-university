@@ -3,7 +3,7 @@
     <figure class="menu-panel__figure">
       <img class="menu-panel__image" :src="panelImageUrl" :alt="imageAlt">
     </figure>
-    <view-all-button-component class="menu-panel__button" :name="buttonName" :buttonSize="buttonSize"/>
+    <view-all-button-component class="menu-panel__button" :name="buttonName" :buttonSize="buttonSize" variationClass="rgba"/>
   </div>
 </template>
 

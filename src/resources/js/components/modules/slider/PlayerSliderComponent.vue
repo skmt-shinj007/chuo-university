@@ -70,7 +70,7 @@ export default {
 <style lang="scss" scoped>
 .slider {
 
-  // slider の際のスタイルを指定
+  // slider の時のみ指定したい選手カードのスタイルを指定
   .player-card {
     margin: 0 auto;
 
