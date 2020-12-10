@@ -44,6 +44,11 @@
       "Title": "member",
       "SubTitle": "メンバー",
       "NumbersText": "現在の部員数"
+    },
+    "Photo": {
+      "memo": "photoのコンテンツが出来上がったら、そこからタイトルを取得",
+      "Title": "photo gallery",
+      "SubTitle": "フォトギャラリー"
     }
   }
 }

@@ -87,9 +87,12 @@
       <div class="club__member-button">
         <view-all-button-component/>
       </div>
-
     </section>
   </div>
+
+  <section class="club__photo">
+    <contents-title-component :title="messages.Club.Photo.Title" :subTitle="messages.Club.Photo.SubTitle"/>
+  </section>
 </div>
 </template>
 
@@ -555,7 +558,11 @@ const memberNumberData = [
   }
 
   &__member {
-    padding-top: interval(5);
+    padding: interval(5) 0;
+
+    @include mq(md) {
+      padding: interval(10) 0;
+    }
 
     &-bg {
       @include gradient();
@@ -584,6 +591,14 @@ const memberNumberData = [
 
     &-button {
       margin-top: interval(5);
+    }
+  }
+
+  &__photo {
+    margin-top: interval(10);
+
+    @include mq(md) {
+      margin-top: interval(20);
     }
   }
 }

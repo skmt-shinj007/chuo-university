@@ -1460,7 +1460,12 @@ import用ファイル
   width: 30%;
 }
 .club__member[data-v-357d3955] {
-  padding-top: 2.5rem;
+  padding: 2.5rem 0;
+}
+@media screen and (min-width: 992px) {
+.club__member[data-v-357d3955] {
+    padding: 5rem 0;
+}
 }
 .club__member-bg[data-v-357d3955] {
   background: #091e2f;
@@ -1499,6 +1504,14 @@ import用ファイル
 }
 .club__member-button[data-v-357d3955] {
   margin-top: 2.5rem;
+}
+.club__photo[data-v-357d3955] {
+  margin-top: 5rem;
+}
+@media screen and (min-width: 992px) {
+.club__photo[data-v-357d3955] {
+    margin-top: 10rem;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
