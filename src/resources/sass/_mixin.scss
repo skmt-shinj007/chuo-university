@@ -49,7 +49,7 @@
   }
 }
 
-// view all button hover
+// 「もっと見る」ボタンのホバーアニメーション
 @mixin button-hover() {
   border: none;
 
@@ -61,7 +61,7 @@
   }
 }
 
-// header button hover animation style
+// ヘッダーボタンのホバーアニメーション
 @mixin header-button-hover($width: 40px, $height: 40px, $time: .5s) {
   &::before {
     position: absolute;
@@ -88,7 +88,7 @@
   }
 }
 
-// text decoration (- text) テキストの前に線を入れる装飾
+// テキストの前に線を入れる装飾 (- text)
 @mixin text-before-line($width, $height, $bg-color) {
   &::before {
     display: block;
@@ -103,7 +103,7 @@
   }
 }
 
-// background image
+// cssで背景指定（background-image）
 @mixin background-image($url, $position) {
   background-image: url($url);
   background-size: cover;
@@ -166,7 +166,7 @@
   }
 }
 
-// image トリミング
+// image トリミング (imgタグの一つ親のタグに指定する)
 @mixin trimming($aspect) {
   position: relative;
 

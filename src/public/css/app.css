@@ -274,14 +274,13 @@ import用ファイル
     width: 300px;
     height: 60px;
     font-size: 12px;
-    background-color: rgba(255, 255, 255, 0.6);
 }
-.view-all-button-xs {
+.view-all-button--xs {
     max-width: 200px;
     height: 45px;
     font-size: 10px;
 }
-.view-all-button-sm {
+.view-all-button--sm {
     width: 240px;
     height: 50px;
     font-size: 10px;
@@ -307,16 +306,17 @@ import用ファイル
   transform: translateX(4px) translateY(-4px);
   transition: all 0.3s ease-out;
 }
-@media screen and (min-width: 992px) {
-.view-all-button__button {
-    background-color: rgba(255, 255, 255, 0.6);
-}
-}
 .view-all-button__icon {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+}
+.view-all-button--rgba {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.view-all-button--rgba .view-all-button__button {
+  background-color: rgba(255, 255, 255, 0.6);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -974,6 +974,7 @@ import用ファイル
 }
 .common-table__value {
   width: 70%;
+  background-color: #ffffff;
   white-space: pre-wrap;
 }@charset "UTF-8";
 /*
@@ -1150,6 +1151,194 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+.tag[data-v-3df5bb76] {
+  margin-right: 0.5rem;
+  padding-top: 0.5rem;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  font-weight: bold;
+  line-height: 1.9;
+}
+.tag[data-v-3df5bb76]:last-child {
+  margin: 0;
+}
+.tag--lg[data-v-3df5bb76] {
+  width: 5rem;
+  font-size: 16px;
+  line-height: 2;
+}
+.tag__color[data-v-3df5bb76] {
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  background-color: #091e2f;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tag__color--lightgreen[data-v-3df5bb76] {
+  background-color: #56b145;
+}
+.tag__color--orange[data-v-3df5bb76] {
+  background-color: #e56c2c;
+}
+.tag__grade[data-v-3df5bb76] {
+  font-size: 10px;
+  line-height: 2.3;
+  letter-spacing: 1.5px;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.player-card {
+  width: 60%;
+}
+@media screen and (min-width: 560px) {
+.player-card {
+    width: 30%;
+}
+}
+@media screen and (min-width: 992px) {
+.player-card {
+    width: 20%;
+    max-width: 12rem;
+}
+}
+.player-card__figure {
+  position: relative;
+  border-bottom: 2px solid #091e2f;
+}
+.player-card__figure::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.player-card__figure > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.player-card__information {
+  background-color: #f2f2f2;
+  padding: 0.5rem;
+}
+.player-card__information-name {
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.player-card__information-name-english {
+  font-weight: bold;
+  font-size: 10px;
+}
+.player-card__information-tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: space-around;
+  padding-bottom: 0.5rem;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.slider .player-card[data-v-53189f00] {
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.slider .player-card[data-v-53189f00] {
+    width: 60%;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
 .club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
   height: 100vh;
@@ -1269,6 +1458,47 @@ import用ファイル
 }
 .club__dormitory-images-item[data-v-357d3955] {
   width: 30%;
+}
+.club__member[data-v-357d3955] {
+  padding-top: 2.5rem;
+}
+.club__member-bg[data-v-357d3955] {
+  background: #091e2f;
+  background: radial-gradient(ellipse at center, #091e2f 0%, #030A10 100%);
+}
+.club__member-number[data-v-357d3955] {
+  margin-top: 5rem;
+}
+.club__member-number-title[data-v-357d3955] {
+  width: 90%;
+  color: #ffffff;
+  margin: 0 auto 1rem auto;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.club__member-number-title[data-v-357d3955]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 560px) {
+.club__member-number-title[data-v-357d3955] {
+    width: 80%;
+}
+}
+@media screen and (min-width: 992px) {
+.club__member-number-title[data-v-357d3955] {
+    width: 70%;
+}
+}
+.club__member-button[data-v-357d3955] {
+  margin-top: 2.5rem;
 }@charset "UTF-8";
 /*
 import用ファイル

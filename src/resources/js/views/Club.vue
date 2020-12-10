@@ -71,8 +71,25 @@
         <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
-
   </section>
+
+  <div class="club__member-bg">
+    <section class="club__member section-container">
+      <contents-title-component :title="messages.Club.Member.Title" :subTitle="messages.Club.Member.SubTitle" color="white"/>
+
+      <player-slider-component :playerInformations="playerInformations"/>
+
+      <div class="club__member-number">
+        <h3 class="club__member-number-title">{{ messages.Club.Member.NumbersText }}</h3>
+        <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+      </div>
+
+      <div class="club__member-button">
+        <view-all-button-component/>
+      </div>
+
+    </section>
+  </div>
 </div>
 </template>
 
@@ -86,6 +103,8 @@ import MainVisualSliderComponent from '../components/modules/slider/MainVisualSl
 import TableComponent from '../components/modules/table/TableComponent';
 import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
+import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
+import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
 
 export default {
   components: {
@@ -97,6 +116,8 @@ export default {
     ContentsImageSliderComponent,
     ArrangeImageComponent,
     DormitoryCardComponent,
+    PlayerSliderComponent,
+    ViewAllButtonComponent,
   },
   data() {
     return {
@@ -107,6 +128,8 @@ export default {
       schedule: [],
       dormitoryInformations: [],
       dormitoryImages: [],
+      playerInformations: [],
+      memberNumber: [],
     }
   },
 
@@ -119,6 +142,8 @@ export default {
     scheduleData.forEach(element => this.schedule.push(element));
     dormitoryData.forEach(element => this.dormitoryInformations.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
+    playerData.forEach(element => this.playerInformations.push(element));
+    memberNumberData.forEach(element => this.memberNumber.push(element));
   },
 
   mounted() {
@@ -313,6 +338,104 @@ const dormitoryData = [
     dryPrice: '乾燥機：24分 / 100円'
   }
 ];
+
+/**
+ * test data : 選手情報のテストデータ
+ */
+const playerData = [
+  {
+    name: '坂本 信治',
+    englishName: 'sakamoto shinji',
+    imagePath: 'player15.jpeg',
+    imageAlt: '坂本 信治の写真',
+    position: '前衛',
+    grade: 4,
+    post: '主務',
+    undergraduate: '経済学部',
+    birthplace: '北海道',
+    almaMater: '北海道科学大学高等学校',
+    record: '2016年インターハイ ベスト16',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '宮崎 悠登',
+    englishName: 'miyazaki yuto',
+    imagePath: 'player01.jpg',
+    imageAlt: '宮崎 悠登の写真',
+    position: '後衛',
+    grade: 4,
+    post: '主将',
+    undergraduate: '経済学部',
+    birthplace: '山形県',
+    almaMater: '山形県羽黒高等学校',
+    record: '2016年ハイスクールジャパンカップ ダブルス準優勝',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '田邊 雅人',
+    englishName: 'tanabe masato',
+    imagePath: 'player09.jpg',
+    imageAlt: '田邊 雅人の写真',
+    position: '前衛',
+    grade: 4,
+    post: '副主将',
+    undergraduate: '法学部',
+    birthplace: '福島県',
+    almaMater: '三重高等学校',
+    record: '2016年国民体育大会 少年の部 優勝',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '斎藤 利貴',
+    englishName: 'saito riki',
+    imagePath: 'player03.jpg',
+    imageAlt: '斎藤 利貴の写真',
+    position: '後衛',
+    grade: 4,
+    post: '寮長',
+    undergraduate: '経済学部',
+    birthplace: '千葉県',
+    almaMater: '千葉県昭和学院高等学校',
+    record: '2016年ハイスクールジャパンカップ ベスト8',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+  {
+    name: '佐藤 辰哉',
+    englishName: 'sato shinya',
+    imagePath: 'player16.jpg',
+    imageAlt: '佐藤 辰哉の写真',
+    position: '後衛',
+    grade: 3,
+    post: '副主将',
+    undergraduate: '文学部',
+    birthplace: '広島県',
+    almaMater: '尾道高等学校',
+    record: '2016年ハイスクールジャパンカップ ダブルス ベスト4',
+    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
+  },
+];
+
+/**
+ * test data : 部員数のデータ
+ */
+const memberNumberData = [
+  {
+    key: 4,    // 年次
+    value: 4,  // 人数
+  },
+  {
+    key: 3,
+    value: 7,
+  },
+  {
+    key: 2,
+    value: 5,
+  },
+  {
+    key: 1,
+    value: 6,
+  }
+];
 </script>
 
 <style lang="scss" scoped>
@@ -428,6 +551,39 @@ const dormitoryData = [
 
     &-images-item {
       width: 30%;
+    }
+  }
+
+  &__member {
+    padding-top: interval(5);
+
+    &-bg {
+      @include gradient();
+    }
+
+    &-number {
+      margin-top: interval(10);
+    }
+
+    &-number-title {
+      width: 90%;
+      color: color(white);
+      margin: 0 auto interval(2) auto;
+      padding-left: interval(3);
+      position: relative;
+      @include text-before-line(interval(2), 1px, color(white));
+
+      @include mq(sm) {
+        width: 80%;
+      };
+
+      @include mq(md) {
+        width: 70%;
+      };
+    }
+
+    &-button {
+      margin-top: interval(5);
     }
   }
 }
