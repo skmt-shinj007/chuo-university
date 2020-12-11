@@ -2,6 +2,7 @@
 <div class="arrange-images">
   <ul class="arrange-images__list-container">
     <li class="arrange-images__list" v-for="(imageData, n) in imagesArraySlice" :key="n">
+      <!-- img要素をクリックしたらモーダルで拡大表示する -->
       <img class="arrange-images__list-item" :src="`/image/${imageData.path}`" :alt="imageData.alt">
     </li>
   </ul>
