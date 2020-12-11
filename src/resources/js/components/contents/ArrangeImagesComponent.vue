@@ -47,6 +47,7 @@ export default {
 
   &__list-item {
     padding: interval(1);
+    cursor: pointer;
   }
 }
 

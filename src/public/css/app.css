@@ -1374,6 +1374,7 @@ import用ファイル
 }
 .arrange-images__list-item[data-v-bb84db5a] {
   padding: 0.5rem;
+  cursor: pointer;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1566,7 +1567,7 @@ import用ファイル
 }
 @media screen and (min-width: 992px) {
 .club__photo[data-v-357d3955] {
-    margin: 10rem auto;
+    margin-top: 10rem;
 }
 }
 .club__photo-images-container[data-v-357d3955] {

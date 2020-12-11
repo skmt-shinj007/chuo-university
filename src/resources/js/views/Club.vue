@@ -651,7 +651,7 @@ const imageApiResponse = [
     margin: interval(10) auto;
 
     @include mq(md) {
-      margin: interval(20) auto;
+      margin-top: interval(20);
     }
 
     &-images-container {
