@@ -85,7 +85,7 @@
       </div>
 
       <div class="club__member-button">
-        <view-all-button-component/>
+        <view-all-button-component :name="messages.Club.Member.Button"/>
       </div>
     </section>
   </div>
@@ -95,6 +95,10 @@
 
     <div class="club__photo-images-container">
       <arrange-images-component :imagesData="imagesData"/>
+    </div>
+
+    <div class="club__photo-button">
+      <view-all-button-component/>
     </div>
   </section>
 </div>
@@ -652,19 +656,23 @@ const imageApiResponse = [
   }
 
   &__photo {
-    margin-top: interval(10);
+    margin: interval(10) 0;
 
     @include mq(md) {
-      margin-top: interval(20);
+      margin: interval(20) 0;
     }
 
     &-images-container {
       width: 90%;
       margin: 0 auto;
+    }
+
+    &-button {
+      margin-top: interval(5);
 
       @include mq(sm) {
-
-      }
+        margin-top: interval(7);
+      };
     }
   }
 }

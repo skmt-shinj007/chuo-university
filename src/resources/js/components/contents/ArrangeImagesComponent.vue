@@ -29,6 +29,7 @@ export default {
 
   @include mq(sm) {
     margin-top: - interval(2);
+    @include flex(row wrap, center, center);
   };
 
   @include mq(md) {
@@ -41,13 +42,15 @@ export default {
     margin: interval(1);
 
     @include mq(sm) {
+      margin: auto;
       margin-top: interval(2);
       width: 30%;
     };
 
     @include mq(md) {
-      width: interval(22);
+      width: 18%;
       margin: interval(1);
+      cursor: pointer;
     }
   }
 }
