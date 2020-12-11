@@ -1,19 +1,19 @@
 <template>
 <div class="player-card">
   <figure class="player-card__figure">
-    <img :src="`/image/${imagePath}`" :alt="imageAlt">
+    <img :src="`/image/${playerInformation.image.path}`" :alt="playerInformation.image.alt">
   </figure>
 
   <div class="player-card__information">
     <div class="player-card__information-name-wrap">
-      <span class="player-card__information-name">{{ name }}</span>
-      <span class="player-card__information-name-english">{{ englishName }}</span>
+      <span class="player-card__information-name">{{ playerInformation.name.ja }}</span>
+      <span class="player-card__information-name-english">{{ playerInformation.name.ja }}</span>
     </div>
 
     <div class="player-card__information-tags">
-      <tag-component tagType="position" :position="position"/>
-      <tag-component tagType="grade" :grade="grade"/>
-      <tag-component :content="post"/>
+      <tag-component tagType="position" :position="playerInformation.position"/>
+      <tag-component tagType="grade" :grade="playerInformation.studentInfo.grade"/>
+      <tag-component :content="playerInformation.post"/>
     </div>
   </div>
 </div>
@@ -28,34 +28,10 @@ export default {
     TagComponent,
   },
   props: {
-    name: {
-      type: String,
-      default: '中央 太郎'
-    },
-    englishName: {
-      type: String,
-      default: 'chuo taro'
-    },
-    imagePath: {
-      type: String,
-      default: 'player01.jpg',
-    },
-    imageAlt: {
-      type: String,
-      default: 'イメージの補足テキストが入ります',
-    },
-    position: {
-      type: String,
-      default: '後衛',
-    },
-    grade: {
-      type: Number,
-      default: 0,
-    },
-    post: {
-      type: String,
-      default: '',
-    },
+    playerInformation: {
+      type: Object,
+      default: null,
+    }
   }
 }
 </script>
