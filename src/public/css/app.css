@@ -1007,16 +1007,16 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.arrange-image[data-v-7f82b6cb] {
+.caption-bar-image[data-v-7fa4fe02] {
   width: 100%;
   position: relative;
 }
-.arrange-image[data-v-7f82b6cb]::before {
+.caption-bar-image[data-v-7fa4fe02]::before {
   content: "";
   display: block;
   padding-bottom: 66.7%;
 }
-.arrange-image > img[data-v-7f82b6cb] {
+.caption-bar-image > img[data-v-7fa4fe02] {
   position: absolute;
   top: 0;
   left: 0;
@@ -1025,11 +1025,11 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.arrange-image__image[data-v-7f82b6cb] {
+.caption-bar-image__image[data-v-7fa4fe02] {
   border-radius: 2px;
   box-shadow: 0 0 6px #b3b3b3;
 }
-.arrange-image__bar[data-v-7f82b6cb] {
+.caption-bar-image__bar[data-v-7fa4fe02] {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
@@ -1039,10 +1039,10 @@ import用ファイル
   left: 50%;
   transform: translateX(-50%);
 }
-.arrange-image__caption[data-v-7f82b6cb], .arrange-image__secondary-caption[data-v-7f82b6cb] {
+.caption-bar-image__caption[data-v-7fa4fe02], .caption-bar-image__secondary-caption[data-v-7fa4fe02] {
   font-size: 10px;
 }
-.arrange-image__capacity-number[data-v-7f82b6cb] {
+.caption-bar-image__capacity-number[data-v-7fa4fe02] {
   font-size: 16px;
   font-weight: bold;
 }@charset "UTF-8";

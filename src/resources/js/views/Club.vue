@@ -39,7 +39,7 @@
     <!-- 画面幅993pxから表示（pcから） -->
     <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
       <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
+        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
 
     <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
       <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
   </section>
@@ -104,7 +104,7 @@ import PolicyCardComponent from '../components/modules/card/PolicyCardComponent'
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
+import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
 import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
@@ -117,7 +117,7 @@ export default {
     TableComponent,
     GoogleMapComponent,
     ContentsImageSliderComponent,
-    ArrangeImageComponent,
+    CaptionBarImageComponent,
     DormitoryCardComponent,
     PlayerSliderComponent,
     ViewAllButtonComponent,
