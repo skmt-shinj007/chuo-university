@@ -957,11 +957,6 @@ import用ファイル
     width: 80%;
 }
 }
-@media screen and (min-width: 992px) {
-.common-table {
-    width: 70%;
-}
-}
 .common-table__record {
   width: 100%;
   border: 1px solid #f2f2f2;
@@ -1339,38 +1334,26 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.arrange-images[data-v-bb84db5a] {
+.arrange-images__list-container[data-v-bb84db5a] {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: -0.5rem;
+  justify-content: flex-start;
+  align-items: stretch;
 }
-@media screen and (min-width: 560px) {
-.arrange-images[data-v-bb84db5a] {
-    margin-top: -1rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-}
-@media screen and (min-width: 992px) {
-.arrange-images[data-v-bb84db5a] {
-    margin-top: -0.5rem;
-}
-}
-.arrange-images__container[data-v-bb84db5a] {
+.arrange-images__list[data-v-bb84db5a] {
   position: relative;
-  width: 45%;
-  margin: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 50%;
 }
-.arrange-images__container[data-v-bb84db5a]::before {
+.arrange-images__list[data-v-bb84db5a]::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.arrange-images__container > img[data-v-bb84db5a] {
+.arrange-images__list > img[data-v-bb84db5a] {
   position: absolute;
   top: 0;
   left: 0;
@@ -1380,18 +1363,17 @@ import用ファイル
      object-fit: cover;
 }
 @media screen and (min-width: 560px) {
-.arrange-images__container[data-v-bb84db5a] {
-    margin: auto;
-    margin-top: 1rem;
-    width: 30%;
+.arrange-images__list[data-v-bb84db5a] {
+    width: 33.3%;
 }
 }
 @media screen and (min-width: 992px) {
-.arrange-images__container[data-v-bb84db5a] {
-    width: 18%;
-    margin: 0.5rem;
-    cursor: pointer;
+.arrange-images__list[data-v-bb84db5a] {
+    width: 20%;
 }
+}
+.arrange-images__list-item[data-v-bb84db5a] {
+  padding: 0.5rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1488,11 +1470,6 @@ import用ファイル
     width: 80%;
 }
 }
-@media screen and (min-width: 992px) {
-.club__practice-schedule-title[data-v-357d3955] {
-    width: 70%;
-}
-}
 .club__dormitory-lead-wrap[data-v-357d3955] {
   width: 90%;
   margin: 0 auto;
@@ -1581,20 +1558,15 @@ import用ファイル
     width: 80%;
 }
 }
-@media screen and (min-width: 992px) {
-.club__member-number-title[data-v-357d3955] {
-    width: 70%;
-}
-}
 .club__member-button[data-v-357d3955] {
   margin-top: 2.5rem;
 }
 .club__photo[data-v-357d3955] {
-  margin: 5rem 0;
+  margin: 5rem auto;
 }
 @media screen and (min-width: 992px) {
 .club__photo[data-v-357d3955] {
-    margin: 10rem 0;
+    margin: 10rem auto;
 }
 }
 .club__photo-images-container[data-v-357d3955] {

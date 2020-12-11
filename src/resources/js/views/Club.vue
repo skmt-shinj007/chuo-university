@@ -564,10 +564,6 @@ const imageApiResponse = [
       @include mq(sm) {
         width: 80%;
       };
-
-      @include mq(md) {
-        width: 70%;
-      };
     }
   }
 
@@ -644,10 +640,6 @@ const imageApiResponse = [
       @include mq(sm) {
         width: 80%;
       };
-
-      @include mq(md) {
-        width: 70%;
-      };
     }
 
     &-button {
@@ -656,10 +648,10 @@ const imageApiResponse = [
   }
 
   &__photo {
-    margin: interval(10) 0;
+    margin: interval(10) auto;
 
     @include mq(md) {
-      margin: interval(20) 0;
+      margin: interval(20) auto;
     }
 
     &-images-container {

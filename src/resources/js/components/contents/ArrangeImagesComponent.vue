@@ -1,8 +1,10 @@
 <template>
 <div class="arrange-images">
-  <figure class="arrange-images__container" v-for="(imageData, n) in imagesArraySlice" :key="n">
-    <img class="arrange-images__image" :src="`/image/${imageData.path}`" :alt="imageData.alt">
-  </figure>
+  <ul class="arrange-images__list-container">
+    <li class="arrange-images__list" v-for="(imageData, n) in imagesArraySlice" :key="n">
+      <img class="arrange-images__list-item" :src="`/image/${imageData.path}`" :alt="imageData.alt">
+    </li>
+  </ul>
 </div>
 </template>
 
@@ -24,34 +26,27 @@ export default {
 
 <style lang="scss" scoped>
 .arrange-images {
-  @include flex(row wrap, space-around, center);
-  margin-top: - interval(1);
 
-  @include mq(sm) {
-    margin-top: - interval(2);
-    @include flex(row wrap, center, center);
-  };
+  &__list-container {
+    @include flex(row wrap);
+  }
 
-  @include mq(md) {
-    margin-top: - interval(1);
-  };
-
-  &__container {
+  &__list {
     @include trimming(aspect(square));
-    width: 45%;
-    margin: interval(1);
+    @include flex($justify-content: center);
+    width: 50%;
 
     @include mq(sm) {
-      margin: auto;
-      margin-top: interval(2);
-      width: 30%;
-    };
+      width: 33.3%;
+    }
 
     @include mq(md) {
-      width: 18%;
-      margin: interval(1);
-      cursor: pointer;
+      width: 20%;
     }
+  }
+
+  &__list-item {
+    padding: interval(1);
   }
 }
 
