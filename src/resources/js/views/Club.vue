@@ -90,8 +90,10 @@
     </section>
   </div>
 
-  <section class="club__photo">
+  <section class="club__photo section-container">
     <contents-title-component :title="messages.Club.Photo.Title" :subTitle="messages.Club.Photo.SubTitle"/>
+
+    <arrange-images-component :imagesData="imagesData"/>
   </section>
 </div>
 </template>
@@ -108,6 +110,7 @@ import CaptionBarImageComponent from '../components/modules/CaptionBarImageCompo
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
 import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
+import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
 
 export default {
   components: {
@@ -121,6 +124,7 @@ export default {
     DormitoryCardComponent,
     PlayerSliderComponent,
     ViewAllButtonComponent,
+    ArrangeImagesComponent,
   },
   data() {
     return {
@@ -133,6 +137,7 @@ export default {
       dormitoryImages: [],
       playerInformations: [],
       memberNumber: [],
+      imagesData: [],
     }
   },
 
@@ -147,6 +152,7 @@ export default {
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
     playerData.forEach(element => this.playerInformations.push(element));
     memberNumberData.forEach(element => this.memberNumber.push(element));
+    imageApiResponse.forEach(element => this.imagesData.push(element));
   },
 
   mounted() {
@@ -438,6 +444,56 @@ const memberNumberData = [
     key: 1,
     value: 6,
   }
+];
+
+/**
+ * test Api Data : 画像ストレージからのAPIレスポンス（想定）
+ */
+const imageApiResponse = [
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
 ];
 </script>
 
