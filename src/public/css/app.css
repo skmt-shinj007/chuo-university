@@ -1146,24 +1146,20 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.tag[data-v-3df5bb76] {
-  margin-right: 0.5rem;
-  padding-top: 0.5rem;
+.tag {
+  margin: 0.25rem;
   color: #ffffff;
   font-size: 12px;
   letter-spacing: 1.8px;
   font-weight: bold;
   line-height: 1.9;
 }
-.tag[data-v-3df5bb76]:last-child {
-  margin: 0;
-}
-.tag--lg[data-v-3df5bb76] {
+.tag--lg {
   width: 5rem;
   font-size: 16px;
   line-height: 2;
 }
-.tag__color[data-v-3df5bb76] {
+.tag__color {
   padding: 0 0.75rem;
   border-radius: 4px;
   background-color: #091e2f;
@@ -1172,16 +1168,11 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.tag__color--lightgreen[data-v-3df5bb76] {
+.tag__color--lightgreen {
   background-color: #56b145;
 }
-.tag__color--orange[data-v-3df5bb76] {
+.tag__color--orange {
   background-color: #e56c2c;
-}
-.tag__grade[data-v-3df5bb76] {
-  font-size: 10px;
-  line-height: 2.3;
-  letter-spacing: 1.5px;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1264,7 +1255,7 @@ import用ファイル
   justify-content: flex-start;
   align-items: stretch;
   align-content: space-around;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
 }@charset "UTF-8";
 /*
 import用ファイル

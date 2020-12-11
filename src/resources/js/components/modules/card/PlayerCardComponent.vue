@@ -7,13 +7,13 @@
   <div class="player-card__information">
     <div class="player-card__information-name-wrap">
       <span class="player-card__information-name">{{ playerInformation.name.ja }}</span>
-      <span class="player-card__information-name-english">{{ playerInformation.name.ja }}</span>
+      <span class="player-card__information-name-english">{{ playerInformation.name.en }}</span>
     </div>
 
     <div class="player-card__information-tags">
-      <tag-component tagType="position" :position="playerInformation.position"/>
-      <tag-component tagType="grade" :grade="playerInformation.studentInfo.grade"/>
+      <position-tag-component :position="playerInformation.position"/>
       <tag-component :content="playerInformation.post"/>
+      <grade-tag-component :grade="playerInformation.studentInfo.grade"/>
     </div>
   </div>
 </div>
@@ -21,11 +21,15 @@
 
 <script>
 // component import
-import TagComponent from '../TagComponent';
+import TagComponent from '../tag/TagComponent';
+import PositionTagComponent from '../tag/PositionTagComponent';
+import GradeTagComponent from '../tag/GradeTagComponent';
 
 export default {
   components: {
     TagComponent,
+    PositionTagComponent,
+    GradeTagComponent,
   },
   props: {
     playerInformation: {
@@ -72,7 +76,7 @@ export default {
     &-tags {
       @include flex($flow: row wrap);
       align-content: space-around;
-      padding-bottom: interval(1);
+      padding: interval(1) 0;
     }
   }
 }
