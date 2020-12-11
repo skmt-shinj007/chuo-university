@@ -43,7 +43,13 @@
     "Member": {
       "Title": "member",
       "SubTitle": "メンバー",
-      "NumbersText": "現在の部員数"
+      "NumbersText": "現在の部員数",
+      "Button": "メンバーを見る"
+    },
+    "Photo": {
+      "memo": "photoのコンテンツが出来上がったら、そこからタイトルを取得",
+      "Title": "photo gallery",
+      "SubTitle": "フォトギャラリー"
     }
   }
 }

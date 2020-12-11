@@ -36,11 +36,6 @@ export default {
     width: 80%;
   };
 
-  // pc style
-  @include mq(md) {
-    width: 70%;
-  };
-
   &__record {
     width: 100%;
     border: 1px solid color(lightgray);

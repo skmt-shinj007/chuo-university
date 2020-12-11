@@ -39,7 +39,7 @@
     <!-- 画面幅993pxから表示（pcから） -->
     <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
       <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
+        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
 
     <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
       <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
   </section>
@@ -85,11 +85,22 @@
       </div>
 
       <div class="club__member-button">
-        <view-all-button-component/>
+        <view-all-button-component :name="messages.Club.Member.Button"/>
       </div>
-
     </section>
   </div>
+
+  <section class="club__photo section-container">
+    <contents-title-component :title="messages.Club.Photo.Title" :subTitle="messages.Club.Photo.SubTitle"/>
+
+    <div class="club__photo-images-container">
+      <arrange-images-component :imagesData="imagesData"/>
+    </div>
+
+    <div class="club__photo-button">
+      <view-all-button-component/>
+    </div>
+  </section>
 </div>
 </template>
 
@@ -101,10 +112,11 @@ import PolicyCardComponent from '../components/modules/card/PolicyCardComponent'
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
+import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
 import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
+import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
 
 export default {
   components: {
@@ -114,10 +126,11 @@ export default {
     TableComponent,
     GoogleMapComponent,
     ContentsImageSliderComponent,
-    ArrangeImageComponent,
+    CaptionBarImageComponent,
     DormitoryCardComponent,
     PlayerSliderComponent,
     ViewAllButtonComponent,
+    ArrangeImagesComponent,
   },
   data() {
     return {
@@ -130,6 +143,7 @@ export default {
       dormitoryImages: [],
       playerInformations: [],
       memberNumber: [],
+      imagesData: [],
     }
   },
 
@@ -144,11 +158,11 @@ export default {
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
     playerData.forEach(element => this.playerInformations.push(element));
     memberNumberData.forEach(element => this.memberNumber.push(element));
+    imageApiResponse.forEach(element => this.imagesData.push(element));
   },
 
   mounted() {
-    console.log('マウント後');
-    console.log(this.$data.messages);
+    // console.log(this.$data.messages);
   },
 }
 
@@ -436,6 +450,56 @@ const memberNumberData = [
     value: 6,
   }
 ];
+
+/**
+ * test Api Data : 画像ストレージからのAPIレスポンス（想定）
+ */
+const imageApiResponse = [
+  {
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player02.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player03.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player04.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player05.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player06.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player07.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player08.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player09.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player10.jpg',
+    alt: '写真の補足テキスト',
+  },
+  {
+    path: 'player11.jpg',
+    alt: '写真の補足テキスト',
+  },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -500,10 +564,6 @@ const memberNumberData = [
       @include mq(sm) {
         width: 80%;
       };
-
-      @include mq(md) {
-        width: 70%;
-      };
     }
   }
 
@@ -555,7 +615,11 @@ const memberNumberData = [
   }
 
   &__member {
-    padding-top: interval(5);
+    padding: interval(5) 0;
+
+    @include mq(md) {
+      padding: interval(10) 0;
+    }
 
     &-bg {
       @include gradient();
@@ -576,14 +640,31 @@ const memberNumberData = [
       @include mq(sm) {
         width: 80%;
       };
-
-      @include mq(md) {
-        width: 70%;
-      };
     }
 
     &-button {
       margin-top: interval(5);
+    }
+  }
+
+  &__photo {
+    margin: interval(10) auto;
+
+    @include mq(md) {
+      margin-top: interval(20);
+    }
+
+    &-images-container {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    &-button {
+      margin-top: interval(5);
+
+      @include mq(sm) {
+        margin-top: interval(7);
+      };
     }
   }
 }
