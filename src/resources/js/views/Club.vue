@@ -93,7 +93,9 @@
   <section class="club__photo section-container">
     <contents-title-component :title="messages.Club.Photo.Title" :subTitle="messages.Club.Photo.SubTitle"/>
 
-    <arrange-images-component :imagesData="imagesData"/>
+    <div class="club__photo-images-container">
+      <arrange-images-component :imagesData="imagesData"/>
+    </div>
   </section>
 </div>
 </template>
@@ -156,8 +158,7 @@ export default {
   },
 
   mounted() {
-    console.log('マウント後');
-    console.log(this.$data.messages);
+    // console.log(this.$data.messages);
   },
 }
 
@@ -455,43 +456,43 @@ const imageApiResponse = [
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player02.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player03.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player04.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player05.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player06.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player07.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player08.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player09.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player10.jpg',
     alt: '写真の補足テキスト',
   },
   {
-    path: 'player01.jpg',
+    path: 'player11.jpg',
     alt: '写真の補足テキスト',
   },
 ];
@@ -655,6 +656,15 @@ const imageApiResponse = [
 
     @include mq(md) {
       margin-top: interval(20);
+    }
+
+    &-images-container {
+      width: 90%;
+      margin: 0 auto;
+
+      @include mq(sm) {
+
+      }
     }
   }
 }

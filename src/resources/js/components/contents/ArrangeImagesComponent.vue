@@ -1,6 +1,6 @@
 <template>
 <div class="arrange-images">
-  <figure class="arrange-images__container" v-for="(imageData, n) in imagesData" :key="n">
+  <figure class="arrange-images__container" v-for="(imageData, n) in imagesArraySlice" :key="n">
     <img class="arrange-images__image" :src="`/image/${imageData.path}`" :alt="imageData.alt">
   </figure>
 </div>
@@ -13,7 +13,12 @@ export default {
       type: Array,
       default: null
     }
-  }
+  },
+  computed: {
+    imagesArraySlice() {
+      return this.imagesData.slice(0, 10);  // 配列の要素をを10個にスライス
+    },
+  },
 }
 </script>
 
@@ -22,17 +27,28 @@ export default {
   @include flex(row wrap, space-around, center);
   margin-top: - interval(1);
 
+  @include mq(sm) {
+    margin-top: - interval(2);
+  };
+
+  @include mq(md) {
+    margin-top: - interval(1);
+  };
+
   &__container {
     @include trimming(aspect(square));
-    width: interval(22);
-    margin-top: interval(1);
+    width: 45%;
+    margin: interval(1);
 
     @include mq(sm) {
-      padding-top: interval(2);
-    }
-  }
+      margin-top: interval(2);
+      width: 30%;
+    };
 
-  &__image {
+    @include mq(md) {
+      width: interval(22);
+      margin: interval(1);
+    }
   }
 }
 
