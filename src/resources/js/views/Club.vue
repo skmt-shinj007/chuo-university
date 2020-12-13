@@ -13,9 +13,7 @@
         <policy-card-component
         v-for="policy in policies"
         :key="policy.id"
-        :policyTitle="policy.title"
-        :policyContent="policy.content"
-        :policySubTitle="policy.subTitle"/>
+        :policy="policy"/>
       </div>
     </section>
   </div>
@@ -58,7 +56,7 @@
 
     <div class="club__dormitory-cards">
       <div class="club__dormitory-card-item" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-card-component v-bind="dormitoryInformation"/>
+        <dormitory-card-component :dormitoryData="dormitoryInformation"/>
       </div>
     </div>
 
@@ -77,7 +75,7 @@
     <section class="club__member section-container">
       <contents-title-component :title="messages.Club.Member.Title" :subTitle="messages.Club.Member.SubTitle" color="white"/>
 
-      <player-slider-component :playerInformations="playerInformations"/>
+      <player-slider-component :playerData="playerData"/>
 
       <div class="club__member-number">
         <h3 class="club__member-number-title">{{ messages.Club.Member.NumbersText }}</h3>
@@ -141,7 +139,7 @@ export default {
       schedule: [],
       dormitoryInformations: [],
       dormitoryImages: [],
-      playerInformations: [],
+      playerData: [],
       memberNumber: [],
       imagesData: [],
     }
@@ -156,7 +154,7 @@ export default {
     scheduleData.forEach(element => this.schedule.push(element));
     dormitoryData.forEach(element => this.dormitoryInformations.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
-    playerData.forEach(element => this.playerInformations.push(element));
+    playerApiResponse.forEach(element => this.playerData.push(element));
     memberNumberData.forEach(element => this.memberNumber.push(element));
     imageApiResponse.forEach(element => this.imagesData.push(element));
   },
@@ -230,21 +228,27 @@ const dormitoryImageApiResponse = [
 const policiesData = [
   {
     id: 1,
-    title: 'Symbol',
+    title: {
+      main: 'Symbol',
+      sub: '部訓'
+    },
     content: '部訓が入ります。部訓が入ります。',
-    subTitle: '部訓'
   },
   {
     id: 2,
-    title: 'Target',
+    title: {
+      main: 'Target',
+      sub: '目標'
+    },
     content: '全日本大学対抗戦優勝',
-    subTitle: '目標'
   },
   {
     id: 3,
-    title: 'mission',
+    title: {
+      main: 'mission',
+      sub: '意義'
+    },
     content: 'ソフトテニスを通じた人間育成',
-    subTitle: '意義'
   }
 ];
 
@@ -329,101 +333,151 @@ const scheduleData = [
  */
 const dormitoryData = [
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: '食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。',
   },
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n',
     bathTime: '入浴可能時間：6:00 - 9:30 / 12:00 - 14:00 / 16:30 - 23:00',
   },
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: 'ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。',
   },
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: '洗濯機は、ソフトテニス部の部屋がある階に4台ございます。',
-    washPrice: '洗濯機：無料',
-    dryPrice: '乾燥機：24分 / 100円'
+    price: {
+      wash: '洗濯機：無料',
+      dry: '乾燥機：24分 / 100円'
+    }
   }
 ];
 
 /**
  * test data : 選手情報のテストデータ
  */
-const playerData = [
+const playerApiResponse = [
   {
-    name: '坂本 信治',
-    englishName: 'sakamoto shinji',
-    imagePath: 'player15.jpeg',
-    imageAlt: '坂本 信治の写真',
+    name: {
+      ja: '坂本 信治',
+      en: 'sakamoto shinji',
+    },
+    image: {
+      path: 'player15.jpeg',
+      alt: '坂本 信治の写真'
+    },
+    studentInfo: {
+      grade: 4,
+      undergraduate: '経済学部',
+    },
+    from: {
+      birthplace: '北海道',
+      almaMater: '北海道科学大学高等学校',
+    },
     position: '前衛',
-    grade: 4,
     post: '主務',
-    undergraduate: '経済学部',
-    birthplace: '北海道',
-    almaMater: '北海道科学大学高等学校',
     record: '2016年インターハイ ベスト16',
     ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
   },
   {
-    name: '宮崎 悠登',
-    englishName: 'miyazaki yuto',
-    imagePath: 'player01.jpg',
-    imageAlt: '宮崎 悠登の写真',
+    name: {
+      ja: '宮崎 悠登',
+      en: 'miyazaki yuto',
+    },
+    image: {
+      path: 'player01.jpg',
+      alt: '宮崎 悠登の写真'
+    },
+    studentInfo: {
+      grade: 4,
+      undergraduate: '経済学部',
+    },
+    from: {
+      birthplace: '山形県',
+      almaMater: '山形県羽黒高等学校',
+    },
     position: '後衛',
-    grade: 4,
     post: '主将',
-    undergraduate: '経済学部',
-    birthplace: '山形県',
-    almaMater: '山形県羽黒高等学校',
     record: '2016年ハイスクールジャパンカップ ダブルス準優勝',
     ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
   },
   {
-    name: '田邊 雅人',
-    englishName: 'tanabe masato',
-    imagePath: 'player09.jpg',
-    imageAlt: '田邊 雅人の写真',
+    name: {
+      ja: '田邊 雅人',
+      en: 'tanabe masato',
+    },
+    image: {
+      path: 'player09.jpg',
+      alt: '田邊 雅人の写真',
+    },
+    studentInfo: {
+      grade: 4,
+      undergraduate: '法学部',
+    },
+    from: {
+      birthplace: '福島県',
+      almaMater: '三重高等学校',
+    },
     position: '前衛',
-    grade: 4,
     post: '副主将',
-    undergraduate: '法学部',
-    birthplace: '福島県',
-    almaMater: '三重高等学校',
     record: '2016年国民体育大会 少年の部 優勝',
     ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
   },
   {
-    name: '斎藤 利貴',
-    englishName: 'saito riki',
-    imagePath: 'player03.jpg',
-    imageAlt: '斎藤 利貴の写真',
+    name: {
+      ja: '斎藤 利貴',
+      en: 'saito riki',
+    },
+    image: {
+      path: 'player03.jpg',
+      alt: '斎藤 利貴の写真',
+    },
+    studentInfo: {
+      grade: 4,
+      undergraduate: '経済学部',
+    },
+    from: {
+      birthplace: '千葉県',
+      almaMater: '千葉県昭和学院高等学校',
+    },
     position: '後衛',
-    grade: 4,
     post: '寮長',
-    undergraduate: '経済学部',
-    birthplace: '千葉県',
-    almaMater: '千葉県昭和学院高等学校',
     record: '2016年ハイスクールジャパンカップ ベスト8',
     ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
   },
   {
-    name: '佐藤 辰哉',
-    englishName: 'sato shinya',
-    imagePath: 'player16.jpg',
-    imageAlt: '佐藤 辰哉の写真',
+    name: {
+      ja: '佐藤 辰哉',
+      en: 'sato shinya',
+    },
+    image: {
+      path: 'player16.jpg',
+      alt: '佐藤 辰哉の写真',
+    },
+    studentInfo: {
+      grade: 3,
+      undergraduate: '経済学部',
+    },
+    from: {
+      birthplace: '福岡県',
+      almaMater: '香川県尽誠学園高等学校',
+    },
     position: '後衛',
-    grade: 3,
     post: '副主将',
-    undergraduate: '文学部',
-    birthplace: '広島県',
-    almaMater: '尾道高等学校',
     record: '2016年ハイスクールジャパンカップ ダブルス ベスト4',
     ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
   },

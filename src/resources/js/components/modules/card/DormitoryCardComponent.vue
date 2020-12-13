@@ -1,18 +1,18 @@
 <template>
 <div class="dormitory-card">
   <div class="dormitory-card__icon-wrap">
-    <img class="dormitory-card__icon" :src="`/image/${srcUrl}`" :alt="alt">
+    <img class="dormitory-card__icon" :src="`/image/${dormitoryData.icon.src}`" :alt="dormitoryData.icon.alt">
   </div>
   <div class="dormitory-card__text-wrap">
-    <p class="dormitory-card__text nl2br" v-text="content"/>
+    <p class="dormitory-card__text nl2br" v-text="dormitoryData.content"/>
 
-    <div class="dormitory-card__tag" v-if="washPrice">
-      <span class="dormitory-card__laundry-price" v-text="washPrice"></span>
-      <span class="dormitory-card__laundry-price" v-text="dryPrice"></span>
+    <div class="dormitory-card__tag" v-if="dormitoryData.price">
+      <span class="dormitory-card__laundry-price" v-text="dormitoryData.price.wash"></span>
+      <span class="dormitory-card__laundry-price" v-text="dormitoryData.price.dry"></span>
     </div>
 
-    <div class="dormitory-card__tag" v-if="bathTime">
-      <span class="dormitory-card__bath-time" v-text="bathTime"/>
+    <div class="dormitory-card__tag" v-if="dormitoryData.bathTime">
+      <span class="dormitory-card__bath-time" v-text="dormitoryData.bathTime"/>
     </div>
   </div>
 </div>
@@ -21,29 +21,9 @@
 <script>
 export default {
   props: {
-    srcUrl: {
-      type: String,
-      default: "restaurant.svg"
-    },
-    alt: {
-      type: String,
-      default: "aa"
-    },
-    content: {
-      type: String,
-      default: "aa"
-    },
-    washPrice: {
-      type: String,
-      default: '',
-    },
-    dryPrice: {
-      type: String,
-      default: '',
-    },
-    bathTime: {
-      type: String,
-      default: '',
+    dormitoryData: {
+      type: Object,
+      default: null
     }
   },
 }
