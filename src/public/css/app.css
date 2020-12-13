@@ -917,6 +917,11 @@ import用ファイル
   color: #ffffff;
   padding-left: 1.5rem;
   font-size: 16px;
+}
+@media screen and (min-width: 992px) {
+.main-visual-slider__text[data-v-30380e08] {
+    left: 10%;
+}
 }@charset "UTF-8";
 /*
 import用ファイル

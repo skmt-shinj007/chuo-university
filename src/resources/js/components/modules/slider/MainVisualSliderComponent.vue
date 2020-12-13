@@ -92,6 +92,10 @@ export default {
     color: color(white);
     padding-left: interval(3);
     font-size: font(md);
+
+    @include mq(md) {
+      left: 10%;
+    }
   }
 }
 </style>
