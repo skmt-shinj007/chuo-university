@@ -56,7 +56,7 @@
 
     <div class="club__dormitory-cards">
       <div class="club__dormitory-card-item" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-card-component v-bind="dormitoryInformation"/>
+        <dormitory-card-component :dormitoryData="dormitoryInformation"/>
       </div>
     </div>
 
@@ -333,27 +333,37 @@ const scheduleData = [
  */
 const dormitoryData = [
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: '食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。',
   },
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n',
     bathTime: '入浴可能時間：6:00 - 9:30 / 12:00 - 14:00 / 16:30 - 23:00',
   },
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: 'ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。',
   },
   {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
+    icon: {
+      src: 'restaurant.svg',
+      alt: 'アイコンのaltが入ります',
+    },
     content: '洗濯機は、ソフトテニス部の部屋がある階に4台ございます。',
-    washPrice: '洗濯機：無料',
-    dryPrice: '乾燥機：24分 / 100円'
+    price: {
+      wash: '洗濯機：無料',
+      dry: '乾燥機：24分 / 100円'
+    }
   }
 ];
 
