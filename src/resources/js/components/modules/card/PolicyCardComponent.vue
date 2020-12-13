@@ -1,26 +1,18 @@
 <template>
 <div class="policy-card">
-  <span class="policy-card__subTitle" v-if="windowWidth > pcWidth">{{ policySubTitle }}</span>  <!-- tablet以下非表示 -->
-  <span class="policy-card__title">{{ policyTitle }}</span>
-  <p class="policy-card__text">{{ policyContent }}</p>
+  <span class="policy-card__subTitle" v-if="windowWidth > pcWidth">{{ policy.title.sub }}</span>  <!-- tablet以下非表示 -->
+  <span class="policy-card__title">{{ policy.title.main }}</span>
+  <p class="policy-card__text">{{ policy.content }}</p>
 </div>
 </template>
 
 <script>
 export default {
   props: {
-    policyTitle: {
-      type: String,
-      default: 'Title'
-    },
-    policySubTitle: {
-      type: String,
-      default: 'サブタイトル'
-    },
-    policyContent: {
-      type: String,
-      default: '内容が入ります。'
-    },
+    policy: {
+      type: Object,
+      default: null
+    }
   },
 }
 </script>

@@ -13,9 +13,7 @@
         <policy-card-component
         v-for="policy in policies"
         :key="policy.id"
-        :policyTitle="policy.title"
-        :policyContent="policy.content"
-        :policySubTitle="policy.subTitle"/>
+        :policy="policy"/>
       </div>
     </section>
   </div>
@@ -230,21 +228,27 @@ const dormitoryImageApiResponse = [
 const policiesData = [
   {
     id: 1,
-    title: 'Symbol',
+    title: {
+      main: 'Symbol',
+      sub: '部訓'
+    },
     content: '部訓が入ります。部訓が入ります。',
-    subTitle: '部訓'
   },
   {
     id: 2,
-    title: 'Target',
+    title: {
+      main: 'Target',
+      sub: '目標'
+    },
     content: '全日本大学対抗戦優勝',
-    subTitle: '目標'
   },
   {
     id: 3,
-    title: 'mission',
+    title: {
+      main: 'mission',
+      sub: '意義'
+    },
     content: 'ソフトテニスを通じた人間育成',
-    subTitle: '意義'
   }
 ];
 
