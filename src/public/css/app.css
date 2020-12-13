@@ -893,14 +893,14 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.main-visual-alider[data-v-30380e08] {
+.main-visual-slider[data-v-30380e08] {
   height: 100%;
   position: relative;
 }
-.main-visual-alider .swiper-slider[data-v-30380e08] {
+.main-visual-slider .swiper-slider[data-v-30380e08] {
   overflow: hidden;
 }
-.main-visual-alider__image[data-v-30380e08] {
+.main-visual-slider__image[data-v-30380e08] {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
@@ -908,7 +908,7 @@ import用ファイル
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
 }
-.main-visual-alider__text[data-v-30380e08] {
+.main-visual-slider__text[data-v-30380e08] {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1215,7 +1215,6 @@ import用ファイル
 @media screen and (min-width: 992px) {
 .player-card {
     width: 20%;
-    max-width: 12rem;
 }
 }
 .player-card__figure {

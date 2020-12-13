@@ -50,7 +50,6 @@ export default {
 
   @include mq(md) {
     width: 20%;
-    max-width: interval(24);  // 192px
   }
 
   &__figure {
