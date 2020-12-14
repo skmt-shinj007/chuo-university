@@ -1178,6 +1178,11 @@ import用ファイル
 }
 .tag__color--orange {
   background-color: #e56c2c;
+}
+.tag__color--outline-orange {
+  background-color: #ffffff;
+  border: 2px solid #e56c2c;
+  color: #e56c2c;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1576,6 +1581,68 @@ import用ファイル
 .club__photo-button[data-v-357d3955] {
     margin-top: 3.5rem;
 }
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.history-card[data-v-4efdffd6] {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid #091e2f;
+  border-radius: 8px;
+  position: relative;
+}
+.history-card__tag-modal[data-v-4efdffd6] {
+  position: absolute;
+  top: -1.5rem;
+  right: 5%;
+}
+.history-card__tag-date[data-v-4efdffd6] {
+  margin: 0.5rem 1rem;
+}
+.history-card__title[data-v-4efdffd6] {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.history-card__title-main[data-v-4efdffd6] {
+  font-size: 18px;
+}
+.history-card__title-sub[data-v-4efdffd6] {
+  font-size: 12px;
+  font-weight: bold;
+}
+.history-card__text-container[data-v-4efdffd6] {
+  margin: 1rem;
+}
+.history-card__text[data-v-4efdffd6] {
+  letter-spacing: 1.8px;
 }@charset "UTF-8";
 /*
 import用ファイル

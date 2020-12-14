@@ -65,6 +65,12 @@ export default {
     &--orange {
       background-color: color(orange);
     }
+
+    &--outline-orange {
+      background-color: color(white);
+      border: 2px solid color(orange);
+      color: color(orange);
+    }
   }
 }
 </style>
