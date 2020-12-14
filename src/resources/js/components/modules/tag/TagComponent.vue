@@ -47,7 +47,6 @@ export default {
   line-height: 1.9;
 
   &--lg {
-    width: interval(10);
     font-size: font(md);
     line-height: 2;
   }

@@ -1,7 +1,7 @@
 <template>
 <div class="history-card">
   <div class="history-card__tag-modal">
-    <tag-component size="lg"/>
+    <record-tag-component :tagTitle="messages.History.TagTitle"/>
   </div>
 
   <div class="history-card__title">
@@ -23,10 +23,12 @@
 <script>
 // component import
 import TagComponent from '../tag/TagComponent';
+import RecordTagComponent from '../tag/RecordTagComponent';
 
 export default {
   components: {
     TagComponent,
+    RecordTagComponent,
 
   }
 }
@@ -70,6 +72,7 @@ export default {
 
   &__text {
     letter-spacing: 1.8px;
+    font-weight: bold;
   }
 }
 

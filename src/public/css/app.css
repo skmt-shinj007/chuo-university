@@ -1160,7 +1160,6 @@ import用ファイル
   line-height: 1.9;
 }
 .tag--lg {
-  width: 5rem;
   font-size: 16px;
   line-height: 2;
 }
@@ -1612,6 +1611,49 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+.record-tag__row[data-v-b79d4b88] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.record-tag__icon[data-v-b79d4b88] {
+  margin-right: 0.25rem;
+}
+.record-tag__content[data-v-b79d4b88] {
+  font-size: 12px;
+  padding: 0.25rem 0;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
 .history-card[data-v-4efdffd6] {
   width: 90%;
   margin: 0 auto;
@@ -1643,6 +1685,7 @@ import用ファイル
 }
 .history-card__text[data-v-4efdffd6] {
   letter-spacing: 1.8px;
+  font-weight: bold;
 }@charset "UTF-8";
 /*
 import用ファイル
