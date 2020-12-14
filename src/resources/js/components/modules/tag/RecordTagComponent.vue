@@ -33,11 +33,23 @@ export default {
 
   &__icon {
     margin-right: interval(.5);
+
+    @include mq(sm) {
+      margin-right: interval(1);
+    }
+
+    @include mq(md) {
+      margin-right: interval(1.5);
+    }
   }
 
   &__content {
     font-size: font(sm);
     padding: interval(.5) 0;
+
+    @include mq(sm) {
+      font-size: font(base);
+    }
   }
 
 }

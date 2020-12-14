@@ -5,16 +5,16 @@
   </div>
 
   <div class="history-card__title">
-    <h3 class="history-card__title-main">{{ messages.History.CreateClub.Title.Main }}</h3>
-    <span class="history-card__title-sub">{{ messages.History.CreateClub.Title.Sub }}</span>
+    <h3 class="history-card__title-main">{{ Contents.Title.Main }}</h3>
+    <span class="history-card__title-sub">{{ Contents.Title.Sub }}</span>
   </div>
 
   <div class="history-card__tag-date">
-    <tag-component color="outline-orange" :content="messages.History.CreateClub.term"/>
+    <tag-component color="outline-orange" :content="Contents.term"/>
   </div>
 
   <div class="history-card__text-container">
-    <p class="history-card__text nl2br" v-text="messages.History.CreateClub.Text"/>
+    <p class="history-card__text nl2br" v-text="Contents.Text"/>
   </div>
 
 </div>
@@ -29,7 +29,12 @@ export default {
   components: {
     TagComponent,
     RecordTagComponent,
-
+  },
+  props: {
+    Contents: {
+      type: Object,
+      default: null
+    }
   }
 }
 </script>
@@ -50,6 +55,10 @@ export default {
 
   &__tag-date {
     margin: interval(1) interval(2);
+
+    @include mq(sm) {
+      width: interval(22);
+    }
   }
 
   &__title {

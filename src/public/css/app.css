@@ -1620,9 +1620,24 @@ import用ファイル
 .record-tag__icon[data-v-b79d4b88] {
   margin-right: 0.25rem;
 }
+@media screen and (min-width: 560px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.5rem;
+}
+}
+@media screen and (min-width: 992px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.75rem;
+}
+}
 .record-tag__content[data-v-b79d4b88] {
   font-size: 12px;
   padding: 0.25rem 0;
+}
+@media screen and (min-width: 560px) {
+.record-tag__content[data-v-b79d4b88] {
+    font-size: 14px;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1668,6 +1683,11 @@ import用ファイル
 }
 .history-card__tag-date[data-v-4efdffd6] {
   margin: 0.5rem 1rem;
+}
+@media screen and (min-width: 560px) {
+.history-card__tag-date[data-v-4efdffd6] {
+    width: 11rem;
+}
 }
 .history-card__title[data-v-4efdffd6] {
   text-align: center;
@@ -1716,7 +1736,13 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
- */@charset "UTF-8";
+ */
+.history__history-item[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__history-item[data-v-301d0ec5]:last-child {
+  margin-bottom: 0;
+}@charset "UTF-8";
 /*
 import用ファイル
 グローバルに使用する変数やmixinをインポート
