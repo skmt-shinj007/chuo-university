@@ -47,6 +47,10 @@ export default {
   border-radius: radius(hard);
   position: relative;
 
+  @include mq(sm) {
+    padding: interval(1);
+  }
+
   &__tag-modal {
     position: absolute;
     top: - interval(3);

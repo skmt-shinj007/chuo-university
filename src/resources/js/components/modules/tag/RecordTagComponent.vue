@@ -27,6 +27,8 @@ export default {
 
 <style lang="scss" scoped>
 .record-tag {
+  cursor: pointer;
+
   &__row {
     @include flex(row nowrap, center, center);
   }

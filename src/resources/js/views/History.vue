@@ -48,6 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 .history {
+
   &__history-item {
     margin-bottom: interval(10);
 
@@ -55,5 +56,6 @@ export default {
       margin-bottom: 0;
     }
   }
+
 }
 </style>
