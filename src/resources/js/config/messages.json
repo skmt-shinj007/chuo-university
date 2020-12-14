@@ -51,5 +51,18 @@
       "Title": "photo gallery",
       "SubTitle": "フォトギャラリー"
     }
+  },
+  "Member": {
+
+  },
+  "Hakumonkai": {
+
+  },
+  "History": {
+    "Title": {
+      "Main": "club history",
+      "Sub": "沿革"
+    },
+    "Text": "aa"
   }
 }
