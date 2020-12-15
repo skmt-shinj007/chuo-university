@@ -2,7 +2,7 @@
 <div class="history">
 
   <section class="history__time-series section-container">
-    <contents-title-component :title="messages.History.Title.Main" :subTitle="messages.History.Title.Sub"/>
+    <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
     <div class="history-content history-taisho">
       <!-- 大正の歴史 -->
