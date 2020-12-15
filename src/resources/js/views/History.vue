@@ -26,6 +26,12 @@
     </div>
   </section>
 
+  <section class="history__primary-titles section-container">
+    <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
+
+    <table-component :tableItems="TitleAcquisitionData"/>
+  </section>
+
 </div>
 </template>
 
@@ -33,21 +39,25 @@
 // import components
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import HistoryCardComponent from '../components/modules/card/HistoryCardComponent';
+import TableComponent from '../components/modules/table/TableComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
     HistoryCardComponent,
+    TableComponent,
   },
   data() {
     return {
       showaHistories: [],
       heiseiHistories: [],
+      TitleAcquisitionData: [],
     }
   },
   beforeMount() {
     this.$data.messages.History.Showa.forEach(element => this.showaHistories.push(element));
     this.$data.messages.History.Heisei.forEach(element => this.heiseiHistories.push(element));
+    this.$data.messages.TitleAcquisitionData.forEach(element => this.TitleAcquisitionData.push(element));
   },
 }
 </script>

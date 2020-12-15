@@ -1,3 +1,5 @@
+<!-- このコンポーネントを呼ぶときは、親から要素がオブジェクトである「配列」を渡す。 -->
+<!-- ※ オブジェクトの中身は、「key」と「value」で構成し、タイトルになるカラムには key の値が入る。 -->
 <template>
   <table class="common-table">
     <tr class="common-table__record" v-for="(tableItem, n) in tableItems" :key="n">

@@ -143,5 +143,24 @@
     "InterCollege": "全日本大学対抗戦",
     "EastInterCollege": "東日本大学対抗戦",
     "AllJapanUniversityChampionship": "全日本大学王座決定戦"
-  }
+  },
+
+  "TitleAcquisitionData": [
+    {
+      "key": "全日本大学対抗戦",
+      "value": 8
+    },
+    {
+      "key": "東日本大学対抗戦",
+      "value": 11
+    },
+    {
+      "key": "全日本大学王座決定戦",
+      "value": 4
+    },
+    {
+      "key": "全日本学生選手権",
+      "value": 4
+    }
+  ]
 }
