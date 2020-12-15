@@ -49,6 +49,12 @@ export default {
 
   @include mq(sm) {
     padding: interval(1);
+    width: 80%;
+  }
+
+  @include mq(md) {
+    max-width: interval(120);
+    transform: translateX( interval(6) );
   }
 
   &__tag-modal {

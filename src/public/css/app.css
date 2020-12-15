@@ -1682,6 +1682,13 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .history-card[data-v-4efdffd6] {
     padding: 0.5rem;
+    width: 80%;
+}
+}
+@media screen and (min-width: 992px) {
+.history-card[data-v-4efdffd6] {
+    max-width: 60rem;
+    transform: translateX(3rem);
 }
 }
 .history-card__tag-modal[data-v-4efdffd6] {
@@ -1745,10 +1752,83 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.history__history-item[data-v-301d0ec5] {
+.history-content[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__history-item[data-v-301d0ec5]:last-child {
+@media screen and (min-width: 992px) {
+.history-content[data-v-301d0ec5] {
+    position: relative;
+}
+.history-content[data-v-301d0ec5]::before {
+    display: block;
+    content: "";
+    width: 0.5rem;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    left: 8%;
+}
+}
+@media screen and (min-width: 992px) {
+.history-taisho[data-v-301d0ec5]::after {
+    display: block;
+    content: "\5927\6B63";
+    padding: 0 1rem;
+    border-radius: 30px;
+    background-color: #091e2f;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 1rem;
+    left: 8%;
+    transform: translateX(-42%);
+}
+}
+@media screen and (min-width: 992px) {
+.history-showa[data-v-301d0ec5]::after {
+    display: block;
+    content: "\662D\548C";
+    padding: 0 1rem;
+    border-radius: 30px;
+    background-color: #091e2f;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 1rem;
+    left: 8%;
+    transform: translateX(-42%);
+}
+}
+@media screen and (min-width: 992px) {
+.history-heisei[data-v-301d0ec5]::after {
+    display: block;
+    content: "\5E73\6210";
+    padding: 0 1rem;
+    border-radius: 30px;
+    background-color: #091e2f;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 1rem;
+    left: 8%;
+    transform: translateX(-42%);
+}
+}
+.history-item[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history-item[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }@charset "UTF-8";
 /*

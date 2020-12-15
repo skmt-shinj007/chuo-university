@@ -185,3 +185,40 @@
     object-fit: cover;
   }
 }
+
+@mixin historyAgeTag($content: '時代', $position: top) {
+  &::after {
+    display: block;
+    content: $content;
+    padding: 0 interval(2);
+    border-radius: 30px;
+    background-color: color(darkblue);
+    color: color(white);
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    @if $position == top {
+      position: absolute;
+      top: interval(2);
+      left: 8%;
+      transform: translateX(-42%);
+    }
+
+    @if $position == mid {
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      transform: translate(-42%, -50%);
+    }
+
+    @if $position == bottom {
+      position: absolute;
+      bottom: interval(1);
+      left: 8%;
+      transform: translateX(-42%);
+    }
+
+  }
+}

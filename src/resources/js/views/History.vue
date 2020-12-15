@@ -1,22 +1,28 @@
 <template>
 <div class="history">
 
-  <section class="history__history section-container">
+  <section class="history__time-series section-container">
     <contents-title-component :title="messages.History.Title.Main" :subTitle="messages.History.Title.Sub"/>
 
-    <!-- 大正の歴史 -->
-    <div class="history__history-item">
-      <history-card-component :Contents="messages.History.Taisho"/>
+    <div class="history-content history-taisho">
+      <!-- 大正の歴史 -->
+      <div class="history-item">
+        <history-card-component :Contents="messages.History.Taisho"/>
+      </div>
     </div>
 
-    <!-- 昭和の歴史 -->
-    <div class="history__history-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-      <history-card-component :Contents="showaHistory"/>
+    <div class="history-content history-showa">
+      <!-- 昭和の歴史 -->
+      <div class="history-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+        <history-card-component :Contents="showaHistory"/>
+      </div>
     </div>
 
-    <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-    <div class="history__history-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-      <history-card-component :Contents="heiseiHistory"/>
+    <div class="history-content history-heisei">
+      <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
+      <div class="history-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+        <history-card-component :Contents="heiseiHistory"/>
+      </div>
     </div>
   </section>
 
@@ -49,7 +55,45 @@ export default {
 <style lang="scss" scoped>
 .history {
 
-  &__history-item {
+  &-content {
+    margin-bottom: interval(10);
+
+    @include mq(md) {
+      position: relative;
+
+      &::before {
+        display: block;
+        content: '';
+        width: interval(1);
+        height: 100%;
+        border-radius: radius(hard);
+        background-color: darken($color: color(lightgray), $amount: 10%);
+        position: absolute;
+        top: 0;
+        left: 8%;
+      }
+    }
+  }
+
+  &-taisho {
+    @include mq(md) {
+      @include historyAgeTag('大正', top);
+    }
+  }
+
+  &-showa {
+    @include mq(md) {
+      @include historyAgeTag('昭和', top);
+    }
+  }
+
+  &-heisei {
+    @include mq(md) {
+      @include historyAgeTag('平成', top);
+    }
+  }
+
+  &-item {
     margin-bottom: interval(10);
 
     &:last-child {
