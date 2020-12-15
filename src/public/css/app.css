@@ -1160,7 +1160,6 @@ import用ファイル
   line-height: 1.9;
 }
 .tag--lg {
-  width: 5rem;
   font-size: 16px;
   line-height: 2;
 }
@@ -1178,6 +1177,11 @@ import用ファイル
 }
 .tag__color--orange {
   background-color: #e56c2c;
+}
+.tag__color--outline-orange {
+  background-color: #ffffff;
+  border: 2px solid #e56c2c;
+  color: #e56c2c;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1576,6 +1580,256 @@ import用ファイル
 .club__photo-button[data-v-357d3955] {
     margin-top: 3.5rem;
 }
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.record-tag[data-v-b79d4b88] {
+  cursor: pointer;
+}
+.record-tag__row[data-v-b79d4b88] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.record-tag__icon[data-v-b79d4b88] {
+  margin-right: 0.25rem;
+}
+@media screen and (min-width: 560px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.5rem;
+}
+}
+@media screen and (min-width: 992px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.75rem;
+}
+}
+.record-tag__content[data-v-b79d4b88] {
+  font-size: 12px;
+  padding: 0.25rem 0;
+}
+@media screen and (min-width: 560px) {
+.record-tag__content[data-v-b79d4b88] {
+    font-size: 14px;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.history-card[data-v-4efdffd6] {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid #091e2f;
+  border-radius: 8px;
+  position: relative;
+}
+@media screen and (min-width: 560px) {
+.history-card[data-v-4efdffd6] {
+    padding: 0.5rem;
+    width: 80%;
+}
+}
+@media screen and (min-width: 992px) {
+.history-card[data-v-4efdffd6] {
+    max-width: 60rem;
+    transform: translateX(3rem);
+}
+}
+.history-card__tag-modal[data-v-4efdffd6] {
+  position: absolute;
+  top: -1.5rem;
+  right: 5%;
+}
+.history-card__tag-date[data-v-4efdffd6] {
+  margin: 0.5rem 1rem;
+}
+@media screen and (min-width: 560px) {
+.history-card__tag-date[data-v-4efdffd6] {
+    width: 11rem;
+}
+}
+.history-card__title[data-v-4efdffd6] {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.history-card__title-main[data-v-4efdffd6] {
+  font-size: 18px;
+}
+.history-card__title-sub[data-v-4efdffd6] {
+  font-size: 12px;
+  font-weight: bold;
+}
+.history-card__text-container[data-v-4efdffd6] {
+  margin: 1rem;
+}
+.history-card__text[data-v-4efdffd6] {
+  letter-spacing: 1.8px;
+  font-weight: bold;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+.history-content[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 992px) {
+.history-content[data-v-301d0ec5] {
+    position: relative;
+}
+.history-content[data-v-301d0ec5]::before {
+    display: block;
+    content: "";
+    width: 0.5rem;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    left: 8%;
+}
+}
+@media screen and (min-width: 992px) {
+.history-taisho[data-v-301d0ec5]::after {
+    display: block;
+    content: "\5927\6B63";
+    padding: 0 1rem;
+    border-radius: 30px;
+    background-color: #091e2f;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 1rem;
+    left: 8%;
+    transform: translateX(-42%);
+}
+}
+@media screen and (min-width: 992px) {
+.history-showa[data-v-301d0ec5]::after {
+    display: block;
+    content: "\662D\548C";
+    padding: 0 1rem;
+    border-radius: 30px;
+    background-color: #091e2f;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 1rem;
+    left: 8%;
+    transform: translateX(-42%);
+}
+}
+@media screen and (min-width: 992px) {
+.history-heisei[data-v-301d0ec5]::after {
+    display: block;
+    content: "\5E73\6210";
+    padding: 0 1rem;
+    border-radius: 30px;
+    background-color: #091e2f;
+    color: #ffffff;
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 1rem;
+    left: 8%;
+    transform: translateX(-42%);
+}
+}
+.history-item[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history-item[data-v-301d0ec5]:last-child {
+  margin-bottom: 0;
 }@charset "UTF-8";
 /*
 import用ファイル

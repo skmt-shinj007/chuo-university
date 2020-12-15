@@ -47,7 +47,6 @@ export default {
   line-height: 1.9;
 
   &--lg {
-    width: interval(10);
     font-size: font(md);
     line-height: 2;
   }
@@ -64,6 +63,12 @@ export default {
 
     &--orange {
       background-color: color(orange);
+    }
+
+    &--outline-orange {
+      background-color: color(white);
+      border: 2px solid color(orange);
+      color: color(orange);
     }
   }
 }
