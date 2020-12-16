@@ -7,7 +7,7 @@
 
   <div class="background-darkblue">
     <section class="club__policy section-container">
-      <contents-title-component :title="messages.Club.Policy.Title" :subTitle="messages.Club.Policy.SubTitle" color="white"/>
+      <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
 
       <div class="club__policy-cards">
         <policy-card-component
@@ -19,7 +19,7 @@
   </div>
 
   <section class="club__practice section-container">
-    <contents-title-component :title="messages.Club.Practice.Title" :subTitle="messages.Club.Practice.SubTitle"/>
+    <contents-title-component :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
 
     <div class="club__practice-table">
       <table-component :tableItems="practiceInformations"/>
@@ -42,13 +42,13 @@
     </div>
 
     <div class="club__practice-schedule">
-      <h3 class="club__practice-schedule-title">{{ messages.Club.Practice.ScheduleTitle }}</h3>
+      <h3 class="club__practice-schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
       <table-component :tableItems="schedule"/>
     </div>
   </section>
 
   <section class="club__dormitory section-container">
-    <contents-title-component :title="messages.Club.Dormitory.Title" :subTitle="messages.Club.Dormitory.SubTitle"/>
+    <contents-title-component :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
 
     <div class="club__dormitory-lead-wrap">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
@@ -73,23 +73,23 @@
 
   <div class="club__member-bg">
     <section class="club__member section-container">
-      <contents-title-component :title="messages.Club.Member.Title" :subTitle="messages.Club.Member.SubTitle" color="white"/>
+      <contents-title-component :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
 
       <player-slider-component :playerData="playerData"/>
 
       <div class="club__member-number">
-        <h3 class="club__member-number-title">{{ messages.Club.Member.NumbersText }}</h3>
+        <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
         <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
       </div>
 
       <div class="club__member-button">
-        <view-all-button-component :name="messages.Club.Member.Button"/>
+        <view-all-button-component :name="messages.ButtonName.Member"/>
       </div>
     </section>
   </div>
 
   <section class="club__photo section-container">
-    <contents-title-component :title="messages.Club.Photo.Title" :subTitle="messages.Club.Photo.SubTitle"/>
+    <contents-title-component :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
 
     <div class="club__photo-images-container">
       <arrange-images-component :imagesData="imagesData"/>

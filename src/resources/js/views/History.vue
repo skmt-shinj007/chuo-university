@@ -2,7 +2,7 @@
 <div class="history">
 
   <section class="history__time-series section-container">
-    <contents-title-component :title="messages.History.Title.Main" :subTitle="messages.History.Title.Sub"/>
+    <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
     <div class="history-content history-taisho">
       <!-- 大正の歴史 -->
@@ -26,6 +26,12 @@
     </div>
   </section>
 
+  <section class="history__primary-titles section-container">
+    <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
+
+    <icon-table-component :tableItems="titleAcquisitionData"/>
+  </section>
+
 </div>
 </template>
 
@@ -33,21 +39,25 @@
 // import components
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import HistoryCardComponent from '../components/modules/card/HistoryCardComponent';
+import IconTableComponent from '../components/modules/table/IconTableComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
     HistoryCardComponent,
+    IconTableComponent,
   },
   data() {
     return {
       showaHistories: [],
       heiseiHistories: [],
+      titleAcquisitionData: [],
     }
   },
   beforeMount() {
     this.$data.messages.History.Showa.forEach(element => this.showaHistories.push(element));
     this.$data.messages.History.Heisei.forEach(element => this.heiseiHistories.push(element));
+    this.$data.messages.TitleAcquisitionData.forEach(element => this.titleAcquisitionData.push(element));
   },
 }
 </script>
