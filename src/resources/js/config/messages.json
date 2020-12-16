@@ -44,7 +44,7 @@
     },
     "PrimaryTitles": {
       "Main": "primary titles",
-      "Sub": "主要タイトル獲得数"
+      "Sub": "主要タイトル"
     }
   },
 
@@ -148,19 +148,35 @@
   "TitleAcquisitionData": [
     {
       "key": "全日本大学対抗戦",
-      "value": 8
+      "value": 8,
+      "Icon": {
+        "Src": "trophy-solid.svg",
+        "Alt": "トロフィーのアイコン"
+      }
     },
     {
       "key": "東日本大学対抗戦",
-      "value": 11
+      "value": 11,
+      "Icon": {
+        "Src": "trophy-solid.svg",
+        "Alt": "トロフィーのアイコン"
+      }
     },
     {
       "key": "全日本大学王座決定戦",
-      "value": 4
+      "value": 4,
+      "Icon": {
+        "Src": "trophy-solid.svg",
+        "Alt": "トロフィーのアイコン"
+      }
     },
     {
       "key": "全日本学生選手権",
-      "value": 4
+      "value": 4,
+      "Icon": {
+        "Src": "trophy-solid.svg",
+        "Alt": "トロフィーのアイコン"
+      }
     }
   ]
 }

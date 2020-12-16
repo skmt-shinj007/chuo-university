@@ -61,6 +61,7 @@ export default {
 
   &__titles {
     margin-bottom: interval(3);
+    @include bangers();
   }
 
   &__sitemap {
