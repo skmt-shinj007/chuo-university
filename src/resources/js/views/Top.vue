@@ -12,9 +12,8 @@
       </figure>
       <lead-text-component
         class="top__team-contentsCard"
-        title="team"
-        subTitle="チーム紹介"
-        buttonName="メンバーを見る"
+        :titles="messages.SectionTitles.Team"
+        :buttonName="messages.ButtonName.Member"
         :contentsText="messages.Top.TeamDescription"/>
     </section>
 
@@ -24,21 +23,19 @@
       </figure>
       <lead-text-component
         class="top__hakumonkai-contentsCard"
-        title="hakumonkai"
-        subTitle="白門会"
-        buttonName="白門会を知る"
+        :titles="messages.SectionTitles.Hakumonkai"
+        :buttonName="messages.ButtonName.Hakumonkai"
         :contentsText="messages.Top.HakumonkaiDescription"/>
     </section>
 
     <section class="top__menuPanel section-container">
+      <!-- TODO:コンポーネントを v-for しない -->
+      <!-- TODO:data.jsonからオブジェクトを引っ張る -->
       <menu-panel-component
         class="top__menuPanel-item"
-        v-for="menuPanel in menuPanels"
-        :key="menuPanel.panelImageUrl"
-        :panelImageUrl="menuPanel.panelImageUrl"
-        :imageAlt="menuPanel.imageAlt"
-        :buttonName="menuPanel.buttonName"
-        :buttonSize="menuPanel.buttonSize"/>
+        v-for="(menuPanelItem, n) in menuPanels"
+        :key="n"
+        :menuPanelData="menuPanelItem"/>
     </section>
 
     <div class="background-image">
@@ -57,6 +54,7 @@
 
 <script>
 // component import
+import Data from '../config/data.json';
 import MainVisualComponent from '../components/contents/MainVisualComponent';
 import NewsComponent from '../components/contents/NewsComponent.vue';
 import LeadTextComponent from '../components/contents/LeadTextComponent';
@@ -73,28 +71,12 @@ export default {
   },
   data() {
     return {
-      // メニューパネルコンポーネントのデータを定義
-      menuPanels: [
-        {
-          buttonName: '大会結果',
-          buttonSize: 'xs',
-          panelImageUrl: '/image/awards-kantoOpen.jpg',
-          imageAlt: '関東オープン表彰写真',
-        },
-        {
-          buttonName: '活動詳細',
-          buttonSize: 'xs',
-          panelImageUrl: '/image/tennis_court-in_chuoUniv-02.jpg',
-          imageAlt: '中央大学ソフトテニスコートの写真',
-        },
-        {
-          buttonName: 'フォトギャラリー',
-          buttonSize: 'xs',
-          panelImageUrl: '/image/group-photo_spring2019.jpg',
-          imageAlt: '春リーグ宿舎での集合写真',
-        }
-      ]
+      data: Data,
+      menuPanels: [],
     }
+  },
+  beforeMount() {
+    this.$data.data.MenuPanels.forEach(element => this.menuPanels.push(element));
   },
 }
 </script>

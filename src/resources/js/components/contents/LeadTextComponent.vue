@@ -1,6 +1,6 @@
 <template>
 <div class="lead-text card-inner-margin">
-  <contents-title-component class="lead-text__title" :title="title" :subTitle="subTitle" :color="titleColor"/>
+  <contents-title-component class="lead-text__title" :title="titles.Main" :subTitle="titles.Sub" :color="titleColor"/>
   <div class="lead-text__inner">
     <p class="nl2br" v-text="contentsText"></p>
   </div>
@@ -21,8 +21,10 @@ export default {
     ViewAllButtonComponent,
   },
   props: {
-    title: String,       // タイトル文言
-    subTitle: String,    // サブタイトル文言
+    titles: {
+      type: Object,
+      default: null
+    },
     titleColor: String,  // タイトルの色変更（未設定の場合：紺色）
     contentsText: {
       type: String,
