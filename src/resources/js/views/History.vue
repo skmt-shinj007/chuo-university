@@ -7,7 +7,7 @@
     <div class="history-content history-taisho">
       <!-- 大正の歴史 -->
       <div class="history-item">
-        <history-card-component :Contents="messages.History.Taisho"/>
+        <history-card-component :Contents="data.History.Taisho"/>
       </div>
     </div>
 
@@ -37,6 +37,7 @@
 
 <script>
 // import components
+import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import HistoryCardComponent from '../components/modules/card/HistoryCardComponent';
 import IconTableComponent from '../components/modules/table/IconTableComponent';
@@ -49,15 +50,16 @@ export default {
   },
   data() {
     return {
+      data: Data,
       showaHistories: [],
       heiseiHistories: [],
       titleAcquisitionData: [],
     }
   },
   beforeMount() {
-    this.$data.messages.History.Showa.forEach(element => this.showaHistories.push(element));
-    this.$data.messages.History.Heisei.forEach(element => this.heiseiHistories.push(element));
-    this.$data.messages.TitleAcquisitionData.forEach(element => this.titleAcquisitionData.push(element));
+    this.$data.data.History.Showa.forEach(element => this.showaHistories.push(element));
+    this.$data.data.History.Heisei.forEach(element => this.heiseiHistories.push(element));
+    this.$data.data.TitleAcquisitionData.forEach(element => this.titleAcquisitionData.push(element));
   },
 }
 </script>

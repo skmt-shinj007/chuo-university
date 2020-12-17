@@ -10,9 +10,10 @@
       <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
 
       <div class="club__policy-cards">
+        <!-- TODO:コンポーネントに直接 v-for しない -->
         <policy-card-component
-        v-for="policy in policies"
-        :key="policy.id"
+        v-for="(policy, n) in policies"
+        :key="n"
         :policy="policy"/>
       </div>
     </section>
@@ -104,6 +105,7 @@
 
 <script>
 // component import
+import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import GoogleMapComponent from '../components/modules/GoogleMapComponent';
 import PolicyCardComponent from '../components/modules/card/PolicyCardComponent';
@@ -132,8 +134,9 @@ export default {
   },
   data() {
     return {
-      policies: [],
+      data: Data,
       mainVisualImages: [],
+      policies: [],
       practiceInformations: [],
       courtImages: [],
       schedule: [],
@@ -146,21 +149,21 @@ export default {
   },
 
   beforeMount() {
-    // TODO: 以下テストデータ生成
+    // TODO:画像を格納するクラウドストレージからApiで取得する
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
-    policiesData.forEach(element => this.policies.push(element));
-    practiceData.forEach(element => this.practiceInformations.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
-    scheduleData.forEach(element => this.schedule.push(element));
-    dormitoryData.forEach(element => this.dormitoryInformations.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
+    imageApiResponse.forEach(element => this.imagesData.push(element));
+
+    // config/data.jsonから引っ張る
+    this.$data.data.Policy.forEach(element => this.policies.push(element));
+    this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
+    this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
+    this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
+
+    // TODO:DBから情報を引っ張る
     playerApiResponse.forEach(element => this.playerData.push(element));
     memberNumberData.forEach(element => this.memberNumber.push(element));
-    imageApiResponse.forEach(element => this.imagesData.push(element));
-  },
-
-  mounted() {
-    // console.log(this.$data.messages);
   },
 }
 
@@ -223,152 +226,7 @@ const dormitoryImageApiResponse = [
 ];
 
 /**
- * test data : ポリシーの内容
- */
-const policiesData = [
-  {
-    id: 1,
-    title: {
-      main: 'Symbol',
-      sub: '部訓'
-    },
-    content: '部訓が入ります。部訓が入ります。',
-  },
-  {
-    id: 2,
-    title: {
-      main: 'Target',
-      sub: '目標'
-    },
-    content: '全日本大学対抗戦優勝',
-  },
-  {
-    id: 3,
-    title: {
-      main: 'mission',
-      sub: '意義'
-    },
-    content: 'ソフトテニスを通じた人間育成',
-  }
-];
-
-/**
- * test data : 練習情報
- */
-const practiceData = [
-  {
-    key: '練習時間',
-    value: '9:00 ~ 12:00（全体練習）',
-  },
-  {
-    key: '活動期間',
-    value: '2月 - 8月、9月 - 12月',
-  },
-  {
-    key: 'オフ',
-    value: '毎週月曜日・各大会後',
-  },
-  {
-    key: '練習場所',
-    value: '〒192-0393\n東京都八王子市東中野742-1\n中央大学多摩キャンパス第二体育館ソフトテニスコート',
-  }
-];
-
-/**
- * test data : 年間スケジュール
- */
-const scheduleData = [
-  {
-    key: '1月',
-    value: 'オフ'
-  },
-  {
-    key: '2月',
-    value: 'オフ / 練習開始'
-  },
-  {
-    key: '3月',
-    value: '春合宿'
-  },
-  {
-    key: '4月',
-    value: '東都リーグ（春）'
-  },
-  {
-    key: '5月',
-    value: '関東リーグ（春）'
-  },
-  {
-    key: '6月',
-    value: '定期戦（立命館大学）'
-  },
-  {
-    key: '7月',
-    value: '東日本インカレ'
-  },
-  {
-    key: '8月',
-    value: 'インカレ'
-  },
-  {
-    key: '9月',
-    value: '東都リーグ（秋）'
-  },
-  {
-    key: '10月',
-    value: '関東リーグ（秋）'
-  },
-  {
-    key: '11月',
-    value: '大学対抗'
-  },
-  {
-    key: '12月',
-    value: 'オフ / 納会'
-  },
-];
-
-/**
- * test data : 寮のデータ
- */
-const dormitoryData = [
-  {
-    icon: {
-      src: 'restaurant.svg',
-      alt: 'アイコンのaltが入ります',
-    },
-    content: '食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。',
-  },
-  {
-    icon: {
-      src: 'restaurant.svg',
-      alt: 'アイコンのaltが入ります',
-    },
-    content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n',
-    bathTime: '入浴可能時間：6:00 - 9:30 / 12:00 - 14:00 / 16:30 - 23:00',
-  },
-  {
-    icon: {
-      src: 'restaurant.svg',
-      alt: 'アイコンのaltが入ります',
-    },
-    content: 'ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。',
-  },
-  {
-    icon: {
-      src: 'restaurant.svg',
-      alt: 'アイコンのaltが入ります',
-    },
-    content: '洗濯機は、ソフトテニス部の部屋がある階に4台ございます。',
-    price: {
-      wash: '洗濯機：無料',
-      dry: '乾燥機：24分 / 100円'
-    }
-  }
-];
-
-/**
- * test data : 選手情報のテストデータ
+ * test API response : 選手情報
  */
 const playerApiResponse = [
   {
@@ -484,7 +342,7 @@ const playerApiResponse = [
 ];
 
 /**
- * test data : 部員数のデータ
+ * test API response : 部員数
  */
 const memberNumberData = [
   {
@@ -506,7 +364,7 @@ const memberNumberData = [
 ];
 
 /**
- * test Api Data : 画像ストレージからのAPIレスポンス（想定）
+ * test Api response : 画像ストレージからのAPIレスポンス（想定）
  */
 const imageApiResponse = [
   {

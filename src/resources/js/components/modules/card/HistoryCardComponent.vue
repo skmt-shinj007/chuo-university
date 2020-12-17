@@ -1,7 +1,7 @@
 <template>
 <div class="history-card">
   <div class="history-card__tag-modal">
-    <record-tag-component :tagTitle="messages.History.TagTitle"/>
+    <record-tag-component :tagTitle="messages.TagTitles.Record"/>
   </div>
 
   <div class="history-card__title">

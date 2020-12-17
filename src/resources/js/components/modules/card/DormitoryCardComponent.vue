@@ -1,18 +1,18 @@
 <template>
 <div class="dormitory-card">
   <div class="dormitory-card__icon-wrap">
-    <img class="dormitory-card__icon" :src="`/image/${dormitoryData.icon.src}`" :alt="dormitoryData.icon.alt">
+    <img class="dormitory-card__icon" :src="`/image/${dormitoryData.Icon.Src}`" :alt="dormitoryData.Icon.Alt">
   </div>
   <div class="dormitory-card__text-wrap">
-    <p class="dormitory-card__text nl2br" v-text="dormitoryData.content"/>
+    <p class="dormitory-card__text nl2br" v-text="dormitoryData.Content"/>
 
-    <div class="dormitory-card__tag" v-if="dormitoryData.price">
-      <span class="dormitory-card__laundry-price" v-text="dormitoryData.price.wash"></span>
-      <span class="dormitory-card__laundry-price" v-text="dormitoryData.price.dry"></span>
+    <div class="dormitory-card__tag" v-if="dormitoryData.Price">
+      <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Wash"></span>
+      <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Dry"></span>
     </div>
 
-    <div class="dormitory-card__tag" v-if="dormitoryData.bathTime">
-      <span class="dormitory-card__bath-time" v-text="dormitoryData.bathTime"/>
+    <div class="dormitory-card__tag" v-if="dormitoryData.BathTime">
+      <span class="dormitory-card__bath-time" v-text="dormitoryData.BathTime"/>
     </div>
   </div>
 </div>
