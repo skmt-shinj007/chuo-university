@@ -1,4 +1,37 @@
 {
+  "MenuPanels": [
+    {
+      "Btn": {
+        "Name": "大会結果",
+        "Size": "xs"
+      },
+      "Image": {
+        "Src": "awards-kantoOpen.jpg",
+        "Alt": "関東オープン表彰写真"
+      }
+    },
+    {
+      "Btn": {
+        "Name": "活動詳細",
+        "Size": "xs"
+      },
+      "Image": {
+        "Src": "tennis_court-in_chuoUniv-02.jpg",
+        "Alt": "中央大学ソフトテニスコートの写真"
+      }
+    },
+    {
+      "Btn": {
+        "Name": "フォトギャラリー",
+        "Size": "xs"
+      },
+      "Image": {
+        "Src": "group-photo_spring2019.jpg",
+        "Alt": "春リーグ宿舎での集合写真"
+      }
+    }
+  ],
+
   "Policy": [
     {
     "Title": {

@@ -19,6 +19,14 @@
   },
 
   "SectionTitles": {
+    "Team": {
+      "Main": "team",
+      "Sub": "チーム紹介"
+    },
+    "Hakumonkai": {
+      "Main": "hakumonkai",
+      "Sub": "白門会"
+    },
     "Policy": {
       "Main": "team policy",
       "Sub": "方針"
@@ -55,7 +63,8 @@
   },
 
   "ButtonName": {
-    "Member": "メンバーを見る"
+    "Member": "メンバーを見る",
+    "Hakumonkai": "白門会を知る"
   },
 
   "TagTitles": {
