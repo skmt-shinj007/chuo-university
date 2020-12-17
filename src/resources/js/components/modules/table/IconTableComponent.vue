@@ -7,7 +7,7 @@
       <th class="icon-table__key">{{ tableItem.key }}{{ addKeyText }}</th>
 
       <td class="icon-table__value">
-        <img class="icon-table__icon" :src="`/image/${tableItem.Icon.Src}`" :alt="tableItem.Icon.Alt">
+        <svg-vue class="icon-table__icon" :icon="tableItem.Icon.Src" :alt="tableItem.Icon.Alt"/>
         <span class="icon-table__value-unit" v-text="`× ${tableItem.value}`"/>
       </td>
     </tr>
@@ -66,7 +66,8 @@ export default {
   }
 
   &__icon {
-    width: interval(3);
+    width: interval(2.5);
+    color: #e3aa00;
   }
 }
 </style>

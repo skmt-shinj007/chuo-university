@@ -1,8 +1,7 @@
 <template>
 <div class="record-tag">
   <tag-component class="record-tag__row" size="lg">
-    <!-- svg要素は後々調整 -->
-    <object class="record-tag__icon" type="image/svg+xml" data="/image/tennis-racket.svg" width="24" height="24"></object>
+    <svg-vue icon="tennis-racket" class="record-tag__icon"></svg-vue>
     <span class="record-tag__content">{{ tagTitle }}</span>
   </tag-component>
 </div>
@@ -35,6 +34,8 @@ export default {
 
   &__icon {
     margin-right: interval(.5);
+    width: interval(3);
+    height: interval(3);
 
     @include mq(sm) {
       margin-right: interval(1);

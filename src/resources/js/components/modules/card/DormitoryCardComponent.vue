@@ -1,17 +1,19 @@
 <template>
 <div class="dormitory-card">
+
   <div class="dormitory-card__icon-wrap">
-    <img class="dormitory-card__icon" :src="`/image/${dormitoryData.Icon.Src}`" :alt="dormitoryData.Icon.Alt">
+    <svg-vue class="dormitory-card__icon" :icon="dormitoryData.Icon.Src" :alt="dormitoryData.Icon.Alt"/>
   </div>
+
   <div class="dormitory-card__text-wrap">
     <p class="dormitory-card__text nl2br" v-text="dormitoryData.Content"/>
 
-    <div class="dormitory-card__tag" v-if="dormitoryData.Price">
+    <div class="dormitory-card__complement-text" v-if="dormitoryData.Price">
       <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Wash"></span>
       <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Dry"></span>
     </div>
 
-    <div class="dormitory-card__tag" v-if="dormitoryData.BathTime">
+    <div class="dormitory-card__complement-text" v-if="dormitoryData.BathTime">
       <span class="dormitory-card__bath-time" v-text="dormitoryData.BathTime"/>
     </div>
   </div>
@@ -41,20 +43,20 @@ export default {
   }
 
   &__icon-wrap {
+    @include flex(row nowrap, center, center);
     border: 2px solid color(darkblue);
     border-radius: radius(circle);
     padding: interval(1.5);
-    margin-right: interval(1);
   }
 
   &__icon {
-    width: icon(lg);
-    height: icon(lg);
-    fill: color(orange);
+    width: interval(3);
+    height: interval(3);
   }
 
   &__text-wrap {
     padding: interval(1);
+    margin-left: interval(1);
   }
 
   &__text {
@@ -63,7 +65,7 @@ export default {
     line-height: 1.5;
   }
 
-  &__tag {
+  &__complement-text {
     margin-top: interval(0.5);
   }
 

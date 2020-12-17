@@ -505,6 +505,7 @@ const imageApiResponse = [
     &-card-item {
       width: 90%;
       margin: 0 auto;
+      @include flex(row nowrap, center, center);
 
       @include mq(sm) {
         width: 70%;
