@@ -129,14 +129,14 @@
   "Dormitory": [
     {
       "Icon": {
-        "Src": "restaurant.svg",
+        "Src": "restaurant",
         "Alt": "レストランのアイコン"
       },
       "Content": "食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。"
     },
     {
       "Icon": {
-        "Src": "restaurant.svg",
+        "Src": "restaurant",
         "Alt": "お風呂のアイコン"
       },
       "Content": "南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n",
@@ -144,14 +144,14 @@
     },
     {
       "Icon": {
-        "Src": "restaurant.svg",
+        "Src": "restaurant",
         "Alt": "ベッドのアイコン"
       },
       "Content": "ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。"
     },
     {
       "Icon": {
-        "Src": "restaurant.svg",
+        "Src": "restaurant",
         "Alt": "洗濯機のアイコン"
       },
       "Content": "洗濯機は、ソフトテニス部の部屋がある階に4台ございます。ソフトテニス部以外にも同階に住んでいる部との供用になります。",
@@ -234,7 +234,7 @@
       "key": "全日本大学対抗戦",
       "value": 8,
       "Icon": {
-        "Src": "trophy-solid.svg",
+        "Src": "trophy-solid",
         "Alt": "トロフィーのアイコン"
       }
     },
@@ -242,7 +242,7 @@
       "key": "東日本大学対抗戦",
       "value": 11,
       "Icon": {
-        "Src": "trophy-solid.svg",
+        "Src": "trophy-solid",
         "Alt": "トロフィーのアイコン"
       }
     },
@@ -250,7 +250,7 @@
       "key": "全日本大学王座決定戦",
       "value": 4,
       "Icon": {
-        "Src": "trophy-solid.svg",
+        "Src": "trophy-solid",
         "Alt": "トロフィーのアイコン"
       }
     },
@@ -258,7 +258,7 @@
       "key": "全日本学生選手権",
       "value": 4,
       "Icon": {
-        "Src": "trophy-solid.svg",
+        "Src": "trophy-solid",
         "Alt": "トロフィーのアイコン"
       }
     }

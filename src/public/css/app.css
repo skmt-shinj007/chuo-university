@@ -1089,25 +1089,28 @@ import用ファイル
   margin-bottom: 0;
 }
 .dormitory-card__icon-wrap[data-v-2a1efbb8] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #091e2f;
   border-radius: 100%;
   padding: 0.75rem;
-  margin-right: 0.5rem;
 }
 .dormitory-card__icon[data-v-2a1efbb8] {
-  width: 32px;
-  height: 32px;
-  fill: #e56c2c;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .dormitory-card__text-wrap[data-v-2a1efbb8] {
   padding: 0.5rem;
+  margin-left: 0.5rem;
 }
 .dormitory-card__text[data-v-2a1efbb8] {
   font-size: 12px;
   font-weight: bold;
   line-height: 1.5;
 }
-.dormitory-card__tag[data-v-2a1efbb8] {
+.dormitory-card__complement-text[data-v-2a1efbb8] {
   margin-top: 0.25rem;
 }
 .dormitory-card__laundry-price[data-v-2a1efbb8] {
@@ -1498,6 +1501,10 @@ import用ファイル
 .club__dormitory-card-item[data-v-357d3955] {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 560px) {
 .club__dormitory-card-item[data-v-357d3955] {
@@ -1622,6 +1629,8 @@ import用ファイル
 }
 .record-tag__icon[data-v-b79d4b88] {
   margin-right: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 @media screen and (min-width: 560px) {
 .record-tag__icon[data-v-b79d4b88] {
@@ -1783,7 +1792,8 @@ import用ファイル
   margin-left: 0.5rem;
 }
 .icon-table__icon {
-  width: 1.5rem;
+  width: 1.25rem;
+  color: #e3aa00;
 }@charset "UTF-8";
 /*
 import用ファイル
