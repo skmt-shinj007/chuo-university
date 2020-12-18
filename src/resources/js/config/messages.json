@@ -54,6 +54,10 @@
     "PrimaryTitles": {
       "Main": "primary titles",
       "Sub": "主要タイトル"
+    },
+    "Champions": {
+      "Main": "champions",
+      "Sub": "天皇杯優勝者"
     }
   },
 

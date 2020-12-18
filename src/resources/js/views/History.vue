@@ -32,6 +32,17 @@
     <icon-table-component :tableItems="titleAcquisitionData"/>
   </section>
 
+  <div class="background-darkblue">
+    <section class="history__champions">
+      <contents-title-component
+        :title="messages.SectionTitles.Champions.Main"
+        :subTitle="messages.SectionTitles.Champions.Sub"
+        color="white"/>
+
+
+    </section>
+  </div>
+
 </div>
 </template>
 
@@ -111,6 +122,14 @@ export default {
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__primary-titles {
+    margin-bottom: interval(10);
+  }
+
+  &__champions {
+    padding: interval(10) 0;
   }
 
 }
