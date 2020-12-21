@@ -262,5 +262,346 @@
         "Alt": "トロフィーのアイコン"
       }
     }
+  ],
+
+  "Champions": [
+    {
+      "Player01": {
+        "Name": "岩佐 正治",
+        "Belong": "東京",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "石川 長一",
+        "Belong": "東京",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "昭和23年"
+        },
+        {
+          "key": "日付",
+          "value": "8/28-29"
+        },
+        {
+          "key": "場所",
+          "value": "名古屋"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "岩佐 正治",
+        "Belong": "東京",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "安友 省三",
+        "Belong": "東京",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "昭和24年"
+        },
+        {
+          "key": "日付",
+          "value": "8/27-28"
+        },
+        {
+          "key": "場所",
+          "value": "東京後楽園コート"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "石川 恵脩",
+        "Belong": "東京",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "右近 義信",
+        "Belong": "東京",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "昭和42年"
+        },
+        {
+          "key": "日付",
+          "value": "8/12-13"
+        },
+        {
+          "key": "場所",
+          "value": "伊勢市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "竹島 満",
+        "Belong": "山口",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "小林 元治",
+        "Belong": "東京",
+        "OB": true
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "昭和45年"
+        },
+        {
+          "key": "日付",
+          "value": "8/21-23"
+        },
+        {
+          "key": "場所",
+          "value": "いわき市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成7年"
+        },
+        {
+          "key": "日付",
+          "value": "9/29 - 10/30"
+        },
+        {
+          "key": "場所",
+          "value": "浜松市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成8年"
+        },
+        {
+          "key": "日付",
+          "value": "9/27-29"
+        },
+        {
+          "key": "場所",
+          "value": "川口市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成9年"
+        },
+        {
+          "key": "日付",
+          "value": "9/26-28"
+        },
+        {
+          "key": "場所",
+          "value": "鈴鹿市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成11年"
+        },
+        {
+          "key": "日付",
+          "value": "9/21-24"
+        },
+        {
+          "key": "場所",
+          "value": "佐賀市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成13年"
+        },
+        {
+          "key": "日付",
+          "value": "9/21-23"
+        },
+        {
+          "key": "場所",
+          "value": "松山市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成17年"
+        },
+        {
+          "key": "日付",
+          "value": "9/23-25"
+        },
+        {
+          "key": "場所",
+          "value": "厚木市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成18年"
+        },
+        {
+          "key": "日付",
+          "value": "10/20-25"
+        },
+        {
+          "key": "場所",
+          "value": "福岡市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成21年"
+        },
+        {
+          "key": "日付",
+          "value": "10/16-18"
+        },
+        {
+          "key": "場所",
+          "value": "三木市"
+        }
+      ]
+    },
+    {
+      "Player01": {
+        "Name": "中堀 成生",
+        "Belong": "広島",
+        "OB": true
+      },
+      "Player02": {
+        "Name": "高川 経生",
+        "Belong": "広島",
+        "OB": false
+      },
+      "TournamentInformation": [
+        {
+          "key": "年度",
+          "value": "平成22年"
+        },
+        {
+          "key": "日付",
+          "value": "10/15-17"
+        },
+        {
+          "key": "場所",
+          "value": "徳島市"
+        }
+      ]
+    }
   ]
 }

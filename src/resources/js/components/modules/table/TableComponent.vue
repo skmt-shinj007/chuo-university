@@ -4,7 +4,7 @@
   <table class="common-table">
     <tr class="common-table__record" v-for="(tableItem, n) in tableItems" :key="n">
       <th class="common-table__key">{{ tableItem.key }}{{ addKeyText }}</th>
-      <td class="common-table__value">{{ tableItem.value }}{{ addValueText }}</td>
+      <td class="common-table__value" :class="bgClassChange">{{ tableItem.value }}{{ addValueText }}</td>
     </tr>
   </table>
 </template>
@@ -23,6 +23,15 @@ export default {
     addValueText: {
       type: String,
       default: ''
+    },
+    valueTransparent: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    bgClassChange() {
+      return (this.valueTransparent) ? `common-table__value--transparent` : null;
     }
   },
 }
@@ -54,6 +63,10 @@ export default {
     width: 70%;
     background-color: color(white);
     white-space: pre-wrap;
+
+    &--transparent {
+      background-color: rgba($color: color(white), $alpha: 0);
+    }
   }
 }
 </style>

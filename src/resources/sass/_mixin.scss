@@ -87,8 +87,10 @@
     }
   }
 }
-
-// テキストの前に線を入れる装飾 (- text)
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 @mixin text-before-line($width, $height, $bg-color) {
   &::before {
     display: block;

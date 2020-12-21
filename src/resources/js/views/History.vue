@@ -39,7 +39,11 @@
         :subTitle="messages.SectionTitles.Champions.Sub"
         color="white"/>
 
-
+      <div class="history__champions-card-row">
+        <div class="history__champions-card" v-for="(champion, n) in champions" :key="n">
+          <champions-card-component :cardElement="champion"/>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -52,12 +56,14 @@ import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import HistoryCardComponent from '../components/modules/card/HistoryCardComponent';
 import IconTableComponent from '../components/modules/table/IconTableComponent';
+import ChampionsCardComponent from '../components/modules/card/ChampionsCardComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
     HistoryCardComponent,
     IconTableComponent,
+    ChampionsCardComponent,
   },
   data() {
     return {
@@ -65,12 +71,14 @@ export default {
       showaHistories: [],
       heiseiHistories: [],
       titleAcquisitionData: [],
+      champions: [],
     }
   },
   beforeMount() {
     this.$data.data.History.Showa.forEach(element => this.showaHistories.push(element));
     this.$data.data.History.Heisei.forEach(element => this.heiseiHistories.push(element));
     this.$data.data.TitleAcquisitionData.forEach(element => this.titleAcquisitionData.push(element));
+    this.$data.data.Champions.forEach(element => this.champions.push(element));
   },
 }
 </script>
@@ -130,6 +138,32 @@ export default {
 
   &__champions {
     padding: interval(10) 0;
+  }
+
+  &__champions-card-row {
+    @include mq(sm) {
+      @include flex(row wrap);
+      margin: 0 auto;
+      max-width: interval(80);
+    }
+
+    @include mq(md) {
+      max-width: interval(120);
+    }
+  }
+
+  &__champions-card {
+    margin: 0 interval(2) interval(5) interval(2);
+
+    @include mq(sm) {
+      margin: 0;
+      padding: interval(1);
+      width: 50%;
+    }
+
+    @include mq(md) {
+      width: 33.33%;
+    }
   }
 
 }
