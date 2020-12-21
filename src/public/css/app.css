@@ -29,6 +29,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .main-visual[data-v-3ff6fe5a] {
   width: 100%;
   height: 100vh;
@@ -87,6 +91,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .contents-title {
   padding-bottom: 2.5rem;
@@ -160,6 +168,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .text-list {
   width: 100%;
   list-style: disc;
@@ -219,6 +231,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .news[data-v-9b317ac0] {
   width: 80%;
   background-color: #ffffff;
@@ -257,6 +273,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .view-all-button {
   width: 80%;
@@ -348,6 +368,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .lead-text {
   width: 80%;
   background-color: #ffffff;
@@ -403,6 +427,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .menu-panel__figure[data-v-481a74cb] {
   width: 100%;
@@ -465,6 +493,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .top[data-v-bae950f4] {
   position: relative;
@@ -670,6 +702,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .google-map__map[data-v-161a410d] {
   width: 100%;
   height: 300px;
@@ -723,6 +759,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .policy-card[data-v-b056e422] {
   width: 160px;
@@ -819,6 +859,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .image-slider__container[data-v-6cd5e234] {
   position: relative;
   position: relative;
@@ -893,6 +937,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .main-visual-slider[data-v-30380e08] {
   height: 100%;
   position: relative;
@@ -953,6 +1001,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .common-table {
   width: 90%;
   margin: 0 auto;
@@ -976,6 +1028,9 @@ import用ファイル
   width: 70%;
   background-color: #ffffff;
   white-space: pre-wrap;
+}
+.common-table__value--transparent {
+  background-color: rgba(255, 255, 255, 0);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1006,6 +1061,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .caption-bar-image[data-v-7fa4fe02] {
   width: 100%;
@@ -1075,6 +1134,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .dormitory-card[data-v-2a1efbb8] {
   width: 100%;
@@ -1154,6 +1217,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .tag {
   margin: 0.25rem;
   color: #ffffff;
@@ -1215,6 +1282,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .player-card {
   width: 60%;
@@ -1298,6 +1369,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .slider .player-card[data-v-53189f00] {
   margin: 0 auto;
 }
@@ -1335,6 +1410,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .arrange-images__list-container[data-v-bb84db5a] {
   display: flex;
@@ -1407,6 +1486,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
@@ -1618,6 +1701,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .record-tag[data-v-b79d4b88] {
   cursor: pointer;
 }
@@ -1680,6 +1767,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .history-card[data-v-4efdffd6] {
   width: 90%;
@@ -1761,6 +1852,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .icon-table {
   width: 90%;
   margin: 0 auto;
@@ -1824,6 +1919,120 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.champions-card[data-v-3ea95d82] {
+  background-color: #ffffff;
+  padding: 1rem;
+  position: relative;
+  border-radius: 2px;
+}
+.champions-card__background[data-v-3ea95d82] {
+  width: 8rem;
+  height: 6.5rem;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url("/svg/trophy-solid-gold.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.champions-card__title-wrapper[data-v-3ea95d82] {
+  padding-bottom: 0.5rem;
+}
+.champions-card__title[data-v-3ea95d82] {
+  font-size: 18px;
+}
+.champions-card__pair[data-v-3ea95d82] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 560px) {
+.champions-card__pair[data-v-3ea95d82] {
+    display: block;
+}
+}
+.champions-card__player[data-v-3ea95d82] {
+  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.champions-card__player[data-v-3ea95d82] {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+}
+}
+.champions-card__player-name[data-v-3ea95d82] {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+}
+.champions-card__icon[data-v-3ea95d82] {
+  width: 1.5rem;
+  margin-left: 0.25rem;
+  fill: #091e2f;
+}
+.champions-card__tournament-info-title[data-v-3ea95d82] {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.champions-card__tournament-info-title[data-v-3ea95d82]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #091e2f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .history-content[data-v-301d0ec5] {
   margin-bottom: 5rem;
@@ -1903,6 +2112,42 @@ import用ファイル
 }
 .history-item[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
+}
+.history__primary-titles[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__champions[data-v-301d0ec5] {
+  padding: 5rem 0;
+}
+@media screen and (min-width: 560px) {
+.history__champions-card-row[data-v-301d0ec5] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 auto;
+    max-width: 40rem;
+}
+}
+@media screen and (min-width: 992px) {
+.history__champions-card-row[data-v-301d0ec5] {
+    max-width: 60rem;
+}
+}
+.history__champions-card[data-v-301d0ec5] {
+  margin: 0 1rem 2.5rem 1rem;
+}
+@media screen and (min-width: 560px) {
+.history__champions-card[data-v-301d0ec5] {
+    margin: 0;
+    padding: 0.5rem;
+    width: 50%;
+}
+}
+@media screen and (min-width: 992px) {
+.history__champions-card[data-v-301d0ec5] {
+    width: 33.33%;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1933,6 +2178,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .test[data-v-b28ce99e] {
   padding: 100px 0;
@@ -2521,6 +2770,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .header-button {
   background-color: #091e2f;
   color: #ffffff;
@@ -2605,6 +2858,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .header[data-v-6832e7cf] {
   width: 100%;
@@ -2748,6 +3005,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .footer-title[data-v-6d5a9373] {
   text-align: center;
 }
@@ -2789,6 +3050,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .site-map {
   width: 60%;
@@ -2864,6 +3129,10 @@ import用ファイル
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .external-link {
   width: 60%;
   max-width: 300px;
@@ -2932,6 +3201,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .footer[data-v-060e08fe] {
   background-color: #091e2f;
@@ -3043,6 +3316,10 @@ import用ファイル
 /**
  * サイト内で扱うsass関数を定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 /* Reset box-model and set borders */
 /* ============================================ */
