@@ -1018,6 +1018,12 @@ import用ファイル
   width: 100%;
   border: 1px solid #f2f2f2;
 }
+.common-table__record--xs {
+  font-size: 10px;
+}
+.common-table__record--sm {
+  font-size: 12px;
+}
 .common-table__key {
   width: 30%;
   background-color: #f8f9fa;
@@ -2131,7 +2137,7 @@ import用ファイル
 }
 @media screen and (min-width: 992px) {
 .history__champions-card-row[data-v-301d0ec5] {
-    max-width: 60rem;
+    max-width: 75rem;
 }
 }
 .history__champions-card[data-v-301d0ec5] {
