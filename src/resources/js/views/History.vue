@@ -33,7 +33,7 @@
   </section>
 
   <div class="background-darkblue">
-    <section class="history__champions">
+    <section class="history__champions section-container">
       <contents-title-component
         :title="messages.SectionTitles.Champions.Main"
         :subTitle="messages.SectionTitles.Champions.Sub"
@@ -148,7 +148,7 @@ export default {
     }
 
     @include mq(md) {
-      max-width: interval(120);
+      max-width: interval(150);
     }
   }
 

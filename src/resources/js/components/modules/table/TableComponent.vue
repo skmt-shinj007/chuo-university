@@ -2,7 +2,7 @@
 <!-- ※ オブジェクトの中身は、「key」と「value」で構成し、タイトルになるカラムには key の値が入る。 -->
 <template>
   <table class="common-table">
-    <tr class="common-table__record" v-for="(tableItem, n) in tableItems" :key="n">
+    <tr class="common-table__record" :class="fontSizeChange" v-for="(tableItem, n) in tableItems" :key="n">
       <th class="common-table__key">{{ tableItem.key }}{{ addKeyText }}</th>
       <td class="common-table__value" :class="bgClassChange">{{ tableItem.value }}{{ addValueText }}</td>
     </tr>
@@ -27,11 +27,18 @@ export default {
     valueTransparent: {
       type: Boolean,
       default: false
+    },
+    font: {
+      type: String,
+      default: null
     }
   },
   computed: {
     bgClassChange() {
       return (this.valueTransparent) ? `common-table__value--transparent` : null;
+    },
+    fontSizeChange() {
+      return (this.font) ? `common-table__record--${this.font}` : null;
     }
   },
 }
@@ -50,6 +57,14 @@ export default {
   &__record {
     width: 100%;
     border: 1px solid color(lightgray);
+
+    &--xs {
+      font-size: font(xs);
+    }
+
+    &--sm {
+      font-size: font(sm);
+    }
   }
 
   &__key {

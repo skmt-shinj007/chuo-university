@@ -26,7 +26,10 @@
 
   <div class="champions-card__tournament-info">
     <h3 class="champions-card__tournament-info-title">{{ messages.ContentsTitles.TournamentInformation }}</h3>
-    <table-component :tableItems="cardElement.TournamentInformation" :valueTransparent="true"/>
+    <table-component
+      :tableItems="cardElement.TournamentInformation"
+      :valueTransparent="true"
+      font="sm"/>
   </div>
 
 </div>
