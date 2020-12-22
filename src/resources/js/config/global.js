@@ -17,7 +17,6 @@ export default {
   },
 
   created() {
-
     // ウインドウ幅を取得
     this.windowWidth = window.innerWidth;
     window.addEventListener('resize', () => {
@@ -26,7 +25,6 @@ export default {
   },
 
   mounted() {
-
     // スクロール量を取得
     this.scrollAmount = window.scrollY;
     window.addEventListener('scroll', () => {
@@ -35,7 +33,6 @@ export default {
   },
 
   beforeDestroy() {
-
     // コンポーネント破棄直前に追加したイベントをリスナーから削除
     window.removeEventListener('resize', () => {
       this.windowWidth = window.innerWidth;
@@ -47,10 +44,11 @@ export default {
 
   /**
    * グローバルで使用するメソッドを定義
-   * コンポーネントからのアクセス：this.method()
+   * コンポーネントからのアクセス：this.getElements()
+   * 参考：https://infoteck-life.com/a0186-js-dom-id-multiple/
    */
   methods: {
-    getElements() {  // https://infoteck-life.com/a0186-js-dom-id-multiple/
+    getElements() {
       let elm = {};
       let elements = {};  // 一括でidを取得したデータが格納される:Object
       let id = '';        // id名が入る:String
