@@ -1779,8 +1779,6 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .history-card[data-v-4efdffd6] {
-  width: 90%;
-  margin: 0 auto;
   border: 2px solid #091e2f;
   border-radius: 8px;
   position: relative;
@@ -1788,13 +1786,6 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .history-card[data-v-4efdffd6] {
     padding: 0.5rem;
-    width: 80%;
-}
-}
-@media screen and (min-width: 992px) {
-.history-card[data-v-4efdffd6] {
-    max-width: 60rem;
-    transform: translateX(3rem);
 }
 }
 .history-card__tag-modal[data-v-4efdffd6] {
@@ -2040,14 +2031,27 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.history-content[data-v-301d0ec5] {
-  margin-bottom: 5rem;
+.history__time-series-container[data-v-301d0ec5] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.history__time-series-content[data-v-301d0ec5] {
+  width: 90%;
+  margin: 0 auto;
+}
+.history__age[data-v-301d0ec5] {
+  display: none;
 }
 @media screen and (min-width: 992px) {
-.history-content[data-v-301d0ec5] {
+.history__age[data-v-301d0ec5] {
+    display: block;
     position: relative;
+    width: 10rem;
+    margin: 0 1.5rem;
 }
-.history-content[data-v-301d0ec5]::before {
+.history__age[data-v-301d0ec5]::before {
     display: block;
     content: "";
     width: 0.5rem;
@@ -2056,67 +2060,34 @@ import用ファイル
     background-color: #d9d9d9;
     position: absolute;
     top: 0;
-    left: 8%;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
 }
 }
-@media screen and (min-width: 992px) {
-.history-taisho[data-v-301d0ec5]::after {
-    display: block;
-    content: "\5927\6B63";
-    padding: 0 1rem;
-    border-radius: 30px;
-    background-color: #091e2f;
-    color: #ffffff;
-    text-align: center;
-    line-height: 2;
-    font-weight: bold;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 1rem;
-    left: 8%;
-    transform: translateX(-42%);
+.history__age-tag[data-v-301d0ec5] {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background-color: #091e2f;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0.25rem;
+  position: absolute;
+  top: 0;
+  transition: all 1s ease-out;
 }
-}
-@media screen and (min-width: 992px) {
-.history-showa[data-v-301d0ec5]::after {
-    display: block;
-    content: "\662D\548C";
-    padding: 0 1rem;
-    border-radius: 30px;
-    background-color: #091e2f;
-    color: #ffffff;
-    text-align: center;
-    line-height: 2;
-    font-weight: bold;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 1rem;
-    left: 8%;
-    transform: translateX(-42%);
-}
-}
-@media screen and (min-width: 992px) {
-.history-heisei[data-v-301d0ec5]::after {
-    display: block;
-    content: "\5E73\6210";
-    padding: 0 1rem;
-    border-radius: 30px;
-    background-color: #091e2f;
-    color: #ffffff;
-    text-align: center;
-    line-height: 2;
-    font-weight: bold;
-    letter-spacing: 2px;
-    position: absolute;
-    top: 1rem;
-    left: 8%;
-    transform: translateX(-42%);
-}
-}
-.history-item[data-v-301d0ec5] {
+.history__cards[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history-item[data-v-301d0ec5]:last-child {
+.history__cards[data-v-301d0ec5]:last-child {
+  margin-bottom: 0;
+}
+.history__card-item[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__card-item[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
 .history__primary-titles[data-v-301d0ec5] {
