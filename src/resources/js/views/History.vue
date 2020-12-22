@@ -4,24 +4,42 @@
   <section class="history__time-series section-container">
     <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
-    <div class="history-content history-taisho">
-      <!-- 大正の歴史 -->
-      <div class="history-item">
-        <history-card-component :Contents="data.History.Taisho"/>
-      </div>
-    </div>
+    <div class="history__time-series-container" id="historySection">
 
-    <div class="history-content history-showa">
-      <!-- 昭和の歴史 -->
-      <div class="history-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-        <history-card-component :Contents="showaHistory"/>
+      <div class="history__age">
+        <div
+          id="historyAgeTag"
+          class="history__age-tag"
+          :style="{ transform: `translateY(${scrollLimit}px)`}"
+          v-text="ageChange">
+        </div>
       </div>
-    </div>
 
-    <div class="history-content history-heisei">
-      <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-      <div class="history-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-        <history-card-component :Contents="heiseiHistory"/>
+      <div class="history__time-series-wrap">
+        <div class="history__time-series-content">
+
+          <div class="history__cards" id="historyTaisho">
+            <!-- 大正の歴史 -->
+            <div class="history__card-item">
+              <history-card-component :Contents="data.History.Taisho"/>
+            </div>
+          </div>
+
+          <div class="history__cards" id="historyShowa">
+            <!-- 昭和の歴史 -->
+            <div class="history__card-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+              <history-card-component :Contents="showaHistory"/>
+            </div>
+          </div>
+
+          <div class="history__cards" id="historyHeisei">
+            <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
+            <div class="history__card-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+              <history-card-component :Contents="heiseiHistory"/>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>
@@ -68,29 +86,112 @@ export default {
   data() {
     return {
       data: Data,
+      ageWard: '',
+      ids: null,
       showaHistories: [],
       heiseiHistories: [],
       titleAcquisitionData: [],
       champions: [],
+      height: {
+        historySection: 0,
+        scrollTag: 0,
+        historyTaisho: 0,
+        historyShowa: 0,
+        historyHeisei: 0,
+      },
+      cardsMarginBottom: 0,
     }
   },
+
   beforeMount() {
+    // マウントされる直前に各データを data() で定義したプロパティに移管
     this.$data.data.History.Showa.forEach(element => this.showaHistories.push(element));
     this.$data.data.History.Heisei.forEach(element => this.heiseiHistories.push(element));
     this.$data.data.TitleAcquisitionData.forEach(element => this.titleAcquisitionData.push(element));
     this.$data.data.Champions.forEach(element => this.champions.push(element));
   },
+
+  mounted() {
+    // 要素のidを複数取得 => global.js > methods
+    this.ids = this.getElements('historySection', 'historyAgeTag', 'historyTaisho', 'historyShowa', 'historyHeisei');
+
+    // .history__cards の margin-bottom を数値で取得
+    this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
+
+    /**
+     * スクロールタグのスクロール上限を設定するために、沿革セクション要素の高さを取得
+     * TODO:関数とか使って一括で指定できそう(help)
+     */
+    this.height.historySection = this.ids.historySection.offsetHeight;
+    this.height.scrollTag      = this.ids.historyAgeTag.offsetHeight
+    this.height.historyTaisho  = this.ids.historyTaisho.offsetHeight;
+    this.height.historyShowa   = this.ids.historyShowa.offsetHeight;
+    this.height.historyHeisei  = this.ids.historyHeisei.offsetHeight;
+
+    // for (let id in this.ids) {
+    //   if (Object.hasOwnProperty.call(this.ids, id)) {
+    //     console.log(id);
+    //     let elementHeight = document.getElementById(id).offsetHeight;
+    //     console.log(elementHeight);
+    //   }
+    // }
+  },
+
+  computed: {
+
+    /**
+     * スクロール量に応じて時代の表示を変える
+     */
+    ageChange() {
+      let scrollLimitTaisho = this.height.historyTaisho + this.cardsMarginBottom;  // 大正の沿革コンテンツの高さを代入
+      let scrollLimitShowa  = scrollLimitTaisho + this.height.historyShowa + this.cardsMarginBottom;  // 昭和の沿革コンテンツの高さを代入
+
+      if (this.scrollAmount < scrollLimitTaisho) {
+        this.ageWard = this.$data.messages.Age.Taisho;
+
+      } else if (this.scrollAmount < scrollLimitShowa) {
+        this.ageWard = this.$data.messages.Age.Showa;
+
+      } else {
+        this.ageWard = this.$data.messages.Age.Heisei;
+      }
+
+      return this.ageWard;
+    },
+    // スクロールタグのスクロール上限を設定
+    scrollLimit() {
+      if (this.scrollAmount > this.height.historySection) {
+        this.scrollAmount = this.height.historySection - this.height.scrollTag;
+      }
+      return this.scrollAmount;
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .history {
 
-  &-content {
-    margin-bottom: interval(10);
+  &__time-series {
+
+    &-container {
+      @include flex;
+    }
+
+    &-content {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  &__age {
+    display: none;
 
     @include mq(md) {
+      display: block;
       position: relative;
+      width: interval(20);
+      margin: 0 interval(3);
 
       &::before {
         display: block;
@@ -101,30 +202,36 @@ export default {
         background-color: darken($color: color(lightgray), $amount: 10%);
         position: absolute;
         top: 0;
-        left: 8%;
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-50%);
       }
     }
-  }
 
-  &-taisho {
-    @include mq(md) {
-      @include historyAgeTag('大正', top);
+    &-tag {
+      width: 100%;
+      text-align: center;
+      color: color(white);
+      background-color: color(darkblue);
+      border-radius: radius(hard);
+      font-size: font(sm);
+      font-weight: bold;
+      padding: interval(.5);
+      position: absolute;
+      top: 0;
+      transition: all 1s ease-out;
     }
   }
 
-  &-showa {
-    @include mq(md) {
-      @include historyAgeTag('昭和', top);
+  &__cards {
+    margin-bottom: interval(10);
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
-  &-heisei {
-    @include mq(md) {
-      @include historyAgeTag('平成', top);
-    }
-  }
-
-  &-item {
+  &__card-item {
     margin-bottom: interval(10);
 
     &:last-child {

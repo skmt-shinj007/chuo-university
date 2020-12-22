@@ -41,20 +41,12 @@ export default {
 
 <style lang="scss" scoped>
 .history-card {
-  width: 90%;
-  margin: 0 auto;
   border: 2px solid color(darkblue);
   border-radius: radius(hard);
   position: relative;
 
   @include mq(sm) {
     padding: interval(1);
-    width: 80%;
-  }
-
-  @include mq(md) {
-    max-width: interval(120);
-    transform: translateX( interval(6) );
   }
 
   &__tag-modal {
