@@ -42,16 +42,16 @@ export default {
     });
   },
 
-  /**
-   * グローバルで使用するメソッドを定義
-   * コンポーネントからのアクセス：this.getElements()
-   * 参考：https://infoteck-life.com/a0186-js-dom-id-multiple/
-   */
   methods: {
+    /**
+     * DOMに記載したid属性をjsで一括取得できるメソッド
+     * コンポーネントからのアクセス：this.getElements()
+     * 参考：https://infoteck-life.com/a0186-js-dom-id-multiple/
+     */
     getElements() {
       let elm = {};
-      let elements = {};  // 一括でidを取得したデータが格納される:Object
-      let id = '';        // id名が入る:String
+      let elements = {};  // 一括でidを取得したデータが格納される
+      let id = '';        // id名が入る
 
       for (let i = 0; i < arguments.length; i++) {
         id = arguments[i];
