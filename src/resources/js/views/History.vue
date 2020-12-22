@@ -119,7 +119,7 @@ export default {
     this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
 
     /**
-     * スクロールタグのスクロール上限を設定するために、沿革セクション要素の高さを取得
+     * スクロールタグのスクロール上限を設定するために、要素の高さを取得
      * TODO:関数とか使って一括で指定できそう(help)
      */
     this.height.historySection = this.ids.historySection.offsetHeight;
@@ -143,20 +143,20 @@ export default {
      * スクロール量に応じて時代の表示を変える
      */
     ageChange() {
-      let scrollLimitTaisho = this.height.historyTaisho + this.cardsMarginBottom;  // 大正の沿革コンテンツの高さを代入
-      let scrollLimitShowa  = scrollLimitTaisho + this.height.historyShowa + this.cardsMarginBottom;  // 昭和の沿革コンテンツの高さを代入
+      let taishoHeight = this.height.historyTaisho + this.cardsMarginBottom;  // 大正の沿革コンテンツの高さを代入
+      let showaHeight  = taishoHeight + this.height.historyShowa + this.cardsMarginBottom;  // 昭和の沿革コンテンツの高さを代入
+      let scroll = this.scrollAmount;  // スクロール量
+      let age = this.ageWard;  // タグのテキスト
 
-      if (this.scrollAmount < scrollLimitTaisho) {
-        this.ageWard = this.$data.messages.Age.Taisho;
-
-      } else if (this.scrollAmount < scrollLimitShowa) {
-        this.ageWard = this.$data.messages.Age.Showa;
-
+      if (scroll < taishoHeight) {
+        age = this.$data.messages.Age.Taisho;
+      } else if (scroll < showaHeight) {
+        age = this.$data.messages.Age.Showa;
       } else {
-        this.ageWard = this.$data.messages.Age.Heisei;
+        age = this.$data.messages.Age.Heisei;
       }
 
-      return this.ageWard;
+      return age;
     },
     // スクロールタグのスクロール上限を設定
     scrollLimit() {
