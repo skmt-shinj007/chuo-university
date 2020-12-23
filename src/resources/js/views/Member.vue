@@ -8,12 +8,23 @@
       </template>
     </main-visual-component>
   </div>
+
+  <section class="member__players section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Players.Main"
+      :subTitle="messages.SectionTitles.Players.Sub"/>
+
+    <div class="member__players-cards">
+
+    </div>
+  </section>
 </div>
 </template>
 
 <script>
 // component import
 import MainVisualComponent from '../components/contents/MainVisualComponent';
+import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
 
 // data import
 import Data from '../config/data.json';
@@ -21,6 +32,7 @@ import Data from '../config/data.json';
 export default {
   components: {
     MainVisualComponent,
+    ContentsTitleComponent
 
   },
   data() {
@@ -51,6 +63,7 @@ export default {
 
 <style lang="scss" scoped>
 .member {
+  background-color: color(lightgray);
 
   &__main-visual-icon {
     width: interval(30);

@@ -1706,6 +1706,9 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
+.member[data-v-668c6779] {
+  background-color: #f2f2f2;
+}
 .member__main-visual-icon[data-v-668c6779] {
   width: 15rem;
   height: 15rem;
