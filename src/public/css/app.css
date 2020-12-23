@@ -51,11 +51,6 @@ import用ファイル
   font-weight: bold;
   text-shadow: 3px 3px 0px #e56c2c;
 }
-@media screen and (min-width: 560px) {
-.main-visual__title[data-v-3ff6fe5a] {
-    font-size: 80px;
-}
-}
 @media screen and (min-width: 992px) {
 .main-visual__title[data-v-3ff6fe5a] {
     line-height: 1.2;
@@ -1675,6 +1670,68 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .club__photo-button[data-v-357d3955] {
     margin-top: 3.5rem;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.member__main-visual-icon[data-v-668c6779] {
+  width: 15rem;
+  height: 15rem;
+  fill: #ffffff;
+  stroke: #e56c2c;
+}
+@media screen and (min-width: 992px) {
+.member__main-visual-icon[data-v-668c6779] {
+    width: 40%;
+    height: 40%;
+    min-width: 30rem;
+    min-height: 30rem;
+}
+}
+.member__main-visual-ward[data-v-668c6779] {
+  font-family: "Bangers", cursive;
+  font-size: 48px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0.5rem;
+}
+@media screen and (min-width: 560px) {
+.member__main-visual-ward[data-v-668c6779] {
+    text-align: center;
 }
 }@charset "UTF-8";
 /*

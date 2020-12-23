@@ -38,7 +38,7 @@ h2 {
 
   // pc style
   @include mq(md) {
-    font-size: font(lg-heading);
+    font-size: font(heading-lg);
   };
 }
 
