@@ -76,7 +76,7 @@
     <section class="club__member section-container">
       <contents-title-component :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
 
-      <player-slider-component :playerData="playerData"/>
+      <player-slider-component :players="players"/>
 
       <div class="club__member-number">
         <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
@@ -142,7 +142,7 @@ export default {
       schedule: [],
       dormitoryInformations: [],
       dormitoryImages: [],
-      playerData: [],
+      players: [],
       memberNumber: [],
       imagesData: [],
     }
@@ -162,7 +162,7 @@ export default {
     this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
 
     // TODO:DBから情報を引っ張る
-    playerApiResponse.forEach(element => this.playerData.push(element));
+    this.$data.data.Players.forEach(element => this.players.push(element));
     memberNumberData.forEach(element => this.memberNumber.push(element));
   },
 }
@@ -223,122 +223,6 @@ const dormitoryImageApiResponse = [
     name: '中央大学南平寮の4人部屋',
     capacity: 4,
   }
-];
-
-/**
- * test API response : 選手情報
- */
-const playerApiResponse = [
-  {
-    name: {
-      ja: '坂本 信治',
-      en: 'sakamoto shinji',
-    },
-    image: {
-      path: 'player15.jpeg',
-      alt: '坂本 信治の写真'
-    },
-    studentInfo: {
-      grade: 4,
-      undergraduate: '経済学部',
-    },
-    from: {
-      birthplace: '北海道',
-      almaMater: '北海道科学大学高等学校',
-    },
-    position: '前衛',
-    post: '主務',
-    record: '2016年インターハイ ベスト16',
-    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
-  },
-  {
-    name: {
-      ja: '宮崎 悠登',
-      en: 'miyazaki yuto',
-    },
-    image: {
-      path: 'player01.jpg',
-      alt: '宮崎 悠登の写真'
-    },
-    studentInfo: {
-      grade: 4,
-      undergraduate: '経済学部',
-    },
-    from: {
-      birthplace: '山形県',
-      almaMater: '山形県羽黒高等学校',
-    },
-    position: '後衛',
-    post: '主将',
-    record: '2016年ハイスクールジャパンカップ ダブルス準優勝',
-    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
-  },
-  {
-    name: {
-      ja: '田邊 雅人',
-      en: 'tanabe masato',
-    },
-    image: {
-      path: 'player09.jpg',
-      alt: '田邊 雅人の写真',
-    },
-    studentInfo: {
-      grade: 4,
-      undergraduate: '法学部',
-    },
-    from: {
-      birthplace: '福島県',
-      almaMater: '三重高等学校',
-    },
-    position: '前衛',
-    post: '副主将',
-    record: '2016年国民体育大会 少年の部 優勝',
-    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
-  },
-  {
-    name: {
-      ja: '斎藤 利貴',
-      en: 'saito riki',
-    },
-    image: {
-      path: 'player03.jpg',
-      alt: '斎藤 利貴の写真',
-    },
-    studentInfo: {
-      grade: 4,
-      undergraduate: '経済学部',
-    },
-    from: {
-      birthplace: '千葉県',
-      almaMater: '千葉県昭和学院高等学校',
-    },
-    position: '後衛',
-    post: '寮長',
-    record: '2016年ハイスクールジャパンカップ ベスト8',
-    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
-  },
-  {
-    name: {
-      ja: '佐藤 辰哉',
-      en: 'sato shinya',
-    },
-    image: {
-      path: 'player16.jpg',
-      alt: '佐藤 辰哉の写真',
-    },
-    studentInfo: {
-      grade: 3,
-      undergraduate: '経済学部',
-    },
-    from: {
-      birthplace: '福岡県',
-      almaMater: '香川県尽誠学園高等学校',
-    },
-    position: '後衛',
-    post: '副主将',
-    record: '2016年ハイスクールジャパンカップ ダブルス ベスト4',
-    ward: 'ここに抱負や選手の一言が入ります。DBに登録する際には、実際に選手自身に聞いた本物のテキストを登録します。',
-  },
 ];
 
 /**
