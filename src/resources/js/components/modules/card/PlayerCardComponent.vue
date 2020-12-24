@@ -12,7 +12,7 @@
 
     <div class="player-card__information-tags">
       <position-tag-component :position="player.position"/>
-      <tag-component :content="player.post"/>
+      <tag-component v-if="player.post" :content="player.post"/>
       <grade-tag-component :grade="player.grade"/>
     </div>
   </div>
