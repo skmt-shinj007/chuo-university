@@ -1158,7 +1158,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
   border: 2px solid #091e2f;
-  border-radius: 100%;
+  border-radius: 50%;
   padding: 0.75rem;
 }
 .dormitory-card__icon[data-v-2a1efbb8] {
@@ -1304,6 +1304,7 @@ import用ファイル
 .player-card__figure {
   position: relative;
   border-bottom: 2px solid #091e2f;
+  background-color: #ffffff;
 }
 .player-card__figure::before {
   content: "";
@@ -1706,6 +1707,158 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
+.player {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 5px 3px #b3b3b3;
+  background-color: #ffffff;
+  width: 17rem;
+  border: 2px solid #f8f9fa;
+  border-radius: 48px;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 560px) {
+.player {
+    width: 19rem;
+    padding: 0.5rem 0.75rem;
+}
+}
+@media screen and (min-width: 992px) {
+.player {
+    cursor: pointer;
+}
+}
+.player-thumbnail-border--blue {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.player-thumbnail-border--blue::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+.player-thumbnail-border--green {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.player-thumbnail-border--green::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #e56c2c;
+  background: linear-gradient(to bottom, #e56c2c 0%, #100702 100%);
+}
+.player-thumbnail-wrap {
+  width: 100%;
+  position: relative;
+}
+.player-thumbnail-wrap::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.player-thumbnail-wrap > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.player-thumbnail-wrap {
+    width: 5rem;
+}
+}
+.player-thumbnail {
+  border-radius: 50%;
+}
+.player-name {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 0.25rem;
+}
+.player-tag-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.player-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #091e2f;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数を定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .member[data-v-668c6779] {
   background-color: #f2f2f2;
 }
@@ -1736,6 +1889,61 @@ import用ファイル
 .member__main-visual-ward[data-v-668c6779] {
     text-align: center;
 }
+}
+.member__players-card-group[data-v-668c6779] {
+  padding-bottom: 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 560px) {
+.member__players-card-group[data-v-668c6779] {
+    align-items: center;
+}
+}
+@media screen and (min-width: 992px) {
+.member__players-card-group[data-v-668c6779] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+}
+.member__players-card[data-v-668c6779] {
+  padding: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+.member__players-card[data-v-668c6779] {
+    margin-bottom: 0;
+}
+}
+@media screen and (min-width: 560px) {
+.member__players-card[data-v-668c6779]:nth-child(odd) {
+    transform: translateX(-5rem);
+}
+}
+@media screen and (min-width: 992px) {
+.member__players-card[data-v-668c6779]:nth-child(odd) {
+    transform: none;
+}
+}
+.member__players-card[data-v-668c6779]:nth-child(even) {
+  align-self: flex-end;
+}
+@media screen and (min-width: 560px) {
+.member__players-card[data-v-668c6779]:nth-child(even) {
+    align-self: auto;
+    transform: translateX(5rem);
+}
+}
+@media screen and (min-width: 992px) {
+.member__players-card[data-v-668c6779]:nth-child(even) {
+    transform: none;
+}
+}
+.member__players-card[data-v-668c6779]:last-child {
+  margin-bottom: 0;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -2816,7 +3024,7 @@ import用ファイル
   color: #ffffff;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
+  border-radius: 50%;
   margin-right: 0.5rem;
   cursor: pointer;
   box-shadow: 1px 3px 6px 3px #cdcdcd;

@@ -14,8 +14,10 @@
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
-    <div class="member__players-cards">
-
+    <div class="member__players-card-group">
+      <div class="member__players-card" v-for="(player, n) in players" :key="n">
+        <player-component :playersObj="player"/>
+      </div>
     </div>
   </section>
 </div>
@@ -25,6 +27,7 @@
 // component import
 import MainVisualComponent from '../components/contents/MainVisualComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
+import PlayerComponent from '../components/modules/PlayerComponent.vue';
 
 // data import
 import Data from '../config/data.json';
@@ -32,21 +35,23 @@ import Data from '../config/data.json';
 export default {
   components: {
     MainVisualComponent,
-    ContentsTitleComponent
+    ContentsTitleComponent,
+    PlayerComponent,
 
   },
   data() {
     return {
       data: Data,
+      players: [],
     }
-  },
-  props: {
-
   },
   mounted() {
 
   },
   beforeMount() {
+    // TODO:DBから情報を引っ張る
+    this.$data.data.Players.forEach(element => this.players.push(element));
+
     /**
      * SP表示のときにメインビジュアルテキストの改行を増やす
      * *ウインドウ幅がリアルタイム取得ではないので、改行増はリロードする必要がある。
@@ -87,6 +92,54 @@ export default {
 
     @include mq(sm) {
       text-align: center;
+    }
+  }
+
+  &__players-card-group {
+    padding-bottom: interval(10);
+    @include flex(column nowrap, center, flex-start);
+
+    @include mq(sm) {
+      align-items: center;
+    }
+
+    @include mq(md) {
+      @include flex(row wrap, center, center);
+    }
+  }
+
+  &__players-card {
+    padding: interval(1);
+
+    @include mq(md) {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(odd) {
+      @include mq(sm) {
+        transform: translateX(- interval(10));
+      }
+
+      @include mq(md) {
+        transform: none;
+      }
+    }
+
+    &:nth-child(even) {
+      align-self: flex-end;
+
+      @include mq(sm) {
+        align-self: auto;
+        transform: translateX(interval(10));
+      }
+
+      @include mq(md) {
+        transform: none;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
