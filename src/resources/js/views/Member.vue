@@ -16,7 +16,7 @@
 
     <div class="member__players-card-group">
       <div class="member__players-card" v-for="(player, n) in players" :key="n">
-        <player-component :playersObj="player"/>
+        <player-ticket-component :playersObj="player"/>
       </div>
     </div>
   </section>
@@ -27,7 +27,7 @@
 // component import
 import MainVisualComponent from '../components/contents/MainVisualComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
-import PlayerComponent from '../components/modules/PlayerComponent.vue';
+import PlayerTicketComponent from '../components/modules/PlayerTicketComponent.vue';
 
 // data import
 import Data from '../config/data.json';
@@ -36,7 +36,7 @@ export default {
   components: {
     MainVisualComponent,
     ContentsTitleComponent,
-    PlayerComponent,
+    PlayerTicketComponent,
 
   },
   data() {
