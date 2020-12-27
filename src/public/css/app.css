@@ -3579,6 +3579,14 @@ import用ファイル
 }
 .member__user-ticket[data-v-668c6779]:last-child {
   margin-bottom: 0;
+}
+.member__staff[data-v-668c6779] {
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 992px) {
+.member__staff[data-v-668c6779] {
+    padding-bottom: 10rem;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -6691,10 +6699,6 @@ p {
   .section-container {
     margin-top: 10rem;
   }
-}
-
-.section-inner {
-  padding: 5rem 0;
 }
 
 .card-inner-margin {

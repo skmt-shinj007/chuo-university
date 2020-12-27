@@ -143,5 +143,12 @@ export default {
     }
   }
 
+  &__staff {
+    padding-bottom: interval(10);
+
+    @include mq(md) {
+      padding-bottom: interval(20);
+    }
+  }
 }
 </style>
