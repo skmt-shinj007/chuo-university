@@ -24,9 +24,9 @@
 
 <script>
 // component import
-import TagComponent from './tag/TagComponent';
-import PositionTagComponent from './tag/PositionTagComponent';
-import GradeTagComponent from './tag/GradeTagComponent';
+import TagComponent from '../tag/TagComponent';
+import PositionTagComponent from '../tag/PositionTagComponent';
+import GradeTagComponent from '../tag/GradeTagComponent';
 
 export default {
   components: {
