@@ -44,25 +44,41 @@ export default {
 
   methods: {
     /**
-     * DOMに記載したid属性をjsで一括取得できるメソッド
-     * コンポーネントからのアクセス：this.getElements()
+     * DOMに記載した id属性をjsで一括取得できるメソッド
      * 参考：https://infoteck-life.com/a0186-js-dom-id-multiple/
+     * @param data : 属性の名前が格納された配列
+     * コンポーネントでのid取得方法：this.getElements(配列);
+     * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.ids['id名']
      */
-    getElements() {
-      let elm = {};
-      let elements = {};  // 一括でidを取得したデータが格納される
-      let id = '';        // id名が入る
+    getElements(data) {
+      let elements = [];
+      let el = '';
 
-      for (let i = 0; i < arguments.length; i++) {
-        id = arguments[i];
-        elm = document.getElementById(id);
-
-        if (elm != null) {
-          elements[id] = elm;
-        }
-      }
+      data.forEach(element => {
+        el = document.getElementById(element);
+        (el != null) ? elements[element] = el : null;
+      })
 
       return elements;
-    }
+    },
+
+    /**
+     * DOMに記載した class属性をjsで一括取得できるメソッド
+     * 参考：https://infoteck-life.com/a0186-js-dom-id-multiple/
+     * @param data : 属性の名前が格納された配列
+     * コンポーネントでのclass取得方法：this.getClasses(配列);
+     * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.classes['class名']
+     */
+    getClasses(data) {
+      let classes = [];
+      let el = '';
+
+      data.forEach(element => {
+        el = document.getElementsByClassName(element);
+        (el != null) ? classes[element] = el : null;
+      })
+
+      return classes;
+    },
   },
 }
