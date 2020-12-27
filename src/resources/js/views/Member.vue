@@ -14,8 +14,8 @@
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
-    <div class="member__players-card-group">
-      <div class="member__players-card" v-for="(player, n) in players" :key="n">
+    <div class="member__players-ticket-group">
+      <div class="member__players-ticket" v-for="(player, n) in players" :key="n">
         <player-ticket-component :playersObj="player"/>
       </div>
     </div>
@@ -92,7 +92,7 @@ export default {
     }
   }
 
-  &__players-card-group {
+  &__players-ticket-group {
     padding-bottom: interval(10);
     @include flex(column nowrap, center, flex-start);
 
@@ -101,7 +101,7 @@ export default {
     }
   }
 
-  &__players-card {
+  &__players-ticket {
     padding: interval(1);
     margin-bottom: interval(5);
     width: 90%;
