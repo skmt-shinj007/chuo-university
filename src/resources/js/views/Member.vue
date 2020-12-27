@@ -130,16 +130,13 @@ export default {
       width: calc(100% / 3);
     }
 
+    // 偶数個のスタイル
     &:nth-child(even) {
       align-self: flex-end;
 
       @include mq(sm) {
         align-self: auto;
       }
-    }
-
-    &:last-child {
-      margin-bottom: 0;
     }
   }
 

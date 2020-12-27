@@ -3577,9 +3577,6 @@ import用ファイル
     align-self: auto;
 }
 }
-.member__user-ticket[data-v-668c6779]:last-child {
-  margin-bottom: 0;
-}
 .member__staff[data-v-668c6779] {
   padding-bottom: 5rem;
 }
