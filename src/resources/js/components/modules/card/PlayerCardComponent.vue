@@ -12,7 +12,7 @@
 
     <div class="player-card__information-tags">
       <position-tag-component :position="player.position"/>
-      <tag-component v-if="player.post" :content="player.post"/>
+      <tag-component v-if="player.post.club" :content="player.post.club"/>
       <grade-tag-component :grade="player.grade"/>
     </div>
   </div>
@@ -65,7 +65,7 @@ export default {
     &-name {
       font-size: font(sm);
       font-weight: bold;
-      margin-right: interval(1);
+      margin: 0 interval(1) 0 interval(.5);
     }
 
     &-name-english {

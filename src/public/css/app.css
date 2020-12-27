@@ -2568,7 +2568,7 @@ import用ファイル
 .player-card__information-name {
   font-size: 12px;
   font-weight: bold;
-  margin-right: 0.5rem;
+  margin: 0 0.5rem 0 0.25rem;
 }
 .player-card__information-name-english {
   font-weight: bold;
