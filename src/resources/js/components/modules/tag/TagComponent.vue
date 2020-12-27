@@ -9,10 +9,8 @@
 </template>
 
 <script>
-// 必ず親でpositionのデータを指定する。
 export default {
   props: {
-    // else
     size: {
       type: String,
       default: null,

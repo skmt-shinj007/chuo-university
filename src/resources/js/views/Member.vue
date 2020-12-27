@@ -14,9 +14,21 @@
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
-    <div class="member__players-card-group">
-      <div class="member__players-card" v-for="(player, n) in players" :key="n">
-        <player-ticket-component :playersObj="player"/>
+    <div class="member__user-ticket-group">
+      <div class="member__user-ticket" v-for="(player, n) in players" :key="n">
+        <user-ticket-component :userObj="player"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="member__staff section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Staff.Main"
+      :subTitle="messages.SectionTitles.Staff.Sub"/>
+
+    <div class="member__user-ticket-group">
+      <div class="member__user-ticket" v-for="(staffItem, n) in staff" :key="n">
+        <user-ticket-component :userObj="staffItem"/>
       </div>
     </div>
   </section>
@@ -26,8 +38,8 @@
 <script>
 // component import
 import MainVisualComponent from '../components/contents/MainVisualComponent';
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
-import PlayerTicketComponent from '../components/modules/PlayerTicketComponent.vue';
+import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
+import UserTicketComponent from '../components/modules/ticket/UserTicketComponent';
 
 // data import
 import Data from '../config/data.json';
@@ -36,18 +48,20 @@ export default {
   components: {
     MainVisualComponent,
     ContentsTitleComponent,
-    PlayerTicketComponent,
+    UserTicketComponent,
 
   },
   data() {
     return {
       data: Data,
       players: [],
+      staff: [],
     }
   },
   beforeMount() {
     // TODO:DBから情報を引っ張る
     this.$data.data.Players.forEach(element => this.players.push(element));
+    this.$data.data.Staff.forEach(element => this.staff.push(element));
 
     /**
      * SP表示のときにメインビジュアルテキストの改行を増やす
@@ -92,8 +106,7 @@ export default {
     }
   }
 
-  &__players-card-group {
-    padding-bottom: interval(10);
+  &__user-ticket-group {
     @include flex(column nowrap, center, flex-start);
 
     @include mq(sm) {
@@ -101,7 +114,7 @@ export default {
     }
   }
 
-  &__players-card {
+  &__user-ticket {
     padding: interval(1);
     margin-bottom: interval(5);
     width: 90%;
@@ -117,6 +130,7 @@ export default {
       width: calc(100% / 3);
     }
 
+    // 偶数個のスタイル
     &:nth-child(even) {
       align-self: flex-end;
 
@@ -124,11 +138,14 @@ export default {
         align-self: auto;
       }
     }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
+  &__staff {
+    padding-bottom: interval(10);
+
+    @include mq(md) {
+      padding-bottom: interval(20);
+    }
+  }
 }
 </style>

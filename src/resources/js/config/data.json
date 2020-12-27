@@ -619,9 +619,13 @@
         "place": "北海道",
         "almaMater": "北海道科学大学高等学校"
       },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "category": 1,
       "position": "前衛",
       "grade": 4,
-      "post": null,
       "undergraduate": "経済学部",
       "record": "戦績が入ります。",
       "message": "メッセージが入ります。"
@@ -639,9 +643,13 @@
         "place": "山形県",
         "almaMater": "山形県羽黒高等学校"
       },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "category": 1,
       "position": "後衛",
       "grade": 4,
-      "post": null,
       "undergraduate": "経済学部",
       "record": "2016年ハイスクールジャパンカップ ダブルス準優勝",
       "message": "メッセージが入ります。"
@@ -659,9 +667,13 @@
         "place": "福島県",
         "almaMater": "三重県三重高等学校"
       },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "category": 1,
       "position": "前衛",
       "grade": 4,
-      "post": null,
       "undergraduate": "法学部",
       "record": "2016年国民体育大会 少年の部 優勝",
       "message": "メッセージが入ります。"
@@ -679,9 +691,13 @@
         "place": "千葉県",
         "almaMater": "千葉県昭和学院高等学校"
       },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "category": 1,
       "position": "後衛",
       "grade": 4,
-      "post": null,
       "undergraduate": "理工学部",
       "record": "2016年ハイスクールジャパンカップ ベスト8",
       "message": "メッセージが入ります。"
@@ -699,9 +715,13 @@
         "place": "福岡県",
         "almaMater": "香川県尽誠学園高等学校"
       },
+      "post": {
+        "club": "主将",
+        "alumni": null
+      },
+      "category": 1,
       "position": "後衛",
       "grade": 3,
-      "post": "主将",
       "undergraduate": "経済学部",
       "record": "2016年ハイスクールジャパンカップ ベスト4",
       "message": "メッセージが入ります。"
@@ -719,6 +739,7 @@
         "place": "広島県",
         "almaMater": "広島県尾道高等学校"
       },
+      "category": 1,
       "position": "後衛",
       "grade": 3,
       "post": "主務",
@@ -739,11 +760,66 @@
         "place": "茨城県",
         "almaMater": "千葉県昭和学院高等学校"
       },
+      "post": {
+        "club": "副主将",
+        "alumni": null
+      },
+      "category": 1,
       "position": "前衛",
       "grade": 3,
-      "post": "副主将",
       "undergraduate": "理工学部",
       "record": "2016年ハイスクールジャパンカップ ベスト8",
+      "message": "メッセージが入ります。"
+    }
+  ],
+
+  "Staff": [
+    {
+      "name": {
+        "ja": "田中 弘",
+        "en": "Tanaka hiroshi"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": "監督",
+        "alumni": "理事"
+      },
+      "category": 2,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "record": "2016年ハイスクールジャパンカップ ベスト8",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "高橋 直哉",
+        "en": "Takahashi Naoya"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": "部長",
+        "alumni": null
+      },
+      "category": 2,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "record": null,
       "message": "メッセージが入ります。"
     }
   ]

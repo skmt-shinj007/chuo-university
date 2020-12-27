@@ -71,6 +71,10 @@
     "Players": {
       "Main": "players",
       "Sub" : "選手"
+    },
+    "Staff": {
+      "Main": "staff",
+      "Sub" : "スタッフ"
     }
   },
 

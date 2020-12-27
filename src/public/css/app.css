@@ -2568,7 +2568,7 @@ import用ファイル
 .player-card__information-name {
   font-size: 12px;
   font-weight: bold;
-  margin-right: 0.5rem;
+  margin: 0 0.5rem 0 0.25rem;
 }
 .player-card__information-name-english {
   font-weight: bold;
@@ -3240,7 +3240,7 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.player-ticket {
+.user-ticket {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -3254,26 +3254,26 @@ import用ファイル
   z-index: 1;
 }
 @media screen and (min-width: 560px) {
-.player-ticket {
+.user-ticket {
     padding: 0.5rem 0.75rem;
 }
 }
 @media screen and (min-width: 992px) {
-.player-ticket {
+.user-ticket {
     cursor: pointer;
     box-shadow: 0 1px 3px 1px #b3b3b3;
     transition: all 0.3s ease-out;
 }
-.player-ticket:hover {
+.user-ticket:hover {
     box-shadow: 0 3px 5px 3px #b3b3b3;
     transform: translateY(-2px);
 }
-.player-ticket:hover .player-ticket-icon {
+.user-ticket:hover .user-ticket-icon {
     -webkit-animation: iconSlide 1.5s infinite;
             animation: iconSlide 1.5s infinite;
 }
 }
-.player-ticket-thumbnail-border--blue {
+.user-ticket-thumbnail-border--blue {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
@@ -3284,7 +3284,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.player-ticket-thumbnail-border--blue::before {
+.user-ticket-thumbnail-border--blue::before {
   content: "";
   display: block;
   width: 110%;
@@ -3298,7 +3298,7 @@ import用ファイル
   background: #0179D5;
   background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
 }
-.player-ticket-thumbnail-border--orange {
+.user-ticket-thumbnail-border--orange {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
@@ -3309,7 +3309,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.player-ticket-thumbnail-border--orange::before {
+.user-ticket-thumbnail-border--orange::before {
   content: "";
   display: block;
   width: 110%;
@@ -3323,7 +3323,7 @@ import用ファイル
   background: #e56c2c;
   background: linear-gradient(to bottom, #e56c2c 0%, #10334e 100%);
 }
-.player-ticket-thumbnail-border--green {
+.user-ticket-thumbnail-border--green {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
@@ -3334,7 +3334,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.player-ticket-thumbnail-border--green::before {
+.user-ticket-thumbnail-border--green::before {
   content: "";
   display: block;
   width: 110%;
@@ -3348,16 +3348,16 @@ import用ファイル
   background: #56b145;
   background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
 }
-.player-ticket-thumbnail-wrap {
+.user-ticket-thumbnail-wrap {
   width: 100%;
   position: relative;
 }
-.player-ticket-thumbnail-wrap::before {
+.user-ticket-thumbnail-wrap::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.player-ticket-thumbnail-wrap > img {
+.user-ticket-thumbnail-wrap > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -3367,34 +3367,34 @@ import用ファイル
      object-fit: cover;
 }
 @media screen and (min-width: 560px) {
-.player-ticket-thumbnail-wrap {
+.user-ticket-thumbnail-wrap {
     width: 5rem;
 }
 }
-.player-ticket-thumbnail {
+.user-ticket-thumbnail {
   border-radius: 50%;
 }
-.player-ticket__name {
+.user-ticket__name {
   display: block;
   font-size: 14px;
   font-weight: bold;
   padding-left: 0.25rem;
 }
-.player-ticket__name:first-of-type {
+.user-ticket__name:first-of-type {
   display: none;
 }
 @media screen and (min-width: 560px) {
-.player-ticket__name:first-of-type {
+.user-ticket__name:first-of-type {
     display: block;
 }
 }
-.player-ticket-tag-group {
+.user-ticket-tag-group {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
 }
-.player-ticket-icon {
+.user-ticket-icon {
   width: 1.5rem;
   height: 1.5rem;
   fill: #091e2f;
@@ -3537,49 +3537,53 @@ import用ファイル
     text-align: center;
 }
 }
-.member__players-card-group[data-v-668c6779] {
-  padding-bottom: 5rem;
+.member__user-ticket-group[data-v-668c6779] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
 }
 @media screen and (min-width: 560px) {
-.member__players-card-group[data-v-668c6779] {
+.member__user-ticket-group[data-v-668c6779] {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
 }
 }
-.member__players-card[data-v-668c6779] {
+.member__user-ticket[data-v-668c6779] {
   padding: 0.5rem;
   margin-bottom: 2.5rem;
   width: 90%;
   max-width: 24rem;
 }
 @media screen and (min-width: 560px) {
-.member__players-card[data-v-668c6779] {
+.member__user-ticket[data-v-668c6779] {
     width: calc(100% / 2);
     max-width: none;
 }
 }
 @media screen and (min-width: 992px) {
-.member__players-card[data-v-668c6779] {
+.member__user-ticket[data-v-668c6779] {
     margin-bottom: 0;
     width: calc(100% / 3);
 }
 }
-.member__players-card[data-v-668c6779]:nth-child(even) {
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
   align-self: flex-end;
 }
 @media screen and (min-width: 560px) {
-.member__players-card[data-v-668c6779]:nth-child(even) {
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
     align-self: auto;
 }
 }
-.member__players-card[data-v-668c6779]:last-child {
-  margin-bottom: 0;
+.member__staff[data-v-668c6779] {
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 992px) {
+.member__staff[data-v-668c6779] {
+    padding-bottom: 10rem;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -6692,10 +6696,6 @@ p {
   .section-container {
     margin-top: 10rem;
   }
-}
-
-.section-inner {
-  padding: 5rem 0;
 }
 
 .card-inner-margin {
