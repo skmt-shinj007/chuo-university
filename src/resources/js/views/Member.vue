@@ -16,9 +16,15 @@
 
     <div class="member__players-ticket-group">
       <div class="member__players-ticket" v-for="(player, n) in players" :key="n">
-        <user-ticket-component :playersObj="player"/>
+        <user-ticket-component :userObj="player"/>
       </div>
     </div>
+  </section>
+
+  <section class="member__staff section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Staff.Main"
+      :subTitle="messages.SectionTitles.Staff.Sub"/>
   </section>
 </div>
 </template>
@@ -93,7 +99,6 @@ export default {
   }
 
   &__players-ticket-group {
-    padding-bottom: interval(10);
     @include flex(column nowrap, center, flex-start);
 
     @include mq(sm) {
