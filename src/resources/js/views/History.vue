@@ -112,8 +112,17 @@ export default {
   },
 
   mounted() {
+    // jsでid属性を一括で取得するため、DOMのid属性を配列にする
+    let idName = [
+      'historySection',
+      'historyAgeTag',
+      'historyTaisho',
+      'historyShowa',
+      'historyHeisei',
+    ];
+
     // 要素のidを複数取得 => global.js > methods
-    this.ids = this.getElements('historySection', 'historyAgeTag', 'historyTaisho', 'historyShowa', 'historyHeisei');
+    this.ids = this.getElements(idName);
 
     // .history__cards の margin-bottom を数値で取得
     this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
@@ -123,22 +132,13 @@ export default {
      * TODO:関数とか使って一括で指定できそう(help)
      */
     this.height.historySection = this.ids.historySection.offsetHeight;
-    this.height.scrollTag      = this.ids.historyAgeTag.offsetHeight
+    this.height.scrollTag      = this.ids.historyAgeTag.offsetHeight;
     this.height.historyTaisho  = this.ids.historyTaisho.offsetHeight;
     this.height.historyShowa   = this.ids.historyShowa.offsetHeight;
     this.height.historyHeisei  = this.ids.historyHeisei.offsetHeight;
-
-    // for (let id in this.ids) {
-    //   if (Object.hasOwnProperty.call(this.ids, id)) {
-    //     console.log(id);
-    //     let elementHeight = document.getElementById(id).offsetHeight;
-    //     console.log(elementHeight);
-    //   }
-    // }
   },
 
   computed: {
-
     /**
      * スクロール量に応じて時代の表示を変える
      */

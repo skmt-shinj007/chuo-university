@@ -603,5 +603,148 @@
         }
       ]
     }
+  ],
+
+  "Players": [
+    {
+      "name": {
+        "ja": "坂本 信治",
+        "en": "Sakamoto Shinji"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "北海道",
+        "almaMater": "北海道科学大学高等学校"
+      },
+      "position": "前衛",
+      "grade": 4,
+      "post": null,
+      "undergraduate": "経済学部",
+      "record": "戦績が入ります。",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "宮崎 悠登",
+        "en": "Miyazaki Yuto"
+      },
+      "img": {
+        "src": "player01.jpg",
+        "alt": "オルト！！"
+      },
+      "from": {
+        "place": "山形県",
+        "almaMater": "山形県羽黒高等学校"
+      },
+      "position": "後衛",
+      "grade": 4,
+      "post": null,
+      "undergraduate": "経済学部",
+      "record": "2016年ハイスクールジャパンカップ ダブルス準優勝",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "田邉 雅人",
+        "en": "Tanabe Masato"
+      },
+      "img": {
+        "src": "player09.jpg",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "福島県",
+        "almaMater": "三重県三重高等学校"
+      },
+      "position": "前衛",
+      "grade": 4,
+      "post": null,
+      "undergraduate": "法学部",
+      "record": "2016年国民体育大会 少年の部 優勝",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "斎藤 利貴",
+        "en": "Saito Riki"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "千葉県",
+        "almaMater": "千葉県昭和学院高等学校"
+      },
+      "position": "後衛",
+      "grade": 4,
+      "post": null,
+      "undergraduate": "理工学部",
+      "record": "2016年ハイスクールジャパンカップ ベスト8",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "佐藤 辰哉",
+        "en": "Satou Tatsuya"
+      },
+      "img": {
+        "src": "player16.jpg",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "福岡県",
+        "almaMater": "香川県尽誠学園高等学校"
+      },
+      "position": "後衛",
+      "grade": 3,
+      "post": "主将",
+      "undergraduate": "経済学部",
+      "record": "2016年ハイスクールジャパンカップ ベスト4",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "丸山 章",
+        "en": "Maruyama Akira"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "広島県",
+        "almaMater": "広島県尾道高等学校"
+      },
+      "position": "後衛",
+      "grade": 3,
+      "post": "主務",
+      "undergraduate": "文学部",
+      "record": "2017年ハイスクールジャパンカップ ベスト4",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "橋本 誠人",
+        "en": "Hashimoto Masato"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "茨城県",
+        "almaMater": "千葉県昭和学院高等学校"
+      },
+      "position": "前衛",
+      "grade": 3,
+      "post": "副主将",
+      "undergraduate": "理工学部",
+      "record": "2016年ハイスクールジャパンカップ ベスト8",
+      "message": "メッセージが入ります。"
+    }
   ]
 }

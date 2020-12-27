@@ -1,19 +1,19 @@
 <template>
 <div class="player-card">
   <figure class="player-card__figure">
-    <img :src="`/image/${playerInformation.image.path}`" :alt="playerInformation.image.alt">
+    <img :src="`/image/${player.img.src}`" :alt="player.img.alt">
   </figure>
 
   <div class="player-card__information">
     <div class="player-card__information-name-wrap">
-      <span class="player-card__information-name">{{ playerInformation.name.ja }}</span>
-      <span class="player-card__information-name-english">{{ playerInformation.name.en }}</span>
+      <span class="player-card__information-name">{{ player.name.ja }}</span>
+      <span class="player-card__information-name-english">{{ player.name.en }}</span>
     </div>
 
     <div class="player-card__information-tags">
-      <position-tag-component :position="playerInformation.position"/>
-      <tag-component :content="playerInformation.post"/>
-      <grade-tag-component :grade="playerInformation.studentInfo.grade"/>
+      <position-tag-component :position="player.position"/>
+      <tag-component v-if="player.post" :content="player.post"/>
+      <grade-tag-component :grade="player.grade"/>
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@ export default {
     GradeTagComponent,
   },
   props: {
-    playerInformation: {
+    player: {
       type: Object,
       default: null,
     }
@@ -55,6 +55,7 @@ export default {
   &__figure {
     @include trimming(aspect(square));
     border-bottom: 2px solid color(darkblue);
+    background-color: color(white);
   }
 
   &__information {

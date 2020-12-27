@@ -41,7 +41,11 @@
     <div class="background-image">
       <div class="background-darkblue">
         <section class="top__support section-container">
-          <contents-title-component title="support" subTitle="サポート" color="white"/>
+          <contents-title-component
+            :title="messages.SectionTitles.Support.Main"
+            :subTitle="messages.SectionTitles.Support.Sub"
+            color="white"/>
+
           <div class="top__support-textaria">
             <p class="nl2br" v-text="messages.Top.Support"/>
           </div>

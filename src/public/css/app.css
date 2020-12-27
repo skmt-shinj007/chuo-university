@@ -26,9 +26,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-3ff6fe5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-3ff6fe5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -84,9 +157,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -160,9 +306,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -223,9 +442,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-9b317ac0 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-9b317ac0 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -266,9 +558,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -360,9 +725,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -420,9 +858,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-481a74cb {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-481a74cb {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -486,9 +997,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-bae950f4 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-bae950f4 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -694,9 +1278,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-161a410d {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-161a410d {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -752,9 +1409,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b056e422 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b056e422 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -851,9 +1581,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6cd5e234 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6cd5e234 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -929,9 +1732,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-30380e08 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-30380e08 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -993,9 +1869,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1060,9 +2009,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-7fa4fe02 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-7fa4fe02 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1133,9 +2155,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-2a1efbb8 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-2a1efbb8 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1158,7 +2253,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
   border: 2px solid #091e2f;
-  border-radius: 100%;
+  border-radius: 50%;
   padding: 0.75rem;
 }
 .dormitory-card__icon[data-v-2a1efbb8] {
@@ -1215,9 +2310,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1281,9 +2449,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1304,6 +2545,7 @@ import用ファイル
 .player-card__figure {
   position: relative;
   border-bottom: 2px solid #091e2f;
+  background-color: #ffffff;
 }
 .player-card__figure::before {
   content: "";
@@ -1367,9 +2609,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-53189f00 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-53189f00 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1409,9 +2724,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-bb84db5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-bb84db5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1485,9 +2873,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-357d3955 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-357d3955 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1699,40 +3160,244 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.member__main-visual-icon[data-v-668c6779] {
-  width: 15rem;
-  height: 15rem;
-  fill: #ffffff;
-  stroke: #e56c2c;
-}
-@media screen and (min-width: 992px) {
-.member__main-visual-icon[data-v-668c6779] {
-    width: 40%;
-    height: 40%;
-    min-width: 30rem;
-    min-height: 30rem;
-}
-}
-.member__main-visual-ward[data-v-668c6779] {
-  font-family: "Bangers", cursive;
-  font-size: 48px;
-  letter-spacing: 1px;
-  font-weight: 400;
-  color: #ffffff;
-  line-height: 1.2;
-  margin: 0 0.5rem;
+.player-ticket {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 5px 3px #b3b3b3;
+  background-color: #ffffff;
+  border: 2px solid #f8f9fa;
+  border-radius: 48px;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (min-width: 560px) {
-.member__main-visual-ward[data-v-668c6779] {
-    text-align: center;
+.player-ticket {
+    padding: 0.5rem 0.75rem;
 }
+}
+@media screen and (min-width: 992px) {
+.player-ticket {
+    cursor: pointer;
+    box-shadow: 0 1px 3px 1px #b3b3b3;
+    transition: all 0.3s ease-out;
+}
+.player-ticket:hover {
+    box-shadow: 0 3px 5px 3px #b3b3b3;
+    transform: translateY(-2px);
+}
+.player-ticket:hover .player-ticket-icon {
+    -webkit-animation: iconSlide 1.5s infinite;
+            animation: iconSlide 1.5s infinite;
+}
+}
+.player-ticket-thumbnail-border--blue {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.player-ticket-thumbnail-border--blue::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+.player-ticket-thumbnail-border--orange {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.player-ticket-thumbnail-border--orange::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #e56c2c;
+  background: linear-gradient(to bottom, #e56c2c 0%, #10334e 100%);
+}
+.player-ticket-thumbnail-border--green {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.player-ticket-thumbnail-border--green::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #56b145;
+  background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
+}
+.player-ticket-thumbnail-wrap {
+  width: 100%;
+  position: relative;
+}
+.player-ticket-thumbnail-wrap::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.player-ticket-thumbnail-wrap > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.player-ticket-thumbnail-wrap {
+    width: 5rem;
+}
+}
+.player-ticket-thumbnail {
+  border-radius: 50%;
+}
+.player-ticket__name {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 0.25rem;
+}
+.player-ticket__name:first-of-type {
+  display: none;
+}
+@media screen and (min-width: 560px) {
+.player-ticket__name:first-of-type {
+    display: block;
+}
+}
+.player-ticket-tag-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.player-ticket-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #091e2f;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1761,9 +3426,264 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.member[data-v-668c6779] {
+  background-color: #f2f2f2;
+}
+.member__main-visual-icon[data-v-668c6779] {
+  width: 15rem;
+  height: 15rem;
+  fill: #ffffff;
+  stroke: #e56c2c;
+}
+@media screen and (min-width: 992px) {
+.member__main-visual-icon[data-v-668c6779] {
+    width: 40%;
+    height: 40%;
+    min-width: 30rem;
+    min-height: 30rem;
+}
+}
+.member__main-visual-ward[data-v-668c6779] {
+  font-family: "Bangers", cursive;
+  font-size: 48px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0.5rem;
+}
+@media screen and (min-width: 560px) {
+.member__main-visual-ward[data-v-668c6779] {
+    text-align: center;
+}
+}
+.member__players-card-group[data-v-668c6779] {
+  padding-bottom: 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 560px) {
+.member__players-card-group[data-v-668c6779] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.member__players-card[data-v-668c6779] {
+  padding: 0.5rem;
+  margin-bottom: 2.5rem;
+  width: 90%;
+  max-width: 24rem;
+}
+@media screen and (min-width: 560px) {
+.member__players-card[data-v-668c6779] {
+    width: calc(100% / 2);
+    max-width: none;
+}
+}
+@media screen and (min-width: 992px) {
+.member__players-card[data-v-668c6779] {
+    margin-bottom: 0;
+    width: calc(100% / 3);
+}
+}
+.member__players-card[data-v-668c6779]:nth-child(even) {
+  align-self: flex-end;
+}
+@media screen and (min-width: 560px) {
+.member__players-card[data-v-668c6779]:nth-child(even) {
+    align-self: auto;
+}
+}
+.member__players-card[data-v-668c6779]:last-child {
+  margin-bottom: 0;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b79d4b88 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b79d4b88 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1828,9 +3748,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-4efdffd6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-4efdffd6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1903,9 +3896,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -1971,9 +4037,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-3ea95d82 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-3ea95d82 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -2081,9 +4220,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-301d0ec5 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-301d0ec5 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -2210,9 +4422,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b28ce99e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b28ce99e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -2801,9 +5086,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -2813,7 +5171,7 @@ import用ファイル
   color: #ffffff;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
+  border-radius: 50%;
   margin-right: 0.5rem;
   cursor: pointer;
   box-shadow: 1px 3px 6px 3px #cdcdcd;
@@ -2890,9 +5248,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6832e7cf {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6832e7cf {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -3036,9 +5467,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6d5a9373 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6d5a9373 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -3082,9 +5586,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -3160,9 +5737,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -3233,9 +5883,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-060e08fe {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-060e08fe {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
@@ -3348,9 +6071,82 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  30% {
+    transform: translateX(30%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  60% {
+    transform: translateX(40%);
+  }
+  70% {
+    transform: translateX(30%);
+  }
+  80% {
+    transform: translateX(20%);
+  }
+  90% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes iconSlide {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  30% {
+    transform: translateX(30%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  60% {
+    transform: translateX(40%);
+  }
+  70% {
+    transform: translateX(30%);
+  }
+  80% {
+    transform: translateX(20%);
+  }
+  90% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける

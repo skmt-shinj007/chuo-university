@@ -24,6 +24,10 @@
   },
 
   "SectionTitles": {
+    "Support": {
+      "Main": "support",
+      "Sub" : "サポート"
+    },
     "Team": {
       "Main": "team",
       "Sub" : "チーム紹介"
@@ -63,6 +67,10 @@
     "Champions": {
       "Main": "champions",
       "Sub" : "天皇杯優勝者"
+    },
+    "Players": {
+      "Main": "players",
+      "Sub" : "選手"
     }
   },
 

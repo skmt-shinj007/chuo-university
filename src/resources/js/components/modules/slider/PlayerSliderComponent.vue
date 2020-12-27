@@ -1,8 +1,8 @@
 <template>
   <div class="slider">
     <swiper ref="contentsImageSwiper" :options="params">
-      <swiper-slide v-for="(playerInformation, n) in playerData" :key="n">
-        <player-card-component :playerInformation="playerInformation"/>
+      <swiper-slide v-for="(player, n) in players" :key="n">
+        <player-card-component :player="player"/>
       </swiper-slide>
 
       <!-- <div class="swiper-pagination" slot="pagination"></div> -->
@@ -21,7 +21,7 @@ export default {
     PlayerCardComponent,
   },
   props: {
-    playerData: Array,
+    players: Array,
   },
   computed: {
     params() {

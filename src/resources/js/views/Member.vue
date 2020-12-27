@@ -8,12 +8,26 @@
       </template>
     </main-visual-component>
   </div>
+
+  <section class="member__players section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Players.Main"
+      :subTitle="messages.SectionTitles.Players.Sub"/>
+
+    <div class="member__players-card-group">
+      <div class="member__players-card" v-for="(player, n) in players" :key="n">
+        <player-ticket-component :playersObj="player"/>
+      </div>
+    </div>
+  </section>
 </div>
 </template>
 
 <script>
 // component import
 import MainVisualComponent from '../components/contents/MainVisualComponent';
+import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
+import PlayerTicketComponent from '../components/modules/PlayerTicketComponent.vue';
 
 // data import
 import Data from '../config/data.json';
@@ -21,20 +35,20 @@ import Data from '../config/data.json';
 export default {
   components: {
     MainVisualComponent,
+    ContentsTitleComponent,
+    PlayerTicketComponent,
 
   },
   data() {
     return {
       data: Data,
+      players: [],
     }
   },
-  props: {
-
-  },
-  mounted() {
-
-  },
   beforeMount() {
+    // TODO:DBから情報を引っ張る
+    this.$data.data.Players.forEach(element => this.players.push(element));
+
     /**
      * SP表示のときにメインビジュアルテキストの改行を増やす
      * *ウインドウ幅がリアルタイム取得ではないので、改行増はリロードする必要がある。
@@ -51,6 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .member {
+  background-color: color(lightgray);
 
   &__main-visual-icon {
     width: interval(30);
@@ -74,6 +89,44 @@ export default {
 
     @include mq(sm) {
       text-align: center;
+    }
+  }
+
+  &__players-card-group {
+    padding-bottom: interval(10);
+    @include flex(column nowrap, center, flex-start);
+
+    @include mq(sm) {
+      @include flex(row wrap, flex-start, center);
+    }
+  }
+
+  &__players-card {
+    padding: interval(1);
+    margin-bottom: interval(5);
+    width: 90%;
+    max-width: interval(48);
+
+    @include mq(sm) {
+      width: calc(100% / 2);
+      max-width: none;
+    }
+
+    @include mq(md) {
+      margin-bottom: 0;
+      width: calc(100% / 3);
+    }
+
+    &:nth-child(even) {
+      align-self: flex-end;
+
+      @include mq(sm) {
+        align-self: auto;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
