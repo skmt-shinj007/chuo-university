@@ -14,8 +14,8 @@
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
-    <div class="member__players-ticket-group">
-      <div class="member__players-ticket" v-for="(player, n) in players" :key="n">
+    <div class="member__user-ticket-group">
+      <div class="member__user-ticket" v-for="(player, n) in players" :key="n">
         <user-ticket-component :userObj="player"/>
       </div>
     </div>
@@ -25,6 +25,12 @@
     <contents-title-component
       :title="messages.SectionTitles.Staff.Main"
       :subTitle="messages.SectionTitles.Staff.Sub"/>
+
+    <div class="member__user-ticket-group">
+      <div class="member__user-ticket" v-for="(staffItem, n) in staff" :key="n">
+        <user-ticket-component :userObj="staffItem"/>
+      </div>
+    </div>
   </section>
 </div>
 </template>
@@ -49,11 +55,13 @@ export default {
     return {
       data: Data,
       players: [],
+      staff: [],
     }
   },
   beforeMount() {
     // TODO:DBから情報を引っ張る
     this.$data.data.Players.forEach(element => this.players.push(element));
+    this.$data.data.Staff.forEach(element => this.staff.push(element));
 
     /**
      * SP表示のときにメインビジュアルテキストの改行を増やす
@@ -98,7 +106,7 @@ export default {
     }
   }
 
-  &__players-ticket-group {
+  &__user-ticket-group {
     @include flex(column nowrap, center, flex-start);
 
     @include mq(sm) {
@@ -106,7 +114,7 @@ export default {
     }
   }
 
-  &__players-ticket {
+  &__user-ticket {
     padding: interval(1);
     margin-bottom: interval(5);
     width: 90%;

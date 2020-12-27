@@ -3537,47 +3537,47 @@ import用ファイル
     text-align: center;
 }
 }
-.member__players-ticket-group[data-v-668c6779] {
+.member__user-ticket-group[data-v-668c6779] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
 }
 @media screen and (min-width: 560px) {
-.member__players-ticket-group[data-v-668c6779] {
+.member__user-ticket-group[data-v-668c6779] {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
 }
 }
-.member__players-ticket[data-v-668c6779] {
+.member__user-ticket[data-v-668c6779] {
   padding: 0.5rem;
   margin-bottom: 2.5rem;
   width: 90%;
   max-width: 24rem;
 }
 @media screen and (min-width: 560px) {
-.member__players-ticket[data-v-668c6779] {
+.member__user-ticket[data-v-668c6779] {
     width: calc(100% / 2);
     max-width: none;
 }
 }
 @media screen and (min-width: 992px) {
-.member__players-ticket[data-v-668c6779] {
+.member__user-ticket[data-v-668c6779] {
     margin-bottom: 0;
     width: calc(100% / 3);
 }
 }
-.member__players-ticket[data-v-668c6779]:nth-child(even) {
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
   align-self: flex-end;
 }
 @media screen and (min-width: 560px) {
-.member__players-ticket[data-v-668c6779]:nth-child(even) {
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
     align-self: auto;
 }
 }
-.member__players-ticket[data-v-668c6779]:last-child {
+.member__user-ticket[data-v-668c6779]:last-child {
   margin-bottom: 0;
 }@charset "UTF-8";
 /*

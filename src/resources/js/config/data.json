@@ -792,10 +792,34 @@
         "alumni": "理事"
       },
       "category": 2,
-      "position": "前衛",
+      "position": null,
       "grade": null,
-      "undergraduate": "理工学部",
+      "undergraduate": null,
       "record": "2016年ハイスクールジャパンカップ ベスト8",
+      "message": "メッセージが入ります。"
+    },
+    {
+      "name": {
+        "ja": "高橋 直哉",
+        "en": "Takahashi Naoya"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": "部長",
+        "alumni": null
+      },
+      "category": 2,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "record": null,
       "message": "メッセージが入ります。"
     }
   ]

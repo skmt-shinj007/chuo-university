@@ -9,9 +9,15 @@
   <div class="user-ticket-item">
     <span class="user-ticket__name">{{ userObj.name.ja }}</span>
     <span class="user-ticket__name">{{ userObj.name.en }}</span>
-    <div class="user-ticket-tag-group">
+
+    <!-- ユーザーカテゴリーが選手の場合 -->
+    <div v-if="userObj.category === 1" class="user-ticket-tag-group">
       <position-tag-component :position="userObj.position"/>
       <grade-tag-component :grade="userObj.grade"/>
+    </div>
+
+    <div v-else class="user-ticket-tag-group">
+      <tag-component :content="userObj.post.club"/>
     </div>
   </div>
 
