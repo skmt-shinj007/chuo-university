@@ -1,21 +1,22 @@
 <template>
-<div class="player">
-  <div class="player-item" :class="borderColor">
-    <figure class="player-thumbnail-wrap">
-      <img class="player-thumbnail" :src="`/image/${playersObj.img.src}`" alt="playersObj.img.alt">
+<div class="player-ticket" ref="targetElement">
+  <div class="player-ticket-item" :class="borderColor">
+    <figure class="player-ticket-thumbnail-wrap">
+      <img class="player-ticket-thumbnail" :src="`/image/${playersObj.img.src}`" alt="playersObj.img.alt">
     </figure>
   </div>
 
-  <div class="player-item">
-    <span class="player-name">{{ playersObj.name.en }}</span>
-    <div class="player-tag-group">
+  <div class="player-ticket-item">
+    <span class="player-ticket__name">{{ playersObj.name.ja }}</span>
+    <span class="player-ticket__name">{{ playersObj.name.en }}</span>
+    <div class="player-ticket-tag-group">
       <position-tag-component :position="playersObj.position"/>
       <grade-tag-component :grade="playersObj.grade"/>
     </div>
   </div>
 
-  <div class="player-item">
-    <svg-vue class="player-icon" icon="angle-right"/>
+  <div class="player-ticket-item">
+    <svg-vue class="player-ticket-icon" icon="angle-right"/>
   </div>
 
 </div>
@@ -41,18 +42,18 @@ export default {
   },
   computed: {
     borderColor() {
-      return (this.playersObj.position === "前衛") ? `player-thumbnail-border--green` : `player-thumbnail-border--blue`;
-    }
-  }
+      const borderClass = 'player-ticket-thumbnail-border';
+      return (this.playersObj.position === "前衛") ? `${borderClass}--orange` : (this.playersObj.position === "後衛") ? `${borderClass}--green` : `${borderClass}--blue`;
+    },
+  },
 }
 </script>
 
 <style lang="scss">
-.player {
+.player-ticket {
   @include flex(row nowrap, space-between, center);
   box-shadow: 0 3px 5px 3px color(darkShadow);
   background-color: color(white);
-  width: interval(34);
   border: 2px solid color(light);
   border-radius: 48px;
   padding: interval(1);
@@ -60,12 +61,22 @@ export default {
   z-index: 1;
 
   @include mq(sm) {
-    width: interval(38);
     padding: interval(1) interval(1.5);
   }
 
   @include mq(md) {
     cursor: pointer;
+    box-shadow: 0 1px 3px 1px color(darkShadow);
+    transition: all .3s ease-out;
+
+    &:hover {
+      box-shadow: 0 3px 5px 3px color(darkShadow);
+      transform: translateY(-2px);
+
+      .player-ticket-icon {
+        animation: iconSlide 1.5s infinite;
+      }
+    }
   }
 
   &-thumbnail-border {
@@ -73,10 +84,17 @@ export default {
       @include border-gradient();
     }
 
-    &--green {
+    &--orange {
       @include border-gradient(
         $start-color: color(orange),
-        $end-color: darken(color(orange), 50%),
+        $end-color: color(lightDarkblue),
+      );
+    }
+
+    &--green {
+      @include border-gradient(
+        $start-color: color(lightGreen),
+        $end-color: color(lightDarkblue),
       );
     }
   }
@@ -94,11 +112,19 @@ export default {
     border-radius: radius(circle);
   }
 
-  &-name {
+  &__name {
     display: block;
     font-size: font(base);
     font-weight: bold;
     padding-left: interval(.5);
+
+    &:first-of-type {
+      display: none;
+
+      @include mq(sm) {
+        display: block;
+      }
+    }
   }
 
   &-tag-group {

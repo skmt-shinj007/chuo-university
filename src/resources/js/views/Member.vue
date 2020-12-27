@@ -45,9 +45,6 @@ export default {
       players: [],
     }
   },
-  mounted() {
-
-  },
   beforeMount() {
     // TODO:DBから情報を引っ張る
     this.$data.data.Players.forEach(element => this.players.push(element));
@@ -100,29 +97,24 @@ export default {
     @include flex(column nowrap, center, flex-start);
 
     @include mq(sm) {
-      align-items: center;
-    }
-
-    @include mq(md) {
-      @include flex(row wrap, center, center);
+      @include flex(row wrap, flex-start, center);
     }
   }
 
   &__players-card {
     padding: interval(1);
+    margin-bottom: interval(5);
+    width: 90%;
+    max-width: interval(48);
+
+    @include mq(sm) {
+      width: calc(100% / 2);
+      max-width: none;
+    }
 
     @include mq(md) {
       margin-bottom: 0;
-    }
-
-    &:nth-child(odd) {
-      @include mq(sm) {
-        transform: translateX(- interval(10));
-      }
-
-      @include mq(md) {
-        transform: none;
-      }
+      width: calc(100% / 3);
     }
 
     &:nth-child(even) {
@@ -130,11 +122,6 @@ export default {
 
       @include mq(sm) {
         align-self: auto;
-        transform: translateX(interval(10));
-      }
-
-      @include mq(md) {
-        transform: none;
       }
     }
 
