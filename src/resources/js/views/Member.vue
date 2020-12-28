@@ -68,10 +68,10 @@ export default {
      * *ウインドウ幅がリアルタイム取得ではないので、改行増はリロードする必要がある。
      * （そもそもPC幅からSP幅に移行する場面は想定できないのでこの作りでOKな気がする）
      */
-    if (this.windowWidth < 560) {
-      this.$data.messages.MainVisual.Member = "CHUO UNIVERSITY\nSOFT TENNIS\nTEAM MEMBER";
-      return this.$data.messages.MainVisual.Member;
-    }
+    // if (this.windowWidth < 560) {
+    //   this.$data.messages.MainVisual.Member = "CHUO UNIVERSITY\nSOFT TENNIS\nTEAM MEMBER";
+    //   return this.$data.messages.MainVisual.Member;
+    // }
   },
 
 }
@@ -96,13 +96,14 @@ export default {
   }
 
   &__main-visual-ward {
-    @include bangers(font(mv), 1px, 400);
+    @include bangers(font(xl), 1px, 400);
     color: color(white);
     line-height: 1.2;
     margin: 0 interval(1);
+    text-align: center;
 
     @include mq(sm) {
-      text-align: center;
+      font-size: font(mv);
     }
   }
 

@@ -3525,16 +3525,17 @@ import用ファイル
 }
 .member__main-visual-ward[data-v-668c6779] {
   font-family: "Bangers", cursive;
-  font-size: 48px;
+  font-size: 22px;
   letter-spacing: 1px;
   font-weight: 400;
   color: #ffffff;
   line-height: 1.2;
   margin: 0 0.5rem;
+  text-align: center;
 }
 @media screen and (min-width: 560px) {
 .member__main-visual-ward[data-v-668c6779] {
-    text-align: center;
+    font-size: 48px;
 }
 }
 .member__user-ticket-group[data-v-668c6779] {
