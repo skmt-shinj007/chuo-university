@@ -1,18 +1,20 @@
 <template>
 <div class="dormitory-card">
-  <div class="dormitory-card__icon-wrap">
-    <img class="dormitory-card__icon" :src="`/image/${srcUrl}`" :alt="alt">
-  </div>
-  <div class="dormitory-card__text-wrap">
-    <p class="dormitory-card__text nl2br" v-text="content"/>
 
-    <div class="dormitory-card__tag" v-if="washPrice">
-      <span class="dormitory-card__laundry-price" v-text="washPrice"></span>
-      <span class="dormitory-card__laundry-price" v-text="dryPrice"></span>
+  <div class="dormitory-card__icon-wrap">
+    <svg-vue class="dormitory-card__icon" :icon="dormitoryData.Icon.Src" :alt="dormitoryData.Icon.Alt"/>
+  </div>
+
+  <div class="dormitory-card__text-wrap">
+    <p class="dormitory-card__text nl2br" v-text="dormitoryData.Content"/>
+
+    <div class="dormitory-card__complement-text" v-if="dormitoryData.Price">
+      <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Wash"></span>
+      <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Dry"></span>
     </div>
 
-    <div class="dormitory-card__tag" v-if="bathTime">
-      <span class="dormitory-card__bath-time" v-text="bathTime"/>
+    <div class="dormitory-card__complement-text" v-if="dormitoryData.BathTime">
+      <span class="dormitory-card__bath-time" v-text="dormitoryData.BathTime"/>
     </div>
   </div>
 </div>
@@ -21,29 +23,9 @@
 <script>
 export default {
   props: {
-    srcUrl: {
-      type: String,
-      default: "restaurant.svg"
-    },
-    alt: {
-      type: String,
-      default: "aa"
-    },
-    content: {
-      type: String,
-      default: "aa"
-    },
-    washPrice: {
-      type: String,
-      default: '',
-    },
-    dryPrice: {
-      type: String,
-      default: '',
-    },
-    bathTime: {
-      type: String,
-      default: '',
+    dormitoryData: {
+      type: Object,
+      default: null
     }
   },
 }
@@ -61,20 +43,20 @@ export default {
   }
 
   &__icon-wrap {
+    @include flex(row nowrap, center, center);
     border: 2px solid color(darkblue);
     border-radius: radius(circle);
     padding: interval(1.5);
-    margin-right: interval(1);
   }
 
   &__icon {
-    width: icon(lg);
-    height: icon(lg);
-    fill: color(orange);
+    width: interval(3);
+    height: interval(3);
   }
 
   &__text-wrap {
     padding: interval(1);
+    margin-left: interval(1);
   }
 
   &__text {
@@ -83,7 +65,7 @@ export default {
     line-height: 1.5;
   }
 
-  &__tag {
+  &__complement-text {
     margin-top: interval(0.5);
   }
 

@@ -2,6 +2,12 @@ import Vue from 'vue';
 import router from './router';  // vueルーターをインポート
 
 /**
+ * laravel-mix-svg-vue (svgファイルをVueコンポーネントとして使えるようにするライブラリ)
+ */
+import SvgVue from 'svg-vue';  // laravel-mix-svg-vueのインポート
+Vue.use(SvgVue);
+
+/**
  * swiper (global mount)
  */
 import VueAwesomeSwiper from 'vue-awesome-swiper';

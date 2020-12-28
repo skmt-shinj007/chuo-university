@@ -1,9 +1,13 @@
 <template>
   <div class="menu-panel">
     <figure class="menu-panel__figure">
-      <img class="menu-panel__image" :src="panelImageUrl" :alt="imageAlt">
+      <img class="menu-panel__image" :src="`/image/${menuPanelData.Image.Src}`" :alt="menuPanelData.Image.Alt">
     </figure>
-    <view-all-button-component class="menu-panel__button" :name="buttonName" :buttonSize="buttonSize"/>
+    <view-all-button-component
+      class="menu-panel__button"
+      :name="menuPanelData.Btn.Name"
+      :buttonSize="menuPanelData.Btn.Size"
+      variationClass="rgba"/>
   </div>
 </template>
 
@@ -16,10 +20,10 @@ export default {
     ViewAllButtonComponent,
   },
   props: {
-    buttonName: String,
-    panelImageUrl: String,
-    imageAlt: String,
-    buttonSize: String,
+    menuPanelData: {
+      type: Object,
+      default: null
+    }
   },
   data() {
     return {

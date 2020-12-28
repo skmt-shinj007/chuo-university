@@ -7,21 +7,20 @@
 
   <div class="background-darkblue">
     <section class="club__policy section-container">
-      <contents-title-component :title="messages.Club.Policy.Title" :subTitle="messages.Club.Policy.SubTitle" color="white"/>
+      <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
 
       <div class="club__policy-cards">
+        <!-- TODO:コンポーネントに直接 v-for しない -->
         <policy-card-component
-        v-for="policy in policies"
-        :key="policy.id"
-        :policyTitle="policy.title"
-        :policyContent="policy.content"
-        :policySubTitle="policy.subTitle"/>
+        v-for="(policy, n) in policies"
+        :key="n"
+        :policy="policy"/>
       </div>
     </section>
   </div>
 
   <section class="club__practice section-container">
-    <contents-title-component :title="messages.Club.Practice.Title" :subTitle="messages.Club.Practice.SubTitle"/>
+    <contents-title-component :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
 
     <div class="club__practice-table">
       <table-component :tableItems="practiceInformations"/>
@@ -39,18 +38,18 @@
     <!-- 画面幅993pxから表示（pcから） -->
     <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
       <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
+        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
     </div>
 
     <div class="club__practice-schedule">
-      <h3 class="club__practice-schedule-title">{{ messages.Club.Practice.ScheduleTitle }}</h3>
+      <h3 class="club__practice-schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
       <table-component :tableItems="schedule"/>
     </div>
   </section>
 
   <section class="club__dormitory section-container">
-    <contents-title-component :title="messages.Club.Dormitory.Title" :subTitle="messages.Club.Dormitory.SubTitle"/>
+    <contents-title-component :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
 
     <div class="club__dormitory-lead-wrap">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
@@ -58,7 +57,7 @@
 
     <div class="club__dormitory-cards">
       <div class="club__dormitory-card-item" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-card-component v-bind="dormitoryInformation"/>
+        <dormitory-card-component :dormitoryData="dormitoryInformation"/>
       </div>
     </div>
 
@@ -68,24 +67,56 @@
 
     <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
       <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
-        <arrange-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
+  </section>
 
+  <div class="club__member-bg">
+    <section class="club__member section-container">
+      <contents-title-component :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
+
+      <player-slider-component :players="players"/>
+
+      <div class="club__member-number">
+        <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
+        <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+      </div>
+
+      <div class="club__member-button">
+        <view-all-button-component :name="messages.ButtonName.Member"/>
+      </div>
+    </section>
+  </div>
+
+  <section class="club__photo section-container">
+    <contents-title-component :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
+
+    <div class="club__photo-images-container">
+      <arrange-images-component :imagesData="imagesData"/>
+    </div>
+
+    <div class="club__photo-button">
+      <view-all-button-component/>
+    </div>
   </section>
 </div>
 </template>
 
 <script>
 // component import
+import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import GoogleMapComponent from '../components/modules/GoogleMapComponent';
 import PolicyCardComponent from '../components/modules/card/PolicyCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import ArrangeImageComponent from '../components/modules/ArrangeImageComponent';
+import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
+import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
+import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
+import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
 
 export default {
   components: {
@@ -95,35 +126,44 @@ export default {
     TableComponent,
     GoogleMapComponent,
     ContentsImageSliderComponent,
-    ArrangeImageComponent,
+    CaptionBarImageComponent,
     DormitoryCardComponent,
+    PlayerSliderComponent,
+    ViewAllButtonComponent,
+    ArrangeImagesComponent,
   },
   data() {
     return {
-      policies: [],
+      data: Data,
       mainVisualImages: [],
+      policies: [],
       practiceInformations: [],
       courtImages: [],
       schedule: [],
       dormitoryInformations: [],
       dormitoryImages: [],
+      players: [],
+      memberNumber: [],
+      imagesData: [],
     }
   },
 
   beforeMount() {
-    // TODO: 以下テストデータ生成
+    // TODO:画像を格納するクラウドストレージからApiで取得する
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
-    policiesData.forEach(element => this.policies.push(element));
-    practiceData.forEach(element => this.practiceInformations.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
-    scheduleData.forEach(element => this.schedule.push(element));
-    dormitoryData.forEach(element => this.dormitoryInformations.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
-  },
+    imageApiResponse.forEach(element => this.imagesData.push(element));
 
-  mounted() {
-    console.log('マウント後');
-    console.log(this.$data.messages);
+    // config/data.jsonから引っ張る
+    this.$data.data.Policy.forEach(element => this.policies.push(element));
+    this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
+    this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
+    this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
+
+    // TODO:DBから情報を引っ張る
+    this.$data.data.Players.forEach(element => this.players.push(element));
+    memberNumberData.forEach(element => this.memberNumber.push(element));
   },
 }
 
@@ -186,132 +226,75 @@ const dormitoryImageApiResponse = [
 ];
 
 /**
- * test data : ポリシーの内容
+ * test API response : 部員数
  */
-const policiesData = [
+const memberNumberData = [
   {
-    id: 1,
-    title: 'Symbol',
-    content: '部訓が入ります。部訓が入ります。',
-    subTitle: '部訓'
+    key: 4,    // 年次
+    value: 4,  // 人数
   },
   {
-    id: 2,
-    title: 'Target',
-    content: '全日本大学対抗戦優勝',
-    subTitle: '目標'
+    key: 3,
+    value: 7,
   },
   {
-    id: 3,
-    title: 'mission',
-    content: 'ソフトテニスを通じた人間育成',
-    subTitle: '意義'
+    key: 2,
+    value: 5,
+  },
+  {
+    key: 1,
+    value: 6,
   }
 ];
 
 /**
- * test data : 練習情報
+ * test Api response : 画像ストレージからのAPIレスポンス（想定）
  */
-const practiceData = [
+const imageApiResponse = [
   {
-    key: '練習時間',
-    value: '9:00 ~ 12:00（全体練習）',
+    path: 'player01.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '活動期間',
-    value: '2月 - 8月、9月 - 12月',
+    path: 'player02.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: 'オフ',
-    value: '毎週月曜日・各大会後',
+    path: 'player03.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '練習場所',
-    value: '〒192-0393\n東京都八王子市東中野742-1\n中央大学多摩キャンパス第二体育館ソフトテニスコート',
-  }
-];
-
-/**
- * test data : 年間スケジュール
- */
-const scheduleData = [
-  {
-    key: '1月',
-    value: 'オフ'
+    path: 'player04.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '2月',
-    value: 'オフ / 練習開始'
+    path: 'player05.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '3月',
-    value: '春合宿'
+    path: 'player06.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '4月',
-    value: '東都リーグ（春）'
+    path: 'player07.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '5月',
-    value: '関東リーグ（春）'
+    path: 'player08.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '6月',
-    value: '定期戦（立命館大学）'
+    path: 'player09.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '7月',
-    value: '東日本インカレ'
+    path: 'player10.jpg',
+    alt: '写真の補足テキスト',
   },
   {
-    key: '8月',
-    value: 'インカレ'
+    path: 'player11.jpg',
+    alt: '写真の補足テキスト',
   },
-  {
-    key: '9月',
-    value: '東都リーグ（秋）'
-  },
-  {
-    key: '10月',
-    value: '関東リーグ（秋）'
-  },
-  {
-    key: '11月',
-    value: '大学対抗'
-  },
-  {
-    key: '12月',
-    value: 'オフ / 納会'
-  },
-];
-
-/**
- * test data : 寮のデータ
- */
-const dormitoryData = [
-  {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
-    content: '食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。',
-  },
-  {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
-    content: '南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n',
-    bathTime: '入浴可能時間：6:00 - 9:30 / 12:00 - 14:00 / 16:30 - 23:00',
-  },
-  {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
-    content: 'ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。',
-  },
-  {
-    srcUrl: 'restaurant.svg',
-    alt: 'アイコンのaltが入ります',
-    content: '洗濯機は、ソフトテニス部の部屋がある階に4台ございます。',
-    washPrice: '洗濯機：無料',
-    dryPrice: '乾燥機：24分 / 100円'
-  }
 ];
 </script>
 
@@ -377,10 +360,6 @@ const dormitoryData = [
       @include mq(sm) {
         width: 80%;
       };
-
-      @include mq(md) {
-        width: 70%;
-      };
     }
   }
 
@@ -410,6 +389,7 @@ const dormitoryData = [
     &-card-item {
       width: 90%;
       margin: 0 auto;
+      @include flex(row nowrap, center, center);
 
       @include mq(sm) {
         width: 70%;
@@ -428,6 +408,60 @@ const dormitoryData = [
 
     &-images-item {
       width: 30%;
+    }
+  }
+
+  &__member {
+    padding: interval(5) 0;
+
+    @include mq(md) {
+      padding: interval(10) 0;
+    }
+
+    &-bg {
+      @include gradient();
+    }
+
+    &-number {
+      margin-top: interval(10);
+    }
+
+    &-number-title {
+      width: 90%;
+      color: color(white);
+      margin: 0 auto interval(2) auto;
+      padding-left: interval(3);
+      position: relative;
+      @include text-before-line(interval(2), 1px, color(white));
+
+      @include mq(sm) {
+        width: 80%;
+      };
+    }
+
+    &-button {
+      margin-top: interval(5);
+    }
+  }
+
+  &__photo {
+    margin: interval(10) auto;
+
+    @include mq(md) {
+      margin-top: interval(20);
+    }
+
+    &-images-container {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    &-button {
+      margin-top: interval(5);
+
+      @include mq(sm) {
+        margin-top: interval(7);
+      };
     }
   }
 }

@@ -26,8 +26,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-3ff6fe5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-3ff6fe5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .main-visual[data-v-3ff6fe5a] {
   width: 100%;
@@ -46,11 +123,6 @@ import用ファイル
   font-size: 48px;
   font-weight: bold;
   text-shadow: 3px 3px 0px #e56c2c;
-}
-@media screen and (min-width: 560px) {
-.main-visual__title[data-v-3ff6fe5a] {
-    font-size: 80px;
-}
 }
 @media screen and (min-width: 992px) {
 .main-visual__title[data-v-3ff6fe5a] {
@@ -85,8 +157,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .contents-title {
   padding-bottom: 2.5rem;
@@ -157,8 +306,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .text-list {
   width: 100%;
@@ -216,8 +442,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-9b317ac0 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-9b317ac0 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .news[data-v-9b317ac0] {
   width: 80%;
@@ -255,8 +558,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .view-all-button {
   width: 80%;
@@ -274,14 +654,13 @@ import用ファイル
     width: 300px;
     height: 60px;
     font-size: 12px;
-    background-color: rgba(255, 255, 255, 0.6);
 }
-.view-all-button-xs {
+.view-all-button--xs {
     max-width: 200px;
     height: 45px;
     font-size: 10px;
 }
-.view-all-button-sm {
+.view-all-button--sm {
     width: 240px;
     height: 50px;
     font-size: 10px;
@@ -307,16 +686,17 @@ import用ファイル
   transform: translateX(4px) translateY(-4px);
   transition: all 0.3s ease-out;
 }
-@media screen and (min-width: 992px) {
-.view-all-button__button {
-    background-color: rgba(255, 255, 255, 0.6);
-}
-}
 .view-all-button__icon {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+}
+.view-all-button--rgba {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.view-all-button--rgba .view-all-button__button {
+  background-color: rgba(255, 255, 255, 0.6);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -345,8 +725,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .lead-text {
   width: 80%;
@@ -401,8 +858,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-481a74cb {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-481a74cb {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .menu-panel__figure[data-v-481a74cb] {
   width: 100%;
@@ -463,8 +997,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-bae950f4 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-bae950f4 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .top[data-v-bae950f4] {
   position: relative;
@@ -667,8 +1278,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-161a410d {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-161a410d {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .google-map__map[data-v-161a410d] {
   width: 100%;
@@ -721,8 +1409,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b056e422 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b056e422 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .policy-card[data-v-b056e422] {
   width: 160px;
@@ -816,8 +1581,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6cd5e234 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6cd5e234 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .image-slider__container[data-v-6cd5e234] {
   position: relative;
@@ -890,17 +1732,94 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.main-visual-alider[data-v-30380e08] {
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-30380e08 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-30380e08 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.main-visual-slider[data-v-30380e08] {
   height: 100%;
   position: relative;
 }
-.main-visual-alider .swiper-slider[data-v-30380e08] {
+.main-visual-slider .swiper-slider[data-v-30380e08] {
   overflow: hidden;
 }
-.main-visual-alider__image[data-v-30380e08] {
+.main-visual-slider__image[data-v-30380e08] {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
@@ -908,7 +1827,7 @@ import用ファイル
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
 }
-.main-visual-alider__text[data-v-30380e08] {
+.main-visual-slider__text[data-v-30380e08] {
   position: absolute;
   top: 50%;
   left: 0;
@@ -917,6 +1836,11 @@ import用ファイル
   color: #ffffff;
   padding-left: 1.5rem;
   font-size: 16px;
+}
+@media screen and (min-width: 992px) {
+.main-visual-slider__text[data-v-30380e08] {
+    left: 10%;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -945,8 +1869,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .common-table {
   width: 90%;
@@ -957,14 +1958,15 @@ import用ファイル
     width: 80%;
 }
 }
-@media screen and (min-width: 992px) {
-.common-table {
-    width: 70%;
-}
-}
 .common-table__record {
   width: 100%;
   border: 1px solid #f2f2f2;
+}
+.common-table__record--xs {
+  font-size: 10px;
+}
+.common-table__record--sm {
+  font-size: 12px;
 }
 .common-table__key {
   width: 30%;
@@ -974,7 +1976,11 @@ import用ファイル
 }
 .common-table__value {
   width: 70%;
+  background-color: #ffffff;
   white-space: pre-wrap;
+}
+.common-table__value--transparent {
+  background-color: rgba(255, 255, 255, 0);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1003,19 +2009,96 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
  */
-.arrange-image[data-v-7f82b6cb] {
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-7fa4fe02 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-7fa4fe02 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.caption-bar-image[data-v-7fa4fe02] {
   width: 100%;
   position: relative;
 }
-.arrange-image[data-v-7f82b6cb]::before {
+.caption-bar-image[data-v-7fa4fe02]::before {
   content: "";
   display: block;
   padding-bottom: 66.7%;
 }
-.arrange-image > img[data-v-7f82b6cb] {
+.caption-bar-image > img[data-v-7fa4fe02] {
   position: absolute;
   top: 0;
   left: 0;
@@ -1024,11 +2107,11 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.arrange-image__image[data-v-7f82b6cb] {
+.caption-bar-image__image[data-v-7fa4fe02] {
   border-radius: 2px;
   box-shadow: 0 0 6px #b3b3b3;
 }
-.arrange-image__bar[data-v-7f82b6cb] {
+.caption-bar-image__bar[data-v-7fa4fe02] {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
@@ -1038,10 +2121,10 @@ import用ファイル
   left: 50%;
   transform: translateX(-50%);
 }
-.arrange-image__caption[data-v-7f82b6cb], .arrange-image__secondary-caption[data-v-7f82b6cb] {
+.caption-bar-image__caption[data-v-7fa4fe02], .caption-bar-image__secondary-caption[data-v-7fa4fe02] {
   font-size: 10px;
 }
-.arrange-image__capacity-number[data-v-7f82b6cb] {
+.caption-bar-image__capacity-number[data-v-7fa4fe02] {
   font-size: 16px;
   font-weight: bold;
 }@charset "UTF-8";
@@ -1072,8 +2155,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-2a1efbb8 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-2a1efbb8 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .dormitory-card[data-v-2a1efbb8] {
   width: 100%;
@@ -1088,25 +2248,28 @@ import用ファイル
   margin-bottom: 0;
 }
 .dormitory-card__icon-wrap[data-v-2a1efbb8] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #091e2f;
-  border-radius: 100%;
+  border-radius: 50%;
   padding: 0.75rem;
-  margin-right: 0.5rem;
 }
 .dormitory-card__icon[data-v-2a1efbb8] {
-  width: 32px;
-  height: 32px;
-  fill: #e56c2c;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .dormitory-card__text-wrap[data-v-2a1efbb8] {
   padding: 0.5rem;
+  margin-left: 0.5rem;
 }
 .dormitory-card__text[data-v-2a1efbb8] {
   font-size: 12px;
   font-weight: bold;
   line-height: 1.5;
 }
-.dormitory-card__tag[data-v-2a1efbb8] {
+.dormitory-card__complement-text[data-v-2a1efbb8] {
   margin-top: 0.25rem;
 }
 .dormitory-card__laundry-price[data-v-2a1efbb8] {
@@ -1147,8 +2310,648 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.tag {
+  margin: 0.25rem;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  font-weight: bold;
+  line-height: 1.9;
+}
+.tag--lg {
+  font-size: 16px;
+  line-height: 2;
+}
+.tag__color {
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  background-color: #091e2f;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tag__color--lightgreen {
+  background-color: #56b145;
+}
+.tag__color--orange {
+  background-color: #e56c2c;
+}
+.tag__color--outline-orange {
+  background-color: #ffffff;
+  border: 2px solid #e56c2c;
+  color: #e56c2c;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.player-card {
+  width: 60%;
+}
+@media screen and (min-width: 560px) {
+.player-card {
+    width: 30%;
+}
+}
+@media screen and (min-width: 992px) {
+.player-card {
+    width: 20%;
+}
+}
+.player-card__figure {
+  position: relative;
+  border-bottom: 2px solid #091e2f;
+  background-color: #ffffff;
+}
+.player-card__figure::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.player-card__figure > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.player-card__information {
+  background-color: #f2f2f2;
+  padding: 0.5rem;
+}
+.player-card__information-name {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0.5rem 0 0.25rem;
+}
+.player-card__information-name-english {
+  font-weight: bold;
+  font-size: 10px;
+}
+.player-card__information-tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: space-around;
+  padding: 0.5rem 0;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-53189f00 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-53189f00 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.slider .player-card[data-v-53189f00] {
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.slider .player-card[data-v-53189f00] {
+    width: 60%;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-bb84db5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-bb84db5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.arrange-images__list-container[data-v-bb84db5a] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.arrange-images__list[data-v-bb84db5a] {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 50%;
+}
+.arrange-images__list[data-v-bb84db5a]::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.arrange-images__list > img[data-v-bb84db5a] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.arrange-images__list[data-v-bb84db5a] {
+    width: 33.3%;
+}
+}
+@media screen and (min-width: 992px) {
+.arrange-images__list[data-v-bb84db5a] {
+    width: 20%;
+}
+}
+.arrange-images__list-item[data-v-bb84db5a] {
+  padding: 0.5rem;
+  cursor: pointer;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-357d3955 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-357d3955 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
@@ -1215,11 +3018,6 @@ import用ファイル
     width: 80%;
 }
 }
-@media screen and (min-width: 992px) {
-.club__practice-schedule-title[data-v-357d3955] {
-    width: 70%;
-}
-}
 .club__dormitory-lead-wrap[data-v-357d3955] {
   width: 90%;
   margin: 0 auto;
@@ -1248,6 +3046,10 @@ import用ファイル
 .club__dormitory-card-item[data-v-357d3955] {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 560px) {
 .club__dormitory-card-item[data-v-357d3955] {
@@ -1269,6 +3071,67 @@ import用ファイル
 }
 .club__dormitory-images-item[data-v-357d3955] {
   width: 30%;
+}
+.club__member[data-v-357d3955] {
+  padding: 2.5rem 0;
+}
+@media screen and (min-width: 992px) {
+.club__member[data-v-357d3955] {
+    padding: 5rem 0;
+}
+}
+.club__member-bg[data-v-357d3955] {
+  background: #091e2f;
+  background: radial-gradient(ellipse at center, #091e2f 0%, #030A10 100%);
+}
+.club__member-number[data-v-357d3955] {
+  margin-top: 5rem;
+}
+.club__member-number-title[data-v-357d3955] {
+  width: 90%;
+  color: #ffffff;
+  margin: 0 auto 1rem auto;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.club__member-number-title[data-v-357d3955]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 560px) {
+.club__member-number-title[data-v-357d3955] {
+    width: 80%;
+}
+}
+.club__member-button[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+.club__photo[data-v-357d3955] {
+  margin: 5rem auto;
+}
+@media screen and (min-width: 992px) {
+.club__photo[data-v-357d3955] {
+    margin-top: 10rem;
+}
+}
+.club__photo-images-container[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+}
+.club__photo-button[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.club__photo-button[data-v-357d3955] {
+    margin-top: 3.5rem;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1297,8 +3160,1352 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.user-ticket {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 5px 3px #b3b3b3;
+  background-color: #ffffff;
+  border: 2px solid #f8f9fa;
+  border-radius: 48px;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 560px) {
+.user-ticket {
+    padding: 0.5rem 0.75rem;
+}
+}
+@media screen and (min-width: 992px) {
+.user-ticket {
+    cursor: pointer;
+    box-shadow: 0 1px 3px 1px #b3b3b3;
+    transition: all 0.3s ease-out;
+}
+.user-ticket:hover {
+    box-shadow: 0 3px 5px 3px #b3b3b3;
+    transform: translateY(-2px);
+}
+.user-ticket:hover .user-ticket-icon {
+    -webkit-animation: iconSlide 1.5s infinite;
+            animation: iconSlide 1.5s infinite;
+}
+}
+.user-ticket-thumbnail-border--blue {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--blue::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+.user-ticket-thumbnail-border--orange {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--orange::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #e56c2c;
+  background: linear-gradient(to bottom, #e56c2c 0%, #10334e 100%);
+}
+.user-ticket-thumbnail-border--green {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--green::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #56b145;
+  background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
+}
+.user-ticket-thumbnail-wrap {
+  width: 100%;
+  position: relative;
+}
+.user-ticket-thumbnail-wrap::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.user-ticket-thumbnail-wrap > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.user-ticket-thumbnail-wrap {
+    width: 5rem;
+}
+}
+.user-ticket-thumbnail {
+  border-radius: 50%;
+}
+.user-ticket__name {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 0.25rem;
+}
+.user-ticket__name:first-of-type {
+  display: none;
+}
+@media screen and (min-width: 560px) {
+.user-ticket__name:first-of-type {
+    display: block;
+}
+}
+.user-ticket-tag-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-ticket-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #091e2f;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.member[data-v-668c6779] {
+  background-color: #f2f2f2;
+}
+.member__main-visual-icon[data-v-668c6779] {
+  width: 15rem;
+  height: 15rem;
+  fill: #ffffff;
+  stroke: #e56c2c;
+}
+@media screen and (min-width: 992px) {
+.member__main-visual-icon[data-v-668c6779] {
+    width: 40%;
+    height: 40%;
+    min-width: 30rem;
+    min-height: 30rem;
+}
+}
+.member__main-visual-ward[data-v-668c6779] {
+  font-family: "Bangers", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 560px) {
+.member__main-visual-ward[data-v-668c6779] {
+    font-size: 48px;
+}
+}
+.member__user-ticket-group[data-v-668c6779] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket-group[data-v-668c6779] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.member__user-ticket[data-v-668c6779] {
+  padding: 0.5rem;
+  margin-bottom: 2.5rem;
+  width: 90%;
+  max-width: 24rem;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket[data-v-668c6779] {
+    width: calc(100% / 2);
+    max-width: none;
+}
+}
+@media screen and (min-width: 992px) {
+.member__user-ticket[data-v-668c6779] {
+    margin-bottom: 0;
+    width: calc(100% / 3);
+}
+}
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
+  align-self: flex-end;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
+    align-self: auto;
+}
+}
+.member__staff[data-v-668c6779] {
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 992px) {
+.member__staff[data-v-668c6779] {
+    padding-bottom: 10rem;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b79d4b88 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b79d4b88 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.record-tag[data-v-b79d4b88] {
+  cursor: pointer;
+}
+.record-tag__row[data-v-b79d4b88] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.record-tag__icon[data-v-b79d4b88] {
+  margin-right: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media screen and (min-width: 560px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.5rem;
+}
+}
+@media screen and (min-width: 992px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.75rem;
+}
+}
+.record-tag__content[data-v-b79d4b88] {
+  font-size: 12px;
+  padding: 0.25rem 0;
+}
+@media screen and (min-width: 560px) {
+.record-tag__content[data-v-b79d4b88] {
+    font-size: 14px;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-4efdffd6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-4efdffd6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.history-card[data-v-4efdffd6] {
+  border: 2px solid #091e2f;
+  border-radius: 8px;
+  position: relative;
+}
+@media screen and (min-width: 560px) {
+.history-card[data-v-4efdffd6] {
+    padding: 0.5rem;
+}
+}
+.history-card__tag-modal[data-v-4efdffd6] {
+  position: absolute;
+  top: -1.5rem;
+  right: 5%;
+}
+.history-card__tag-date[data-v-4efdffd6] {
+  margin: 0.5rem 1rem;
+}
+@media screen and (min-width: 560px) {
+.history-card__tag-date[data-v-4efdffd6] {
+    width: 11rem;
+}
+}
+.history-card__title[data-v-4efdffd6] {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.history-card__title-main[data-v-4efdffd6] {
+  font-size: 18px;
+}
+.history-card__title-sub[data-v-4efdffd6] {
+  font-size: 12px;
+  font-weight: bold;
+}
+.history-card__text-container[data-v-4efdffd6] {
+  margin: 1rem;
+}
+.history-card__text[data-v-4efdffd6] {
+  letter-spacing: 1.8px;
+  font-weight: bold;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.icon-table {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.icon-table {
+    width: 80%;
+}
+}
+.icon-table__record {
+  width: 100%;
+  border: 1px solid #f2f2f2;
+}
+.icon-table__key {
+  width: 50%;
+  background-color: #f8f9fa;
+  text-align: center;
+  vertical-align: middle;
+}
+.icon-table__value {
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.icon-table__value-unit {
+  font-size: 14px;
+  margin-left: 0.5rem;
+}
+.icon-table__icon {
+  width: 1.25rem;
+  color: #e3aa00;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-3ea95d82 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-3ea95d82 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.champions-card[data-v-3ea95d82] {
+  background-color: #ffffff;
+  padding: 1rem;
+  position: relative;
+  border-radius: 2px;
+}
+.champions-card__background[data-v-3ea95d82] {
+  width: 8rem;
+  height: 6.5rem;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url("/svg/trophy-solid-gold.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.champions-card__title-wrapper[data-v-3ea95d82] {
+  padding-bottom: 0.5rem;
+}
+.champions-card__title[data-v-3ea95d82] {
+  font-size: 18px;
+}
+.champions-card__pair[data-v-3ea95d82] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 560px) {
+.champions-card__pair[data-v-3ea95d82] {
+    display: block;
+}
+}
+.champions-card__player[data-v-3ea95d82] {
+  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.champions-card__player[data-v-3ea95d82] {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+}
+}
+.champions-card__player-name[data-v-3ea95d82] {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+}
+.champions-card__icon[data-v-3ea95d82] {
+  width: 1.5rem;
+  margin-left: 0.25rem;
+  fill: #091e2f;
+}
+.champions-card__tournament-info-title[data-v-3ea95d82] {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.champions-card__tournament-info-title[data-v-3ea95d82]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #091e2f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-301d0ec5 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-301d0ec5 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.history__time-series-container[data-v-301d0ec5] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.history__time-series-content[data-v-301d0ec5] {
+  width: 90%;
+  margin: 0 auto;
+}
+.history__age[data-v-301d0ec5] {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+.history__age[data-v-301d0ec5] {
+    display: block;
+    position: relative;
+    width: 10rem;
+    margin: 0 1.5rem;
+}
+.history__age[data-v-301d0ec5]::before {
+    display: block;
+    content: "";
+    width: 0.5rem;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+}
+.history__age-tag[data-v-301d0ec5] {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background-color: #091e2f;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0.25rem;
+  position: absolute;
+  top: 0;
+  transition: all 1s ease-out;
+}
+.history__cards[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__cards[data-v-301d0ec5]:last-child {
+  margin-bottom: 0;
+}
+.history__card-item[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__card-item[data-v-301d0ec5]:last-child {
+  margin-bottom: 0;
+}
+.history__primary-titles[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__champions[data-v-301d0ec5] {
+  padding: 5rem 0;
+}
+@media screen and (min-width: 560px) {
+.history__champions-card-row[data-v-301d0ec5] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 auto;
+    max-width: 40rem;
+}
+}
+@media screen and (min-width: 992px) {
+.history__champions-card-row[data-v-301d0ec5] {
+    max-width: 75rem;
+}
+}
+.history__champions-card[data-v-301d0ec5] {
+  margin: 0 1rem 2.5rem 1rem;
+}
+@media screen and (min-width: 560px) {
+.history__champions-card[data-v-301d0ec5] {
+    margin: 0;
+    padding: 0.5rem;
+    width: 50%;
+}
+}
+@media screen and (min-width: 992px) {
+.history__champions-card[data-v-301d0ec5] {
+    width: 33.33%;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b28ce99e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b28ce99e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .test[data-v-b28ce99e] {
   padding: 100px 0;
@@ -1884,15 +5091,92 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .header-button {
   background-color: #091e2f;
   color: #ffffff;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
+  border-radius: 50%;
   margin-right: 0.5rem;
   cursor: pointer;
   box-shadow: 1px 3px 6px 3px #cdcdcd;
@@ -1969,8 +5253,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6832e7cf {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6832e7cf {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .header[data-v-6832e7cf] {
   width: 100%;
@@ -2111,8 +5472,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6d5a9373 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6d5a9373 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .footer-title[data-v-6d5a9373] {
   text-align: center;
@@ -2153,8 +5591,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .site-map {
   width: 60%;
@@ -2227,8 +5742,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .external-link {
   width: 60%;
@@ -2296,8 +5888,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-060e08fe {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-060e08fe {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 .footer[data-v-060e08fe] {
   background-color: #091e2f;
@@ -2317,6 +5986,10 @@ import用ファイル
 }
 .footer__titles[data-v-060e08fe] {
   margin-bottom: 1.5rem;
+  font-family: "Bangers", cursive;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 .footer__sitemap[data-v-060e08fe] {
   padding-top: 5rem;
@@ -2403,8 +6076,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  30% {
+    transform: translateX(30%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  60% {
+    transform: translateX(40%);
+  }
+  70% {
+    transform: translateX(30%);
+  }
+  80% {
+    transform: translateX(20%);
+  }
+  90% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes iconSlide {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  30% {
+    transform: translateX(30%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  60% {
+    transform: translateX(40%);
+  }
+  70% {
+    transform: translateX(30%);
+  }
+  80% {
+    transform: translateX(20%);
+  }
+  90% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -2879,6 +6629,7 @@ body {
   font-size: 14px;
   color: #10334e;
   font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
   font-family: Arial;
@@ -2896,7 +6647,7 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family: "Bangers", cursive;
   font-size: 16px;
   letter-spacing: 1px;
@@ -2914,6 +6665,10 @@ h2 {
   h2 {
     font-size: 50px;
   }
+}
+
+h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
 p {
@@ -2942,10 +6697,6 @@ p {
   .section-container {
     margin-top: 10rem;
   }
-}
-
-.section-inner {
-  padding: 5rem 0;
 }
 
 .card-inner-margin {

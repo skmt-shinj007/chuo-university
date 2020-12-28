@@ -1,14 +1,14 @@
 <template>
-<figure class="arrange-image">
-  <img class="arrange-image__image" :src="imageUrl" :alt="alt" :class="radiusClass">
-  <figcaption class="arrange-image__bar">
+<figure class="caption-bar-image">
+  <img class="caption-bar-image__image" :src="imageUrl" :alt="alt" :class="radiusClass">
+  <figcaption class="caption-bar-image__bar">
 
     <!-- デフォルトのbar -->
-    <span v-if="barCaption" class="arrange-image__caption">{{ barCaption }}</span>
+    <span v-if="barCaption" class="caption-bar-image__caption">{{ barCaption }}</span>
 
     <!-- 寮の写真でのbarTextが特殊だったので追加。 -->
-    <span v-if="capacityNum" class="arrange-image__capacity-number">{{ capacityNum }}</span>
-    <span v-if="capacityNum" class="arrange-image__secondary-caption">人部屋</span>
+    <span v-if="capacityNum" class="caption-bar-image__capacity-number">{{ capacityNum }}</span>
+    <span v-if="capacityNum" class="caption-bar-image__secondary-caption">人部屋</span>
   </figcaption>
 </figure>
 </template>
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.arrange-image {
+.caption-bar-image {
   width: 100%;
   @include trimming(aspect(rectangle));
 

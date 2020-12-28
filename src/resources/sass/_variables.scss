@@ -8,7 +8,7 @@ $color: (
 	lightDarkblue: #10334e,
 	deepDarkblue:  #030A10,
   orange:        #e56c2c,
-  lightGray:     #f2f2f2,
+  lightgray:     #f2f2f2,
   white:         #ffffff,
 
   shadow:      #e6e6e6,
@@ -44,10 +44,10 @@ $font: (
   lg:   18px,
   xl:   22px,
 
-  heading:       32px,
-  lg-heading:    50px,
-  mainVisual:    48px,
-  mainVisual-lg: 80px,
+  heading:    32px,
+  heading-lg: 50px,
+  mv:         48px,
+  mv-lg:      80px,
 ) !default;
 
 /**
@@ -106,5 +106,5 @@ $radius: (
   normal: 4px,
   hard: 8px,
 
-  circle: 100%
+  circle: 50%
 );
