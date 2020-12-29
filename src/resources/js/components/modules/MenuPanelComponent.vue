@@ -1,25 +1,29 @@
 <template>
-  <div class="c-menuPanel">
-    <image-component class="c-menuPanel__image" :imageUrl="panelImageUrl" :alt="imageAlt" :radius="imageRadius"/>
-    <view-all-button-component class="c-menuPanel__button" :name="buttonName" :buttonSize="buttonSize"/>
+  <div class="menu-panel">
+    <figure class="menu-panel__figure">
+      <img class="menu-panel__image" :src="`/image/${menuPanelData.Image.Src}`" :alt="menuPanelData.Image.Alt">
+    </figure>
+    <view-all-button-component
+      class="menu-panel__button"
+      :name="menuPanelData.Btn.Name"
+      :buttonSize="menuPanelData.Btn.Size"
+      variationClass="rgba"/>
   </div>
 </template>
 
 <script>
 // component import
-import ImageComponent from './ImageComponent';
 import ViewAllButtonComponent from './button/ViewAllButtonComponent';
 
 export default {
   components: {
-    ImageComponent,
     ViewAllButtonComponent,
   },
   props: {
-    buttonName: String,
-    panelImageUrl: String,
-    imageAlt: String,
-    buttonSize: String,
+    menuPanelData: {
+      type: Object,
+      default: null
+    }
   },
   data() {
     return {
@@ -30,18 +34,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-menuPanel {
+.menu-panel {
+
+  &__figure {
+    width: 100%;
+    @include trimming(aspect(rectangle));
+  }
 
   &__image {
     width: 100%;
-    height: 250px;
-    opacity: 0.7;
+    border-radius: radius(soft);
+    opacity: 0.8;
     box-shadow: 0 0 8px 2px color(shadow);
-
-    // pc style
-    @include mq(md) {
-      height: 200px;
-    };
   }
 
   &__button {

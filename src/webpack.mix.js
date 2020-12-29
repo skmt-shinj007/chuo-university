@@ -1,6 +1,9 @@
 const mix = require('laravel-mix');
 const VueLoader = require('vue-loader');
 
+// svgファイルをvueコンポーネントとして使うために追加。
+require('laravel-mix-svg-vue');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -17,7 +20,13 @@ mix.js('resources/js/app.js', 'public/js')
     .options({
         processCssUrls: false,
         extractVueStyles: true,
-        globalVueStyles: 'resources/sass/_imports.scss',  // Vueコンポーネント内で sass変数,mixin を使用するために拡張。
+
+        // Vueコンポーネント内で sass変数,mixin を使用するために拡張
+        globalVueStyles: 'resources/sass/_imports.scss',
     })
     .sourceMaps(false)
+    .svgVue({
+        // svgディレクトリのパスを記述
+        svgPath: 'public/svg',
+    })
     .version();

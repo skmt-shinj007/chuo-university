@@ -1,4 +1,4537 @@
-@import url(https://fonts.googleapis.com/css2?family=Bangers&display=swap);/**
+@import url(https://fonts.googleapis.com/css2?family=Bangers&display=swap);@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-3ff6fe5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-3ff6fe5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.main-visual[data-v-3ff6fe5a] {
+  width: 100%;
+  height: 100vh;
+  background: #030A10;
+  background: linear-gradient(to right, #030A10 0%, #091e2f 100%);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.main-visual__title[data-v-3ff6fe5a] {
+  color: #ffffff;
+  white-space: pre-wrap;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 3px 3px 0px #e56c2c;
+}
+@media screen and (min-width: 992px) {
+.main-visual__title[data-v-3ff6fe5a] {
+    line-height: 1.2;
+    font-size: 80px;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.contents-title {
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 992px) {
+.contents-title {
+    padding-bottom: 3.5rem;
+}
+}
+.contents-title-white {
+  color: #ffffff;
+}
+.contents-title__assistance {
+  font-size: 10px;
+}
+@media screen and (min-width: 992px) {
+.contents-title__assistance {
+    font-size: 12px;
+}
+}
+.contents-title__primary {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.contents-title__primary::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #091e2f;
+}
+.contents-title.contents-title-white .contents-title__primary::after {
+  background-color: #ffffff;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.text-list {
+  width: 100%;
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+.text-list__item {
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+@media screen and (min-width: 992px) {
+.text-list__item {
+    font-size: 14px;
+}
+}
+.text-list__item:last-child {
+  margin-bottom: 0;
+}
+.text-list__item-link {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+@media screen and (min-width: 992px) {
+.text-list__item-link:hover {
+    text-decoration: underline;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-9b317ac0 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-9b317ac0 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.news[data-v-9b317ac0] {
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0px 6px 8px #e6e6e6;
+  margin: 0 auto;
+}
+.news__list[data-v-9b317ac0] {
+  margin: 0 1rem;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.view-all-button {
+  width: 80%;
+  max-width: 240px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  font-size: 10px;
+  border: 1px solid #e56c2c;
+  border-radius: 2px;
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+.view-all-button {
+    width: 300px;
+    height: 60px;
+    font-size: 12px;
+}
+.view-all-button--xs {
+    max-width: 200px;
+    height: 45px;
+    font-size: 10px;
+}
+.view-all-button--sm {
+    width: 240px;
+    height: 50px;
+    font-size: 10px;
+}
+.view-all-button:hover {
+    border: none;
+}
+.view-all-button:hover .view-all-button__button {
+    transform: none;
+    border: none;
+    background-color: #e56c2c;
+    color: #ffffff;
+}
+}
+.view-all-button__button {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  color: #e56c2c;
+  border: 1px solid #e56c2c;
+  border-radius: 2px;
+  transform: translateX(4px) translateY(-4px);
+  transition: all 0.3s ease-out;
+}
+.view-all-button__icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.view-all-button--rgba {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.view-all-button--rgba .view-all-button__button {
+  background-color: rgba(255, 255, 255, 0.6);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.lead-text {
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0px 6px 8px #e6e6e6;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.lead-text {
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.lead-text {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+}
+.lead-text__title {
+  padding-bottom: 1.5rem;
+}
+.lead-text__inner {
+  padding: 0 0.5rem;
+}
+.lead-text__viewAll {
+  margin-top: 1rem;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-481a74cb {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-481a74cb {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.menu-panel__figure[data-v-481a74cb] {
+  width: 100%;
+  position: relative;
+}
+.menu-panel__figure[data-v-481a74cb]::before {
+  content: "";
+  display: block;
+  padding-bottom: 66.7%;
+}
+.menu-panel__figure > img[data-v-481a74cb] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.menu-panel__image[data-v-481a74cb] {
+  width: 100%;
+  border-radius: 2px;
+  opacity: 0.8;
+  box-shadow: 0 0 8px 2px #e6e6e6;
+}
+.menu-panel__button[data-v-481a74cb] {
+  transform: translateY(-120%);
+}
+@media screen and (min-width: 992px) {
+.menu-panel__button[data-v-481a74cb] {
+    transform: translateY(-50%);
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-bae950f4 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-bae950f4 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.top[data-v-bae950f4] {
+  position: relative;
+}
+.top__news[data-v-bae950f4] {
+  transform: translateY(-50px);
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 992px) {
+.top__news[data-v-bae950f4] {
+    transform: none;
+    margin-top: 7.5rem;
+    margin-bottom: 5rem;
+}
+}
+@media screen and (min-width: 992px) {
+.top__team[data-v-bae950f4] {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+}
+.top__team-img[data-v-bae950f4] {
+  width: 100%;
+  border-top: 5px solid #091e2f;
+  border-bottom: 5px solid #091e2f;
+  box-shadow: 0px -5px 8px 3px #e6e6e6;
+  position: relative;
+}
+.top__team-img[data-v-bae950f4]::before {
+  content: "";
+  display: block;
+  padding-bottom: 61.8%;
+}
+.top__team-img > img[data-v-bae950f4] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 992px) {
+.top__team-img[data-v-bae950f4] {
+    width: 70%;
+}
+}
+.top__team-contentsCard[data-v-bae950f4] {
+  transform: translateY(-50px);
+}
+@media screen and (min-width: 992px) {
+.top__team-contentsCard[data-v-bae950f4] {
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+}
+@media screen and (min-width: 992px) {
+.top__hakumonkai[data-v-bae950f4] {
+    position: relative;
+    margin-top: 20rem;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+}
+.top__hakumonkai-img[data-v-bae950f4] {
+  width: 100%;
+  border-top: 5px solid #091e2f;
+  border-bottom: 5px solid #091e2f;
+  box-shadow: 0px -5px 8px 3px #e6e6e6;
+  position: relative;
+}
+.top__hakumonkai-img[data-v-bae950f4]::before {
+  content: "";
+  display: block;
+  padding-bottom: 61.8%;
+}
+.top__hakumonkai-img > img[data-v-bae950f4] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 992px) {
+.top__hakumonkai-img[data-v-bae950f4] {
+    width: 70%;
+}
+}
+.top__hakumonkai-contentsCard[data-v-bae950f4] {
+  transform: translateY(-50px);
+}
+@media screen and (min-width: 992px) {
+.top__hakumonkai-contentsCard[data-v-bae950f4] {
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+}
+@media screen and (min-width: 992px) {
+.top__menuPanel[data-v-bae950f4] {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20rem;
+}
+}
+.top__menuPanel-item[data-v-bae950f4] {
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.top__menuPanel-item[data-v-bae950f4] {
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.top__menuPanel-item[data-v-bae950f4] {
+    padding: 0.25rem;
+    max-width: 340px;
+}
+}
+.top__support[data-v-bae950f4] {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.top__support-textaria[data-v-bae950f4] {
+  width: 80%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.top__support-textaria[data-v-bae950f4] {
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.top__support-textaria[data-v-bae950f4] {
+    width: 60%;
+}
+}
+.top .background-image[data-v-bae950f4] {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/image/player09.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media screen and (min-width: 560px) {
+.top .background-image[data-v-bae950f4] {
+    background-image: url("/image/player11.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+}
+.top .background-darkblue[data-v-bae950f4] {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(9, 30, 47, 0.8);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-161a410d {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-161a410d {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.google-map__map[data-v-161a410d] {
+  width: 100%;
+  height: 300px;
+}
+@media screen and (min-width: 992px) {
+.google-map__map[data-v-161a410d] {
+    height: 400px;
+}
+}
+.google-map__attentionText[data-v-161a410d] {
+  margin: 0.5rem auto 0 auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+@media screen and (min-width: 992px) {
+.google-map__attentionText[data-v-161a410d] {
+    text-align: end;
+    width: 100%;
+    padding: 0 0.5rem;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b056e422 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b056e422 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.policy-card[data-v-b056e422] {
+  width: 160px;
+  height: 160px;
+  border: 3px solid #ffffff;
+  border-radius: 4px;
+  margin: 2.5rem auto 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #10334e;
+  background: linear-gradient(to right, #10334e 0%, #030A10 100%);
+}
+@media screen and (min-width: 560px) {
+.policy-card[data-v-b056e422] {
+    margin: 0;
+}
+}
+@media screen and (min-width: 992px) {
+.policy-card[data-v-b056e422] {
+    position: relative;
+}
+.policy-card__title[data-v-b056e422], .policy-card__subTitle[data-v-b056e422] {
+    transition: all 0.5s ease-in-out;
+}
+.policy-card:hover .policy-card__title[data-v-b056e422],
+.policy-card:hover .policy-card__subTitle[data-v-b056e422] {
+    opacity: 0;
+}
+.policy-card:hover .policy-card__text[data-v-b056e422] {
+    opacity: 1;
+}
+}
+.policy-card[data-v-b056e422]:first-child {
+  margin-top: 0;
+}
+.policy-card__subTitle[data-v-b056e422] {
+  font-size: 10px;
+  color: #ffffff;
+}
+.policy-card__title[data-v-b056e422] {
+  color: #ffffff;
+  font-family: "Bangers", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.policy-card__text[data-v-b056e422] {
+  color: #ffffff;
+  padding: 0.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 992px) {
+.policy-card__text[data-v-b056e422] {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6cd5e234 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6cd5e234 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.image-slider__container[data-v-6cd5e234] {
+  position: relative;
+  position: relative;
+}
+.image-slider__container[data-v-6cd5e234]::before {
+  content: "";
+  display: block;
+  padding-bottom: 66.7%;
+}
+.image-slider__container > img[data-v-6cd5e234] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.image-slider__image[data-v-6cd5e234] {
+  border-radius: 4px;
+}
+.image-slider__caption[data-v-6cd5e234] {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  padding: 0.25rem 1rem;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+@media screen and (min-width: 560px) {
+.image-slider__caption[data-v-6cd5e234] {
+    line-height: 2;
+}
+}
+.image-slider__secondary-caption[data-v-6cd5e234] {
+  font-size: 10px;
+}
+.image-slider__capacity-number[data-v-6cd5e234] {
+  font-size: 16px;
+  font-weight: bold;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-30380e08 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-30380e08 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.main-visual-slider[data-v-30380e08] {
+  height: 100%;
+  position: relative;
+}
+.main-visual-slider .swiper-slider[data-v-30380e08] {
+  overflow: hidden;
+}
+.main-visual-slider__image[data-v-30380e08] {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+.main-visual-slider__text[data-v-30380e08] {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  max-width: 280px;
+  color: #ffffff;
+  padding-left: 1.5rem;
+  font-size: 16px;
+}
+@media screen and (min-width: 992px) {
+.main-visual-slider__text[data-v-30380e08] {
+    left: 10%;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.common-table {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.common-table {
+    width: 80%;
+}
+}
+.common-table__record {
+  width: 100%;
+  border: 1px solid #f2f2f2;
+}
+.common-table__record--xs {
+  font-size: 10px;
+}
+.common-table__record--sm {
+  font-size: 12px;
+}
+.common-table__key {
+  width: 30%;
+  background-color: #f8f9fa;
+  text-align: center;
+  vertical-align: middle;
+}
+.common-table__value {
+  width: 70%;
+  background-color: #ffffff;
+  white-space: pre-wrap;
+}
+.common-table__value--transparent {
+  background-color: rgba(255, 255, 255, 0);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-7fa4fe02 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-7fa4fe02 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.caption-bar-image[data-v-7fa4fe02] {
+  width: 100%;
+  position: relative;
+}
+.caption-bar-image[data-v-7fa4fe02]::before {
+  content: "";
+  display: block;
+  padding-bottom: 66.7%;
+}
+.caption-bar-image > img[data-v-7fa4fe02] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.caption-bar-image__image[data-v-7fa4fe02] {
+  border-radius: 2px;
+  box-shadow: 0 0 6px #b3b3b3;
+}
+.caption-bar-image__bar[data-v-7fa4fe02] {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  padding: 0.25rem 1rem;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.caption-bar-image__caption[data-v-7fa4fe02], .caption-bar-image__secondary-caption[data-v-7fa4fe02] {
+  font-size: 10px;
+}
+.caption-bar-image__capacity-number[data-v-7fa4fe02] {
+  font-size: 16px;
+  font-weight: bold;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-2a1efbb8 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-2a1efbb8 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.dormitory-card[data-v-2a1efbb8] {
+  width: 100%;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dormitory-card[data-v-2a1efbb8]:last-child {
+  margin-bottom: 0;
+}
+.dormitory-card__icon-wrap[data-v-2a1efbb8] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #091e2f;
+  border-radius: 50%;
+  padding: 0.75rem;
+}
+.dormitory-card__icon[data-v-2a1efbb8] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.dormitory-card__text-wrap[data-v-2a1efbb8] {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+}
+.dormitory-card__text[data-v-2a1efbb8] {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.dormitory-card__complement-text[data-v-2a1efbb8] {
+  margin-top: 0.25rem;
+}
+.dormitory-card__laundry-price[data-v-2a1efbb8] {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.dormitory-card__bath-time[data-v-2a1efbb8] {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.tag {
+  margin: 0.25rem;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  font-weight: bold;
+  line-height: 1.9;
+}
+.tag--lg {
+  font-size: 16px;
+  line-height: 2;
+}
+.tag__color {
+  padding: 0 0.75rem;
+  border-radius: 4px;
+  background-color: #091e2f;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.tag__color--lightgreen {
+  background-color: #56b145;
+}
+.tag__color--orange {
+  background-color: #e56c2c;
+}
+.tag__color--outline-orange {
+  background-color: #ffffff;
+  border: 2px solid #e56c2c;
+  color: #e56c2c;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.player-card {
+  width: 60%;
+}
+@media screen and (min-width: 560px) {
+.player-card {
+    width: 30%;
+}
+}
+@media screen and (min-width: 992px) {
+.player-card {
+    width: 20%;
+}
+}
+.player-card__figure {
+  position: relative;
+  border-bottom: 2px solid #091e2f;
+  background-color: #ffffff;
+}
+.player-card__figure::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.player-card__figure > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.player-card__information {
+  background-color: #f2f2f2;
+  padding: 0.5rem;
+}
+.player-card__information-name {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0.5rem 0 0.25rem;
+}
+.player-card__information-name-english {
+  font-weight: bold;
+  font-size: 10px;
+}
+.player-card__information-tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: space-around;
+  padding: 0.5rem 0;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-53189f00 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-53189f00 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.slider .player-card[data-v-53189f00] {
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.slider .player-card[data-v-53189f00] {
+    width: 60%;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-bb84db5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-bb84db5a {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.arrange-images__list-container[data-v-bb84db5a] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.arrange-images__list[data-v-bb84db5a] {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 50%;
+}
+.arrange-images__list[data-v-bb84db5a]::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.arrange-images__list > img[data-v-bb84db5a] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.arrange-images__list[data-v-bb84db5a] {
+    width: 33.3%;
+}
+}
+@media screen and (min-width: 992px) {
+.arrange-images__list[data-v-bb84db5a] {
+    width: 20%;
+}
+}
+.arrange-images__list-item[data-v-bb84db5a] {
+  padding: 0.5rem;
+  cursor: pointer;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-357d3955 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-357d3955 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.club__mainVisualSlider[data-v-357d3955] {
+  width: 100%;
+  height: 100vh;
+}
+.club__policy[data-v-357d3955] {
+  padding: 5rem 0;
+  margin-top: 0;
+}
+@media screen and (min-width: 560px) {
+.club__policy-cards[data-v-357d3955] {
+    margin: 0 1.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+}
+.club__practice-map[data-v-357d3955] {
+  padding-top: 2.5rem;
+}
+.club__practice-imageSlider[data-v-357d3955] {
+  padding-top: 4rem;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.club__practice-imageSlider[data-v-357d3955] {
+    width: 70%;
+}
+}
+.club__practice-rowImages[data-v-357d3955] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 5rem;
+}
+.club__practice-rowImages-item[data-v-357d3955] {
+  width: 30%;
+}
+.club__practice-schedule[data-v-357d3955] {
+  margin-top: 5rem;
+}
+.club__practice-schedule-title[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto 1rem auto;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.club__practice-schedule-title[data-v-357d3955]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #091e2f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 560px) {
+.club__practice-schedule-title[data-v-357d3955] {
+    width: 80%;
+}
+}
+.club__dormitory-lead-wrap[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.club__dormitory-lead-wrap[data-v-357d3955] {
+    width: 80%;
+}
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-lead-wrap[data-v-357d3955] {
+    text-align: center;
+}
+}
+.club__dormitory-cards[data-v-357d3955] {
+  margin-top: 2rem;
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-cards[data-v-357d3955] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+}
+.club__dormitory-card-item[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.club__dormitory-card-item[data-v-357d3955] {
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-card-item[data-v-357d3955] {
+    width: 50%;
+    max-width: 500px;
+}
+}
+.club__dormitory-images[data-v-357d3955] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 5rem;
+}
+.club__dormitory-images-item[data-v-357d3955] {
+  width: 30%;
+}
+.club__member[data-v-357d3955] {
+  padding: 2.5rem 0;
+}
+@media screen and (min-width: 992px) {
+.club__member[data-v-357d3955] {
+    padding: 5rem 0;
+}
+}
+.club__member-bg[data-v-357d3955] {
+  background: #091e2f;
+  background: radial-gradient(ellipse at center, #091e2f 0%, #030A10 100%);
+}
+.club__member-number[data-v-357d3955] {
+  margin-top: 5rem;
+}
+.club__member-number-title[data-v-357d3955] {
+  width: 90%;
+  color: #ffffff;
+  margin: 0 auto 1rem auto;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.club__member-number-title[data-v-357d3955]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 560px) {
+.club__member-number-title[data-v-357d3955] {
+    width: 80%;
+}
+}
+.club__member-button[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+.club__photo[data-v-357d3955] {
+  margin: 5rem auto;
+}
+@media screen and (min-width: 992px) {
+.club__photo[data-v-357d3955] {
+    margin-top: 10rem;
+}
+}
+.club__photo-images-container[data-v-357d3955] {
+  width: 90%;
+  margin: 0 auto;
+}
+.club__photo-button[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.club__photo-button[data-v-357d3955] {
+    margin-top: 3.5rem;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.user-ticket {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 5px 3px #b3b3b3;
+  background-color: #ffffff;
+  border: 2px solid #f8f9fa;
+  border-radius: 48px;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 560px) {
+.user-ticket {
+    padding: 0.5rem 0.75rem;
+}
+}
+@media screen and (min-width: 992px) {
+.user-ticket {
+    cursor: pointer;
+    box-shadow: 0 1px 3px 1px #b3b3b3;
+    transition: all 0.3s ease-out;
+}
+.user-ticket:hover {
+    box-shadow: 0 3px 5px 3px #b3b3b3;
+    transform: translateY(-2px);
+}
+.user-ticket:hover .user-ticket-icon {
+    -webkit-animation: iconSlide 1.5s infinite;
+            animation: iconSlide 1.5s infinite;
+}
+}
+.user-ticket-thumbnail-border--blue {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--blue::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+.user-ticket-thumbnail-border--orange {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--orange::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #e56c2c;
+  background: linear-gradient(to bottom, #e56c2c 0%, #10334e 100%);
+}
+.user-ticket-thumbnail-border--green {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--green::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #56b145;
+  background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
+}
+.user-ticket-thumbnail-wrap {
+  width: 100%;
+  position: relative;
+}
+.user-ticket-thumbnail-wrap::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.user-ticket-thumbnail-wrap > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.user-ticket-thumbnail-wrap {
+    width: 5rem;
+}
+}
+.user-ticket-thumbnail {
+  border-radius: 50%;
+}
+.user-ticket__name {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 0.25rem;
+}
+.user-ticket__name:first-of-type {
+  display: none;
+}
+@media screen and (min-width: 560px) {
+.user-ticket__name:first-of-type {
+    display: block;
+}
+}
+.user-ticket-tag-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-ticket-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #091e2f;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.member[data-v-668c6779] {
+  background-color: #f2f2f2;
+}
+.member__main-visual-icon[data-v-668c6779] {
+  width: 15rem;
+  height: 15rem;
+  fill: #ffffff;
+  stroke: #e56c2c;
+}
+@media screen and (min-width: 992px) {
+.member__main-visual-icon[data-v-668c6779] {
+    width: 40%;
+    height: 40%;
+    min-width: 30rem;
+    min-height: 30rem;
+}
+}
+.member__main-visual-ward[data-v-668c6779] {
+  font-family: "Bangers", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 560px) {
+.member__main-visual-ward[data-v-668c6779] {
+    font-size: 48px;
+}
+}
+.member__user-ticket-group[data-v-668c6779] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket-group[data-v-668c6779] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.member__user-ticket[data-v-668c6779] {
+  padding: 0.5rem;
+  margin-bottom: 2.5rem;
+  width: 90%;
+  max-width: 24rem;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket[data-v-668c6779] {
+    width: calc(100% / 2);
+    max-width: none;
+}
+}
+@media screen and (min-width: 992px) {
+.member__user-ticket[data-v-668c6779] {
+    margin-bottom: 0;
+    width: calc(100% / 3);
+}
+}
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
+  align-self: flex-end;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
+    align-self: auto;
+}
+}
+.member__staff[data-v-668c6779] {
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 992px) {
+.member__staff[data-v-668c6779] {
+    padding-bottom: 10rem;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b79d4b88 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b79d4b88 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.record-tag[data-v-b79d4b88] {
+  cursor: pointer;
+}
+.record-tag__row[data-v-b79d4b88] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.record-tag__icon[data-v-b79d4b88] {
+  margin-right: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media screen and (min-width: 560px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.5rem;
+}
+}
+@media screen and (min-width: 992px) {
+.record-tag__icon[data-v-b79d4b88] {
+    margin-right: 0.75rem;
+}
+}
+.record-tag__content[data-v-b79d4b88] {
+  font-size: 12px;
+  padding: 0.25rem 0;
+}
+@media screen and (min-width: 560px) {
+.record-tag__content[data-v-b79d4b88] {
+    font-size: 14px;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-4efdffd6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-4efdffd6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.history-card[data-v-4efdffd6] {
+  border: 2px solid #091e2f;
+  border-radius: 8px;
+  position: relative;
+}
+@media screen and (min-width: 560px) {
+.history-card[data-v-4efdffd6] {
+    padding: 0.5rem;
+}
+}
+.history-card__tag-modal[data-v-4efdffd6] {
+  position: absolute;
+  top: -1.5rem;
+  right: 5%;
+}
+.history-card__tag-date[data-v-4efdffd6] {
+  margin: 0.5rem 1rem;
+}
+@media screen and (min-width: 560px) {
+.history-card__tag-date[data-v-4efdffd6] {
+    width: 11rem;
+}
+}
+.history-card__title[data-v-4efdffd6] {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.history-card__title-main[data-v-4efdffd6] {
+  font-size: 18px;
+}
+.history-card__title-sub[data-v-4efdffd6] {
+  font-size: 12px;
+  font-weight: bold;
+}
+.history-card__text-container[data-v-4efdffd6] {
+  margin: 1rem;
+}
+.history-card__text[data-v-4efdffd6] {
+  letter-spacing: 1.8px;
+  font-weight: bold;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.icon-table {
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.icon-table {
+    width: 80%;
+}
+}
+.icon-table__record {
+  width: 100%;
+  border: 1px solid #f2f2f2;
+}
+.icon-table__key {
+  width: 50%;
+  background-color: #f8f9fa;
+  text-align: center;
+  vertical-align: middle;
+}
+.icon-table__value {
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.icon-table__value-unit {
+  font-size: 14px;
+  margin-left: 0.5rem;
+}
+.icon-table__icon {
+  width: 1.25rem;
+  color: #e3aa00;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-3ea95d82 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-3ea95d82 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.champions-card[data-v-3ea95d82] {
+  background-color: #ffffff;
+  padding: 1rem;
+  position: relative;
+  border-radius: 2px;
+}
+.champions-card__background[data-v-3ea95d82] {
+  width: 8rem;
+  height: 6.5rem;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url("/svg/trophy-solid-gold.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.champions-card__title-wrapper[data-v-3ea95d82] {
+  padding-bottom: 0.5rem;
+}
+.champions-card__title[data-v-3ea95d82] {
+  font-size: 18px;
+}
+.champions-card__pair[data-v-3ea95d82] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 560px) {
+.champions-card__pair[data-v-3ea95d82] {
+    display: block;
+}
+}
+.champions-card__player[data-v-3ea95d82] {
+  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.champions-card__player[data-v-3ea95d82] {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+}
+}
+.champions-card__player-name[data-v-3ea95d82] {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+}
+.champions-card__icon[data-v-3ea95d82] {
+  width: 1.5rem;
+  margin-left: 0.25rem;
+  fill: #091e2f;
+}
+.champions-card__tournament-info-title[data-v-3ea95d82] {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.champions-card__tournament-info-title[data-v-3ea95d82]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #091e2f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-301d0ec5 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-301d0ec5 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.history__time-series-container[data-v-301d0ec5] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.history__time-series-content[data-v-301d0ec5] {
+  width: 90%;
+  margin: 0 auto;
+}
+.history__age[data-v-301d0ec5] {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+.history__age[data-v-301d0ec5] {
+    display: block;
+    position: relative;
+    width: 10rem;
+    margin: 0 1.5rem;
+}
+.history__age[data-v-301d0ec5]::before {
+    display: block;
+    content: "";
+    width: 0.5rem;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+}
+}
+.history__age-tag[data-v-301d0ec5] {
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background-color: #091e2f;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0.25rem;
+  position: absolute;
+  top: 0;
+  transition: all 1s ease-out;
+}
+.history__cards[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__cards[data-v-301d0ec5]:last-child {
+  margin-bottom: 0;
+}
+.history__card-item[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__card-item[data-v-301d0ec5]:last-child {
+  margin-bottom: 0;
+}
+.history__primary-titles[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__champions[data-v-301d0ec5] {
+  padding: 5rem 0;
+}
+@media screen and (min-width: 560px) {
+.history__champions-card-row[data-v-301d0ec5] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0 auto;
+    max-width: 40rem;
+}
+}
+@media screen and (min-width: 992px) {
+.history__champions-card-row[data-v-301d0ec5] {
+    max-width: 75rem;
+}
+}
+.history__champions-card[data-v-301d0ec5] {
+  margin: 0 1rem 2.5rem 1rem;
+}
+@media screen and (min-width: 560px) {
+.history__champions-card[data-v-301d0ec5] {
+    margin: 0;
+    padding: 0.5rem;
+    width: 50%;
+}
+}
+@media screen and (min-width: 992px) {
+.history__champions-card[data-v-301d0ec5] {
+    width: 33.33%;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-b28ce99e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-b28ce99e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.test[data-v-b28ce99e] {
+  padding: 100px 0;
+}
+span[data-v-b28ce99e] {
+  font-size: 1.2rem;
+}
+.wrap[data-v-b28ce99e] {
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.wrap[data-v-b28ce99e]::before {
+  content: "";
+  display: block;
+  padding-bottom: 61.8%;
+}
+.wrap > img[data-v-b28ce99e] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/**
  * Swiper 5.4.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://swiperjs.com
@@ -531,6 +5064,983 @@ button.swiper-pagination-bullet {
           backface-visibility: hidden;
 }
 @charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.header-button {
+  background-color: #091e2f;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  box-shadow: 1px 3px 6px 3px #cdcdcd;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.header-button {
+    margin-right: 1rem;
+}
+}
+@media screen and (min-width: 992px) {
+.header-button {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    transition: 0.5s all ease-in-out;
+}
+.header-button::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: 0.5s all ease-in-out;
+}
+.header-button:hover {
+    background-color: #ffffff;
+    color: #091e2f;
+    transform: scale(1.1);
+}
+.header-button:hover::before {
+    border-color: #091e2f;
+}
+.header-button:hover .header-icon {
+    transform: rotateZ(360deg);
+}
+}
+.header-button:last-child {
+  margin: 0;
+}
+.header-button .header-icon {
+  width: 20px;
+  height: 20px;
+  transition: 0.3s all ease;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6832e7cf {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6832e7cf {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.header[data-v-6832e7cf] {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px #e6e6e6;
+}
+@media screen and (min-width: 992px) {
+.header[data-v-6832e7cf] {
+    width: 10%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    box-shadow: 2px 0px 6px #e6e6e6;
+}
+}
+.header__navbar[data-v-6832e7cf] {
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (min-width: 992px) {
+.header__navbar[data-v-6832e7cf] {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+}
+.header__title[data-v-6832e7cf] {
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 992px) {
+.header__title[data-v-6832e7cf] {
+    padding: 1.5rem;
+    margin: 0 auto;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+}
+}
+.header__title-main[data-v-6832e7cf] {
+  font-family: "Bangers", cursive;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+@media screen and (min-width: 560px) {
+.header__title-main[data-v-6832e7cf] {
+    font-size: 18px;
+}
+}
+@media screen and (min-width: 992px) {
+.header__title-main[data-v-6832e7cf] {
+    margin-bottom: 3.5rem;
+}
+}
+.header__title-assistance[data-v-6832e7cf] {
+  display: none;
+}
+@media screen and (min-width: 560px) {
+.header__title-assistance[data-v-6832e7cf] {
+    margin-left: 1.5rem;
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    position: relative;
+    display: block;
+}
+}
+@media screen and (min-width: 992px) {
+.header__title-assistance[data-v-6832e7cf] {
+    margin: 0;
+    font-size: 12px;
+}
+}
+.header__title-assistance[data-v-6832e7cf]::before {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+.header__title-assistance[data-v-6832e7cf]::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 16px;
+    background-color: #091e2f;
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+}
+.header__menus[data-v-6832e7cf] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+@media screen and (min-width: 992px) {
+.header__menus[data-v-6832e7cf] {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-6d5a9373 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-6d5a9373 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.footer-title[data-v-6d5a9373] {
+  text-align: center;
+}
+.footer-title__title[data-v-6d5a9373] {
+  font-size: 32px;
+  letter-spacing: 3px;
+}
+@media screen and (min-width: 560px) {
+.footer-title__title[data-v-6d5a9373] {
+    font-size: 22px;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.site-map {
+  width: 60%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.site-map {
+    width: 100%;
+    max-width: none;
+}
+}
+.site-map__list {
+  margin-bottom: 0.5rem;
+  line-height: 2;
+}
+@media screen and (min-width: 560px) {
+.site-map__list {
+    line-height: 1.5;
+}
+}
+.site-map__list:last-child {
+  margin: 0;
+}
+.site-map__item {
+  padding: 0.25rem 1rem;
+  position: relative;
+  font-size: 16px;
+}
+.site-map__item::before {
+  display: block;
+  content: "";
+  width: 8px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 560px) {
+.site-map__item {
+    font-size: 12px;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.external-link {
+  width: 60%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.external-link {
+    width: 100%;
+    max-width: none;
+}
+}
+.external-link__list {
+  margin-bottom: 0.5rem;
+  line-height: 2;
+}
+@media screen and (min-width: 560px) {
+.external-link__list {
+    margin-bottom: 0.25rem;
+}
+}
+.external-link__list:last-child {
+  margin: 0;
+}
+.external-link__item {
+  padding: 0.25rem 1rem;
+  position: relative;
+  font-size: 12px;
+}
+.external-link__item::before {
+  display: block;
+  content: "";
+  width: 8px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-060e08fe {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-060e08fe {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.footer[data-v-060e08fe] {
+  background-color: #091e2f;
+  color: #ffffff;
+  font-weight: bold;
+}
+.footer__main-contents[data-v-060e08fe] {
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 560px) {
+.footer__main-contents[data-v-060e08fe] {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+}
+.footer__titles[data-v-060e08fe] {
+  margin-bottom: 1.5rem;
+  font-family: "Bangers", cursive;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.footer__sitemap[data-v-060e08fe] {
+  padding-top: 5rem;
+}
+@media screen and (min-width: 560px) {
+.footer__sitemap[data-v-060e08fe] {
+    padding-top: 0;
+    margin-top: 2.5rem;
+    padding: 0 1rem;
+}
+}
+.footer__external-link[data-v-060e08fe] {
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.footer__external-link[data-v-060e08fe] {
+    padding: 0 1rem;
+}
+}
+.footer__information[data-v-060e08fe] {
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.footer__information[data-v-060e08fe] {
+    padding: 0 1rem;
+}
+}
+.footer__information-list[data-v-060e08fe] {
+  width: 50%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.footer__information-list[data-v-060e08fe] {
+    width: 100%;
+    max-width: none;
+}
+}
+.footer__information-list-item[data-v-060e08fe] {
+  margin-bottom: 0.25rem;
+  font-size: 10px;
+}
+.footer__information-list-item[data-v-060e08fe]:last-child {
+  margin-bottom: 0;
+}
+.footer__end[data-v-060e08fe] {
+  padding: 1.5rem 0;
+  text-align: center;
+  font-weight: normal;
+  font-size: 10px;
+}@charset "UTF-8";
 /**
  * _imports.scss === Vueファイル内で使用するmixinや関数・変数をインポート
  * _reset.scss   === サイトに標準で付与されているスタイルをリセット
@@ -554,6 +6064,9 @@ import用ファイル
  * button size
  */
 /**
+ * icon size
+ */
+/**
  * google map size
  */
 /**
@@ -563,8 +6076,85 @@ import用ファイル
  * radius
  */
 /**
- * サイト内で扱うsass関数を定義するファイル。
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  30% {
+    transform: translateX(30%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  60% {
+    transform: translateX(40%);
+  }
+  70% {
+    transform: translateX(30%);
+  }
+  80% {
+    transform: translateX(20%);
+  }
+  90% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes iconSlide {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(10%);
+  }
+  20% {
+    transform: translateX(20%);
+  }
+  30% {
+    transform: translateX(30%);
+  }
+  40% {
+    transform: translateX(40%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  60% {
+    transform: translateX(40%);
+  }
+  70% {
+    transform: translateX(30%);
+  }
+  80% {
+    transform: translateX(20%);
+  }
+  90% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
  */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -1039,6 +6629,7 @@ body {
   font-size: 14px;
   color: #10334e;
   font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
   font-family: Arial;
@@ -1056,7 +6647,7 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family: "Bangers", cursive;
   font-size: 16px;
   letter-spacing: 1px;
@@ -1076,6 +6667,10 @@ h2 {
   }
 }
 
+h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
 p {
   font-size: 12px;
   line-height: 1.8;
@@ -1086,6 +6681,11 @@ p {
     font-size: 14px;
     line-height: 2;
   }
+}
+
+.background-darkblue {
+  background-color: #091e2f;
+  margin-top: 0;
 }
 
 .section-container {
@@ -1099,17 +6699,22 @@ p {
   }
 }
 
-.section-inner {
-  padding: 5rem 0;
-}
-
-.card-container {
+.card-inner-margin {
   padding: 1rem;
 }
 @media screen and (min-width: 992px) {
-  .card-container {
+  .card-inner-margin {
     padding: 1.5rem;
   }
+}
+
+/**
+ * 改行したい文字列に指定。
+ * 大抵 <p> のクラスに指定。（他タグでも問題ない）
+ * 前提：messages.jsonの対象の文字列に改行コード（\n）を入れる。
+ */
+.nl2br {
+  white-space: pre-wrap;
 }
 
 tr {
@@ -1130,1530 +6735,4 @@ th, td {
   th, td {
     line-height: 2;
   }
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.p-club__mainVisualSlider[data-v-357d3955] {
-  width: 100%;
-  height: 100vh;
-}
-.p-club__policy-bg[data-v-357d3955] {
-  background-color: #091e2f;
-  margin-top: 0;
-}
-.p-club__policy[data-v-357d3955] {
-  padding: 5rem 0;
-  margin-top: 0;
-}
-.p-club__policy-cards[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.p-club__policy-cards[data-v-357d3955] {
-    margin: 5rem 1.5rem 0 1.5rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: stretch;
-}
-}
-.p-club__practice-table[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
-.p-club__practice-map[data-v-357d3955] {
-  padding-top: 2.5rem;
-}
-.p-club__practice-imageSlider[data-v-357d3955] {
-  padding-top: 4rem;
-  width: 90%;
-  margin: 0 auto;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-image[data-v-27ade895] {
-  width: 100%;
-}
-.c-image__image[data-v-27ade895] {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.c-image__image-radius[data-v-27ade895] {
-  border-radius: 2px;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-footerTitle[data-v-6d5a9373] {
-  text-align: center;
-}
-.c-footerTitle__title[data-v-6d5a9373] {
-  font-size: 32px;
-  letter-spacing: 3px;
-}
-@media screen and (min-width: 560px) {
-.c-footerTitle__title[data-v-6d5a9373] {
-    font-size: 22px;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.p-news[data-v-9b317ac0] {
-  width: 80%;
-  background-color: #ffffff;
-  box-shadow: 0px 6px 8px #e6e6e6;
-  margin: 0 auto;
-}
-.p-news__list[data-v-9b317ac0] {
-  margin: 1.5rem 1rem;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.test[data-v-b28ce99e] {
-  padding: 100px 0;
-}
-span[data-v-b28ce99e] {
-  font-size: 1.2rem;
-}
-.wrap[data-v-b28ce99e] {
-  position: relative;
-}
-.wrap[data-v-b28ce99e]::before {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-.wrap > img[data-v-b28ce99e] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-menuPanel__image[data-v-481a74cb] {
-  width: 100%;
-  height: 250px;
-  opacity: 0.7;
-  box-shadow: 0 0 8px 2px #e6e6e6;
-}
-@media screen and (min-width: 992px) {
-.c-menuPanel__image[data-v-481a74cb] {
-    height: 200px;
-}
-}
-.c-menuPanel__button[data-v-481a74cb] {
-  transform: translateY(-120%);
-}
-@media screen and (min-width: 992px) {
-.c-menuPanel__button[data-v-481a74cb] {
-    transform: translateY(-50%);
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-sliderMainVisual[data-v-30380e08] {
-  height: 100%;
-  position: relative;
-}
-.c-sliderMainVisual .swiper-slider[data-v-30380e08] {
-  overflow: hidden;
-}
-.c-sliderMainVisual__image[data-v-30380e08] {
-  width: 100%;
-  height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
-}
-.c-sliderMainVisual__text[data-v-30380e08] {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 10;
-  max-width: 280px;
-  color: #ffffff;
-  padding-left: 1.5rem;
-  font-size: 16px;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-table {
-  width: 90%;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.c-table {
-    width: 80%;
-}
-}
-@media screen and (min-width: 992px) {
-.c-table {
-    width: 70%;
-}
-}
-.c-table__record {
-  width: 100%;
-  border: 1px solid #f2f2f2;
-}
-.c-table__key {
-  width: 30%;
-  background-color: #f8f9fa;
-  text-align: center;
-  vertical-align: middle;
-}
-.c-table__value {
-  width: 70%;
-  white-space: pre-wrap;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-map__googleMap[data-v-325cd626] {
-  width: 100%;
-  height: 300px;
-}
-@media screen and (min-width: 992px) {
-.c-map__googleMap[data-v-325cd626] {
-    height: 400px;
-}
-}
-.c-map__attentionText[data-v-325cd626] {
-  margin: 0.5rem auto 0 auto;
-  display: block;
-  width: 80%;
-  text-align: center;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-}
-@media screen and (min-width: 992px) {
-.c-map__attentionText[data-v-325cd626] {
-    text-align: end;
-    width: 100%;
-    padding: 0 0.5rem;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-textList {
-  width: 100%;
-  list-style: disc;
-  padding-left: 1.5rem;
-}
-.c-textList__item {
-  font-size: 12px;
-  margin-bottom: 0.5rem;
-  word-wrap: break-word;
-}
-@media screen and (min-width: 992px) {
-.c-textList__item {
-    font-size: 14px;
-}
-}
-.c-textList__item:last-child {
-  margin-bottom: 0;
-}
-.c-textList__item-link {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-}
-@media screen and (min-width: 992px) {
-.c-textList__item-link:hover {
-    text-decoration: underline;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.p-contentsCard {
-  width: 80%;
-  background-color: #ffffff;
-  box-shadow: 0px 6px 8px #e6e6e6;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.p-contentsCard {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.p-contentsCard {
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
-}
-}
-.p-contentsCard__lead {
-  margin-top: 1.5rem;
-  padding: 0.5rem;
-}
-.p-contentsCard__viewAll {
-  margin-top: 1rem;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-contentsTitle {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.c-contentsTitle-white {
-  color: #ffffff;
-}
-.c-contentsTitle__assistance {
-  font-size: 10px;
-}
-@media screen and (min-width: 992px) {
-.c-contentsTitle__assistance {
-    font-size: 12px;
-}
-}
-.c-contentsTitle__primary {
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-.c-contentsTitle__primary::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 2px;
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #091e2f;
-}
-.c-contentsTitle.c-contentsTitle-white .c-contentsTitle__primary::after {
-  background-color: #ffffff;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-externalLink {
-  width: 60%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.c-externalLink {
-    width: 100%;
-    max-width: none;
-}
-}
-.c-externalLink__list {
-  margin-bottom: 0.5rem;
-  line-height: 2;
-}
-@media screen and (min-width: 560px) {
-.c-externalLink__list {
-    margin-bottom: 0.25rem;
-}
-}
-.c-externalLink__list:last-child {
-  margin: 0;
-}
-.c-externalLink__item {
-  padding: 0.25rem 1rem;
-  position: relative;
-  font-size: 12px;
-}
-.c-externalLink__item::before {
-  display: block;
-  content: "";
-  width: 8px;
-  height: 2px;
-  background-color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-imageSlider__container[data-v-6cd5e234] {
-  position: relative;
-  position: relative;
-}
-.c-imageSlider__container[data-v-6cd5e234]::before {
-  content: "";
-  display: block;
-  padding-bottom: 66.7%;
-}
-.c-imageSlider__container > img[data-v-6cd5e234] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.c-imageSlider__image[data-v-6cd5e234] {
-  border-radius: 4px;
-}
-.c-imageSlider__image-caption[data-v-6cd5e234] {
-  width: 90%;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 4px;
-  padding: 0.25rem 1rem;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 12px;
-}
-@media screen and (min-width: 560px) {
-.c-imageSlider__image-caption[data-v-6cd5e234] {
-    line-height: 2;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-sitemap {
-  width: 60%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.c-sitemap {
-    width: 100%;
-    max-width: none;
-}
-}
-.c-sitemap__list {
-  margin-bottom: 0.5rem;
-  line-height: 2;
-}
-@media screen and (min-width: 560px) {
-.c-sitemap__list {
-    line-height: 1.5;
-}
-}
-.c-sitemap__list:last-child {
-  margin: 0;
-}
-.c-sitemap__item {
-  padding: 0.25rem 1rem;
-  position: relative;
-  font-size: 16px;
-}
-.c-sitemap__item::before {
-  display: block;
-  content: "";
-  width: 8px;
-  height: 2px;
-  background-color: #ffffff;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-@media screen and (min-width: 560px) {
-.c-sitemap__item {
-    font-size: 12px;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.p-mainVisual[data-v-3ff6fe5a] {
-  width: 100%;
-  height: 100vh;
-  background: #030A10;
-  background: linear-gradient(to right, #030A10 0%, #091e2f 100%);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.p-mainVisual__title[data-v-3ff6fe5a] {
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  font-weight: bold;
-  text-shadow: 3px 3px 0px #e56c2c;
-}
-@media screen and (min-width: 560px) {
-.p-mainVisual__title[data-v-3ff6fe5a] {
-    font-size: 80px;
-}
-}
-@media screen and (min-width: 992px) {
-.p-mainVisual__title[data-v-3ff6fe5a] {
-    line-height: 1.2;
-    font-size: 80px;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-headerButton {
-  background-color: #091e2f;
-  color: #ffffff;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  box-shadow: 1px 3px 6px 3px #cdcdcd;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 560px) {
-.c-headerButton {
-    margin-right: 1rem;
-}
-}
-@media screen and (min-width: 992px) {
-.c-headerButton {
-    margin-right: 0;
-    margin-bottom: 1rem;
-    position: relative;
-    transition: 0.5s all ease-in-out;
-}
-.c-headerButton::before {
-    position: absolute;
-    content: "";
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    transition: 0.5s all ease-in-out;
-}
-.c-headerButton:hover {
-    background-color: #ffffff;
-    color: #091e2f;
-    transform: scale(1.1);
-}
-.c-headerButton:hover::before {
-    border-color: #091e2f;
-}
-.c-headerButton:hover .c-icon {
-    transform: rotateZ(360deg);
-}
-}
-.c-headerButton:last-child {
-  margin: 0;
-}
-.c-headerButton .c-icon {
-  width: 20px;
-  height: 20px;
-  transition: 0.3s all ease;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.l-footer[data-v-060e08fe] {
-  background-color: #091e2f;
-  color: #ffffff;
-  font-weight: bold;
-}
-.p-footer__mainContents[data-v-060e08fe] {
-  margin-bottom: 1.5rem;
-}
-@media screen and (min-width: 560px) {
-.p-footer__mainContents[data-v-060e08fe] {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: stretch;
-}
-}
-.p-footer__mainContents-title[data-v-060e08fe] {
-  margin-bottom: 1.5rem;
-}
-.p-footer__mainContents-sitemap[data-v-060e08fe] {
-  padding-top: 5rem;
-}
-@media screen and (min-width: 560px) {
-.p-footer__mainContents-sitemap[data-v-060e08fe] {
-    padding-top: 0;
-    margin-top: 2.5rem;
-    padding: 0 1rem;
-}
-}
-.p-footer__mainContents-externalLink[data-v-060e08fe] {
-  margin-top: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.p-footer__mainContents-externalLink[data-v-060e08fe] {
-    padding: 0 1rem;
-}
-}
-.p-footer__mainContents-information[data-v-060e08fe] {
-  margin-top: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.p-footer__mainContents-information[data-v-060e08fe] {
-    padding: 0 1rem;
-}
-}
-.p-footer__mainContents-information-wrap[data-v-060e08fe] {
-  width: 50%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.p-footer__mainContents-information-wrap[data-v-060e08fe] {
-    width: 100%;
-    max-width: none;
-}
-}
-.p-footer__mainContents-information-list[data-v-060e08fe] {
-  margin-bottom: 0.25rem;
-  font-size: 10px;
-}
-.p-footer__mainContents-information-list[data-v-060e08fe]:last-child {
-  margin-bottom: 0;
-}
-.p-footer__endText[data-v-060e08fe] {
-  padding: 1.5rem 0;
-  text-align: center;
-  font-weight: normal;
-  font-size: 10px;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-viewAll {
-  width: 80%;
-  max-width: 240px;
-  height: 50px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  font-size: 10px;
-  border: 1px solid #e56c2c;
-  border-radius: 2px;
-  position: relative;
-}
-@media screen and (min-width: 992px) {
-.c-viewAll {
-    width: 300px;
-    height: 60px;
-    font-size: 12px;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-.c-viewAll-xs {
-    max-width: 200px;
-    height: 45px;
-    font-size: 10px;
-}
-.c-viewAll-sm {
-    width: 240px;
-    height: 50px;
-    font-size: 10px;
-}
-.c-viewAll:hover {
-    border: none;
-}
-.c-viewAll:hover .c-viewAll__button {
-    transform: none;
-    border: none;
-    background-color: #e56c2c;
-    color: #ffffff;
-}
-}
-.c-viewAll__button {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background-color: #ffffff;
-  color: #e56c2c;
-  border: 1px solid #e56c2c;
-  border-radius: 2px;
-  transform: translateX(4px) translateY(-4px);
-  transition: all 0.3s ease-out;
-}
-@media screen and (min-width: 992px) {
-.c-viewAll__button {
-    background-color: rgba(255, 255, 255, 0.6);
-}
-}
-.c-viewAll__button-icon {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.c-policy[data-v-5c858898] {
-  width: 160px;
-  height: 160px;
-  border: 3px solid #ffffff;
-  border-radius: 4px;
-  margin: 2.5rem auto 0 auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  background: #10334e;
-  background: linear-gradient(to right, #10334e 0%, #030A10 100%);
-}
-@media screen and (min-width: 560px) {
-.c-policy[data-v-5c858898] {
-    margin: 0;
-}
-}
-@media screen and (min-width: 992px) {
-.c-policy[data-v-5c858898] {
-    position: relative;
-}
-.c-policy__title[data-v-5c858898], .c-policy__subTitle[data-v-5c858898] {
-    transition: all 0.5s ease-in-out;
-}
-.c-policy:hover .c-policy__title[data-v-5c858898],
-.c-policy:hover .c-policy__subTitle[data-v-5c858898] {
-    opacity: 0;
-}
-.c-policy:hover .c-policy__text[data-v-5c858898] {
-    opacity: 1;
-}
-}
-.c-policy[data-v-5c858898]:first-child {
-  margin-top: 0;
-}
-.c-policy__subTitle[data-v-5c858898] {
-  font-size: 10px;
-  color: #ffffff;
-}
-.c-policy__title[data-v-5c858898] {
-  color: #ffffff;
-  font-family: "Bangers", cursive;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-.c-policy__text[data-v-5c858898] {
-  color: #ffffff;
-  padding: 0.5rem;
-  text-align: center;
-}
-@media screen and (min-width: 992px) {
-.c-policy__text[data-v-5c858898] {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    font-size: 12px;
-    font-weight: bold;
-    transition: all 0.5s ease-in-out;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.l-header[data-v-6832e7cf] {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 6px #e6e6e6;
-}
-@media screen and (min-width: 992px) {
-.l-header[data-v-6832e7cf] {
-    width: 10%;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    box-shadow: 2px 0px 6px #e6e6e6;
-}
-}
-.p-header__navbar[data-v-6832e7cf] {
-  height: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center;
-}
-@media screen and (min-width: 992px) {
-.p-header__navbar[data-v-6832e7cf] {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: center;
-}
-}
-.p-header__navbar-title[data-v-6832e7cf] {
-  cursor: pointer;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 992px) {
-.p-header__navbar-title[data-v-6832e7cf] {
-    padding: 1.5rem;
-    margin: 0 auto;
-    -ms-writing-mode: tb-rl;
-        writing-mode: vertical-rl;
-}
-}
-.p-header__navbar-title-main[data-v-6832e7cf] {
-  font-family: "Bangers", cursive;
-  font-size: 16px;
-  letter-spacing: 1px;
-  font-weight: bold;
-}
-@media screen and (min-width: 560px) {
-.p-header__navbar-title-main[data-v-6832e7cf] {
-    font-size: 18px;
-}
-}
-@media screen and (min-width: 992px) {
-.p-header__navbar-title-main[data-v-6832e7cf] {
-    margin-bottom: 3.5rem;
-}
-}
-.p-header__navbar-title-assistance[data-v-6832e7cf] {
-  display: none;
-}
-@media screen and (min-width: 560px) {
-.p-header__navbar-title-assistance[data-v-6832e7cf] {
-    margin-left: 1.5rem;
-    font-size: 10px;
-    letter-spacing: 1.1px;
-    position: relative;
-    display: block;
-}
-}
-@media screen and (min-width: 992px) {
-.p-header__navbar-title-assistance[data-v-6832e7cf] {
-    margin: 0;
-    font-size: 12px;
-}
-}
-.p-header__navbar-title-assistance[data-v-6832e7cf]::before {
-  display: none;
-}
-@media screen and (min-width: 992px) {
-.p-header__navbar-title-assistance[data-v-6832e7cf]::before {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 16px;
-    background-color: #091e2f;
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-}
-.p-header__navbar-menus[data-v-6832e7cf] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: stretch;
-}
-@media screen and (min-width: 992px) {
-.p-header__navbar-menus[data-v-6832e7cf] {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
-    align-items: stretch;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数を定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-.l-top[data-v-bae950f4] {
-  position: relative;
-}
-.l-top__news[data-v-bae950f4] {
-  transform: translateY(-50px);
-  max-width: 800px;
-  margin: 0 auto;
-}
-@media screen and (min-width: 992px) {
-.l-top__news[data-v-bae950f4] {
-    transform: none;
-    margin-top: 7.5rem;
-    margin-bottom: 5rem;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__team[data-v-bae950f4] {
-    position: relative;
-    padding-bottom: 10rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-}
-.l-top__team-background[data-v-bae950f4] {
-  background-image: url("/image/group-photo_toutoSpring2017.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.l-top__team-contentsCard[data-v-bae950f4] {
-  transform: translateY(-50px);
-}
-@media screen and (min-width: 992px) {
-.l-top__team-contentsCard[data-v-bae950f4] {
-    position: absolute;
-    top: 50%;
-    right: 0;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__hakumonkai[data-v-bae950f4] {
-    position: relative;
-    padding-bottom: 10rem;
-    display: flex;
-    flex-flow: row-reverse nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-}
-.l-top__hakumonkai-background[data-v-bae950f4] {
-  background-image: url("/image/hakumon.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.l-top__hakumonkai-contentsCard[data-v-bae950f4] {
-  transform: translateY(-50px);
-}
-@media screen and (min-width: 992px) {
-.l-top__hakumonkai-contentsCard[data-v-bae950f4] {
-    position: absolute;
-    top: 50%;
-    left: 0;
-}
-}
-.l-top__backgroundImage[data-v-bae950f4] {
-  width: 100%;
-  height: 300px;
-  border-top: 5px solid #091e2f;
-  border-bottom: 5px solid #091e2f;
-  box-shadow: 0px -5px 8px 3px #e6e6e6;
-}
-@media screen and (min-width: 560px) {
-.l-top__backgroundImage[data-v-bae950f4] {
-    height: 500px;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__backgroundImage[data-v-bae950f4] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__menuPanel[data-v-bae950f4] {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: stretch;
-}
-}
-.l-top__menuPanel-item[data-v-bae950f4] {
-  max-width: 500px;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.l-top__menuPanel-item[data-v-bae950f4] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__menuPanel-item[data-v-bae950f4] {
-    padding: 0.25rem;
-    max-width: 340px;
-}
-}
-.l-top__support[data-v-bae950f4] {
-  width: 100%;
-  height: 100vh;
-  color: #ffffff;
-  background-image: url("/image/player09.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-@media screen and (min-width: 560px) {
-.l-top__support[data-v-bae950f4] {
-    background-image: url("/image/player11.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-}
-.l-top__support-background[data-v-bae950f4] {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(9, 30, 47, 0.8);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.l-top__support-textaria[data-v-bae950f4] {
-  width: 80%;
-  margin: 2.5rem auto 0 auto;
-}
-@media screen and (min-width: 560px) {
-.l-top__support-textaria[data-v-bae950f4] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.l-top__support-textaria[data-v-bae950f4] {
-    width: 60%;
-}
 }

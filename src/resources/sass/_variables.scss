@@ -8,11 +8,11 @@ $color: (
 	lightDarkblue: #10334e,
 	deepDarkblue:  #030A10,
   orange:        #e56c2c,
-  lightGray:     #f2f2f2,
+  lightgray:     #f2f2f2,
   white:         #ffffff,
 
   shadow:      #e6e6e6,
-  darkShadow:  darken(#e6e6e6, 15%),
+  darkShadow:  darken(#e6e6e6, 20%),
   lightShadow: lighten(#e6e6e6, 10%),
 
   lightGreen: #56b145,
@@ -44,10 +44,10 @@ $font: (
   lg:   18px,
   xl:   22px,
 
-  heading:       32px,
-  lg-heading:    50px,
-  mainVisual:    48px,
-  mainVisual-lg: 80px,
+  heading:    32px,
+  heading-lg: 50px,
+  mv:         48px,
+  mv-lg:      80px,
 ) !default;
 
 /**
@@ -68,6 +68,14 @@ $button: (
 
   lg-width: 300px,
   lg-height: 60px,
+);
+
+/**
+ * icon size
+ */
+$icon: (
+  normal: 20px,
+  lg: 32px,
 );
 
 /**
@@ -98,5 +106,5 @@ $radius: (
   normal: 4px,
   hard: 8px,
 
-  circle: 100%
+  circle: 50%
 );
