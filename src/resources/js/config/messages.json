@@ -79,6 +79,10 @@
     "Officer": {
       "Main": "officer",
       "Sub" : "白門会役員"
+    },
+    "ActiveAlumni": {
+      "Main": "active OB",
+      "Sub" : "活躍中の卒業生"
     }
   },
 

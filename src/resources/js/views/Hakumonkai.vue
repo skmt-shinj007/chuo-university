@@ -23,6 +23,14 @@
       <tile-table-component :tableItemHeading="tableHeading" :tableItems="officer"/>
     </div>
   </section>
+
+  <section class="hakumonkai__active-ob section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.ActiveAlumni.Main"
+      :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
+
+
+  </section>
 </div>
 </template>
 
