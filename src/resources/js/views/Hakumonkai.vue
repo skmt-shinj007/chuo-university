@@ -13,6 +13,16 @@
       <img class="hakumonkai-lead-img" src="/image/hakumon.jpg" alt="中央大学多摩キャンパスの白門">
     </figure>
   </section>
+
+  <section class="hakumonkai__officer section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Officer.Main"
+      :subTitle="messages.SectionTitles.Officer.Sub"/>
+
+    <div class="hakumonkai__officer-table">
+
+    </div>
+  </section>
 </div>
 </template>
 
