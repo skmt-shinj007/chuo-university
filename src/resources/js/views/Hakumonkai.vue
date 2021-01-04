@@ -5,12 +5,12 @@
       :title="messages.SectionTitles.Hakumonkai.Main"
       :subTitle="messages.SectionTitles.Hakumonkai.Sub"/>
 
-    <div class="hakumonkai-lead-wrap">
-      <p class="hakunmonkai-lead-text nl2br" v-text="messages.Hakumonkai.Lead"></p>
+    <div class="hakumonkai-lead-text-wrap">
+      <p class="hakumonkai-lead-text nl2br" v-text="messages.Hakumonkai.Lead"></p>
     </div>
 
     <figure class="hakumonkai-lead-img-wrap">
-      <img class="hakumonkai-lead-img" src="/image/player01.jpg" alt="">
+      <img class="hakumonkai-lead-img" src="/image/hakumon.jpg" alt="中央大学多摩キャンパスの白門">
     </figure>
   </section>
 </div>
@@ -47,7 +47,7 @@ export default {
     padding: 0 interval(2);
   }
 
-  &-lead-wrap {
+  &-lead-text-wrap {
     margin-bottom: interval(5);
 
     @include mq(sm) {
@@ -58,6 +58,10 @@ export default {
     @include mq(md) {
       max-width: interval(90);
     }
+  }
+
+  &-lead-text {
+    font-weight: bold;
   }
 
   &-lead-img-wrap {
