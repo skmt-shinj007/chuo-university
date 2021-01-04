@@ -822,5 +822,47 @@
       "record": null,
       "message": "メッセージが入ります。"
     }
-  ]
+  ],
+
+  "HakumonkaiOfficer": {
+    "Heading": ["白門会役職", "名前", "卒業年", "学員会役職"],
+    "Data": [
+      {
+        "name": {
+          "ja": "田中 季夫",
+          "en": "tanaka yukio"
+        },
+        "post": "名誉会長",
+        "graduate": {
+          "age": "昭和",
+          "year": 31
+        },
+        "schoolTitle": "学員会体育顧問"
+      },
+      {
+        "name": {
+          "ja": "曽根田 正美",
+          "en": "tanaka yukio"
+        },
+        "post": "名誉会長",
+        "graduate": {
+          "age": "昭和",
+          "year": 31
+        },
+        "schoolTitle": "学員会体育顧問"
+      },
+      {
+        "name": {
+          "ja": "田中 季夫",
+          "en": "tanaka yukio"
+        },
+        "post": "名誉会長",
+        "graduate": {
+          "age": "昭和",
+          "year": 31
+        },
+        "schoolTitle": "学員会体育顧問"
+      }
+    ]
+  }
 }

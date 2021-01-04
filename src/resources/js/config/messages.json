@@ -75,6 +75,10 @@
     "Staff": {
       "Main": "staff",
       "Sub" : "スタッフ"
+    },
+    "Officer": {
+      "Main": "officer",
+      "Sub" : "白門会役員"
     }
   },
 

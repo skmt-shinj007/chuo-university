@@ -13,24 +13,42 @@
       <img class="hakumonkai-lead-img" src="/image/hakumon.jpg" alt="中央大学多摩キャンパスの白門">
     </figure>
   </section>
+
+  <section class="hakumonkai__officer section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Officer.Main"
+      :subTitle="messages.SectionTitles.Officer.Sub"/>
+
+    <div class="hakumonkai__officer-table">
+      <tile-table-component :tableItemHeading="tableHeading" :tableItems="officer"/>
+    </div>
+  </section>
 </div>
 </template>
 
 <script>
 // components import
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
+import TileTableComponent from '../components/modules/table/TileTableComponent.vue';
+
+// data import
+import Data from '../config/data.json';
 
 export default {
   components: {
     ContentsTitleComponent,
+    TileTableComponent,
   },
   data() {
     return {
-
+      data: Data,
+      tableHeading: [],
+      officer: [],
     }
   },
   beforeMount() {
-
+    this.$data.data.HakumonkaiOfficer.Data.forEach(element => this.officer.push(element));
+    this.$data.data.HakumonkaiOfficer.Heading.forEach(element => this.tableHeading.push(element));
   },
 }
 </script>
@@ -77,6 +95,11 @@ export default {
 
   &-lead-img {
     border-radius: radius(soft);
+  }
+
+  &__officer-table {
+    // サイトの左右マージンが決まり次第削除
+    padding: 0 interval(2);
   }
 }
 </style>
