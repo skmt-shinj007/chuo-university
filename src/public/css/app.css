@@ -3619,6 +3619,144 @@ import用ファイル
 /**
  * @keyframe を定義
  */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.tile-table {
+  width: 100%;
+  color: #ffffff;
+}
+.tile-table__heading {
+  background-color: #091e2f;
+  border-bottom: 8px solid #ffffff;
+}
+.tile-table__title {
+  text-align: center;
+  font-size: 10px;
+}
+@media screen and (min-width: 560px) {
+.tile-table__title {
+    font-size: 12px;
+    border: 2px solid #ffffff;
+}
+}
+.tile-table__body {
+  background-color: #10334e;
+}
+.tile-table__el {
+  text-align: center;
+  font-size: 10px;
+}
+@media screen and (min-width: 560px) {
+.tile-table__el {
+    font-size: 12px;
+    border: 2px solid #ffffff;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
 @-webkit-keyframes iconSlide-data-v-42f1fe89 {
 0% {
     transform: translateX(0);
@@ -3748,6 +3886,9 @@ import用ファイル
 }
 .hakumonkai-lead-img[data-v-42f1fe89] {
   border-radius: 2px;
+}
+.hakumonkai__officer-table[data-v-42f1fe89] {
+  padding: 0 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
