@@ -147,8 +147,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
     border-image-source: repeating-linear-gradient(45deg, color(white), color(white) 3px, color(darkblue) 0, color(darkblue) 6px);
     border-image-slice: 10;
     border-image-repeat: round;

@@ -3619,6 +3619,166 @@ import用ファイル
 /**
  * @keyframe を定義
  */
+@-webkit-keyframes iconSlide-data-v-42f1fe89 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-42f1fe89 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.hakumonkai[data-v-42f1fe89] {
+  padding: 7.5rem 0;
+}
+@media screen and (min-width: 992px) {
+.hakumonkai[data-v-42f1fe89] {
+    padding: 5rem 0;
+}
+}
+.hakumonkai__page-header[data-v-42f1fe89] {
+  padding: 0 1rem;
+}
+.hakumonkai-lead-wrap[data-v-42f1fe89] {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.hakumonkai-lead-wrap[data-v-42f1fe89] {
+    margin: 0 auto 2.5rem auto;
+    max-width: 37.5rem;
+}
+}
+@media screen and (min-width: 992px) {
+.hakumonkai-lead-wrap[data-v-42f1fe89] {
+    max-width: 45rem;
+}
+}
+.hakumonkai-lead-img-wrap[data-v-42f1fe89] {
+  width: 100%;
+  max-width: 37.5rem;
+  margin: 0 auto;
+  position: relative;
+}
+.hakumonkai-lead-img-wrap[data-v-42f1fe89]::before {
+  content: "";
+  display: block;
+  padding-bottom: 56%;
+}
+.hakumonkai-lead-img-wrap > img[data-v-42f1fe89] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 992px) {
+.hakumonkai-lead-img-wrap[data-v-42f1fe89] {
+    max-width: 45rem;
+}
+}
+.hakumonkai-lead-img[data-v-42f1fe89] {
+  border-radius: 2px;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
 @-webkit-keyframes iconSlide-data-v-b79d4b88 {
 0% {
     transform: translateX(0);
