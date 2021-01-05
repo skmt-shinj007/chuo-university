@@ -50,6 +50,7 @@ export default {
 
   &__assistance {
     font-size: font(xs);
+    font-weight: normal;
 
     // pc style
     @include mq(md) {

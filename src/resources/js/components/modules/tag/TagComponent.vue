@@ -1,8 +1,8 @@
 <template>
-  <div class="tag" :class="sizeClass">
+  <div class="tag">
     <div class="tag__color" :class="colorClass">
       <slot>
-        <span class="tag__content">{{ content }}</span>
+        <span class="tag__content" :class="sizeClass">{{ content }}</span>
       </slot>
     </div>
   </div>
@@ -39,14 +39,16 @@ export default {
 .tag {
   margin: interval(.5);
   color: color(white);
-  font-size: font(sm);
   letter-spacing: 1.8px;
-  font-weight: bold;
   line-height: 1.9;
 
-  &--lg {
-    font-size: font(md);
-    line-height: 2;
+  &__content {
+    font-size: font(xs);
+
+    &--lg {
+      font-size: font(md);
+      line-height: 2;
+    }
   }
 
   &__color {

@@ -70,12 +70,17 @@ export default {
 <style lang="scss" scoped>
 .slider {
 
-  // slider の時のみ指定したい選手カードのスタイルを指定
+  // sliderの場合のplayer cardの幅を指定
   .player-card {
     margin: 0 auto;
+    width: 60%;
 
     @include mq(sm){
-      width: 60%;
+      width: 70%;
+    }
+
+    @include mq(){
+      width: 80%;
     }
   }
 

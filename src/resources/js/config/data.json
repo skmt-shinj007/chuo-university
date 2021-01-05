@@ -129,14 +129,14 @@
   "Dormitory": [
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "レストランのアイコン"
       },
       "Content": "食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。"
     },
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "お風呂のアイコン"
       },
       "Content": "南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n",
@@ -144,14 +144,14 @@
     },
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "ベッドのアイコン"
       },
       "Content": "ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。"
     },
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "洗濯機のアイコン"
       },
       "Content": "洗濯機は、ソフトテニス部の部屋がある階に4台ございます。ソフトテニス部以外にも同階に住んでいる部との供用になります。",
@@ -630,6 +630,7 @@
       "record": "戦績が入ります。",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "宮崎 悠登",
@@ -654,6 +655,7 @@
       "record": "2016年ハイスクールジャパンカップ ダブルス準優勝",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "田邉 雅人",
@@ -678,6 +680,7 @@
       "record": "2016年国民体育大会 少年の部 優勝",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "斎藤 利貴",
@@ -702,6 +705,7 @@
       "record": "2016年ハイスクールジャパンカップ ベスト8",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "佐藤 辰哉",
@@ -726,6 +730,7 @@
       "record": "2016年ハイスクールジャパンカップ ベスト4",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "丸山 章",
@@ -739,14 +744,18 @@
         "place": "広島県",
         "almaMater": "広島県尾道高等学校"
       },
+      "post": {
+        "club": "主務",
+        "alumni": null
+      },
       "category": 1,
       "position": "後衛",
       "grade": 3,
-      "post": "主務",
       "undergraduate": "文学部",
       "record": "2017年ハイスクールジャパンカップ ベスト4",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "橋本 誠人",
@@ -769,6 +778,81 @@
       "grade": 3,
       "undergraduate": "理工学部",
       "record": "2016年ハイスクールジャパンカップ ベスト8",
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "丸中 大明",
+        "en": "Marunaka taimei"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "宮城県",
+        "almaMater": "宮城県東北高等学校"
+      },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "category": 4,
+      "position": "後衛",
+      "grade": null,
+      "undergraduate": null,
+      "record": "第16回世界選手権国別対抗戦 優勝",
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "鈴木 琢己",
+        "en": "Suzuki takumi"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "福島県",
+        "almaMater": "宮城県東北高等学校"
+      },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "category": 4,
+      "position": "前衛",
+      "grade": null,
+      "undergraduate": null,
+      "record": "第16回世界選手権国別対抗戦 優勝",
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "中堀 成生",
+        "en": "Nakahori shigeo"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "宮城県",
+        "almaMater": "宮城県東北高等学校"
+      },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "category": 4,
+      "position": "後衛",
+      "grade": null,
+      "undergraduate": null,
+      "record": "第16回世界選手権国別対抗戦 優勝（監督）",
       "message": "メッセージが入ります。"
     }
   ],
@@ -837,7 +921,8 @@
           "age": "昭和",
           "year": 31
         },
-        "schoolTitle": "学員会体育顧問"
+        "schoolTitle": "学員会体育顧問",
+        "category": 3
       },
       {
         "name": {
@@ -849,7 +934,8 @@
           "age": "昭和",
           "year": 31
         },
-        "schoolTitle": "学員会体育顧問"
+        "schoolTitle": "学員会体育顧問",
+        "category": 3
       },
       {
         "name": {
@@ -861,7 +947,8 @@
           "age": "昭和",
           "year": 31
         },
-        "schoolTitle": "学員会体育顧問"
+        "schoolTitle": "学員会体育顧問",
+        "category": 3
       }
     ]
   }

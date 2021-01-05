@@ -71,14 +71,10 @@ export default {
 
   &__laundry-price {
     display: block;
-    font-size: font(sm);
-    font-weight: bold;
     line-height: 1.5;
   }
 
   &__bath-time {
-    font-size: font(sm);
-    font-weight: bold;
     line-height: 1.5;
   }
 }

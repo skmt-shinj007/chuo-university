@@ -110,6 +110,7 @@ export default {
       @include mq(sm) {
         margin-left: interval(3);
         font-size: font(xs);
+        font-weight: normal;
         letter-spacing: 1.1px;
         position: relative;
         display: block;

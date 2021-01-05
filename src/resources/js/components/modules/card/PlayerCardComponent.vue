@@ -13,8 +13,12 @@
     <div class="player-card__information-tags">
       <position-tag-component :position="player.position"/>
       <tag-component v-if="player.post.club" :content="player.post.club"/>
-      <grade-tag-component :grade="player.grade"/>
+      <grade-tag-component v-if="player.grade" :grade="player.grade"/>
     </div>
+
+    <slot name="addCardContents" :player="player">
+      <!-- 差し込み：カードに追加したい内容を親コンポーネントで記述 -->
+    </slot>
   </div>
 </div>
 </template>
@@ -42,15 +46,6 @@ export default {
 
 <style lang="scss">
 .player-card {
-  width: 60%;
-
-  @include mq(sm) {
-    width: 30%;
-  }
-
-  @include mq(md) {
-    width: 20%;
-  }
 
   &__figure {
     @include trimming(aspect(square));
@@ -63,13 +58,10 @@ export default {
     padding: interval(1);
 
     &-name {
-      font-size: font(sm);
-      font-weight: bold;
       margin: 0 interval(1) 0 interval(.5);
     }
 
     &-name-english {
-      font-weight: bold;
       font-size: font(xs);
     }
 

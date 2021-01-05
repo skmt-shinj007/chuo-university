@@ -70,11 +70,6 @@ export default {
     &-main {
       font-size: font(lg);
     }
-
-    &-sub {
-      font-size: font(sm);
-      font-weight: bold;
-    }
   }
 
   &__text-container {

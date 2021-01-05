@@ -24,5 +24,10 @@ export default {
 </script>
 
 <style lang="scss">
+.grade-tag {
 
+  &__content {
+    font-size: font(xs);
+  }
+}
 </style>

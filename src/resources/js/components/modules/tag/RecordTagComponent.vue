@@ -36,6 +36,7 @@ export default {
     margin-right: interval(.5);
     width: interval(3);
     height: interval(3);
+    fill: color(white);
 
     @include mq(sm) {
       margin-right: interval(1);
@@ -47,7 +48,6 @@ export default {
   }
 
   &__content {
-    font-size: font(sm);
     padding: interval(.5) 0;
 
     @include mq(sm) {
