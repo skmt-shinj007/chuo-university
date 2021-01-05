@@ -142,7 +142,7 @@ export default {
     @include flex(column wrap, center, center);
 
     @include mq(sm) {
-      flex-flow: row nowrap;
+      @include flex(row nowrap, flex-start, stretch);
       padding: 0 interval(2);
     }
   }
@@ -151,6 +151,7 @@ export default {
     width: 60%;
     margin-bottom: interval(5);
     box-shadow: 0 1px 10px 2px color(shadow);
+    background-color: color(lightgray);
 
     @include mq(sm) {
       width: calc(100% / 3);
