@@ -97,8 +97,6 @@ export default {
   }
 
   &__player-name {
-    font-size: font(sm);
-    font-weight: bold;
     letter-spacing: 1.8px;
   }
 

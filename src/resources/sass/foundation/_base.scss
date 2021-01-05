@@ -58,6 +58,11 @@ p {
   };
 }
 
+span {
+  font-weight: bold;
+  font-size: font(sm);
+}
+
 .background-darkblue {
   background-color: color(darkblue);
   margin-top: 0;

@@ -96,7 +96,6 @@ export default {
 
   &__capacity-number {
     font-size: font(md);
-    font-weight: bold;
   }
 }
 </style>

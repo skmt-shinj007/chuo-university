@@ -121,7 +121,6 @@ export default {
   &__name {
     display: block;
     font-size: font(base);
-    font-weight: bold;
     padding-left: interval(.5);
 
     &:first-of-type {

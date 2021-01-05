@@ -48,7 +48,6 @@ export default {
   }
 
   &__content {
-    font-size: font(sm);
     padding: interval(.5) 0;
 
     @include mq(sm) {

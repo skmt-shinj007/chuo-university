@@ -29,7 +29,6 @@ export default {
     white-space: pre-wrap;
     font-family: Arial, Helvetica, sans-serif;
     font-size: font(mv);
-    font-weight: bold;
     text-shadow: 3px 3px 0px color(orange);
 
     // pc style

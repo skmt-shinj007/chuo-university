@@ -31,6 +31,7 @@ export default {
     width: 80%;
     text-align: center;
     font-size: font(xs);
+    font-weight: normal;
     letter-spacing: 1.5px;
 
     // pc style
