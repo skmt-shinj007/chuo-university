@@ -39,7 +39,7 @@ export default {
 .tag {
   margin: interval(.5);
   color: color(white);
-  font-size: font(sm);
+  font-size: font(xs);
   letter-spacing: 1.8px;
   font-weight: bold;
   line-height: 1.9;
