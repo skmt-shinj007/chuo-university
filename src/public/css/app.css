@@ -121,7 +121,6 @@ import用ファイル
   white-space: pre-wrap;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 48px;
-  font-weight: bold;
   text-shadow: 3px 3px 0px #e56c2c;
 }
 @media screen and (min-width: 992px) {
@@ -254,6 +253,7 @@ import用ファイル
 }
 .contents-title__assistance {
   font-size: 10px;
+  font-weight: normal;
 }
 @media screen and (min-width: 992px) {
 .contents-title__assistance {
@@ -1373,6 +1373,7 @@ import用ファイル
   width: 80%;
   text-align: center;
   font-size: 10px;
+  font-weight: normal;
   letter-spacing: 1.5px;
 }
 @media screen and (min-width: 992px) {
@@ -1703,7 +1704,6 @@ import用ファイル
 }
 .image-slider__capacity-number[data-v-6cd5e234] {
   font-size: 16px;
-  font-weight: bold;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -2274,13 +2274,9 @@ import用ファイル
 }
 .dormitory-card__laundry-price[data-v-2a1efbb8] {
   display: block;
-  font-size: 12px;
-  font-weight: bold;
   line-height: 1.5;
 }
 .dormitory-card__bath-time[data-v-2a1efbb8] {
-  font-size: 12px;
-  font-weight: bold;
   line-height: 1.5;
 }@charset "UTF-8";
 /*
@@ -2393,12 +2389,13 @@ import用ファイル
 .tag {
   margin: 0.25rem;
   color: #ffffff;
-  font-size: 12px;
   letter-spacing: 1.8px;
-  font-weight: bold;
   line-height: 1.9;
 }
-.tag--lg {
+.tag__content {
+  font-size: 10px;
+}
+.tag__content--lg {
   font-size: 16px;
   line-height: 2;
 }
@@ -2529,19 +2526,116 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.player-card {
-  width: 60%;
+.grade-tag__content {
+  font-size: 10px;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
 }
-@media screen and (min-width: 560px) {
-.player-card {
-    width: 30%;
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
 }
 }
-@media screen and (min-width: 992px) {
-.player-card {
-    width: 20%;
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
 }
 }
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .player-card__figure {
   position: relative;
   border-bottom: 2px solid #091e2f;
@@ -2566,12 +2660,9 @@ import用ファイル
   padding: 0.5rem;
 }
 .player-card__information-name {
-  font-size: 12px;
-  font-weight: bold;
   margin: 0 0.5rem 0 0.25rem;
 }
 .player-card__information-name-english {
-  font-weight: bold;
   font-size: 10px;
 }
 .player-card__information-tags {
@@ -2691,10 +2782,16 @@ import用ファイル
  */
 .slider .player-card[data-v-53189f00] {
   margin: 0 auto;
+  width: 60%;
 }
 @media screen and (min-width: 560px) {
 .slider .player-card[data-v-53189f00] {
-    width: 60%;
+    width: 70%;
+}
+}
+@media screen and (min-width: 992px) {
+.slider .player-card[data-v-53189f00] {
+    width: 80%;
 }
 }@charset "UTF-8";
 /*
@@ -3377,7 +3474,6 @@ import用ファイル
 .user-ticket__name {
   display: block;
   font-size: 14px;
-  font-weight: bold;
   padding-left: 0.25rem;
 }
 .user-ticket__name:first-of-type {
@@ -3395,8 +3491,8 @@ import用ファイル
   align-items: center;
 }
 .user-ticket-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
   fill: #091e2f;
 }@charset "UTF-8";
 /*
@@ -3514,6 +3610,7 @@ import用ファイル
   height: 15rem;
   fill: #ffffff;
   stroke: #e56c2c;
+  stroke-width: 0.5rem;
 }
 @media screen and (min-width: 992px) {
 .member__main-visual-icon[data-v-668c6779] {
@@ -3889,6 +3986,45 @@ import用ファイル
 }
 .hakumonkai__officer-table[data-v-42f1fe89] {
   padding: 0 1rem;
+}
+.hakumonkai__players[data-v-42f1fe89] {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.hakumonkai__players[data-v-42f1fe89] {
+    flex-flow: row nowrap;
+    padding: 0 1rem;
+}
+}
+.hakumonkai__player-card[data-v-42f1fe89] {
+  width: 60%;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 1px 10px 2px #e6e6e6;
+}
+@media screen and (min-width: 560px) {
+.hakumonkai__player-card[data-v-42f1fe89] {
+    width: calc(100% / 3);
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+}
+.hakumonkai__player-card[data-v-42f1fe89]:last-child {
+  margin: 0;
+}
+.player-card__record[data-v-42f1fe89] {
+  margin-left: 0.25rem;
+}
+.player-card__record-text[data-v-42f1fe89] {
+  font-size: 10px;
+  letter-spacing: 1.1px;
+}
+@media screen and (min-width: 992px) {
+.player-card__record-text[data-v-42f1fe89] {
+    font-size: 12px;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -4010,6 +4146,7 @@ import用ファイル
   margin-right: 0.25rem;
   width: 1.5rem;
   height: 1.5rem;
+  fill: #ffffff;
 }
 @media screen and (min-width: 560px) {
 .record-tag__icon[data-v-b79d4b88] {
@@ -4022,7 +4159,6 @@ import用ファイル
 }
 }
 .record-tag__content[data-v-b79d4b88] {
-  font-size: 12px;
   padding: 0.25rem 0;
 }
 @media screen and (min-width: 560px) {
@@ -4166,10 +4302,6 @@ import用ファイル
 }
 .history-card__title-main[data-v-4efdffd6] {
   font-size: 18px;
-}
-.history-card__title-sub[data-v-4efdffd6] {
-  font-size: 12px;
-  font-weight: bold;
 }
 .history-card__text-container[data-v-4efdffd6] {
   margin: 1rem;
@@ -4317,7 +4449,7 @@ import用ファイル
 }
 .icon-table__icon {
   width: 1.25rem;
-  color: #e3aa00;
+  fill: #e3aa00;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -4477,8 +4609,6 @@ import用ファイル
 }
 }
 .champions-card__player-name[data-v-3ea95d82] {
-  font-size: 12px;
-  font-weight: bold;
   letter-spacing: 1.8px;
 }
 .champions-card__icon[data-v-3ea95d82] {
@@ -5708,6 +5838,7 @@ import用ファイル
 .header__title-assistance[data-v-6832e7cf] {
     margin-left: 1.5rem;
     font-size: 10px;
+    font-weight: normal;
     letter-spacing: 1.1px;
     position: relative;
     display: block;
@@ -6985,6 +7116,11 @@ p {
     font-size: 14px;
     line-height: 2;
   }
+}
+
+span {
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .background-darkblue {
