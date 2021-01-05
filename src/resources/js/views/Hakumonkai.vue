@@ -149,7 +149,7 @@ export default {
 
   &__player-card {
     width: 60%;
-    margin-bottom: interval(5);
+    margin-bottom: interval(8);
     box-shadow: 0 1px 10px 2px color(shadow);
     background-color: color(lightgray);
 
