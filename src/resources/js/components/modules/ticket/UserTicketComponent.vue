@@ -138,8 +138,8 @@ export default {
   }
 
   &-icon {
-    width: interval(3);
-    height: interval(3);
+    width: interval(2.5);
+    height: interval(2.5);
     fill: color(darkblue);
   }
 }

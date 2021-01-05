@@ -67,7 +67,7 @@ export default {
 
   &__icon {
     width: interval(2.5);
-    color: #e3aa00;
+    fill: #e3aa00;
   }
 }
 </style>

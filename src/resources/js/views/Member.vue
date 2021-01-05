@@ -75,6 +75,7 @@ export default {
     height: interval(30);
     fill: color(white);
     stroke: color(orange);
+    stroke-width: interval(1);
 
     @include mq(md) {
       width: 40%;
