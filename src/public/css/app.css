@@ -3337,6 +3337,459 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
+.user-ticket {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 5px 3px #b3b3b3;
+  background-color: #ffffff;
+  border: 2px solid #f8f9fa;
+  border-radius: 48px;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 560px) {
+.user-ticket {
+    padding: 0.5rem 0.75rem;
+}
+}
+@media screen and (min-width: 992px) {
+.user-ticket {
+    cursor: pointer;
+    box-shadow: 0 1px 3px 1px #b3b3b3;
+    transition: all 0.3s ease-out;
+}
+.user-ticket:hover {
+    box-shadow: 0 3px 5px 3px #b3b3b3;
+    transform: translateY(-2px);
+}
+.user-ticket:hover .user-ticket-icon {
+    -webkit-animation: iconSlide 1.5s infinite;
+            animation: iconSlide 1.5s infinite;
+}
+}
+.user-ticket-thumbnail-border--blue {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--blue::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+.user-ticket-thumbnail-border--orange {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--orange::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #e56c2c;
+  background: linear-gradient(to bottom, #e56c2c 0%, #10334e 100%);
+}
+.user-ticket-thumbnail-border--green {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.user-ticket-thumbnail-border--green::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #56b145;
+  background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
+}
+.user-ticket-thumbnail-wrap {
+  width: 100%;
+  position: relative;
+}
+.user-ticket-thumbnail-wrap::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.user-ticket-thumbnail-wrap > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.user-ticket-thumbnail-wrap {
+    width: 5rem;
+}
+}
+.user-ticket-thumbnail {
+  border-radius: 50%;
+}
+.user-ticket__name {
+  display: block;
+  font-size: 14px;
+  padding-left: 0.25rem;
+}
+.user-ticket__name:first-of-type {
+  display: none;
+}
+@media screen and (min-width: 560px) {
+.user-ticket__name:first-of-type {
+    display: block;
+}
+}
+.user-ticket-tag-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.user-ticket-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: #091e2f;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-668c6779 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.member[data-v-668c6779] {
+  background-color: #f2f2f2;
+}
+.member__main-visual-icon[data-v-668c6779] {
+  width: 15rem;
+  height: 15rem;
+  fill: #ffffff;
+  stroke: #e56c2c;
+  stroke-width: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+.member__main-visual-icon[data-v-668c6779] {
+    width: 40%;
+    height: 40%;
+    min-width: 30rem;
+    min-height: 30rem;
+}
+}
+.member__main-visual-ward[data-v-668c6779] {
+  font-family: "Bangers", cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 560px) {
+.member__main-visual-ward[data-v-668c6779] {
+    font-size: 48px;
+}
+}
+.member__user-ticket-group[data-v-668c6779] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket-group[data-v-668c6779] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.member__user-ticket[data-v-668c6779] {
+  padding: 0.5rem;
+  margin-bottom: 2.5rem;
+  width: 90%;
+  max-width: 24rem;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket[data-v-668c6779] {
+    width: calc(100% / 2);
+    max-width: none;
+}
+}
+@media screen and (min-width: 992px) {
+.member__user-ticket[data-v-668c6779] {
+    margin-bottom: 0;
+    width: calc(100% / 3);
+}
+}
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
+  align-self: flex-end;
+}
+@media screen and (min-width: 560px) {
+.member__user-ticket[data-v-668c6779]:nth-child(even) {
+    align-self: auto;
+}
+}
+.member__staff[data-v-668c6779] {
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 992px) {
+.member__staff[data-v-668c6779] {
+    padding-bottom: 10rem;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .tile-table {
   width: 100%;
   color: #ffffff;
@@ -3564,6 +4017,20 @@ import用ファイル
 }
 .hakumonkai__player-card[data-v-42f1fe89]:last-child {
   margin: 0;
+}
+.hakumonkai__message-container[data-v-42f1fe89] {
+  padding: 0 1rem;
+}
+.hakumonkai__message-text[data-v-42f1fe89] {
+  text-align: center;
+  font-weight: bold;
+  max-width: 29rem;
+  margin: 0 auto 2.5rem auto;
+}
+@media screen and (min-width: 992px) {
+.hakumonkai__message-text[data-v-42f1fe89] {
+    max-width: 34rem;
+}
 }
 .player-card__record[data-v-42f1fe89] {
   margin-left: 0.25rem;
