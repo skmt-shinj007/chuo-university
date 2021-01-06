@@ -30,8 +30,8 @@
       :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
 
     <div class="hakumonkai__players">
-      <div class="hakumonkai__player-card" v-for="(alumni, n) in activeAlumni" :key="n">
 
+      <div class="hakumonkai__player-card" v-for="(alumni, n) in activeAlumni" :key="n">
         <player-card-component :player="alumni">
           <template v-slot:addCardContents="componentProps">
             <div class="player-card__record">
@@ -39,8 +39,19 @@
             </div>
           </template>
         </player-card-component>
-
       </div>
+
+    </div>
+  </section>
+
+  <section class="hakumonkai__message section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Message.Main"
+      :subTitle="messages.SectionTitles.Message.Sub"/>
+
+    <div class="hakumonkai__message-container">
+      <p class="hakumonkai__message-text nl2br" v-text="messages.Hakumonkai.Message"/>
+      <view-all-button-component :name="messages.ButtonName.ToContact"/>
     </div>
   </section>
 </div>
@@ -51,6 +62,7 @@
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TileTableComponent from '../components/modules/table/TileTableComponent';
 import PlayerCardComponent from '../components/modules/card/PlayerCardComponent';
+import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
 
 // data import
 import Data from '../config/data.json';
@@ -60,10 +72,11 @@ export default {
     ContentsTitleComponent,
     TileTableComponent,
     PlayerCardComponent,
+    ViewAllButtonComponent,
   },
   data() {
     return {
-      data: Data,
+      data:Data,
       tableHeading: [],
       officer: [],
       activeAlumni: [],
@@ -161,6 +174,21 @@ export default {
 
     &:last-child {
       margin: 0;
+    }
+  }
+
+  &__message-container {
+    padding: 0 interval(2);
+  }
+
+  &__message-text {
+    text-align: center;
+    font-weight: bold;
+    max-width: interval(58);
+    margin: 0 auto interval(5) auto;
+
+    @include mq(md) {
+      max-width: interval(68);
     }
   }
 }
