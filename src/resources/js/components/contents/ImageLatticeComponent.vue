@@ -1,24 +1,30 @@
 <template>
 <div class="lattice">
+
+  <!-- フィルター機能 -->
   <div class="lattice__filter">
     <span class="lattice__filter-name">絞り込み</span>
-    <!-- フィルター機能 -->
+
     <select class="lattice__years-select" name="year" v-model="selectVal">
       <option value="all">全表示</option>
       <option v-for="(year, n) in years" :key="n" :value="year">{{ year }}</option>
     </select>
   </div>
+
+  <!-- 写真 -->
   <div class="lattice__item-wrap">
-    <!-- 写真 -->
     <div class="lattice__item" v-for="(image,n) in filteringImages" :key="n">
       <figure class="lattice__img-wrap">
         <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt">
       </figure>
     </div>
   </div>
+
+  <!-- もっと見るボタン -->
   <div class="lattice__view-all">
     <view-all-button-component :clickEvent="viewMore"/>
   </div>
+
 </div>
 </template>
 
@@ -34,9 +40,10 @@ export default {
     return {
       years: [],        // 撮影年の配列（images配列参照）
       selectVal: "all", // 絞り込みの選択値
-      count: 6,         // イメージの表示枚数（こいつで表示枚数を管理する）
+      count: 10,         // イメージの表示枚数（こいつで表示枚数を管理する）
     }
   },
+
   props: {
     // 全写真データが格納されている配列
     images: {
@@ -44,6 +51,7 @@ export default {
       default: null
     }
   },
+
   beforeMount() {
     /**
      * イメージは新しいものから表示させたいので、イメージ配列を降順でソート。
@@ -65,28 +73,35 @@ export default {
     // years配列の重複した値を削除
     this.years = Array.from(new Set(this.years));
   },
+
   mounted() {
   },
+
   computed: {
     /**
-     * 返り値 => images配列をフィルタリングした配列を返す
+     * [絞り込み機能] 処理
+     * 返り値 => 絞り込みの値によってimages配列をフィルタリングした配列を返す
      */
     filteringImages() {
       if (this.selectVal !== "all") {
-        // filter関数内で$dataにアクセスできなかったので、変数に代入。
+
+        // 絞り込みの選択値を変数に代入
         let selected = this.selectVal;
 
-        // 絞り込む年を選択した場合、フィルタリングされた配列を 指定回数(countの数) 返す。
+        // 絞り込み -> フィルタリングされた配列を count の数だけ返す。 -> dataに定義
         return this.images.filter( function(value) {
           return value.shooting.year === selected;
         }).slice(0, this.count);
 
       } else {
+        // 絞り込まない -> フィルタリングされていない配列を count の数だけ返す。
         return this.images.slice(0, this.count);
       }
     }
   },
+
   methods: {
+    // もっと見るボタンのクリックイベント
     viewMore() {
       return this.count += 1;
     }
