@@ -3,7 +3,7 @@
   <div class="lattice__filter">
     <span class="lattice__filter-name">絞り込み</span>
     <!-- フィルター機能 -->
-    <select class="lattice__years-select" name="year" v-model="filteringValue">
+    <select class="lattice__years-select" name="year" v-model="selectVal">
       <option value="all">全表示</option>
       <option v-for="(year, n) in years" :key="n" :value="year">{{ year }}</option>
     </select>
@@ -16,15 +16,24 @@
       </figure>
     </div>
   </div>
+  <div class="lattice__view-all">
+    <view-all-button-component/>
+  </div>
 </div>
 </template>
 
 <script>
+// component import
+import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
+
 export default {
+  components: {
+    ViewAllButtonComponent,
+  },
   data() {
     return {
       years: [],
-      filteringValue: "all",
+      selectVal: "all",
     }
   },
   props: {
@@ -56,9 +65,9 @@ export default {
   },
   computed: {
     filteringData() {
-      if (this.filteringValue !== "all") {
+      if (this.selectVal !== "all") {
         // filter関数内で$dataにアクセスできなかったので、変数に代入。
-        let selected = this.filteringValue;
+        let selected = this.selectVal;
 
         // 絞り込みを選択した場合、フィルタリングされた配列を返す。
         return this.images.filter( function(value) {
