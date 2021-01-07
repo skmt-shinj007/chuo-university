@@ -960,7 +960,25 @@
       "addDate": "2020.11.20",
       "shooting": {
         "competition": "2018年関東春季リーグ戦",
-        "year": 2018
+        "year": 2019
+      }
+    },
+    {
+      "src": "player14.jpeg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "2017年関東春季リーグ戦",
+        "year": 2019
+      }
+    },
+    {
+      "src": "player10.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "2017年関東春季リーグ戦",
+        "year": 2019
       }
     },
     {
@@ -973,12 +991,12 @@
       }
     },
     {
-      "src": "player03.jpg",
+      "src": "interCollege2019_match_scenery06.jpeg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
-        "competition": "2015年関東春季リーグ戦",
-        "year": 2015
+        "competition": "2019年関東春季リーグ戦",
+        "year": 2019
       }
     },
     {
@@ -1000,16 +1018,16 @@
       }
     },
     {
-      "src": "interCollege2019_match_scenery06.jpeg",
+      "src": "group-photo2017-spring.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
-        "competition": "2019年関東春季リーグ戦",
-        "year": 2019
+        "competition": "2017年関東春季リーグ戦",
+        "year": 2017
       }
     },
     {
-      "src": "group-photo2017-spring.jpg",
+      "src": "group-photo_higashi2017.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
@@ -1027,21 +1045,30 @@
       }
     },
     {
-      "src": "group-photo2017-spring.jpg",
+      "src": "player03.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
-        "competition": "2017年関東春季リーグ戦",
-        "year": 2017
+        "competition": "2015年関東春季リーグ戦",
+        "year": 2015
       }
     },
     {
-      "src": "player14.jpeg",
+      "src": "player04.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
-        "competition": "2017年関東春季リーグ戦",
-        "year": 2019
+        "competition": "2015年関東春季リーグ戦",
+        "year": 2015
+      }
+    },
+    {
+      "src": "player08.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "2015年関東春季リーグ戦",
+        "year": 2015
       }
     }
   ]
