@@ -5,7 +5,7 @@
       :title="messages.SectionTitles.Photo.Main"
       :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <image-lattice-component :contentsData="images"></image-lattice-component>
+    <image-lattice-component :images="images"/>
   </section>
 </div>
 </template>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.photo {
+// .photo {
 
-}
+// }
 </style>
