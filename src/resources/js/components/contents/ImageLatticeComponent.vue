@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="lattice__view-all">
-    <view-all-button-component/>
+    <view-all-button-component :clickEvent="viewMore"/>
   </div>
 </div>
 </template>
@@ -66,7 +66,6 @@ export default {
     this.years = Array.from(new Set(this.years));
   },
   mounted() {
-    console.log(this.filteringImages.slice(0, 6));
   },
   computed: {
     /**
@@ -77,7 +76,7 @@ export default {
         // filter関数内で$dataにアクセスできなかったので、変数に代入。
         let selected = this.selectVal;
 
-        // 絞り込む年を選択した場合、フィルタリングされた配列を 指定回数(20) 返す。
+        // 絞り込む年を選択した場合、フィルタリングされた配列を 指定回数(countの数) 返す。
         return this.images.filter( function(value) {
           return value.shooting.year === selected;
         }).slice(0, this.count);
@@ -89,7 +88,7 @@ export default {
   },
   methods: {
     viewMore() {
-      this.count += 1
+      return this.count += 1;
     }
   },
 }
