@@ -77,7 +77,7 @@
 @mixin button-hover() {
   border: none;
 
-  .view-all-button__button {
+  .primary-btn__btn {
     transform: none;
     border: none;
     background-color: color(orange);

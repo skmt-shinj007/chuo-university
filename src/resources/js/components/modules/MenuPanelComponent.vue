@@ -6,7 +6,7 @@
     <primary-button-component
       class="menu-panel__button"
       :name="menuPanelData.Btn.Name"
-      :buttonSize="menuPanelData.Btn.Size"
+      :btnSize="menuPanelData.Btn.Size"
       variationClass="rgba"/>
   </div>
 </template>

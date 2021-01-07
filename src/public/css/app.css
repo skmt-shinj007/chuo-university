@@ -638,7 +638,7 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.view-all-button {
+.primary-btn {
   width: 80%;
   max-width: 240px;
   height: 50px;
@@ -650,32 +650,32 @@ import用ファイル
   position: relative;
 }
 @media screen and (min-width: 992px) {
-.view-all-button {
+.primary-btn {
     width: 300px;
     height: 60px;
     font-size: 12px;
 }
-.view-all-button--xs {
+.primary-btn--xs {
     max-width: 200px;
     height: 45px;
     font-size: 10px;
 }
-.view-all-button--sm {
+.primary-btn--sm {
     width: 240px;
     height: 50px;
     font-size: 10px;
 }
-.view-all-button:hover {
+.primary-btn:hover {
     border: none;
 }
-.view-all-button:hover .view-all-button__button {
+.primary-btn:hover .primary-btn__btn {
     transform: none;
     border: none;
     background-color: #e56c2c;
     color: #ffffff;
 }
 }
-.view-all-button__button {
+.primary-btn__btn {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -686,16 +686,16 @@ import用ファイル
   transform: translateX(4px) translateY(-4px);
   transition: all 0.3s ease-out;
 }
-.view-all-button__icon {
+.primary-btn__icon {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
 }
-.view-all-button--rgba {
+.primary-btn--rgba {
   background-color: rgba(255, 255, 255, 0.6);
 }
-.view-all-button--rgba .view-all-button__button {
+.primary-btn--rgba .primary-btn__btn {
   background-color: rgba(255, 255, 255, 0.6);
 }@charset "UTF-8";
 /*
@@ -4850,6 +4850,141 @@ import用ファイル
 @media screen and (min-width: 992px) {
 .history__champions-card[data-v-301d0ec5] {
     width: 33.33%;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.view-all {
+  width: 80%;
+  max-width: 240px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  font-size: 10px;
+  border: 1px solid #e56c2c;
+  border-radius: 2px;
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+.view-all {
+    width: 300px;
+    height: 60px;
+    font-size: 12px;
+}
+.view-all--xs {
+    max-width: 200px;
+    height: 45px;
+    font-size: 10px;
+}
+.view-all--sm {
+    width: 240px;
+    height: 50px;
+    font-size: 10px;
 }
 }@charset "UTF-8";
 /*

@@ -17,17 +17,18 @@
     </div>
   </div>
   <div class="lattice__view-all">
-
+    <view-all-button-component/>
   </div>
 </div>
 </template>
 
 <script>
 // component import
+import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
 
 export default {
   components: {
-
+    ViewAllButtonComponent,
   },
   data() {
     return {

@@ -1,19 +1,19 @@
 <template>
-<div class="view-all-button" :class="[changeSizing, variation]">
-  <button class="view-all-button__button" :type="buttonType">
+<div class="primary-btn" :class="[changeSizing, variation]">
+  <button class="primary-btn__btn" :type="btnType">
     {{ name }}
-    <i class="fas fa-angle-right fa-2x view-all-button__icon"></i>
+    <i class="fas fa-angle-right fa-2x primary-btn__icon"></i>
   </button>
 </div>
 
 <!--
-  ボタンテキストとボタンタイプを指定可能 (name="hoge" buttonType="hoge" を親コンポーネントで指定)
-  指定なしならpropsオブジェクト内default値が適用される。
-  例）<primary-button-component name="メンバーを見る" buttonType="submit"/>
+  ボタンテキストとボタンタイプを指定可能 (name="hoge" btnType="hoge" を親コンポーネントで指定)
+  指定なしならpropsオブジェクト内default値が適用。
+  例）<primary-button-component name="メンバーを見る" btnType="submit"/>
 
-  ボタンサイズの可変は、クラスの指定で行う。(親コンポーネントで buttonSize を指定)
-  1. view-all-button-xs
-  2. view-all-button-sm
+  ボタンサイズの可変は、クラスの指定で行う。(親コンポーネントで btnSize を指定)
+  1. primary-btn-xs
+  2. primary-btn-sm
 
   variation -> ボタンのレイアウトを変えたいときに追加のクラス名を指定する。（スタイルを追加する必要あり）
 -->
@@ -26,11 +26,11 @@ export default {
       type: String,
       default: 'もっと見る',
     },
-    buttonType: {
+    btnType: {
       type: String,
       default: 'button',
     },
-    buttonSize: {
+    btnSize: {
       type: String,
       default: null,
     },
@@ -41,17 +41,17 @@ export default {
   },
   computed: {
     changeSizing() {
-      return (this.buttonSize) ? `view-all-button--${this.buttonSize}` : null;
+      return (this.btnSize) ? `primary-btn--${this.btnSize}` : null;
     },
     variation() {
-      return (this.variationClass) ? `view-all-button--${this.variationClass}` : null;
+      return (this.variationClass) ? `primary-btn--${this.variationClass}` : null;
     }
   },
 }
 </script>
 
 <style lang="scss">
-.view-all-button {
+.primary-btn {
   width: 80%;
   max-width: btn-size(sm-width);
   height: btn-size(sm-height);
@@ -85,7 +85,7 @@ export default {
     }
   };
 
-  &__button {
+  &__btn {
     width: 100%;
     height: 100%;
     text-align: center;
@@ -107,7 +107,7 @@ export default {
   &--rgba {
     background-color: rgba($color: color(white), $alpha: .6);
 
-    .view-all-button__button {
+    .primary-btn__btn {
       background-color: rgba($color: color(white), $alpha: .6);
     }
   }

@@ -5,7 +5,7 @@
     <p class="nl2br" v-text="contentsText"></p>
   </div>
   <div class="lead-text__viewAll">
-    <primary-button-component :name="buttonName" :buttonSize="buttonSize"/>
+    <primary-button-component :name="buttonName" :btnSize="btnSize"/>
   </div>
 </div>
 </template>
@@ -31,7 +31,7 @@ export default {
       default: 'コンテンツ内テキストは準備中です。もうしばらくお待ちください。'
     },
     buttonName: String,
-    buttonSize: String,
+    btnSize: String,
   },
 }
 </script>
