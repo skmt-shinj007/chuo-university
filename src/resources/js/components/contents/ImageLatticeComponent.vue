@@ -10,7 +10,7 @@
   </div>
   <div class="lattice__item-wrap">
     <!-- 写真 -->
-    <div class="lattice__item" v-for="(contentsItem,n) in filteringData" :key="n">
+    <div class="lattice__item" v-for="(contentsItem,n) in filteringImages" :key="n">
       <figure class="lattice__img-wrap">
         <img class="lattice__img" :src="`/image/${contentsItem.src}`" :alt="contentsItem.alt">
       </figure>
@@ -37,6 +37,7 @@ export default {
     }
   },
   props: {
+    // 全写真データが格納されている配列
     images: {
       type: Array,
       default: null
@@ -46,6 +47,8 @@ export default {
     /**
      * イメージは新しいものから表示させたいので、イメージ配列を降順でソート。
      * 比較対象は、shooting.yearプロパティ (写真を撮った年月)
+     * @param1 配列の要素 比較対象 1つ目
+     * @param2 配列の要素 比較対象 2つ目
      */
     this.images.sort( function(firstEl,secondEl) {
       if (firstEl.shooting.year > secondEl.shooting.year) return -1;
@@ -62,9 +65,13 @@ export default {
     this.years = Array.from(new Set(this.years));
   },
   mounted() {
+
   },
   computed: {
-    filteringData() {
+    /**
+     * 返り値 => images配列をフィルタリングした配列を返す
+     */
+    filteringImages() {
       if (this.selectVal !== "all") {
         // filter関数内で$dataにアクセスできなかったので、変数に代入。
         let selected = this.selectVal;
@@ -76,6 +83,7 @@ export default {
 
       } else {
         return this.images;
+        // return this.images.slice(0, 7);
       }
     }
   },
@@ -111,6 +119,7 @@ export default {
 
   &__item-wrap {
     @include flex(column nowrap, center, center);
+    margin-bottom: interval(8);
 
     @include mq(sm) {
       @include flex(row wrap, flex-start, stretch);

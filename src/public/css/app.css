@@ -4989,6 +4989,7 @@ import用ファイル
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
 }
 @media screen and (min-width: 560px) {
 .lattice__item-wrap[data-v-d066a2d0] {
