@@ -9,7 +9,7 @@
 <!--
   ボタンテキストとボタンタイプを指定可能 (name="hoge" buttonType="hoge" を親コンポーネントで指定)
   指定なしならpropsオブジェクト内default値が適用される。
-  例）<view-all-button-component name="メンバーを見る" buttonType="submit"/>
+  例）<primary-button-component name="メンバーを見る" buttonType="submit"/>
 
   ボタンサイズの可変は、クラスの指定で行う。(親コンポーネントで buttonSize を指定)
   1. view-all-button-xs

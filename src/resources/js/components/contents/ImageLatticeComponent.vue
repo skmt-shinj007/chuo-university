@@ -10,30 +10,30 @@
   </div>
   <div class="lattice__item-wrap">
     <!-- 写真 -->
-    <div class="lattice__item" v-for="(contentsItem,n) in filteringImages" :key="n">
+    <div class="lattice__item" v-for="(image,n) in filteringImages" :key="n">
       <figure class="lattice__img-wrap">
-        <img class="lattice__img" :src="`/image/${contentsItem.src}`" :alt="contentsItem.alt">
+        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt">
       </figure>
     </div>
   </div>
   <div class="lattice__view-all">
-    <view-all-button-component/>
+
   </div>
 </div>
 </template>
 
 <script>
 // component import
-import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
 
 export default {
   components: {
-    ViewAllButtonComponent,
+
   },
   data() {
     return {
-      years: [],
-      selectVal: "all",
+      years: [],        // 撮影年の配列（images配列参照）
+      selectVal: "all", // 絞り込みの選択値
+      count: 6,         // イメージの表示枚数（こいつで表示枚数を管理する）
     }
   },
   props: {
@@ -65,7 +65,7 @@ export default {
     this.years = Array.from(new Set(this.years));
   },
   mounted() {
-
+    console.log(this.filteringImages.slice(0, 6));
   },
   computed: {
     /**
@@ -76,15 +76,19 @@ export default {
         // filter関数内で$dataにアクセスできなかったので、変数に代入。
         let selected = this.selectVal;
 
-        // 絞り込みを選択した場合、フィルタリングされた配列を返す。
+        // 絞り込む年を選択した場合、フィルタリングされた配列を 指定回数(20) 返す。
         return this.images.filter( function(value) {
           return value.shooting.year === selected;
-        });
+        }).slice(0, this.count);
 
       } else {
-        return this.images;
-        // return this.images.slice(0, 7);
+        return this.images.slice(0, this.count);
       }
+    }
+  },
+  methods: {
+    viewMore() {
+      this.count += 1
     }
   },
 }

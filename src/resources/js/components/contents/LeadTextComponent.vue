@@ -5,7 +5,7 @@
     <p class="nl2br" v-text="contentsText"></p>
   </div>
   <div class="lead-text__viewAll">
-    <view-all-button-component :name="buttonName" :buttonSize="buttonSize"/>
+    <primary-button-component :name="buttonName" :buttonSize="buttonSize"/>
   </div>
 </div>
 </template>
@@ -13,12 +13,12 @@
 <script>
 // components import
 import ContentsTitleComponent from '../modules/ContentsTitleComponent';
-import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
+import PrimaryButtonComponent from '../modules/button/PrimaryButtonComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
-    ViewAllButtonComponent,
+    PrimaryButtonComponent,
   },
   props: {
     titles: {

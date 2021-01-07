@@ -51,7 +51,7 @@
 
     <div class="hakumonkai__message-container">
       <p class="hakumonkai__message-text nl2br" v-text="messages.Hakumonkai.Message"/>
-      <view-all-button-component :name="messages.ButtonName.ToContact"/>
+      <primary-button-component :name="messages.ButtonName.ToContact"/>
     </div>
   </section>
 </div>
@@ -62,7 +62,7 @@
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TileTableComponent from '../components/modules/table/TileTableComponent';
 import PlayerCardComponent from '../components/modules/card/PlayerCardComponent';
-import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
+import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
 
 // data import
 import Data from '../config/data.json';
@@ -72,7 +72,7 @@ export default {
     ContentsTitleComponent,
     TileTableComponent,
     PlayerCardComponent,
-    ViewAllButtonComponent,
+    PrimaryButtonComponent,
   },
   data() {
     return {
