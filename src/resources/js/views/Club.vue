@@ -44,7 +44,9 @@
 
     <div class="club__practice-schedule">
       <h3 class="club__practice-schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
-      <table-component :tableItems="schedule"/>
+      <div class="club__practice-schedule-table">
+        <table-component :tableItems="schedule"/>
+      </div>
     </div>
   </section>
 
@@ -80,11 +82,13 @@
 
       <div class="club__member-number">
         <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
-        <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+        <div class="club__member-number-table">
+          <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+        </div>
       </div>
 
       <div class="club__member-button">
-        <view-all-button-component :name="messages.ButtonName.Member"/>
+        <primary-button-component :name="messages.ButtonName.Member"/>
       </div>
     </section>
   </div>
@@ -97,7 +101,7 @@
     </div>
 
     <div class="club__photo-button">
-      <view-all-button-component/>
+      <primary-button-component/>
     </div>
   </section>
 </div>
@@ -115,7 +119,7 @@ import TableComponent from '../components/modules/table/TableComponent';
 import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
 import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
-import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
+import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
 import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
 
 export default {
@@ -129,7 +133,7 @@ export default {
     CaptionBarImageComponent,
     DormitoryCardComponent,
     PlayerSliderComponent,
-    ViewAllButtonComponent,
+    PrimaryButtonComponent,
     ArrangeImagesComponent,
   },
   data() {
@@ -321,6 +325,10 @@ const imageApiResponse = [
 
   &__practice {
 
+    &-table {
+      margin: 0 interval(1);
+    }
+
     &-map {
       padding-top: interval(5);
     }
@@ -360,6 +368,10 @@ const imageApiResponse = [
       @include mq(sm) {
         width: 80%;
       };
+    }
+
+    &-schedule-table {
+      margin: 0 interval(1);
     }
   }
 
@@ -437,6 +449,10 @@ const imageApiResponse = [
       @include mq(sm) {
         width: 80%;
       };
+    }
+
+    &-number-table {
+      margin: 0 interval(1);
     }
 
     &-button {

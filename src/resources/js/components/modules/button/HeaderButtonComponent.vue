@@ -1,5 +1,5 @@
 <template>
-  <button class="header-button" :type="buttonType">
+  <button class="header-button" :type="btnType">
     <slot></slot>
   </button>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    buttonType: {
+    btnType: {
       type: String,
       default: 'button',
     },

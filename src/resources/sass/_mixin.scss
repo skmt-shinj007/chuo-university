@@ -5,7 +5,7 @@
   }
 }
 
-// bangers指定するときに使用。
+// フォント種類：bangers
 @mixin bangers($size: font(md), $letterSpacing: 1px, $weight: bold) {
   font-family: 'Bangers', cursive;
   font-size: $size;
@@ -13,7 +13,7 @@
   font-weight: $weight;
 }
 
-// よく使うflexレイアウト
+// flexレイアウト
 @mixin flex($flow: row nowrap, $justify-content: flex-start, $align-items: stretch) {
   display: flex;
   flex-flow: $flow;
@@ -73,11 +73,11 @@
   }
 }
 
-// 「もっと見る」ボタンのホバーアニメーション
+// プライマリーボタンのホバーアニメーション
 @mixin button-hover() {
   border: none;
 
-  .view-all-button__button {
+  .primary-btn__btn {
     transform: none;
     border: none;
     background-color: color(orange);
@@ -130,11 +130,11 @@
 }
 
 // cssで背景指定（background-image）
-@mixin background-image($url, $position) {
+@mixin background-image($url, $position, $size: cover) {
   background-image: url($url);
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: $position;
+  background-size: $size;
 }
 
 // image画像の縁を斜線で囲むレイアウト （多分使わないけど一旦保存しとく）

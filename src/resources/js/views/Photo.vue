@@ -1,20 +1,60 @@
 <template>
-<div class="wrap">
-  {{ windowWidth }}
+<div class="photo">
+  <section class="photo__gallery section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Photo.Main"
+      :subTitle="messages.SectionTitles.Photo.Sub"/>
+
+    <image-lattice-component :images="images" :filter="features.ImageFilter"/>
+  </section>
 </div>
 </template>
 
 <script>
+// component import
+import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
+import ImageLatticeComponent from '../components/contents/ImageLatticeComponent';
+
+// config json import
+import Data from '../config/data.json';
+import Features from '../config/features.json';
+
 export default {
+  components: {
+    ContentsTitleComponent,
+    ImageLatticeComponent,
+  },
   data() {
     return {
-      hello: 'Hello,World',
-      display: true,
+      data: Data,
+      features: Features,
+      images: [],
     }
   },
+  beforeMount() {
+    this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
+  },
 }
+
+/**
+ * imageApiResponseの想定データ
+ * 写真の並び替えも行いたいので、撮影時期や大会名もデータとして持っておきたい。
+ *
+ * {
+      "src": "player01.jpg",   （ここの値はデータを表示できればOK。ストレージAPIならファイル名かな？）
+      "alt": "宮崎 悠登",        (テキストを写真に紐付けて格納できるかが不明。)
+      "addDate": "2020.11.20",  (写真をストレージに格納した日付)
+      "shooting": {
+        "competition": "2018年関東春季リーグ戦",  (撮影時の大会)
+        "year": 2018  (撮影時の年)
+      }
+    },
+ */
+
 </script>
 
-<style>
+<style lang="scss" scoped>
+// .photo {
 
+// }
 </style>

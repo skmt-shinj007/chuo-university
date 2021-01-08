@@ -3,21 +3,21 @@
     <figure class="menu-panel__figure">
       <img class="menu-panel__image" :src="`/image/${menuPanelData.Image.Src}`" :alt="menuPanelData.Image.Alt">
     </figure>
-    <view-all-button-component
+    <primary-button-component
       class="menu-panel__button"
       :name="menuPanelData.Btn.Name"
-      :buttonSize="menuPanelData.Btn.Size"
+      :btnSize="menuPanelData.Btn.Size"
       variationClass="rgba"/>
   </div>
 </template>
 
 <script>
 // component import
-import ViewAllButtonComponent from './button/ViewAllButtonComponent';
+import PrimaryButtonComponent from './button/PrimaryButtonComponent';
 
 export default {
   components: {
-    ViewAllButtonComponent,
+    PrimaryButtonComponent,
   },
   props: {
     menuPanelData: {

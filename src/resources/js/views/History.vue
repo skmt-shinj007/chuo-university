@@ -47,7 +47,9 @@
   <section class="history__primary-titles section-container">
     <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
 
-    <icon-table-component :tableItems="titleAcquisitionData"/>
+    <div class="history__primary-titles-table">
+      <icon-table-component :tableItems="titleAcquisitionData"/>
+    </div>
   </section>
 
   <div class="background-darkblue">
@@ -241,6 +243,10 @@ export default {
 
   &__primary-titles {
     margin-bottom: interval(10);
+  }
+
+  &__primary-titles-table {
+    margin: 0 interval(1);
   }
 
   &__champions {

@@ -46,13 +46,7 @@ export default {
 
 <style lang="scss">
 .common-table {
-  width: 90%;
-  margin: 0 auto;
-
-  // tablet style
-  @include mq(sm) {
-    width: 80%;
-  };
+  width: 100%;
 
   &__record {
     width: 100%;

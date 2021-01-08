@@ -96,6 +96,10 @@
     "TournamentInformation" : "大会情報"
   },
 
+  "FunctionName": {
+    "Filter" : "絞り込み"
+  },
+
   "ButtonName": {
     "Member"     : "メンバーを見る",
     "Hakumonkai" : "白門会を知る",
@@ -110,6 +114,11 @@
     "Heisei" : "平成",
     "Showa"  : "昭和",
     "Taisho" : "大正"
+  },
+
+  "Filter": {
+    "All": "全て",
+    "Years": "年月"
   },
 
   "Top": {
