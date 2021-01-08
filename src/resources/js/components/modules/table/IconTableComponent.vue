@@ -38,7 +38,6 @@ export default {
 <style lang="scss">
 .icon-table {
   width: 100%;
-  margin: 0 auto;
 
   &__record {
     width: 100%;

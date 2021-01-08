@@ -63,6 +63,26 @@ span {
   font-size: font(sm);
 }
 
+tr {
+  font-size: font(sm);
+  font-weight: bold;
+
+  // pc style
+  @include mq(md) {
+    font-size: font(base);
+  };
+}
+
+th,td {
+  padding: interval(1);
+  line-height: 1.8;
+
+  // tablet style
+  @include mq(sm) {
+    line-height: 2;
+  };
+}
+
 .background-darkblue {
   background-color: color(darkblue);
   margin-top: 0;
@@ -94,24 +114,4 @@ span {
  */
 .nl2br {
   white-space: pre-wrap;
-}
-
-tr {
-  font-size: font(sm);
-  font-weight: bold;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(base);
-  };
-}
-
-th,td {
-  padding: interval(1);
-  line-height: 1.8;
-
-  // tablet style
-  @include mq(sm) {
-    line-height: 2;
-  };
 }
