@@ -7,8 +7,10 @@
       <th class="icon-table__key">{{ tableItem.key }}{{ addKeyText }}</th>
 
       <td class="icon-table__value">
+        <slot name="value">
         <svg-vue class="icon-table__icon" :icon="tableItem.Icon.Src" :alt="tableItem.Icon.Alt"/>
         <span class="icon-table__value-unit" v-text="`× ${tableItem.value}`"/>
+        </slot>
       </td>
     </tr>
   </table>
@@ -35,7 +37,7 @@ export default {
 
 <style lang="scss">
 .icon-table {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 
   // tablet style
