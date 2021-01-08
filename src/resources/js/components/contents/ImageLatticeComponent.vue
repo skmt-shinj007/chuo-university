@@ -40,8 +40,9 @@ export default {
     return {
       years: [],        // 撮影年の配列（images配列参照）
       selectVal: "all", // 絞り込みの選択値
-      // TODO：countを初期表示枚数の値に変更
-      count: 3,         // イメージの表示枚数（こいつで表示枚数を管理する）
+      count: 0,         // イメージの表示枚数（こいつで表示枚数を管理する）
+      // TODO：初期表示枚数の値を変更
+      defaultCountNumber: 10, // イメージ表示枚数のデフォルト値
     }
   },
 
@@ -77,6 +78,11 @@ export default {
      */
     this.images.forEach(element => this.years.push(element.shooting.year));
     this.years = Array.from(new Set(this.years));
+
+    /**
+     * イメージの表示枚数はcountで管理するので、初期表示枚数をcountに代入
+     */
+    this.count = this.defaultCountNumber;
   },
 
   computed: {
@@ -130,6 +136,13 @@ export default {
       return this.count += 1;
     }
   },
+
+  watch: {
+    // 絞り込みが切り替わる時に count を初期値に戻す
+    selectVal() {
+      this.count = this.defaultCountNumber;
+    }
+  }
 }
 </script>
 
