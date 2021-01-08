@@ -3,12 +3,13 @@
 
   <!-- フィルター機能 -->
   <div class="lattice__filter">
-    <span class="lattice__filter-name">絞り込み</span>
+    <span class="lattice__filter-title">{{ messages.FunctionName.Filter }}</span>
 
-    <select class="lattice__years-select" name="year" v-model="selectVal">
-      <option value="all">全表示</option>
-      <option v-for="(year, n) in years" :key="n" :value="year">{{ year }}</option>
-    </select>
+    <pull-down-table-component
+      :filterItem="filter.year"
+      :pulldownMenus="years"
+      @select="select = $event"/>
+
   </div>
 
   <!-- 写真 -->
@@ -31,15 +32,18 @@
 <script>
 // component import
 import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
+import PullDownTableComponent from '../modules/table/PullDownTableComponent';
 
 export default {
   components: {
     ViewAllButtonComponent,
+    PullDownTableComponent,
   },
+
   data() {
     return {
-      years: [],        // 撮影年の配列（images配列参照）
-      selectVal: "all", // 絞り込みの選択値
+      years: [],        // 撮影年の配列（プルダウンのメニューになる）
+      select: "all", // 絞り込みの選択値
       count: 0,         // イメージの表示枚数（こいつで表示枚数を管理する）
       // TODO：初期表示枚数の値を変更
       defaultCountNumber: 10, // イメージ表示枚数のデフォルト値
@@ -48,20 +52,28 @@ export default {
 
   props: {
     /**
-     * type:Array
      * 写真データが格納されている配列。
      * この配列をフィルタリングしたり、ソートしたりする。
      */
     images: {
       type: Array,
       default: null
+    },
+
+    /**
+     * 各絞り込みの情報（絞り込みメニューのタイトルなど）
+     */
+    filter: {
+      type: Object,
+      default: null
     }
   },
 
   beforeMount() {
     /**
-     * イメージは新しいものから表示させたいので、イメージ配列を降順でソート。
-     * 比較対象は、shooting.yearプロパティ (写真を撮った年月)
+     * [images配列を降順でソート]
+     * フォトギャラリーは新しい写真から表示させる。
+     * 比較対象は、shooting.yearプロパティ (撮影年)
      * @param1 配列の要素 比較対象 1つ目
      * @param2 配列の要素 比較対象 2つ目
      */
@@ -72,7 +84,8 @@ export default {
     });
 
     /**
-     * フィルター機能のプルダウンで使用する項目を生成（撮影年の配列）
+     * [years配列を生成]
+     * フィルター機能のプルダウンで使用するメニュー
      * 1:撮影年を写真のデータから抽出して years 配列にセット
      * 2:years配列の重複した値を削除
      */
@@ -89,12 +102,13 @@ export default {
     /**
      * [絞り込み機能] 処理
      * 返り値 => 絞り込みの値によってimages配列をフィルタリングした配列を返す
+     * [表示枚数制御]と処理を切り分け => フィルタリングされた配列の要素数を使用するため。
      */
     filteringImages() {
-      if (this.selectVal !== "all") {
+      if (this.select !== "all") {
 
         // 絞り込みの選択値を変数に代入
-        let selected = this.selectVal;
+        let selected = this.select;
 
         // 絞り込み -> フィルタリングされた配列を count の数だけ返す。 -> dataに定義
         return this.images.filter( function(value) {
@@ -116,8 +130,8 @@ export default {
     },
 
     /**
-     * ボタンの表示を制御する処理
-     * this.filteringImages.length：images配列の要素数
+     * [ボタン表示制御] 処理
+     * this.filteringImages.length：写真データの最大要素数
      * this.count：表示枚数
      */
     displayBtn() {
@@ -138,8 +152,11 @@ export default {
   },
 
   watch: {
-    // 絞り込みが切り替わる時に count を初期値に戻す
-    selectVal() {
+    /**
+     * [count初期化]
+     * プルダウンの選択値が切り替わる時に発火。
+     */
+    select() {
       this.count = this.defaultCountNumber;
     }
   }
@@ -148,29 +165,38 @@ export default {
 
 <style lang="scss" scoped>
 .lattice {
+  padding: 0 interval(2);
 
   &__filter {
-    @include flex(row nowrap, flex-end, center);
-    width: 80%;
-    margin: 0 auto interval(3) auto;
+    @include flex(column nowrap, center, stretch);
+    margin: 0 0 interval(3) 0;
 
     @include mq(sm) {
       justify-content: center;
+      padding: 0 interval(1);
       width: 100%;
-      margin: 0 0 interval(3) 0;
+    }
+
+    @include mq(md) {
+      width: 50%;
     }
   }
 
-  &__filter-name {
-    margin-right: interval(2);
+  &__filter-title {
+    position: relative;
+    margin-bottom: interval(2);
+    padding-left: interval(3);
+    font-size: font(base);
+    @include text-before-line(interval(2), 1px, color(darkblue));
+
+    @include mq(sm) {
+
+    }
   }
 
-  &__years-select {
-    font-size: font(sm);
-    text-align: center;
-    padding: interval(.5) interval(1);
-    border: 1px solid color(lightDarkblue);
-    border-radius: radius(soft);
+  &__filter-wrap {
+    @include flex(row nowrap, flex-start, center);
+    width: 100%;
   }
 
   &__item-wrap {
@@ -183,13 +209,13 @@ export default {
   }
 
   &__item {
-    width: 80%;
-    margin-bottom: interval(5);
+    width: 100%;
+    margin-bottom: interval(10);
 
     @include mq(sm) {
       margin-bottom: 0;
       width: calc(100% / 2);
-      padding: interval(2);
+      padding: interval(1);
     }
 
     @include mq(md) {

@@ -2226,16 +2226,16 @@ import用ファイル
   width: 100%;
   height: 100vh;
   background-image: url("/image/player09.jpg");
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
 }
 @media screen and (min-width: 560px) {
 .top .background-image[data-v-bae950f4] {
     background-image: url("/image/player11.jpg");
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
 }
 }
 .top .background-darkblue[data-v-bae950f4] {
@@ -3562,13 +3562,7 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .common-table {
-  width: 90%;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.common-table {
-    width: 80%;
-}
+  width: 100%;
 }
 .common-table__record {
   width: 100%;
@@ -5671,6 +5665,9 @@ import用ファイル
     align-items: stretch;
 }
 }
+.club__practice-table[data-v-357d3955] {
+  margin: 0 0.5rem;
+}
 .club__practice-map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
@@ -5718,6 +5715,9 @@ import用ファイル
 .club__practice-schedule-title[data-v-357d3955] {
     width: 80%;
 }
+}
+.club__practice-schedule-table[data-v-357d3955] {
+  margin: 0 0.5rem;
 }
 .club__dormitory-lead-wrap[data-v-357d3955] {
   width: 90%;
@@ -5810,6 +5810,9 @@ import用ファイル
 .club__member-number-title[data-v-357d3955] {
     width: 80%;
 }
+}
+.club__member-number-table[data-v-357d3955] {
+  margin: 0 0.5rem;
 }
 .club__member-button[data-v-357d3955] {
   margin-top: 2.5rem;
@@ -7908,13 +7911,7 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .icon-table {
-  width: 90%;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.icon-table {
-    width: 80%;
-}
+  width: 100%;
 }
 .icon-table__record {
   width: 100%;
@@ -8186,9 +8183,9 @@ import用ファイル
   bottom: 0;
   right: 0;
   background-image: url("/svg/trophy-solid-gold.svg");
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
 }
 .champions-card__title-wrapper[data-v-3ea95d82] {
   padding-bottom: 0.5rem;
@@ -8538,6 +8535,9 @@ import用ファイル
 }
 .history__primary-titles[data-v-301d0ec5] {
   margin-bottom: 5rem;
+}
+.history__primary-titles-table[data-v-301d0ec5] {
+  margin: 0 0.5rem;
 }
 .history__champions[data-v-301d0ec5] {
   padding: 5rem 0;
@@ -8905,6 +8905,274 @@ import用ファイル
 /**
  * @keyframe を定義
  */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.pull-down-table {
+  display: table;
+  width: 100%;
+  border: 1px solid #f2f2f2;
+}
+.pull-down-table__record {
+  width: 100%;
+}
+.pull-down-table__key {
+  width: 50%;
+  background-color: #f8f9fa;
+  text-align: center;
+  vertical-align: middle;
+}
+.pull-down-table__value {
+  background-color: #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pull-down-table__select {
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+  border-radius: 2px;
+  background-image: url("/svg/angle-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  background-size: 0.75rem 0.5rem;
+}
+@media screen and (min-width: 560px) {
+.pull-down-table__select {
+    background-size: 1rem 0.75rem;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
 @-webkit-keyframes iconSlide-data-v-d066a2d0 {
 0% {
     transform: translateX(0);
@@ -9103,30 +9371,51 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
+.lattice[data-v-d066a2d0] {
+  padding: 0 1rem;
+}
 .lattice__filter[data-v-d066a2d0] {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto 1.5rem auto;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 0 1.5rem 0;
 }
 @media screen and (min-width: 560px) {
 .lattice__filter[data-v-d066a2d0] {
     justify-content: center;
+    padding: 0 0.5rem;
     width: 100%;
-    margin: 0 0 1.5rem 0;
 }
 }
-.lattice__filter-name[data-v-d066a2d0] {
-  margin-right: 1rem;
+@media screen and (min-width: 992px) {
+.lattice__filter[data-v-d066a2d0] {
+    width: 50%;
 }
-.lattice__years-select[data-v-d066a2d0] {
-  font-size: 12px;
-  text-align: center;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid #10334e;
-  border-radius: 2px;
+}
+.lattice__filter-title[data-v-d066a2d0] {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  font-size: 14px;
+}
+.lattice__filter-title[data-v-d066a2d0]::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #091e2f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.lattice__filter-wrap[data-v-d066a2d0] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 .lattice__item-wrap[data-v-d066a2d0] {
   display: flex;
@@ -9144,14 +9433,14 @@ import用ファイル
 }
 }
 .lattice__item[data-v-d066a2d0] {
-  width: 80%;
-  margin-bottom: 2.5rem;
+  width: 100%;
+  margin-bottom: 5rem;
 }
 @media screen and (min-width: 560px) {
 .lattice__item[data-v-d066a2d0] {
     margin-bottom: 0;
     width: calc(100% / 2);
-    padding: 1rem;
+    padding: 0.5rem;
 }
 }
 @media screen and (min-width: 992px) {
@@ -12707,6 +12996,26 @@ span {
   font-size: 12px;
 }
 
+tr {
+  font-size: 12px;
+  font-weight: bold;
+}
+@media screen and (min-width: 992px) {
+  tr {
+    font-size: 14px;
+  }
+}
+
+th, td {
+  padding: 0.5rem;
+  line-height: 1.8;
+}
+@media screen and (min-width: 560px) {
+  th, td {
+    line-height: 2;
+  }
+}
+
 .background-darkblue {
   background-color: #091e2f;
   margin-top: 0;
@@ -12739,24 +13048,4 @@ span {
  */
 .nl2br {
   white-space: pre-wrap;
-}
-
-tr {
-  font-size: 12px;
-  font-weight: bold;
-}
-@media screen and (min-width: 992px) {
-  tr {
-    font-size: 14px;
-  }
-}
-
-th, td {
-  padding: 0.5rem;
-  line-height: 1.8;
-}
-@media screen and (min-width: 560px) {
-  th, td {
-    line-height: 2;
-  }
 }
