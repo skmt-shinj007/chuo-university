@@ -13,7 +13,7 @@
 
   <!-- 写真 -->
   <div class="lattice__item-wrap">
-    <div class="lattice__item" v-for="(image,n) in filteringImages" :key="n">
+    <div class="lattice__item" v-for="(image,n) in displayImages" :key="n">
       <figure class="lattice__img-wrap">
         <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt">
       </figure>
@@ -21,7 +21,7 @@
   </div>
 
   <!-- もっと見るボタン -->
-  <div class="lattice__view-all">
+  <div class="lattice__view-all" v-if="displayBtn">
     <view-all-button-component :clickEvent="viewMore"/>
   </div>
 
@@ -40,12 +40,17 @@ export default {
     return {
       years: [],        // 撮影年の配列（images配列参照）
       selectVal: "all", // 絞り込みの選択値
-      count: 10,         // イメージの表示枚数（こいつで表示枚数を管理する）
+      // TODO：countを初期表示枚数の値に変更
+      count: 3,         // イメージの表示枚数（こいつで表示枚数を管理する）
     }
   },
 
   props: {
-    // 全写真データが格納されている配列
+    /**
+     * type:Array
+     * 写真データが格納されている配列。
+     * この配列をフィルタリングしたり、ソートしたりする。
+     */
     images: {
       type: Array,
       default: null
@@ -66,15 +71,12 @@ export default {
     });
 
     /**
-     * [フィルター機能]で使用する 撮影年 の配列を生成
-     * 撮影年を写真のデータから抽出して year配列にセットする
+     * フィルター機能のプルダウンで使用する項目を生成（撮影年の配列）
+     * 1:撮影年を写真のデータから抽出して years 配列にセット
+     * 2:years配列の重複した値を削除
      */
     this.images.forEach(element => this.years.push(element.shooting.year));
-    // years配列の重複した値を削除
     this.years = Array.from(new Set(this.years));
-  },
-
-  mounted() {
   },
 
   computed: {
@@ -91,11 +93,32 @@ export default {
         // 絞り込み -> フィルタリングされた配列を count の数だけ返す。 -> dataに定義
         return this.images.filter( function(value) {
           return value.shooting.year === selected;
-        }).slice(0, this.count);
+        });
 
       } else {
         // 絞り込まない -> フィルタリングされていない配列を count の数だけ返す。
-        return this.images.slice(0, this.count);
+        return this.images;
+      }
+    },
+
+    /**
+     * [表示枚数制御]
+     * フィルタリング処理後の配列を count プロパティを参照して切り取る。
+     */
+    displayImages() {
+      return this.filteringImages.slice(0, this.count);
+    },
+
+    /**
+     * ボタンの表示を制御する処理
+     * this.filteringImages.length：images配列の要素数
+     * this.count：表示枚数
+     */
+    displayBtn() {
+      if (this.filteringImages.length > this.count) {
+        return true;
+      } else {
+        return false;
       }
     }
   },
@@ -103,6 +126,7 @@ export default {
   methods: {
     // もっと見るボタンのクリックイベント
     viewMore() {
+      // TODO：ボタンクリック時に増やす枚数を変更
       return this.count += 1;
     }
   },
