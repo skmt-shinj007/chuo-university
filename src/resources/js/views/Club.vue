@@ -44,7 +44,9 @@
 
     <div class="club__practice-schedule">
       <h3 class="club__practice-schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
-      <table-component :tableItems="schedule"/>
+      <div class="club__practice-schedule-table">
+        <table-component :tableItems="schedule"/>
+      </div>
     </div>
   </section>
 
@@ -80,7 +82,9 @@
 
       <div class="club__member-number">
         <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
-        <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+        <div class="club__member-number-table">
+          <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+        </div>
       </div>
 
       <div class="club__member-button">
@@ -321,6 +325,10 @@ const imageApiResponse = [
 
   &__practice {
 
+    &-table {
+      margin: 0 interval(1);
+    }
+
     &-map {
       padding-top: interval(5);
     }
@@ -360,6 +368,10 @@ const imageApiResponse = [
       @include mq(sm) {
         width: 80%;
       };
+    }
+
+    &-schedule-table {
+      margin: 0 interval(1);
     }
   }
 
@@ -437,6 +449,10 @@ const imageApiResponse = [
       @include mq(sm) {
         width: 80%;
       };
+    }
+
+    &-number-table {
+      margin: 0 interval(1);
     }
 
     &-button {
