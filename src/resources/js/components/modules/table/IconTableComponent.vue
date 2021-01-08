@@ -40,11 +40,6 @@ export default {
   width: 100%;
   margin: 0 auto;
 
-  // tablet style
-  @include mq(sm) {
-    width: 80%;
-  };
-
   &__record {
     width: 100%;
     border: 1px solid color(lightgray);
