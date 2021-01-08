@@ -1,0 +1,19 @@
+{
+  "ImageFilter": {
+
+    "year": {
+      "select": {
+        "name": "year",
+        "title": "年月"
+      }
+    },
+
+    "tournament": {
+      "select": {
+        "name": "tournament",
+        "title": "大会名"
+      }
+    }
+
+  }
+}

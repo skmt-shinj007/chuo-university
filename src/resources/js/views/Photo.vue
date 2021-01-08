@@ -5,7 +5,7 @@
       :title="messages.SectionTitles.Photo.Main"
       :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <image-lattice-component :images="images"/>
+    <image-lattice-component :images="images" :filter="features.ImageFilter"/>
   </section>
 </div>
 </template>
@@ -15,8 +15,9 @@
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
 import ImageLatticeComponent from '../components/contents/ImageLatticeComponent';
 
-// data import
+// config json import
 import Data from '../config/data.json';
+import Features from '../config/features.json';
 
 export default {
   components: {
@@ -26,6 +27,7 @@ export default {
   data() {
     return {
       data: Data,
+      features: Features,
       images: [],
     }
   },
