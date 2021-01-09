@@ -87,6 +87,10 @@
     "Message": {
       "Main": "message",
       "Sub" : "OBの方へ"
+    },
+    "Provider": {
+      "Main": "provider",
+      "Sub" : "写真提供"
     }
   },
 

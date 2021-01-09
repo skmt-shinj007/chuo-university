@@ -243,10 +243,6 @@ export default {
       cursor: pointer;
     }
   }
-
-  &__view-all {
-    margin-bottom: interval(10);
-  }
 }
 
 </style>
