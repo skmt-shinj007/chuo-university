@@ -16,6 +16,7 @@
       <grade-tag-component :grade="userObj.grade"/>
     </div>
 
+    <!-- 選手ではない場合（スタッフ）は役職を出す -->
     <div v-else class="user-ticket-tag-group">
       <tag-component :content="userObj.post.club"/>
     </div>
@@ -40,12 +41,14 @@ export default {
     PositionTagComponent,
     GradeTagComponent,
   },
+
   props: {
     userObj: {
       type: Object,
       default: null
     }
   },
+
   computed: {
     borderColor() {
       const borderClass = 'user-ticket-thumbnail-border';
