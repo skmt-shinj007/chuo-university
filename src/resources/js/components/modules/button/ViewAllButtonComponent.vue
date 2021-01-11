@@ -42,7 +42,7 @@ export default {
   color: color(white);
   width: 60%;
   max-width: interval(25);
-  margin: 0 auto;
+  margin: interval(5) auto 0 auto;
 
   @include mq(sm) {
     max-width: interval(40);

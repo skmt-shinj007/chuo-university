@@ -201,7 +201,6 @@ export default {
 
   &__item-wrap {
     @include flex(column nowrap, center, center);
-    margin-bottom: interval(8);
 
     @include mq(sm) {
       @include flex(row wrap, flex-start, stretch);
