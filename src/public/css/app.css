@@ -9712,6 +9712,272 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
+.sns-tag {
+  margin: 0.25rem;
+  color: #ffffff;
+  letter-spacing: 1.2px;
+  line-height: 2;
+}
+.sns-tag__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  padding-right: 0.5rem;
+}
+.sns-tag__content {
+  font-size: 10px;
+}
+.sns-tag__content--lg {
+  font-size: 16px;
+  line-height: 2;
+}
+.sns-tag__color {
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.sns-tag__color--twitter {
+  background-color: #00acee;
+}
+.sns-tag__color--instagram {
+  background: linear-gradient(to right, #5478f2 0%, #f23f79 60%, orange 100%);
+}
+.sns-tag__color--facebook {
+  background-color: #3b5998;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
 .provider-ticket {
   display: flex;
   flex-flow: row nowrap;
@@ -9743,6 +10009,14 @@ import用ファイル
 .provider-ticket:hover .provider-ticket-icon {
     -webkit-animation: iconSlide 1.5s infinite;
             animation: iconSlide 1.5s infinite;
+}
+}
+.provider-ticket-item {
+  max-width: 10rem;
+}
+@media screen and (min-width: 992px) {
+.provider-ticket-item {
+    max-width: none;
 }
 }
 .provider-ticket-thumbnail-border {
@@ -10045,6 +10319,33 @@ import用ファイル
  */
 .photo__gallery-images[data-v-46e3fba3] {
   margin-bottom: 5rem;
+}
+.photo__provider-ticket-group[data-v-46e3fba3] {
+  padding: 1rem;
+}
+@media screen and (min-width: 992px) {
+.photo__provider-ticket-group[data-v-46e3fba3] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.photo__provider-ticket[data-v-46e3fba3] {
+  max-width: 25rem;
+  margin: 0 auto;
+  margin-bottom: 2.5rem;
+}
+.photo__provider-ticket[data-v-46e3fba3]:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 992px) {
+.photo__provider-ticket[data-v-46e3fba3] {
+    margin: 0;
+    width: calc(100% / 2);
+    padding: 0.5rem;
+    max-width: none;
+}
 }@charset "UTF-8";
 /*
 import用ファイル

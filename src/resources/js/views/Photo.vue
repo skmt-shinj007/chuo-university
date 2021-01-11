@@ -80,5 +80,30 @@ export default {
     margin-bottom: interval(10);
   }
 
+  &__provider-ticket-group {
+    padding: interval(2);
+
+    @include mq(md) {
+      @include flex(row wrap, flex-start, center);
+    }
+  }
+
+  &__provider-ticket {
+    max-width: interval(50);
+    margin: 0 auto;
+    margin-bottom: interval(5);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(md) {
+      margin: 0;
+      width: calc(100% / 2);
+      padding: interval(1);
+      max-width: none;
+    }
+  }
+
 }
 </style>

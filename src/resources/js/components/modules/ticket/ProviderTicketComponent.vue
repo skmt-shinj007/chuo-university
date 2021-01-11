@@ -11,9 +11,11 @@
 
     <div class="provider-ticket-tag-group">
       <!-- twitter -->
-      <tag-component/>
+      <sns-tag-component sns="twitter" content="Twitter"/>
       <!-- instagram -->
-      <tag-component/>
+      <sns-tag-component sns="instagram" content="Instagram"/>
+      <!-- facebook -->
+      <sns-tag-component sns="facebook" content="Facebook"/>
     </div>
   </div>
 
@@ -26,11 +28,11 @@
 
 <script>
 // component import
-import TagComponent from '../tag/TagComponent';
+import SnsTagComponent from '../tag/SnsTagComponent';
 
 export default {
   components: {
-    TagComponent,
+    SnsTagComponent,
   },
 
   props: {
@@ -41,10 +43,7 @@ export default {
   },
 
   computed: {
-    borderColor() {
-      const borderClass = 'provider-ticket-thumbnail-border';
-      return (this.userObj.position === "前衛") ? `${borderClass}--orange` : (this.userObj.position === "後衛") ? `${borderClass}--green` : `${borderClass}--blue`;
-    },
+
   },
 }
 </script>
@@ -76,6 +75,14 @@ export default {
       .provider-ticket-icon {
         animation: iconSlide 1.5s infinite;
       }
+    }
+  }
+
+  &-item {
+    max-width: interval(20);
+
+    @include mq(md) {
+      max-width: none;
     }
   }
 
