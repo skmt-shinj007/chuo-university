@@ -10319,6 +10319,9 @@ import用ファイル
 .photo__gallery-images[data-v-46e3fba3] {
   margin-bottom: 5rem;
 }
+.photo__provider[data-v-46e3fba3] {
+  padding-bottom: 5rem;
+}
 .photo__provider-ticket-group[data-v-46e3fba3] {
   padding: 1rem;
 }
