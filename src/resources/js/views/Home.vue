@@ -190,6 +190,7 @@ export default {
   }
 
   &__support {
+    margin-bottom: 0;
     padding: interval(20) 0;
     color: color(white);
     @include flex(column nowrap, center, center);
