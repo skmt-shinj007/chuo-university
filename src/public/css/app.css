@@ -3877,7 +3877,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-2a1efbb8 {
+@-webkit-keyframes iconSlide-data-v-c3a537a8 {
 0% {
     transform: translateX(0);
 }
@@ -3912,7 +3912,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-2a1efbb8 {
+@keyframes iconSlide-data-v-c3a537a8 {
 0% {
     transform: translateX(0);
 }
@@ -3947,7 +3947,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-2a1efbb8 {
+@-webkit-keyframes fadeoutDown-data-v-c3a537a8 {
 0% {
     transform: translateY(0);
 }
@@ -3992,7 +3992,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-2a1efbb8 {
+@keyframes fadeoutDown-data-v-c3a537a8 {
 0% {
     transform: translateY(0);
 }
@@ -4037,7 +4037,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes rotation-data-v-2a1efbb8 {
+@-webkit-keyframes rotation-data-v-c3a537a8 {
 0% {
     transform: rotate(0);
 }
@@ -4054,7 +4054,7 @@ import用ファイル
     transform: rotate(180deg);
 }
 }
-@keyframes rotation-data-v-2a1efbb8 {
+@keyframes rotation-data-v-c3a537a8 {
 0% {
     transform: rotate(0);
 }
@@ -4075,7 +4075,7 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.dormitory-card[data-v-2a1efbb8] {
+.dormitory-ticket[data-v-c3a537a8] {
   width: 100%;
   margin: 0 auto 1rem auto;
   padding: 0.5rem 0;
@@ -4084,10 +4084,10 @@ import用ファイル
   justify-content: flex-start;
   align-items: center;
 }
-.dormitory-card[data-v-2a1efbb8]:last-child {
+.dormitory-ticket[data-v-c3a537a8]:last-child {
   margin-bottom: 0;
 }
-.dormitory-card__icon-wrap[data-v-2a1efbb8] {
+.dormitory-ticket__icon-wrap[data-v-c3a537a8] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -4096,26 +4096,26 @@ import用ファイル
   border-radius: 50%;
   padding: 0.75rem;
 }
-.dormitory-card__icon[data-v-2a1efbb8] {
+.dormitory-ticket__icon[data-v-c3a537a8] {
   width: 1.5rem;
   height: 1.5rem;
 }
-.dormitory-card__text-wrap[data-v-2a1efbb8] {
+.dormitory-ticket__text-wrap[data-v-c3a537a8] {
   margin-left: 0.5rem;
 }
-.dormitory-card__text[data-v-2a1efbb8] {
+.dormitory-ticket__text[data-v-c3a537a8] {
   font-size: 12px;
   font-weight: bold;
   line-height: 1.5;
 }
-.dormitory-card__complement-text[data-v-2a1efbb8] {
+.dormitory-ticket__complement-text[data-v-c3a537a8] {
   margin-top: 0.25rem;
 }
-.dormitory-card__laundry-price[data-v-2a1efbb8] {
+.dormitory-ticket__laundry-price[data-v-c3a537a8] {
   display: block;
   line-height: 1.5;
 }
-.dormitory-card__bath-time[data-v-2a1efbb8] {
+.dormitory-ticket__bath-time[data-v-c3a537a8] {
   line-height: 1.5;
 }@charset "UTF-8";
 /*
@@ -5715,17 +5715,17 @@ import用ファイル
     max-width: 50rem;
 }
 }
-.club__dormitory-cards[data-v-357d3955] {
+.club__dormitory-ticket-group[data-v-357d3955] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.club__dormitory-cards[data-v-357d3955] {
+.club__dormitory-ticket-group[data-v-357d3955] {
     max-width: 40rem;
     margin: 2rem auto 0 auto;
 }
 }
 @media screen and (min-width: 992px) {
-.club__dormitory-cards[data-v-357d3955] {
+.club__dormitory-ticket-group[data-v-357d3955] {
     margin-top: 5rem;
     max-width: none;
     display: flex;
@@ -5734,7 +5734,7 @@ import用ファイル
     align-items: stretch;
 }
 }
-.club__dormitory-card-item[data-v-357d3955] {
+.club__dormitory-ticket[data-v-357d3955] {
   margin-bottom: 2.5rem;
   display: flex;
   flex-flow: row nowrap;
@@ -5742,12 +5742,12 @@ import用ファイル
   align-items: center;
 }
 @media screen and (min-width: 992px) {
-.club__dormitory-card-item[data-v-357d3955] {
+.club__dormitory-ticket[data-v-357d3955] {
     width: calc(100% / 2);
 }
 }
 @media screen and (min-width: 992px) {
-.club__dormitory-card-item[data-v-357d3955]:nth-child(odd) {
+.club__dormitory-ticket[data-v-357d3955]:nth-child(odd) {
     padding-right: 1rem;
 }
 }

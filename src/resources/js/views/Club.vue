@@ -29,12 +29,12 @@
       <google-map-component/>
     </div>
 
-    <!-- 画面幅992px以下で表示（tablet以下） -->
+    <!-- PCデバイス幅 以下 -->
     <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
       <contents-image-slider-component :images="courtImages"/>
     </div>
 
-    <!-- 画面幅993pxから表示（pcから） -->
+    <!-- PCデバイス幅 -->
     <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
       <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
         <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
@@ -56,21 +56,24 @@
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
 
-    <div class="club__dormitory-cards">
-      <div class="club__dormitory-card-item" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-card-component :dormitoryData="dormitoryInformation"/>
+    <div class="club__dormitory-ticket-group">
+      <div class="club__dormitory-ticket" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
+        <dormitory-ticket-component :dormitoryData="dormitoryInformation"/>
       </div>
     </div>
 
+    <!-- PCデバイス幅 以下 -->
     <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
       <contents-image-slider-component :images="dormitoryImages"/>
     </div>
 
+    <!-- PCデバイス幅 -->
     <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
       <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
         <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
+
   </section>
 
   <div class="background-darkblue">
@@ -116,7 +119,7 @@ import ContentsImageSliderComponent from '../components/modules/slider/contentsI
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
 import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
-import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
+import DormitoryTicketComponent from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
 import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
 import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
@@ -130,7 +133,7 @@ export default {
     GoogleMapComponent,
     ContentsImageSliderComponent,
     CaptionBarImageComponent,
-    DormitoryCardComponent,
+    DormitoryTicketComponent,
     PlayerSliderComponent,
     PrimaryButtonComponent,
     ArrangeImagesComponent,
@@ -382,7 +385,7 @@ const imageApiResponse = [
       };
     }
 
-    &-cards {
+    &-ticket-group {
       margin-top: interval(5);
 
       @include mq(sm) {
@@ -397,7 +400,7 @@ const imageApiResponse = [
       };
     }
 
-    &-card-item {
+    &-ticket {
       margin-bottom: interval(5);
       @include flex(row nowrap, center, center);
 

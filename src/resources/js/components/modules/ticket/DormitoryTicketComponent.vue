@@ -1,20 +1,20 @@
 <template>
-<div class="dormitory-card">
+<div class="dormitory-ticket">
 
-  <div class="dormitory-card__icon-wrap">
-    <svg-vue class="dormitory-card__icon" :icon="dormitoryData.Icon.Src" :alt="dormitoryData.Icon.Alt"/>
+  <div class="dormitory-ticket__icon-wrap">
+    <svg-vue class="dormitory-ticket__icon" :icon="dormitoryData.Icon.Src" :alt="dormitoryData.Icon.Alt"/>
   </div>
 
-  <div class="dormitory-card__text-wrap">
-    <p class="dormitory-card__text nl2br" v-text="dormitoryData.Content"/>
+  <div class="dormitory-ticket__text-wrap">
+    <p class="dormitory-ticket__text nl2br" v-text="dormitoryData.Content"/>
 
-    <div class="dormitory-card__complement-text" v-if="dormitoryData.Price">
-      <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Wash"></span>
-      <span class="dormitory-card__laundry-price" v-text="dormitoryData.Price.Dry"></span>
+    <div class="dormitory-ticket__complement-text" v-if="dormitoryData.Price">
+      <span class="dormitory-ticket__laundry-price" v-text="dormitoryData.Price.Wash"></span>
+      <span class="dormitory-ticket__laundry-price" v-text="dormitoryData.Price.Dry"></span>
     </div>
 
-    <div class="dormitory-card__complement-text" v-if="dormitoryData.BathTime">
-      <span class="dormitory-card__bath-time" v-text="dormitoryData.BathTime"/>
+    <div class="dormitory-ticket__complement-text" v-if="dormitoryData.BathTime">
+      <span class="dormitory-ticket__bath-time" v-text="dormitoryData.BathTime"/>
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dormitory-card {
+.dormitory-ticket {
   width: 100%;
   margin: 0 auto interval(2) auto;
   padding: interval(1) 0;
