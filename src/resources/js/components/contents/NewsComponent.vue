@@ -30,10 +30,8 @@ export default {
 
 <style lang="scss" scoped>
 .news {
-  width: 80%;
   background-color: color(white);
   box-shadow: 0px 6px 8px color(shadow);
-  margin: 0 auto;
 
   &__list {
     margin: 0 interval(2);

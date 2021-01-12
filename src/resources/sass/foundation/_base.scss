@@ -28,6 +28,12 @@ body {
   };
 }
 
+section {
+  padding: 0 interval(2);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 h1, h2 {
   @include bangers();
 }
@@ -86,17 +92,6 @@ th,td {
 .background-darkblue {
   background-color: color(darkblue);
   margin-top: 0;
-}
-
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: interval(10);
-
-  // pc style
-  @include mq(md) {
-    margin-top: interval(20);
-  };
 }
 
 .card-inner-margin {
