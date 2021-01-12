@@ -1,7 +1,7 @@
 <template>
 <div class="history">
 
-  <section class="history__time-series section-container">
+  <section class="history__time-series">
     <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
     <div class="history__time-series-container" id="historySection">
@@ -44,7 +44,7 @@
     </div>
   </section>
 
-  <section class="history__primary-titles section-container">
+  <section class="history__primary-titles">
     <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
 
     <div class="history__primary-titles-table">
@@ -53,7 +53,7 @@
   </section>
 
   <div class="background-darkblue">
-    <section class="history__champions section-container">
+    <section class="history__champions">
       <contents-title-component
         :title="messages.SectionTitles.Champions.Main"
         :subTitle="messages.SectionTitles.Champions.Sub"

@@ -35,7 +35,7 @@ export default {
 .dormitory-card {
   width: 100%;
   margin: 0 auto interval(2) auto;
-  padding: interval(1);
+  padding: interval(1) 0;
   @include flex($align-items: center);
 
   &:last-child {
@@ -55,7 +55,6 @@ export default {
   }
 
   &__text-wrap {
-    padding: interval(1);
     margin-left: interval(1);
   }
 

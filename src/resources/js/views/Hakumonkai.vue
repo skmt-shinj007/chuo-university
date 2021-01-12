@@ -14,7 +14,7 @@
     </figure>
   </section>
 
-  <section class="hakumonkai__officer section-container">
+  <section class="hakumonkai__officer">
     <contents-title-component
       :title="messages.SectionTitles.Officer.Main"
       :subTitle="messages.SectionTitles.Officer.Sub"/>
@@ -24,7 +24,7 @@
     </div>
   </section>
 
-  <section class="hakumonkai__active-ob section-container">
+  <section class="hakumonkai__active-ob">
     <contents-title-component
       :title="messages.SectionTitles.ActiveAlumni.Main"
       :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
@@ -44,7 +44,7 @@
     </div>
   </section>
 
-  <section class="hakumonkai__message section-container">
+  <section class="hakumonkai__message">
     <contents-title-component
       :title="messages.SectionTitles.Message.Main"
       :subTitle="messages.SectionTitles.Message.Sub"/>

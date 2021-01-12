@@ -73,7 +73,6 @@ export default {
 
   &__item {
     padding: interval(0.5) interval(2);
-    position: relative;
     font-size: font(md);
     @include middle-line-text(1, 2px, color(white));
 

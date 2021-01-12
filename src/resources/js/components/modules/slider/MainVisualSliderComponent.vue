@@ -88,13 +88,18 @@ export default {
     top: 50%;
     left: 0;
     z-index: 10;
-    max-width: 280px;
     color: color(white);
-    padding-left: interval(3);
-    font-size: font(md);
+    padding-left: interval(2);
+    font-size: font(sm);
+
+    @include mq(sm) {
+      left: 5%;
+      padding-left: 0;
+      font-size: font(md);
+    }
 
     @include mq(md) {
-      left: 10%;
+      font-size: font(xl);
     }
   }
 }

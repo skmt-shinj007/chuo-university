@@ -116,6 +116,7 @@
  * 親要素に position: relative; と padding-left をつける
  */
 @mixin middle-line-text($width, $height, $bg-color) {
+  position: relative;
   padding-left: interval($width + 1);
 
   &::before {

@@ -3300,14 +3300,20 @@ import用ファイル
   top: 50%;
   left: 0;
   z-index: 10;
-  max-width: 280px;
   color: #ffffff;
-  padding-left: 1.5rem;
-  font-size: 16px;
+  padding-left: 1rem;
+  font-size: 12px;
+}
+@media screen and (min-width: 560px) {
+.main-visual-slider__text[data-v-30380e08] {
+    left: 5%;
+    padding-left: 0;
+    font-size: 16px;
+}
 }
 @media screen and (min-width: 992px) {
 .main-visual-slider__text[data-v-30380e08] {
-    left: 10%;
+    font-size: 22px;
 }
 }@charset "UTF-8";
 /*
@@ -4072,7 +4078,7 @@ import用ファイル
 .dormitory-card[data-v-2a1efbb8] {
   width: 100%;
   margin: 0 auto 1rem auto;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -4095,7 +4101,6 @@ import用ファイル
   height: 1.5rem;
 }
 .dormitory-card__text-wrap[data-v-2a1efbb8] {
-  padding: 0.5rem;
   margin-left: 0.5rem;
 }
 .dormitory-card__text[data-v-2a1efbb8] {
@@ -5633,52 +5638,56 @@ import用ファイル
   height: 100vh;
 }
 .club__policy[data-v-357d3955] {
-  padding: 5rem 0;
-  margin-top: 0;
+  margin: 0;
 }
 @media screen and (min-width: 560px) {
 .club__policy-cards[data-v-357d3955] {
-    margin: 0 1.5rem;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: stretch;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 40rem;
+    margin: 0 auto;
 }
 }
-.club__practice-table[data-v-357d3955] {
-  margin: 0 0.5rem;
+@media screen and (min-width: 992px) {
+.club__policy-cards[data-v-357d3955] {
+    max-width: 50rem;
+}
 }
 .club__practice-map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
 .club__practice-imageSlider[data-v-357d3955] {
   padding-top: 4rem;
-  width: 90%;
-  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .club__practice-imageSlider[data-v-357d3955] {
-    width: 70%;
+    max-width: 40rem;
+    margin: 0 auto;
 }
 }
 .club__practice-rowImages[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: stretch;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 5rem;
 }
 .club__practice-rowImages-item[data-v-357d3955] {
-  width: 30%;
+  width: calc(100% / 3);
+  margin-right: 1rem;
+}
+.club__practice-rowImages-item[data-v-357d3955]:last-child {
+  margin-right: 0;
 }
 .club__practice-schedule[data-v-357d3955] {
   margin-top: 5rem;
 }
 .club__practice-schedule-title[data-v-357d3955] {
-  width: 90%;
   margin: 0 auto 1rem auto;
-  padding-left: 1.5rem;
   position: relative;
+  padding-left: 1.5rem;
 }
 .club__practice-schedule-title[data-v-357d3955]::before {
   display: block;
@@ -5691,33 +5700,34 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-@media screen and (min-width: 560px) {
-.club__practice-schedule-title[data-v-357d3955] {
-    width: 80%;
-}
-}
-.club__practice-schedule-table[data-v-357d3955] {
-  margin: 0 0.5rem;
-}
-.club__dormitory-lead-wrap[data-v-357d3955] {
-  width: 90%;
-  margin: 0 auto;
+.club__dormitory[data-v-357d3955] {
+  margin-bottom: 5rem;
 }
 @media screen and (min-width: 560px) {
-.club__dormitory-lead-wrap[data-v-357d3955] {
-    width: 80%;
-}
-}
-@media screen and (min-width: 992px) {
 .club__dormitory-lead-wrap[data-v-357d3955] {
     text-align: center;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+}
+@media screen and (min-width: 992px) {
+.club__dormitory-lead-wrap[data-v-357d3955] {
+    max-width: 50rem;
 }
 }
 .club__dormitory-cards[data-v-357d3955] {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.club__dormitory-cards[data-v-357d3955] {
+    max-width: 40rem;
+    margin: 2rem auto 0 auto;
+}
 }
 @media screen and (min-width: 992px) {
 .club__dormitory-cards[data-v-357d3955] {
+    margin-top: 5rem;
+    max-width: none;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -5725,55 +5735,46 @@ import用ファイル
 }
 }
 .club__dormitory-card-item[data-v-357d3955] {
-  width: 90%;
-  margin: 0 auto;
+  margin-bottom: 2.5rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 992px) {
 .club__dormitory-card-item[data-v-357d3955] {
-    width: 70%;
+    width: calc(100% / 2);
 }
 }
 @media screen and (min-width: 992px) {
-.club__dormitory-card-item[data-v-357d3955] {
-    width: 50%;
-    max-width: 500px;
+.club__dormitory-card-item[data-v-357d3955]:nth-child(odd) {
+    padding-right: 1rem;
 }
 }
 .club__dormitory-images[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: stretch;
-  margin-top: 5rem;
 }
 .club__dormitory-images-item[data-v-357d3955] {
-  width: 30%;
+  width: calc(100% / 3);
+  margin-right: 1rem;
+}
+.club__dormitory-images-item[data-v-357d3955]:last-child {
+  margin-right: 0;
 }
 .club__member[data-v-357d3955] {
-  padding: 2.5rem 0;
-}
-@media screen and (min-width: 992px) {
-.club__member[data-v-357d3955] {
-    padding: 5rem 0;
-}
-}
-.club__member-bg[data-v-357d3955] {
-  background: #091e2f;
-  background: radial-gradient(ellipse at center, #091e2f 0%, #030A10 100%);
+  margin: 0;
 }
 .club__member-number[data-v-357d3955] {
   margin-top: 5rem;
 }
 .club__member-number-title[data-v-357d3955] {
-  width: 90%;
   color: #ffffff;
-  margin: 0 auto 1rem auto;
-  padding-left: 1.5rem;
+  margin-bottom: 1rem;
   position: relative;
+  padding-left: 1.5rem;
 }
 .club__member-number-title[data-v-357d3955]::before {
   display: block;
@@ -5786,36 +5787,11 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-@media screen and (min-width: 560px) {
-.club__member-number-title[data-v-357d3955] {
-    width: 80%;
-}
-}
-.club__member-number-table[data-v-357d3955] {
-  margin: 0 0.5rem;
-}
 .club__member-button[data-v-357d3955] {
   margin-top: 2.5rem;
 }
-.club__photo[data-v-357d3955] {
-  margin: 5rem auto;
-}
-@media screen and (min-width: 992px) {
-.club__photo[data-v-357d3955] {
-    margin-top: 10rem;
-}
-}
-.club__photo-images-container[data-v-357d3955] {
-  width: 90%;
-  margin: 0 auto;
-}
 .club__photo-button[data-v-357d3955] {
   margin-top: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.club__photo-button[data-v-357d3955] {
-    margin-top: 3.5rem;
-}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8208,9 +8184,9 @@ import用ファイル
   fill: #091e2f;
 }
 .champions-card__tournament-info-title[data-v-3ea95d82] {
+  margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
 }
 .champions-card__tournament-info-title[data-v-3ea95d82]::before {
   display: block;
@@ -9374,10 +9350,10 @@ import用ファイル
 }
 }
 .lattice__filter-title[data-v-d066a2d0] {
-  position: relative;
   margin-bottom: 1rem;
-  padding-left: 1.5rem;
   font-size: 14px;
+  position: relative;
+  padding-left: 1.5rem;
 }
 .lattice__filter-title[data-v-d066a2d0]::before {
   display: block;
@@ -12246,13 +12222,14 @@ import用ファイル
 }
 .site-map__item {
   padding: 0.25rem 1rem;
-  position: relative;
   font-size: 16px;
+  position: relative;
+  padding-left: 1rem;
 }
 .site-map__item::before {
   display: block;
   content: "";
-  width: 8px;
+  width: 0.5rem;
   height: 2px;
   background-color: #ffffff;
   position: absolute;
@@ -12521,13 +12498,14 @@ import用ファイル
 }
 .external-link__item {
   padding: 0.25rem 1rem;
-  position: relative;
   font-size: 12px;
+  position: relative;
+  padding-left: 1rem;
 }
 .external-link__item::before {
   display: block;
   content: "";
-  width: 8px;
+  width: 0.5rem;
   height: 2px;
   background-color: #ffffff;
   position: absolute;
@@ -13572,7 +13550,12 @@ body {
 section {
   padding: 0 1rem;
   max-width: 1600px;
-  margin: 5rem auto 0 auto;
+  margin: 5rem auto;
+}
+@media screen and (min-width: 992px) {
+  section {
+    margin: 5rem auto;
+  }
 }
 
 h1, h2 {
@@ -13592,6 +13575,20 @@ h2 {
 @media screen and (min-width: 992px) {
   h2 {
     font-size: 50px;
+  }
+}
+
+h3 {
+  font-size: 14px;
+}
+@media screen and (min-width: 560px) {
+  h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  h3 {
+    font-size: 22px;
   }
 }
 
@@ -13637,8 +13634,10 @@ th, td {
 }
 
 .background-darkblue {
-  background-color: #091e2f;
+  background: #10334e;
+  background: linear-gradient(to right, #10334e 0%, #030A10 100%);
   margin-top: 0;
+  padding: 5rem 0;
 }
 
 /**

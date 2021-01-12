@@ -9,7 +9,7 @@
     </main-visual-component>
   </div>
 
-  <section class="member__players section-container">
+  <section class="member__players">
     <contents-title-component
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
@@ -21,7 +21,7 @@
     </div>
   </section>
 
-  <section class="member__staff section-container">
+  <section class="member__staff">
     <contents-title-component
       :title="messages.SectionTitles.Staff.Main"
       :subTitle="messages.SectionTitles.Staff.Sub"/>

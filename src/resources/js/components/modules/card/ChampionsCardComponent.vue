@@ -108,7 +108,6 @@ export default {
 
   &__tournament-info {
     &-title {
-      position: relative;
       margin-bottom: interval(1);
       @include middle-line-text(2, 1px, color(darkblue));
     }

@@ -9,7 +9,6 @@
       :filterItem="filter.year"
       :pulldownMenus="years"
       @select="select = $event"/>
-
   </div>
 
   <!-- 写真 -->
@@ -183,7 +182,6 @@ export default {
   }
 
   &__filter-title {
-    position: relative;
     margin-bottom: interval(2);
     font-size: font(base);
     @include middle-line-text(2, 1px, color(darkblue));

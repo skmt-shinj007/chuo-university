@@ -1,12 +1,12 @@
 <template>
 <div class="club">
 
-  <section class="club__mainVisualSlider">
+  <div class="club__mainVisualSlider">
     <main-visual-slider-component :images="mainVisualImages"/>
-  </section>
+  </div>
 
   <div class="background-darkblue">
-    <section class="club__policy section-container">
+    <section class="club__policy">
       <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
 
       <div class="club__policy-cards">
@@ -19,7 +19,7 @@
     </section>
   </div>
 
-  <section class="club__practice section-container">
+  <section class="club__practice">
     <contents-title-component :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
 
     <div class="club__practice-table">
@@ -50,7 +50,7 @@
     </div>
   </section>
 
-  <section class="club__dormitory section-container">
+  <section class="club__dormitory">
     <contents-title-component :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
 
     <div class="club__dormitory-lead-wrap">
@@ -74,8 +74,8 @@
     </div>
   </section>
 
-  <div class="club__member-bg">
-    <section class="club__member section-container">
+  <div class="background-darkblue">
+    <section class="club__member">
       <contents-title-component :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
 
       <player-slider-component :players="players"/>
@@ -93,7 +93,7 @@
     </section>
   </div>
 
-  <section class="club__photo section-container">
+  <section class="club__photo">
     <contents-title-component :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
 
     <div class="club__photo-images-container">
@@ -310,24 +310,24 @@ const imageApiResponse = [
   }
 
   &__policy {
-    padding: interval(10) 0;
-    margin-top: 0;
+    margin: 0;
 
     &-cards {
 
       // tablet style
       @include mq(sm) {
-        margin: 0 interval(3);
-        @include flex($justify-content: space-around);
+        @include flex(row nowrap, space-between, center);
+        max-width: interval(80);
+        margin: 0 auto;
       };
+
+      @include mq(md) {
+        max-width: interval(100);
+      }
     }
   }
 
   &__practice {
-
-    &-table {
-      margin: 0 interval(1);
-    }
 
     &-map {
       padding-top: interval(5);
@@ -335,22 +335,25 @@ const imageApiResponse = [
 
     &-imageSlider {
       padding-top: interval(8);
-      width: 90%;
-      margin: 0 auto;
 
-      // tab
       @include mq(sm) {
-        width: 70%;
+        max-width: interval(80);
+        margin: 0 auto;
       };
 
     }
 
     &-rowImages {
-      @include flex($justify-content: space-around);
+      @include flex(row nowrap, space-between, center);
       margin-top: interval(10);
 
       &-item {
-        width: 30%;
+        width: calc(100% / 3);
+        margin-right: interval(2);
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
 
@@ -359,100 +362,83 @@ const imageApiResponse = [
     }
 
     &-schedule-title {
-      width: 90%;
       margin: 0 auto interval(2) auto;
-      padding-left: interval(3);
-      position: relative;
-      @include text-before-line(interval(2), 1px, color(darkblue));
-
-      @include mq(sm) {
-        width: 80%;
-      };
-    }
-
-    &-schedule-table {
-      margin: 0 interval(1);
+      @include middle-line-text(2, 1px, color(darkblue));
     }
   }
 
   &__dormitory {
+    margin-bottom: interval(10);
 
     &-lead-wrap {
-      width: 90%;
-      margin: 0 auto;
 
       @include mq(sm) {
-        width: 80%;
+        text-align: center;
+        max-width: interval(80);
+        margin: 0 auto;
       };
 
       @include mq(md) {
-        text-align: center;
+        max-width: interval(100);
       };
     }
 
     &-cards {
-      margin-top: interval(4);
+      margin-top: interval(5);
+
+      @include mq(sm) {
+        max-width: interval(80);
+        margin: interval(4) auto 0 auto;
+      }
 
       @include mq(md) {
+        margin-top: interval(10);
+        max-width: none;
         @include flex(row wrap);
       };
     }
 
     &-card-item {
-      width: 90%;
-      margin: 0 auto;
+      margin-bottom: interval(5);
       @include flex(row nowrap, center, center);
 
-      @include mq(sm) {
-        width: 70%;
+      @include mq(md) {
+        width: calc(100% / 2);
       };
 
-      @include mq(md) {
-        width: 50%;
-        max-width: 500px;
-      };
+      // アイテムが奇数個の場合、アイテム間に余白をつける
+      &:nth-child(odd) {
+        @include mq(md) {
+          padding-right: interval(2);
+        }
+      }
     }
 
     &-images {
-      @include flex($justify-content: space-around);
-      margin-top: interval(10);
+      @include flex();
     }
 
     &-images-item {
-      width: 30%;
+      width: calc(100% / 3);
+      margin-right: interval(2);
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
   &__member {
-    padding: interval(5) 0;
-
-    @include mq(md) {
-      padding: interval(10) 0;
-    }
-
-    &-bg {
-      @include gradient();
-    }
+    margin: 0;
 
     &-number {
       margin-top: interval(10);
     }
 
     &-number-title {
-      width: 90%;
       color: color(white);
-      margin: 0 auto interval(2) auto;
-      padding-left: interval(3);
-      position: relative;
-      @include text-before-line(interval(2), 1px, color(white));
-
-      @include mq(sm) {
-        width: 80%;
-      };
-    }
-
-    &-number-table {
-      margin: 0 interval(1);
+      margin-bottom: interval(2);
+      @include middle-line-text(2, 1px, color(white));
     }
 
     &-button {
@@ -461,23 +447,9 @@ const imageApiResponse = [
   }
 
   &__photo {
-    margin: interval(10) auto;
-
-    @include mq(md) {
-      margin-top: interval(20);
-    }
-
-    &-images-container {
-      width: 90%;
-      margin: 0 auto;
-    }
 
     &-button {
       margin-top: interval(5);
-
-      @include mq(sm) {
-        margin-top: interval(7);
-      };
     }
   }
 }
