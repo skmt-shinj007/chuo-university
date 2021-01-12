@@ -115,11 +115,13 @@
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-@mixin text-before-line($width, $height, $bg-color) {
+@mixin middle-line-text($width, $height, $bg-color) {
+  padding-left: interval($width + 1);
+
   &::before {
     display: block;
     content: '';
-    width: $width;
+    width: interval($width);
     height: $height;
     background-color: $bg-color;
     position: absolute;

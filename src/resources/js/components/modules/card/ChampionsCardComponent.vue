@@ -109,9 +109,8 @@ export default {
   &__tournament-info {
     &-title {
       position: relative;
-      padding-left: interval(3);
       margin-bottom: interval(1);
-      @include text-before-line(interval(2), 1px, color(darkblue));
+      @include middle-line-text(2, 1px, color(darkblue));
     }
   }
 }

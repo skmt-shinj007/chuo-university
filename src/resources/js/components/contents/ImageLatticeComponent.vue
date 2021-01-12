@@ -185,9 +185,8 @@ export default {
   &__filter-title {
     position: relative;
     margin-bottom: interval(2);
-    padding-left: interval(3);
     font-size: font(base);
-    @include text-before-line(interval(2), 1px, color(darkblue));
+    @include middle-line-text(2, 1px, color(darkblue));
 
     @include mq(sm) {
 
