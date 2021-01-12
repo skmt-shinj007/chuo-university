@@ -1,11 +1,27 @@
 <template>
 <div class="photo">
+  <!-- フォトギャラリー -->
   <section class="photo__gallery section-container">
     <contents-title-component
       :title="messages.SectionTitles.Photo.Main"
       :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <image-lattice-component :images="images" :filter="features.ImageFilter"/>
+    <div class="photo__gallery-images">
+      <image-lattice-component :images="images" :filter="features.ImageFilter"/>
+    </div>
+  </section>
+
+  <!-- プロバイダー -->
+  <section class="photo__provider section-container">
+    <contents-title-component
+      :title="messages.SectionTitles.Provider.Main"
+      :subTitle="messages.SectionTitles.Provider.Sub"/>
+
+    <div class="photo__provider-ticket-group">
+      <div class="photo__provider-ticket" v-for="(provider, n) in providers" :key="n">
+        <provider-ticket-component :providerObj="provider"/>
+      </div>
+    </div>
   </section>
 </div>
 </template>
@@ -14,6 +30,7 @@
 // component import
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
 import ImageLatticeComponent from '../components/contents/ImageLatticeComponent';
+import ProviderTicketComponent from '../components/modules/ticket/ProviderTicketComponent';
 
 // config json import
 import Data from '../config/data.json';
@@ -23,16 +40,19 @@ export default {
   components: {
     ContentsTitleComponent,
     ImageLatticeComponent,
+    ProviderTicketComponent,
   },
   data() {
     return {
       data: Data,
       features: Features,
       images: [],
+      providers: [],
     }
   },
   beforeMount() {
     this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
+    this.$data.data.Provider.forEach(element => this.providers.push(element));
   },
 }
 
@@ -54,7 +74,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .photo {
+.photo {
 
-// }
+  &__gallery-images {
+    margin-bottom: interval(10);
+  }
+
+  &__provider {
+    padding-bottom: interval(10);
+  }
+
+  &__provider-ticket-group {
+    padding: interval(2);
+
+    @include mq(md) {
+      @include flex(row wrap, flex-start, center);
+    }
+  }
+
+  &__provider-ticket {
+    max-width: interval(50);
+    margin: 0 auto;
+    margin-bottom: interval(5);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(md) {
+      margin: 0;
+      width: calc(100% / 2);
+      padding: interval(1);
+      max-width: none;
+    }
+  }
+
+}
 </style>

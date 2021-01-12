@@ -908,6 +908,24 @@
     }
   ],
 
+  "Provider": [
+    {
+      "name": "Hana",
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "Hanaのサムネイル"
+      },
+      "twitter": {
+        "url": "https://twitter.com/SFphoto87",
+        "userName": "SFphoto87"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/sfphoto87/",
+        "userName": "sfphoto87"
+      }
+    }
+  ],
+
   "HakumonkaiOfficer": {
     "Heading": ["白門会役職", "名前", "卒業年", "学員会役職"],
     "Data": [

@@ -8807,7 +8807,7 @@ import用ファイル
   color: #ffffff;
   width: 60%;
   max-width: 12.5rem;
-  margin: 0 auto;
+  margin: 2.5rem auto 0 auto;
 }
 @media screen and (min-width: 560px) {
 .view-all {
@@ -9422,7 +9422,6 @@ import用ファイル
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4rem;
 }
 @media screen and (min-width: 560px) {
 .lattice__item-wrap[data-v-d066a2d0] {
@@ -9480,9 +9479,611 @@ import用ファイル
 .lattice__img[data-v-d066a2d0]:hover {
     transform: scale(1.05);
 }
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
 }
-.lattice__view-all[data-v-d066a2d0] {
-  margin-bottom: 5rem;
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.sns-tag {
+  margin: 0.25rem;
+  color: #ffffff;
+  letter-spacing: 1.2px;
+  line-height: 2;
+}
+.sns-tag__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  padding-right: 0.5rem;
+}
+.sns-tag__content {
+  font-size: 10px;
+}
+.sns-tag__content--lg {
+  font-size: 16px;
+  line-height: 2;
+}
+.sns-tag__color {
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.sns-tag__color--twitter {
+  background-color: #00acee;
+}
+.sns-tag__color--instagram {
+  background: linear-gradient(to right, #5478f2 0%, #f23f79 60%, orange 100%);
+}
+.sns-tag__color--facebook {
+  background-color: #3b5998;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.provider-ticket {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 5px 3px #b3b3b3;
+  background-color: #ffffff;
+  border: 2px solid #f8f9fa;
+  border-radius: 48px;
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 560px) {
+.provider-ticket {
+    padding: 0.5rem 0.75rem;
+}
+}
+@media screen and (min-width: 992px) {
+.provider-ticket {
+    cursor: pointer;
+    box-shadow: 0 1px 3px 1px #b3b3b3;
+    transition: all 0.3s ease-out;
+}
+.provider-ticket:hover {
+    box-shadow: 0 3px 5px 3px #b3b3b3;
+    transform: translateY(-2px);
+}
+.provider-ticket:hover .provider-ticket-icon {
+    -webkit-animation: iconSlide 1.5s infinite;
+            animation: iconSlide 1.5s infinite;
+}
+}
+.provider-ticket-item {
+  max-width: 10rem;
+}
+@media screen and (min-width: 992px) {
+.provider-ticket-item {
+    max-width: none;
+}
+}
+.provider-ticket-thumbnail-border {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.provider-ticket-thumbnail-border::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+.provider-ticket-thumbnail-wrap {
+  width: 100%;
+  position: relative;
+}
+.provider-ticket-thumbnail-wrap::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.provider-ticket-thumbnail-wrap > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 560px) {
+.provider-ticket-thumbnail-wrap {
+    width: 5rem;
+}
+}
+.provider-ticket-thumbnail {
+  border-radius: 50%;
+}
+.provider-ticket__name {
+  display: block;
+  font-size: 14px;
+  padding-left: 0.25rem;
+}
+.provider-ticket-tag-group {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.provider-ticket-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: #091e2f;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -9714,7 +10315,40 @@ import用ファイル
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
- */@charset "UTF-8";
+ */
+.photo__gallery-images[data-v-46e3fba3] {
+  margin-bottom: 5rem;
+}
+.photo__provider[data-v-46e3fba3] {
+  padding-bottom: 5rem;
+}
+.photo__provider-ticket-group[data-v-46e3fba3] {
+  padding: 1rem;
+}
+@media screen and (min-width: 992px) {
+.photo__provider-ticket-group[data-v-46e3fba3] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.photo__provider-ticket[data-v-46e3fba3] {
+  max-width: 25rem;
+  margin: 0 auto;
+  margin-bottom: 2.5rem;
+}
+.photo__provider-ticket[data-v-46e3fba3]:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 992px) {
+.photo__provider-ticket[data-v-46e3fba3] {
+    margin: 0;
+    width: calc(100% / 2);
+    padding: 0.5rem;
+    max-width: none;
+}
+}@charset "UTF-8";
 /*
 import用ファイル
 グローバルに使用する変数やmixinをインポート
