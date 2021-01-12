@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 // コンポーネントをインポート
-import Top from './views/Top.vue';
+import Home from './views/Home.vue';
 import Club from './views/Club.vue';
 import Member from './views/Member.vue';
 import Hakumonkai from './views/Hakumonkai.vue';
@@ -22,8 +22,8 @@ export default new VueRouter({
     routes: [
     {
         path: '/',        // routeのパス設定
-        name: 'top',      // 名前付きルートを設定したい場合付与
-        component: Top    // コンポーネントの指定
+        name: 'home',      // 名前付きルートを設定したい場合付与
+        component: Home    // コンポーネントの指定
     },
     {
         path: '/club',

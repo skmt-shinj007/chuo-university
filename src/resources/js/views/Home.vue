@@ -1,38 +1,42 @@
 <template>
-  <div class="top">
+  <div class="home">
     <main-visual-component/>
 
-    <section class="top__news">
+    <section class="home__news">
       <news-component/>
     </section>
 
-    <section class="top__team section-container">
-      <figure class="top__team-img">
+    <section class="home__team">
+      <figure class="home__section-img">
         <img src="/image/group-photo_toutoSpring2017.jpg" alt="2017年東都春季リーグ戦の集合写真">
       </figure>
-      <lead-text-component
-        class="top__team-contentsCard"
+
+      <div class="home__team-lead">
+        <lead-text-component
         :titles="messages.SectionTitles.Team"
         :buttonName="messages.ButtonName.Member"
-        :contentsText="messages.Top.TeamDescription"/>
+        :contentsText="messages.Home.TeamDescription"/>
+      </div>
     </section>
 
-    <section class="top__hakumonkai section-container">
-      <figure class="top__team-img">
+    <section class="home__hakumonkai">
+      <figure class="home__section-img">
         <img src="/image/hakumon.jpg" alt="中央大学多摩キャンパス白門の画像">
       </figure>
-      <lead-text-component
-        class="top__hakumonkai-contentsCard"
+
+      <div class="home__hakumonkai-lead">
+        <lead-text-component
         :titles="messages.SectionTitles.Hakumonkai"
         :buttonName="messages.ButtonName.Hakumonkai"
-        :contentsText="messages.Top.HakumonkaiDescription"/>
+        :contentsText="messages.Home.HakumonkaiDescription"/>
+      </div>
     </section>
 
-    <section class="top__menuPanel section-container">
+    <section class="home__menuPanel">
       <!-- TODO:コンポーネントを v-for しない -->
       <!-- TODO:data.jsonからオブジェクトを引っ張る -->
       <menu-panel-component
-        class="top__menuPanel-item"
+        class="home__menuPanel-item"
         v-for="(menuPanelItem, n) in menuPanels"
         :key="n"
         :menuPanelData="menuPanelItem"/>
@@ -40,14 +44,14 @@
 
     <div class="background-image">
       <div class="background-darkblue">
-        <section class="top__support section-container">
+        <section class="home__support">
           <contents-title-component
             :title="messages.SectionTitles.Support.Main"
             :subTitle="messages.SectionTitles.Support.Sub"
             color="white"/>
 
-          <div class="top__support-textaria">
-            <p class="nl2br" v-text="messages.Top.Support"/>
+          <div class="home__support-textaria">
+            <p class="nl2br" v-text="messages.Home.Support"/>
           </div>
         </section>
       </div>
@@ -86,20 +90,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.top {
+// team & hakumonkai セクションの共通スタイルを定義
+%text-card {
+  width: 90%;
+  max-width: interval(100);
+  margin: 0 auto;
+  transform: translateY(-50px);
+
+  // pc style
+  @include mq(md) {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+  };
+}
+
+.home {
   position: relative;
 
   &__news {
     transform: translateY(-50px);
-    max-width: 800px;
-    margin: 0 auto;
-
-    // pc style
-    @include mq(md) {
-      transform: none;
-      margin-top: interval(15);
-      margin-bottom: interval(10);
-    };
+    max-width: interval(100);
+    margin: 0 auto interval(10) auto;
   }
 
   &__team {
@@ -109,30 +121,12 @@ export default {
       position: relative;
       @include flex();
     };
+  }
 
-    &-img {
-      width: 100%;
-      border-top: 5px solid color(darkblue);
-      border-bottom: 5px solid color(darkblue);
-      box-shadow: 0px -5px 8px 3px color(shadow);
-      // @include imageFlame;
-      @include trimming(aspect(golden));
-
-      // pc style
-      @include mq(md) {
-        width: 70%;
-      };
-    }
-
-    &-contentsCard {
-      transform: translateY(-50px);
-
-      // pc style
-      @include mq(md) {
-        position: absolute;
-        top: 50%;
-        right: 0;
-      };
+  &__team-lead {
+    @extend %text-card;
+    @include mq(md) {
+      right: interval(2);
     }
   }
 
@@ -146,31 +140,26 @@ export default {
         $flow: row-reverse nowrap
       );
     }
+  }
 
-    &-img {
-      width: 100%;
-      border-top: 5px solid color(darkblue);
-      border-bottom: 5px solid color(darkblue);
-      box-shadow: 0px -5px 8px 3px color(shadow);
-      // @include imageFlame;
-      @include trimming(aspect(golden));
-
-      // pc style
-      @include mq(md) {
-        width: 70%;
-      };
+  &__hakumonkai-lead {
+    @extend %text-card;
+    @include mq(md) {
+      left: interval(2);
     }
+  }
 
-    &-contentsCard {
-      transform: translateY(-50px);
+  &__section-img {
+    width: 100%;
+    border-top: 5px solid color(darkblue);
+    border-bottom: 5px solid color(darkblue);
+    box-shadow: 0px -5px 8px 3px color(shadow);
+    @include trimming(aspect(golden));
 
-      // pc style
-      @include mq(md) {
-        position: absolute;
-        top: 50%;
-        left: 0;
-      };
-    }
+    // pc style
+    @include mq(md) {
+      width: 70%;
+    };
   }
 
   &__menuPanel {

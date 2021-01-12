@@ -12,8 +12,8 @@ export default {
     return {
       siteMapMenus: [
         {
-          name: "TOP",
-          routeName: "top",
+          name: "HOME",
+          routeName: "/",
         },
         {
           name: "CLUB",
