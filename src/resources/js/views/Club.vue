@@ -11,10 +11,9 @@
 
       <div class="club__policy-cards">
         <!-- TODO:コンポーネントに直接 v-for しない -->
-        <policy-card-component
-        v-for="(policy, n) in policies"
-        :key="n"
-        :policy="policy"/>
+        <div class="club__policy-card" v-for="(policy, n) in policies" :key="n">
+          <policy-card-component :policy="policy"/>
+        </div>
       </div>
     </section>
   </div>
