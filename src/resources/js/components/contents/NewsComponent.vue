@@ -1,10 +1,10 @@
 <template>
 <div class="news">
-  <div class="card-inner-margin">
-    <contents-title-component :title="contentsTitle" :subTitle="contentsSubTitle"/>  <!-- :color="white" 記述でテキストを白に -->
-    <div class="news__list">
-      <text-list-component/>
-    </div>
+  <!-- :color="white" 記述でテキストを白に -->
+  <contents-title-component :title="contentsTitle" :subTitle="contentsSubTitle"/>
+
+  <div class="news__list">
+    <text-list-component/>
   </div>
 </div>
 </template>
@@ -30,8 +30,13 @@ export default {
 
 <style lang="scss" scoped>
 .news {
+  padding: interval(2);
   background-color: color(white);
   box-shadow: 0px 6px 8px color(shadow);
+
+  @include mq(sm) {
+    padding: interval(3);
+  }
 
   &__list {
     margin: 0 interval(2);
