@@ -30,6 +30,8 @@ body {
 
 section {
   padding: 0 interval(2);
+  max-width: device(max);
+  margin: interval(10) auto 0 auto;
 }
 
 h1, h2 {

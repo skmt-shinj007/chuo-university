@@ -1,12 +1,12 @@
 <template>
-<div class="lead-text">
-  <div class="lead-text__title">
+<div class="text-card">
+  <div class="text-card__title">
     <contents-title-component :title="titles.Main" :subTitle="titles.Sub" :color="titleColor"/>
   </div>
-  <div class="lead-text__text">
+  <div class="text-card__text">
     <p class="nl2br" v-text="contentsText"></p>
   </div>
-  <div class="lead-text__button">
+  <div class="text-card__button">
     <primary-button-component :name="buttonName" :btnSize="btnSize"/>
   </div>
 </div>
@@ -39,16 +39,20 @@ export default {
 </script>
 
 <style lang="scss">
-.lead-text {
+.text-card {
   padding: interval(2);
   background-color: color(white);
   box-shadow: 0px 6px 8px color(shadow);
   margin: 0 auto;
 
-  // pc style
-  @include mq(md) {
+  @include mq(sm) {
     padding: interval(3);
+  }
+
+  @include mq(md) {
+    @include flex(column nowrap, center, center);
     background-color: rgba($color: color(white), $alpha: .8);
+    min-height: interval(60);
   };
 
   &__text {

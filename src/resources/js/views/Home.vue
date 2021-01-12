@@ -35,15 +35,13 @@
     <section class="home__menuPanel">
       <!-- TODO:コンポーネントを v-for しない -->
       <!-- TODO:data.jsonからオブジェクトを引っ張る -->
-      <menu-panel-component
-        class="home__menuPanel-item"
-        v-for="(menuPanelItem, n) in menuPanels"
-        :key="n"
-        :menuPanelData="menuPanelItem"/>
+      <div class="home__menuPanel-item" v-for="(menuPanelItem, n) in menuPanels" :key="n">
+        <menu-panel-component :menuPanelData="menuPanelItem"/>
+      </div>
     </section>
 
-    <div class="background-image">
-      <div class="background-darkblue">
+    <div class="home__background-image">
+      <div class="home__background-darkblue">
         <section class="home__support">
           <contents-title-component
             :title="messages.SectionTitles.Support.Main"
@@ -90,6 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 // team & hakumonkai セクションの共通スタイルを定義
 %text-card {
   width: 90%;
@@ -97,7 +96,6 @@ export default {
   margin: 0 auto;
   transform: translateY(-50px);
 
-  // pc style
   @include mq(md) {
     width: 60%;
     position: absolute;
@@ -166,30 +164,33 @@ export default {
 
     // pc style
     @include mq(md) {
-      @include flex($justify-content: center);
+      @include flex(row nowrap, space-between, center);
       margin-top: interval(40);
     };
 
     &-item {
-      max-width: 500px;
-      margin: 0 auto;
+      width: 100%;
 
-      // tablet style
       @include mq(sm) {
-        width: 70%;
-      };
+        width: 90%;
+        max-width: interval(100);
+        margin: 0 auto;
+      }
 
-      // pc style
       @include mq(md) {
-        padding: interval(0.5);
-        max-width: 340px;
-      };
+        margin-right: interval(2);
+      }
+
+      &:last-child {
+        @include mq(md) {
+          margin-right: 0;
+        }
+      }
     }
   }
 
   &__support {
-    width: 100%;
-    height: 100%;
+    padding: interval(20) 0;
     color: color(white);
     @include flex(column nowrap, center, center);
 
@@ -209,7 +210,7 @@ export default {
     }
   }
 
-  .background-image {
+  &__background-image {
     width: 100%;
     height: 100vh;
     @include background-image(
@@ -219,6 +220,7 @@ export default {
 
     // tablet style
     @include mq(sm) {
+      height: auto;
       @include background-image(
       $url: "/image/player11.jpg",
       $position: center center
@@ -226,7 +228,7 @@ export default {
     };
   }
 
-  .background-darkblue {
+  &__background-darkblue {
     width: 100%;
     height: 100%;
     background-color: rgba($color: color(darkblue), $alpha: .8);
