@@ -2715,7 +2715,7 @@ import用ファイル
   height: 160px;
   border: 3px solid #ffffff;
   border-radius: 4px;
-  margin: 2.5rem auto 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -2742,9 +2742,6 @@ import用ファイル
 .policy-card:hover .policy-card__text[data-v-b056e422] {
     opacity: 1;
 }
-}
-.policy-card[data-v-b056e422]:first-child {
-  margin-top: 0;
 }
 .policy-card__subTitle[data-v-b056e422] {
   font-size: 10px;
@@ -5654,6 +5651,17 @@ import用ファイル
 .club__policy-cards[data-v-357d3955] {
     max-width: 50rem;
 }
+}
+.club__policy-card[data-v-357d3955] {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.club__policy-card[data-v-357d3955] {
+    margin-bottom: 0;
+}
+}
+.club__policy-card[data-v-357d3955]:last-child {
+  margin-bottom: 0;
 }
 .club__practice-map[data-v-357d3955] {
   padding-top: 2.5rem;

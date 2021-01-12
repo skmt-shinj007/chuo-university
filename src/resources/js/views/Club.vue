@@ -10,11 +10,11 @@
       <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
 
       <div class="club__policy-cards">
-        <!-- TODO:コンポーネントに直接 v-for しない -->
         <div class="club__policy-card" v-for="(policy, n) in policies" :key="n">
           <policy-card-component :policy="policy"/>
         </div>
       </div>
+
     </section>
   </div>
 
@@ -325,6 +325,18 @@ const imageApiResponse = [
 
       @include mq(md) {
         max-width: interval(100);
+      }
+    }
+
+    &-card {
+      margin-bottom: interval(5);
+
+      @include mq(sm) {
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }

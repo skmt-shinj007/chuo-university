@@ -23,7 +23,7 @@ export default {
   height: 160px;
   border: 3px solid color(white);
   border-radius: radius(normal);
-  margin: interval(5) auto 0 auto;
+  margin: 0 auto;
   @include flex(
     $flow: column nowrap,
     $justify-content: center,
@@ -56,10 +56,6 @@ export default {
       }
     }
   };
-
-  &:first-child {
-    margin-top: 0;
-  }
 
   &__subTitle {
     font-size: font(xs);
