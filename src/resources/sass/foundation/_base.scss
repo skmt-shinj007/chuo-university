@@ -30,8 +30,6 @@ body {
 
 section {
   padding: 0 interval(2);
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 h1, h2 {
@@ -94,14 +92,6 @@ th,td {
   margin-top: 0;
 }
 
-.card-inner-margin {
-  padding: interval(2);
-
-  // pc style
-  @include mq(md) {
-    padding: interval(3);
-  };
-}
 /**
  * 改行したい文字列に指定。
  * 大抵 <p> のクラスに指定。（他タグでも問題ない）

@@ -1019,10 +1019,14 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .news[data-v-9b317ac0] {
-  width: 80%;
+  padding: 1rem;
   background-color: #ffffff;
   box-shadow: 0px 6px 8px #e6e6e6;
-  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+.news[data-v-9b317ac0] {
+    padding: 1.5rem;
+}
 }
 .news__list[data-v-9b317ac0] {
   margin: 0 1rem;
@@ -1351,263 +1355,6 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@keyframes iconSlide {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@-webkit-keyframes fadeoutDown {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@keyframes fadeoutDown {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@-webkit-keyframes rotation {
-0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
-}
-100% {
-    transform: rotate(180deg);
-}
-}
-@keyframes rotation {
-0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
-}
-100% {
-    transform: rotate(180deg);
-}
-}
-/**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
- */
-.lead-text {
-  width: 80%;
-  background-color: #ffffff;
-  box-shadow: 0px 6px 8px #e6e6e6;
-  margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.lead-text {
-    width: 70%;
-}
-}
-@media screen and (min-width: 992px) {
-.lead-text {
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
-}
-}
-.lead-text__title {
-  padding-bottom: 1.5rem;
-}
-.lead-text__inner {
-  padding: 0 0.5rem;
-}
-.lead-text__viewAll {
-  margin-top: 1rem;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数とキーフレームを定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-/**
- * @keyframe を定義
- */
 @-webkit-keyframes iconSlide-data-v-481a74cb {
 0% {
     transform: translateX(0);
@@ -1871,7 +1618,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-bae950f4 {
+@-webkit-keyframes iconSlide {
 0% {
     transform: translateX(0);
 }
@@ -1906,7 +1653,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-bae950f4 {
+@keyframes iconSlide {
 0% {
     transform: translateX(0);
 }
@@ -1941,7 +1688,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-bae950f4 {
+@-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
 }
@@ -1986,7 +1733,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-bae950f4 {
+@keyframes fadeoutDown {
 0% {
     transform: translateY(0);
 }
@@ -2031,7 +1778,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes rotation-data-v-bae950f4 {
+@-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
 }
@@ -2048,7 +1795,7 @@ import用ファイル
     transform: rotate(180deg);
 }
 }
-@keyframes rotation-data-v-bae950f4 {
+@keyframes rotation {
 0% {
     transform: rotate(0);
 }
@@ -2069,23 +1816,278 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.top[data-v-bae950f4] {
-  position: relative;
-}
-.top__news[data-v-bae950f4] {
-  transform: translateY(-50px);
-  max-width: 800px;
+.lead-text {
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0px 6px 8px #e6e6e6;
   margin: 0 auto;
 }
 @media screen and (min-width: 992px) {
-.top__news[data-v-bae950f4] {
-    transform: none;
-    margin-top: 7.5rem;
-    margin-bottom: 5rem;
+.lead-text {
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
 }
+}
+.lead-text__text {
+  padding: 0 0.5rem;
+}
+.lead-text__button {
+  margin-top: 2.5rem;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-63cd6604 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-63cd6604 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown-data-v-63cd6604 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown-data-v-63cd6604 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes rotation-data-v-63cd6604 {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation-data-v-63cd6604 {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.home__hakumonkai-lead[data-v-63cd6604], .home__team-lead[data-v-63cd6604] {
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
+  transform: translateY(-50px);
 }
 @media screen and (min-width: 992px) {
-.top__team[data-v-bae950f4] {
+.home__hakumonkai-lead[data-v-63cd6604], .home__team-lead[data-v-63cd6604] {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+}
+}
+.home[data-v-63cd6604] {
+  position: relative;
+}
+.home__news[data-v-63cd6604] {
+  transform: translateY(-50px);
+  max-width: 50rem;
+  margin: 0 auto 5rem auto;
+}
+@media screen and (min-width: 992px) {
+.home__team[data-v-63cd6604] {
     position: relative;
     display: flex;
     flex-flow: row nowrap;
@@ -2093,44 +2095,13 @@ import用ファイル
     align-items: stretch;
 }
 }
-.top__team-img[data-v-bae950f4] {
-  width: 100%;
-  border-top: 5px solid #091e2f;
-  border-bottom: 5px solid #091e2f;
-  box-shadow: 0px -5px 8px 3px #e6e6e6;
-  position: relative;
-}
-.top__team-img[data-v-bae950f4]::before {
-  content: "";
-  display: block;
-  padding-bottom: 61.8%;
-}
-.top__team-img > img[data-v-bae950f4] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 @media screen and (min-width: 992px) {
-.top__team-img[data-v-bae950f4] {
-    width: 70%;
-}
-}
-.top__team-contentsCard[data-v-bae950f4] {
-  transform: translateY(-50px);
-}
-@media screen and (min-width: 992px) {
-.top__team-contentsCard[data-v-bae950f4] {
-    position: absolute;
-    top: 50%;
-    right: 0;
+.home__team-lead[data-v-63cd6604] {
+    right: 1rem;
 }
 }
 @media screen and (min-width: 992px) {
-.top__hakumonkai[data-v-bae950f4] {
+.home__hakumonkai[data-v-63cd6604] {
     position: relative;
     margin-top: 20rem;
     display: flex;
@@ -2139,19 +2110,24 @@ import用ファイル
     align-items: stretch;
 }
 }
-.top__hakumonkai-img[data-v-bae950f4] {
+@media screen and (min-width: 992px) {
+.home__hakumonkai-lead[data-v-63cd6604] {
+    left: 1rem;
+}
+}
+.home__section-img[data-v-63cd6604] {
   width: 100%;
   border-top: 5px solid #091e2f;
   border-bottom: 5px solid #091e2f;
   box-shadow: 0px -5px 8px 3px #e6e6e6;
   position: relative;
 }
-.top__hakumonkai-img[data-v-bae950f4]::before {
+.home__section-img[data-v-63cd6604]::before {
   content: "";
   display: block;
   padding-bottom: 61.8%;
 }
-.top__hakumonkai-img > img[data-v-bae950f4] {
+.home__section-img > img[data-v-63cd6604] {
   position: absolute;
   top: 0;
   left: 0;
@@ -2161,22 +2137,12 @@ import用ファイル
      object-fit: cover;
 }
 @media screen and (min-width: 992px) {
-.top__hakumonkai-img[data-v-bae950f4] {
+.home__section-img[data-v-63cd6604] {
     width: 70%;
 }
 }
-.top__hakumonkai-contentsCard[data-v-bae950f4] {
-  transform: translateY(-50px);
-}
 @media screen and (min-width: 992px) {
-.top__hakumonkai-contentsCard[data-v-bae950f4] {
-    position: absolute;
-    top: 50%;
-    left: 0;
-}
-}
-@media screen and (min-width: 992px) {
-.top__menuPanel[data-v-bae950f4] {
+.home__menuPanel[data-v-63cd6604] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -2184,22 +2150,22 @@ import用ファイル
     margin-top: 20rem;
 }
 }
-.top__menuPanel-item[data-v-bae950f4] {
+.home__menuPanel-item[data-v-63cd6604] {
   max-width: 500px;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.top__menuPanel-item[data-v-bae950f4] {
+.home__menuPanel-item[data-v-63cd6604] {
     width: 70%;
 }
 }
 @media screen and (min-width: 992px) {
-.top__menuPanel-item[data-v-bae950f4] {
+.home__menuPanel-item[data-v-63cd6604] {
     padding: 0.25rem;
     max-width: 340px;
 }
 }
-.top__support[data-v-bae950f4] {
+.home__support[data-v-63cd6604] {
   width: 100%;
   height: 100%;
   color: #ffffff;
@@ -2208,21 +2174,21 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.top__support-textaria[data-v-bae950f4] {
+.home__support-textaria[data-v-63cd6604] {
   width: 80%;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.top__support-textaria[data-v-bae950f4] {
+.home__support-textaria[data-v-63cd6604] {
     width: 70%;
 }
 }
 @media screen and (min-width: 992px) {
-.top__support-textaria[data-v-bae950f4] {
+.home__support-textaria[data-v-63cd6604] {
     width: 60%;
 }
 }
-.top .background-image[data-v-bae950f4] {
+.home .background-image[data-v-63cd6604] {
   width: 100%;
   height: 100vh;
   background-image: url("/image/player09.jpg");
@@ -2231,14 +2197,14 @@ import用ファイル
   background-size: cover;
 }
 @media screen and (min-width: 560px) {
-.top .background-image[data-v-bae950f4] {
+.home .background-image[data-v-63cd6604] {
     background-image: url("/image/player11.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 }
-.top .background-darkblue[data-v-bae950f4] {
+.home .background-darkblue[data-v-63cd6604] {
   width: 100%;
   height: 100%;
   background-color: rgba(9, 30, 47, 0.8);
@@ -13589,6 +13555,10 @@ body {
   }
 }
 
+section {
+  padding: 0 1rem;
+}
+
 h1, h2 {
   font-family: "Bangers", cursive;
   font-size: 16px;
@@ -13653,26 +13623,6 @@ th, td {
 .background-darkblue {
   background-color: #091e2f;
   margin-top: 0;
-}
-
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 5rem;
-}
-@media screen and (min-width: 992px) {
-  .section-container {
-    margin-top: 10rem;
-  }
-}
-
-.card-inner-margin {
-  padding: 1rem;
-}
-@media screen and (min-width: 992px) {
-  .card-inner-margin {
-    padding: 1.5rem;
-  }
 }
 
 /**

@@ -12,7 +12,7 @@
       </figure>
 
       <div class="home__team-lead">
-        <lead-text-component
+        <text-card-component
         :titles="messages.SectionTitles.Team"
         :buttonName="messages.ButtonName.Member"
         :contentsText="messages.Home.TeamDescription"/>
@@ -25,7 +25,7 @@
       </figure>
 
       <div class="home__hakumonkai-lead">
-        <lead-text-component
+        <text-card-component
         :titles="messages.SectionTitles.Hakumonkai"
         :buttonName="messages.ButtonName.Hakumonkai"
         :contentsText="messages.Home.HakumonkaiDescription"/>
@@ -64,18 +64,18 @@
 // component import
 import Data from '../config/data.json';
 import MainVisualComponent from '../components/contents/MainVisualComponent';
-import NewsComponent from '../components/contents/NewsComponent.vue';
-import LeadTextComponent from '../components/contents/LeadTextComponent';
-import MenuPanelComponent from '../components/modules/MenuPanelComponent.vue';
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
+import NewsComponent from '../components/contents/NewsComponent';
+import MenuPanelComponent from '../components/modules/MenuPanelComponent';
+import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
+import TextCardComponent from '../components/modules/card/TextCardComponent';
 
 export default {
   components: {
     MainVisualComponent,
     NewsComponent,
-    LeadTextComponent,
     MenuPanelComponent,
     ContentsTitleComponent,
+    TextCardComponent,
   },
   data() {
     return {
