@@ -6,10 +6,10 @@
   </tr>
 
   <tr class="tile-table__body" v-for="(tableItem, i) in tableItems" :key="i">
-    <td class="tile-table__el">{{ tableItem.post }}</td>
+    <td class="tile-table__el">{{ tableItem.post.alumni }}</td>
     <td class="tile-table__el">{{ tableItem.name.ja }}</td>
     <td class="tile-table__el">{{ tableItem.graduate.age }}{{ tableItem.graduate.year }}年</td>
-    <td class="tile-table__el">{{ tableItem.schoolTitle }}</td>
+    <td class="tile-table__el">{{ tableItem.schoolPost }}</td>
   </tr>
 
 </table>
