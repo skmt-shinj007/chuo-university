@@ -39,6 +39,12 @@ $breakpoints: (
 	lg: 'screen and (min-width: 1200px)',
 ) !default;
 
+// display(このサイトが対応するデバイス幅)
+$display: (
+  min: 320px,
+  max: 1600px
+)!default;
+
 // font size map
 $font: (
   xs:   10px,

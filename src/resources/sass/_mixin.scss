@@ -73,18 +73,6 @@
   }
 }
 
-// プライマリーボタンのホバーアニメーション
-@mixin button-hover() {
-  border: none;
-
-  .primary-btn__btn {
-    transform: none;
-    border: none;
-    background-color: color(orange);
-    color: color(white);
-  }
-}
-
 // ヘッダーボタンのホバーアニメーション
 @mixin header-button-hover($width: 40px, $height: 40px, $time: .5s) {
   &::before {
@@ -115,11 +103,14 @@
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-@mixin text-before-line($width, $height, $bg-color) {
+@mixin middle-line-text($width, $height, $bg-color) {
+  position: relative;
+  padding-left: interval($width + 1);
+
   &::before {
     display: block;
     content: '';
-    width: $width;
+    width: interval($width);
     height: $height;
     background-color: $bg-color;
     position: absolute;
@@ -246,5 +237,14 @@
       transform: translateX(-42%);
     }
 
+  }
+}
+
+// hover
+@mixin hover {
+  &:hover {
+    @include mq(md) {
+      @content;
+    }
   }
 }

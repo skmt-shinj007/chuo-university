@@ -12,8 +12,8 @@ export default {
     return {
       siteMapMenus: [
         {
-          name: "TOP",
-          routeName: "top",
+          name: "HOME",
+          routeName: "/",
         },
         {
           name: "CLUB",
@@ -73,9 +73,8 @@ export default {
 
   &__item {
     padding: interval(0.5) interval(2);
-    position: relative;
     font-size: font(md);
-    @include text-before-line($width: 8px, $height: 2px, $bg-color: color(white));
+    @include middle-line-text(1, 2px, color(white));
 
     // tablet style
     @include mq(sm) {

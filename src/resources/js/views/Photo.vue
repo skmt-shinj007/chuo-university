@@ -1,7 +1,7 @@
 <template>
 <div class="photo">
   <!-- フォトギャラリー -->
-  <section class="photo__gallery section-container">
+  <section class="photo__gallery">
     <contents-title-component
       :title="messages.SectionTitles.Photo.Main"
       :subTitle="messages.SectionTitles.Photo.Sub"/>
@@ -12,7 +12,7 @@
   </section>
 
   <!-- プロバイダー -->
-  <section class="photo__provider section-container">
+  <section class="photo__provider">
     <contents-title-component
       :title="messages.SectionTitles.Provider.Main"
       :subTitle="messages.SectionTitles.Provider.Sub"/>
@@ -80,12 +80,8 @@ export default {
     margin-bottom: interval(10);
   }
 
-  &__provider {
-    padding-bottom: interval(10);
-  }
-
   &__provider-ticket-group {
-    padding: interval(2);
+    // padding: interval(2);
 
     @include mq(md) {
       @include flex(row wrap, flex-start, center);
@@ -103,7 +99,7 @@ export default {
 
     @include mq(md) {
       margin: 0;
-      width: calc(100% / 2);
+      width: calc(100% / 3);
       padding: interval(1);
       max-width: none;
     }

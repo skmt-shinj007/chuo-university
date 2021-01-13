@@ -1,7 +1,7 @@
 <template>
 <div class="main-visual">
   <slot name="inner">
-  <span class="main-visual__title" v-text="messages.MainVisual.Top"></span>
+  <span class="main-visual__title" v-text="messages.MainVisual.Home"></span>
   </slot>
 </div>
 </template>

@@ -38,7 +38,7 @@ export default {
 .sns-tag {
   margin: interval(.5);
   color: color(white);
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   line-height: 2;
 
   &__icon {

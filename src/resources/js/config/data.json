@@ -605,7 +605,7 @@
     }
   ],
 
-  "Players": [
+  "Users": [
     {
       "name": {
         "ja": "坂本 信治",
@@ -783,6 +783,56 @@
 
     {
       "name": {
+        "ja": "田中 弘",
+        "en": "Tanaka hiroshi"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": "監督",
+        "alumni": "理事"
+      },
+      "category": 2,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "record": "女子日本代表監督 兼 ナガセケンコー監督",
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "高橋 直哉",
+        "en": "Takahashi Naoya"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": "部長",
+        "alumni": null
+      },
+      "category": 2,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "record": null,
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
         "ja": "丸中 大明",
         "en": "Marunaka taimei"
       },
@@ -854,57 +904,96 @@
       "undergraduate": null,
       "record": "第16回世界選手権国別対抗戦 優勝（監督）",
       "message": "メッセージが入ります。"
-    }
-  ],
-
-  "Staff": [
-    {
-      "name": {
-        "ja": "田中 弘",
-        "en": "Tanaka hiroshi"
-      },
-      "img": {
-        "src": "hakumonkai_OB-marunaka.png",
-        "alt": "丸中の写真"
-      },
-      "from": {
-        "place": null,
-        "almaMater": null
-      },
-      "post": {
-        "club": "監督",
-        "alumni": "理事"
-      },
-      "category": 2,
-      "position": null,
-      "grade": null,
-      "undergraduate": null,
-      "record": "2016年ハイスクールジャパンカップ ベスト8",
-      "message": "メッセージが入ります。"
     },
+
     {
       "name": {
-        "ja": "高橋 直哉",
-        "en": "Takahashi Naoya"
+        "ja": "田中 季夫",
+        "en": "tanaka yukio"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
-        "alt": "丸中の写真"
+        "src": null,
+        "alt": null
       },
       "from": {
         "place": null,
         "almaMater": null
       },
       "post": {
-        "club": "部長",
-        "alumni": null
+        "club": null,
+        "alumni": "名誉会長"
       },
-      "category": 2,
+      "graduate": {
+        "age": "昭和",
+        "year": 31
+      },
+      "category": 3,
       "position": null,
       "grade": null,
       "undergraduate": null,
+      "schoolPost": "学員会体育顧問",
       "record": null,
-      "message": "メッセージが入ります。"
+      "message": null
+    },
+
+    {
+      "name": {
+        "ja": "曽根田 正美",
+        "en": "tanaka yukio"
+      },
+      "img": {
+        "src": null,
+        "alt": null
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": null,
+        "alumni": "名誉会長"
+      },
+      "graduate": {
+        "age": "昭和",
+        "year": 31
+      },
+      "category": 3,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "schoolPost": "学員会体育顧問",
+      "record": null,
+      "message": null
+    },
+
+    {
+      "name": {
+        "ja": "村上 博之",
+        "en": "tanaka yukio"
+      },
+      "img": {
+        "src": null,
+        "alt": null
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": null,
+        "alumni": "名誉会長"
+      },
+      "graduate": {
+        "age": "昭和",
+        "year": 31
+      },
+      "category": 3,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "schoolPost": "学員会体育顧問",
+      "record": null,
+      "message": null
     }
   ],
 
@@ -925,51 +1014,6 @@
       }
     }
   ],
-
-  "HakumonkaiOfficer": {
-    "Heading": ["白門会役職", "名前", "卒業年", "学員会役職"],
-    "Data": [
-      {
-        "name": {
-          "ja": "田中 季夫",
-          "en": "tanaka yukio"
-        },
-        "post": "名誉会長",
-        "graduate": {
-          "age": "昭和",
-          "year": 31
-        },
-        "schoolTitle": "学員会体育顧問",
-        "category": 3
-      },
-      {
-        "name": {
-          "ja": "曽根田 正美",
-          "en": "tanaka yukio"
-        },
-        "post": "名誉会長",
-        "graduate": {
-          "age": "昭和",
-          "year": 31
-        },
-        "schoolTitle": "学員会体育顧問",
-        "category": 3
-      },
-      {
-        "name": {
-          "ja": "田中 季夫",
-          "en": "tanaka yukio"
-        },
-        "post": "名誉会長",
-        "graduate": {
-          "age": "昭和",
-          "year": 31
-        },
-        "schoolTitle": "学員会体育顧問",
-        "category": 3
-      }
-    ]
-  },
 
   "ImageApiResponse": [
     {

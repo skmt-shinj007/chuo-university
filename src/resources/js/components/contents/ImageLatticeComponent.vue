@@ -9,7 +9,6 @@
       :filterItem="filter.year"
       :pulldownMenus="years"
       @select="select = $event"/>
-
   </div>
 
   <!-- 写真 -->
@@ -165,7 +164,6 @@ export default {
 
 <style lang="scss" scoped>
 .lattice {
-  padding: 0 interval(2);
 
   &__filter {
     @include flex(column nowrap, center, stretch);
@@ -183,15 +181,9 @@ export default {
   }
 
   &__filter-title {
-    position: relative;
     margin-bottom: interval(2);
-    padding-left: interval(3);
     font-size: font(base);
-    @include text-before-line(interval(2), 1px, color(darkblue));
-
-    @include mq(sm) {
-
-    }
+    @include middle-line-text(2, 1px, color(darkblue));
   }
 
   &__filter-wrap {
@@ -235,10 +227,11 @@ export default {
     border-radius: radius(soft);
     transition: all .3s ease-out;
 
+    @include hover {
+      transform: scale(1.05);
+    }
+
     @include mq(md) {
-      &:hover {
-        transform: scale(1.05);
-      }
       cursor: pointer;
     }
   }

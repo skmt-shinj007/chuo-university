@@ -9,7 +9,7 @@
     </main-visual-component>
   </div>
 
-  <section class="member__players section-container">
+  <section class="member__players">
     <contents-title-component
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
@@ -21,7 +21,7 @@
     </div>
   </section>
 
-  <section class="member__staff section-container">
+  <section class="member__staff">
     <contents-title-component
       :title="messages.SectionTitles.Staff.Main"
       :subTitle="messages.SectionTitles.Staff.Sub"/>
@@ -54,14 +54,26 @@ export default {
   data() {
     return {
       data: Data,
-      players: [],
-      staff: [],
+      users: [],     // 全ユーザー
+      players: [],  // プレイヤー
+      staff: [],    // スタッフ
     }
   },
   beforeMount() {
-    // TODO:DBから情報を引っ張る
-    this.$data.data.Players.forEach(element => this.players.push(element));
-    this.$data.data.Staff.forEach(element => this.staff.push(element));
+    // TODO:以下DBから情報を引っ張る
+
+    // 全ユーザーを取得
+    this.$data.data.Users.forEach(element => this.users.push(element));
+
+    // usersプロパティから選手のみを抽出
+    this.users.forEach(element => {
+      (element.category === this.playerNum) ? this.players.push(element) : null;
+    });
+
+    // usersプロパティからスタッフのみを抽出
+    this.users.forEach(element => {
+      (element.category === this.staffNum) ? this.staff.push(element) : null;
+    });
   },
 }
 </script>
@@ -98,7 +110,7 @@ export default {
   }
 
   &__user-ticket-group {
-    @include flex(column nowrap, center, flex-start);
+    @include flex(column nowrap, center, center);
 
     @include mq(sm) {
       @include flex(row wrap, flex-start, center);
@@ -108,7 +120,7 @@ export default {
   &__user-ticket {
     padding: interval(1);
     margin-bottom: interval(5);
-    width: 90%;
+    width: 100%;
     max-width: interval(48);
 
     @include mq(sm) {
@@ -120,19 +132,11 @@ export default {
       margin-bottom: 0;
       width: calc(100% / 3);
     }
-
-    // 偶数個のスタイル
-    &:nth-child(even) {
-      align-self: flex-end;
-
-      @include mq(sm) {
-        align-self: auto;
-      }
-    }
   }
 
   &__staff {
     padding-bottom: interval(10);
+    margin-bottom: 0;
 
     @include mq(md) {
       padding-bottom: interval(20);

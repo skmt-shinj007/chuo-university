@@ -47,13 +47,9 @@ export default {
     -webkit-line-clamp: 2;
     overflow: hidden;
 
-    // pc style
-    @include mq(md) {
-      &:hover {
-        text-decoration: underline;
-      }
-    };
-
+    @include hover {
+      text-decoration: underline;
+    }
   }
 }
 

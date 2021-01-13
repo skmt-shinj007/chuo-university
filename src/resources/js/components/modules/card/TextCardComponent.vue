@@ -1,10 +1,12 @@
 <template>
-<div class="lead-text card-inner-margin">
-  <contents-title-component class="lead-text__title" :title="titles.Main" :subTitle="titles.Sub" :color="titleColor"/>
-  <div class="lead-text__inner">
+<div class="text-card">
+  <div class="text-card__title">
+    <contents-title-component :title="titles.Main" :subTitle="titles.Sub" :color="titleColor"/>
+  </div>
+  <div class="text-card__text">
     <p class="nl2br" v-text="contentsText"></p>
   </div>
-  <div class="lead-text__viewAll">
+  <div class="text-card__button">
     <primary-button-component :name="buttonName" :btnSize="btnSize"/>
   </div>
 </div>
@@ -12,8 +14,8 @@
 
 <script>
 // components import
-import ContentsTitleComponent from '../modules/ContentsTitleComponent';
-import PrimaryButtonComponent from '../modules/button/PrimaryButtonComponent';
+import ContentsTitleComponent from '../ContentsTitleComponent';
+import PrimaryButtonComponent from '../button/PrimaryButtonComponent';
 
 export default {
   components: {
@@ -37,34 +39,28 @@ export default {
 </script>
 
 <style lang="scss">
-.lead-text {
-  width: 80%;
+.text-card {
+  padding: interval(2);
   background-color: color(white);
   box-shadow: 0px 6px 8px color(shadow);
   margin: 0 auto;
 
-  // tablet style
   @include mq(sm) {
-    width: 70%;
-  };
-
-  // pc style
-  @include mq(md) {
-    width: 50%;
-    background-color: rgba($color: color(white), $alpha: .8);
-  };
-
-  &__title {
-    // コンテンツタイトルの下余白を上書き
-    padding-bottom: interval(3);
+    padding: interval(3);
   }
 
-  &__inner {
+  @include mq(md) {
+    @include flex(column nowrap, center, center);
+    background-color: rgba($color: color(white), $alpha: .8);
+    min-height: interval(60);
+  };
+
+  &__text {
     padding: 0 interval(1);
   }
 
-  &__viewAll{
-    margin-top: interval(2);
+  &__button {
+    margin-top: interval(5);
   }
 }
 </style>

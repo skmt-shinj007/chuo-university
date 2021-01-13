@@ -23,7 +23,7 @@ export default {
   height: 160px;
   border: 3px solid color(white);
   border-radius: radius(normal);
-  margin: interval(5) auto 0 auto;
+  margin: 0 auto;
   @include flex(
     $flow: column nowrap,
     $justify-content: center,
@@ -34,7 +34,7 @@ export default {
   // tablet style
   @include mq(sm) {
     margin: 0;
-  };
+  }
 
   // pc style
   @include mq(md) {
@@ -44,21 +44,17 @@ export default {
     &__subTitle {
       transition: all .5s ease-in-out;
     }
+  }
 
-    &:hover {
-      .policy-card__title,
-      .policy-card__subTitle {
-        opacity: 0;
-      }
-
-      .policy-card__text {
-        opacity: 1;
-      }
+  @include hover {
+    .policy-card__title,
+    .policy-card__subTitle {
+      opacity: 0;
     }
-  };
 
-  &:first-child {
-    margin-top: 0;
+    .policy-card__text {
+      opacity: 1;
+    }
   }
 
   &__subTitle {

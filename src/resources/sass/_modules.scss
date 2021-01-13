@@ -43,6 +43,11 @@
   @return $base-pixel * $pixel;  // 8px × $pixel
 }
 
+// デバイス幅 (displayマップ)
+@function device($key) {
+  @return map-get($display, $key);
+}
+
 /**
  * @keyframe を定義
  */

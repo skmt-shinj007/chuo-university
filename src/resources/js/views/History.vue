@@ -1,7 +1,7 @@
 <template>
 <div class="history">
 
-  <section class="history__time-series section-container">
+  <section class="history__time-series">
     <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
     <div class="history__time-series-container" id="historySection">
@@ -18,24 +18,24 @@
       <div class="history__time-series-wrap">
         <div class="history__time-series-content">
 
-          <div class="history__cards" id="historyTaisho">
+          <div class="history__contents" id="historyTaisho">
             <!-- 大正の歴史 -->
-            <div class="history__card-item">
-              <history-card-component :Contents="data.History.Taisho"/>
+            <div class="history__contents-item">
+              <history-text-component :Contents="data.History.Taisho"/>
             </div>
           </div>
 
-          <div class="history__cards" id="historyShowa">
+          <div class="history__contents" id="historyShowa">
             <!-- 昭和の歴史 -->
-            <div class="history__card-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-              <history-card-component :Contents="showaHistory"/>
+            <div class="history__contents-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+              <history-text-component :Contents="showaHistory"/>
             </div>
           </div>
 
-          <div class="history__cards" id="historyHeisei">
+          <div class="history__contents" id="historyHeisei">
             <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-            <div class="history__card-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-              <history-card-component :Contents="heiseiHistory"/>
+            <div class="history__contents-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+              <history-text-component :Contents="heiseiHistory"/>
             </div>
           </div>
 
@@ -44,7 +44,7 @@
     </div>
   </section>
 
-  <section class="history__primary-titles section-container">
+  <section class="history__primary-titles">
     <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
 
     <div class="history__primary-titles-table">
@@ -53,7 +53,7 @@
   </section>
 
   <div class="background-darkblue">
-    <section class="history__champions section-container">
+    <section class="history__champions">
       <contents-title-component
         :title="messages.SectionTitles.Champions.Main"
         :subTitle="messages.SectionTitles.Champions.Sub"
@@ -74,14 +74,14 @@
 // import components
 import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import HistoryCardComponent from '../components/modules/card/HistoryCardComponent';
+import HistoryTextComponent from '../components/contents/HistoryTextComponent';
 import IconTableComponent from '../components/modules/table/IconTableComponent';
 import ChampionsCardComponent from '../components/modules/card/ChampionsCardComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
-    HistoryCardComponent,
+    HistoryTextComponent,
     IconTableComponent,
     ChampionsCardComponent,
   },
@@ -94,14 +94,9 @@ export default {
       heiseiHistories: [],
       titleAcquisitionData: [],
       champions: [],
-      height: {
-        historySection: 0,
-        scrollTag: 0,
-        historyTaisho: 0,
-        historyShowa: 0,
-        historyHeisei: 0,
-      },
       cardsMarginBottom: 0,
+
+      heights: []
     }
   },
 
@@ -123,21 +118,18 @@ export default {
       'historyHeisei',
     ];
 
-    // 要素のidを複数取得 => global.js > methods
+    // DOM要素を取得 => global.js > methods
     this.ids = this.getElements(idName);
 
-    // .history__cards の margin-bottom を数値で取得
-    this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
-
     /**
-     * スクロールタグのスクロール上限を設定するために、要素の高さを取得
-     * TODO:関数とか使って一括で指定できそう(help)
+     * 要素の高さを取得
+     * リアルタイム取得ではないため、下記動作をするとバグる
+     * SPで画面読み込み > PC幅にしてスクロールタグを表示 > スクロール
      */
-    this.height.historySection = this.ids.historySection.offsetHeight;
-    this.height.scrollTag      = this.ids.historyAgeTag.offsetHeight;
-    this.height.historyTaisho  = this.ids.historyTaisho.offsetHeight;
-    this.height.historyShowa   = this.ids.historyShowa.offsetHeight;
-    this.height.historyHeisei  = this.ids.historyHeisei.offsetHeight;
+    this.heights = this.getElementHeight(idName, 'id');
+
+    // .history-contents の margin-bottom を数値で取得
+    this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
   },
 
   computed: {
@@ -145,8 +137,8 @@ export default {
      * スクロール量に応じて時代の表示を変える
      */
     ageChange() {
-      let taishoHeight = this.height.historyTaisho + this.cardsMarginBottom;  // 大正の沿革コンテンツの高さを代入
-      let showaHeight  = taishoHeight + this.height.historyShowa + this.cardsMarginBottom;  // 昭和の沿革コンテンツの高さを代入
+      let taishoHeight = this.heights.historyTaisho + this.cardsMarginBottom;  // 大正の沿革コンテンツの高さを代入
+      let showaHeight  = taishoHeight + this.heights.historyShowa + this.cardsMarginBottom;  // 昭和の沿革コンテンツの高さを代入
       let scroll = this.scrollAmount;  // スクロール量
       let age = this.ageWard;  // タグのテキスト
 
@@ -160,11 +152,17 @@ export default {
 
       return age;
     },
+
     // スクロールタグのスクロール上限を設定
     scrollLimit() {
-      if (this.scrollAmount > this.height.historySection) {
-        this.scrollAmount = this.height.historySection - this.height.scrollTag;
+      const scroll = this.scrollAmount;  // スクロール量
+      const sectionHeight = this.heights.historySection;  // [沿革]セクションの高さ
+      const tag = this.heights.historyAgeTag;  // スクロールタグの高さ
+
+      if (scroll > sectionHeight) {
+        this.scrollAmount = sectionHeight - tag;
       }
+
       return this.scrollAmount;
     }
   }
@@ -178,11 +176,6 @@ export default {
 
     &-container {
       @include flex;
-    }
-
-    &-content {
-      width: 90%;
-      margin: 0 auto;
     }
   }
 
@@ -225,7 +218,7 @@ export default {
     }
   }
 
-  &__cards {
+  &__contents {
     margin-bottom: interval(10);
 
     &:last-child {
@@ -233,7 +226,7 @@ export default {
     }
   }
 
-  &__card-item {
+  &__contents-item {
     margin-bottom: interval(10);
 
     &:last-child {
@@ -245,37 +238,27 @@ export default {
     margin-bottom: interval(10);
   }
 
-  &__primary-titles-table {
-    margin: 0 interval(1);
-  }
-
   &__champions {
-    padding: interval(10) 0;
+    margin: 0 auto;
   }
 
   &__champions-card-row {
     @include mq(sm) {
       @include flex(row wrap);
-      margin: 0 auto;
-      max-width: interval(80);
-    }
-
-    @include mq(md) {
-      max-width: interval(150);
     }
   }
 
   &__champions-card {
-    margin: 0 interval(2) interval(5) interval(2);
+    margin-bottom: interval(5);
 
     @include mq(sm) {
       margin: 0;
       padding: interval(1);
-      width: 50%;
+      width: calc(100% / 2);
     }
 
     @include mq(md) {
-      width: 33.33%;
+      width: calc(100% / 3);
     }
   }
 

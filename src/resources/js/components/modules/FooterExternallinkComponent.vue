@@ -61,9 +61,8 @@ export default {
 
   &__item {
     padding: interval(0.5) interval(2);
-    position: relative;
     font-size: font(sm);
-    @include text-before-line($width: 8px, $height: 2px, $bg-color: color(white));
+    @include middle-line-text(1, 2px, color(white));
   }
 }
 </style>

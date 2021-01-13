@@ -62,6 +62,17 @@ export default {
   border-radius: radius(soft);
   position: relative;
 
+  @include hover {
+    border: none;
+
+    .primary-btn__btn {
+      transform: none;
+      border: none;
+      background-color: color(orange);
+      color: color(white);
+    }
+  }
+
   // pc style
   @include mq(md) {
     width: btn-size(lg-width);
@@ -78,10 +89,6 @@ export default {
       width: btn-size(sm-width);
       height: btn-size(sm-height);
       font-size: font(xs);
-    }
-
-    &:hover {
-      @include button-hover();  // ネストが深くなるためmixinファイルに変数としてスタイルを設定
     }
   };
 

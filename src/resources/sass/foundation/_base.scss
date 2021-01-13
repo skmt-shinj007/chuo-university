@@ -28,6 +28,16 @@ body {
   };
 }
 
+section {
+  padding: 0 interval(2);
+  max-width: device(max);
+  margin: interval(10) auto;
+
+  @include mq(md) {
+    margin: interval(10) auto;
+  }
+}
+
 h1, h2 {
   @include bangers();
 }
@@ -40,6 +50,18 @@ h2 {
   @include mq(md) {
     font-size: font(heading-lg);
   };
+}
+
+h3 {
+  font-size: font(base);
+
+  @include mq(sm) {
+    font-size: font(md);
+  }
+
+  @include mq(md) {
+    font-size: font(xl);
+  }
 }
 
 h3, h4, h5, h6 {
@@ -84,29 +106,11 @@ th,td {
 }
 
 .background-darkblue {
-  background-color: color(darkblue);
+  @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
   margin-top: 0;
+  padding: interval(10) 0;
 }
 
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: interval(10);
-
-  // pc style
-  @include mq(md) {
-    margin-top: interval(20);
-  };
-}
-
-.card-inner-margin {
-  padding: interval(2);
-
-  // pc style
-  @include mq(md) {
-    padding: interval(3);
-  };
-}
 /**
  * 改行したい文字列に指定。
  * 大抵 <p> のクラスに指定。（他タグでも問題ない）

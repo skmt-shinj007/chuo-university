@@ -14,7 +14,7 @@
     </figure>
   </section>
 
-  <section class="hakumonkai__officer section-container">
+  <section class="hakumonkai__officer">
     <contents-title-component
       :title="messages.SectionTitles.Officer.Main"
       :subTitle="messages.SectionTitles.Officer.Sub"/>
@@ -24,7 +24,7 @@
     </div>
   </section>
 
-  <section class="hakumonkai__active-ob section-container">
+  <section class="hakumonkai__active-ob">
     <contents-title-component
       :title="messages.SectionTitles.ActiveAlumni.Main"
       :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
@@ -33,25 +33,27 @@
 
       <div class="hakumonkai__player-card" v-for="(alumni, n) in activeAlumni" :key="n">
         <player-card-component :player="alumni">
-          <template v-slot:addCardContents="componentProps">
-            <div class="player-card__record">
-              <span class="player-card__record-text">{{ componentProps.player.record }}</span>
-            </div>
-          </template>
+        <template v-slot:addCardContents="componentProps">
+          <div class="player-card__record">
+            <span class="player-card__record-text">{{ componentProps.player.record }}</span>
+          </div>
+        </template>
         </player-card-component>
       </div>
 
     </div>
   </section>
 
-  <section class="hakumonkai__message section-container">
+  <section class="hakumonkai__message">
     <contents-title-component
       :title="messages.SectionTitles.Message.Main"
       :subTitle="messages.SectionTitles.Message.Sub"/>
 
     <div class="hakumonkai__message-container">
       <p class="hakumonkai__message-text nl2br" v-text="messages.Hakumonkai.Message"/>
-      <primary-button-component :name="messages.ButtonName.ToContact"/>
+      <div class="hakumonkai__message-btn">
+        <primary-button-component :name="messages.ButtonName.ToContact"/>
+      </div>
     </div>
   </section>
 </div>
@@ -83,20 +85,17 @@ export default {
     }
   },
   beforeMount() {
-    this.$data.data.HakumonkaiOfficer.Data.forEach(element => this.officer.push(element));
-    this.$data.data.HakumonkaiOfficer.Heading.forEach(element => this.tableHeading.push(element));
+    // 役員テーブルの [見出し] 配列を取得
+    this.$data.messages.Hakumonkai.OfficerTable.Heading.forEach(element => this.tableHeading.push(element));
 
-    /**
-     * ユーザー情報は、データベースから一括で引っ張る想定。-> ユーザーカテゴリーで活躍中のOBを仕分ける。
-     * ユーザーカテゴリー情報
-     * 1. 選手
-     * 2. 現役スタッフ
-     * 3. OB（役職あり）
-     * *4. 現役OB（活躍中）
-     * 5. OB
-     */
-    this.$data.data.Players.forEach(element => {
-      (element.category === 4) ? this.activeAlumni.push(element) : null;
+    // ユーザーカテゴリーで [役職OB] を抽出
+    this.$data.data.Users.forEach(element => {
+      (element.category === this.officerNum) ? this.officer.push(element) : null;
+    });
+
+    // ユーザーカテゴリーで [現役OB] を抽出
+    this.$data.data.Users.forEach(element => {
+      (element.category === this.activeAlumniNum) ? this.activeAlumni.push(element) : null;
     });
   },
 }
@@ -104,11 +103,6 @@ export default {
 
 <style lang="scss" scoped>
 .hakumonkai {
-  padding: interval(15) 0;
-
-  @include mq(md) {
-    padding: interval(10) 0;
-  }
 
   &__page-header {
     padding: 0 interval(2);
@@ -119,11 +113,11 @@ export default {
 
     @include mq(sm) {
       margin: 0 auto interval(5) auto;
-      max-width: interval(75);
+      max-width: interval(80);
     }
 
     @include mq(md) {
-      max-width: interval(90);
+      max-width: interval(100);
     }
   }
 
@@ -133,12 +127,12 @@ export default {
 
   &-lead-img-wrap {
     width: 100%;
-    max-width: interval(75);
+    max-width: interval(80);
     margin: 0 auto;
     @include trimming(aspect(wide));
 
     @include mq(md) {
-      max-width: interval(90);
+      max-width: interval(100);
     }
   }
 
@@ -146,22 +140,16 @@ export default {
     border-radius: radius(soft);
   }
 
-  &__officer-table {
-    // サイトの左右マージンが決まり次第削除
-    padding: 0 interval(2);
-  }
-
   &__players {
     @include flex(column wrap, center, center);
 
     @include mq(sm) {
       @include flex(row nowrap, flex-start, stretch);
-      padding: 0 interval(2);
     }
   }
 
   &__player-card {
-    width: 60%;
+    width: 100%;
     margin-bottom: interval(8);
     box-shadow: 0 1px 10px 2px color(shadow);
     background-color: color(lightgray);
@@ -177,19 +165,19 @@ export default {
     }
   }
 
-  &__message-container {
-    padding: 0 interval(2);
-  }
-
   &__message-text {
     text-align: center;
     font-weight: bold;
     max-width: interval(58);
-    margin: 0 auto interval(5) auto;
+    margin: 0 auto;
 
     @include mq(md) {
       max-width: interval(68);
     }
+  }
+
+  &__message-btn {
+    margin-top: interval(5);
   }
 }
 
