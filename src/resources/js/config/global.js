@@ -94,5 +94,31 @@ export default {
 
       return classes;
     },
+
+    /**
+     * DOM要素の高さを一括取得できるメソッド
+     * @param data : 属性の名前が格納された配列
+     * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.heights['class名']
+     */
+    getElementHeight(data, method = 'id') {
+      let heights = [];
+      let el = '';
+
+      // class指定の場合こちらが通る
+      if (method === 'class') {
+        data.forEach(element => {
+          el = document.getElementsByClassName(element).offsetHeight;
+          (el != null) ? heights[element] = el : null;
+        })
+        return heights;
+      }
+
+      // idの場合こちらが通る（デフォルト）
+      data.forEach(element => {
+        el = document.getElementById(element).offsetHeight;
+        (el != null) ? heights[element] = el : null;
+      })
+      return heights;
+    }
   },
 }
