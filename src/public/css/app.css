@@ -9370,9 +9370,6 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.lattice[data-v-d066a2d0] {
-  padding: 0 1rem;
-}
 .lattice__filter[data-v-d066a2d0] {
   display: flex;
   flex-flow: column nowrap;
@@ -9715,7 +9712,7 @@ import用ファイル
 .sns-tag {
   margin: 0.25rem;
   color: #ffffff;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   line-height: 2;
 }
 .sns-tag__icon {

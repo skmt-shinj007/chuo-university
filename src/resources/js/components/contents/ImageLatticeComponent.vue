@@ -164,7 +164,6 @@ export default {
 
 <style lang="scss" scoped>
 .lattice {
-  padding: 0 interval(2);
 
   &__filter {
     @include flex(column nowrap, center, stretch);
@@ -185,10 +184,6 @@ export default {
     margin-bottom: interval(2);
     font-size: font(base);
     @include middle-line-text(2, 1px, color(darkblue));
-
-    @include mq(sm) {
-
-    }
   }
 
   &__filter-wrap {
