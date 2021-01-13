@@ -86,17 +86,9 @@ export default {
     this.$data.data.HakumonkaiOfficer.Data.forEach(element => this.officer.push(element));
     this.$data.data.HakumonkaiOfficer.Heading.forEach(element => this.tableHeading.push(element));
 
-    /**
-     * ユーザー情報は、データベースから一括で引っ張る想定。-> ユーザーカテゴリーで活躍中のOBを仕分ける。
-     * ユーザーカテゴリー情報
-     * 1. 選手
-     * 2. 現役スタッフ
-     * 3. OB（役職あり）
-     * *4. 現役OB（活躍中）
-     * 5. OB
-     */
-    this.$data.data.Players.forEach(element => {
-      (element.category === 4) ? this.activeAlumni.push(element) : null;
+    // ユーザーカテゴリーで [現役OB] を抽出
+    this.$data.data.Users.forEach(element => {
+      (element.category === this.activeAlumniNum) ? this.activeAlumni.push(element) : null;
     });
   },
 }

@@ -168,7 +168,10 @@ export default {
     this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
 
     // TODO:DBから情報を引っ張る
-    this.$data.data.Players.forEach(element => this.players.push(element));
+    // ユーザーカテゴリーで [選手] を抽出
+    this.$data.data.Users.forEach(element => {
+      (element.category === this.playerNum) ? this.players.push(element) : null;
+    });
     memberNumberData.forEach(element => this.memberNumber.push(element));
   },
 }
