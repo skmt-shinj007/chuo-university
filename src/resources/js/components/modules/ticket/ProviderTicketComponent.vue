@@ -88,6 +88,7 @@ export default {
 
   &-thumbnail-border {
     @include border-gradient();
+    margin-right: interval(.5);
   }
 
   &-thumbnail-wrap {

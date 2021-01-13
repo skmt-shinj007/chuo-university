@@ -10031,6 +10031,7 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  margin-right: 0.25rem;
 }
 .provider-ticket-thumbnail-border::before {
   content: "";
@@ -10322,12 +10323,6 @@ import用ファイル
 .photo__gallery-images[data-v-46e3fba3] {
   margin-bottom: 5rem;
 }
-.photo__provider[data-v-46e3fba3] {
-  padding-bottom: 5rem;
-}
-.photo__provider-ticket-group[data-v-46e3fba3] {
-  padding: 1rem;
-}
 @media screen and (min-width: 992px) {
 .photo__provider-ticket-group[data-v-46e3fba3] {
     display: flex;
@@ -10347,7 +10342,7 @@ import用ファイル
 @media screen and (min-width: 992px) {
 .photo__provider-ticket[data-v-46e3fba3] {
     margin: 0;
-    width: calc(100% / 2);
+    width: calc(100% / 3);
     padding: 0.5rem;
     max-width: none;
 }
