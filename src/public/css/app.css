@@ -7326,12 +7326,30 @@ import用ファイル
  */
 .record-tag[data-v-b79d4b88] {
   cursor: pointer;
+  position: relative;
+  color: #ffffff;
+  letter-spacing: 1.8px;
+  line-height: 1.9;
 }
-.record-tag__row[data-v-b79d4b88] {
+@media screen and (min-width: 992px) {
+.record-tag:hover > .record-tag__color[data-v-b79d4b88], .record-tag:hover > .record-tag__open[data-v-b79d4b88] {
+    transform: rotateX(180deg);
+}
+.record-tag:hover > .record-tag__open[data-v-b79d4b88] {
+    opacity: 1;
+    transform: rotateX(0);
+}
+}
+.record-tag__color[data-v-b79d4b88], .record-tag__open[data-v-b79d4b88] {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  background-color: #091e2f;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 3px 20px 2px #b3b3b3;
 }
 .record-tag__icon[data-v-b79d4b88] {
   margin-right: 0.25rem;
@@ -7354,6 +7372,36 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .record-tag__content[data-v-b79d4b88] {
+    font-size: 14px;
+}
+}
+@media screen and (min-width: 992px) {
+.record-tag__content[data-v-b79d4b88] {
+    font-size: 16px;
+}
+}
+.record-tag__open[data-v-b79d4b88] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotateX(-180deg);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.record-tag__open-text[data-v-b79d4b88] {
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #e56c2c;
+  background: linear-gradient(to right, #e56c2c 0%, #FDC830 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 560px) {
+.record-tag__open-text[data-v-b79d4b88] {
     font-size: 14px;
 }
 }@charset "UTF-8";
@@ -7390,7 +7438,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-4efdffd6 {
+@-webkit-keyframes iconSlide-data-v-579f0756 {
 0% {
     transform: translateX(0);
 }
@@ -7425,7 +7473,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-4efdffd6 {
+@keyframes iconSlide-data-v-579f0756 {
 0% {
     transform: translateX(0);
 }
@@ -7460,7 +7508,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-4efdffd6 {
+@-webkit-keyframes fadeoutDown-data-v-579f0756 {
 0% {
     transform: translateY(0);
 }
@@ -7505,7 +7553,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-4efdffd6 {
+@keyframes fadeoutDown-data-v-579f0756 {
 0% {
     transform: translateY(0);
 }
@@ -7550,7 +7598,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes rotation-data-v-4efdffd6 {
+@-webkit-keyframes rotation-data-v-579f0756 {
 0% {
     transform: rotate(0);
 }
@@ -7567,7 +7615,7 @@ import用ファイル
     transform: rotate(180deg);
 }
 }
-@keyframes rotation-data-v-4efdffd6 {
+@keyframes rotation-data-v-579f0756 {
 0% {
     transform: rotate(0);
 }
@@ -7588,40 +7636,45 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.history-card[data-v-4efdffd6] {
+.history-text[data-v-579f0756] {
   border: 2px solid #091e2f;
   border-radius: 8px;
   position: relative;
 }
 @media screen and (min-width: 560px) {
-.history-card[data-v-4efdffd6] {
+.history-text[data-v-579f0756] {
     padding: 0.5rem;
 }
 }
-.history-card__tag-modal[data-v-4efdffd6] {
+.history-text__tag-modal[data-v-579f0756] {
   position: absolute;
-  top: -1.5rem;
+  top: -1.25rem;
   right: 5%;
 }
-.history-card__tag-date[data-v-4efdffd6] {
+@media screen and (min-width: 992px) {
+.history-text__tag-modal[data-v-579f0756] {
+    top: -1.5rem;
+}
+}
+.history-text__tag-date[data-v-579f0756] {
   margin: 0.5rem 1rem;
 }
 @media screen and (min-width: 560px) {
-.history-card__tag-date[data-v-4efdffd6] {
+.history-text__tag-date[data-v-579f0756] {
     width: 11rem;
 }
 }
-.history-card__title[data-v-4efdffd6] {
+.history-text__title[data-v-579f0756] {
   text-align: center;
   margin-top: 1.5rem;
 }
-.history-card__title-main[data-v-4efdffd6] {
+.history-text__title-main[data-v-579f0756] {
   font-size: 18px;
 }
-.history-card__text-container[data-v-4efdffd6] {
+.history-text__text-container[data-v-579f0756] {
   margin: 1rem;
 }
-.history-card__text[data-v-4efdffd6] {
+.history-text__text[data-v-579f0756] {
   letter-spacing: 1.8px;
   font-weight: bold;
 }@charset "UTF-8";
@@ -8469,16 +8522,16 @@ import用ファイル
   top: 0;
   transition: all 1s ease-out;
 }
-.history__cards[data-v-301d0ec5] {
+.history__contents[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__cards[data-v-301d0ec5]:last-child {
+.history__contents[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
-.history__card-item[data-v-301d0ec5] {
+.history__contents-item[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__card-item[data-v-301d0ec5]:last-child {
+.history__contents-item[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
 .history__primary-titles[data-v-301d0ec5] {
