@@ -179,11 +179,6 @@ export default {
     &-container {
       @include flex;
     }
-
-    &-content {
-      width: 90%;
-      margin: 0 auto;
-    }
   }
 
   &__age {
@@ -245,37 +240,27 @@ export default {
     margin-bottom: interval(10);
   }
 
-  &__primary-titles-table {
-    margin: 0 interval(1);
-  }
-
   &__champions {
-    padding: interval(10) 0;
+    margin: 0 auto;
   }
 
   &__champions-card-row {
     @include mq(sm) {
       @include flex(row wrap);
-      margin: 0 auto;
-      max-width: interval(80);
-    }
-
-    @include mq(md) {
-      max-width: interval(150);
     }
   }
 
   &__champions-card {
-    margin: 0 interval(2) interval(5) interval(2);
+    margin-bottom: interval(5);
 
     @include mq(sm) {
       margin: 0;
       padding: interval(1);
-      width: 50%;
+      width: calc(100% / 2);
     }
 
     @include mq(md) {
-      width: 33.33%;
+      width: calc(100% / 3);
     }
   }
 

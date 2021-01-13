@@ -25,7 +25,7 @@
   </div>
 
   <div class="champions-card__tournament-info">
-    <h3 class="champions-card__tournament-info-title">{{ messages.ContentsTitles.TournamentInformation }}</h3>
+    <span class="champions-card__tournament-info-title">{{ messages.ContentsTitles.TournamentInformation }}</span>
     <table-component
       :tableItems="cardElement.TournamentInformation"
       :valueTransparent="true"
@@ -106,10 +106,13 @@ export default {
     fill: color(darkblue);
   }
 
-  &__tournament-info {
-    &-title {
-      margin-bottom: interval(1);
-      @include middle-line-text(2, 1px, color(darkblue));
+  &__tournament-info-title {
+    display: block;
+    margin-bottom: interval(1);
+    @include middle-line-text(2, 1px, color(darkblue));
+
+    @include mq(sm) {
+      font-size: font(base);
     }
   }
 }

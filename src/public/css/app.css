@@ -8174,6 +8174,7 @@ import用ファイル
   fill: #091e2f;
 }
 .champions-card__tournament-info-title[data-v-3ea95d82] {
+  display: block;
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1.5rem;
@@ -8188,6 +8189,11 @@ import用ファイル
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+}
+@media screen and (min-width: 560px) {
+.champions-card__tournament-info-title[data-v-3ea95d82] {
+    font-size: 14px;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8426,10 +8432,6 @@ import用ファイル
   justify-content: flex-start;
   align-items: stretch;
 }
-.history__time-series-content[data-v-301d0ec5] {
-  width: 90%;
-  margin: 0 auto;
-}
 .history__age[data-v-301d0ec5] {
   display: none;
 }
@@ -8482,11 +8484,8 @@ import用ファイル
 .history__primary-titles[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__primary-titles-table[data-v-301d0ec5] {
-  margin: 0 0.5rem;
-}
 .history__champions[data-v-301d0ec5] {
-  padding: 5rem 0;
+  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .history__champions-card-row[data-v-301d0ec5] {
@@ -8494,28 +8493,21 @@ import用ファイル
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: stretch;
-    margin: 0 auto;
-    max-width: 40rem;
-}
-}
-@media screen and (min-width: 992px) {
-.history__champions-card-row[data-v-301d0ec5] {
-    max-width: 75rem;
 }
 }
 .history__champions-card[data-v-301d0ec5] {
-  margin: 0 1rem 2.5rem 1rem;
+  margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
 .history__champions-card[data-v-301d0ec5] {
     margin: 0;
     padding: 0.5rem;
-    width: 50%;
+    width: calc(100% / 2);
 }
 }
 @media screen and (min-width: 992px) {
 .history__champions-card[data-v-301d0ec5] {
-    width: 33.33%;
+    width: calc(100% / 3);
 }
 }@charset "UTF-8";
 /*
