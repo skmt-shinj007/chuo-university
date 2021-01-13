@@ -51,8 +51,12 @@ export default {
 
   &__tag-modal {
     position: absolute;
-    top: - interval(3);
+    top: - interval(2.5);
     right: 5%;
+
+    @include mq(md) {
+      top: - interval(3);
+    }
   }
 
   &__tag-date {

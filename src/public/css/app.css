@@ -7648,8 +7648,13 @@ import用ファイル
 }
 .history-text__tag-modal[data-v-579f0756] {
   position: absolute;
-  top: -1.5rem;
+  top: -1.25rem;
   right: 5%;
+}
+@media screen and (min-width: 992px) {
+.history-text__tag-modal[data-v-579f0756] {
+    top: -1.5rem;
+}
 }
 .history-text__tag-date[data-v-579f0756] {
   margin: 0.5rem 1rem;
