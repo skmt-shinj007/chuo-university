@@ -232,10 +232,11 @@ export default {
     border-radius: radius(soft);
     transition: all .3s ease-out;
 
+    @include hover {
+      transform: scale(1.05);
+    }
+
     @include mq(md) {
-      &:hover {
-        transform: scale(1.05);
-      }
       cursor: pointer;
     }
   }

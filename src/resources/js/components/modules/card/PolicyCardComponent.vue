@@ -34,7 +34,7 @@ export default {
   // tablet style
   @include mq(sm) {
     margin: 0;
-  };
+  }
 
   // pc style
   @include mq(md) {
@@ -44,18 +44,18 @@ export default {
     &__subTitle {
       transition: all .5s ease-in-out;
     }
+  }
 
-    &:hover {
-      .policy-card__title,
-      .policy-card__subTitle {
-        opacity: 0;
-      }
-
-      .policy-card__text {
-        opacity: 1;
-      }
+  @include hover {
+    .policy-card__title,
+    .policy-card__subTitle {
+      opacity: 0;
     }
-  };
+
+    .policy-card__text {
+      opacity: 1;
+    }
+  }
 
   &__subTitle {
     font-size: font(xs);

@@ -73,18 +73,6 @@
   }
 }
 
-// プライマリーボタンのホバーアニメーション
-@mixin button-hover() {
-  border: none;
-
-  .primary-btn__btn {
-    transform: none;
-    border: none;
-    background-color: color(orange);
-    color: color(white);
-  }
-}
-
 // ヘッダーボタンのホバーアニメーション
 @mixin header-button-hover($width: 40px, $height: 40px, $time: .5s) {
   &::before {

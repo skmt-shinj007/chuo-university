@@ -77,14 +77,14 @@ export default {
     cursor: pointer;
     box-shadow: 0 1px 3px 1px color(darkShadow);
     transition: all .3s ease-out;
+  }
 
-    &:hover {
-      box-shadow: 0 3px 5px 3px color(darkShadow);
-      transform: translateY(-2px);
+  @include hover {
+    box-shadow: 0 3px 5px 3px color(darkShadow);
+    transform: translateY(-2px);
 
-      .user-ticket-icon {
-        animation: iconSlide 1.5s infinite;
-      }
+    .user-ticket-icon {
+      animation: iconSlide 1.5s infinite;
     }
   }
 

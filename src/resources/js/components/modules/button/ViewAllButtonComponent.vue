@@ -58,6 +58,15 @@ export default {
     @include flex(row nowrap, center, center);
     @include gradient(color(deepYellow), color(orange), horizontal);
 
+    @include hover {
+      box-shadow: 0 32px 30px -26px darken($color: color(orange), $amount: 3%);
+      transform: translateY(-4px);
+
+      .view-all__btn-label {
+        letter-spacing: 3px;
+      }
+    }
+
     @include mq(sm) {
       max-width: interval(40);
       padding: interval(3) interval(6);
@@ -65,15 +74,6 @@ export default {
 
     @include mq(md) {
       box-shadow: 0 32px 30px -30px darken($color: color(orange), $amount: 3%);
-
-      &:hover {
-        box-shadow: 0 32px 30px -26px darken($color: color(orange), $amount: 3%);
-        transform: translateY(-4px);
-
-        .view-all__btn-label {
-          letter-spacing: 3px;
-        }
-      }
     }
   }
 
