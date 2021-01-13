@@ -6989,14 +6989,6 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.hakumonkai[data-v-42f1fe89] {
-  padding: 7.5rem 0;
-}
-@media screen and (min-width: 992px) {
-.hakumonkai[data-v-42f1fe89] {
-    padding: 5rem 0;
-}
-}
 .hakumonkai__page-header[data-v-42f1fe89] {
   padding: 0 1rem;
 }
@@ -7006,12 +6998,12 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .hakumonkai-lead-text-wrap[data-v-42f1fe89] {
     margin: 0 auto 2.5rem auto;
-    max-width: 37.5rem;
+    max-width: 40rem;
 }
 }
 @media screen and (min-width: 992px) {
 .hakumonkai-lead-text-wrap[data-v-42f1fe89] {
-    max-width: 45rem;
+    max-width: 50rem;
 }
 }
 .hakumonkai-lead-text[data-v-42f1fe89] {
@@ -7019,7 +7011,7 @@ import用ファイル
 }
 .hakumonkai-lead-img-wrap[data-v-42f1fe89] {
   width: 100%;
-  max-width: 37.5rem;
+  max-width: 40rem;
   margin: 0 auto;
   position: relative;
 }
@@ -7039,14 +7031,11 @@ import用ファイル
 }
 @media screen and (min-width: 992px) {
 .hakumonkai-lead-img-wrap[data-v-42f1fe89] {
-    max-width: 45rem;
+    max-width: 50rem;
 }
 }
 .hakumonkai-lead-img[data-v-42f1fe89] {
   border-radius: 2px;
-}
-.hakumonkai__officer-table[data-v-42f1fe89] {
-  padding: 0 1rem;
 }
 .hakumonkai__players[data-v-42f1fe89] {
   display: flex;
@@ -7060,11 +7049,10 @@ import用ファイル
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: stretch;
-    padding: 0 1rem;
 }
 }
 .hakumonkai__player-card[data-v-42f1fe89] {
-  width: 60%;
+  width: 100%;
   margin-bottom: 4rem;
   box-shadow: 0 1px 10px 2px #e6e6e6;
   background-color: #f2f2f2;
@@ -7079,19 +7067,19 @@ import用ファイル
 .hakumonkai__player-card[data-v-42f1fe89]:last-child {
   margin: 0;
 }
-.hakumonkai__message-container[data-v-42f1fe89] {
-  padding: 0 1rem;
-}
 .hakumonkai__message-text[data-v-42f1fe89] {
   text-align: center;
   font-weight: bold;
   max-width: 29rem;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 auto;
 }
 @media screen and (min-width: 992px) {
 .hakumonkai__message-text[data-v-42f1fe89] {
     max-width: 34rem;
 }
+}
+.hakumonkai__message-btn[data-v-42f1fe89] {
+  margin-top: 2.5rem;
 }
 .player-card__record[data-v-42f1fe89] {
   margin-left: 0.25rem;
