@@ -251,3 +251,12 @@
 
   }
 }
+
+// hover
+@mixin hover {
+  &:hover {
+    @include mq(md) {
+      @content;
+    }
+  }
+}

@@ -18,24 +18,24 @@
       <div class="history__time-series-wrap">
         <div class="history__time-series-content">
 
-          <div class="history__cards" id="historyTaisho">
+          <div class="history__contents" id="historyTaisho">
             <!-- 大正の歴史 -->
-            <div class="history__card-item">
-              <history-card-component :Contents="data.History.Taisho"/>
+            <div class="history__contents-item">
+              <history-text-component :Contents="data.History.Taisho"/>
             </div>
           </div>
 
-          <div class="history__cards" id="historyShowa">
+          <div class="history__contents" id="historyShowa">
             <!-- 昭和の歴史 -->
-            <div class="history__card-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-              <history-card-component :Contents="showaHistory"/>
+            <div class="history__contents-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+              <history-text-component :Contents="showaHistory"/>
             </div>
           </div>
 
-          <div class="history__cards" id="historyHeisei">
+          <div class="history__contents" id="historyHeisei">
             <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-            <div class="history__card-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-              <history-card-component :Contents="heiseiHistory"/>
+            <div class="history__contents-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+              <history-text-component :Contents="heiseiHistory"/>
             </div>
           </div>
 
@@ -74,14 +74,14 @@
 // import components
 import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import HistoryCardComponent from '../components/modules/card/HistoryCardComponent';
+import HistoryTextComponent from '../components/contents/HistoryTextComponent';
 import IconTableComponent from '../components/modules/table/IconTableComponent';
 import ChampionsCardComponent from '../components/modules/card/ChampionsCardComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
-    HistoryCardComponent,
+    HistoryTextComponent,
     IconTableComponent,
     ChampionsCardComponent,
   },
@@ -128,7 +128,7 @@ export default {
      */
     this.heights = this.getElementHeight(idName, 'id');
 
-    // .history__cards の margin-bottom を数値で取得
+    // .history-contents の margin-bottom を数値で取得
     this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
   },
 
@@ -218,7 +218,7 @@ export default {
     }
   }
 
-  &__cards {
+  &__contents {
     margin-bottom: interval(10);
 
     &:last-child {
@@ -226,7 +226,7 @@ export default {
     }
   }
 
-  &__card-item {
+  &__contents-item {
     margin-bottom: interval(10);
 
     &:last-child {

@@ -1,20 +1,18 @@
 <template>
 <div class="record-tag">
-  <tag-component class="record-tag__row" size="lg">
-    <svg-vue icon="tennis-racket" class="record-tag__icon"></svg-vue>
+  <div class="record-tag__color">
+    <svg-vue icon="tennis-racket" class="record-tag__icon"/>
     <span class="record-tag__content">{{ tagTitle }}</span>
-  </tag-component>
+  </div>
+
+  <div class="record-tag__open">
+    <span class="record-tag__open-text">WATCH</span>
+  </div>
 </div>
 </template>
 
 <script>
-// component import
-import TagComponent from './TagComponent';
-
 export default {
-  components: {
-    TagComponent
-  },
   props: {
     tagTitle: {
       type: String,
@@ -27,9 +25,29 @@ export default {
 <style lang="scss" scoped>
 .record-tag {
   cursor: pointer;
+  position: relative;
+  color: color(white);
+  letter-spacing: 1.8px;
+  line-height: 1.9;
 
-  &__row {
+  @include hover {
+    > .record-tag__color {
+      transform: rotateX(180deg);
+    }
+
+    > .record-tag__open {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
+
+  &__color {
+    padding: interval(.5) interval(1.5);
+    border-radius: radius(normal);
+    background-color: color(darkblue);
     @include flex(row nowrap, center, center);
+    transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+    box-shadow: 0 3px 20px 2px color(darkShadow);
   }
 
   &__icon {
@@ -53,8 +71,36 @@ export default {
     @include mq(sm) {
       font-size: font(base);
     }
+
+    @include mq(md) {
+      font-size: font(md);
+    }
   }
 
+  &__open {
+    @extend .record-tag__color;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotateX(-180deg);
+    opacity: 0;
+    transition: all .5s cubic-bezier(.175, .885, .32, 1.275);
+  }
+
+  &__open-text {
+    letter-spacing: 1px;
+    font-size: font(sm);
+    font-weight: bold;
+    @include gradient(color(orange),color(deepYellow), horizontal);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include mq(sm) {
+      font-size: font(base);
+    }
+  }
 }
 
 </style>
