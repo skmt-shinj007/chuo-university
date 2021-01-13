@@ -6459,7 +6459,7 @@ import用ファイル
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 @media screen and (min-width: 560px) {
 .member__user-ticket-group[data-v-668c6779] {
@@ -6472,7 +6472,7 @@ import用ファイル
 .member__user-ticket[data-v-668c6779] {
   padding: 0.5rem;
   margin-bottom: 2.5rem;
-  width: 90%;
+  width: 100%;
   max-width: 24rem;
 }
 @media screen and (min-width: 560px) {
@@ -6487,16 +6487,9 @@ import用ファイル
     width: calc(100% / 3);
 }
 }
-.member__user-ticket[data-v-668c6779]:nth-child(even) {
-  align-self: flex-end;
-}
-@media screen and (min-width: 560px) {
-.member__user-ticket[data-v-668c6779]:nth-child(even) {
-    align-self: auto;
-}
-}
 .member__staff[data-v-668c6779] {
   padding-bottom: 5rem;
+  margin-bottom: 0;
 }
 @media screen and (min-width: 992px) {
 .member__staff[data-v-668c6779] {
