@@ -31,10 +31,9 @@ export default {
     margin-bottom: interval(1);
     word-wrap: break-word;
 
-    // pc style
     @include mq(md) {
       font-size: font(base);
-    };
+    }
 
     &:last-child {
       margin-bottom: 0;

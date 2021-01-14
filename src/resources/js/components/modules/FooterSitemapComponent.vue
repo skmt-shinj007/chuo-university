@@ -51,20 +51,18 @@ export default {
   max-width: 300px;
   margin: 0 auto;
 
-  // tablet style
   @include mq(sm) {
     width: 100%;
     max-width: none;
-  };
+  }
 
   &__list {
     margin-bottom: interval(1);
     line-height: 2;
 
-    // tablet style
     @include mq(sm) {
       line-height: 1.5;
-    };
+    }
 
     &:last-child {
       margin: 0;
@@ -76,10 +74,9 @@ export default {
     font-size: font(md);
     @include middle-line-text(1, 2px, color(white));
 
-    // tablet style
     @include mq(sm) {
       font-size: font(sm);
-    };
+    }
   }
 }
 </style>

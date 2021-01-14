@@ -24,19 +24,13 @@ export default {
   border: 3px solid color(white);
   border-radius: radius(normal);
   margin: 0 auto;
-  @include flex(
-    $flow: column nowrap,
-    $justify-content: center,
-    $align-items: center,
-  );
+  @include flex(column nowrap, center, center);
   @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
 
-  // tablet style
   @include mq(sm) {
     margin: 0;
   }
 
-  // pc style
   @include mq(md) {
     position: relative;
 
@@ -82,7 +76,7 @@ export default {
       font-size: font(sm);
       font-weight: bold;
       transition: all .5s ease-in-out;
-    };
+    }
   }
 }
 </style>

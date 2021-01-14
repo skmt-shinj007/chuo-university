@@ -39,20 +39,18 @@ export default {
   max-width: 300px;
   margin: 0 auto;
 
-  // tablet style
   @include mq(sm) {
     width: 100%;
     max-width: none;
-  };
+  }
 
   &__list {
     margin-bottom: interval(1);
     line-height: 2;
 
-    // tablet style
     @include mq(sm) {
       margin-bottom: interval(0.5);
-    };
+    }
 
     &:last-child {
       margin: 0;

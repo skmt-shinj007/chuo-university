@@ -53,7 +53,7 @@ export default {
     @include flex(column nowrap, center, center);
     background-color: rgba($color: color(white), $alpha: .8);
     min-height: interval(60);
-  };
+  }
 
   &__text {
     padding: 0 interval(1);

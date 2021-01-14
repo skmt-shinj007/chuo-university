@@ -195,7 +195,7 @@ export default {
     @include flex(column nowrap, center, center);
 
     @include mq(sm) {
-      @include flex(row wrap, flex-start, stretch);
+      @include flex(row wrap);
     }
   }
 

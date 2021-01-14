@@ -57,7 +57,7 @@ h2 {
   // pc style
   @include mq(md) {
     font-size: font(heading-lg);
-  };
+  }
 }
 
 h3 {
@@ -85,7 +85,7 @@ p {
   @include mq(md) {
     font-size: font(base);
     line-height: 2;
-  };
+  }
 }
 
 span {
@@ -100,7 +100,7 @@ tr {
   // pc style
   @include mq(md) {
     font-size: font(base);
-  };
+  }
 }
 
 th,td {
@@ -110,7 +110,7 @@ th,td {
   // tablet style
   @include mq(sm) {
     line-height: 2;
-  };
+  }
 }
 
 .background-darkblue {

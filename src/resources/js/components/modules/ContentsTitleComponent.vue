@@ -52,10 +52,9 @@ export default {
     font-size: font(xs);
     font-weight: normal;
 
-    // pc style
     @include mq(md) {
       font-size: font(sm);
-    };
+    }
   }
 
   &__primary {

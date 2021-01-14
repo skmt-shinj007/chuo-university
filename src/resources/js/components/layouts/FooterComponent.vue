@@ -55,8 +55,8 @@ export default {
 
     // tablet style
     @include mq(sm) {
-      @include flex($justify-content: center);
-    };
+      @include flex(row nowrap, center);
+    }
   }
 
   &__titles {
@@ -67,41 +67,37 @@ export default {
   &__sitemap {
     padding-top: interval(10);
 
-    // tablet style
     @include mq(sm) {
       padding-top: 0;
       margin-top: interval(5);
       padding: 0 interval(2);
-    };
+    }
   }
 
   &__external-link {
     margin-top: interval(5);
 
-    // tablet style
     @include mq(sm) {
       padding: 0 interval(2);
-    };
+    }
   }
 
   &__information {
     margin-top: interval(5);
 
-    // tablet style
     @include mq(sm) {
       padding: 0 interval(2);
-    };
+    }
 
     &-list {
       width: 50%;
       max-width: 300px;
       margin: 0 auto;
 
-      // tablet style
       @include mq(sm) {
         width: 100%;
         max-width: none;
-      };
+      }
     }
 
     &-list-item {

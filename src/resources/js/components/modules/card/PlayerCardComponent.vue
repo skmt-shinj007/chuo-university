@@ -66,7 +66,7 @@ export default {
     }
 
     &-tags {
-      @include flex($flow: row wrap);
+      @include flex(row wrap);
       align-content: space-around;
       padding: interval(1) 0;
     }

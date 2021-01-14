@@ -84,10 +84,9 @@ export default {
     transform: translateX(-50%);
     font-size: font(sm);
 
-    // tab style
     @include mq(sm) {
       line-height: 2;
-    };
+    }
   }
 
   &__secondary-caption {

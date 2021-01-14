@@ -27,11 +27,10 @@ export default {
     font-size: font(mv);
     text-shadow: 3px 3px 0px color(orange);
 
-    // pc style
     @include mq(md) {
       line-height: 1.2;
       font-size: font(mv-lg);
-    };
+    }
   }
 }
 </style>

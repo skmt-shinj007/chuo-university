@@ -319,12 +319,11 @@ const imageApiResponse = [
 
     &-cards {
 
-      // tablet style
       @include mq(sm) {
         @include flex(row nowrap, space-between, center);
         max-width: interval(80);
         margin: 0 auto;
-      };
+      }
 
       @include mq(md) {
         max-width: interval(100);
@@ -356,7 +355,7 @@ const imageApiResponse = [
       @include mq(sm) {
         max-width: interval(80);
         margin: 0 auto;
-      };
+      }
 
     }
 
@@ -393,11 +392,11 @@ const imageApiResponse = [
         text-align: center;
         max-width: interval(80);
         margin: 0 auto;
-      };
+      }
 
       @include mq(md) {
         max-width: interval(100);
-      };
+      }
     }
 
     &-ticket-group {
@@ -412,7 +411,7 @@ const imageApiResponse = [
         margin-top: interval(10);
         max-width: none;
         @include flex(row wrap);
-      };
+      }
     }
 
     &-ticket {
@@ -421,7 +420,7 @@ const imageApiResponse = [
 
       @include mq(md) {
         width: calc(100% / 2);
-      };
+      }
 
       // アイテムが奇数個の場合、アイテム間に余白をつける
       &:nth-child(odd) {
