@@ -5640,7 +5640,7 @@ import用ファイル
   height: 100vh;
 }
 .club__policy[data-v-357d3955] {
-  margin: 0;
+  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .club__policy-cards[data-v-357d3955] {
@@ -5778,7 +5778,7 @@ import用ファイル
   margin-right: 0;
 }
 .club__member[data-v-357d3955] {
-  margin: 0;
+  margin: 0 auto;
 }
 .club__member-number[data-v-357d3955] {
   margin-top: 5rem;
@@ -6432,18 +6432,21 @@ import用ファイル
   background-color: #f2f2f2;
 }
 .member__main-visual-icon[data-v-668c6779] {
-  width: 15rem;
-  height: 15rem;
+  width: 80%;
+  max-width: 15rem;
   fill: #ffffff;
   stroke: #e56c2c;
   stroke-width: 0.5rem;
 }
+@media screen and (min-width: 560px) {
+.member__main-visual-icon[data-v-668c6779] {
+    width: 50%;
+    max-width: 25rem;
+}
+}
 @media screen and (min-width: 992px) {
 .member__main-visual-icon[data-v-668c6779] {
-    width: 40%;
-    height: 40%;
-    min-width: 30rem;
-    min-height: 30rem;
+    max-width: 40rem;
 }
 }
 .member__main-visual-ward[data-v-668c6779] {
@@ -6453,11 +6456,17 @@ import用ファイル
   font-weight: 400;
   color: #ffffff;
   line-height: 1.2;
-  margin: 0 0.5rem;
   text-align: center;
+  margin-top: 1rem;
 }
 @media screen and (min-width: 560px) {
 .member__main-visual-ward[data-v-668c6779] {
+    font-size: calc(48px - 8px);
+}
+}
+@media screen and (min-width: 992px) {
+.member__main-visual-ward[data-v-668c6779] {
+    margin-top: 2.5rem;
     font-size: 48px;
 }
 }
@@ -13576,6 +13585,12 @@ body {
   width: 100%;
 }
 
+.right-justified {
+  /**
+   * サイドヘッダーは固定幅でもつ
+   * _variables.scss > $width map
+   */
+}
 @media screen and (min-width: 992px) {
   .right-justified {
     width: calc(100% - 120px);

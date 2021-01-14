@@ -83,17 +83,19 @@ export default {
   background-color: color(lightgray);
 
   &__main-visual-icon {
-    width: interval(30);
-    height: interval(30);
+    width: 80%;
+    max-width: interval(30);
     fill: color(white);
     stroke: color(orange);
     stroke-width: interval(1);
 
+    @include mq(sm) {
+      width: 50%;
+      max-width: interval(50);
+    }
+
     @include mq(md) {
-      width: 40%;
-      height: 40%;
-      min-width: interval(60);
-      min-height: interval(60);
+      max-width: interval(80);
     }
   }
 
@@ -101,10 +103,15 @@ export default {
     @include bangers(font(xl), 1px, 400);
     color: color(white);
     line-height: 1.2;
-    margin: 0 interval(1);
     text-align: center;
+    margin-top: interval(2);
 
     @include mq(sm) {
+      font-size: calc(#{font(mv)} - 8px);
+    }
+
+    @include mq(md) {
+      margin-top: interval(5);
       font-size: font(mv);
     }
   }

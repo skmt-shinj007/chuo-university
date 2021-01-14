@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <main-visual-component/>
+    <div class="home__main-visual">
+      <main-visual-component/>
+    </div>
 
     <section class="home__news">
       <news-component/>
