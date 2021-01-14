@@ -68,12 +68,8 @@ export default {
 
     // pc style
     @include mq(md) {
-      @include flex(
-        $flow: column nowrap,
-        $justify-content:space-around,
-        $align-items:center
-      );
-    };
+      @include flex(column nowrap, space-around, center);
+    }
   }
 
   &__title {

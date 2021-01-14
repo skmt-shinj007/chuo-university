@@ -20,7 +20,10 @@ body {
 // main要素とfooter要素を右詰めするクラス
 .right-justified {
 
-  // pc style
+  /**
+   * サイドヘッダーは固定幅でもつ
+   * _variables.scss > $width map
+   */
   @include mq(md) {
     width: calc(100% - #{width(header)});
     position: absolute;
