@@ -44,22 +44,20 @@ export default {
 
 // layout style
 .header {
-  width: 100%;
   height: 60px;
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-color: color(white);
   box-shadow: 0px 2px 6px color(shadow);
 
   // pc style
   @include mq(md) {
-    width: 10%;
+    width: width(header);
     height: 100vh;
     position: fixed;
     left: 0;
-    box-shadow: 2px 0px 6px color(shadow);
-  };
+    box-shadow: 2px 0px 10px color(shadow);
+  }
 
   &__navbar {
     height: 100%;

@@ -45,6 +45,11 @@ $display: (
   max: 1600px
 )!default;
 
+// 固定値で持っておきたい要素幅を指定する（max-width想定）
+$width: (
+  header: 120px,
+)!default;
+
 // font size map
 $font: (
   xs:   10px,

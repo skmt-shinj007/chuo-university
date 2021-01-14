@@ -8499,7 +8499,7 @@ import用ファイル
     display: block;
     position: relative;
     width: 10rem;
-    margin: 0 1.5rem;
+    margin-right: 1rem;
 }
 .history__age[data-v-301d0ec5]::before {
     display: block;
@@ -11650,21 +11650,19 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .header[data-v-6832e7cf] {
-  width: 100%;
   height: 60px;
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-color: #ffffff;
   box-shadow: 0px 2px 6px #e6e6e6;
 }
 @media screen and (min-width: 992px) {
 .header[data-v-6832e7cf] {
-    width: 10%;
+    width: 120px;
     height: 100vh;
     position: fixed;
     left: 0;
-    box-shadow: 2px 0px 6px #e6e6e6;
+    box-shadow: 2px 0px 10px #e6e6e6;
 }
 }
 .header__navbar[data-v-6832e7cf] {
@@ -13579,11 +13577,16 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-  .Right-justified {
-    width: 90%;
+  .right-justified {
+    width: calc(100% - 120px);
     position: absolute;
     right: 0;
   }
+}
+
+header {
+  width: 100%;
+  background-color: #ffffff;
 }
 
 section {
