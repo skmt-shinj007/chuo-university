@@ -315,7 +315,7 @@ const imageApiResponse = [
   }
 
   &__policy {
-    margin: 0;
+    margin: 0 auto;
 
     &-cards {
 
@@ -446,7 +446,7 @@ const imageApiResponse = [
   }
 
   &__member {
-    margin: 0;
+    margin: 0 auto;
 
     &-number {
       margin-top: interval(10);
