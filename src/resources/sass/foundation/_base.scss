@@ -18,14 +18,22 @@ body {
 }
 
 // main要素とfooter要素を右詰めするクラス
-.Right-justified {
+.right-justified {
 
-  // pc style
+  /**
+   * サイドヘッダーは固定幅でもつ
+   * _variables.scss > $width map
+   */
   @include mq(md) {
-    width: 90%;
+    width: calc(100% - #{width(header)});
     position: absolute;
     right: 0;
-  };
+  }
+}
+
+header {
+  width: 100%;
+  background-color: color(white);
 }
 
 section {

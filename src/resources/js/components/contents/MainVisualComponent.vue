@@ -17,11 +17,7 @@ export default {
   width: 100%;
   height: 100vh;
   @include gradient(color(deepDarkblue), color(darkblue), horizontal);
-  @include flex(
-    $flow:column nowrap,
-    $justify-content:center,
-    $align-items:center
-  );
+  @include flex(column nowrap, center, center);
 
 
   &__title {

@@ -186,7 +186,7 @@ export default {
       display: block;
       position: relative;
       width: interval(20);
-      margin: 0 interval(3);
+      margin-right: interval(2);
 
       &::before {
         display: block;

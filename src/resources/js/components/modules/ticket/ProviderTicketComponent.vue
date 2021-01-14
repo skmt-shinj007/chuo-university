@@ -9,13 +9,12 @@
   <div class="provider-ticket-item">
     <span class="provider-ticket__name">{{ providerObj.name }}</span>
 
+    <!-- SNSタグは 2つ まで -->
     <div class="provider-ticket-tag-group">
       <!-- twitter -->
       <sns-tag-component sns="twitter" content="Twitter"/>
       <!-- instagram -->
       <sns-tag-component sns="instagram" content="Instagram"/>
-      <!-- facebook -->
-      <sns-tag-component sns="facebook" content="Facebook"/>
     </div>
   </div>
 

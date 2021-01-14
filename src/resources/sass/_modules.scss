@@ -48,6 +48,11 @@
   @return map-get($display, $key);
 }
 
+// パーツ固定値
+@function width($key) {
+  @return map-get($width, $key);
+}
+
 /**
  * @keyframe を定義
  */
