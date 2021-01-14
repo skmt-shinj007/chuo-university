@@ -90,7 +90,7 @@ export default {
       height: btn-size(sm-height);
       font-size: font(xs);
     }
-  };
+  }
 
   &__btn {
     width: 100%;

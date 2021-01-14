@@ -20,10 +20,9 @@ export default {
     font-size: font(heading);
     letter-spacing: 3px;
 
-    // tablet style
     @include mq(sm) {
       font-size: font(xl);
-    };
+    }
   }
 }
 </style>

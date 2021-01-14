@@ -34,7 +34,7 @@ export default {
 
   &__list {
     @include trimming(aspect(square));
-    @include flex($justify-content: center);
+    @include flex(row nowrap, center);
     width: 50%;
 
     @include mq(sm) {

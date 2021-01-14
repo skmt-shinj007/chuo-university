@@ -37,7 +37,7 @@ export default {
     HeaderButtonComponent,
   },
 
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -61,12 +61,8 @@ export default {
 
   &__navbar {
     height: 100%;
-    @include flex(
-      $justify-content:space-around,
-      $align-items:center
-    );
+    @include flex(row nowrap, space-around, center);
 
-    // pc style
     @include mq(md) {
       @include flex(column nowrap, space-around, center);
     }
@@ -74,33 +70,29 @@ export default {
 
   &__title {
     cursor: pointer;
-    @include flex($justify-content:center, $align-items:center);
+    @include flex(row nowrap, center, center);
 
-    // pc style
     @include mq(md) {
       padding: interval(3);
       margin: 0 auto;
       writing-mode: vertical-rl;
-    };
+    }
 
     &-main {
       @include bangers();
 
-      // tablet style
       @include mq(sm) {
         font-size: font(lg);
-      };
+      }
 
-      // pc style
       @include mq(md) {
         margin-bottom: interval(7);
-      };
+      }
     }
 
     &-assistance {
       display: none;
 
-      // tablet style
       @include mq(sm) {
         margin-left: interval(3);
         font-size: font(xs);
@@ -108,19 +100,17 @@ export default {
         letter-spacing: 1.1px;
         position: relative;
         display: block;
-      };
+      }
 
-      // pc style
       @include mq(md) {
         margin: 0;
         font-size: font(sm);
-      };
+      }
     }
 
     &-assistance::before {
       display: none;
 
-      // pc style
       @include mq(md) {
         content: '';
         display: block;
@@ -136,18 +126,11 @@ export default {
   }
 
   &__menus {
-    @include flex(
-      $justify-content: space-around,
-    );
+    @include flex(row nowrap, space-around);
 
-    // pc style
     @include mq(md) {
-      @include flex(
-        $flow: column nowrap,
-        $justify-content: space-around,
-      );
-    };
-
+      @include flex(column nowrap, space-around);
+    }
   }
 }
 </style>

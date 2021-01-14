@@ -102,7 +102,7 @@ export default {
     width: 60%;
     position: absolute;
     top: 50%;
-  };
+  }
 }
 
 .home {
@@ -116,11 +116,10 @@ export default {
 
   &__team {
 
-    // pc style
     @include mq(md) {
       position: relative;
       @include flex();
-    };
+    }
   }
 
   &__team-lead {
@@ -132,13 +131,10 @@ export default {
 
   &__hakumonkai {
 
-    // pc style
     @include mq(md) {
       position: relative;
       margin-top: interval(40);
-      @include flex(
-        $flow: row-reverse nowrap
-      );
+      @include flex(row-reverse nowrap);
     }
   }
 
@@ -156,19 +152,17 @@ export default {
     box-shadow: 0px -5px 8px 3px color(shadow);
     @include trimming(aspect(golden));
 
-    // pc style
     @include mq(md) {
       width: 70%;
-    };
+    }
   }
 
   &__menuPanel {
 
-    // pc style
     @include mq(md) {
       @include flex(row nowrap, space-between, center);
       margin-top: interval(40);
-    };
+    }
 
     &-item {
       width: 100%;
@@ -201,34 +195,25 @@ export default {
       width: 80%;
       margin: 0 auto;
 
-      // tablet style
       @include mq(sm) {
         width: 70%;
-      };
+      }
 
-      // pc style
       @include mq(md) {
         width: 60%;
-      };
+      }
     }
   }
 
   &__background-image {
     width: 100%;
     height: 100vh;
-    @include background-image(
-      $url: "/image/player09.jpg",
-      $position: center center
-    );
+    @include background-image("/image/player09.jpg", center center);
 
-    // tablet style
     @include mq(sm) {
       height: auto;
-      @include background-image(
-      $url: "/image/player11.jpg",
-      $position: center center
-      );
-    };
+      @include background-image("/image/player11.jpg", center center);
+    }
   }
 
   &__background-darkblue {
