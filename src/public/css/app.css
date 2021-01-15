@@ -11802,7 +11802,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-7d2d8855 {
+@-webkit-keyframes iconSlide {
 0% {
     transform: translateX(0);
 }
@@ -11837,7 +11837,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-7d2d8855 {
+@keyframes iconSlide {
 0% {
     transform: translateX(0);
 }
@@ -11872,7 +11872,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-7d2d8855 {
+@-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
 }
@@ -11917,7 +11917,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-7d2d8855 {
+@keyframes fadeoutDown {
 0% {
     transform: translateY(0);
 }
@@ -11962,7 +11962,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes rotation-data-v-7d2d8855 {
+@-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
 }
@@ -11979,7 +11979,7 @@ import用ファイル
     transform: rotate(180deg);
 }
 }
-@keyframes rotation-data-v-7d2d8855 {
+@keyframes rotation {
 0% {
     transform: rotate(0);
 }
@@ -12000,17 +12000,10 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.accordion-link[data-v-7d2d8855] {
+.accordion-link {
   color: #ffffff;
 }
-.accordion-link__menu[data-v-7d2d8855] {
-  margin-bottom: 1rem;
-  border-top: 2px solid #f2f2f2;
-}
-.accordion-link__menu[data-v-7d2d8855]:last-child {
-  margin-bottom: 0;
-}
-.accordion-link__menu-title[data-v-7d2d8855] {
+.accordion-link__title {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -12018,27 +12011,29 @@ import用ファイル
   padding: 1rem 0.5rem;
   cursor: pointer;
 }
-.accordion-link__label[data-v-7d2d8855] {
+.accordion-link__label {
   font-weight: bold;
   letter-spacing: 1.2px;
   cursor: pointer;
 }
-.accordion-link__icon[data-v-7d2d8855] {
+.accordion-link__icon {
   width: 1rem;
 }
-.accordion-link__children[data-v-7d2d8855] {
+.accordion-link__children {
   background-color: #10334e;
 }
-.accordion-link__children-item[data-v-7d2d8855] {
+.accordion-link__children-item {
+  border-top: 1px solid #f2f2f2;
+}
+.accordion-link__link {
+  padding: 0.75rem 0.5rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 0.5rem;
-  border-top: 1px solid #f2f2f2;
   cursor: pointer;
 }
-.accordion-link__children-icon[data-v-7d2d8855] {
+.accordion-link__children-icon {
   width: 0.5rem;
   cursor: pointer;
 }@charset "UTF-8";
@@ -12295,6 +12290,12 @@ import用ファイル
 }
 .footer__menu[data-v-060e08fe] {
   margin-top: 5rem;
+}
+.footer__menu-item[data-v-060e08fe] {
+  border-top: 2px solid #f2f2f2;
+}
+.footer__menu-item[data-v-060e08fe]:last-child {
+  border-bottom: 2px solid #f2f2f2;
 }@charset "UTF-8";
 /**
  * _imports.scss === Vueファイル内で使用するmixinや関数・変数をインポート

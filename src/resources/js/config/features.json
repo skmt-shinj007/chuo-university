@@ -18,8 +18,8 @@
   "FooterLinks": [
     {
       "menuName": "Site Map",
-      "menuBlank": false,
-      "menus": [
+      "blank": false,
+      "childrenMenus": [
         {
           "label": "Home",
           "link": "/"
@@ -54,30 +54,26 @@
 
     {
       "menuName": "External Link",
-      "menuBlank": true,
-      "menus": [
+      "blank": true,
+      "childrenMenus": [
         {
           "label": "中央大学ホームページ",
-          "link": "/chuo",
-          "newTab": true
+          "link": "https://www.chuo-u.ac.jp/"
         },
 
         {
           "label": "立命館大学ホームページ",
-          "link": "/ritsumeikan",
-          "newTab": true
+          "link": "http://www5c.biglobe.ne.jp/~rst/"
         },
 
         {
           "label": "日本学生ソフトテニス連盟",
-          "link": "/japan-softtennis-student",
-          "newTab": true
+          "link": "https://www.jssta.jp/"
         },
 
         {
           "label": "関東学生ソフトテニス連盟",
-          "link": "/kantou-softtennis-student",
-          "newTab": true
+          "link": "https://kssta.net/"
         }
       ]
     }

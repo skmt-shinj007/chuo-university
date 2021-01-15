@@ -1,40 +1,37 @@
 <template>
-<ul class="accordion-link">
+<div class="accordion-link">
 
-  <li class="accordion-link__menu">
-    <div class="accordion-link__menu-title" @click="accordionToggle()">
-      <label class="accordion-link__label">{{ item.menuName }}</label>
-      <svg-vue class="accordion-link__icon" icon="plus"/>
-    </div>
+  <div class="accordion-link__title" @click="accordionToggle()">
+    <label class="accordion-link__label">{{ item.menuName }}</label>
+    <svg-vue class="accordion-link__icon" icon="plus"/>
+  </div>
 
-    <collapse-transition>
-      <ul class="accordion-link__children" v-if="isOpened">
-        <router-link
-          tag="li"
-          class="accordion-link__children-item"
-          v-for="(menu, n) in childrenMenus"
-          :key="n"
-          :to="menu.link"
-          @click.native="accordionReset()">
+  <collapse-transition>
+    <ul class="accordion-link__children" v-if="isOpened">
+      <li class="accordion-link__children-item" v-for="(menu, n) in childrenMenus" :key="n">
 
-          <label class="accordion-link__label">{{ menu.label }}</label>
-          <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
-        </router-link>
-      </ul>
-    </collapse-transition>
+        <!-- 別タブ遷移の場合は、<a> -->
+        <a class="accordion-link__link"
+          target="_blank" rel="noopener noreferrer"
+          :href="menu.link"
+          v-if="item.blank"
+          @click="accordionReset()">
 
-
-    <!-- <ul class="accordion-link__children" v-if="item.menuBlank">
-      <li v-for="(menu, n) in childrenMenus" :key="n">
-        <a class="accordion-link__children-item" :href="menu.link">
           <label class="accordion-link__label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </a>
-      </li>
-    </ul> -->
 
-  </li>
-</ul>
+        <!-- 同タブ遷移の場合は、<router-link> -->
+        <router-link class="accordion-link__link" :to="menu.link" @click.native="accordionReset()" v-else>
+          <label class="accordion-link__label">{{ menu.label }}</label>
+          <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
+        </router-link>
+
+      </li>
+    </ul>
+  </collapse-transition>
+
+</div>
 </template>
 
 <script>
@@ -64,7 +61,7 @@ export default {
   },
 
   beforeMount() {
-    this.item.menus.forEach(element => this.childrenMenus.push(element));
+    this.item.childrenMenus.forEach(element => this.childrenMenus.push(element));
   },
 
   methods: {
@@ -78,21 +75,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .accordion-link {
   color: color(white);
 
-  &__menu {
-    margin-bottom: interval(2);
-    border-top: 2px solid color(lightgray);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__menu-title {
+  &__title {
     @include flex(row nowrap, space-between, center);
     padding: interval(2) interval(1);
     cursor: pointer;
@@ -113,9 +101,12 @@ export default {
   }
 
   &__children-item {
-    @include flex(row nowrap, space-between, center);
-    padding: interval(1.5) interval(1);
     border-top: 1px solid color(lightgray);
+  }
+
+  &__link {
+    padding: interval(1.5) interval(1);
+    @include flex(row nowrap, space-between, center);
     cursor: pointer;
   }
 

@@ -41,6 +41,7 @@ export default {
     PrimaryButtonComponent,
     AccordionLinkComponent,
   },
+
   data() {
     return {
       data: Data,
@@ -48,8 +49,19 @@ export default {
       links: [],
     }
   },
+
   beforeMount() {
     this.$data.features.FooterLinks.forEach(element => this.links.push(element));
+
+    /**
+     * メニュー配列のバリデーションを設定 (テスト的な処理)
+     * -> 同タブか別タブかを判定するプロパティ [blank]
+     */
+    this.links.forEach(element => {
+      if (!element.hasOwnProperty('blank')) {
+        alert('メニューを生成している配列に [blank] プロパティを設定してください。')
+      }
+    })
   },
 }
 </script>
@@ -80,6 +92,14 @@ export default {
 
   &__menu {
     margin-top: interval(10);
+  }
+
+  &__menu-item {
+    border-top: 2px solid color(lightgray);
+
+    &:last-child {
+      border-bottom: 2px solid color(lightgray);
+    }
   }
 }
 </style>
