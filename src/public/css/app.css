@@ -12296,14 +12296,12 @@ import用ファイル
   padding: 0 1rem;
   max-width: 1600px;
   margin: 0 auto;
+  color: #ffffff;
 }
 .footer-wrap[data-v-060e08fe] {
   background: #030A10;
   background: linear-gradient(to right, #030A10 0%, #10334e 100%);
   padding: 5rem 0;
-}
-.footer__contact[data-v-060e08fe] {
-  color: #ffffff;
 }
 .footer__contact-lead[data-v-060e08fe] {
   max-width: 20rem;
@@ -12320,6 +12318,32 @@ import用ファイル
 }
 .footer__menu-item[data-v-060e08fe]:last-child {
   border-bottom: 2px solid #f2f2f2;
+}
+.footer__information[data-v-060e08fe] {
+  margin-top: 5rem;
+}
+.footer__information-title[data-v-060e08fe] {
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+.footer__information-item[data-v-060e08fe] {
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 1.2px;
+}
+.footer__information-item[data-v-060e08fe]:last-child {
+  margin-top: 0.5rem;
+}
+.footer__information-telephone[data-v-060e08fe] {
+  text-decoration: underline;
+}
+@media screen and (min-width: 560px) {
+.footer__information-telephone[data-v-060e08fe] {
+    pointer-events: none;
+    text-decoration: underline;
+}
 }@charset "UTF-8";
 /**
  * _imports.scss === Vueファイル内で使用するmixinや関数・変数をインポート

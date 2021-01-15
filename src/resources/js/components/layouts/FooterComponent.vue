@@ -21,6 +21,16 @@
         <accordion-link-component :item="link"/>
       </li>
     </ul>
+
+    <address class="footer__information">
+      <h4 class="footer__information-title">{{ messages.Information.ClubName }}</h4>
+      <span class="footer__information-item">{{ messages.Information.Address }}</span>
+      <a class="footer__information-item footer__information-telephone" :href="`tel:+${telephoneNum}`">
+        {{ messages.Information.TelephoneNumber }}
+      </a>
+      <span class="footer__information-item">{{ messages.Information.MailAddress }}</span>
+      <span class="footer__information-item">{{ messages.Information.Caretaker }}</span>
+    </address>
   </footer>
 </div>
 </template>
@@ -47,6 +57,7 @@ export default {
       data: Data,
       features: Features,
       links: [],
+      telephoneNum: '',
     }
   },
 
@@ -61,7 +72,17 @@ export default {
       if (!element.hasOwnProperty('blank')) {
         alert('メニューを生成している配列に [blank] プロパティを設定してください。')
       }
-    })
+    });
+
+    /**
+     * 電話番号にリンクを貼るため、最初の「0」に [国コード:81] を挿入
+     * https://webliker.info/65145/#toc_4
+     */
+    const phoneNum = this.messages.Information.TelephoneNumber.slice(1);
+    const phoneCode = this.messages.Information.PhoneCode;
+    const phoneAry = [phoneCode, phoneNum];
+
+    this.telephoneNum = phoneAry.join('-');
   },
 }
 </script>
@@ -71,14 +92,11 @@ export default {
   padding: 0 interval(2);
   max-width: device(max);
   margin: 0 auto;
+  color: color(white);
 
   &-wrap {
     @include gradient(color(deepDarkblue), color(lightDarkblue), horizontal);
     padding: interval(10) 0;
-  }
-
-  &__contact {
-    color: color(white);
   }
 
   &__contact-lead {
@@ -99,6 +117,36 @@ export default {
 
     &:last-child {
       border-bottom: 2px solid color(lightgray);
+    }
+  }
+
+  &__information {
+    margin-top: interval(10);
+  }
+
+  &__information-title {
+    letter-spacing: 1.5px;
+    margin-bottom: interval(1);
+  }
+
+  &__information-item {
+    display: block;
+    font-weight: bold;
+    font-size: font(sm);
+    line-height: 1.8;
+    letter-spacing: 1.2px;
+
+    &:last-child {
+      margin-top: interval(1);
+    }
+  }
+
+  &__information-telephone {
+    text-decoration: underline;
+
+    @include mq(sm) {
+      pointer-events: none;
+      text-decoration: underline;
     }
   }
 }

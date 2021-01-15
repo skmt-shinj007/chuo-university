@@ -10,14 +10,16 @@
 
   "Footer": {
     "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容は、部の主務が受け付けますのでお気軽にご連絡ください。",
-    "Information": {
-      "ClubName"        : "クラブ名：中央大学ソフトテニス部",
-      "Address"         : "住所：東京都八王子市東中野742-1",
-      "TelephoneNumber" : "TEL：042‐594‐4243",
-      "MailAddress"     : "MAIL：xxxxxxxxxxxxx@gmail.com",
-      "Caretaker"       : "管理人：村上 博之"
-    },
     "EndText": "@ Chuo University Soft Tennis Team"
+  },
+
+  "Information": {
+    "ClubName"        : "中央大学ソフトテニス部",
+    "Address"         : "東京都八王子市東中野742-1",
+    "TelephoneNumber" : "042‐594‐4243",
+    "PhoneCode"       : "81",
+    "MailAddress"     : "xxxxxxxxxxxxx@gmail.com",
+    "Caretaker"       : "管理人：村上 博之"
   },
 
   "MainVisual": {
