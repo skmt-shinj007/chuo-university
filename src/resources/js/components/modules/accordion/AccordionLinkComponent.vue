@@ -39,7 +39,7 @@
 
 <script>
 /**
- * アコーディオン開閉アニメーション
+ * [ライブラリ] アコーディオン開閉アニメーション
  * componentsプロパティに登録することで、コンポーネントで使用可能
  */
 import CollapseTransition from "@ivanv/vue-collapse-transition"
