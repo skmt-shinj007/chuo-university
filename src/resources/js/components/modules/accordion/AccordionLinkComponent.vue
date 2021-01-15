@@ -3,7 +3,10 @@
 
   <div class="accordion-link__title" @click="accordionToggle()">
     <label class="accordion-link__label">{{ item.menuName }}</label>
-    <svg-vue class="accordion-link__icon" icon="plus"/>
+    <!-- <svg-vue class="accordion-link__icon" icon="plus"/> -->
+    <div class="accordion-link__icon-wrap">
+      <i class="accordion-link__icon" :class="{ 'accordion-link__open-icon': isOpened }"/>
+    </div>
   </div>
 
   <collapse-transition>
@@ -92,8 +95,41 @@ export default {
     cursor: pointer;
   }
 
-  &__icon {
+  &__icon-wrap {
     width: interval(2);
+  }
+
+  %icon {
+    display: block;
+    background-color: color(white);
+    width: 100%;
+    height: 2px;
+  }
+
+  // アコーディオンが閉じている時のアイコン
+  &__icon {
+    position: relative;
+    transition: all .3s ease-out;
+    @extend %icon;
+
+    &::before {
+      content: '';
+      @extend %icon;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all .3s ease-out;
+      transform: rotate(90deg);
+    }
+  }
+
+  // アコーディオンが開いた時のアイコン
+  &__open-icon {
+    transform: rotate(360deg);
+
+    &::before {
+      transform: rotate(0);
+    }
   }
 
   &__children {
