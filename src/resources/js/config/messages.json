@@ -7,7 +7,9 @@
     "AssistanceTitle" : "中央大学ソフトテニス部",
     "NavItem"         : [ "Home", "Club", "Member", "Hakumonkai", "History", "Photo", "Contact" ]
   },
+
   "Footer": {
+    "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容は、部の主務が受け付けますのでお気軽にご連絡ください。",
     "Information": {
       "ClubName"        : "クラブ名：中央大学ソフトテニス部",
       "Address"         : "住所：東京都八王子市東中野742-1",
@@ -91,6 +93,10 @@
     "Provider": {
       "Main": "provider",
       "Sub" : "写真提供"
+    },
+    "Contact": {
+      "Main": "contact",
+      "Sub" : "お問い合わせ"
     }
   },
 

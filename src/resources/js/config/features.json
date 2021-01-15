@@ -13,5 +13,73 @@
         "title": "大会名"
       }
     }
-  }
+  },
+
+  "FooterLinks": [
+    {
+      "menuName": "Site Map",
+      "menuBlank": false,
+      "menus": [
+        {
+          "label": "Home",
+          "link": "/"
+        },
+
+        {
+          "label": "Club",
+          "link": "/club"
+        },
+
+        {
+          "label": "Member",
+          "link": "/member"
+        },
+
+        {
+          "label": "Hakumonkai",
+          "link": "/hakumonkai"
+        },
+
+        {
+          "label": "History",
+          "link": "/history"
+        },
+
+        {
+          "label": "Photo",
+          "link": "/photo"
+        }
+      ]
+    },
+
+    {
+      "menuName": "External Link",
+      "menuBlank": true,
+      "menus": [
+        {
+          "label": "中央大学ホームページ",
+          "link": "/chuo",
+          "newTab": true
+        },
+
+        {
+          "label": "立命館大学ホームページ",
+          "link": "/ritsumeikan",
+          "newTab": true
+        },
+
+        {
+          "label": "日本学生ソフトテニス連盟",
+          "link": "/japan-softtennis-student",
+          "newTab": true
+        },
+
+        {
+          "label": "関東学生ソフトテニス連盟",
+          "link": "/kantou-softtennis-student",
+          "newTab": true
+        }
+      ]
+    }
+  ]
 }
