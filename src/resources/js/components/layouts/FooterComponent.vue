@@ -22,15 +22,26 @@
       </li>
     </ul>
 
-    <address class="footer__information">
-      <h4 class="footer__information-title">{{ messages.Information.ClubName }}</h4>
-      <span class="footer__information-item">{{ messages.Information.Address }}</span>
-      <a class="footer__information-item footer__information-telephone" :href="`tel:+${telephoneNum}`">
-        {{ messages.Information.TelephoneNumber }}
-      </a>
-      <span class="footer__information-item">{{ messages.Information.MailAddress }}</span>
-      <span class="footer__information-item">{{ messages.Information.Caretaker }}</span>
-    </address>
+    <div class="footer__information">
+      <svg-vue class="footer__information-logo" icon="chuo-logo"/>
+
+      <address>
+        <h4 class="footer__information-title">{{ messages.Information.ClubName }}</h4>
+        <span class="footer__information-item">{{ messages.Information.Address }}</span>
+        <a class="footer__information-item footer__information-telephone" :href="`tel:+${telephoneNum}`">
+          {{ messages.Information.TelephoneNumber }}
+        </a>
+        <span class="footer__information-item">{{ messages.Information.MailAddress }}</span>
+      </address>
+
+      <div class="footer__scroll-top" @click="scrollTop()">
+        <svg-vue class="footer__scroll-top-icon" icon="angle-up-double"/>
+      </div>
+    </div>
+
+    <div class="footer__copyright">
+      {{ messages.Footer.Copyright }}
+    </div>
   </footer>
 </div>
 </template>
@@ -84,6 +95,15 @@ export default {
 
     this.telephoneNum = phoneAry.join('-');
   },
+
+  methods: {
+    scrollTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
+  },
 }
 </script>
 
@@ -96,7 +116,8 @@ export default {
 
   &-wrap {
     @include gradient(color(deepDarkblue), color(lightDarkblue), horizontal);
-    padding: interval(10) 0;
+    padding-top: interval(10);
+    padding-bottom: interval(3);
   }
 
   &__contact-lead {
@@ -121,7 +142,18 @@ export default {
   }
 
   &__information {
+    position: relative;
     margin-top: interval(10);
+  }
+
+  &__information-logo {
+    width: interval(18);
+    opacity: .2;
+    fill: color(white);
+    position: absolute;
+    top: 50%;
+    left: interval(2);
+    transform: translateY(-50%);
   }
 
   &__information-title {
@@ -135,10 +167,6 @@ export default {
     font-size: font(sm);
     line-height: 1.8;
     letter-spacing: 1.2px;
-
-    &:last-child {
-      margin-top: interval(1);
-    }
   }
 
   &__information-telephone {
@@ -148,6 +176,28 @@ export default {
       pointer-events: none;
       text-decoration: underline;
     }
+  }
+
+  &__scroll-top {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: interval(6);
+    height: interval(6);
+    padding: interval(1);
+    border: 1px solid color(white);
+    border-radius: radius(circle);
+    @include flex(row nowrap, center, center);
+  }
+
+  &__scroll-top-icon {
+    width: interval(1.5);
+  }
+
+  &__copyright {
+    font-size: font(xs);
+    text-align: center;
+    margin-top: interval(5);
   }
 }
 </style>

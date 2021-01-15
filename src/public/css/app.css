@@ -12301,7 +12301,8 @@ import用ファイル
 .footer-wrap[data-v-060e08fe] {
   background: #030A10;
   background: linear-gradient(to right, #030A10 0%, #10334e 100%);
-  padding: 5rem 0;
+  padding-top: 5rem;
+  padding-bottom: 1.5rem;
 }
 .footer__contact-lead[data-v-060e08fe] {
   max-width: 20rem;
@@ -12320,7 +12321,17 @@ import用ファイル
   border-bottom: 2px solid #f2f2f2;
 }
 .footer__information[data-v-060e08fe] {
+  position: relative;
   margin-top: 5rem;
+}
+.footer__information-logo[data-v-060e08fe] {
+  width: 9rem;
+  opacity: 0.2;
+  fill: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
 }
 .footer__information-title[data-v-060e08fe] {
   letter-spacing: 1.5px;
@@ -12333,9 +12344,6 @@ import用ファイル
   line-height: 1.8;
   letter-spacing: 1.2px;
 }
-.footer__information-item[data-v-060e08fe]:last-child {
-  margin-top: 0.5rem;
-}
 .footer__information-telephone[data-v-060e08fe] {
   text-decoration: underline;
 }
@@ -12344,6 +12352,28 @@ import用ファイル
     pointer-events: none;
     text-decoration: underline;
 }
+}
+.footer__scroll-top[data-v-060e08fe] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.footer__scroll-top-icon[data-v-060e08fe] {
+  width: 0.75rem;
+}
+.footer__copyright[data-v-060e08fe] {
+  font-size: 10px;
+  text-align: center;
+  margin-top: 2.5rem;
 }@charset "UTF-8";
 /**
  * _imports.scss === Vueファイル内で使用するmixinや関数・変数をインポート
