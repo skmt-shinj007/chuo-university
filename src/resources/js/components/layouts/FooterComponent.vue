@@ -192,6 +192,7 @@ export default {
 
   &__scroll-top-icon {
     width: interval(1.5);
+    animation: fadeoutTop 1.5s linear infinite;
   }
 
   &__copyright {

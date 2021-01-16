@@ -192,6 +192,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-3ff6fe5a {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-3ff6fe5a {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-3ff6fe5a {
 0% {
     transform: rotate(0);
@@ -444,6 +464,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation {
@@ -720,6 +760,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -980,6 +1040,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-9b317ac0 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-9b317ac0 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-9b317ac0 {
 0% {
     transform: rotate(0);
@@ -1222,6 +1302,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation {
@@ -1517,6 +1617,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-481a74cb {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-481a74cb {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-481a74cb {
 0% {
     transform: rotate(0);
@@ -1780,6 +1900,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -2036,6 +2176,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-63cd6604 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-63cd6604 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-63cd6604 {
@@ -2419,6 +2579,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-161a410d {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-161a410d {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-161a410d {
 0% {
     transform: rotate(0);
@@ -2673,6 +2853,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-b056e422 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-b056e422 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-b056e422 {
@@ -2970,6 +3170,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-6cd5e234 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-6cd5e234 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-6cd5e234 {
 0% {
     transform: rotate(0);
@@ -3244,6 +3464,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-30380e08 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-30380e08 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-30380e08 {
 0% {
     transform: rotate(0);
@@ -3511,6 +3751,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -3767,6 +4027,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-7fa4fe02 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-7fa4fe02 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-7fa4fe02 {
@@ -4037,6 +4317,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-c3a537a8 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-c3a537a8 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-c3a537a8 {
@@ -4313,6 +4613,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -4577,6 +4897,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -4809,6 +5149,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation {
@@ -5079,6 +5439,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-53189f00 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-53189f00 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-53189f00 {
 0% {
     transform: rotate(0);
@@ -5322,6 +5702,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-bb84db5a {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-bb84db5a {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-bb84db5a {
@@ -5595,6 +5995,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-357d3955 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-357d3955 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-357d3955 {
@@ -5999,6 +6419,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -6390,6 +6830,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-668c6779 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-668c6779 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-668c6779 {
 0% {
     transform: rotate(0);
@@ -6704,6 +7164,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -6964,6 +7444,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-42f1fe89 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-42f1fe89 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-42f1fe89 {
@@ -7301,6 +7801,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-b79d4b88 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-b79d4b88 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-b79d4b88 {
 0% {
     transform: rotate(0);
@@ -7613,6 +8133,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-579f0756 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-579f0756 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-579f0756 {
 0% {
     transform: rotate(0);
@@ -7886,6 +8426,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -8143,6 +8703,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-3ea95d82 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-3ea95d82 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-3ea95d82 {
@@ -8454,6 +9034,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-301d0ec5 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-301d0ec5 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-301d0ec5 {
@@ -8771,6 +9371,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -9073,6 +9693,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -9339,6 +9979,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-d066a2d0 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-d066a2d0 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-d066a2d0 {
@@ -9680,6 +10340,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -9944,6 +10624,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation {
@@ -10288,6 +10988,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-46e3fba3 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-46e3fba3 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-46e3fba3 {
 0% {
     transform: rotate(0);
@@ -10544,6 +11264,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-b28ce99e {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-b28ce99e {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-b28ce99e {
@@ -11334,6 +12074,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -11618,6 +12378,26 @@ import用ファイル
 100% {
     opacity: 0;
     transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-6832e7cf {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-6832e7cf {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
 }
 }
 @-webkit-keyframes rotation-data-v-6832e7cf {
@@ -11962,6 +12742,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation {
 0% {
     transform: rotate(0);
@@ -12254,6 +13054,26 @@ import用ファイル
     transform: translateY(100%);
 }
 }
+@-webkit-keyframes fadeoutTop-data-v-060e08fe {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-060e08fe {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
 @-webkit-keyframes rotation-data-v-060e08fe {
 0% {
     transform: rotate(0);
@@ -12369,6 +13189,8 @@ import用ファイル
 }
 .footer__scroll-top-icon[data-v-060e08fe] {
   width: 0.75rem;
+  -webkit-animation: fadeoutTop-data-v-060e08fe 1.5s linear infinite;
+          animation: fadeoutTop-data-v-060e08fe 1.5s linear infinite;
 }
 .footer__copyright[data-v-060e08fe] {
   font-size: 10px;
@@ -12574,6 +13396,26 @@ import用ファイル
   100% {
     opacity: 0;
     transform: translateY(100%);
+  }
+}
+@-webkit-keyframes fadeoutTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+}
+@keyframes fadeoutTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30%);
   }
 }
 @-webkit-keyframes rotation {
