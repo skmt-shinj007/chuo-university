@@ -13174,6 +13174,14 @@ import用ファイル
   padding: 0.5rem;
   cursor: pointer;
 }
+@media screen and (min-width: 992px) {
+.footer__menu-list-item:hover .footer__menu-list-label[data-v-060e08fe] {
+    text-shadow: 1px 1px #e56c2c;
+}
+.footer__menu-list-item:hover .footer__menu-list-link[data-v-060e08fe] {
+    transform: translateX(1rem);
+}
+}
 .footer__menu-list-item--site-map[data-v-060e08fe] {
   width: calc(100% / 4);
 }
@@ -13186,6 +13194,7 @@ import用ファイル
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease-out;
 }
 .footer__menu-list-icon[data-v-060e08fe] {
   width: 0.5rem;

@@ -234,6 +234,16 @@ export default {
       padding: interval(1);
       cursor: pointer;
 
+      @include hover {
+        .footer__menu-list-label {
+          text-shadow: 1px 1px color(orange);
+        }
+
+        .footer__menu-list-link {
+          transform: translateX(interval(2));
+        }
+      }
+
       &--site-map {
         width: calc(100% / 4);
       }
@@ -246,6 +256,7 @@ export default {
     &-link {
       @include flex(row nowrap, flex-start, center);
       cursor: pointer;
+      transition: all .3s ease-out;
     }
 
     &-icon {
