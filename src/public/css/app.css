@@ -13128,6 +13128,12 @@ import用ファイル
   max-width: 20rem;
   margin: 0 auto;
 }
+@media screen and (min-width: 560px) {
+.footer__contact-lead[data-v-060e08fe] {
+    max-width: none;
+    text-align: center;
+}
+}
 .footer__contact-btn[data-v-060e08fe] {
   margin-top: 2.5rem;
 }

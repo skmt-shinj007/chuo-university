@@ -133,6 +133,11 @@ export default {
   &__contact-lead {
     max-width: interval(40);
     margin: 0 auto;
+
+    @include mq(sm) {
+      max-width: none;
+      text-align: center;
+    }
   }
 
   &__contact-btn {
