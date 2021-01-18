@@ -13,5 +13,69 @@
         "title": "大会名"
       }
     }
-  }
+  },
+
+  "FooterLinks": [
+    {
+      "menuName": "Site Map",
+      "blank": false,
+      "childrenMenus": [
+        {
+          "label": "Home",
+          "link": "/"
+        },
+
+        {
+          "label": "Club",
+          "link": "/club"
+        },
+
+        {
+          "label": "Member",
+          "link": "/member"
+        },
+
+        {
+          "label": "Hakumonkai",
+          "link": "/hakumonkai"
+        },
+
+        {
+          "label": "History",
+          "link": "/history"
+        },
+
+        {
+          "label": "Photo",
+          "link": "/photo"
+        }
+      ]
+    },
+
+    {
+      "menuName": "External Link",
+      "blank": true,
+      "childrenMenus": [
+        {
+          "label": "中央大学ホームページ",
+          "link": "https://www.chuo-u.ac.jp/"
+        },
+
+        {
+          "label": "立命館大学ホームページ",
+          "link": "http://www5c.biglobe.ne.jp/~rst/"
+        },
+
+        {
+          "label": "日本学生ソフトテニス連盟",
+          "link": "https://www.jssta.jp/"
+        },
+
+        {
+          "label": "関東学生ソフトテニス連盟",
+          "link": "https://kssta.net/"
+        }
+      ]
+    }
+  ]
 }

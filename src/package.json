@@ -23,6 +23,7 @@
     "main": "index.js",
     "license": "MIT",
     "dependencies": {
+        "@ivanv/vue-collapse-transition": "^0.2.1",
         "laravel-mix-svg-vue": "^0.2.6",
         "sass-resources-loader": "^2.1.1",
         "swiper": "5.4.5",

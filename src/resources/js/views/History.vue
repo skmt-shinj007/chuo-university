@@ -109,7 +109,7 @@ export default {
   },
 
   mounted() {
-    // jsでid属性を一括で取得するため、DOMのid属性を配列にする
+    // jsでid属性を一括で取得するため、DOMのid属性を配列にする (マウント以降に可能)
     let idName = [
       'historySection',
       'historyAgeTag',
