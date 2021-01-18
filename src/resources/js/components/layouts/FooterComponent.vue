@@ -34,7 +34,7 @@
         <span class="footer__information-item">{{ messages.Information.MailAddress }}</span>
       </address>
 
-      <div class="footer__scroll-top" @click="scrollTop()">
+      <div class="footer__scroll-top" id="scrollTarget" @click="scrollTop()" :class="{ 'footer__scroll-top--animation': scrollAnimation }">
         <svg-vue class="footer__scroll-top-icon" icon="angle-up-double"/>
       </div>
     </div>
@@ -69,10 +69,13 @@ export default {
       features: Features,
       links: [],
       telephoneNum: '',
+      ids: null,
+      scrollAnimation: false
     }
   },
 
   beforeMount() {
+    // フッターリンクの配列を[features.json]を元に生成
     this.$data.features.FooterLinks.forEach(element => this.links.push(element));
 
     /**
@@ -98,10 +101,17 @@ export default {
 
   methods: {
     scrollTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
+      // アニメーションのため、ボタンにクラスをつける
+      this.scrollAnimation = true;
+
+      // css アニメーションが完了次第実行 css fadeout -> .3s
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+        this.scrollAnimation = false;
+      }, 500);
     }
   },
 }
@@ -188,6 +198,12 @@ export default {
     border: 1px solid color(white);
     border-radius: radius(circle);
     @include flex(row nowrap, center, center);
+    cursor: pointer;
+    transition: all .3s ease-out;
+
+    &--animation {
+      opacity: 0;
+    }
   }
 
   &__scroll-top-icon {

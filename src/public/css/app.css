@@ -13186,6 +13186,11 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.footer__scroll-top--animation[data-v-060e08fe] {
+  opacity: 0;
 }
 .footer__scroll-top-icon[data-v-060e08fe] {
   width: 0.75rem;
@@ -13918,6 +13923,14 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+/**
+ * スムーズスクロールのスタイル
+ * SPAのようにページ遷移ごとにスクロール位置の調整が必要な場合に微妙な挙動になるかも。
+ */
+html {
+  scroll-behavior: smooth;
 }
 
 * {
