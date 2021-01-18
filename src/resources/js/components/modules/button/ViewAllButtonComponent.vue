@@ -79,9 +79,7 @@ export default {
 
   &__btn-label {
     transition: all .3s ease-out;
-    font-weight: bold;
     font-size: font(sm);
-    letter-spacing: 1.1px;
 
     @include mq(sm) {
       font-size: font(base);

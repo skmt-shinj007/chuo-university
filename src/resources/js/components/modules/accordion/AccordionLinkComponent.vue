@@ -90,8 +90,6 @@ export default {
   }
 
   &__label {
-    font-weight: bold;
-    letter-spacing: 1.2px;
     cursor: pointer;
   }
 
