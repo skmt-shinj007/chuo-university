@@ -13211,8 +13211,12 @@ import用ファイル
 }
 .footer__information-logo[data-v-060e08fe] {
   width: 9rem;
+  height: 100%;
   opacity: 0.2;
-  fill: #ffffff;
+  background-image: url("/svg/chuo-logo-white.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -13243,7 +13247,7 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .footer__information-telephone[data-v-060e08fe] {
     pointer-events: none;
-    text-decoration: underline;
+    text-decoration: none;
 }
 }
 .footer__scroll-top[data-v-060e08fe] {

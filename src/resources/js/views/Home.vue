@@ -208,11 +208,11 @@ export default {
   &__background-image {
     width: 100%;
     height: 100vh;
-    @include background-image("/image/player09.jpg", center center);
+    @include background-image("/image/player09.jpg");
 
     @include mq(sm) {
       height: auto;
-      @include background-image("/image/player11.jpg", center center);
+      @include background-image("/image/player11.jpg");
     }
   }
 

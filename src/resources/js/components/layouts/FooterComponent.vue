@@ -45,10 +45,12 @@
     </div>
 
     <div class="footer__information">
-      <svg-vue class="footer__information-logo" icon="chuo-logo"/>
+      <div class="footer__information-logo"/>
 
       <address>
-        <h4 class="footer__information-title">{{ messages.Information.ClubName }}</h4>
+        <h4 class="footer__information-title">
+          <router-link to="/">{{ messages.Information.ClubName }}</router-link>
+        </h4>
         <span class="footer__information-item">{{ messages.Information.Address }}</span>
         <a class="footer__information-item footer__information-telephone" :href="`tel:+${telephoneNum}`">
           {{ messages.Information.TelephoneNumber }}
@@ -279,8 +281,9 @@ export default {
 
   &__information-logo {
     width: interval(18);
+    height: 100%;
     opacity: .2;
-    fill: color(white);
+    @include background-image('/svg/chuo-logo-white.svg');
     position: absolute;
     top: 50%;
     left: interval(2);
@@ -311,7 +314,7 @@ export default {
 
     @include mq(sm) {
       pointer-events: none;
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 
