@@ -9476,9 +9476,7 @@ import用ファイル
 }
 .view-all__btn-label {
   transition: all 0.3s ease-out;
-  font-weight: bold;
   font-size: 12px;
-  letter-spacing: 1.1px;
 }
 @media screen and (min-width: 560px) {
 .view-all__btn-label {
@@ -12812,8 +12810,6 @@ import用ファイル
   cursor: pointer;
 }
 .accordion-link__label {
-  font-weight: bold;
-  letter-spacing: 1.2px;
   cursor: pointer;
 }
 .accordion-link__icon-wrap {
@@ -13128,26 +13124,100 @@ import用ファイル
   max-width: 20rem;
   margin: 0 auto;
 }
+@media screen and (min-width: 560px) {
+.footer__contact-lead[data-v-060e08fe] {
+    max-width: none;
+    text-align: center;
+}
+}
 .footer__contact-btn[data-v-060e08fe] {
   margin-top: 2.5rem;
 }
-.footer__menu[data-v-060e08fe] {
+.footer__accordion-menu[data-v-060e08fe] {
   margin-top: 5rem;
 }
-.footer__menu-item[data-v-060e08fe] {
+@media screen and (min-width: 992px) {
+.footer__accordion-menu[data-v-060e08fe] {
+    display: none;
+}
+}
+.footer__accordion-menu-item[data-v-060e08fe] {
   border-top: 2px solid #f2f2f2;
 }
-.footer__menu-item[data-v-060e08fe]:last-child {
+.footer__accordion-menu-item[data-v-060e08fe]:last-child {
   border-bottom: 2px solid #f2f2f2;
+}
+.footer__menu[data-v-060e08fe] {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+.footer__menu[data-v-060e08fe] {
+    display: block;
+    margin-top: 5rem;
+}
+}
+.footer__menu-list[data-v-060e08fe] {
+  margin-top: 1rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer__menu-list-title[data-v-060e08fe] {
+  font-family: "Bangers", cursive;
+  font-size: 32px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+}
+.footer__menu-list-item[data-v-060e08fe] {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+.footer__menu-list-item:hover .footer__menu-list-label[data-v-060e08fe] {
+    text-shadow: 1px 1px #e56c2c;
+}
+.footer__menu-list-item:hover .footer__menu-list-link[data-v-060e08fe] {
+    transform: translateX(1rem);
+}
+}
+.footer__menu-list-item--site-map[data-v-060e08fe] {
+  width: calc(100% / 4);
+}
+.footer__menu-list-item--external-link[data-v-060e08fe] {
+  width: calc(100% / 3);
+}
+.footer__menu-list-link[data-v-060e08fe] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.footer__menu-list-icon[data-v-060e08fe] {
+  width: 0.5rem;
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+.footer__menu-list-label[data-v-060e08fe] {
+  font-size: 16px;
+  cursor: pointer;
 }
 .footer__information[data-v-060e08fe] {
   position: relative;
   margin-top: 5rem;
 }
 .footer__information-logo[data-v-060e08fe] {
+  pointer-events: none;
   width: 9rem;
+  height: 100%;
   opacity: 0.2;
-  fill: #ffffff;
+  background-image: url("/svg/chuo-logo-white.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -13161,14 +13231,14 @@ import用ファイル
 .footer__information-title[data-v-060e08fe] {
   margin-bottom: 0.5rem;
 }
-.footer__information-item[data-v-060e08fe] {
+.footer__information-item[data-v-060e08fe], .footer__information-telephone[data-v-060e08fe] {
   display: block;
   font-weight: bold;
   line-height: 1.8;
   letter-spacing: 1.2px;
 }
 @media screen and (min-width: 560px) {
-.footer__information-item[data-v-060e08fe] {
+.footer__information-item[data-v-060e08fe], .footer__information-telephone[data-v-060e08fe] {
     font-size: 14px;
 }
 }
@@ -13178,7 +13248,7 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .footer__information-telephone[data-v-060e08fe] {
     pointer-events: none;
-    text-decoration: underline;
+    text-decoration: none;
 }
 }
 .footer__scroll-top[data-v-060e08fe] {
@@ -13196,6 +13266,15 @@ import用ファイル
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 992px) {
+.footer__scroll-top[data-v-060e08fe]:hover {
+    background-color: #ffffff;
+}
+.footer__scroll-top:hover .footer__scroll-top-icon[data-v-060e08fe] {
+    fill: #e56c2c;
+    color: #e56c2c;
+}
 }
 .footer__scroll-top--animation[data-v-060e08fe] {
   opacity: 0;
@@ -14053,6 +14132,11 @@ p {
 span {
   font-weight: bold;
   font-size: 12px;
+}
+
+label {
+  letter-spacing: 1.2px;
+  font-weight: bold;
 }
 
 tr {

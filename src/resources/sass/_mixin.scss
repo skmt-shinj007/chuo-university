@@ -121,7 +121,7 @@
 }
 
 // cssで背景指定（background-image）
-@mixin background-image($url, $position, $size: cover) {
+@mixin background-image($url, $position: center center, $size: cover) {
   background-image: url($url);
   background-repeat: no-repeat;
   background-position: $position;

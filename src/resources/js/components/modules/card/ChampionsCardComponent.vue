@@ -65,7 +65,7 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
-    @include background-image('/svg/trophy-solid-gold.svg', center center);
+    @include background-image('/svg/trophy-solid-gold.svg');
   }
 
   &__title-wrapper {
