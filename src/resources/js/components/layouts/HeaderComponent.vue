@@ -4,13 +4,8 @@
   <div class="header__navbar">
     <router-link to="/">
       <div class="header__title">
-        <span class="header__title-main">
-          {{ messages.Header.MainTitle }}
-        </span>
-
-        <span class="header__title-assistance">
-          {{ messages.Header.AssistanceTitle }}
-        </span>
+        <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
+        <span class="header__title-assistance">{{ messages.Header.AssistanceTitle }}</span>
       </div>
     </router-link>
 
@@ -41,8 +36,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-// layout style
 .header {
   height: 60px;
   position: fixed;
@@ -50,7 +43,6 @@ export default {
   z-index: 1000;
   box-shadow: 0px 2px 6px color(shadow);
 
-  // pc style
   @include mq(md) {
     width: width(header);
     height: 100vh;
@@ -61,7 +53,10 @@ export default {
 
   &__navbar {
     height: 100%;
-    @include flex(row nowrap, space-around, center);
+    padding: 0 interval(2);
+    max-width: device(max);
+    margin: 0 auto;
+    @include flex(row nowrap, space-between, center);
 
     @include mq(md) {
       @include flex(column nowrap, space-around, center);
@@ -73,17 +68,13 @@ export default {
     @include flex(row nowrap, center, center);
 
     @include mq(md) {
-      padding: interval(3);
-      margin: 0 auto;
+      padding: 0 interval(2);
       writing-mode: vertical-rl;
     }
 
     &-main {
       @include bangers();
-
-      @include mq(sm) {
-        font-size: font(lg);
-      }
+      font-size: font(lg);
 
       @include mq(md) {
         margin-bottom: interval(7);
@@ -115,10 +106,10 @@ export default {
         content: '';
         display: block;
         width: 1px;
-        height: 16px;
+        height: interval(2);
         background-color: color(darkblue);
         position: absolute;
-        top: -32px;
+        top: - interval(4);
         left: 50%;
         transform: translateX(-50%);
       }
