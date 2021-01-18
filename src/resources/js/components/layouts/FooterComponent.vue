@@ -16,11 +16,33 @@
       </div>
     </div>
 
+    <!-- sm, tablet -->
     <ul class="footer__accordion-menu">
-      <li class="footer__menu-item" v-for="(link, n) in links" :key="n">
+      <li class="footer__accordion-menu-item" v-for="(link, n) in links" :key="n">
         <accordion-link-component :item="link"/>
       </li>
     </ul>
+
+    <!-- pc -->
+    <div class="footer__menu" v-for="(link, n) in links" :key="n">
+      <h4 class="footer__menu-list-title">{{ link.menuName }}</h4>
+      <ul class="footer__menu-list">
+        <li class="footer__menu-list-item" :class="`footer__menu-list-item--${menuClass[n]}`"
+            v-for="(menu, i) in link.childrenMenus"
+            :key="i">
+
+          <router-link class="footer__menu-list-link" :to="menu.link" v-if="!link.blank">
+            <svg-vue class="footer__menu-list-icon" icon="angle-right"/>
+            <label class="footer__menu-list-label">{{ menu.label }}</label>
+          </router-link>
+
+          <a class="footer__menu-list-link" :href="menu.link" v-else>
+            <svg-vue class="footer__menu-list-icon" icon="angle-right"/>
+            <label class="footer__menu-list-label">{{ menu.label }}</label>
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <div class="footer__information">
       <svg-vue class="footer__information-logo" icon="chuo-logo"/>
@@ -67,9 +89,19 @@ export default {
     return {
       data: Data,
       features: Features,
+      /**
+       * footer linkの全データ
+       * features.json > FooterLinksのデータを取得
+       */
       links: [],
+
+      /**
+       * links配列のmenuNameを取得。
+       * メニューアイテムの幅を個別に変更するため、クラスにつける文字列を配列で格納
+       */
+      menuClass: [],
+
       telephoneNum: '',
-      ids: null,
       scrollAnimation: false
     }
   },
@@ -77,6 +109,10 @@ export default {
   beforeMount() {
     // フッターリンクの配列を[features.json]を元に生成
     this.$data.features.FooterLinks.forEach(element => this.links.push(element));
+
+    this.links.forEach(element => {
+      this.menuClass.push(element.menuName.replace(" ", "-").toLowerCase());
+    })
 
     /**
      * メニュー配列のバリデーションを設定 (テスト的な処理)
@@ -146,14 +182,68 @@ export default {
 
   &__accordion-menu {
     margin-top: interval(10);
+
+    // pc アコーディオンを非表示にする
+    @include mq(md) {
+      display: none;
+    }
   }
 
-  &__menu-item {
+  &__accordion-menu-item {
     border-top: 2px solid color(lightgray);
 
     &:last-child {
       border-bottom: 2px solid color(lightgray);
     }
+  }
+
+  &__menu {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+      margin-top: interval(10);
+    }
+  }
+
+  &__menu-list {
+    margin-top: interval(2);
+    padding: 0 interval(2);
+    @include flex(row wrap, flex-start, center);
+
+    &-title {
+      @include bangers(font(heading), 2.5px);
+    }
+
+    &-item {
+      padding: interval(1);
+      cursor: pointer;
+
+      &--site-map {
+        width: calc(100% / 4);
+      }
+
+      &--external-link {
+        width: calc(100% / 3);
+      }
+    }
+
+    &-link {
+      @include flex(row nowrap, flex-start, center);
+      cursor: pointer;
+    }
+
+    &-icon {
+      width: interval(1);
+      margin-right: interval(.5);
+      cursor: pointer;
+    }
+
+    &-label {
+      font-size: font(md);
+      cursor: pointer;
+    }
+
   }
 
   &__information {
