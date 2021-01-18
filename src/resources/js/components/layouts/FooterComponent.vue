@@ -164,19 +164,25 @@ export default {
     top: 50%;
     left: interval(2);
     transform: translateY(-50%);
+
+    @include mq(sm) {
+      width: interval(20);
+    }
   }
 
   &__information-title {
-    letter-spacing: 1.5px;
     margin-bottom: interval(1);
   }
 
   &__information-item {
     display: block;
     font-weight: bold;
-    font-size: font(sm);
     line-height: 1.8;
     letter-spacing: 1.2px;
+
+    @include mq(sm) {
+      font-size: font(base);
+    }
   }
 
   &__information-telephone {
