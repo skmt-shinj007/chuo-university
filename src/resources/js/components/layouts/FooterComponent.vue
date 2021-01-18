@@ -89,6 +89,7 @@ export default {
     return {
       data: Data,
       features: Features,
+
       /**
        * footer linkの全データ
        * features.json > FooterLinksのデータを取得
@@ -101,7 +102,14 @@ export default {
        */
       menuClass: [],
 
+      /**
+       * 電話番号のリンク [81-00-0000-0000]
+       */
       telephoneNum: '',
+
+      /**
+       * スクロールボタンのアニメーションを制御するフラグ
+       */
       scrollAnimation: false
     }
   },
@@ -110,6 +118,7 @@ export default {
     // フッターリンクの配列を[features.json]を元に生成
     this.$data.features.FooterLinks.forEach(element => this.links.push(element));
 
+    // メニューアイテムに付与するclass名を生成 (links > menuName参照)
     this.links.forEach(element => {
       this.menuClass.push(element.menuName.replace(" ", "-").toLowerCase());
     })
@@ -137,15 +146,21 @@ export default {
 
   methods: {
     scrollTop() {
-      // アニメーションのため、ボタンにクラスをつける
+      // cssアニメーションを行うため、ボタンにクラスをつける
       this.scrollAnimation = true;
 
       // css アニメーションが完了次第実行 css fadeout -> .3s
       setTimeout(() => {
+        /**
+         * ページ最上部までスクロール
+         * ! (safari,IE)非対応
+         */
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
         })
+
+        // アニメーションフラグをデフォルトに戻す
         this.scrollAnimation = false;
       }, 500);
     }
