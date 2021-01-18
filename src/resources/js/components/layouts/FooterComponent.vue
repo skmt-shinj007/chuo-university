@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <ul class="footer__menu">
+    <ul class="footer__accordion-menu">
       <li class="footer__menu-item" v-for="(link, n) in links" :key="n">
         <accordion-link-component :item="link"/>
       </li>
@@ -144,7 +144,7 @@ export default {
     margin-top: interval(5);
   }
 
-  &__menu {
+  &__accordion-menu {
     margin-top: interval(10);
   }
 
