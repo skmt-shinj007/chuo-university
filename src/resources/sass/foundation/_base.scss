@@ -1,3 +1,11 @@
+/**
+ * スムーズスクロールのスタイル
+ * SPAのようにページ遷移ごとにスクロール位置の調整が必要な場合に微妙な挙動になるかも。
+ */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -76,6 +84,15 @@ h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+h4 {
+  letter-spacing: 1.5px;
+  font-size: font(base);
+
+  @include mq(sm) {
+    font-size: font(md);
+  }
+}
+
 p {
   font-size: font(sm);  // 12px
   line-height: 1.8;
@@ -91,6 +108,11 @@ p {
 span {
   font-weight: bold;
   font-size: font(sm);
+}
+
+label {
+  letter-spacing: 1.2px;
+  font-weight: bold;
 }
 
 tr {

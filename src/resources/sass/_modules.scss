@@ -141,6 +141,18 @@
   }
 }
 
+// fadeOut 上 (footer スクロールボタン)
+@keyframes fadeoutTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+}
+
 // 回転
 @keyframes rotation {
   0% {
