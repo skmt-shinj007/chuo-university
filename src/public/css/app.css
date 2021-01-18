@@ -13262,6 +13262,15 @@ import用ファイル
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
+@media screen and (min-width: 992px) {
+.footer__scroll-top[data-v-060e08fe]:hover {
+    background-color: #ffffff;
+}
+.footer__scroll-top:hover .footer__scroll-top-icon[data-v-060e08fe] {
+    fill: #e56c2c;
+    color: #e56c2c;
+}
+}
 .footer__scroll-top--animation[data-v-060e08fe] {
   opacity: 0;
 }

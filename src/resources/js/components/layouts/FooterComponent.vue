@@ -328,6 +328,15 @@ export default {
     cursor: pointer;
     transition: all .3s ease-out;
 
+    @include hover {
+      background-color: color(white);
+
+      .footer__scroll-top-icon {
+        fill: color(orange);
+        color: color(orange);
+      }
+    }
+
     &--animation {
       opacity: 0;
     }
