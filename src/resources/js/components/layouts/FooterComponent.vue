@@ -230,6 +230,19 @@ export default {
 
     &-title {
       @include bangers(font(heading), 2.5px);
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 80%;
+        height: 2px;
+        @include gradient(rgba(color(lightgray), 0), color(lightgray), horizontal);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
     }
 
     &-item {
