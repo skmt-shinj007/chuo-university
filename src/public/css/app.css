@@ -13169,6 +13169,19 @@ import用ファイル
   font-size: 32px;
   letter-spacing: 2.5px;
   font-weight: bold;
+  position: relative;
+}
+.footer__menu-list-title[data-v-060e08fe]::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background: rgba(242, 242, 242, 0);
+  background: linear-gradient(to right, rgba(242, 242, 242, 0) 0%, #f2f2f2 100%);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
 .footer__menu-list-item[data-v-060e08fe] {
   padding: 0.5rem;
