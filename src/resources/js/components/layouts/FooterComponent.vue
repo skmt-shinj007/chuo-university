@@ -48,11 +48,9 @@
       <div class="footer__information-logo"/>
 
       <address>
-        <h4 class="footer__information-title">
-          <router-link to="/">{{ messages.Information.ClubName }}</router-link>
-        </h4>
+        <h4 class="footer__information-title">{{ messages.Information.ClubName }}</h4>
         <span class="footer__information-item">{{ messages.Information.Address }}</span>
-        <a class="footer__information-item footer__information-telephone" :href="`tel:+${telephoneNum}`">
+        <a class="footer__information-telephone" :href="`tel:+${telephoneNum}`">
           {{ messages.Information.TelephoneNumber }}
         </a>
         <span class="footer__information-item">{{ messages.Information.MailAddress }}</span>
@@ -280,17 +278,18 @@ export default {
   }
 
   &__information-logo {
-    width: interval(18);
-    height: 100%;
-    opacity: .2;
-    @include background-image('/svg/chuo-logo-white.svg');
-    position: absolute;
-    top: 50%;
-    left: interval(2);
-    transform: translateY(-50%);
+    display: none;
 
     @include mq(sm) {
+      display: block;
       width: interval(20);
+      height: 100%;
+      opacity: .2;
+      @include background-image('/svg/chuo-logo-white.svg');
+      position: absolute;
+      top: 50%;
+      left: interval(2);
+      transform: translateY(-50%);
     }
   }
 
@@ -310,6 +309,7 @@ export default {
   }
 
   &__information-telephone {
+    @extend .footer__information-item;
     text-decoration: underline;
 
     @include mq(sm) {

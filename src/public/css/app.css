@@ -13210,34 +13210,35 @@ import用ファイル
   margin-top: 5rem;
 }
 .footer__information-logo[data-v-060e08fe] {
-  width: 9rem;
-  height: 100%;
-  opacity: 0.2;
-  background-image: url("/svg/chuo-logo-white.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
+  display: none;
 }
 @media screen and (min-width: 560px) {
 .footer__information-logo[data-v-060e08fe] {
+    display: block;
     width: 10rem;
+    height: 100%;
+    opacity: 0.2;
+    background-image: url("/svg/chuo-logo-white.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
 }
 }
 .footer__information-title[data-v-060e08fe] {
   margin-bottom: 0.5rem;
 }
-.footer__information-item[data-v-060e08fe] {
+.footer__information-item[data-v-060e08fe], .footer__information-telephone[data-v-060e08fe] {
   display: block;
   font-weight: bold;
   line-height: 1.8;
   letter-spacing: 1.2px;
 }
 @media screen and (min-width: 560px) {
-.footer__information-item[data-v-060e08fe] {
+.footer__information-item[data-v-060e08fe], .footer__information-telephone[data-v-060e08fe] {
     font-size: 14px;
 }
 }
