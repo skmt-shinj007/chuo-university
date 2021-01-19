@@ -11912,312 +11912,6 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@keyframes iconSlide {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@-webkit-keyframes fadeoutDown {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@keyframes fadeoutDown {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@-webkit-keyframes fadeoutTop {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@keyframes fadeoutTop {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@-webkit-keyframes rotation {
-0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
-}
-100% {
-    transform: rotate(180deg);
-}
-}
-@keyframes rotation {
-0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
-}
-100% {
-    transform: rotate(180deg);
-}
-}
-/**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
- */
-.header-button {
-  background-color: #091e2f;
-  color: #ffffff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  box-shadow: 1px 3px 6px 3px #cdcdcd;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 560px) {
-.header-button {
-    margin-right: 1rem;
-}
-}
-@media screen and (min-width: 992px) {
-.header-button {
-    margin-right: 0;
-    margin-bottom: 1rem;
-    position: relative;
-    transition: 0.5s all ease-in-out;
-}
-.header-button::before {
-    position: absolute;
-    content: "";
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    transition: 0.5s all ease-in-out;
-}
-.header-button:hover {
-    background-color: #ffffff;
-    color: #091e2f;
-    transform: scale(1.1);
-}
-.header-button:hover::before {
-    border-color: #091e2f;
-}
-.header-button:hover .header-icon {
-    transform: rotateZ(360deg);
-}
-}
-.header-button:last-child {
-  margin: 0;
-}
-.header-button .header-icon {
-  width: 20px;
-  height: 20px;
-  transition: 0.3s all ease;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数とキーフレームを定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-/**
- * @keyframe を定義
- */
 @-webkit-keyframes iconSlide-data-v-6832e7cf {
 0% {
     transform: translateX(0);
@@ -12438,10 +12132,10 @@ import用ファイル
  */
 .header[data-v-6832e7cf] {
   height: 60px;
+  box-shadow: 0px 2px 6px #e6e6e6;
   position: fixed;
   top: 0;
   z-index: 1000;
-  box-shadow: 0px 2px 6px #e6e6e6;
 }
 @media screen and (min-width: 992px) {
 .header[data-v-6832e7cf] {
@@ -12476,9 +12170,11 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  margin-right: 0.5rem;
 }
 @media screen and (min-width: 992px) {
 .header__title[data-v-6832e7cf] {
+    margin: 0;
     padding: 0 1rem;
     -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
@@ -12544,6 +12240,52 @@ import用ファイル
     justify-content: space-around;
     align-items: stretch;
 }
+}
+.header__btn[data-v-6832e7cf] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #091e2f;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 1px 3px 6px 3px #cdcdcd;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  margin-right: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+.header__btn[data-v-6832e7cf] {
+    margin: 0 0 0.5rem 0;
+}
+.header__btn[data-v-6832e7cf]::before {
+    content: "";
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: 0.3s all ease-in-out;
+}
+}
+@media screen and (min-width: 992px) {
+.header__btn[data-v-6832e7cf]:hover {
+    background-color: #ffffff;
+    transform: scale(1.1);
+}
+.header__btn[data-v-6832e7cf]:hover::before {
+    border-color: #091e2f;
+}
+.header__btn:hover .header__btn-icon[data-v-6832e7cf] {
+    transform: rotateZ(360deg);
+    color: #091e2f;
+}
+}
+.header__btn-icon[data-v-6832e7cf] {
+  width: 1rem;
+  color: #ffffff;
+  transition: 0.3s all ease-out;
 }@charset "UTF-8";
 /*
 import用ファイル
