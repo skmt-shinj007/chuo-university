@@ -81,7 +81,7 @@ export default {
      * [id属性をjsで一括取得]
      * キー表記でアクセスすることで element が取得可能 => this.ids['id名']
      * @param data : 属性の名前が格納された配列
-     * @returns { ofject } : 取得した要素のHTMLCollectionが格納された配列で戻る
+     * @returns { object } : 取得した要素のHTMLCollectionが格納された配列で戻る
      * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }
      */
     getElements(data) {
@@ -100,7 +100,7 @@ export default {
      * [class属性をjsで一括取得]
      * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.classes['class名']
      * @param data : 属性の名前が格納された配列
-     * @return { ofject } : 取得した要素のHTMLCollectionが格納された配列で戻る
+     * @return { object } : 取得した要素のHTMLCollectionが格納された配列で戻る
      * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }
      */
     getClasses(data) {
