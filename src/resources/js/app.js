@@ -27,10 +27,30 @@ import HeaderComponent from './components/layouts/HeaderComponent';
 import FooterComponent from './components/layouts/FooterComponent';
 
 new Vue({
-    el: '#app',
-    router: router,
-    components: {
-        HeaderComponent,
-        FooterComponent
-    },
+  el: '#app',
+
+  router: router,
+
+  components: {
+    HeaderComponent,
+    FooterComponent
+  },
+
+  /**
+   * セキュリティ対策
+   */
+  mounted() {
+    // サイト内のaタグを取得
+    const anchorElementsOfject = document.getElementsByTagName('a');
+
+    // HTMLCollection [Ofject] を配列に変換
+    const anchorElements = Object.entries(anchorElementsOfject).map(([key, value]) => ({'key': key, 'value': value}))
+
+    anchorElements.forEach(element => {
+      // target='_blank' が設定されている要素に rel='noopener noreferrer'をつける
+      if (element.value.getAttribute("target") === '_blank') {
+          element.value.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+  },
 });
