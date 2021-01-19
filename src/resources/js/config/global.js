@@ -9,13 +9,27 @@ export default {
   data() {
     return {
       messages: Messages,
+      /**
+       * [ブレイクポイント]
+       * @type { Number }
+       */
       tabletWidth: 560,
       pcWidth: 992,
+
+      /**
+       * [現在のデバイス幅]
+       * @type { Number }
+       */
       windowWidth: null,
+
+      /**
+       * [現在のスクロール量]
+       * @type { Number }
+       */
       scrollAmount: null,
 
       /**
-     * ユーザーカテゴリー情報
+     * [ユーザーカテゴリー情報]
      * 1. 選手
      * 2. スタッフ
      * 3. OB（役職あり）
@@ -31,7 +45,10 @@ export default {
   },
 
   created() {
-    // ウインドウ幅を取得
+    /**
+     * [ウインドウ幅をリアルタイムで取得]
+     * @type { function }
+     */
     this.windowWidth = window.innerWidth;
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth;
@@ -39,7 +56,10 @@ export default {
   },
 
   mounted() {
-    // スクロール量を取得
+    /**
+     * [スクロール量をリアルタイムで取得]
+     * @type { function }
+     */
     this.scrollAmount = window.scrollY;
     window.addEventListener('scroll', () => {
       this.scrollAmount = window.scrollY;
@@ -58,11 +78,11 @@ export default {
 
   methods: {
     /**
-     * DOMに記載した id属性をjsで一括取得できるメソッド
-     * 参考：https://infoteck-life.com/a0186-js-dom-id-multiple/
+     * [id属性をjsで一括取得]
+     * キー表記でアクセスすることで element が取得可能 => this.ids['id名']
      * @param data : 属性の名前が格納された配列
-     * コンポーネントでのid取得方法：this.getElements(配列);
-     * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.ids['id名']
+     * @returns { ofject } : 取得した要素のHTMLCollectionが格納された配列で戻る
+     * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }
      */
     getElements(data) {
       let elements = [];
@@ -77,11 +97,11 @@ export default {
     },
 
     /**
-     * DOMに記載した class属性をjsで一括取得できるメソッド
-     * 参考：https://infoteck-life.com/a0186-js-dom-id-multiple/
-     * @param data : 属性の名前が格納された配列
-     * コンポーネントでのclass取得方法：this.getClasses(配列);
+     * [class属性をjsで一括取得]
      * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.classes['class名']
+     * @param data : 属性の名前が格納された配列
+     * @return { ofject } : 取得した要素のHTMLCollectionが格納された配列で戻る
+     * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }
      */
     getClasses(data) {
       let classes = [];
@@ -96,9 +116,11 @@ export default {
     },
 
     /**
-     * DOM要素の高さを一括取得できるメソッド
+     * [要素の高さを一括取得できるメソッド]
+     * ドット記法で要素にアクセス可能
      * @param data : 属性の名前が格納された配列
-     * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.heights['class名']
+     * @return { Array } : 各要素の高さが入った配列を返す
+     * ex) > [hoge: 23, fuga: 99]
      */
     getElementHeight(data, method = 'id') {
       let heights = [];

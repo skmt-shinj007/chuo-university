@@ -1,8 +1,7 @@
 <template>
-
-<header class="header">
+<header class="header" id="header" :class="{ 'header--hide': display }">
   <div class="header__navbar">
-    <router-link to="/">
+    <router-link to="/" class="header__navbar-link">
       <div class="header__title">
         <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
         <span class="header__title-assistance">{{ messages.Header.AssistanceTitle }}</span>
@@ -24,9 +23,6 @@
 </template>
 
 <script>
-// component import
-
-
 // data import
 import Data from '../../config/data.json';
 
@@ -37,11 +33,29 @@ export default {
   data() {
     return {
       data: Data,
-      twitter: null
-    }
-  },
-  beforeMount() {
 
+      /**
+       * 要素の高さが入った配列
+       * @type { Array }
+       */
+      elementsHeight: null,
+
+      /**
+       * [ヘッダーの表示を制御するフラグ]
+       * true  表示 (デフォ)
+       * false 非表示
+       * クラスの付与で表示切り替え
+       * @type { Boolean }
+       */
+      display: true,
+
+      /**
+       * [スクロール位置]
+       * ヘッダーの表示切り替えで使用
+       * @type { Number }
+       */
+      lastPosition: 0,
+    }
   },
 
   mounted() {
@@ -56,17 +70,50 @@ export default {
         element.value.setAttribute("rel", "noopener noreferrer");
       }
     });
+
+    // 要素の高さを取得
+    const idName = ['header'];
+    this.elementsHeight = this.getElementHeight(idName);
+    console.log(this.elementsHeight.header);
   },
+
+  watch: {
+    /**
+     * [スクロールに応じてヘッダーの表示を制御する]
+     */
+    scrollAmount() {
+      let pos = this.scrollAmount;                 // 現在地（スクロール）
+      const headerH = this.elementsHeight.header;  // ヘッダーの高さ
+      let lastpos = this.lastPosition;             // 最後のスクロール位置
+
+      // ヘッダーの高さ分スクロール かつ 上スクロールした際にクラスを付与
+      (pos > headerH && pos > lastpos) ? this.display = true : this.display = false;
+
+      // 最後のスクロール位置を更新
+      this.lastPosition = this.scrollAmount;
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .header {
-  height: 60px;
+  height: interval(8);
   box-shadow: 0px 2px 6px color(shadow);
   position: fixed;
   top: 0;
+  right: 0;
   z-index: 1000;
+  transition: all .3s ease-out;
+  transform: translateY(0);
+
+  &--hide {
+    transform: translateY(-110%);
+
+    @include mq(sm) {
+      transform: translateY(0);
+    }
+  }
 
   @include mq(md) {
     width: width(header);
