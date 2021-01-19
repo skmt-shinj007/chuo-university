@@ -62,7 +62,6 @@ export default {
     // 要素の高さを取得
     const idName = ['header'];
     this.elementsHeight = this.getElementHeight(idName);
-    console.log(this.elementsHeight.header);
   },
 
   watch: {

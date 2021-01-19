@@ -36,7 +36,7 @@
             <label class="footer__menu-list-label">{{ menu.label }}</label>
           </router-link>
 
-          <a class="footer__menu-list-link" :href="menu.link" target="_blank" rel="noopener noreferrer" v-else>
+          <a class="footer__menu-list-link" :href="menu.link" target="_blank" v-else>
             <svg-vue class="footer__menu-list-icon" icon="angle-right"/>
             <label class="footer__menu-list-label">{{ menu.label }}</label>
           </a>

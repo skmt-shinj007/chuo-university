@@ -38,19 +38,35 @@ new Vue({
 
   /**
    * セキュリティ対策
+   * DOMがマウントされた後に実行。
+   * ! v-if等で生成された要素には適用されないので注意
    */
   mounted() {
     // サイト内のaタグを取得
-    const anchorElementsOfject = document.getElementsByTagName('a');
+    let anchorElementsObject = document.getElementsByTagName('a');
+    // ビュー全体がレンダリングされた後にnoopenerを付与
+    this.$nextTick(() => {
+      this.addNoopener(anchorElementsObject);
+    })
+  },
 
-    // HTMLCollection [Ofject] を配列に変換
-    const anchorElements = Object.entries(anchorElementsOfject).map(([key, value]) => ({'key': key, 'value': value}))
+  methods: {
+    /**
+     * [サイト内のaタグにnoopenerを付与する処理]
+     * つけ忘れを防ぐために作成。
+     * @param {object} el
+     */
+    addNoopener(el) {
+      // HTMLCollection [Object] を配列に変換
+      let anchorElements = Object.entries(el).map(([key, value]) => ({'key': key, 'value': value}))
 
-    anchorElements.forEach(element => {
-      // target='_blank' が設定されている要素に rel='noopener noreferrer'をつける
-      if (element.value.getAttribute("target") === '_blank') {
+      // 配列にした要素をループして target = "_blank" が設定されている要素を検出
+      anchorElements.forEach(element => {
+        // target='_blank' が設定されている要素に rel='noopener noreferrer'をつける
+        if (element.value.getAttribute("target") === '_blank') {
           element.value.setAttribute("rel", "noopener noreferrer");
-      }
-    });
+        }
+      });
+    }
   },
 });
