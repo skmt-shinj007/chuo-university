@@ -98,10 +98,17 @@ export default {
     @include flex(row nowrap, space-between, center);
     padding: interval(2) interval(1);
     cursor: pointer;
+
+    @include hover {
+      .accordion-link__label {
+        transform: translateX(interval(2));
+      }
+    }
   }
 
   &__label {
     cursor: pointer;
+    transition: all .3s ease-out;
 
     @include mq(sm) {
       font-size: font(lg);
@@ -158,6 +165,12 @@ export default {
 
   &__children-item {
     border-top: 1px solid rgba(color(lightgray), .2);
+
+    @include hover {
+      .accordion-link__children-label {
+        transform: translateX(interval(2));
+      }
+    }
   }
 
   &__link {
@@ -168,6 +181,7 @@ export default {
 
   &__children-label {
     cursor: pointer;
+    transition: all .3s ease-out;
   }
 
   &__children-icon {

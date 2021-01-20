@@ -39,7 +39,7 @@
           <div class="nav-modal__sns">
             <!-- snsの各プロフィールページに遷移するように修正 -->
             <div class="nav-modal__sns-item" v-for="(sns, n) in snsData" :key="n" :class="`nav-modal__sns-item--${sns.name}`">
-              <a :href="sns.link" class="nav-modal__sns-link">
+              <a :href="sns.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
                 <svg-vue :icon="sns.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${sns.name}`"/>
               </a>
             </div>
@@ -217,12 +217,27 @@ export default {
 
   &__menu-item {
     width: 100%;
+
+    @include hover {
+      .nav-modal__menu-title {
+        transform: translateX(interval(2));
+      }
+    }
   }
 
   &__menu-link {
     @include flex(row nowrap, space-between, center);
     padding: interval(2) interval(1);
     cursor: pointer;
+  }
+
+  &__menu-title {
+    cursor: pointer;
+    transition: all .3s ease-out;
+
+    @include mq(sm) {
+      font-size: font(lg);
+    }
   }
 
   &__menu-icon {
