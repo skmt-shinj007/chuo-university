@@ -153,7 +153,7 @@ export default {
   }
 
   &__children-item {
-    border-top: 1px solid color(lightgray);
+    border-top: 1px solid rgba(color(lightgray), .2);
   }
 
   &__link {

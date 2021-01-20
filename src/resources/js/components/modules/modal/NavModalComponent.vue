@@ -146,7 +146,7 @@ export default {
       position: absolute;
       bottom: 0;
       left: 0;
-      @include gradient(rgba(color(lightgray), .8), rgba(color(lightgray), .1), horizontal);
+      @include gradient(rgba(color(lightgray), .3), rgba(color(lightgray), 0), horizontal);
     }
   }
 

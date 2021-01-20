@@ -12178,7 +12178,7 @@ import用ファイル
   background-color: #e56c2c;
 }
 .accordion-link__children-item {
-  border-top: 1px solid #f2f2f2;
+  border-top: 1px solid rgba(242, 242, 242, 0.2);
 }
 .accordion-link__link {
   padding: 0.75rem 0.5rem;
@@ -12510,8 +12510,8 @@ import用ファイル
   position: absolute;
   bottom: 0;
   left: 0;
-  background: rgba(242, 242, 242, 0.8);
-  background: linear-gradient(to right, rgba(242, 242, 242, 0.8) 0%, rgba(242, 242, 242, 0.1) 100%);
+  background: rgba(242, 242, 242, 0.3);
+  background: linear-gradient(to right, rgba(242, 242, 242, 0.3) 0%, rgba(242, 242, 242, 0) 100%);
 }
 .nav-modal__menu[data-v-1f270d64] {
   margin-top: 1.25rem;
