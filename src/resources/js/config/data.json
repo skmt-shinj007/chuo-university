@@ -1,6 +1,10 @@
 {
-  "Href": {
-    "Twitter": "https://twitter.com/home?lang=ja"
+
+  "Button": {
+    "Twitter": {
+      "Name": "Twitter",
+      "Href": "https://twitter.com/home?lang=ja"
+    }
   },
 
   "MenuPanels": [

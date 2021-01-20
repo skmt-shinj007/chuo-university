@@ -18,7 +18,7 @@
 
         <nav class="nav-modal__main">
           <div class="nav-modal__accordion">
-            <div class="nav-modal__accordion-item" v-for="(menu, n) in accordionMenu" :key="n">
+            <div class="nav-modal__accordion-item" v-for="(menu, n) in accordionMenus" :key="n">
               <accordion-link-component
                 :item="menu"
                 @navClose="$emit('close')"
@@ -38,7 +38,7 @@
 
           <div class="nav-modal__sns">
             <!-- snsの各プロフィールページに遷移するように修正 -->
-            <div class="nav-modal__sns-item" v-for="(sns, n) in snsData" :key="n" :class="`nav-modal__sns-item--${sns.name}`">
+            <div class="nav-modal__sns-item" v-for="(sns, n) in snsLinks" :key="n" :class="`nav-modal__sns-item--${sns.name}`">
               <a :href="sns.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
                 <svg-vue :icon="sns.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${sns.name}`"/>
               </a>
@@ -68,7 +68,7 @@ export default {
     /**
      * [アコーディオン: メニューデータ]
      */
-    accordionMenu: {
+    accordionMenus: {
       type: Array,
       required: true,
     },
@@ -76,7 +76,7 @@ export default {
     /**
      * [sns: snsメニューパネルを生成するデータ]
      */
-    snsData: {
+    snsLinks: {
       type: Array,
       required: true
     }

@@ -1,6 +1,6 @@
 <template>
 <header class="header" id="header">
-  <div class="header__navbar" :class="{ 'header__navbar--hide': display }">
+  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
     <router-link to="/" class="header__navbar-link">
       <div class="header__title">
         <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
@@ -13,7 +13,7 @@
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
-      <a class="header__btn" :href="data.Href.Twitter" target="_blank">
+      <a class="header__btn" :href="data.Button.Twitter.Href" target="_blank">
         <svg-vue icon="twitter" class="header__btn-icon"/>
       </a>
     </div>
@@ -21,10 +21,10 @@
 
   <!-- グローバルナビ（モーダル） -->
   <nav-modal-component
-    v-if="nav"
+    v-if="navShow"
     @close="modalClose"
-    :accordionMenu="links"
-    :snsData="sns"/>
+    :accordionMenus="links"
+    :snsLinks="snsLinks"/>
 </header>
 
 </template>
@@ -59,20 +59,20 @@ export default {
        * クラスの付与で表示切り替え
        * @type { Boolean }
        */
-      display: true,
+      headerShow: true,
 
       /**
        * [スクロール位置]
        * ヘッダーの表示切り替えで使用
        * @type { Number }
        */
-      lastPosition: 0,
+      lastScrollPosition: 0,
 
       /**
        * [ナビを開くフラグ]
        * @type { Boolean }
        */
-      nav: false,
+      navShow: false,
 
       /**
        * [ナビ：リンクデータ]
@@ -84,20 +84,20 @@ export default {
        * [ナビ：snsデータ]
        * @type { Array }
        */
-      sns: [],
+      snsLinks: [],
     }
   },
 
   beforeMount() {
     // リンクのデータを生成
     this.$data.features.Links.forEach(element => this.links.push(element));
-    this.$data.features.Sns.forEach(element => this.sns.push(element));
+    this.$data.features.Sns.forEach(element => this.snsLinks.push(element));
   },
 
   mounted() {
     // 要素の高さを取得
-    const idName = ['header'];
-    this.elementsHeight = this.getElementHeight(idName);
+    const idElements = ['header'];
+    this.elementsHeight = this.getElementHeight(idElements);
   },
 
   watch: {
@@ -106,14 +106,14 @@ export default {
      */
     scrollAmount() {
       let pos = this.scrollAmount;                 // 現在地（スクロール）
-      const headerH = this.elementsHeight.header;  // ヘッダーの高さ
-      let lastpos = this.lastPosition;             // 最後のスクロール位置
+      const headerHeight = this.elementsHeight.header;  // ヘッダーの高さ
+      let lastpos = this.lastScrollPosition;             // 最後のスクロール位置
 
       // ヘッダーの高さ分スクロール かつ 上スクロールした際にクラスを付与
-      (pos > headerH && pos > lastpos) ? this.display = true : this.display = false;
+      (pos > headerHeight && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
 
       // 最後のスクロール位置を更新
-      this.lastPosition = this.scrollAmount;
+      this.lastScrollPosition = this.scrollAmount;
     }
   },
 
@@ -122,12 +122,10 @@ export default {
      * [ナビ表示切り替え]
      */
     modalOpen() {
-      this.nav = true;
-      document.body.classList.add("modal-open");
+      this.navShow = true;
     },
     modalClose() {
-      this.nav = false;
-      document.body.classList.remove("modal-open");
+      this.navShow = false;
     }
   },
 }
