@@ -20,13 +20,13 @@
           v-if="item.blank"
           @click="accordionReset(); $emit('navClose')">
 
-          <label class="accordion-link__label">{{ menu.label }}</label>
+          <label class="accordion-link__children-label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </a>
 
         <!-- 同タブ遷移の場合は、<router-link> -->
         <router-link class="accordion-link__link" :to="menu.link" @click.native="accordionReset(); $emit('navClose')" v-else>
-          <label class="accordion-link__label">{{ menu.label }}</label>
+          <label class="accordion-link__children-label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </router-link>
 
@@ -98,10 +98,21 @@ export default {
     @include flex(row nowrap, space-between, center);
     padding: interval(2) interval(1);
     cursor: pointer;
+
+    @include hover {
+      .accordion-link__label {
+        transform: translateX(interval(2));
+      }
+    }
   }
 
   &__label {
     cursor: pointer;
+    transition: all .3s ease-out;
+
+    @include mq(sm) {
+      font-size: font(lg);
+    }
   }
 
   &__icon-wrap {
@@ -154,12 +165,23 @@ export default {
 
   &__children-item {
     border-top: 1px solid rgba(color(lightgray), .2);
+
+    @include hover {
+      .accordion-link__children-label {
+        transform: translateX(interval(2));
+      }
+    }
   }
 
   &__link {
     padding: interval(1.5) interval(1);
     @include flex(row nowrap, space-between, center);
     cursor: pointer;
+  }
+
+  &__children-label {
+    cursor: pointer;
+    transition: all .3s ease-out;
   }
 
   &__children-icon {

@@ -12141,8 +12141,19 @@ import用ファイル
   padding: 1rem 0.5rem;
   cursor: pointer;
 }
+@media screen and (min-width: 992px) {
+.accordion-link__title:hover .accordion-link__label {
+    transform: translateX(1rem);
+}
+}
 .accordion-link__label {
   cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 560px) {
+.accordion-link__label {
+    font-size: 18px;
+}
 }
 .accordion-link__icon-wrap {
   width: 1rem;
@@ -12180,6 +12191,11 @@ import用ファイル
 .accordion-link__children-item {
   border-top: 1px solid rgba(242, 242, 242, 0.2);
 }
+@media screen and (min-width: 992px) {
+.accordion-link__children-item:hover .accordion-link__children-label {
+    transform: translateX(1rem);
+}
+}
 .accordion-link__link {
   padding: 0.75rem 0.5rem;
   display: flex;
@@ -12187,6 +12203,10 @@ import用ファイル
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+.accordion-link__children-label {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
 }
 .accordion-link__children-icon {
   width: 0.5rem;
@@ -12451,12 +12471,46 @@ import用ファイル
   left: 0;
   z-index: 999;
   background-color: rgba(3, 10, 16, 0.9);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+@media screen and (min-width: 992px) {
+.nav-modal[data-v-1f270d64] {
+    flex-direction: row;
+}
 }
 .nav-modal__window[data-v-1f270d64] {
   padding: 0 1rem 2.5rem 1rem;
   color: #ffffff;
   max-height: 100%;
   overflow-y: auto;
+}
+@media screen and (min-width: 992px) {
+.nav-modal__window[data-v-1f270d64] {
+    width: 50%;
+}
+}
+.nav-modal__visual[data-v-1f270d64] {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+.nav-modal__visual[data-v-1f270d64] {
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-image: url("/image/player06.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+}
+.nav-modal__visual-overlay[data-v-1f270d64] {
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 10, 16, 0.3);
+  background: radial-gradient(ellipse at center, rgba(3, 10, 16, 0.3) 0%, rgba(3, 10, 16, 0.9) 100%);
 }
 .nav-modal__header[data-v-1f270d64] {
   display: flex;
@@ -12467,6 +12521,11 @@ import用ファイル
 .nav-modal__logo[data-v-1f270d64] {
   width: 9rem;
   fill: #ffffff;
+}
+@media screen and (min-width: 560px) {
+.nav-modal__logo[data-v-1f270d64] {
+    width: 11rem;
+}
 }
 .nav-modal__btn[data-v-1f270d64] {
   width: 2.5rem;
@@ -12480,6 +12539,29 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 560px) {
+.nav-modal__btn[data-v-1f270d64] {
+    width: 3rem;
+    height: 3rem;
+}
+}
+@media screen and (min-width: 992px) {
+.nav-modal__btn[data-v-1f270d64] {
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 0.3s ease-out;
+}
+}
+@media screen and (min-width: 992px) {
+.nav-modal__btn[data-v-1f270d64]:hover {
+    background: #e56c2c;
+    box-shadow: 0 0 20px 2px #c65418;
+}
+.nav-modal__btn:hover .nav-modal__btn-line[data-v-1f270d64],
+.nav-modal__btn:hover .nav-modal__btn-line[data-v-1f270d64]::before {
+    background-color: #ffffff;
+}
+}
 .nav-modal__btn-line[data-v-1f270d64] {
   position: relative;
   display: block;
@@ -12487,6 +12569,7 @@ import用ファイル
   width: 1.25rem;
   height: 3px;
   transform: rotate(-45deg);
+  transition: all 0.3s ease-out;
 }
 .nav-modal__btn-line[data-v-1f270d64]::before {
   content: "";
@@ -12495,6 +12578,7 @@ import用ファイル
   height: 100%;
   background-color: #e56c2c;
   transform: rotate(90deg);
+  transition: all 0.3s ease-out;
 }
 .nav-modal__accordion[data-v-1f270d64] {
   margin-top: 2.5rem;
@@ -12519,6 +12603,11 @@ import用ファイル
 .nav-modal__menu-item[data-v-1f270d64] {
   width: 100%;
 }
+@media screen and (min-width: 992px) {
+.nav-modal__menu-item:hover .nav-modal__menu-title[data-v-1f270d64] {
+    transform: translateX(1rem);
+}
+}
 .nav-modal__menu-link[data-v-1f270d64] {
   display: flex;
   flex-flow: row nowrap;
@@ -12526,6 +12615,15 @@ import用ファイル
   align-items: center;
   padding: 1rem 0.5rem;
   cursor: pointer;
+}
+.nav-modal__menu-title[data-v-1f270d64] {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 560px) {
+.nav-modal__menu-title[data-v-1f270d64] {
+    font-size: 18px;
+}
 }
 .nav-modal__menu-icon[data-v-1f270d64] {
   width: 0.5rem;
@@ -12537,19 +12635,40 @@ import用ファイル
   justify-content: flex-start;
   align-items: center;
   border: 1px solid rgba(242, 242, 242, 0.1);
-  max-width: 22.5rem;
-  margin: 2.5rem 0 0 auto;
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.nav-modal__sns[data-v-1f270d64] {
+    max-width: 22.5rem;
+    margin: 2.5rem 0 0 auto;
+}
 }
 .nav-modal__sns-item[data-v-1f270d64] {
   width: calc(100% / 3);
-  background-color: rgba(255, 255, 255, 0.3);
-  border-right: 1px solid rgba(242, 242, 242, 0.1);
+  border-right: 1px solid #595959;
+}
+.nav-modal__sns-item--twitter[data-v-1f270d64] {
+  background-color: #00acee;
+}
+.nav-modal__sns-item--instagram[data-v-1f270d64] {
+  position: relative;
+  background: linear-gradient(200deg, #5478f2 0%, #f23f79 60%, orange 100%);
+}
+.nav-modal__sns-item--facebook[data-v-1f270d64] {
+  background-color: #3b5998;
 }
 .nav-modal__sns-link[data-v-1f270d64] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
+  background-color: #404040;
+}
+@media screen and (min-width: 992px) {
+.nav-modal__sns-link[data-v-1f270d64]:hover {
+    background-color: rgba(64, 64, 64, 0);
+}
 }
 .nav-modal__sns-link[data-v-1f270d64]::before {
   display: block;

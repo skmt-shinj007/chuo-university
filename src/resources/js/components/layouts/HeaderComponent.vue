@@ -19,6 +19,7 @@
     </div>
   </div>
 
+  <!-- グローバルナビ（モーダル） -->
   <nav-modal-component
     v-if="nav"
     @close="modalClose"
