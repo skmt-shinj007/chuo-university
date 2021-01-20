@@ -38,7 +38,7 @@
 
           <div class="nav-modal__sns">
             <!-- snsの各プロフィールページに遷移するように修正 -->
-            <div class="nav-modal__sns-item" v-for="(sns, n) in snsData" :key="n">
+            <div class="nav-modal__sns-item" v-for="(sns, n) in snsData" :key="n" :class="`nav-modal__sns-item--${sns.name}`">
               <a :href="sns.link" class="nav-modal__sns-link">
                 <svg-vue :icon="sns.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${sns.name}`"/>
               </a>
@@ -154,6 +154,22 @@ export default {
       width: interval(6);
       height: interval(6);
     }
+
+    @include mq(md) {
+      width: interval(5);
+      height: interval(5);
+      transition: all .3s ease-out;
+    }
+
+    @include hover {
+      background: color(orange);
+      box-shadow: 0 0 20px 2px darken(color(orange), 10%);
+
+      .nav-modal__btn-line,
+      .nav-modal__btn-line::before {
+        background-color: color(white);
+      }
+    }
   }
 
   &__btn-line {
@@ -163,6 +179,7 @@ export default {
     width: interval(2.5);
     height: 3px;
     transform: rotate(-45deg);
+    transition: all .3s ease-out;
 
     &::before {
       content: '';
@@ -171,6 +188,7 @@ export default {
       height: 100%;
       background-color: color(orange);
       transform: rotate(90deg);
+      transition: all .3s ease-out;
     }
   }
 
@@ -225,12 +243,30 @@ export default {
 
   &__sns-item {
     width: calc(100% / 3);
-    background-color: rgba(color(white), .3);
-    border-right: 1px solid rgba(color(lightgray), .1);
+    border-right: 1px solid darken( color(lightgray), 60%);
+
+    &--twitter {
+      background-color: color(twitter);
+    }
+
+    &--instagram {
+      position: relative;
+      background: linear-gradient(200deg, #5478f2 0%, #f23f79 60%, orange 100%);
+    }
+
+    &--facebook {
+      background-color: color(facebook);
+    }
   }
 
   &__sns-link {
     @include flex(row nowrap, center, center);
+    transition: all .3s ease-out;
+    background-color: darken( color(lightgray), 70%);
+
+    @include hover {
+      background-color: rgba( darken( color(lightgray), 70%) , 0);
+    }
 
     &::before {
       display: block;
@@ -241,7 +277,6 @@ export default {
 
   &__sns-icon {
     width: interval(4);
-
   }
 
   &__footer {
