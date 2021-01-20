@@ -15,7 +15,7 @@
     }
   },
 
-  "FooterLinks": [
+  "Links": [
     {
       "menuName": "Site Map",
       "blank": false,
@@ -76,6 +76,24 @@
           "link": "https://kssta.net/"
         }
       ]
+    }
+  ],
+
+  "Sns": [
+    {
+      "name": "twitter",
+      "link": "example.com",
+      "icon": "twitter"
+    },
+    {
+      "name": "instagram",
+      "link": "example.com",
+      "icon": "instagram"
+    },
+    {
+      "name": "facebook",
+      "link": "example.com",
+      "icon": "facebook"
     }
   ]
 }

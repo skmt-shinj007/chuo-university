@@ -73,32 +73,6 @@
   }
 }
 
-// ヘッダーボタンのホバーアニメーション
-@mixin header-button-hover($width: 40px, $height: 40px, $time: .5s) {
-  &::before {
-    position: absolute;
-    content: '';
-    width: $width;
-    height: $height;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    transition: $time all ease-in-out;
-  }
-
-  &:hover {
-    background-color: color(white);
-    color: color(darkblue);
-    transform: scale(1.1);
-
-    &::before {
-      border-color: color(darkblue);
-    }
-
-    .header-icon {
-      transform: rotateZ(360deg);
-    }
-  }
-}
 /**
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける

@@ -10,7 +10,7 @@
   </div>
 
   <collapse-transition>
-    <ul class="accordion-link__children" v-if="isOpened">
+    <ul class="accordion-link__children" v-if="isOpened" :class="background">
       <li class="accordion-link__children-item" v-for="(menu, n) in childrenMenus" :key="n">
 
         <!-- 別タブ遷移の場合は、<a> -->
@@ -18,14 +18,14 @@
           target="_blank" rel="noopener noreferrer"
           :href="menu.link"
           v-if="item.blank"
-          @click="accordionReset()">
+          @click="accordionReset(); $emit('navClose')">
 
           <label class="accordion-link__label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </a>
 
         <!-- 同タブ遷移の場合は、<router-link> -->
-        <router-link class="accordion-link__link" :to="menu.link" @click.native="accordionReset()" v-else>
+        <router-link class="accordion-link__link" :to="menu.link" @click.native="accordionReset(); $emit('navClose')" v-else>
           <label class="accordion-link__label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </router-link>
@@ -60,6 +60,11 @@ export default {
     item: {
       type: Object,
       required: true
+    },
+
+    color: {
+      type: String,
+      default: null
     }
   },
 
@@ -75,6 +80,12 @@ export default {
       this.isOpened = false;
     },
   },
+
+  computed: {
+    background() {
+      return (this.color) ? `accordion-link__children--${this.color}` : null;
+    }
+  }
 }
 </script>
 
@@ -131,11 +142,18 @@ export default {
   }
 
   &__children {
-    background-color: color(lightDarkblue);
+
+    &--lightDarkblue {
+      background-color: color(lightDarkblue);
+    }
+
+    &--orange {
+      background-color: color(orange);
+    }
   }
 
   &__children-item {
-    border-top: 1px solid color(lightgray);
+    border-top: 1px solid rgba(color(lightgray), .2);
   }
 
   &__link {

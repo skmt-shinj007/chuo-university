@@ -1,16 +1,19 @@
 {
   "ReserveText"    : "ただいまテキストを準備中です。もう少々お待ちください。更新されない場合はお問い合わせフォームからご連絡ください。",
   "ReserveImageAlt": "イメージの補足テキストが入ります。",
+  "Copyright": "@ Chuo University Soft Tennis Team",
 
   "Header": {
     "MainTitle"       : "chuo university soft tennis team",
-    "AssistanceTitle" : "中央大学ソフトテニス部",
-    "NavItem"         : [ "Home", "Club", "Member", "Hakumonkai", "History", "Photo", "Contact" ]
+    "AssistanceTitle" : "中央大学ソフトテニス部"
+  },
+
+  "Nav": {
+    "Contact": "Contact"
   },
 
   "Footer": {
-    "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容は、部の主務が受け付けますのでお気軽にご連絡ください。",
-    "Copyright": "@ Chuo University Soft Tennis Team"
+    "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容は、部の主務が受け付けますのでお気軽にご連絡ください。"
   },
 
   "Information": {
