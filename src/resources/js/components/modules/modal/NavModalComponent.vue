@@ -84,7 +84,7 @@ export default {
   right: 0;
   left: 0;
   z-index: 999;
-  background-color: rgba(color(darkblue), $alpha: .9);
+  background-color: rgba(color(deepDarkblue), $alpha: .9);
 
   &__window {
     padding: 0 interval(2) interval(5) interval(2);
@@ -172,7 +172,7 @@ export default {
   &__sns {
     @include flex(row wrap, flex-start, center);
     border: 1px solid rgba(color(lightgray), .1);
-    max-width: interval(40);
+    max-width: interval(45);
     margin: interval(5) 0 0 auto;
   }
 

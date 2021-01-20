@@ -12450,7 +12450,7 @@ import用ファイル
   right: 0;
   left: 0;
   z-index: 999;
-  background-color: rgba(9, 30, 47, 0.9);
+  background-color: rgba(3, 10, 16, 0.9);
 }
 .nav-modal__window[data-v-1f270d64] {
   padding: 0 1rem 2.5rem 1rem;
@@ -12537,7 +12537,7 @@ import用ファイル
   justify-content: flex-start;
   align-items: center;
   border: 1px solid rgba(242, 242, 242, 0.1);
-  max-width: 20rem;
+  max-width: 22.5rem;
   margin: 2.5rem 0 0 auto;
 }
 .nav-modal__sns-item[data-v-1f270d64] {
