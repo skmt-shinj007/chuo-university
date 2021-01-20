@@ -2,8 +2,9 @@
   <transition name="modal" appear>
     <div class="nav-modal" @click.self="$emit('close')">
       <div class="nav-modal__window modal-window">
+
         <header class="nav-modal__header" @click="$emit('close')">
-          <svg-vue icon="logo04" class="nav-modal__logo"/>
+          <svg-vue icon="hakumonkai-logo" class="nav-modal__logo"/>
           <button class="nav-modal__btn">
             <i class="nav-modal__btn-line"/>
           </button>
@@ -42,6 +43,7 @@
         <footer class="nav-modal__footer">
           <p class="nav-modal__copyright nl2br" v-text="messages.Copyright"/>
         </footer>
+
       </div>
     </div>
   </transition>
