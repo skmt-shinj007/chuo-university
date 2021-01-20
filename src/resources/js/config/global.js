@@ -13,8 +13,8 @@ export default {
        * [ブレイクポイント]
        * @type { Number }
        */
-      tabletWidth: 560,
-      pcWidth: 992,
+      breakPointTablet: 560,
+      breakpointPc: 992,
 
       /**
        * [現在のデバイス幅]

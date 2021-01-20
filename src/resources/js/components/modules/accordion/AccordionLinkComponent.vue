@@ -51,7 +51,16 @@ export default {
 
   data() {
     return {
+      /**
+       * [アコーディオンのメニューが入った配列]
+       * @type { Array }
+       */
       childrenMenus: [],
+
+      /**
+       * [アコーディオンの表示・非表示フラグ]
+       * @type { Boolean }
+       */
       isOpened: false
     }
   },
