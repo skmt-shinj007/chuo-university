@@ -15,7 +15,7 @@
     }
   },
 
-  "FooterLinks": [
+  "Links": [
     {
       "menuName": "Site Map",
       "blank": false,

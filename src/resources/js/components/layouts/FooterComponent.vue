@@ -94,23 +94,27 @@ export default {
 
       /**
        * footer linkの全データ
-       * features.json > FooterLinksのデータを取得
+       * features.json > Linksのデータを取得
+       * @type {Array}
        */
       links: [],
 
       /**
        * links配列のmenuNameを取得。
-       * メニューアイテムの幅を個別に変更するため、クラスにつける文字列を配列で格納
+       * pcレイアウトでメニューアイテムの幅を個別に変更するため、クラスにつける文字列を配列で格納
+       * @type {Array}
        */
       menuClass: [],
 
       /**
        * 電話番号のリンク [81-00-0000-0000]
+       * @type {Number}
        */
       telephoneNum: '',
 
       /**
        * スクロールボタンのアニメーションを制御するフラグ
+       * @type {Boolean}
        */
       scrollAnimation: false
     }
@@ -118,7 +122,7 @@ export default {
 
   beforeMount() {
     // フッターリンクの配列を[features.json]を元に生成
-    this.$data.features.FooterLinks.forEach(element => this.links.push(element));
+    this.$data.features.Links.forEach(element => this.links.push(element));
 
     // メニューアイテムに付与するclass名を生成 (links > menuName参照)
     this.links.forEach(element => {
