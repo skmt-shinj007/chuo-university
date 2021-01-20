@@ -12136,7 +12136,7 @@ import用ファイル
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 999;
   transition: all 0.3s ease-out;
   transform: translateY(0);
 }
@@ -12297,6 +12297,21 @@ import用ファイル
   width: 1rem;
   color: #ffffff;
   transition: 0.3s all ease-out;
+}
+.header__nav-aria[data-v-6832e7cf] {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+  transform: translateX(-100%);
+  transition: all 0.3s ease-out;
+}
+.header__nav-aria--open[data-v-6832e7cf] {
+  transform: translateX(0);
 }@charset "UTF-8";
 /*
 import用ファイル

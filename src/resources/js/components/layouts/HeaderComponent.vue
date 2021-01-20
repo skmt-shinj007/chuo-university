@@ -9,7 +9,7 @@
     </router-link>
 
     <div class="header__menus">
-      <button class="header__btn">
+      <button class="header__btn" @click="navOpen()">
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
@@ -17,6 +17,10 @@
         <svg-vue icon="twitter" class="header__btn-icon"/>
       </a>
     </div>
+  </div>
+
+  <div class="header__nav-aria" :class="{ 'header__nav-aria--open' : isOpened }">
+    <h1>aiueo</h1>
   </div>
 </header>
 
@@ -55,6 +59,12 @@ export default {
        * @type { Number }
        */
       lastPosition: 0,
+
+      /**
+       * [ナビを開くフラグ]
+       * @type { Boolean }
+       */
+      isOpened: false
     }
   },
 
@@ -79,7 +89,13 @@ export default {
       // 最後のスクロール位置を更新
       this.lastPosition = this.scrollAmount;
     }
-  }
+  },
+
+  methods: {
+    navOpen() {
+      this.isOpened = !this.isOpened;
+    }
+  },
 }
 </script>
 
@@ -90,7 +106,7 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 999;
   transition: all .3s ease-out;
   transform: translateY(0);
 
@@ -229,6 +245,23 @@ export default {
     width: interval(2);
     color: color(white);
     transition: .3s all ease-out;
+  }
+
+  &__nav-aria {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(black, $alpha: .5);
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: color(white);
+    transform: translateX(-100%);
+    transition: all .3s ease-out;
+
+    &--open {
+      transform: translateX(0);
+    }
   }
 }
 </style>
