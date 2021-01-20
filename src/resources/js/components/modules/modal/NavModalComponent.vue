@@ -1,6 +1,12 @@
 <template>
   <transition name="modal" appear>
     <div class="nav-modal" @click.self="$emit('close')">
+
+      <!-- pcのみ イメージ画像 -->
+      <div class="nav-modal__visual modal-window" @click="$emit('close')">
+        <div class="nav-modal__visual-overlay"/>
+      </div>
+
       <div class="nav-modal__window modal-window">
 
         <header class="nav-modal__header" @click="$emit('close')">
@@ -87,6 +93,11 @@ export default {
   left: 0;
   z-index: 999;
   background-color: rgba(color(deepDarkblue), $alpha: .9);
+  @include flex(column nowrap);
+
+  @include mq(md) {
+    flex-direction: row;
+  }
 
   &__window {
     padding: 0 interval(2) interval(5) interval(2);
@@ -95,6 +106,27 @@ export default {
     // ↓ モーダルがスクロールできない問題を解消
     max-height: 100%;
     overflow-y: auto;
+
+    @include mq(md) {
+      width: 50%;
+    }
+  }
+
+  &__visual {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+      width: 50%;
+      height: 100%;
+      @include background-image('/image/player06.jpg');
+    }
+
+    &-overlay {
+      width: 100%;
+      height: 100%;
+      @include gradient(rgba( color(deepDarkblue) , .3), rgba( color(deepDarkblue) , .9));
+    }
   }
 
   &__header {

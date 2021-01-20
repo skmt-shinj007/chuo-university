@@ -12459,12 +12459,46 @@ import用ファイル
   left: 0;
   z-index: 999;
   background-color: rgba(3, 10, 16, 0.9);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+@media screen and (min-width: 992px) {
+.nav-modal[data-v-1f270d64] {
+    flex-direction: row;
+}
 }
 .nav-modal__window[data-v-1f270d64] {
   padding: 0 1rem 2.5rem 1rem;
   color: #ffffff;
   max-height: 100%;
   overflow-y: auto;
+}
+@media screen and (min-width: 992px) {
+.nav-modal__window[data-v-1f270d64] {
+    width: 50%;
+}
+}
+.nav-modal__visual[data-v-1f270d64] {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+.nav-modal__visual[data-v-1f270d64] {
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-image: url("/image/player06.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+}
+.nav-modal__visual-overlay[data-v-1f270d64] {
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 10, 16, 0.3);
+  background: radial-gradient(ellipse at center, rgba(3, 10, 16, 0.3) 0%, rgba(3, 10, 16, 0.9) 100%);
 }
 .nav-modal__header[data-v-1f270d64] {
   display: flex;
