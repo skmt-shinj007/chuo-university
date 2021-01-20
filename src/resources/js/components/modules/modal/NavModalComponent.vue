@@ -104,6 +104,10 @@ export default {
   &__logo {
     width: interval(18);
     fill: color(white);
+
+    @include mq(sm) {
+      width: interval(22);
+    }
   }
 
   &__btn {
@@ -113,6 +117,11 @@ export default {
     @include gradient(color(white), color(lightgray));
     box-shadow: 0 3px 15px 1px darken(color(orange), 10%);
     @include flex(row nowrap, center, center);
+
+    @include mq(sm) {
+      width: interval(6);
+      height: interval(6);
+    }
   }
 
   &__btn-line {
@@ -174,8 +183,12 @@ export default {
   &__sns {
     @include flex(row wrap, flex-start, center);
     border: 1px solid rgba(color(lightgray), .1);
-    max-width: interval(45);
-    margin: interval(5) 0 0 auto;
+    margin-top: interval(5);
+
+    @include mq(sm) {
+      max-width: interval(45);
+      margin: interval(5) 0 0 auto;
+    }
   }
 
   &__sns-item {

@@ -12144,6 +12144,11 @@ import用ファイル
 .accordion-link__label {
   cursor: pointer;
 }
+@media screen and (min-width: 560px) {
+.accordion-link__label {
+    font-size: 18px;
+}
+}
 .accordion-link__icon-wrap {
   width: 1rem;
 }
@@ -12186,6 +12191,9 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+}
+.accordion-link__children-label {
   cursor: pointer;
 }
 .accordion-link__children-icon {
@@ -12468,6 +12476,11 @@ import用ファイル
   width: 9rem;
   fill: #ffffff;
 }
+@media screen and (min-width: 560px) {
+.nav-modal__logo[data-v-1f270d64] {
+    width: 11rem;
+}
+}
 .nav-modal__btn[data-v-1f270d64] {
   width: 2.5rem;
   height: 2.5rem;
@@ -12479,6 +12492,12 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 560px) {
+.nav-modal__btn[data-v-1f270d64] {
+    width: 3rem;
+    height: 3rem;
+}
 }
 .nav-modal__btn-line[data-v-1f270d64] {
   position: relative;
@@ -12537,8 +12556,13 @@ import用ファイル
   justify-content: flex-start;
   align-items: center;
   border: 1px solid rgba(242, 242, 242, 0.1);
-  max-width: 22.5rem;
-  margin: 2.5rem 0 0 auto;
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.nav-modal__sns[data-v-1f270d64] {
+    max-width: 22.5rem;
+    margin: 2.5rem 0 0 auto;
+}
 }
 .nav-modal__sns-item[data-v-1f270d64] {
   width: calc(100% / 3);
