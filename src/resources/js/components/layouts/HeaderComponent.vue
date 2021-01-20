@@ -136,6 +136,7 @@ export default {
 .header {
 
   &__navbar {
+    width: 100%;
     position: fixed;
     top: 0;
     right: 0;

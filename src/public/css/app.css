@@ -12532,12 +12532,13 @@ import用ファイル
   cursor: pointer;
 }
 .nav-modal__sns[data-v-1f270d64] {
-  margin-top: 2.5rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
   border: 1px solid rgba(242, 242, 242, 0.1);
+  max-width: 20rem;
+  margin: 2.5rem 0 0 auto;
 }
 .nav-modal__sns-item[data-v-1f270d64] {
   width: calc(100% / 3);
@@ -12558,8 +12559,10 @@ import用ファイル
 .nav-modal__sns-icon[data-v-1f270d64] {
   width: 2rem;
 }
-.nav-modal__copyright[data-v-1f270d64] {
+.nav-modal__footer[data-v-1f270d64] {
   margin-top: 2.5rem;
+}
+.nav-modal__copyright[data-v-1f270d64] {
   text-align: center;
   font-size: 10px;
   line-height: 1.2;
@@ -12817,6 +12820,7 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .header__navbar[data-v-6832e7cf] {
+  width: 100%;
   position: fixed;
   top: 0;
   right: 0;

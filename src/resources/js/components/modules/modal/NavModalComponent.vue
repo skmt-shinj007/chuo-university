@@ -39,7 +39,9 @@
           </div>
         </nav>
 
-        <p class="nav-modal__copyright nl2br" v-text="messages.Copyright"/>
+        <footer class="nav-modal__footer">
+          <p class="nav-modal__copyright nl2br" v-text="messages.Copyright"/>
+        </footer>
       </div>
     </div>
   </transition>
@@ -168,9 +170,10 @@ export default {
   }
 
   &__sns {
-    margin-top: interval(5);
     @include flex(row wrap, flex-start, center);
     border: 1px solid rgba(color(lightgray), .1);
+    max-width: interval(40);
+    margin: interval(5) 0 0 auto;
   }
 
   &__sns-item {
@@ -194,8 +197,11 @@ export default {
 
   }
 
-  &__copyright {
+  &__footer {
     margin-top: interval(5);
+  }
+
+  &__copyright {
     text-align: center;
     font-size: font(xs);
     line-height: 1.2;
