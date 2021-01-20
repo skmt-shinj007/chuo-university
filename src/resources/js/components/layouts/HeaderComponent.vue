@@ -1,6 +1,6 @@
 <template>
-<header class="header" id="header" :class="{ 'header--hide': display }">
-  <div class="header__navbar">
+<header class="header" id="header">
+  <div class="header__navbar" :class="{ 'header__navbar--hide': display }">
     <router-link to="/" class="header__navbar-link">
       <div class="header__title">
         <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
@@ -9,7 +9,7 @@
     </router-link>
 
     <div class="header__menus">
-      <button class="header__btn" @click="navOpen()">
+      <button class="header__btn" @click="modalOpen">
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
@@ -19,9 +19,11 @@
     </div>
   </div>
 
-  <div class="header__nav-aria" :class="{ 'header__nav-aria--open' : isOpened }">
-    <h1>aiueo</h1>
-  </div>
+  <nav-modal-component
+    v-if="nav"
+    @close="modalClose"
+    :accordionMenu="links"
+    :snsData="sns"/>
 </header>
 
 </template>
@@ -29,14 +31,19 @@
 <script>
 // data import
 import Data from '../../config/data.json';
+import Features from '../../config/features.json';
+
+// component import
+import NavModalComponent from '../modules/modal/NavModalComponent.vue';
 
 export default {
   components: {
-
+    NavModalComponent,
   },
   data() {
     return {
       data: Data,
+      features: Features,
 
       /**
        * 要素の高さが入った配列
@@ -64,8 +71,26 @@ export default {
        * [ナビを開くフラグ]
        * @type { Boolean }
        */
-      isOpened: false
+      nav: false,
+
+      /**
+       * [ナビ：リンクデータ]
+       * @type { Array }
+       */
+      links: [],
+
+      /**
+       * [ナビ：snsデータ]
+       * @type { Array }
+       */
+      sns: [],
     }
+  },
+
+  beforeMount() {
+    // リンクのデータを生成
+    this.$data.features.Links.forEach(element => this.links.push(element));
+    this.$data.features.Sns.forEach(element => this.sns.push(element));
   },
 
   mounted() {
@@ -92,8 +117,16 @@ export default {
   },
 
   methods: {
-    navOpen() {
-      this.isOpened = !this.isOpened;
+    /**
+     * [ナビ表示切り替え]
+     */
+    modalOpen() {
+      this.nav = true;
+      document.body.classList.add("modal-open");
+    },
+    modalClose() {
+      this.nav = false;
+      document.body.classList.remove("modal-open");
     }
   },
 }
@@ -101,40 +134,35 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: interval(8);
-  box-shadow: 0px 2px 6px color(shadow);
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 999;
-  transition: all .3s ease-out;
-  transform: translateY(0);
-
-  &--hide {
-    transform: translateY(-110%);
-
-    @include mq(sm) {
-      transform: translateY(0);
-    }
-  }
-
-  @include mq(md) {
-    width: width(header);
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    box-shadow: 2px 0px 10px color(shadow);
-  }
 
   &__navbar {
-    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    height: interval(8);
+    background-color: color(white);
     padding: 0 interval(2);
-    max-width: device(max);
-    margin: 0 auto;
+    box-shadow: 0px 2px 6px color(shadow);
+    transition: all .3s ease-out;
+    transform: translateY(0);
     @include flex(row nowrap, space-between, center);
 
     @include mq(md) {
+      position: fixed;
+      left: 0;
+      width: width(header);
+      height: 100vh;
+      box-shadow: 2px 0px 10px color(shadow);
       @include flex(column nowrap, space-around, center);
+    }
+
+    &--hide {
+      transform: translateY(-110%);
+
+      @include mq(sm) {
+        transform: translateY(0);
+      }
     }
   }
 
@@ -247,7 +275,7 @@ export default {
     transition: .3s all ease-out;
   }
 
-  &__nav-aria {
+  &__nav-modal {
     width: 100vw;
     height: 100vh;
     background-color: rgba(black, $alpha: .5);

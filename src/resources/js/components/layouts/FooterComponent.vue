@@ -19,7 +19,7 @@
     <!-- sm, tablet -->
     <ul class="footer__accordion-menu">
       <li class="footer__accordion-menu-item" v-for="(link, n) in links" :key="n">
-        <accordion-link-component :item="link"/>
+        <accordion-link-component :item="link" color="lightDarkblue"/>
       </li>
     </ul>
 
@@ -64,7 +64,7 @@
     </div>
 
     <div class="footer__copyright">
-      {{ messages.Footer.Copyright }}
+      {{ messages.Copyright }}
     </div>
   </footer>
 </div>
@@ -121,7 +121,7 @@ export default {
   },
 
   beforeMount() {
-    // フッターリンクの配列を[features.json]を元に生成
+    // リンクの配列を[features.json]を元に生成
     this.$data.features.Links.forEach(element => this.links.push(element));
 
     // メニューアイテムに付与するclass名を生成 (links > menuName参照)
