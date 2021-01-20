@@ -12567,6 +12567,22 @@ import用ファイル
   font-size: 10px;
   line-height: 1.2;
   font-weight: bold;
+}
+.modal-enter-active[data-v-1f270d64], .modal-leave-active[data-v-1f270d64] {
+  transition: opacity 0.4s;
+}
+.modal-enter-active .modal-window[data-v-1f270d64], .modal-leave-active .modal-window[data-v-1f270d64] {
+  transition: opacity 0.4s, transform 0.4s;
+}
+.modal-leave-active[data-v-1f270d64] {
+  transition: opacity 0.6s ease 0.4s;
+}
+.modal-enter[data-v-1f270d64], .modal-leave-to[data-v-1f270d64] {
+  opacity: 0;
+}
+.modal-enter .modal-window[data-v-1f270d64], .modal-leave-to .modal-window[data-v-1f270d64] {
+  opacity: 0;
+  transform: translateY(-20px);
 }@charset "UTF-8";
 /*
 import用ファイル

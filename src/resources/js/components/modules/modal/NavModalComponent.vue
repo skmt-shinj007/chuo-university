@@ -1,7 +1,7 @@
 <template>
   <transition name="modal" appear>
     <div class="nav-modal" @click.self="$emit('close')">
-      <div class="nav-modal__window">
+      <div class="nav-modal__window modal-window">
         <header class="nav-modal__header" @click="$emit('close')">
           <svg-vue icon="logo04" class="nav-modal__logo"/>
           <button class="nav-modal__btn">
@@ -206,6 +206,29 @@ export default {
     font-size: font(xs);
     line-height: 1.2;
     font-weight: bold;
+  }
+}
+
+// モーダル開閉アニメーション
+.modal-enter-active, .modal-leave-active {
+  transition: opacity 0.4s;
+
+  // オーバーレイに包含されているモーダルウィンドウのトランジション
+  .modal-window {
+    transition: opacity 0.4s, transform 0.4s;
+  }
+}
+
+.modal-leave-active {
+  transition: opacity 0.6s ease 0.4s;
+}
+
+.modal-enter, .modal-leave-to {
+  opacity: 0;
+
+  .modal-window {
+    opacity: 0;
+    transform: translateY(-20px);
   }
 }
 </style>
