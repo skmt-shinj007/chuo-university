@@ -1,6 +1,6 @@
 <template>
 <div class="policy-card">
-  <span class="policy-card__subTitle" v-if="windowWidth > pcWidth">{{ policy.Title.Sub }}</span>  <!-- tablet以下非表示 -->
+  <span class="policy-card__subTitle" v-if="windowWidth > breakpointPc">{{ policy.Title.Sub }}</span>  <!-- tablet以下非表示 -->
   <span class="policy-card__title">{{ policy.Title.Main }}</span>
   <p class="policy-card__text">{{ policy.Content }}</p>
 </div>

@@ -10,7 +10,7 @@
   </div>
 
   <collapse-transition>
-    <ul class="accordion-link__children" v-if="isOpened">
+    <ul class="accordion-link__children" v-if="isOpened" :class="background">
       <li class="accordion-link__children-item" v-for="(menu, n) in childrenMenus" :key="n">
 
         <!-- 別タブ遷移の場合は、<a> -->
@@ -18,15 +18,15 @@
           target="_blank" rel="noopener noreferrer"
           :href="menu.link"
           v-if="item.blank"
-          @click="accordionReset()">
+          @click="accordionReset(); $emit('navClose')">
 
-          <label class="accordion-link__label">{{ menu.label }}</label>
+          <label class="accordion-link__children-label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </a>
 
         <!-- 同タブ遷移の場合は、<router-link> -->
-        <router-link class="accordion-link__link" :to="menu.link" @click.native="accordionReset()" v-else>
-          <label class="accordion-link__label">{{ menu.label }}</label>
+        <router-link class="accordion-link__link" :to="menu.link" @click.native="accordionReset(); $emit('navClose')" v-else>
+          <label class="accordion-link__children-label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </router-link>
 
@@ -51,7 +51,16 @@ export default {
 
   data() {
     return {
+      /**
+       * [アコーディオンのメニューが入った配列]
+       * @type { Array }
+       */
       childrenMenus: [],
+
+      /**
+       * [アコーディオンの表示・非表示フラグ]
+       * @type { Boolean }
+       */
       isOpened: false
     }
   },
@@ -60,6 +69,11 @@ export default {
     item: {
       type: Object,
       required: true
+    },
+
+    color: {
+      type: String,
+      default: null
     }
   },
 
@@ -75,6 +89,12 @@ export default {
       this.isOpened = false;
     },
   },
+
+  computed: {
+    background() {
+      return (this.color) ? `accordion-link__children--${this.color}` : null;
+    }
+  }
 }
 </script>
 
@@ -87,10 +107,21 @@ export default {
     @include flex(row nowrap, space-between, center);
     padding: interval(2) interval(1);
     cursor: pointer;
+
+    @include hover {
+      .accordion-link__label {
+        transform: translateX(interval(2));
+      }
+    }
   }
 
   &__label {
     cursor: pointer;
+    transition: all .3s ease-out;
+
+    @include mq(sm) {
+      font-size: font(lg);
+    }
   }
 
   &__icon-wrap {
@@ -131,17 +162,35 @@ export default {
   }
 
   &__children {
-    background-color: color(lightDarkblue);
+
+    &--lightDarkblue {
+      background-color: color(lightDarkblue);
+    }
+
+    &--orange {
+      background-color: color(orange);
+    }
   }
 
   &__children-item {
-    border-top: 1px solid color(lightgray);
+    border-top: 1px solid rgba(color(lightgray), .2);
+
+    @include hover {
+      .accordion-link__children-label {
+        transform: translateX(interval(2));
+      }
+    }
   }
 
   &__link {
     padding: interval(1.5) interval(1);
     @include flex(row nowrap, space-between, center);
     cursor: pointer;
+  }
+
+  &__children-label {
+    cursor: pointer;
+    transition: all .3s ease-out;
   }
 
   &__children-icon {

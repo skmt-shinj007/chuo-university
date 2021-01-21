@@ -30,12 +30,12 @@
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
+    <div class="club__practice-imageSlider" v-if="windowWidth < breakpointPc">
       <contents-image-slider-component :images="courtImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
+    <div class="club__practice-rowImages" v-if="windowWidth >= breakpointPc">
       <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
         <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
@@ -63,12 +63,12 @@
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
+    <div class="club__practice-imageSlider" v-if="windowWidth < breakpointPc">
       <contents-image-slider-component :images="dormitoryImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
+    <div class="club__dormitory-images" v-if="windowWidth >= breakpointPc">
       <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
         <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>

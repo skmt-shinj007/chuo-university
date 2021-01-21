@@ -19,7 +19,7 @@
     <!-- sm, tablet -->
     <ul class="footer__accordion-menu">
       <li class="footer__accordion-menu-item" v-for="(link, n) in links" :key="n">
-        <accordion-link-component :item="link"/>
+        <accordion-link-component :item="link" color="lightDarkblue"/>
       </li>
     </ul>
 
@@ -36,7 +36,7 @@
             <label class="footer__menu-list-label">{{ menu.label }}</label>
           </router-link>
 
-          <a class="footer__menu-list-link" :href="menu.link" v-else>
+          <a class="footer__menu-list-link" :href="menu.link" target="_blank" v-else>
             <svg-vue class="footer__menu-list-icon" icon="angle-right"/>
             <label class="footer__menu-list-label">{{ menu.label }}</label>
           </a>
@@ -64,7 +64,7 @@
     </div>
 
     <div class="footer__copyright">
-      {{ messages.Footer.Copyright }}
+      {{ messages.Copyright }}
     </div>
   </footer>
 </div>
@@ -94,31 +94,35 @@ export default {
 
       /**
        * footer linkの全データ
-       * features.json > FooterLinksのデータを取得
+       * features.json > Linksのデータを取得
+       * @type {Array}
        */
       links: [],
 
       /**
        * links配列のmenuNameを取得。
-       * メニューアイテムの幅を個別に変更するため、クラスにつける文字列を配列で格納
+       * pcレイアウトでメニューアイテムの幅を個別に変更するため、クラスにつける文字列を配列で格納
+       * @type {Array}
        */
       menuClass: [],
 
       /**
        * 電話番号のリンク [81-00-0000-0000]
+       * @type {Number}
        */
       telephoneNum: '',
 
       /**
        * スクロールボタンのアニメーションを制御するフラグ
+       * @type {Boolean}
        */
       scrollAnimation: false
     }
   },
 
   beforeMount() {
-    // フッターリンクの配列を[features.json]を元に生成
-    this.$data.features.FooterLinks.forEach(element => this.links.push(element));
+    // リンクの配列を[features.json]を元に生成
+    this.$data.features.Links.forEach(element => this.links.push(element));
 
     // メニューアイテムに付与するclass名を生成 (links > menuName参照)
     this.links.forEach(element => {

@@ -21,7 +21,7 @@
   </div>
 
   <!-- もっと見るボタン -->
-  <div class="lattice__view-all" v-if="displayBtn">
+  <div class="lattice__view-all" v-if="buttonShow">
     <view-all-button-component :clickEvent="viewMore"/>
   </div>
 
@@ -133,7 +133,7 @@ export default {
      * this.filteringImages.length：写真データの最大要素数
      * this.count：表示枚数
      */
-    displayBtn() {
+    buttonShow() {
       if (this.filteringImages.length > this.count) {
         return true;
       } else {
