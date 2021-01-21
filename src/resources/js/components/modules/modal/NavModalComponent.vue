@@ -143,12 +143,7 @@ export default {
   }
 
   &__btn {
-    width: interval(5);
-    height: interval(5);
-    border-radius: radius(circle);
-    @include gradient(color(white), color(lightgray));
-    box-shadow: 0 3px 15px 1px darken(color(orange), 10%);
-    @include flex(row nowrap, center, center);
+    @include close-button(interval(5));
 
     @include mq(sm) {
       width: interval(6);
@@ -169,26 +164,6 @@ export default {
       .nav-modal__btn-line::before {
         background-color: color(white);
       }
-    }
-  }
-
-  &__btn-line {
-    position: relative;
-    display: block;
-    background-color: color(orange);
-    width: interval(2.5);
-    height: 3px;
-    transform: rotate(-45deg);
-    transition: all .3s ease-out;
-
-    &::before {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: color(orange);
-      transform: rotate(90deg);
-      transition: all .3s ease-out;
     }
   }
 
