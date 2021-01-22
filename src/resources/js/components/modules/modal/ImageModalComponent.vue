@@ -55,7 +55,7 @@ export default {
        * [images配列の最後のインデックス番号]
        * @type { Number }
        */
-      max: null,
+      max: 0,
 
       /**
        * [footerの表示切り替え]
@@ -120,7 +120,7 @@ export default {
   methods: {
     /**
      * [次へボタンのクリックイベント]
-     * 配列の次の写真を表示させる
+     * images配列の次の写真を表示させる
      */
     nextImage() {
       const max = this.max;
@@ -142,7 +142,7 @@ export default {
 
     /**
      * [前へボタンのクリックイベント]
-     * 配列の一つ前の写真を表示させる
+     * images配列の一つ前の写真を表示させる
      */
     prevImage() {
       const max = this.max;
@@ -177,16 +177,6 @@ export default {
 
       return maxIndex;
     },
-
-    // getLastElement(array) {
-    //   let el = null;
-
-    //   array.forEach(element => {
-    //     el = element;
-    //   });
-
-    //   return el;
-    // }
   },
 }
 </script>
