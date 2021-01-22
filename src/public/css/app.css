@@ -10180,6 +10180,46 @@ import用ファイル
   width: 0.75rem;
   color: #ffffff;
   fill: #ffffff;
+}
+.modal-enter-active[data-v-213a8ec6], .modal-leave-active[data-v-213a8ec6] {
+  transition: opacity 0.3s;
+}
+.modal-leave-active[data-v-213a8ec6] {
+  transition: opacity 0.3s ease 0.1s;
+}
+.modal-enter[data-v-213a8ec6], .modal-leave-to[data-v-213a8ec6] {
+  opacity: 0;
+}
+.modal-enter .modal-window[data-v-213a8ec6], .modal-leave-to .modal-window[data-v-213a8ec6] {
+  opacity: 0;
+}
+.next-enter-active[data-v-213a8ec6],
+.prev-enter-active[data-v-213a8ec6] {
+  transition: all 0.5s ease-out;
+}
+.next-enter[data-v-213a8ec6] {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.next-enter-to[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 1;
+}
+.next-leave[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 0;
+}
+.prev-enter[data-v-213a8ec6] {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.prev-enter-to[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 1;
+}
+.prev-leave[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 0;
 }@charset "UTF-8";
 /*
 import用ファイル

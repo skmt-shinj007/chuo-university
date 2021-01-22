@@ -10,9 +10,11 @@
             </button>
           </header>
 
-          <figure class="image-modal__img-wrap">
-            <img class="image-modal__img" :src="`/image/${item.src}`" :alt="item.alt">
-          </figure>
+          <transition :name="transitionName">
+            <figure class="image-modal__img-wrap" :key="item.id">
+              <img class="image-modal__img" :src="`/image/${item.src}`" :alt="item.alt">
+            </figure>
+          </transition>
 
           <footer class="image-modal__footer" v-if="footerShow">
             <div class="image-modal__prev-btn-area" @click="prevImage" v-if="showPrevBtn">
@@ -74,6 +76,8 @@ export default {
        * @type { Boolean }
        */
       showNextBtn: true,
+
+      transitionName: '',
     }
   },
 
@@ -123,6 +127,7 @@ export default {
      * images配列の次の写真を表示させる
      */
     nextImage() {
+      this.transitionName = 'next';
       const max = this.max;
 
       if (this.showIndex < max) {
@@ -145,6 +150,7 @@ export default {
      * images配列の一つ前の写真を表示させる
      */
     prevImage() {
+      this.transitionName = 'prev';
       const max = this.max;
 
       if (this.showIndex > 0) {
@@ -305,6 +311,54 @@ export default {
     color: color(white);
     fill: color(white);
   }
+}
+
+// vue transitionのアニメーション
+.modal-enter-active, .modal-leave-active {
+  transition: opacity .3s;
+}
+
+.modal-leave-active {
+  transition: opacity .3s ease .1s;
+}
+
+.modal-enter, .modal-leave-to {
+  opacity: 0;
+
+  .modal-window {
+    opacity: 0;
+  }
+}
+
+.next-enter-active,
+.prev-enter-active {
+  transition: all .5s ease-out;
+}
+
+.next-enter {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.next-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.next-leave {
+  transform: translateX(0);
+  opacity: 0;
+}
+
+.prev-enter {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.prev-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.prev-leave {
+  transform: translateX(0);
+  opacity: 0;
 }
 
 </style>
