@@ -9819,7 +9819,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-b58f8e50 {
+@-webkit-keyframes iconSlide-data-v-213a8ec6 {
 0% {
     transform: translateX(0);
 }
@@ -9854,7 +9854,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-b58f8e50 {
+@keyframes iconSlide-data-v-213a8ec6 {
 0% {
     transform: translateX(0);
 }
@@ -9889,7 +9889,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-b58f8e50 {
+@-webkit-keyframes fadeoutDown-data-v-213a8ec6 {
 0% {
     transform: translateY(0);
 }
@@ -9934,7 +9934,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-b58f8e50 {
+@keyframes fadeoutDown-data-v-213a8ec6 {
 0% {
     transform: translateY(0);
 }
@@ -9979,7 +9979,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-b58f8e50 {
+@-webkit-keyframes fadeoutTop-data-v-213a8ec6 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -9989,7 +9989,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-b58f8e50 {
+@keyframes fadeoutTop-data-v-213a8ec6 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -9999,7 +9999,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-b58f8e50 {
+@-webkit-keyframes rotation-data-v-213a8ec6 {
 0% {
     transform: rotate(0);
 }
@@ -10016,7 +10016,7 @@ import用ファイル
     transform: rotate(180deg);
 }
 }
-@keyframes rotation-data-v-b58f8e50 {
+@keyframes rotation-data-v-213a8ec6 {
 0% {
     transform: rotate(0);
 }
@@ -10037,7 +10037,7 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.modal[data-v-b58f8e50] {
+.modal[data-v-213a8ec6] {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -10050,12 +10050,136 @@ import用ファイル
   justify-content: flex-start;
   align-items: stretch;
 }
-.modal__window[data-v-b58f8e50] {
+.modal__window[data-v-213a8ec6] {
   height: 100%;
   padding: 0 1rem;
   position: relative;
   max-height: 100%;
   overflow-y: auto;
+}
+.image-modal[data-v-213a8ec6] {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.image-modal__header[data-v-213a8ec6] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+  position: fixed;
+  top: 1rem;
+}
+.image-modal__close-btn[data-v-213a8ec6] {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #e56c2c;
+  box-shadow: 0 3px 15px 1px #c65418;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.image-modal__close-btn > i[data-v-213a8ec6] {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  width: calc( 2.5rem / 2);
+  height: 3px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-out;
+}
+.image-modal__close-btn > i[data-v-213a8ec6]::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
+.image-modal__img-wrap[data-v-213a8ec6] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 100%;
+  padding: 2.5rem 0;
+}
+@media screen and (min-width: 560px) {
+.image-modal__img-wrap[data-v-213a8ec6] {
+    width: 90%;
+}
+}
+@media screen and (min-width: 992px) {
+.image-modal__img-wrap[data-v-213a8ec6] {
+    width: 80%;
+}
+}
+.image-modal__img[data-v-213a8ec6] {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 0 15px 1px #b3b3b3;
+}
+.image-modal__footer[data-v-213a8ec6] {
+  width: 100%;
+  padding: 0 1rem;
+}
+.image-modal__prev-btn-area[data-v-213a8ec6] {
+  padding: 0.5rem;
+  position: fixed;
+  left: 5%;
+  bottom: 10%;
+}
+.image-modal__next-btn-area[data-v-213a8ec6] {
+  padding: 0.5rem;
+  position: fixed;
+  right: 5%;
+  bottom: 10%;
+}
+.image-modal .image-modal__next-btn[data-v-213a8ec6], .image-modal .image-modal__prev-btn[data-v-213a8ec6] {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.image-modal .image-modal__next-btn[data-v-213a8ec6]::before, .image-modal .image-modal__prev-btn[data-v-213a8ec6]::before {
+  width: 150%;
+  text-align: center;
+  font-size: 10px;
+  display: block;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.image-modal__prev-btn[data-v-213a8ec6]::before {
+  content: "\524D\3078";
+  right: -130%;
+}
+.image-modal__next-btn[data-v-213a8ec6]::before {
+  content: "\6B21\3078";
+  left: -130%;
+}
+.image-modal__icon[data-v-213a8ec6] {
+  width: 0.75rem;
+  color: #ffffff;
+  fill: #ffffff;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -10414,137 +10538,6 @@ import用ファイル
 @media screen and (min-width: 992px) {
 .lattice__img[data-v-d066a2d0] {
     cursor: pointer;
-}
-}
-.image-modal[data-v-d066a2d0] {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.image-modal__header[data-v-d066a2d0] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 1rem;
-  position: fixed;
-  top: 1rem;
-}
-.image-modal__close-btn[data-v-d066a2d0] {
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 15px 1px #c65418;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.image-modal__close-btn > i[data-v-d066a2d0] {
-  position: relative;
-  display: block;
-  background-color: #ffffff;
-  width: calc( 2.5rem / 2);
-  height: 3px;
-  transform: rotate(-45deg);
-  transition: all 0.3s ease-out;
-}
-.image-modal__close-btn > i[data-v-d066a2d0]::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  transform: rotate(90deg);
-  transition: all 0.3s ease-out;
-}
-.image-modal__img-wrap[data-v-d066a2d0] {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-height: 100%;
-  padding: 2.5rem 0;
-}
-@media screen and (min-width: 560px) {
-.image-modal__img-wrap[data-v-d066a2d0] {
-    width: 90%;
-}
-}
-@media screen and (min-width: 992px) {
-.image-modal__img-wrap[data-v-d066a2d0] {
-    width: 80%;
-}
-}
-.image-modal__img[data-v-d066a2d0] {
-  width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  box-shadow: 0 0 15px 1px #b3b3b3;
-}
-.image-modal__footer[data-v-d066a2d0] {
-  width: 100%;
-  padding: 0 1rem;
-  position: fixed;
-  bottom: 2.5rem;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-}
-.image-modal__btn-area[data-v-d066a2d0] {
-  padding: 0.5rem;
-}
-.image-modal .image-modal__next-btn[data-v-d066a2d0], .image-modal .image-modal__prev-btn[data-v-d066a2d0] {
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  border: 1px solid #ffffff;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.image-modal .image-modal__next-btn[data-v-d066a2d0]::before, .image-modal .image-modal__prev-btn[data-v-d066a2d0]::before {
-  width: 150%;
-  text-align: center;
-  font-size: 10px;
-  display: block;
-  color: #ffffff;
-  position: absolute;
-  bottom: -60%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.image-modal__prev-btn[data-v-d066a2d0]::before {
-  content: "\524D\3078";
-}
-.image-modal__next-btn[data-v-d066a2d0]::before {
-  content: "\6B21\3078";
-}
-.image-modal__icon[data-v-d066a2d0] {
-  width: 0.75rem;
-  color: #ffffff;
-  fill: #ffffff;
-}
-.image-modal__border[data-v-d066a2d0] {
-  display: block;
-  width: 50%;
-  height: 1px;
-  background-color: #ffffff;
-}
-@media screen and (min-width: 560px) {
-.image-modal__border[data-v-d066a2d0] {
-    width: 70%;
 }
 }@charset "UTF-8";
 /*

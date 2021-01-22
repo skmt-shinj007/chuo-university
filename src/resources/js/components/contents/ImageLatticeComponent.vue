@@ -15,45 +15,17 @@
   <div class="lattice__item-wrap">
     <div class="lattice__item" v-for="(image,n) in displayImages" :key="n">
       <figure class="lattice__img-wrap">
-        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt" @click="modalOpen">
+        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt" @click="modalOpen(image)">
       </figure>
     </div>
   </div>
 
   <!-- 写真クリック後のモーダル -->
-  <modal-frame-component v-if="showModal" @close="modalClose">
-    <template v-slot:contents>
-      <div class="image-modal">
-
-        <header class="image-modal__header">
-          <button class="image-modal__close-btn" @click="modalClose">
-            <i class="image-modal__close-btn-line"/>
-          </button>
-        </header>
-
-        <figure class="image-modal__img-wrap">
-          <img class="image-modal__img" src="/image/group-photo_toutoSpring2018-02.jpg" alt="">
-        </figure>
-
-        <footer class="image-modal__footer">
-          <div class="image-modal__btn-area">
-            <button class="image-modal__prev-btn">
-              <svg-vue icon="arrow-left" class="image-modal__icon"/>
-            </button>
-          </div>
-
-          <span class="image-modal__border"></span>
-
-          <div class="image-modal__btn-area">
-            <button class="image-modal__next-btn">
-              <svg-vue icon="arrow-right" class="image-modal__icon"/>
-            </button>
-          </div>
-        </footer>
-
-      </div>
-    </template>
-  </modal-frame-component>
+  <image-modal-component
+    v-if="showModal"
+    @close="modalClose"
+    :selectIndex="selectImageIndex"
+    :images="filteringImages"/>
 
   <!-- もっと見るボタン -->
   <div class="lattice__view-all" v-if="buttonShow">
@@ -67,13 +39,13 @@
 // component import
 import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
 import PullDownTableComponent from '../modules/table/PullDownTableComponent';
-import ModalFrameComponent from '../modules/modal/ModalFrameComponent';
+import ImageModalComponent from '../modules/modal/ImageModalComponent';
 
 export default {
   components: {
     ViewAllButtonComponent,
     PullDownTableComponent,
-    ModalFrameComponent,
+    ImageModalComponent,
   },
 
   data() {
@@ -88,7 +60,13 @@ export default {
        * [モーダル表示フラグ]
        * @type { Boolean }
        */
-      showModal: true,
+      showModal: false,
+
+      /**
+       * [選択した画像のインデックス番号]
+       * @type { Number }
+       */
+      selectImageIndex: null,
     }
   },
 
@@ -166,6 +144,7 @@ export default {
     /**
      * [表示枚数制御]
      * フィルタリング処理後の配列を count プロパティを参照して切り取る。
+     * filteringImagesで返された配列をcount数で切り取っているだけ。
      */
     displayImages() {
       return this.filteringImages.slice(0, this.count);
@@ -195,12 +174,14 @@ export default {
     /**
      * [モーダル表示切り替え]
      */
-    modalOpen() {
+    modalOpen(el) {
       this.showModal = true;
+
+      this.selectImageIndex = this.filteringImages.indexOf(el);
     },
     modalClose() {
       this.showModal = false;
-    }
+    },
   },
 
   watch: {
@@ -289,111 +270,4 @@ export default {
     }
   }
 }
-
-.image-modal {
-  width: 100%;
-  height: 100%;
-  @include flex(column nowrap, center, center);
-
-  &__header {
-    @include flex(row nowrap, flex-end, center);
-    padding: 0 interval(2);
-    position: fixed;
-    top: interval(2);
-  }
-
-  &__close-btn {
-    @include close-button(interval(5));
-  }
-
-  &__img-wrap {
-    @include flex(column nowrap, center, center);
-    width: 100%;
-    max-height: 100%;
-    padding: interval(5) 0;
-
-    @include mq(sm) {
-      width: 90%;
-    }
-
-    @include mq(md) {
-      width: 80%;
-    }
-  }
-
-  &__img {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    box-shadow: 0 0 15px 1px color(darkShadow);
-  }
-
-  &__footer {
-    width: 100%;
-    padding: 0 interval(2);
-    position: fixed;
-    bottom: interval(5);
-    @include flex(row nowrap, space-between, center);
-  }
-
-  &__btn-area {
-    padding: interval(1);
-  }
-
-  %btn {
-    position: relative;
-    width: interval(5);
-    height: interval(5);
-    border-radius: radius(circle);
-    border: 1px solid color(white);
-    @include flex(row nowrap, center, center);
-
-    &::before {
-      width: 150%;
-      text-align: center;
-      font-size: font(xs);
-      display: block;
-      color: color(white);
-      position: absolute;
-      bottom: - 60%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  &__prev-btn {
-    @extend %btn;
-
-    &::before {
-      content: '前へ';
-    }
-  }
-
-  &__next-btn {
-    @extend %btn;
-
-    &::before {
-      content: '次へ';
-    }
-  }
-
-  &__icon {
-    width: interval(1.5);
-    color: color(white);
-    fill: color(white);
-  }
-
-  &__border {
-    display: block;
-    width: 50%;
-    height: 1px;
-    background-color: color(white);
-
-    @include mq(sm) {
-      width: 70%;
-    }
-  }
-}
-
 </style>
