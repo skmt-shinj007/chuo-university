@@ -15,10 +15,17 @@
   <div class="lattice__item-wrap">
     <div class="lattice__item" v-for="(image,n) in displayImages" :key="n">
       <figure class="lattice__img-wrap">
-        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt">
+        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt" @click="modalOpen(image)">
       </figure>
     </div>
   </div>
+
+  <!-- 写真クリック後のモーダル -->
+  <image-modal-component
+    v-if="showModal"
+    @close="modalClose"
+    :selectIndex="selectImageIndex"
+    :images="filteringImages"/>
 
   <!-- もっと見るボタン -->
   <div class="lattice__view-all" v-if="buttonShow">
@@ -32,11 +39,13 @@
 // component import
 import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
 import PullDownTableComponent from '../modules/table/PullDownTableComponent';
+import ImageModalComponent from '../modules/modal/ImageModalComponent';
 
 export default {
   components: {
     ViewAllButtonComponent,
     PullDownTableComponent,
+    ImageModalComponent,
   },
 
   data() {
@@ -46,6 +55,18 @@ export default {
       count: 0,         // イメージの表示枚数（こいつで表示枚数を管理する）
       // TODO：初期表示枚数の値を変更
       defaultCountNumber: 10, // イメージ表示枚数のデフォルト値
+
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      showModal: false,
+
+      /**
+       * [選択した画像のインデックス番号]
+       * @type { Number }
+       */
+      selectImageIndex: null,
     }
   },
 
@@ -123,6 +144,7 @@ export default {
     /**
      * [表示枚数制御]
      * フィルタリング処理後の配列を count プロパティを参照して切り取る。
+     * filteringImagesで返された配列をcount数で切り取っているだけ。
      */
     displayImages() {
       return this.filteringImages.slice(0, this.count);
@@ -147,7 +169,19 @@ export default {
     viewMore() {
       // TODO：ボタンクリック時に増やす枚数を変更
       return this.count += 1;
-    }
+    },
+
+    /**
+     * [モーダル表示切り替え]
+     */
+    modalOpen(el) {
+      this.showModal = true;
+
+      this.selectImageIndex = this.filteringImages.indexOf(el);
+    },
+    modalClose() {
+      this.showModal = false;
+    },
   },
 
   watch: {
@@ -236,5 +270,4 @@ export default {
     }
   }
 }
-
 </style>

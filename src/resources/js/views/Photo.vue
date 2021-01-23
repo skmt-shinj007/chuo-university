@@ -44,9 +44,23 @@ export default {
   },
   data() {
     return {
+      /**
+       * [各データ]
+       * @type { object }
+       */
       data: Data,
       features: Features,
+
+      /**
+       * [イメージデータ]
+       * @type { Array }
+       */
       images: [],
+
+      /**
+       * [写真提供者の情報]
+       * @type { Array }
+       */
       providers: [],
     }
   },
@@ -81,7 +95,6 @@ export default {
   }
 
   &__provider-ticket-group {
-    // padding: interval(2);
 
     @include mq(md) {
       @include flex(row wrap, flex-start, center);
