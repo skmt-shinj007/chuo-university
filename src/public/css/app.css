@@ -12922,6 +12922,12 @@ import用ファイル
   max-height: 100%;
   overflow-y: auto;
 }
+@media screen and (min-width: 560px) {
+.nav-modal__window[data-v-1f270d64] {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+}
 @media screen and (min-width: 992px) {
 .nav-modal__window[data-v-1f270d64] {
     width: 50%;
@@ -13818,9 +13824,18 @@ import用ファイル
  */
 .footer[data-v-060e08fe] {
   padding: 0 1rem;
-  max-width: 1600px;
-  margin: 0 auto;
   color: #ffffff;
+}
+@media screen and (min-width: 560px) {
+.footer[data-v-060e08fe] {
+    padding: 0 2rem;
+}
+}
+@media screen and (min-width: 992px) {
+.footer[data-v-060e08fe] {
+    max-width: 1600px;
+    margin: 0 auto;
+}
 }
 .footer-wrap[data-v-060e08fe] {
   background: #030A10;
@@ -14775,9 +14790,9 @@ section {
   max-width: 1600px;
   margin: 5rem auto;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 560px) {
   section {
-    margin: 5rem auto;
+    padding: 0 2rem;
   }
 }
 

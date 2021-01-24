@@ -40,8 +40,8 @@ section {
   max-width: device(max);
   margin: interval(10) auto;
 
-  @include mq(md) {
-    margin: interval(10) auto;
+  @include mq(sm) {
+    padding: 0 interval(4);
   }
 }
 
