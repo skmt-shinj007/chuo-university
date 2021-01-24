@@ -14752,14 +14752,14 @@ body {
   width: 100%;
 }
 
-.right-justified {
+.container {
   /**
    * サイドヘッダーは固定幅でもつ
    * _variables.scss > $width map
    */
 }
 @media screen and (min-width: 992px) {
-  .right-justified {
+  .container {
     width: calc(100% - 120px);
     position: absolute;
     right: 0;
