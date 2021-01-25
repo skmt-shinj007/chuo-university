@@ -50,9 +50,7 @@
 }
 
 // 円形コンテンツのボーダーグラデーション
-@mixin border-gradient($w: 9, $h: 9, $c: white, $start-color: #0179D5, $end-color: #091E2F, $direction: vertical) {
-  width: interval($w);
-  height: interval($h);
+@mixin border-gradient($c: white, $start-color: #0179D5, $end-color: #091E2F, $direction: vertical) {
   border-radius: radius(circle);
   background-color: color($c);
   position: relative;
@@ -68,7 +66,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -2;
     @include gradient($start-color, $end-color, $direction);
   }
 }

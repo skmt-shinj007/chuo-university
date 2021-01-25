@@ -5943,6 +5943,549 @@ import用ファイル
 /**
  * @keyframe を定義
  */
+@-webkit-keyframes iconSlide-data-v-358d2551 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-358d2551 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown-data-v-358d2551 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown-data-v-358d2551 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-358d2551 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-358d2551 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@-webkit-keyframes rotation-data-v-358d2551 {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation-data-v-358d2551 {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.modal[data-v-358d2551] {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 910;
+  background-color: rgba(3, 10, 16, 0.9);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.modal-window[data-v-358d2551] {
+  height: 100%;
+  padding: 0 1rem;
+  position: relative;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.ticket-modal__container[data-v-358d2551] {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 2.5rem auto;
+  border-radius: 8px;
+  position: relative;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__container[data-v-358d2551] {
+    width: 80%;
+}
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__container[data-v-358d2551] {
+    width: 60%;
+}
+}
+.ticket-modal__header[data-v-358d2551] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 1rem 0;
+}
+.ticket-modal__close-btn[data-v-358d2551] {
+  margin-right: 1rem;
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #e56c2c;
+  box-shadow: 0 3px 15px 1px #c65418;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-modal__close-btn > i[data-v-358d2551] {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  width: calc( 2.5rem / 2);
+  height: 3px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-out;
+}
+.ticket-modal__close-btn > i[data-v-358d2551]::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
+.ticket-modal__content[data-v-358d2551] {
+  padding: 0 1rem;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__content[data-v-358d2551] {
+    padding: 0.5rem 1rem;
+}
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__content[data-v-358d2551] {
+    padding: 1rem 2rem;
+}
+}
+.ticket-modal__basic-information[data-v-358d2551] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__basic-information[data-v-358d2551] {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.ticket-modal__thumbnail-border[data-v-358d2551] {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-modal__thumbnail-border[data-v-358d2551]::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__thumbnail-border[data-v-358d2551] {
+    min-width: 7.5rem;
+    max-width: 17rem;
+    width: 27%;
+    height: 100%;
+    margin-left: 5%;
+}
+}
+.ticket-modal__thumbnail-border--orange[data-v-358d2551] {
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-modal__thumbnail-border--orange[data-v-358d2551]::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e56c2c;
+  background: linear-gradient(to bottom, #e56c2c 0%, #10334e 100%);
+}
+.ticket-modal__thumbnail-border--green[data-v-358d2551] {
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-modal__thumbnail-border--green[data-v-358d2551]::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #56b145;
+  background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
+}
+.ticket-modal__thumbnail[data-v-358d2551] {
+  position: relative;
+  width: 100%;
+}
+.ticket-modal__thumbnail[data-v-358d2551]::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.ticket-modal__thumbnail > img[data-v-358d2551] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ticket-modal__thumbnail > img[data-v-358d2551] {
+  border-radius: 50%;
+}
+.ticket-modal__name[data-v-358d2551] {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__name[data-v-358d2551] {
+    margin-top: 0;
+    margin-left: 10%;
+    text-align: left;
+}
+}
+.ticket-modal__name-sub[data-v-358d2551] {
+  font-size: 14px;
+}
+.ticket-modal__name-main[data-v-358d2551] {
+  font-size: 18px;
+}
+.ticket-modal__tag-group[data-v-358d2551] {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__tag-group[data-v-358d2551] {
+    margin-top: 0;
+    margin-left: 10%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+}
+.ticket-modal__line[data-v-358d2551] {
+  width: 100%;
+  height: 2px;
+  margin-top: 2.5rem;
+  background-color: #f2f2f2;
+}
+.ticket-modal__list[data-v-358d2551] {
+  padding: 2.5rem 0;
+}
+.ticket-modal__list-item[data-v-358d2551] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+.ticket-modal__list-item[data-v-358d2551]:last-child {
+  margin-bottom: 0;
+}
+.ticket-modal__list-item > span[data-v-358d2551] {
+  font-size: 12px;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__list-item > span[data-v-358d2551] {
+    font-size: 16px;
+}
+}
+.ticket-modal__list-title[data-v-358d2551] {
+  display: block;
+  width: 30%;
+  text-align: center;
+}
+.ticket-modal__list-content[data-v-358d2551] {
+  display: block;
+  width: 70%;
+  margin-left: 0.5rem;
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__list-content[data-v-358d2551] {
+    margin-left: 0;
+}
+}
+.modal-enter-active[data-v-358d2551], .modal-leave-active[data-v-358d2551] {
+  transition: opacity 0.4s;
+}
+.modal-enter-active .modal-window[data-v-358d2551], .modal-leave-active .modal-window[data-v-358d2551] {
+  transition: opacity 0.4s, transform 0.4s;
+}
+.modal-leave-active[data-v-358d2551] {
+  transition: opacity 0.6s ease 0.4s;
+}
+.modal-enter[data-v-358d2551], .modal-leave-to[data-v-358d2551] {
+  opacity: 0;
+}
+.modal-enter .modal-window[data-v-358d2551], .modal-leave-to .modal-window[data-v-358d2551] {
+  opacity: 0;
+  transform: translateY(-20px);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * base pixel (8px)
+ * rem記法を基準に設定。
+ */
+/**
+ * button size
+ */
+/**
+ * icon size
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * @keyframe を定義
+ */
 @-webkit-keyframes iconSlide {
 0% {
     transform: translateX(0);
@@ -6196,9 +6739,11 @@ import用ファイル
             animation: iconSlide 1.5s infinite;
 }
 }
-.user-ticket-thumbnail-border--blue {
+.user-ticket-thumbnail-border {
   width: 4.5rem;
   height: 4.5rem;
+}
+.user-ticket-thumbnail-border--blue {
   border-radius: 50%;
   background-color: #ffffff;
   position: relative;
@@ -6217,13 +6762,10 @@ import用ファイル
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -2;
   background: #0179D5;
   background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
 }
 .user-ticket-thumbnail-border--orange {
-  width: 4.5rem;
-  height: 4.5rem;
   border-radius: 50%;
   background-color: #ffffff;
   position: relative;
@@ -6242,13 +6784,10 @@ import用ファイル
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -2;
   background: #e56c2c;
   background: linear-gradient(to bottom, #e56c2c 0%, #10334e 100%);
 }
 .user-ticket-thumbnail-border--green {
-  width: 4.5rem;
-  height: 4.5rem;
   border-radius: 50%;
   background-color: #ffffff;
   position: relative;
@@ -6267,7 +6806,6 @@ import用ファイル
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -2;
   background: #56b145;
   background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
 }
@@ -6294,7 +6832,7 @@ import用ファイル
     width: 5rem;
 }
 }
-.user-ticket-thumbnail {
+.user-ticket-thumbnail-wrap > img {
   border-radius: 50%;
 }
 .user-ticket__name {
@@ -6649,11 +7187,6 @@ import用ファイル
 .member__staff[data-v-668c6779] {
   padding-bottom: 5rem;
   margin-bottom: 0;
-}
-@media screen and (min-width: 1025px) {
-.member__staff[data-v-668c6779] {
-    padding-bottom: 10rem;
-}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -10845,8 +11378,6 @@ import用ファイル
 }
 }
 .provider-ticket-thumbnail-border {
-  width: 4.5rem;
-  height: 4.5rem;
   border-radius: 50%;
   background-color: #ffffff;
   position: relative;
@@ -10866,7 +11397,6 @@ import用ファイル
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -2;
   background: #0179D5;
   background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
 }
@@ -12588,7 +13118,7 @@ import用ファイル
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 910;
   background-color: rgba(3, 10, 16, 0.9);
   display: flex;
   flex-flow: column nowrap;
@@ -13084,7 +13614,7 @@ import用ファイル
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 999;
+  z-index: 900;
   height: 4rem;
   background-color: #ffffff;
   padding: 0 1rem;
@@ -14568,6 +15098,10 @@ th, td {
   th, td {
     line-height: 2;
   }
+}
+
+.modal-open {
+  overflow: hidden;
 }
 
 .background-darkblue {
