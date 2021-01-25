@@ -35,8 +35,8 @@ $color: (
 $breakpoints: (
   xs: 'screen and (min-width: 320px)',
   sm: 'screen and (min-width: 560px)',
-	md: 'screen and (min-width: 992px)',
-	lg: 'screen and (min-width: 1200px)',
+	md: 'screen and (min-width: 1025px)',
+	lg: 'screen and (min-width: 1920px)',
 ) !default;
 
 // display(このサイトが対応するデバイス幅)
