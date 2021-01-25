@@ -107,6 +107,11 @@ export default {
     max-height: 100%;
     overflow-y: auto;
 
+    @include mq(sm) {
+      padding-left: interval(4);
+      padding-right: interval(4);
+    }
+
     @include mq(md) {
       width: 50%;
     }

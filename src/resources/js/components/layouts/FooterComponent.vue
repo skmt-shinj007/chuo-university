@@ -177,9 +177,16 @@ export default {
 <style lang="scss" scoped>
 .footer {
   padding: 0 interval(2);
-  max-width: device(max);
-  margin: 0 auto;
   color: color(white);
+
+  @include mq(sm) {
+    padding: 0 interval(4);
+  }
+
+  @include mq(md) {
+    max-width: device(max);
+    margin: 0 auto;
+  }
 
   &-wrap {
     @include gradient(color(deepDarkblue), color(lightDarkblue), horizontal);
