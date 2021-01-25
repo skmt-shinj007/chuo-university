@@ -9,38 +9,17 @@
     </section>
 
     <section class="home__about">
-      <div class="home__about-item">
+      <div class="home__about-item" v-for="(aboutItem, n) in aboutItems" :key="n">
         <figure class="home__img">
-          <img src="/image/group-photo_toutoSpring2017.jpg" alt="2017年東都春季リーグ戦の集合写真">
+          <img :src="`/image/${aboutItem.img.src}.jpg`" :alt="aboutItem.img.alt">
         </figure>
 
         <div class="home__lead">
           <text-card-component
-          :titles="messages.SectionTitles.Team"
-          :buttonName="messages.ButtonName.Member"
-          :contentsText="messages.Home.TeamDescription"/>
+          :titles="aboutItem.title"
+          :buttonName="aboutItem.button.name"
+          :contentsText="aboutItem.text"/>
         </div>
-      </div>
-
-      <div class="home__about-item">
-        <figure class="home__img">
-          <img src="/image/hakumon.jpg" alt="中央大学多摩キャンパス白門の画像">
-        </figure>
-
-        <div class="home__lead">
-          <text-card-component
-          :titles="messages.SectionTitles.Hakumonkai"
-          :buttonName="messages.ButtonName.Hakumonkai"
-          :contentsText="messages.Home.HakumonkaiDescription"/>
-        </div>
-      </div>
-    </section>
-
-    <section class="home__menuPanel">
-      <!-- TODO:コンポーネントを v-for しない -->
-      <!-- TODO:data.jsonからオブジェクトを引っ張る -->
-      <div class="home__menuPanel-item" v-for="(menuPanelItem, n) in menuPanels" :key="n">
-        <menu-panel-component :menuPanelData="menuPanelItem"/>
       </div>
     </section>
 
@@ -67,7 +46,6 @@
 import Data from '../config/data.json';
 import MainVisualComponent from '../components/contents/MainVisualComponent';
 import NewsComponent from '../components/contents/NewsComponent';
-import MenuPanelComponent from '../components/modules/MenuPanelComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TextCardComponent from '../components/modules/card/TextCardComponent';
 
@@ -75,18 +53,17 @@ export default {
   components: {
     MainVisualComponent,
     NewsComponent,
-    MenuPanelComponent,
     ContentsTitleComponent,
     TextCardComponent,
   },
   data() {
     return {
       data: Data,
-      menuPanels: [],
+      aboutItems: [],
     }
   },
   beforeMount() {
-    this.$data.data.MenuPanels.forEach(element => this.menuPanels.push(element));
+    this.$data.data.HomeAbout.forEach(element => this.aboutItems.push(element));
   },
 }
 </script>
@@ -106,13 +83,14 @@ export default {
     @include mq(md) {
       position: relative;
       @include flex();
+      margin-bottom: interval(32);
     }
   }
 
+  // 偶数個のアバウトメニュースタイル
   &__about-item:nth-child(even) {
 
     @include mq(md) {
-      margin-top: interval(32);
       @include flex(row-reverse nowrap);
     }
 
@@ -148,34 +126,6 @@ export default {
 
     @include mq(md) {
       width: 80%;
-    }
-  }
-
-  &__menuPanel {
-
-    @include mq(md) {
-      @include flex(row nowrap, space-between, center);
-      margin-top: interval(40);
-    }
-
-    &-item {
-      width: 100%;
-
-      @include mq(sm) {
-        width: 90%;
-        max-width: interval(100);
-        margin: 0 auto;
-      }
-
-      @include mq(md) {
-        margin-right: interval(2);
-      }
-
-      &:last-child {
-        @include mq(md) {
-          margin-right: 0;
-        }
-      }
     }
   }
 
