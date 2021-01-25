@@ -126,6 +126,10 @@ th,td {
   }
 }
 
+.modal-open {
+  overflow: hidden;
+}
+
 .background-darkblue {
   @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
   margin-top: 0;

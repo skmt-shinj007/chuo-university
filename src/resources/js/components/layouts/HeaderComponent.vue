@@ -9,7 +9,7 @@
     </router-link>
 
     <div class="header__menus">
-      <button class="header__btn" @click="modalOpen">
+      <button class="header__btn" @click="openModal">
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
@@ -22,7 +22,7 @@
   <!-- グローバルナビ（モーダル） -->
   <nav-modal-component
     v-if="navShow"
-    @close="modalClose"
+    @close="closeModal"
     :accordionMenus="links"
     :snsLinks="snsLinks"/>
 </header>
@@ -121,11 +121,13 @@ export default {
     /**
      * [ナビ表示切り替え]
      */
-    modalOpen() {
+    openModal() {
       this.navShow = true;
+      document.body.classList.add("modal-open");
     },
-    modalClose() {
+    closeModal() {
       this.navShow = false;
+      document.body.classList.remove("modal-open");
     }
   },
 }
@@ -139,7 +141,7 @@ export default {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 999;
+    z-index: 900;
     height: interval(8);
     background-color: color(white);
     padding: 0 interval(2);
