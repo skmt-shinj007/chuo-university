@@ -49,7 +49,7 @@ header {
 section {
   padding: 0 interval(2);
   max-width: device(max);
-  margin: interval(10) auto;
+  margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
     padding: 0 interval(4);
@@ -61,21 +61,12 @@ h1, h2 {
 }
 
 h2 {
-  @include bangers($size:font(32), $letterSpacing:3px);
+  @include bangers($size:font(40), $letterSpacing:3px);
   line-height: 1;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(48);
-  }
 }
 
 h3 {
   font-size: font(14);
-
-  @include mq(sm) {
-    font-size: font(16);
-  }
 }
 
 h3, h4, h5, h6 {
@@ -95,12 +86,6 @@ p {
   font-size: font(12);  // 12px
   line-height: 1.8;
   letter-spacing: 1.2px;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(14);
-    line-height: 2;
-  }
 }
 
 span {

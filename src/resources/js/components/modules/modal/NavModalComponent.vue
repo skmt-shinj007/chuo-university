@@ -150,14 +150,7 @@ export default {
   &__btn {
     @include close-button(interval(5));
 
-    @include mq(sm) {
-      width: interval(6);
-      height: interval(6);
-    }
-
     @include mq(md) {
-      width: interval(5);
-      height: interval(5);
       transition: all .3s ease-out;
     }
 
@@ -214,10 +207,7 @@ export default {
   &__menu-title {
     cursor: pointer;
     transition: all .3s ease-out;
-
-    @include mq(sm) {
-      font-size: font(18);
-    }
+    font-size: font(16);
   }
 
   &__menu-icon {

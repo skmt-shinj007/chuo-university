@@ -1,48 +1,42 @@
 <template>
-<div class="primary-btn" :class="[changeSizing, variation]">
+<div class="primary-btn" :class="variation">
   <button class="primary-btn__btn" :type="btnType">
     {{ name }}
     <i class="fas fa-angle-right fa-2x primary-btn__icon"></i>
   </button>
 </div>
-
-<!--
-  ボタンテキストとボタンタイプを指定可能 (name="hoge" btnType="hoge" を親コンポーネントで指定)
-  指定なしならpropsオブジェクト内default値が適用。
-  例）<primary-button-component name="メンバーを見る" btnType="submit"/>
-
-  ボタンサイズの可変は、クラスの指定で行う。(親コンポーネントで btnSize を指定)
-  1. primary-btn-xs
-  2. primary-btn-sm
-
-  variation -> ボタンのレイアウトを変えたいときに追加のクラス名を指定する。（スタイルを追加する必要あり）
--->
 </template>
 
 <script>
 export default {
   props: {
+    /**
+     * ボタンのラベル
+     */
     name: {
       type: String,
       default: 'もっと見る',
     },
+
+    /**
+     * ボタンのタイプ
+     * button, submit 等
+     */
     btnType: {
       type: String,
       default: 'button',
     },
-    btnSize: {
-      type: String,
-      default: null,
-    },
+
+    /**
+     * 特定の時にスタイルを変えたい場合のクラス名
+     * スタイルを追加する必要がある。
+     */
     variationClass: {
       type: String,
       default: null,
     }
   },
   computed: {
-    changeSizing() {
-      return (this.btnSize) ? `primary-btn--${this.btnSize}` : null;
-    },
     variation() {
       return (this.variationClass) ? `primary-btn--${this.variationClass}` : null;
     }

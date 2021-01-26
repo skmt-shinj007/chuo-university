@@ -15,7 +15,7 @@
         </figure>
 
         <div class="home__lead">
-          <text-card-component
+          <text-box-component
           :titles="aboutItem.title"
           :buttonName="aboutItem.button.name"
           :contentsText="aboutItem.text"/>
@@ -47,14 +47,14 @@ import Data from '../config/data.json';
 import MainVisualComponent from '../components/contents/MainVisualComponent';
 import NewsComponent from '../components/contents/NewsComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import TextCardComponent from '../components/modules/card/TextCardComponent';
+import TextBoxComponent from '../components/modules/TextBoxComponent';
 
 export default {
   components: {
     MainVisualComponent,
     NewsComponent,
     ContentsTitleComponent,
-    TextCardComponent,
+    TextBoxComponent,
   },
   data() {
     return {
@@ -75,15 +75,26 @@ export default {
   &__news {
     transform: translateY(-50px);
     max-width: interval(100);
-    margin: 0 auto interval(10) auto;
+  }
+
+  &__about {
+    margin-bottom: 0;
+
+    @include mq(md) {
+      margin-bottom: - interval(5);
+    }
   }
 
   &__about-item {
 
     @include mq(md) {
       position: relative;
-      @include flex();
-      margin-bottom: interval(32);
+      @include flex(row wrap);
+      margin-top: - interval(10);
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
 
@@ -91,14 +102,13 @@ export default {
   &__about-item:nth-child(even) {
 
     @include mq(md) {
-      @include flex(row-reverse nowrap);
+      @include flex(row-reverse wrap);
     }
 
-    // リードテキストを左寄せにする
+    // テキストボックスを左寄せにする
     .home__lead {
       @include mq(md) {
-        right: auto;
-        left: 0;
+        margin: 0 auto 0 0;
       }
     }
   }
@@ -107,13 +117,17 @@ export default {
     width: 90%;
     max-width: interval(100);
     margin: 0 auto;
-    transform: translateY(-50px);
+    transform: translateY(-15%);
+
+    @include mq(sm) {
+      transform: translateY(-20%);
+    }
 
     @include mq(md) {
+      min-width: interval(60);
       width: 60%;
-      position: absolute;
-      top: 50%;
-      right: 0;
+      margin: 0 0 0 auto;
+      transform: translateY(-40%);
     }
   }
 
@@ -126,6 +140,7 @@ export default {
 
     @include mq(md) {
       width: 80%;
+      min-width: interval(66);
     }
   }
 

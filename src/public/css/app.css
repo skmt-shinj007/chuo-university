@@ -1441,32 +1441,29 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.text-card {
+.text-box {
   padding: 1rem;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 6px 8px #e6e6e6;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.text-card {
+.text-box {
     padding: 1.5rem;
 }
 }
 @media screen and (min-width: 1025px) {
-.text-card {
+.text-box {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    min-height: 30rem;
+    min-height: 25rem;
 }
 }
-.text-card__text {
-  padding: 0 0.5rem;
-}
-.text-card__button {
+.text-box__button {
   margin-top: 2.5rem;
+  width: 100%;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1734,44 +1731,58 @@ import用ファイル
 .home__news[data-v-63cd6604] {
   transform: translateY(-50px);
   max-width: 50rem;
-  margin: 0 auto 5rem auto;
+}
+.home__about[data-v-63cd6604] {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1025px) {
+.home__about[data-v-63cd6604] {
+    margin-bottom: -2.5rem;
+}
 }
 @media screen and (min-width: 1025px) {
 .home__about-item[data-v-63cd6604] {
     position: relative;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
     align-items: stretch;
-    margin-bottom: 16rem;
+    margin-top: -5rem;
+}
+.home__about-item[data-v-63cd6604]:first-child {
+    margin-top: 0;
 }
 }
 @media screen and (min-width: 1025px) {
 .home__about-item[data-v-63cd6604]:nth-child(even) {
     display: flex;
-    flex-flow: row-reverse nowrap;
+    flex-flow: row-reverse wrap;
     justify-content: flex-start;
     align-items: stretch;
 }
 }
 @media screen and (min-width: 1025px) {
 .home__about-item:nth-child(even) .home__lead[data-v-63cd6604] {
-    right: auto;
-    left: 0;
+    margin: 0 auto 0 0;
 }
 }
 .home__lead[data-v-63cd6604] {
   width: 90%;
   max-width: 50rem;
   margin: 0 auto;
-  transform: translateY(-50px);
+  transform: translateY(-15%);
+}
+@media screen and (min-width: 560px) {
+.home__lead[data-v-63cd6604] {
+    transform: translateY(-20%);
+}
 }
 @media screen and (min-width: 1025px) {
 .home__lead[data-v-63cd6604] {
+    min-width: 30rem;
     width: 60%;
-    position: absolute;
-    top: 50%;
-    right: 0;
+    margin: 0 0 0 auto;
+    transform: translateY(-40%);
 }
 }
 .home__img[data-v-63cd6604] {
@@ -1798,6 +1809,7 @@ import用ファイル
 @media screen and (min-width: 1025px) {
 .home__img[data-v-63cd6604] {
     width: 80%;
+    min-width: 33rem;
 }
 }
 .home__support[data-v-63cd6604] {
@@ -12900,11 +12912,7 @@ import用ファイル
 .accordion-link__label {
   cursor: pointer;
   transition: all 0.3s ease-out;
-}
-@media screen and (min-width: 560px) {
-.accordion-link__label {
-    font-size: 1.125rem;
-}
+  font-size: 1rem;
 }
 .accordion-link__icon-wrap {
   width: 1rem;
@@ -12958,6 +12966,7 @@ import用ファイル
 .accordion-link__children-label {
   cursor: pointer;
   transition: all 0.3s ease-out;
+  font-size: 0.75rem;
 }
 .accordion-link__children-icon {
   width: 0.5rem;
@@ -13323,16 +13332,8 @@ import用ファイル
   transform: rotate(90deg);
   transition: all 0.3s ease-out;
 }
-@media screen and (min-width: 560px) {
-.nav-modal__btn[data-v-1f270d64] {
-    width: 3rem;
-    height: 3rem;
-}
-}
 @media screen and (min-width: 1025px) {
 .nav-modal__btn[data-v-1f270d64] {
-    width: 2.5rem;
-    height: 2.5rem;
     transition: all 0.3s ease-out;
 }
 }
@@ -13385,11 +13386,7 @@ import用ファイル
 .nav-modal__menu-title[data-v-1f270d64] {
   cursor: pointer;
   transition: all 0.3s ease-out;
-}
-@media screen and (min-width: 560px) {
-.nav-modal__menu-title[data-v-1f270d64] {
-    font-size: 1.125rem;
-}
+  font-size: 1rem;
 }
 .nav-modal__menu-icon[data-v-1f270d64] {
   width: 0.5rem;
@@ -13788,11 +13785,11 @@ import用ファイル
   font-size: 1rem;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 @media screen and (min-width: 1025px) {
 .header__title-main[data-v-6832e7cf] {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
 }
 }
 .header__title-assistance[data-v-6832e7cf] {
@@ -13801,7 +13798,7 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .header__title-assistance[data-v-6832e7cf] {
     margin-left: 1.5rem;
-    font-size: 0.625rem;
+    font-size: 0.5rem;
     font-weight: normal;
     letter-spacing: 1.1px;
     position: relative;
@@ -15143,7 +15140,7 @@ header {
 section {
   padding: 0 1rem;
   max-width: 1600px;
-  margin: 5rem auto;
+  margin: 0 auto 5rem auto;
 }
 @media screen and (min-width: 560px) {
   section {
@@ -15160,24 +15157,14 @@ h1, h2 {
 
 h2 {
   font-family: "Bangers", cursive;
-  font-size: 2rem;
+  font-size: 2.5rem;
   letter-spacing: 3px;
   font-weight: bold;
   line-height: 1;
 }
-@media screen and (min-width: 1025px) {
-  h2 {
-    font-size: 3rem;
-  }
-}
 
 h3 {
   font-size: 0.875rem;
-}
-@media screen and (min-width: 560px) {
-  h3 {
-    font-size: 1rem;
-  }
 }
 
 h3, h4, h5, h6 {
@@ -15198,12 +15185,6 @@ p {
   font-size: 0.75rem;
   line-height: 1.8;
   letter-spacing: 1.2px;
-}
-@media screen and (min-width: 1025px) {
-  p {
-    font-size: 0.875rem;
-    line-height: 2;
-  }
 }
 
 span {
