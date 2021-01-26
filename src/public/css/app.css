@@ -4364,6 +4364,21 @@ import用ファイル
 .tag__content {
   font-size: 10px;
 }
+@media screen and (min-width: 560px) {
+.tag__content--responsive {
+    font-size: 12px;
+    line-height: 2;
+}
+}
+@media screen and (min-width: 1025px) {
+.tag__content--responsive {
+    font-size: 16px;
+}
+}
+.tag__content--md {
+  font-size: 14px;
+  line-height: 2;
+}
 .tag__content--lg {
   font-size: 16px;
   line-height: 2;
@@ -4641,6 +4656,25 @@ import用ファイル
  */
 .grade-tag__content {
   font-size: 10px;
+}
+@media screen and (min-width: 560px) {
+.grade-tag__content--responsive {
+    font-size: 12px;
+    line-height: 2;
+}
+}
+@media screen and (min-width: 1025px) {
+.grade-tag__content--responsive {
+    font-size: 16px;
+}
+}
+.grade-tag__content--md {
+  font-size: 14px;
+  line-height: 2;
+}
+.grade-tag__content--lg {
+  font-size: 16px;
+  line-height: 2;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -6388,11 +6422,16 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .ticket-modal__tag-group[data-v-358d2551] {
     margin-top: 0;
-    margin-left: 10%;
+    margin-left: 1rem;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: stretch;
+}
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__tag-group[data-v-358d2551] {
+    margin-left: 10%;
 }
 }
 .ticket-modal__line[data-v-358d2551] {

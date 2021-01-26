@@ -26,9 +26,9 @@
                 </div>
 
                 <div class="ticket-modal__tag-group">
-                  <tag-component v-if="item.post.club" :content="item.post.club"/>
-                  <position-tag-component :position="item.position"/>
-                  <grade-tag-component :grade="item.grade"/>
+                  <tag-component v-if="item.post.club" :content="item.post.club" :responsive="true"/>
+                  <position-tag-component :position="item.position" :responsive="true"/>
+                  <grade-tag-component :grade="item.grade" :responsive="true"/>
                 </div>
               </div>
 
@@ -266,8 +266,12 @@ export default {
 
     @include mq(sm) {
       margin-top: 0;
-      margin-left: 10%;
+      margin-left: interval(2);
       @include flex(column wrap, center, stretch);
+    }
+
+    @include mq(md) {
+      margin-left: 10%;
     }
   }
 
