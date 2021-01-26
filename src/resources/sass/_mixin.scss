@@ -227,7 +227,7 @@
   height: $size;
   border-radius: radius(circle);
   background-color: color(orange);
-  box-shadow: 0 3px 15px 1px darken(color(orange), 10%);
+  box-shadow: 0 3px 10px 1px darken(color(orange), 10%);
   @include flex(row nowrap, center, center);
 
   & > i {
