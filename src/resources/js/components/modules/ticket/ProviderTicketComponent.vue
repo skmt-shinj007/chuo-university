@@ -105,7 +105,7 @@ export default {
 
   &__name {
     display: block;
-    font-size: font(base);
+    font-size: font(14);
     padding-left: interval(.5);
   }
 

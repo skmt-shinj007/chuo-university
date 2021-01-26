@@ -57,7 +57,7 @@ export default {
   }
 
   &__value-unit {
-    font-size: font(base);
+    font-size: font(14);
     margin-left: interval(1);
   }
 

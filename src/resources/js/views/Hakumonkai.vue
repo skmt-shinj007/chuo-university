@@ -186,11 +186,11 @@ export default {
   margin-left: interval(.5);
 
   &-text {
-    font-size: font(xs);
+    font-size: font(10);
     letter-spacing: 1.1px;
 
     @include mq(md) {
-      font-size: font(sm);
+      font-size: font(12);
     }
   }
 }

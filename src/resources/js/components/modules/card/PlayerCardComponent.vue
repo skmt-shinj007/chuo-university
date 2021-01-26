@@ -62,7 +62,7 @@ export default {
     }
 
     &-name-english {
-      font-size: font(xs);
+      font-size: font(10);
     }
 
     &-tags {

@@ -1,10 +1,21 @@
+html {
+
+  @include mq(sm) {
+    font-size: 20px;
+  }
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   width: 100vw;
-  font-size: font(base);
+  font-size: font(14);
   color: color(lightDarkblue);
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
@@ -50,24 +61,24 @@ h1, h2 {
 }
 
 h2 {
-  @include bangers($size:font(heading), $letterSpacing:3px);
+  @include bangers($size:font(32), $letterSpacing:3px);
   line-height: 1;
 
   // pc style
   @include mq(md) {
-    font-size: font(heading-lg);
+    font-size: font(50);
   }
 }
 
 h3 {
-  font-size: font(base);
+  font-size: font(14);
 
   @include mq(sm) {
-    font-size: font(md);
+    font-size: font(16);
   }
 
   @include mq(md) {
-    font-size: font(xl);
+    font-size: font(22);
   }
 }
 
@@ -77,28 +88,28 @@ h3, h4, h5, h6 {
 
 h4 {
   letter-spacing: 1.5px;
-  font-size: font(base);
+  font-size: font(14);
 
   @include mq(sm) {
-    font-size: font(md);
+    font-size: font(16);
   }
 }
 
 p {
-  font-size: font(sm);  // 12px
+  font-size: font(12);  // 12px
   line-height: 1.8;
   letter-spacing: 1.2px;
 
   // pc style
   @include mq(md) {
-    font-size: font(base);
+    font-size: font(14);
     line-height: 2;
   }
 }
 
 span {
   font-weight: bold;
-  font-size: font(sm);
+  font-size: font(12);
 }
 
 label {
@@ -107,12 +118,12 @@ label {
 }
 
 tr {
-  font-size: font(sm);
+  font-size: font(12);
   font-weight: bold;
 
   // pc style
   @include mq(md) {
-    font-size: font(base);
+    font-size: font(14);
   }
 }
 

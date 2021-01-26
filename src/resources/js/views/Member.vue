@@ -134,19 +134,19 @@ export default {
   }
 
   &__main-visual-ward {
-    @include bangers(font(xl), 1px, 400);
+    @include bangers(font(22), 1px, 400);
     color: color(white);
     line-height: 1.2;
     text-align: center;
     margin-top: interval(2);
 
     @include mq(sm) {
-      font-size: calc(#{font(mv)} - 8px);
+      font-size: calc(#{font(48)} - 8px);
     }
 
     @include mq(md) {
       margin-top: interval(5);
-      font-size: font(mv);
+      font-size: font(48);
     }
   }
 

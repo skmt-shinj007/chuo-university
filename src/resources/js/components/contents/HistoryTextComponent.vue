@@ -72,7 +72,7 @@ export default {
     margin-top: interval(3);
 
     &-main {
-      font-size: font(lg);
+      font-size: font(18);
     }
   }
 

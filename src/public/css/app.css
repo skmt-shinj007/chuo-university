@@ -7,6 +7,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -28,6 +32,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -253,6 +262,7 @@ import用ファイル
 .main-visual[data-v-3ff6fe5a] {
   width: 100%;
   height: 100vh;
+  padding: 0 1rem;
   background: #030A10;
   background: linear-gradient(to right, #030A10 0%, #091e2f 100%);
   display: flex;
@@ -264,13 +274,12 @@ import用ファイル
   color: #ffffff;
   white-space: pre-wrap;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 48px;
+  font-size: 3rem;
   text-shadow: 3px 3px 0px #e56c2c;
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 560px) {
 .main-visual__title[data-v-3ff6fe5a] {
     line-height: 1.2;
-    font-size: 80px;
 }
 }@charset "UTF-8";
 /*
@@ -279,6 +288,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -302,6 +315,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -540,12 +558,12 @@ import用ファイル
   color: #ffffff;
 }
 .contents-title__assistance {
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: normal;
 }
 @media screen and (min-width: 1025px) {
 .contents-title__assistance {
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 }
 .contents-title__primary {
@@ -575,6 +593,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -596,6 +618,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -824,13 +851,13 @@ import用ファイル
   padding-left: 1.5rem;
 }
 .text-list__item {
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-bottom: 0.5rem;
   word-wrap: break-word;
 }
 @media screen and (min-width: 1025px) {
 .text-list__item {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 }
 .text-list__item:last-child {
@@ -855,6 +882,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -876,6 +907,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -1119,6 +1155,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -1140,6 +1180,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -1368,7 +1413,7 @@ import用ファイル
   height: 50px;
   margin: 0 auto;
   background-color: #ffffff;
-  font-size: 10px;
+  font-size: 0.625rem;
   border: 1px solid #e56c2c;
   border-radius: 2px;
   position: relative;
@@ -1388,17 +1433,17 @@ import用ファイル
 .primary-btn {
     width: 300px;
     height: 60px;
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 .primary-btn--xs {
     max-width: 200px;
     height: 45px;
-    font-size: 10px;
+    font-size: 0.625rem;
 }
 .primary-btn--sm {
     width: 240px;
     height: 50px;
-    font-size: 10px;
+    font-size: 0.625rem;
 }
 }
 .primary-btn__btn {
@@ -1432,6 +1477,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -1453,6 +1502,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -1710,6 +1764,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -1731,6 +1789,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -2078,6 +2141,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -2099,6 +2166,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -2335,7 +2407,7 @@ import用ファイル
   display: block;
   width: 80%;
   text-align: center;
-  font-size: 10px;
+  font-size: 0.625rem;
   font-weight: normal;
   letter-spacing: 1.5px;
 }
@@ -2352,6 +2424,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -2375,6 +2451,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -2633,13 +2714,13 @@ import用ファイル
 }
 }
 .policy-card__subTitle[data-v-b056e422] {
-  font-size: 10px;
+  font-size: 0.625rem;
   color: #ffffff;
 }
 .policy-card__title[data-v-b056e422] {
   color: #ffffff;
   font-family: "Bangers", cursive;
-  font-size: 22px;
+  font-size: 1.375rem;
   letter-spacing: 1px;
   font-weight: bold;
 }
@@ -2656,7 +2737,7 @@ import用ファイル
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: bold;
     transition: all 0.5s ease-in-out;
 }
@@ -2667,6 +2748,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -2690,6 +2775,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -2942,7 +3032,7 @@ import用ファイル
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 @media screen and (min-width: 560px) {
 .image-slider__caption[data-v-6cd5e234] {
@@ -2950,10 +3040,10 @@ import用ファイル
 }
 }
 .image-slider__secondary-caption[data-v-6cd5e234] {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .image-slider__capacity-number[data-v-6cd5e234] {
-  font-size: 16px;
+  font-size: 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -2961,6 +3051,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -2984,6 +3078,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -3228,18 +3327,18 @@ import用ファイル
   z-index: 10;
   color: #ffffff;
   padding-left: 1rem;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 @media screen and (min-width: 560px) {
 .main-visual-slider__text[data-v-30380e08] {
     left: 5%;
     padding-left: 0;
-    font-size: 16px;
+    font-size: 1rem;
 }
 }
 @media screen and (min-width: 1025px) {
 .main-visual-slider__text[data-v-30380e08] {
-    font-size: 22px;
+    font-size: 1.375rem;
 }
 }@charset "UTF-8";
 /*
@@ -3248,6 +3347,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -3271,6 +3374,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -3501,10 +3609,10 @@ import用ファイル
   border: 1px solid #f2f2f2;
 }
 .common-table__record--xs {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .common-table__record--sm {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .common-table__key {
   width: 30%;
@@ -3528,6 +3636,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -3549,6 +3661,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -3804,10 +3921,10 @@ import用ファイル
   transform: translateX(-50%);
 }
 .caption-bar-image__caption[data-v-7fa4fe02], .caption-bar-image__secondary-caption[data-v-7fa4fe02] {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .caption-bar-image__capacity-number[data-v-7fa4fe02] {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
 }@charset "UTF-8";
 /*
@@ -3816,6 +3933,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -3839,6 +3960,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -4090,7 +4216,7 @@ import用ファイル
   margin-left: 0.5rem;
 }
 .dormitory-ticket__text[data-v-c3a537a8] {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -4110,6 +4236,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -4133,6 +4263,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -4362,25 +4497,25 @@ import用ファイル
   line-height: 1.9;
 }
 .tag__content {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 @media screen and (min-width: 560px) {
 .tag__content--responsive {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 2;
 }
 }
 @media screen and (min-width: 1025px) {
 .tag__content--responsive {
-    font-size: 16px;
+    font-size: 1rem;
 }
 }
 .tag__content--md {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 2;
 }
 .tag__content--lg {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 2;
 }
 .tag__color {
@@ -4411,6 +4546,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -4432,6 +4571,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -4655,25 +4799,25 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .grade-tag__content {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 @media screen and (min-width: 560px) {
 .grade-tag__content--responsive {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 2;
 }
 }
 @media screen and (min-width: 1025px) {
 .grade-tag__content--responsive {
-    font-size: 16px;
+    font-size: 1rem;
 }
 }
 .grade-tag__content--md {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 2;
 }
 .grade-tag__content--lg {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 2;
 }@charset "UTF-8";
 /*
@@ -4682,6 +4826,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -4705,6 +4853,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -4954,7 +5107,7 @@ import用ファイル
   margin: 0 0.5rem 0 0.25rem;
 }
 .player-card__information-name-english {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .player-card__information-tags {
   display: flex;
@@ -4970,6 +5123,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -4993,6 +5150,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -5237,6 +5399,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -5258,6 +5424,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -5530,6 +5701,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -5551,6 +5726,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -5952,6 +6132,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -5973,6 +6157,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -6407,10 +6596,10 @@ import用ファイル
 }
 }
 .ticket-modal__name-sub[data-v-358d2551] {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .ticket-modal__name-main[data-v-358d2551] {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .ticket-modal__tag-group[data-v-358d2551] {
   margin-top: 1rem;
@@ -6454,11 +6643,11 @@ import用ファイル
   margin-bottom: 0;
 }
 .ticket-modal__list-item > span[data-v-358d2551] {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 @media screen and (min-width: 560px) {
 .ticket-modal__list-item > span[data-v-358d2551] {
-    font-size: 16px;
+    font-size: 1rem;
 }
 }
 .ticket-modal__list-title[data-v-358d2551] {
@@ -6500,6 +6689,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -6521,6 +6714,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -6876,7 +7074,7 @@ import用ファイル
 }
 .user-ticket__name {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding-left: 0.25rem;
 }
 .user-ticket__name:first-of-type {
@@ -6906,6 +7104,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -6927,6 +7129,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -7172,7 +7379,7 @@ import用ファイル
 }
 .member__main-visual-ward[data-v-668c6779] {
   font-family: "Bangers", cursive;
-  font-size: 22px;
+  font-size: 1.375rem;
   letter-spacing: 1px;
   font-weight: 400;
   color: #ffffff;
@@ -7182,13 +7389,13 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .member__main-visual-ward[data-v-668c6779] {
-    font-size: calc(48px - 8px);
+    font-size: calc(3rem - 8px);
 }
 }
 @media screen and (min-width: 1025px) {
 .member__main-visual-ward[data-v-668c6779] {
     margin-top: 2.5rem;
-    font-size: 48px;
+    font-size: 3rem;
 }
 }
 .member__user-ticket-group[data-v-668c6779] {
@@ -7235,6 +7442,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -7256,6 +7467,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -7488,11 +7704,11 @@ import用ファイル
 }
 .tile-table__title {
   text-align: center;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 @media screen and (min-width: 560px) {
 .tile-table__title {
-    font-size: 12px;
+    font-size: 0.75rem;
     border: 2px solid #ffffff;
 }
 }
@@ -7501,11 +7717,11 @@ import用ファイル
 }
 .tile-table__el {
   text-align: center;
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 @media screen and (min-width: 560px) {
 .tile-table__el {
-    font-size: 12px;
+    font-size: 0.75rem;
     border: 2px solid #ffffff;
 }
 }@charset "UTF-8";
@@ -7515,6 +7731,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -7538,6 +7758,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -7856,12 +8081,12 @@ import用ファイル
   margin-left: 0.25rem;
 }
 .player-card__record-text[data-v-42f1fe89] {
-  font-size: 10px;
+  font-size: 0.625rem;
   letter-spacing: 1.1px;
 }
 @media screen and (min-width: 1025px) {
 .player-card__record-text[data-v-42f1fe89] {
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 }@charset "UTF-8";
 /*
@@ -7870,6 +8095,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -7893,6 +8122,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -8163,12 +8397,12 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .record-tag__content[data-v-b79d4b88] {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 }
 @media screen and (min-width: 1025px) {
 .record-tag__content[data-v-b79d4b88] {
-    font-size: 16px;
+    font-size: 1rem;
 }
 }
 .record-tag__open[data-v-b79d4b88] {
@@ -8183,7 +8417,7 @@ import用ファイル
 }
 .record-tag__open-text[data-v-b79d4b88] {
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   background: #e56c2c;
   background: linear-gradient(to right, #e56c2c 0%, #FDC830 100%);
@@ -8193,7 +8427,7 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .record-tag__open-text[data-v-b79d4b88] {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 }@charset "UTF-8";
 /*
@@ -8202,6 +8436,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -8225,6 +8463,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -8480,7 +8723,7 @@ import用ファイル
   margin-top: 1.5rem;
 }
 .history-text__title-main[data-v-579f0756] {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .history-text__text-container[data-v-579f0756] {
   margin: 1rem;
@@ -8495,6 +8738,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -8518,6 +8765,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -8761,7 +9013,7 @@ import用ファイル
   align-items: center;
 }
 .icon-table__value-unit {
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-left: 0.5rem;
 }
 .icon-table__icon {
@@ -8774,6 +9026,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -8797,6 +9053,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -9041,7 +9302,7 @@ import用ファイル
   padding-bottom: 0.5rem;
 }
 .champions-card__title[data-v-3ea95d82] {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .champions-card__pair[data-v-3ea95d82] {
   display: flex;
@@ -9096,7 +9357,7 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .champions-card__tournament-info-title[data-v-3ea95d82] {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 }@charset "UTF-8";
 /*
@@ -9105,6 +9366,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -9128,6 +9393,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -9386,7 +9656,7 @@ import用ファイル
   color: #ffffff;
   background-color: #091e2f;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   padding: 0.25rem;
   position: absolute;
@@ -9442,6 +9712,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -9463,6 +9737,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -9732,11 +10011,11 @@ import用ファイル
 }
 .view-all__btn-label {
   transition: all 0.3s ease-out;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 @media screen and (min-width: 560px) {
 .view-all__btn-label {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 }
 .view-all__icon {
@@ -9762,6 +10041,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -9783,6 +10066,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -10028,7 +10316,7 @@ import用ファイル
 }
 .pull-down-table__select {
   width: 100%;
-  font-size: 12px;
+  font-size: 0.75rem;
   text-align: center;
   padding: 0.25rem 1.5rem 0.25rem 0.5rem;
   border-radius: 2px;
@@ -10048,6 +10336,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -10071,6 +10363,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -10417,7 +10714,7 @@ import用ファイル
 .image-modal .image-modal__next-btn[data-v-213a8ec6]::before, .image-modal .image-modal__prev-btn[data-v-213a8ec6]::before {
   width: 150%;
   text-align: center;
-  font-size: 10px;
+  font-size: 0.625rem;
   display: block;
   color: #ffffff;
   position: absolute;
@@ -10485,6 +10782,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -10506,6 +10807,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -10749,7 +11055,7 @@ import用ファイル
 }
 .lattice__filter-title[data-v-d066a2d0] {
   margin-bottom: 1rem;
-  font-size: 14px;
+  font-size: 0.875rem;
   position: relative;
   padding-left: 1.5rem;
 }
@@ -10844,6 +11150,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -10865,6 +11175,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -11099,10 +11414,10 @@ import用ファイル
   padding-right: 0.5rem;
 }
 .sns-tag__content {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .sns-tag__content--lg {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 2;
 }
 .sns-tag__color {
@@ -11130,6 +11445,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -11151,6 +11470,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -11467,7 +11791,7 @@ import用ファイル
 }
 .provider-ticket__name {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding-left: 0.25rem;
 }
 .provider-ticket-tag-group {
@@ -11487,6 +11811,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -11510,6 +11838,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -11767,6 +12100,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -11788,6 +12125,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -12575,6 +12917,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -12596,6 +12942,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -12840,7 +13191,7 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .accordion-link__label {
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 }
 .accordion-link__icon-wrap {
@@ -12908,6 +13259,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -12929,6 +13284,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -13316,7 +13676,7 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .nav-modal__menu-title[data-v-1f270d64] {
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 }
 .nav-modal__menu-icon[data-v-1f270d64] {
@@ -13377,7 +13737,7 @@ import用ファイル
 }
 .nav-modal__copyright[data-v-1f270d64] {
   text-align: center;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 1.2;
   font-weight: bold;
 }
@@ -13405,6 +13765,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -13426,6 +13790,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -13704,10 +14073,10 @@ import用ファイル
 }
 .header__title-main[data-v-6832e7cf] {
   font-family: "Bangers", cursive;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 1px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1rem;
 }
 @media screen and (min-width: 1025px) {
 .header__title-main[data-v-6832e7cf] {
@@ -13720,7 +14089,7 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .header__title-assistance[data-v-6832e7cf] {
     margin-left: 1.5rem;
-    font-size: 10px;
+    font-size: 0.625rem;
     font-weight: normal;
     letter-spacing: 1.1px;
     position: relative;
@@ -13730,7 +14099,6 @@ import用ファイル
 @media screen and (min-width: 1025px) {
 .header__title-assistance[data-v-6832e7cf] {
     margin: 0;
-    font-size: 12px;
 }
 }
 .header__title-assistance[data-v-6832e7cf]::before {
@@ -13832,6 +14200,10 @@ import用ファイル
  * サイトで使用するマップを定義します
  */
 /**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
  * base pixel (8px)
  * rem記法を基準に設定。
  */
@@ -13853,6 +14225,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -14142,7 +14519,7 @@ import用ファイル
 }
 .footer__menu-list-title[data-v-060e08fe] {
   font-family: "Bangers", cursive;
-  font-size: 32px;
+  font-size: 2rem;
   letter-spacing: 2.5px;
   font-weight: bold;
   position: relative;
@@ -14191,7 +14568,7 @@ import用ファイル
   cursor: pointer;
 }
 .footer__menu-list-label[data-v-060e08fe] {
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
 }
 .footer__information[data-v-060e08fe] {
@@ -14228,7 +14605,7 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .footer__information-item[data-v-060e08fe], .footer__information-telephone[data-v-060e08fe] {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 }
 .footer__information-telephone[data-v-060e08fe] {
@@ -14274,7 +14651,7 @@ import用ファイル
           animation: fadeoutTop-data-v-060e08fe 1.5s linear infinite;
 }
 .footer__copyright[data-v-060e08fe] {
-  font-size: 10px;
+  font-size: 0.625rem;
   text-align: center;
   margin-top: 2.5rem;
 }@charset "UTF-8";
@@ -14292,6 +14669,10 @@ import用ファイル
 */
 /**
  * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
  */
 /**
  * base pixel (8px)
@@ -14315,6 +14696,11 @@ import用ファイル
 /**
  * サイト内で扱うsass関数とキーフレームを定義するファイル。
  * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
  */
 /**
  * @keyframe を定義
@@ -15001,13 +15387,24 @@ template {
   display: none;
 }
 
+@media screen and (min-width: 560px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  html {
+    font-size: 24px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   width: 100vw;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #10334e;
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
@@ -15051,35 +15448,35 @@ section {
 
 h1, h2 {
   font-family: "Bangers", cursive;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 1px;
   font-weight: bold;
 }
 
 h2 {
   font-family: "Bangers", cursive;
-  font-size: 32px;
+  font-size: 2rem;
   letter-spacing: 3px;
   font-weight: bold;
   line-height: 1;
 }
 @media screen and (min-width: 1025px) {
   h2 {
-    font-size: 50px;
+    font-size: 3.125rem;
   }
 }
 
 h3 {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 @media screen and (min-width: 560px) {
   h3 {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 @media screen and (min-width: 1025px) {
   h3 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 }
 
@@ -15089,29 +15486,29 @@ h3, h4, h5, h6 {
 
 h4 {
   letter-spacing: 1.5px;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 @media screen and (min-width: 560px) {
   h4 {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
 p {
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.8;
   letter-spacing: 1.2px;
 }
 @media screen and (min-width: 1025px) {
   p {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 2;
   }
 }
 
 span {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 label {
@@ -15120,12 +15517,12 @@ label {
 }
 
 tr {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 @media screen and (min-width: 1025px) {
   tr {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 

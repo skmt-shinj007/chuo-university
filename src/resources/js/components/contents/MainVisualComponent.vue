@@ -16,6 +16,7 @@ export default {
 .main-visual{
   width: 100%;
   height: 100vh;
+  padding: 0 interval(2);
   @include gradient(color(deepDarkblue), color(darkblue), horizontal);
   @include flex(column nowrap, center, center);
 
@@ -24,12 +25,11 @@ export default {
     color: color(white);
     white-space: pre-wrap;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: font(mv);
+    font-size: font(48);
     text-shadow: 3px 3px 0px color(orange);
 
-    @include mq(md) {
+    @include mq(sm) {
       line-height: 1.2;
-      font-size: font(mv-lg);
     }
   }
 }

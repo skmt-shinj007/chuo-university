@@ -253,11 +253,11 @@ export default {
   }
 
   &__name-sub {
-    font-size: font(base);
+    font-size: font(14);
   }
 
   &__name-main {
-    font-size: font(lg);
+    font-size: font(18);
   }
 
   &__tag-group {
@@ -296,10 +296,10 @@ export default {
     }
 
     & > span {
-      font-size: font(sm);
+      font-size: font(12);
 
       @include mq(sm) {
-        font-size: font(md);
+        font-size: font(16);
       }
     }
   }

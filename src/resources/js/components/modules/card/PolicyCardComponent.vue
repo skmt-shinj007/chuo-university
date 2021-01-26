@@ -52,13 +52,13 @@ export default {
   }
 
   &__subTitle {
-    font-size: font(xs);
+    font-size: font(10);
     color: color(white);
   }
 
   &__title {
     color: color(white);
-    @include bangers($size: font(xl));
+    @include bangers($size: font(22));
   }
 
   &__text {
@@ -73,7 +73,7 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 80%;
-      font-size: font(sm);
+      font-size: font(12);
       font-weight: bold;
       transition: all .5s ease-in-out;
     }

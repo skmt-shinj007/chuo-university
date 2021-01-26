@@ -42,10 +42,10 @@ export default {
 
   &__title {
     text-align: center;
-    font-size: font(xs);
+    font-size: font(10);
 
     @include mq(sm) {
-      font-size: font(sm);
+      font-size: font(12);
       border: 2px solid color(white);
     }
   }
@@ -56,10 +56,10 @@ export default {
 
   &__el {
     text-align: center;
-    font-size: font(xs);
+    font-size: font(10);
 
     @include mq(sm) {
-      font-size: font(sm);
+      font-size: font(12);
       border: 2px solid color(white);
     }
   }

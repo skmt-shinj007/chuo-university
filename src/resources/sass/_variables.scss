@@ -50,20 +50,11 @@ $width: (
   header: 120px,
 )!default;
 
-// font size map
-$font: (
-  xs:   10px,
-  sm:   12px,
-  base: 14px,
-  md:   16px,
-  lg:   18px,
-  xl:   22px,
-
-  heading:    32px,
-  heading-lg: 50px,
-  mv:         48px,
-  mv-lg:      80px,
-) !default;
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+$base-font: 16;
 
 /**
  * base pixel (8px)

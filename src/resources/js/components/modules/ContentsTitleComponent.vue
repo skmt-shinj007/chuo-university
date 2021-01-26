@@ -49,11 +49,11 @@ export default {
   }
 
   &__assistance {
-    font-size: font(xs);
+    font-size: font(10);
     font-weight: normal;
 
     @include mq(md) {
-      font-size: font(sm);
+      font-size: font(12);
     }
   }
 

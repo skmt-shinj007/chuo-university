@@ -209,7 +209,7 @@ export default {
       color: color(white);
       background-color: color(darkblue);
       border-radius: radius(hard);
-      font-size: font(sm);
+      font-size: font(12);
       font-weight: bold;
       padding: interval(.5);
       position: absolute;

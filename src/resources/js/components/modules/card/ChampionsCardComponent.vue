@@ -73,7 +73,7 @@ export default {
   }
 
   &__title {
-    font-size: font(lg);
+    font-size: font(18);
   }
 
   &__pair {
@@ -112,7 +112,7 @@ export default {
     @include middle-line-text(2, 1px, color(darkblue));
 
     @include mq(sm) {
-      font-size: font(base);
+      font-size: font(14);
     }
   }
 }

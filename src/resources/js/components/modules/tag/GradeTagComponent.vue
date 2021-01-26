@@ -49,29 +49,29 @@ export default {
 .grade-tag {
 
   &__content {
-    font-size: font(xs);
+    font-size: font(10);
 
     // レスポンシブスタイル
     &--responsive {
 
       @include mq(sm) {
-        font-size: font(sm);
+        font-size: font(12);
         line-height: 2;
       }
 
       @include mq(md) {
-        font-size: font(md);
+        font-size: font(16);
       }
     }
 
     // サイズ
     &--md {
-      font-size: font(base);
+      font-size: font(14);
       line-height: 2;
     }
 
     &--lg {
-      font-size: font(md);
+      font-size: font(16);
       line-height: 2;
     }
   }

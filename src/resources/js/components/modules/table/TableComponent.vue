@@ -53,11 +53,11 @@ export default {
     border: 1px solid color(lightgray);
 
     &--xs {
-      font-size: font(xs);
+      font-size: font(10);
     }
 
     &--sm {
-      font-size: font(sm);
+      font-size: font(12);
     }
   }
 

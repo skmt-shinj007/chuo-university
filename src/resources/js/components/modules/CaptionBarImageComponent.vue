@@ -58,11 +58,11 @@ export default {
 
   &__caption,
   &__secondary-caption {
-    font-size: font(xs);
+    font-size: font(10);
   }
 
   &__capacity-number {
-    font-size: font(md);
+    font-size: font(16);
     font-weight: bold;
   }
 }

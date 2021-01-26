@@ -57,7 +57,7 @@ export default {
   height: btn-size(sm-height);
   margin: 0 auto;
   background-color: color(white);
-  font-size: font(xs);
+  font-size: font(10);
   border: 1px solid color(orange);
   border-radius: radius(soft);
   position: relative;
@@ -77,18 +77,18 @@ export default {
   @include mq(md) {
     width: btn-size(lg-width);
     height: btn-size(lg-height);
-    font-size: font(sm);
+    font-size: font(12);
 
     &--xs {
       max-width: btn-size(xs-width);
       height: btn-size(xs-height);
-      font-size: font(xs);
+      font-size: font(10);
     }
 
     &--sm {
       width: btn-size(sm-width);
       height: btn-size(sm-height);
-      font-size: font(xs);
+      font-size: font(10);
     }
   }
 

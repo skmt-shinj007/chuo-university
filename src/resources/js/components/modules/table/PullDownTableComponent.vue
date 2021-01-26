@@ -77,7 +77,7 @@ export default {
 
   &__select {
     width: 100%;
-    font-size: font(sm);
+    font-size: font(12);
     text-align: center;
     padding: interval(.5) interval(3) interval(.5) interval(1);
     border-radius: radius(soft);

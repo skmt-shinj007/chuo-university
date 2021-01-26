@@ -240,7 +240,7 @@ export default {
     @include flex(row wrap, flex-start, center);
 
     &-title {
-      @include bangers(font(heading), 2.5px);
+      @include bangers(font(32), 2.5px);
       position: relative;
 
       &::after {
@@ -292,7 +292,7 @@ export default {
     }
 
     &-label {
-      font-size: font(md);
+      font-size: font(16);
       cursor: pointer;
     }
 
@@ -330,7 +330,7 @@ export default {
     letter-spacing: 1.2px;
 
     @include mq(sm) {
-      font-size: font(base);
+      font-size: font(14);
     }
   }
 
@@ -377,7 +377,7 @@ export default {
   }
 
   &__copyright {
-    font-size: font(xs);
+    font-size: font(10);
     text-align: center;
     margin-top: interval(5);
   }

@@ -79,10 +79,10 @@ export default {
 
   &__btn-label {
     transition: all .3s ease-out;
-    font-size: font(sm);
+    font-size: font(12);
 
     @include mq(sm) {
-      font-size: font(base);
+      font-size: font(14);
     }
   }
 

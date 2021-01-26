@@ -216,7 +216,7 @@ export default {
     transition: all .3s ease-out;
 
     @include mq(sm) {
-      font-size: font(lg);
+      font-size: font(18);
     }
   }
 
@@ -280,7 +280,7 @@ export default {
 
   &__copyright {
     text-align: center;
-    font-size: font(xs);
+    font-size: font(10);
     line-height: 1.2;
     font-weight: bold;
   }

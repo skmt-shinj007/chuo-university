@@ -181,7 +181,7 @@ export default {
 
     &-main {
       @include bangers();
-      font-size: font(lg);
+      font-size: font(16);
 
       @include mq(md) {
         margin-bottom: interval(7);
@@ -193,7 +193,7 @@ export default {
 
       @include mq(sm) {
         margin-left: interval(3);
-        font-size: font(xs);
+        font-size: font(10);
         font-weight: normal;
         letter-spacing: 1.1px;
         position: relative;
@@ -202,7 +202,6 @@ export default {
 
       @include mq(md) {
         margin: 0;
-        font-size: font(sm);
       }
     }
 

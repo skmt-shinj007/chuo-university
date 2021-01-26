@@ -279,7 +279,7 @@ export default {
     &::before {
       width: 150%;
       text-align: center;
-      font-size: font(xs);
+      font-size: font(10);
       display: block;
       color: color(white);
       position: absolute;

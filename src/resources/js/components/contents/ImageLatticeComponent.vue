@@ -218,7 +218,7 @@ export default {
 
   &__filter-title {
     margin-bottom: interval(2);
-    font-size: font(base);
+    font-size: font(14);
     @include middle-line-text(2, 1px, color(darkblue));
   }
 

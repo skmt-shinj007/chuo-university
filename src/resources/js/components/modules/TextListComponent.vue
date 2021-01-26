@@ -27,12 +27,12 @@ export default {
   padding-left: interval(3);
 
   &__item {
-    font-size: font(sm);
+    font-size: font(12);
     margin-bottom: interval(1);
     word-wrap: break-word;
 
     @include mq(md) {
-      font-size: font(base);
+      font-size: font(14);
     }
 
     &:last-child {

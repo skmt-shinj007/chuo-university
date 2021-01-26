@@ -6,7 +6,7 @@
 }
 
 // フォント種類：bangers
-@mixin bangers($size: font(md), $letterSpacing: 1px, $weight: bold) {
+@mixin bangers($size: font(16), $letterSpacing: 1px, $weight: bold) {
   font-family: 'Bangers', cursive;
   font-size: $size;
   letter-spacing: $letterSpacing;
@@ -145,7 +145,7 @@
     content: 'CHUO UNIVERSITY';
     color: darken($color: red, $amount: .4);
     font-weight: bold;
-    font-size: font(sm);
+    font-size: font(12);
     text-align: center;
     position: absolute;
     top: 50%;
