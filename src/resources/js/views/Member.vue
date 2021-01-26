@@ -15,10 +15,16 @@
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
     <div class="member__user-ticket-group">
-      <div class="member__user-ticket" v-for="(player, n) in players" :key="n">
+      <div class="member__user-ticket" v-for="(player, n) in players" :key="n" @click="openModal(player)">
         <user-ticket-component :userObj="player"/>
       </div>
     </div>
+
+    <ticket-modal-component
+      v-if="showModal"
+      @close="closeModal"
+      :item="clickElement"/>
+
   </section>
 
   <section class="member__staff">
@@ -39,6 +45,7 @@
 // component import
 import MainVisualComponent from '../components/contents/MainVisualComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
+import TicketModalComponent from '../components/modules/modal/TicketModalComponent.vue';
 import UserTicketComponent from '../components/modules/ticket/UserTicketComponent';
 
 // data import
@@ -49,7 +56,7 @@ export default {
     MainVisualComponent,
     ContentsTitleComponent,
     UserTicketComponent,
-
+    TicketModalComponent,
   },
   data() {
     return {
@@ -57,6 +64,18 @@ export default {
       users: [],     // 全ユーザー
       players: [],  // プレイヤー
       staff: [],    // スタッフ
+
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      showModal: false,
+
+      /**
+       * [モーダルに渡すデータ]
+       * @type { Object }
+       */
+      clickElement: null,
     }
   },
   beforeMount() {
@@ -74,6 +93,21 @@ export default {
     this.users.forEach(element => {
       (element.category === this.staffNum) ? this.staff.push(element) : null;
     });
+  },
+
+  methods: {
+    /**
+     * [モーダル開閉処理]
+     */
+    openModal(el) {
+      this.showModal = true;
+      this.clickElement = el;
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.showModal = false;
+      document.body.classList.remove("modal-open");
+    }
   },
 }
 </script>
@@ -144,10 +178,6 @@ export default {
   &__staff {
     padding-bottom: interval(10);
     margin-bottom: 0;
-
-    @include mq(md) {
-      padding-bottom: interval(20);
-    }
   }
 }
 </style>

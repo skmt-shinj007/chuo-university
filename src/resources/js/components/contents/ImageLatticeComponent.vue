@@ -15,7 +15,7 @@
   <div class="lattice__item-wrap">
     <div class="lattice__item" v-for="(image,n) in displayImages" :key="n">
       <figure class="lattice__img-wrap">
-        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt" @click="modalOpen(image)">
+        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt" @click="openModal(image)">
       </figure>
     </div>
   </div>
@@ -23,7 +23,7 @@
   <!-- 写真クリック後のモーダル -->
   <image-modal-component
     v-if="showModal"
-    @close="modalClose"
+    @close="closeModal"
     :selectIndex="selectImageIndex"
     :images="filteringImages"/>
 
@@ -174,13 +174,15 @@ export default {
     /**
      * [モーダル表示切り替え]
      */
-    modalOpen(el) {
+    openModal(el) {
       this.showModal = true;
 
       this.selectImageIndex = this.filteringImages.indexOf(el);
+      document.body.classList.add("modal-open");
     },
-    modalClose() {
+    closeModal() {
       this.showModal = false;
+      document.body.classList.remove("modal-open");
     },
   },
 

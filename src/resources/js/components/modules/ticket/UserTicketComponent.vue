@@ -1,8 +1,8 @@
 <template>
 <div class="user-ticket" ref="targetElement">
-  <div class="user-ticket-item" :class="borderColor">
+  <div class="user-ticket-thumbnail-border" :class="borderColor">
     <figure class="user-ticket-thumbnail-wrap">
-      <img class="user-ticket-thumbnail" :src="`/image/${userObj.img.src}`" alt="userObj.img.alt">
+      <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
     </figure>
   </div>
 
@@ -89,6 +89,9 @@ export default {
   }
 
   &-thumbnail-border {
+    width: interval(9);
+    height: interval(9);
+
     &--blue {
       @include border-gradient();
     }
@@ -115,10 +118,10 @@ export default {
     @include mq(sm) {
       width: interval(10);
     }
-  }
 
-  &-thumbnail {
-    border-radius: radius(circle);
+    & > img {
+      border-radius: radius(circle);
+    }
   }
 
   &__name {

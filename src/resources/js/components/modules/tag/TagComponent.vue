@@ -2,7 +2,9 @@
   <div class="tag">
     <div class="tag__color" :class="colorClass">
       <slot>
-        <span class="tag__content" :class="sizeClass">{{ content }}</span>
+        <span class="tag__content" :class="[sizing, { 'tag__content--responsive': responsive }]">
+          {{ content }}
+        </span>
       </slot>
     </div>
   </div>
@@ -11,25 +13,45 @@
 <script>
 export default {
   props: {
+    // タグサイズ
     size: {
       type: String,
       default: null,
     },
+
+    // タグの色
     color: {
       type: String,
       default: '',
     },
+
+    // レスポンシブのフラグ
+    responsive: {
+      type: Boolean,
+      default: false
+    },
+
+    // タグの内容（文字列）
     content: {
       type: String,
       default: 'タグ',
     },
   },
   computed: {
+    /**
+     * [色によってクラスをつける]
+     * @return { string } クラス名が文字列として返る
+     */
     colorClass() {
       return (this.color) ? `tag__color--${this.color}` : null;
     },
-    sizeClass() {
-      return (this.size) ? `tag--${this.size}` : null;
+
+    /**
+     * [サイズクラスをつける]
+     * @return { string } クラス名が文字列として返る
+     */
+    sizing() {
+      return (this.size) ? `tag__content--${this.size}` : null;
     },
   }
 }
@@ -44,6 +66,25 @@ export default {
 
   &__content {
     font-size: font(xs);
+
+    // レスポンシブがtrueの時
+    &--responsive {
+
+      @include mq(sm) {
+        font-size: font(sm);
+        line-height: 2;
+      }
+
+      @include mq(md) {
+        font-size: font(md);
+      }
+    }
+
+    // サイズ スタイル
+    &--md {
+      font-size: font(base);
+      line-height: 2;
+    }
 
     &--lg {
       font-size: font(md);
