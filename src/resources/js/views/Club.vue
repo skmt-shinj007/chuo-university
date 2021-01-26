@@ -6,12 +6,12 @@
   </div>
 
   <div class="background-darkblue">
-    <section class="club__policy">
-      <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
+    <section class="club__concept">
+      <contents-title-component :title="messages.SectionTitles.Concept.Main" :subTitle="messages.SectionTitles.Concept.Sub" color="white"/>
 
-      <div class="club__policy-cards">
-        <div class="club__policy-card" v-for="(policy, n) in policies" :key="n">
-          <policy-card-component :policy="policy"/>
+      <div class="club__concept-cards">
+        <div class="club__concept-card" v-for="(concept, n) in concepts" :key="n">
+          <concept-card-component :concept="concept"/>
         </div>
       </div>
 
@@ -114,7 +114,7 @@
 import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import GoogleMapComponent from '../components/modules/GoogleMapComponent';
-import PolicyCardComponent from '../components/modules/card/PolicyCardComponent';
+import conceptCardComponent from '../components/modules/card/conceptCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
@@ -127,7 +127,7 @@ import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponen
 export default {
   components: {
     ContentsTitleComponent,
-    PolicyCardComponent,
+    conceptCardComponent,
     MainVisualSliderComponent,
     TableComponent,
     GoogleMapComponent,
@@ -142,7 +142,7 @@ export default {
     return {
       data: Data,
       mainVisualImages: [],
-      policies: [],
+      concepts: [],
       practiceInformations: [],
       courtImages: [],
       schedule: [],
@@ -162,7 +162,7 @@ export default {
     imageApiResponse.forEach(element => this.imagesData.push(element));
 
     // config/data.jsonから引っ張る
-    this.$data.data.Policy.forEach(element => this.policies.push(element));
+    this.$data.data.Concept.forEach(element => this.concepts.push(element));
     this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
     this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
     this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
@@ -314,7 +314,7 @@ const imageApiResponse = [
     height: 100vh;
   }
 
-  &__policy {
+  &__concept {
     margin: 0 auto;
 
     &-cards {

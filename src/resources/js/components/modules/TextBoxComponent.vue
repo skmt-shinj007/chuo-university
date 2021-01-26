@@ -54,13 +54,13 @@ export default {
 
 <style lang="scss">
 .text-box {
-  padding: interval(2);
+  padding: 0 interval(2) interval(2) interval(2);
   background-color: rgba($color: color(white), $alpha: .8);
   box-shadow: 0px 6px 8px color(shadow);
   margin: 0 auto;
 
   @include mq(sm) {
-    padding: interval(3);
+    padding: 0 interval(3) interval(3) interval(3);
   }
 
   @include mq(md) {

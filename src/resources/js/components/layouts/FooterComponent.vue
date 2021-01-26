@@ -1,6 +1,6 @@
 <template>
 <div class="footer-wrap">
-  <footer class="footer">
+  <footer class="footer wrapper">
     <div class="footer__contact">
       <contents-title-component
       :title="messages.SectionTitles.Contact.Main"
@@ -164,21 +164,12 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  padding: 0 interval(2);
   color: color(white);
-
-  @include mq(sm) {
-    padding: 0 interval(4);
-  }
-
-  @include mq(md) {
-    max-width: device(max);
-    margin: 0 auto;
-  }
+  margin-bottom: 0;
 
   &-wrap {
     @include gradient(color(deepDarkblue), color(lightDarkblue), horizontal);
-    padding-top: interval(10);
+    padding-top: interval(5);
     padding-bottom: interval(3);
   }
 
@@ -298,10 +289,6 @@ export default {
     top: 50%;
     left: interval(2);
     transform: translateY(-50%);
-
-    @include mq(sm) {
-      width: interval(20);
-    }
   }
 
   &__information-title {

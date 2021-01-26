@@ -146,7 +146,8 @@ export default {
 
   &__support {
     margin-bottom: 0;
-    padding: interval(20) 0;
+    padding-top: interval(15);
+    padding-bottom: interval(20);
     color: color(white);
     @include flex(column nowrap, center, center);
 

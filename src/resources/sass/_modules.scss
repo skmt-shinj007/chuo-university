@@ -22,16 +22,6 @@
   @return ($pixel / $base-font) * 1rem;
 }
 
-// button size
-@function btn-size($key) {
-  @return map-get($button, $key);
-}
-
-// icon size
-@function icon($key) {
-  @return map-get($icon, $key);
-}
-
 // aspect ratio
 @function aspect($key) {
   @return map-get($aspectRatio, $key);
@@ -44,6 +34,11 @@
 
 // interval (間隔)
 @function interval($pixel) {
+  @return $base-rem * $pixel;  // 1/2rem × $pixel
+}
+
+// pixel (固定値)
+@function pixel($pixel) {
   @return $base-pixel * $pixel;  // 8px × $pixel
 }
 

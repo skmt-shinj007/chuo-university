@@ -30,12 +30,12 @@ export default {
 
 <style lang="scss" scoped>
 .news {
-  padding: interval(2);
+  padding: 0 interval(2) interval(2) interval(2);
   background-color: color(white);
   box-shadow: 0px 6px 8px color(shadow);
 
   @include mq(sm) {
-    padding: interval(3);
+    padding: 0 interval(3) interval(3) interval(3);
   }
 
   &-list {

@@ -12,13 +12,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -295,13 +289,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -543,7 +531,7 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .contents-title {
-  padding-bottom: 2.5rem;
+  padding: 2.5rem 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -554,6 +542,7 @@ import用ファイル
 }
 .contents-title__assistance {
   font-size: 0.625rem;
+  letter-spacing: 2px;
   font-weight: normal;
 }
 .contents-title__primary {
@@ -567,7 +556,7 @@ import用ファイル
   width: 50px;
   height: 2px;
   position: absolute;
-  bottom: -20px;
+  bottom: -1rem;
   left: 50%;
   transform: translateX(-50%);
   background-color: #091e2f;
@@ -588,13 +577,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -836,13 +819,13 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .news[data-v-9b317ac0] {
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: #ffffff;
   box-shadow: 0px 6px 8px #e6e6e6;
 }
 @media screen and (min-width: 560px) {
 .news[data-v-9b317ac0] {
-    padding: 1.5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
 }
 }
 .news-list[data-v-9b317ac0] {
@@ -882,13 +865,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -1194,13 +1171,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -1442,14 +1413,14 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .text-box {
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 6px 8px #e6e6e6;
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .text-box {
-    padding: 1.5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
 }
 }
 @media screen and (min-width: 1025px) {
@@ -1478,13 +1449,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -1814,7 +1779,8 @@ import用ファイル
 }
 .home__support[data-v-63cd6604] {
   margin-bottom: 0;
-  padding: 10rem 0;
+  padding-top: 7.5rem;
+  padding-bottom: 10rem;
   color: #ffffff;
   display: flex;
   flex-flow: column nowrap;
@@ -1870,13 +1836,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -2155,13 +2115,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -2184,7 +2138,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-b056e422 {
+@-webkit-keyframes iconSlide-data-v-348f28a1 {
 0% {
     transform: translateX(0);
 }
@@ -2219,7 +2173,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-b056e422 {
+@keyframes iconSlide-data-v-348f28a1 {
 0% {
     transform: translateX(0);
 }
@@ -2254,7 +2208,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-b056e422 {
+@-webkit-keyframes fadeoutDown-data-v-348f28a1 {
 0% {
     transform: translateY(0);
 }
@@ -2299,7 +2253,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-b056e422 {
+@keyframes fadeoutDown-data-v-348f28a1 {
 0% {
     transform: translateY(0);
 }
@@ -2344,7 +2298,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-b056e422 {
+@-webkit-keyframes fadeoutTop-data-v-348f28a1 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -2354,7 +2308,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-b056e422 {
+@keyframes fadeoutTop-data-v-348f28a1 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -2364,7 +2318,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-b056e422 {
+@-webkit-keyframes rotation-data-v-348f28a1 {
 0% {
     transform: rotate(0);
 }
@@ -2381,7 +2335,7 @@ import用ファイル
     transform: rotate(180deg);
 }
 }
-@keyframes rotation-data-v-b056e422 {
+@keyframes rotation-data-v-348f28a1 {
 0% {
     transform: rotate(0);
 }
@@ -2402,9 +2356,9 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.policy-card[data-v-b056e422] {
-  width: 160px;
-  height: 160px;
+.concept-card[data-v-348f28a1] {
+  width: 10rem;
+  height: 10rem;
   border: 3px solid #ffffff;
   border-radius: 4px;
   margin: 0 auto;
@@ -2413,55 +2367,52 @@ import用ファイル
   justify-content: center;
   align-items: center;
   background: #10334e;
-  background: linear-gradient(to right, #10334e 0%, #030A10 100%);
+  background: radial-gradient(ellipse at center, #10334e 0%, #030A10 100%);
 }
 @media screen and (min-width: 560px) {
-.policy-card[data-v-b056e422] {
+.concept-card[data-v-348f28a1] {
     margin: 0;
 }
 }
 @media screen and (min-width: 1025px) {
-.policy-card[data-v-b056e422] {
+.concept-card[data-v-348f28a1] {
     position: relative;
 }
-.policy-card__title[data-v-b056e422], .policy-card__subTitle[data-v-b056e422] {
+.concept-card__title[data-v-348f28a1], .concept-card__subTitle[data-v-348f28a1] {
     transition: all 0.5s ease-in-out;
 }
 }
 @media screen and (min-width: 1025px) {
-.policy-card:hover .policy-card__title[data-v-b056e422],
-.policy-card:hover .policy-card__subTitle[data-v-b056e422] {
+.concept-card:hover .concept-card__title[data-v-348f28a1],
+.concept-card:hover .concept-card__subTitle[data-v-348f28a1] {
     opacity: 0;
 }
-.policy-card:hover .policy-card__text[data-v-b056e422] {
+.concept-card:hover .concept-card__text[data-v-348f28a1] {
     opacity: 1;
 }
 }
-.policy-card__subTitle[data-v-b056e422] {
+.concept-card__subTitle[data-v-348f28a1] {
   font-size: 0.625rem;
+  letter-spacing: 2px;
   color: #ffffff;
 }
-.policy-card__title[data-v-b056e422] {
+.concept-card__title[data-v-348f28a1] {
   color: #ffffff;
-  font-family: "Bangers", cursive;
-  font-size: 1.375rem;
-  letter-spacing: 1px;
-  font-weight: bold;
+  font-size: 1rem;
 }
-.policy-card__text[data-v-b056e422] {
+.concept-card__text[data-v-348f28a1] {
   color: #ffffff;
   padding: 0.5rem;
   text-align: center;
 }
 @media screen and (min-width: 1025px) {
-.policy-card__text[data-v-b056e422] {
+.concept-card__text[data-v-348f28a1] {
     opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
-    font-size: 0.75rem;
     font-weight: bold;
     transition: all 0.5s ease-in-out;
 }
@@ -2479,13 +2430,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -2782,13 +2727,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -3059,11 +2998,6 @@ import用ファイル
     padding-left: 0;
     font-size: 1rem;
 }
-}
-@media screen and (min-width: 1025px) {
-.main-visual-slider__text[data-v-30380e08] {
-    font-size: 1.375rem;
-}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -3078,13 +3012,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -3365,13 +3293,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -3664,13 +3586,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -3967,13 +3883,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -4275,13 +4185,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -4557,13 +4461,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -4854,13 +4752,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -5128,13 +5020,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -5430,13 +5316,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -5681,11 +5561,11 @@ import用ファイル
   width: 100%;
   height: 100vh;
 }
-.club__policy[data-v-357d3955] {
+.club__concept[data-v-357d3955] {
   margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
-.club__policy-cards[data-v-357d3955] {
+.club__concept-cards[data-v-357d3955] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -5695,19 +5575,19 @@ import用ファイル
 }
 }
 @media screen and (min-width: 1025px) {
-.club__policy-cards[data-v-357d3955] {
+.club__concept-cards[data-v-357d3955] {
     max-width: 50rem;
 }
 }
-.club__policy-card[data-v-357d3955] {
+.club__concept-card[data-v-357d3955] {
   margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.club__policy-card[data-v-357d3955] {
+.club__concept-card[data-v-357d3955] {
     margin-bottom: 0;
 }
 }
-.club__policy-card[data-v-357d3955]:last-child {
+.club__concept-card[data-v-357d3955]:last-child {
   margin-bottom: 0;
 }
 .club__practice-map[data-v-357d3955] {
@@ -5861,13 +5741,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -6418,13 +6292,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -6833,13 +6701,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -7171,13 +7033,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -7462,13 +7318,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -7826,13 +7676,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -8167,13 +8011,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -8469,13 +8307,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -8757,13 +8589,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -9097,13 +8923,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -9441,13 +9261,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -9770,13 +9584,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -10067,13 +9875,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -10511,13 +10313,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -10879,13 +10675,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -11174,13 +10964,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -11542,13 +11326,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -11829,13 +11607,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -12646,13 +12418,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -12985,13 +12751,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -13479,13 +13239,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -13914,13 +13668,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -14162,24 +13910,13 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .footer[data-v-060e08fe] {
-  padding: 0 1rem;
   color: #ffffff;
-}
-@media screen and (min-width: 560px) {
-.footer[data-v-060e08fe] {
-    padding: 0 2rem;
-}
-}
-@media screen and (min-width: 1025px) {
-.footer[data-v-060e08fe] {
-    max-width: 1600px;
-    margin: 0 auto;
-}
+  margin-bottom: 0;
 }
 .footer-wrap[data-v-060e08fe] {
   background: #030A10;
   background: linear-gradient(to right, #030A10 0%, #10334e 100%);
-  padding-top: 5rem;
+  padding-top: 2.5rem;
   padding-bottom: 1.5rem;
 }
 .footer__contact-lead[data-v-060e08fe] {
@@ -14296,11 +14033,6 @@ import用ファイル
   left: 1rem;
   transform: translateY(-50%);
 }
-@media screen and (min-width: 560px) {
-.footer__information-logo[data-v-060e08fe] {
-    width: 10rem;
-}
-}
 .footer__information-title[data-v-060e08fe] {
   margin-bottom: 0.5rem;
 }
@@ -14378,13 +14110,7 @@ import用ファイル
  */
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
- */
-/**
- * button size
- */
-/**
- * icon size
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * google map size
@@ -15138,13 +14864,34 @@ header {
 }
 
 section {
-  padding: 0 1rem;
+  padding: 0 16px;
   max-width: 1600px;
   margin: 0 auto 5rem auto;
 }
 @media screen and (min-width: 560px) {
   section {
-    padding: 0 2rem;
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  section {
+    padding: 0 32px;
+  }
+}
+
+.wrapper {
+  padding: 0 16px;
+  max-width: 1600px;
+  margin: 0 auto 5rem auto;
+}
+@media screen and (min-width: 560px) {
+  .wrapper {
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .wrapper {
+    padding: 0 32px;
   }
 }
 
@@ -15225,7 +14972,7 @@ th, td {
   background: #10334e;
   background: linear-gradient(to right, #10334e 0%, #030A10 100%);
   margin-top: 0;
-  padding: 5rem 0;
+  padding: 2.5rem 0 5rem 0;
 }
 
 /**

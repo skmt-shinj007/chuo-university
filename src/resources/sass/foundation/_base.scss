@@ -47,12 +47,31 @@ header {
 }
 
 section {
-  padding: 0 interval(2);
+  padding: 0 pixel(2);
   max-width: device(max);
   margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
-    padding: 0 interval(4);
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 pixel(4);
+  }
+}
+
+// セクションではないが、スタイルだけ適用したいとき。
+.wrapper {
+  padding: 0 pixel(2);
+  max-width: device(max);
+  margin: 0 auto interval(10) auto;
+
+  @include mq(sm) {
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 pixel(4);
   }
 }
 
@@ -125,7 +144,7 @@ th,td {
 .background-darkblue {
   @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
   margin-top: 0;
-  padding: interval(10) 0;
+  padding: interval(5) 0 interval(10) 0;
 }
 
 /**
