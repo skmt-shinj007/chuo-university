@@ -1,6 +1,6 @@
 <template>
 <div class="position-tag">
-  <tag-component :color="positionColor" :content="position"/>
+  <tag-component :color="positionColor" :content="position" :size="size" :responsive="responsive"/>
 </div>
 </template>
 
@@ -12,27 +12,41 @@ export default {
   components: {
     TagComponent
   },
-  data() {
-    return {
-      positionColor: '',
-    }
-  },
+
   props: {
+    // [ポジション]
     position: {
       type: String,
       default: ''
+    },
+
+    // [タグサイズ]
+    size: {
+      type: String,
+      default: ''
+    },
+
+    // レスポンシブ フラグ
+    responsive: {
+      type: Boolean,
+      default: false
     }
   },
+
   computed: {
-  },
-  mounted() {
-    // position が '後衛' の場合、カラーを 'lightgreen' に設定。
-    // position が '前衛' の場合、カラーを 'orange' に設定。
-    (this.position === '後衛') ? this.positionColor = 'lightgreen' : (this.position === '前衛') ? this.positionColor = 'orange' : null;
+    /**
+     * [ポジションに合わせてタグ色を決める]
+     * @type { function }
+     * @return { string } 変数colorが返る
+     */
+    positionColor() {
+      // returnする変数を定義
+      let color = '';
+      // ポジションに合わせて色を代入
+      (this.position === '後衛') ? color = 'lightgreen' : (this.position === '前衛') ? color = 'orange' : null;
+
+      return color;
+    }
   },
 }
 </script>
-
-<style lang="scss">
-
-</style>
