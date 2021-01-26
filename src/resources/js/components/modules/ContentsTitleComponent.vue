@@ -40,10 +40,6 @@ export default {
   padding-bottom: interval(5);
   @include flex(column nowrap, center, center);
 
-  @include mq(md) {
-    padding-bottom: interval(7);
-  }
-
   &-white {
     color: color(white);
   }
@@ -51,10 +47,6 @@ export default {
   &__assistance {
     font-size: font(10);
     font-weight: normal;
-
-    @include mq(md) {
-      font-size: font(12);
-    }
   }
 
   &__primary {

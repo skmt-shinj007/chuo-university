@@ -53,8 +53,8 @@ export default {
 <style lang="scss">
 .primary-btn {
   width: 80%;
-  max-width: btn-size(sm-width);
-  height: btn-size(sm-height);
+  max-width: interval(30);
+  height: interval(6);
   margin: 0 auto;
   background-color: color(white);
   font-size: font(10);
@@ -75,20 +75,11 @@ export default {
 
   // pc style
   @include mq(md) {
-    width: btn-size(lg-width);
-    height: btn-size(lg-height);
-    font-size: font(12);
-
-    &--xs {
-      max-width: btn-size(xs-width);
-      height: btn-size(xs-height);
-      font-size: font(10);
-    }
 
     &--sm {
-      width: btn-size(sm-width);
-      height: btn-size(sm-height);
-      font-size: font(10);
+      max-width: interval(26);
+      height: interval(5);
+      font-size: font(8);
     }
   }
 

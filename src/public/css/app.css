@@ -549,22 +549,12 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 1025px) {
-.contents-title {
-    padding-bottom: 3.5rem;
-}
-}
 .contents-title-white {
   color: #ffffff;
 }
 .contents-title__assistance {
   font-size: 0.625rem;
   font-weight: normal;
-}
-@media screen and (min-width: 1025px) {
-.contents-title__assistance {
-    font-size: 0.75rem;
-}
 }
 .contents-title__primary {
   margin-top: 0.5rem;
@@ -1409,8 +1399,8 @@ import用ファイル
  */
 .primary-btn {
   width: 80%;
-  max-width: 240px;
-  height: 50px;
+  max-width: 15rem;
+  height: 3rem;
   margin: 0 auto;
   background-color: #ffffff;
   font-size: 0.625rem;
@@ -1430,20 +1420,10 @@ import用ファイル
 }
 }
 @media screen and (min-width: 1025px) {
-.primary-btn {
-    width: 300px;
-    height: 60px;
-    font-size: 0.75rem;
-}
-.primary-btn--xs {
-    max-width: 200px;
-    height: 45px;
-    font-size: 0.625rem;
-}
 .primary-btn--sm {
-    width: 240px;
-    height: 50px;
-    font-size: 0.625rem;
+    max-width: 13rem;
+    height: 2.5rem;
+    font-size: 0.5rem;
 }
 }
 .primary-btn__btn {
@@ -14539,6 +14519,10 @@ import用ファイル
 .footer__menu-list-item[data-v-060e08fe] {
   padding: 0.5rem;
   cursor: pointer;
+  margin-right: 1rem;
+}
+.footer__menu-list-item[data-v-060e08fe]:last-child {
+  margin-right: 0;
 }
 @media screen and (min-width: 1025px) {
 .footer__menu-list-item:hover .footer__menu-list-label[data-v-060e08fe] {
@@ -14547,12 +14531,6 @@ import用ファイル
 .footer__menu-list-item:hover .footer__menu-list-link[data-v-060e08fe] {
     transform: translateX(1rem);
 }
-}
-.footer__menu-list-item--site-map[data-v-060e08fe] {
-  width: calc(100% / 4);
-}
-.footer__menu-list-item--external-link[data-v-060e08fe] {
-  width: calc(100% / 3);
 }
 .footer__menu-list-link[data-v-060e08fe] {
   display: flex;
@@ -14568,7 +14546,7 @@ import用ファイル
   cursor: pointer;
 }
 .footer__menu-list-label[data-v-060e08fe] {
-  font-size: 1rem;
+  font-size: 0.875rem;
   cursor: pointer;
 }
 .footer__information[data-v-060e08fe] {
@@ -14602,11 +14580,6 @@ import用ファイル
   font-weight: bold;
   line-height: 1.8;
   letter-spacing: 1.2px;
-}
-@media screen and (min-width: 560px) {
-.footer__information-item[data-v-060e08fe], .footer__information-telephone[data-v-060e08fe] {
-    font-size: 0.875rem;
-}
 }
 .footer__information-telephone[data-v-060e08fe] {
   text-decoration: underline;
@@ -15462,7 +15435,7 @@ h2 {
 }
 @media screen and (min-width: 1025px) {
   h2 {
-    font-size: 3.125rem;
+    font-size: 3rem;
   }
 }
 
@@ -15472,11 +15445,6 @@ h3 {
 @media screen and (min-width: 560px) {
   h3 {
     font-size: 1rem;
-  }
-}
-@media screen and (min-width: 1025px) {
-  h3 {
-    font-size: 1.375rem;
   }
 }
 
