@@ -85,13 +85,13 @@
     }
   ],
 
-  "Policy": [
+  "Concept": [
     {
-    "Title": {
-      "Main": "Symbol",
-      "Sub": "部訓"
-    },
-    "Content": "部訓が入ります。部訓が入ります。"
+      "Title": {
+        "Main": "Symbol",
+        "Sub": "部訓"
+      },
+      "Content": "部訓が入ります。部訓が入ります。"
     },
     {
       "Title": {
@@ -102,7 +102,7 @@
     },
     {
       "Title": {
-        "Main": "mission",
+        "Main": "Mission",
         "Sub": "意義"
       },
       "Content": "ソフトテニスを通じた人間育成"

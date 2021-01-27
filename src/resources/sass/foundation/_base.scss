@@ -2,6 +2,7 @@ html {
 
   @include mq(sm) {
     font-size: 20px;
+    width: 100vw;
   }
 
   @include mq(md) {
@@ -47,12 +48,31 @@ header {
 }
 
 section {
-  padding: 0 interval(2);
+  padding: 0 pixel(2);
   max-width: device(max);
   margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
-    padding: 0 interval(4);
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 pixel(4);
+  }
+}
+
+// セクションではないが、スタイルだけ適用したいとき。
+.wrapper {
+  padding: 0 pixel(2);
+  max-width: device(max);
+  margin: 0 auto interval(10) auto;
+
+  @include mq(sm) {
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 pixel(4);
   }
 }
 
@@ -101,11 +121,6 @@ label {
 tr {
   font-size: font(12);
   font-weight: bold;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(14);
-  }
 }
 
 th,td {
@@ -125,7 +140,7 @@ th,td {
 .background-darkblue {
   @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
   margin-top: 0;
-  padding: interval(10) 0;
+  padding: interval(5) 0 interval(10) 0;
 }
 
 /**

@@ -97,10 +97,6 @@ export default {
       padding-left: 0;
       font-size: font(16);
     }
-
-    @include mq(md) {
-      font-size: font(22);
-    }
   }
 }
 </style>

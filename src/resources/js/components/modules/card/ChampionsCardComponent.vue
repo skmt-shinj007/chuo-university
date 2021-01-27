@@ -28,8 +28,7 @@
     <span class="champions-card__tournament-info-title">{{ messages.ContentsTitles.TournamentInformation }}</span>
     <table-component
       :tableItems="cardElement.TournamentInformation"
-      :valueTransparent="true"
-      font="sm"/>
+      :valueTransparent="true"/>
   </div>
 
 </div>

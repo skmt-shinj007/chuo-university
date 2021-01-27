@@ -58,31 +58,10 @@ $base-font: 16;
 
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
-$base-pixel: 1rem / 2;
-
-/**
- * button size
- */
-$button: (
-  xs-width: 200px,
-  xs-height: 45px,
-
-  sm-width: 240px,
-  sm-height: 50px,
-
-  lg-width: 300px,
-  lg-height: 60px,
-);
-
-/**
- * icon size
- */
-$icon: (
-  normal: 20px,
-  lg: 32px,
-);
+$base-pixel: 8px;
+$base-rem: 1rem / 2;
 
 /**
  * google map size

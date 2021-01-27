@@ -42,8 +42,8 @@
       "Main": "hakumonkai",
       "Sub" : "白門会"
     },
-    "Policy": {
-      "Main": "team policy",
+    "Concept": {
+      "Main": "team concept",
       "Sub" : "方針"
     },
     "Practice": {
@@ -59,7 +59,7 @@
       "Sub" : "メンバー"
     },
     "Photo": {
-      "Main": "photo gallery",
+      "Main": "photo",
       "Sub" : "フォトギャラリー"
     },
     "History": {
