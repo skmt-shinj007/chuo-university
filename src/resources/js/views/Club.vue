@@ -320,25 +320,30 @@ const imageApiResponse = [
     &-cards {
 
       @include mq(sm) {
-        @include flex(row nowrap, space-between, center);
-        max-width: interval(80);
+        max-width: interval(60);
         margin: 0 auto;
+        @include flex(row nowrap, space-between, center);
       }
 
       @include mq(md) {
         max-width: interval(100);
       }
     }
+  }
 
-    &-card {
-      margin-bottom: interval(5);
+  &__concept-card {
+    margin-bottom: interval(5);
 
-      @include mq(sm) {
-        margin-bottom: 0;
-      }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(sm) {
+      margin-bottom: 0;
+      margin-right: interval(2);
 
       &:last-child {
-        margin-bottom: 0;
+        margin-right: 0;
       }
     }
   }
@@ -350,11 +355,11 @@ const imageApiResponse = [
     }
 
     &-imageSlider {
-      padding-top: interval(8);
+      margin-top: interval(10);
 
       @include mq(sm) {
-        max-width: interval(80);
-        margin: 0 auto;
+        max-width: pixel(80);
+        margin: interval(10) auto 0 auto;
       }
 
     }

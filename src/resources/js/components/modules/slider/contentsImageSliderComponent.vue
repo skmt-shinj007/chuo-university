@@ -82,7 +82,7 @@ export default {
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: font(12);
+    font-size: font(10);
 
     @include mq(sm) {
       line-height: 2;

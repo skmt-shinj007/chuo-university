@@ -2357,11 +2357,12 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .concept-card[data-v-348f28a1] {
-  width: 10rem;
-  height: 10rem;
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  color: #ffffff;
   border: 3px solid #ffffff;
   border-radius: 4px;
-  margin: 0 auto;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -2371,16 +2372,13 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .concept-card[data-v-348f28a1] {
-    margin: 0;
+    width: 8rem;
 }
 }
-@media screen and (min-width: 1025px) {
-.concept-card[data-v-348f28a1] {
-    position: relative;
-}
-.concept-card__title[data-v-348f28a1], .concept-card__subTitle[data-v-348f28a1] {
-    transition: all 0.5s ease-in-out;
-}
+.concept-card[data-v-348f28a1]::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
 }
 @media screen and (min-width: 1025px) {
 .concept-card:hover .concept-card__title[data-v-348f28a1],
@@ -2391,14 +2389,25 @@ import用ファイル
     opacity: 1;
 }
 }
+.concept-card-inner[data-v-348f28a1] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 .concept-card__subTitle[data-v-348f28a1] {
   font-size: 0.625rem;
   letter-spacing: 2px;
-  color: #ffffff;
+  transition: all 0.5s ease-in-out;
 }
 .concept-card__title[data-v-348f28a1] {
-  color: #ffffff;
   font-size: 1rem;
+  transition: all 0.5s ease-in-out;
 }
 .concept-card__text[data-v-348f28a1] {
   color: #ffffff;
@@ -2701,7 +2710,7 @@ import用ファイル
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.75rem;
+  font-size: 0.625rem;
 }
 @media screen and (min-width: 560px) {
 .image-slider__caption[data-v-6cd5e234] {
@@ -3560,7 +3569,8 @@ import用ファイル
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -3570,7 +3580,7 @@ import用ファイル
   font-size: 0.625rem;
 }
 .caption-bar-image__capacity-number[data-v-7fa4fe02] {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: bold;
 }@charset "UTF-8";
 /*
@@ -4702,6 +4712,9 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
+.player-card {
+  position: relative;
+}
 .player-card__figure {
   position: relative;
   border-bottom: 2px solid #091e2f;
@@ -4725,19 +4738,39 @@ import用ファイル
   background-color: #f2f2f2;
   padding: 0.5rem;
 }
-.player-card__information-name {
-  margin: 0 0.5rem 0 0.25rem;
+.player-card__name-ja, .player-card__name-en {
+  display: block;
+  margin-left: 0.25rem;
 }
-.player-card__information-name-english {
+.player-card__name-en {
   font-size: 0.625rem;
 }
-.player-card__information-tags {
+.player-card__tag-group {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: stretch;
   align-content: space-around;
   padding: 0.5rem 0;
+}
+.player-card__post {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #091e2f;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.player-card__post-label {
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -4993,18 +5026,16 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
+.slider[data-v-53189f00] {
+  height: auto;
+}
 .slider .player-card[data-v-53189f00] {
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
 }
 @media screen and (min-width: 560px) {
 .slider .player-card[data-v-53189f00] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 1025px) {
-.slider .player-card[data-v-53189f00] {
-    width: 80%;
+    width: 90%;
 }
 }@charset "UTF-8";
 /*
@@ -5566,12 +5597,12 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .club__concept-cards[data-v-357d3955] {
+    max-width: 30rem;
+    margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    max-width: 40rem;
-    margin: 0 auto;
 }
 }
 @media screen and (min-width: 1025px) {
@@ -5582,24 +5613,28 @@ import用ファイル
 .club__concept-card[data-v-357d3955] {
   margin-bottom: 2.5rem;
 }
+.club__concept-card[data-v-357d3955]:last-child {
+  margin-bottom: 0;
+}
 @media screen and (min-width: 560px) {
 .club__concept-card[data-v-357d3955] {
     margin-bottom: 0;
-}
+    margin-right: 1rem;
 }
 .club__concept-card[data-v-357d3955]:last-child {
-  margin-bottom: 0;
+    margin-right: 0;
+}
 }
 .club__practice-map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
 .club__practice-imageSlider[data-v-357d3955] {
-  padding-top: 4rem;
+  margin-top: 5rem;
 }
 @media screen and (min-width: 560px) {
 .club__practice-imageSlider[data-v-357d3955] {
-    max-width: 40rem;
-    margin: 0 auto;
+    max-width: 640px;
+    margin: 5rem auto 0 auto;
 }
 }
 .club__practice-rowImages[data-v-357d3955] {
@@ -14818,6 +14853,7 @@ template {
 @media screen and (min-width: 560px) {
   html {
     font-size: 20px;
+    width: 100vw;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -14947,11 +14983,6 @@ label {
 tr {
   font-size: 0.75rem;
   font-weight: bold;
-}
-@media screen and (min-width: 1025px) {
-  tr {
-    font-size: 0.875rem;
-  }
 }
 
 th, td {

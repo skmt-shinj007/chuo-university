@@ -5,15 +5,18 @@
   </figure>
 
   <div class="player-card__information">
-    <div class="player-card__information-name-wrap">
-      <span class="player-card__information-name">{{ player.name.ja }}</span>
-      <span class="player-card__information-name-english">{{ player.name.en }}</span>
+    <div class="player-card__name">
+      <span class="player-card__name-ja">{{ player.name.ja }}</span>
+      <span class="player-card__name-en">{{ player.name.en }}</span>
     </div>
 
-    <div class="player-card__information-tags">
+    <div class="player-card__tag-group">
       <position-tag-component :position="player.position"/>
-      <tag-component v-if="player.post.club" :content="player.post.club"/>
       <grade-tag-component v-if="player.grade" :grade="player.grade"/>
+    </div>
+
+    <div class="player-card__post" v-if="player.post.club">
+      <label class="player-card__post-label">{{ player.post.club }}</label>
     </div>
 
     <slot name="addCardContents" :player="player">
@@ -46,6 +49,7 @@ export default {
 
 <style lang="scss">
 .player-card {
+  position: relative;
 
   &__figure {
     @include trimming(aspect(square));
@@ -56,20 +60,40 @@ export default {
   &__information {
     background-color: color(lightgrey);
     padding: interval(1);
+  }
 
-    &-name {
-      margin: 0 interval(1) 0 interval(.5);
-    }
+  &__name-ja {
+    display: block;
+    margin-left: interval(.5);
+  }
 
-    &-name-english {
-      font-size: font(10);
-    }
+  &__name-en {
+    @extend .player-card__name-ja;
+    font-size: font(10);
+  }
 
-    &-tags {
-      @include flex(row wrap);
-      align-content: space-around;
-      padding: interval(1) 0;
-    }
+  &__tag-group {
+    @include flex(row wrap);
+    align-content: space-around;
+    padding: interval(1) 0;
+  }
+
+  &__post {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: color(darkblue);
+    width: interval(6);
+    height: interval(6);
+    border: 2px solid color(white);
+    border-radius: radius(circle);
+    @include flex(row nowrap, center, center);
+  }
+
+  &__post-label {
+    color: color(white);
+    font-size: font(12);
+    line-height: 1;
   }
 }
 </style>

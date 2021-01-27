@@ -2,6 +2,7 @@ html {
 
   @include mq(sm) {
     font-size: 20px;
+    width: 100vw;
   }
 
   @include mq(md) {
@@ -120,11 +121,6 @@ label {
 tr {
   font-size: font(12);
   font-weight: bold;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(14);
-  }
 }
 
 th,td {
