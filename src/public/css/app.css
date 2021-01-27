@@ -3266,14 +3266,15 @@ import用ファイル
   width: 100%;
 }
 .common-table__record {
+  font-size: 0.75rem;
   width: 100%;
   border: 1px solid #f2f2f2;
 }
-.common-table__record--xs {
+.common-table__record--sm {
   font-size: 0.625rem;
 }
-.common-table__record--sm {
-  font-size: 0.75rem;
+.common-table__record--lg {
+  font-size: 0.875rem;
 }
 .common-table__key {
   width: 30%;
@@ -5758,6 +5759,9 @@ import用ファイル
   transform: translateY(-50%);
 }
 .club__member-button[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+.club__photo[data-v-357d3955] {
   margin-top: 2.5rem;
 }
 .club__photo-button[data-v-357d3955] {

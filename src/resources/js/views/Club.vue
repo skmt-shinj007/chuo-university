@@ -85,7 +85,7 @@
       <div class="club__member-number">
         <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
         <div class="club__member-number-table">
-          <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+          <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
         </div>
       </div>
 
@@ -468,6 +468,7 @@ const imageApiResponse = [
   }
 
   &__photo {
+    margin-top: interval(5);
 
     &-button {
       margin-top: interval(5);
