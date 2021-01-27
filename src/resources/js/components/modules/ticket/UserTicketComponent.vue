@@ -1,5 +1,5 @@
 <template>
-<div class="user-ticket" ref="targetElement">
+<div class="user-ticket">
   <div class="user-ticket-thumbnail-border" :class="borderColor">
     <figure class="user-ticket-thumbnail-wrap">
       <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
@@ -64,14 +64,10 @@ export default {
   box-shadow: 0 3px 5px 3px color(darkShadow);
   background-color: color(white);
   border: 2px solid color(light);
-  border-radius: 48px;
+  border-radius: 100px;
   padding: interval(1);
   position: relative;
-  z-index: 1;
-
-  @include mq(sm) {
-    padding: interval(1) interval(1.5);
-  }
+  width: interval(34);
 
   @include mq(md) {
     cursor: pointer;

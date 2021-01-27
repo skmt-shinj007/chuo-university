@@ -96,25 +96,6 @@ export default {
     },
 
     /**
-     * [class属性をjsで一括取得]
-     * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.classes['class名']
-     * @param data : 属性の名前が格納された配列
-     * @return { object } : 取得した要素のHTMLCollectionが格納された配列で戻る
-     * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }
-     */
-    getClasses(data) {
-      let classes = [];
-      let el = '';
-
-      data.forEach(element => {
-        el = document.getElementsByClassName(element);
-        (el != null) ? classes[element] = el : null;
-      })
-
-      return classes;
-    },
-
-    /**
      * [要素の高さを一括取得できるメソッド]
      * ドット記法で要素にアクセス可能
      * @param data : 属性の名前が格納された配列
