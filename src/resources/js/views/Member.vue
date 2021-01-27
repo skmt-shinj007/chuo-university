@@ -93,10 +93,16 @@ export default {
       clickElement: null,
 
       /**
-       * チケットの要素数とチケットのwidth
+       * 各チケットの要素数
+       * @type { Number }
        */
       playerTicketNumber: 0,
       staffTicketNumber: 0,
+
+      /**
+       * ユーザーチケットの幅 (width)
+       * @type { Number }
+       */
       ticketWidth: 0,
     }
   },
