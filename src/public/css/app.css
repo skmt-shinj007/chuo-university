@@ -6580,15 +6580,10 @@ import用ファイル
   box-shadow: 0 3px 5px 3px #b3b3b3;
   background-color: #ffffff;
   border: 2px solid #f8f9fa;
-  border-radius: 48px;
+  border-radius: 100px;
   padding: 0.5rem;
   position: relative;
-  z-index: 1;
-}
-@media screen and (min-width: 560px) {
-.user-ticket {
-    padding: 0.5rem 0.75rem;
-}
+  width: 17rem;
 }
 @media screen and (min-width: 1025px) {
 .user-ticket {
@@ -7022,6 +7017,9 @@ import用ファイル
     font-size: 3rem;
 }
 }
+.member__players[data-v-668c6779] {
+  margin-top: 2.5rem;
+}
 .member__user-ticket-group[data-v-668c6779] {
   display: flex;
   flex-flow: column nowrap;
@@ -7032,30 +7030,28 @@ import用ファイル
 .member__user-ticket-group[data-v-668c6779] {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 }
 .member__user-ticket[data-v-668c6779] {
-  padding: 0.5rem;
   margin-bottom: 2.5rem;
-  width: 100%;
-  max-width: 24rem;
 }
 @media screen and (min-width: 560px) {
 .member__user-ticket[data-v-668c6779] {
-    width: calc(100% / 2);
-    max-width: none;
-}
-}
-@media screen and (min-width: 1025px) {
-.member__user-ticket[data-v-668c6779] {
     margin-bottom: 0;
-    width: calc(100% / 3);
+    padding: 0.5rem;
 }
 }
 .member__staff[data-v-668c6779] {
   padding-bottom: 5rem;
+  margin-bottom: 0;
+}
+.enpty-box[data-v-668c6779] {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
   margin-bottom: 0;
 }@charset "UTF-8";
 /*

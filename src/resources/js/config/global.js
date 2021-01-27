@@ -98,6 +98,7 @@ export default {
     /**
      * [class属性をjsで一括取得]
      * 複数取得した属性の要素一つにアクセスする場合、キー表記でアクセスが可能 -> this.classes['class名']
+     * ! vueの場合 > refでDOM要素を取得できる
      * @param data : 属性の名前が格納された配列
      * @return { object } : 取得した要素のHTMLCollectionが格納された配列で戻る
      * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }

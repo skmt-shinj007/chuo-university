@@ -15,15 +15,23 @@
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
     <div class="member__user-ticket-group">
-      <div class="member__user-ticket" v-for="(player, n) in players" :key="n" @click="openModal(player)">
+      <div class="member__user-ticket" ref="playerTicket"
+          v-for="(player, n) in players"
+          :key="n"
+          @click="openModal(player)">
+
         <user-ticket-component :userObj="player"/>
       </div>
+      <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
+      <div
+        class="enpty"
+        v-for="n in playerTicketNumber"
+        :key="`enpty-${n}`"
+        :style="{ width: `${ticketWidth}px` }"
+      />
     </div>
 
-    <ticket-modal-component
-      v-if="showModal"
-      @close="closeModal"
-      :item="clickElement"/>
+    <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
 
   </section>
 
@@ -33,9 +41,16 @@
       :subTitle="messages.SectionTitles.Staff.Sub"/>
 
     <div class="member__user-ticket-group">
-      <div class="member__user-ticket" v-for="(staffItem, n) in staff" :key="n">
+      <div class="member__user-ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n">
         <user-ticket-component :userObj="staffItem"/>
       </div>
+      <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
+      <div
+        class="enpty"
+        v-for="n in staffTicketNumber"
+        :key="`enpty-${n}`"
+        :style="{ width: `${ticketWidth}px` }"
+      />
     </div>
   </section>
 </div>
@@ -76,6 +91,13 @@ export default {
        * @type { Object }
        */
       clickElement: null,
+
+      /**
+       * チケットの要素数とチケットのwidth
+       */
+      playerTicketNumber: 0,
+      staffTicketNumber: 0,
+      ticketWidth: 0,
     }
   },
   beforeMount() {
@@ -95,6 +117,29 @@ export default {
     });
   },
 
+  mounted() {
+    /**
+     * [チケットレイアウトの配置]
+     * justify-content: center; は余った要素が真ん中よりになるので、左寄せに揃えるための処理
+     * 解決策 -> チケットの数だけ空divを追加する。
+     */
+    const playerTicket = this.$refs.playerTicket;
+    const staffTicket = this.$refs.staffTicket;
+
+    // チケットの個数を変数に格納
+    this.playerTicketNumber = playerTicket.length;
+    this.staffTicketNumber = staffTicket.length;
+
+    /**
+     * 1.描画後にチケットの幅を取得（デフォ値を代入）
+     * 2.チケットのサイズをリアルタイムで取得
+     */
+    this.ticketWidth = playerTicket[0].offsetWidth;
+    window.addEventListener('resize', () => {
+      this.ticketWidth = playerTicket[0].offsetWidth;
+    });
+  },
+
   methods: {
     /**
      * [モーダル開閉処理]
@@ -107,7 +152,14 @@ export default {
     closeModal() {
       this.showModal = false;
       document.body.classList.remove("modal-open");
-    }
+    },
+  },
+
+  beforeDestroy() {
+    // コンポーネント破棄直前にイベントを削除
+    window.removeEventListener('resize', () => {
+      this.ticketWidth = playerTicket[0].offsetWidth;
+    });
   },
 }
 </script>
@@ -149,28 +201,28 @@ export default {
     }
   }
 
+  &__players {
+    margin-top: interval(5);
+  }
+
   &__user-ticket-group {
     @include flex(column nowrap, center, center);
 
     @include mq(sm) {
-      @include flex(row wrap, flex-start, center);
+      @include flex(row wrap, center, center);
     }
   }
 
   &__user-ticket {
-    padding: interval(1);
     margin-bottom: interval(5);
-    width: 100%;
-    max-width: interval(48);
 
     @include mq(sm) {
-      width: calc(100% / 2);
-      max-width: none;
+      margin-bottom: 0;
+      padding: interval(1);
     }
 
     @include mq(md) {
-      margin-bottom: 0;
-      width: calc(100% / 3);
+
     }
   }
 
@@ -178,5 +230,13 @@ export default {
     padding-bottom: interval(10);
     margin-bottom: 0;
   }
+}
+
+.enpty-box {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 </style>
