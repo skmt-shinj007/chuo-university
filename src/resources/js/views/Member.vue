@@ -118,34 +118,33 @@ export default {
 
   &__main-visual-icon {
     width: 80%;
-    max-width: interval(30);
+    max-width: interval(40);
     fill: color(white);
     stroke: color(orange);
     stroke-width: interval(1);
 
     @include mq(sm) {
       width: 50%;
-      max-width: interval(50);
     }
 
     @include mq(md) {
-      max-width: interval(80);
+      max-width: interval(60);
     }
   }
 
   &__main-visual-ward {
-    @include bangers(font(22), 1px, 400);
+    @include bangers(font(24), 1px, 400);
     color: color(white);
+    letter-spacing: 1.8px;
     line-height: 1.2;
     text-align: center;
-    margin-top: interval(2);
+    margin-top: interval(5);
 
     @include mq(sm) {
-      font-size: calc(#{font(48)} - 8px);
+      font-size: font(28);
     }
 
     @include mq(md) {
-      margin-top: interval(5);
       font-size: font(48);
     }
   }

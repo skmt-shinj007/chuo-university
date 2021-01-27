@@ -6986,7 +6986,7 @@ import用ファイル
 }
 .member__main-visual-icon[data-v-668c6779] {
   width: 80%;
-  max-width: 15rem;
+  max-width: 20rem;
   fill: #ffffff;
   stroke: #e56c2c;
   stroke-width: 0.5rem;
@@ -6994,32 +6994,31 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .member__main-visual-icon[data-v-668c6779] {
     width: 50%;
-    max-width: 25rem;
 }
 }
 @media screen and (min-width: 1025px) {
 .member__main-visual-icon[data-v-668c6779] {
-    max-width: 40rem;
+    max-width: 30rem;
 }
 }
 .member__main-visual-ward[data-v-668c6779] {
   font-family: "Bangers", cursive;
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   font-weight: 400;
   color: #ffffff;
+  letter-spacing: 1.8px;
   line-height: 1.2;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
 .member__main-visual-ward[data-v-668c6779] {
-    font-size: calc(3rem - 8px);
+    font-size: 1.75rem;
 }
 }
 @media screen and (min-width: 1025px) {
 .member__main-visual-ward[data-v-668c6779] {
-    margin-top: 2.5rem;
     font-size: 3rem;
 }
 }
