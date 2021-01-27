@@ -49,10 +49,6 @@ export default {
     }
   },
 
-  beforeMount() {
-    const idElements = []
-  },
-
   computed: {
     borderColor() {
       const borderClass = 'user-ticket-thumbnail-border';
