@@ -49,9 +49,7 @@ export default {
      * @type { function }
      */
     this.windowWidth = window.innerWidth;
-    window.addEventListener('resize', () => {
-      this.windowWidth = window.innerWidth;
-    });
+    window.addEventListener('resize', this.getWindowWidth);
   },
 
   mounted() {
@@ -60,22 +58,33 @@ export default {
      * @type { function }
      */
     this.scrollAmount = window.scrollY;
-    window.addEventListener('scroll', () => {
-      this.scrollAmount = window.scrollY;
-    });
+    window.addEventListener('scroll', this.getScroll);
   },
 
   beforeDestroy() {
     // コンポーネント破棄直前に追加したイベントをリスナーから削除
-    window.removeEventListener('resize', () => {
-      this.windowWidth = window.innerWidth;
-    });
-    window.removeEventListener('scroll', () => {
-      this.scrollAmount = window.scrollY;
-    });
+    window.removeEventListener('resize', this.getWindowWidth);
+    window.removeEventListener('scroll', this.getScroll);
   },
 
   methods: {
+    /**
+     * [スクロール量を取得]
+     * イベント解除を考えて、メソッドとして登録
+     * https://gray-code.com/javascript/unset-event-listener/
+    */
+    getScroll() {
+      this.scrollAmount = window.scrollY;
+    },
+
+    /**
+     * [windowサイズを取得]
+     * イベント解除を考えて、メソッドとして登録
+     */
+    getWindowWidth() {
+      this.windowWidth = window.innerWidth;
+    },
+
     /**
      * [id属性をjsで一括取得]
      * キー表記でアクセスすることで element が取得可能 => this.ids['id名']

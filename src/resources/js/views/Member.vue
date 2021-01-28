@@ -140,10 +140,8 @@ export default {
      * 1.描画後にチケットの幅を取得（デフォ値を代入）
      * 2.チケットのサイズをリアルタイムで取得
      */
-    this.ticketWidth = playerTicket[0].offsetWidth;
-    window.addEventListener('resize', () => {
-      this.ticketWidth = playerTicket[0].offsetWidth;
-    });
+    this.getTicketWidth();
+    window.addEventListener('resize', this.getTicketWidth);
   },
 
   methods: {
@@ -159,13 +157,22 @@ export default {
       this.showModal = false;
       document.body.classList.remove("modal-open");
     },
+
+    /**
+     * [チケットの幅を変数にぶち込む]
+     * removeEventListener > 無名関数だと解除できないので処理をメソッドとして登録
+     */
+    getTicketWidth() {
+      this.ticketWidth = this.$refs.playerTicket[0].offsetWidth;
+    },
   },
 
   beforeDestroy() {
-    // コンポーネント破棄直前にイベントを削除
-    window.removeEventListener('resize', () => {
-      this.ticketWidth = playerTicket[0].offsetWidth;
-    });
+    /**
+     * コンポーネント破棄直前にイベントを削除
+     * ! 無名関数はイベント解除できないので注意
+     */
+    window.removeEventListener('resize', this.getTicketWidth);
   },
 }
 </script>
