@@ -7056,13 +7056,6 @@ import用ファイル
 .member__staff[data-v-668c6779] {
   padding-bottom: 5rem;
   margin-bottom: 0;
-}
-.enpty-box[data-v-668c6779] {
-  height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8841,6 +8834,7 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .champions-card[data-v-3ea95d82] {
+  width: 100%;
   background-color: #ffffff;
   padding: 1rem;
   position: relative;
@@ -8862,14 +8856,16 @@ import用ファイル
   padding-bottom: 0.5rem;
 }
 .champions-card__title[data-v-3ea95d82] {
-  font-size: 1.125rem;
+  font-family: "Bangers", cursive;
+  font-size: 1.625rem;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  line-height: 1;
 }
 .champions-card__pair[data-v-3ea95d82] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
+  width: 100%;
   margin-bottom: 1rem;
+  font-size: 0.75rem;
 }
 @media screen and (min-width: 560px) {
 .champions-card__pair[data-v-3ea95d82] {
@@ -8877,18 +8873,14 @@ import用ファイル
 }
 }
 .champions-card__player[data-v-3ea95d82] {
-  width: 50%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  margin-top: 0.5rem;
 }
-@media screen and (min-width: 560px) {
-.champions-card__player[data-v-3ea95d82] {
-    width: 100%;
-    justify-content: flex-start;
-    padding-left: 0.5rem;
-}
+.champions-card__player[data-v-3ea95d82]:first-child {
+  margin-top: 0;
 }
 .champions-card__player-name[data-v-3ea95d82] {
   letter-spacing: 1.8px;
@@ -8901,6 +8893,7 @@ import用ファイル
 .champions-card__tournament-info-title[data-v-3ea95d82] {
   display: block;
   margin-bottom: 0.5rem;
+  font-size: 0.875rem;
   position: relative;
   padding-left: 1.5rem;
 }
@@ -8914,11 +8907,6 @@ import用ファイル
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-}
-@media screen and (min-width: 560px) {
-.champions-card__tournament-info-title[data-v-3ea95d82] {
-    font-size: 0.875rem;
-}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -9243,28 +9231,15 @@ import用ファイル
 .history__champions[data-v-301d0ec5] {
   margin: 0 auto;
 }
-@media screen and (min-width: 560px) {
-.history__champions-card-row[data-v-301d0ec5] {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-}
+.history__champions-card-group[data-v-301d0ec5] {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 .history__champions-card[data-v-301d0ec5] {
-  margin-bottom: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.history__champions-card[data-v-301d0ec5] {
-    margin: 0;
-    padding: 0.5rem;
-    width: calc(100% / 2);
-}
-}
-@media screen and (min-width: 1025px) {
-.history__champions-card[data-v-301d0ec5] {
-    width: calc(100% / 3);
-}
+  width: 16rem;
+  padding: 0.5rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -14996,4 +14971,16 @@ th, td {
  */
 .nl2br {
   white-space: pre-wrap;
+}
+
+/**
+ * flexの配置を左揃えにするための空要素に指定するクラス
+ * widthは各コンポーネントで指定する。
+ */
+.enpty-box {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }

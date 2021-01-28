@@ -151,3 +151,15 @@ th,td {
 .nl2br {
   white-space: pre-wrap;
 }
+
+/**
+ * flexの配置を左揃えにするための空要素に指定するクラス
+ * widthは各コンポーネントで指定する。
+ */
+.enpty-box {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}

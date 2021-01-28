@@ -244,12 +244,4 @@ export default {
     margin-bottom: 0;
   }
 }
-
-.enpty-box {
-  height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
 </style>

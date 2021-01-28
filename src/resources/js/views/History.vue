@@ -57,10 +57,17 @@
         :subTitle="messages.SectionTitles.Champions.Sub"
         color="white"/>
 
-      <div class="history__champions-card-row">
-        <div class="history__champions-card" v-for="(champion, n) in champions" :key="n">
+      <div class="history__champions-card-group">
+        <div class="history__champions-card" v-for="(champion, n) in champions" :key="n" ref="championCard">
           <champions-card-component :cardElement="champion"/>
         </div>
+        <!-- カード配置を左揃えにするため、空の要素を追加 -->
+        <div
+          class="enpty"
+          v-for="n in cardNumber"
+          :key="`enpty-${n}`"
+          :style="{ width: `${cardWidth}px` }"
+        />
       </div>
     </section>
   </div>
@@ -94,7 +101,19 @@ export default {
       champions: [],
       cardsMarginBottom: 0,
 
-      heights: []
+      heights: [],
+
+      /**
+       * チャンピオンセクションのカード個数
+       * @type { Number }
+       */
+      cardNumber: 0,
+
+      /**
+       * チャンピオンカードのwidth値
+       * @type { Number }
+       */
+      cardWidth: 0,
     }
   },
 
@@ -128,6 +147,16 @@ export default {
 
     // .history-contents の margin-bottom を数値で取得
     this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
+
+    // チャンピオンカードのDOM要素を代入
+    const card = this.$refs.championCard;
+
+    // チャンピオンカード > 描画後の個数と幅を取得
+    this.cardNumber = card.length;
+    this.getCardWidth();
+
+    // sp, md, pc でカード幅が変わるので、リアルタイムでwidthを取得
+    window.addEventListener('resize', this.getCardWidth);
   },
 
   computed: {
@@ -163,7 +192,21 @@ export default {
 
       return this.scrollAmount;
     }
-  }
+  },
+
+  methods: {
+    /**
+     * カード幅を取得
+     */
+    getCardWidth() {
+      this.cardWidth = this.$refs.championCard[0].offsetWidth;
+    }
+  },
+
+  beforeDestroy() {
+    // 登録したイベントを解除
+    window.removeEventListener('resize', this.getCardWidth);
+  },
 }
 </script>
 
@@ -245,23 +288,19 @@ export default {
     margin: 0 auto;
   }
 
-  &__champions-card-row {
-    @include mq(sm) {
-      @include flex(row wrap);
-    }
+  &__champions-card-group {
+    @include flex(row wrap, center, center);
   }
 
   &__champions-card {
-    margin-bottom: interval(5);
+    width: interval(32);
+    padding: interval(1);
 
     @include mq(sm) {
-      margin: 0;
-      padding: interval(1);
-      width: calc(100% / 2);
+
     }
 
     @include mq(md) {
-      width: calc(100% / 3);
     }
   }
 
