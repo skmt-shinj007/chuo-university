@@ -15,6 +15,13 @@ import 'swiper/css/swiper.css';  // swiper ~version5.x
 Vue.use(VueAwesomeSwiper);
 
 /**
+ * vue-prlx
+ * vueで簡単にパララックスを導入できるライブラリ
+ */
+import VuePrlx from 'vue-prlx';
+Vue.use(VuePrlx);
+
+/**
  * global methods (全コンポーネントで使うオプション)
  */
 import global from './config/global';

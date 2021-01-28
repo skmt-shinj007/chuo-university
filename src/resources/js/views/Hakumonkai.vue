@@ -8,11 +8,9 @@
     <div class="hakumonkai-lead-text-wrap">
       <p class="hakumonkai-lead-text nl2br" v-text="messages.Hakumonkai.Lead"></p>
     </div>
-
-    <figure class="hakumonkai-lead-img-wrap">
-      <img class="hakumonkai-lead-img" src="/image/hakumon.jpg" alt="中央大学多摩キャンパスの白門">
-    </figure>
   </section>
+
+  <div class="background-prlx" v-prlx.background="{ speed: 0.3 }"/>
 
   <section class="hakumonkai__officer">
     <contents-title-component
@@ -105,7 +103,7 @@ export default {
 .hakumonkai {
 
   &__page-header {
-    padding: 0 interval(2);
+    margin-top: interval(5);
   }
 
   &-lead-text-wrap {
@@ -113,31 +111,15 @@ export default {
 
     @include mq(sm) {
       margin: 0 auto interval(5) auto;
-      max-width: interval(80);
-    }
-
-    @include mq(md) {
-      max-width: interval(100);
     }
   }
 
   &-lead-text {
     font-weight: bold;
-  }
-
-  &-lead-img-wrap {
-    width: 100%;
-    max-width: interval(80);
-    margin: 0 auto;
-    @include trimming(aspect(wide));
 
     @include mq(md) {
-      max-width: interval(100);
+      text-align: center;
     }
-  }
-
-  &-lead-img {
-    border-radius: radius(soft);
   }
 
   &__players {
@@ -150,6 +132,7 @@ export default {
 
   &__player-card {
     width: 100%;
+
     margin-bottom: interval(8);
     box-shadow: 0 1px 10px 2px color(shadow);
     background-color: color(lightgray);
@@ -186,12 +169,14 @@ export default {
   margin-left: interval(.5);
 
   &-text {
-    font-size: font(10);
+    font-size: font(12);
     letter-spacing: 1.1px;
-
-    @include mq(md) {
-      font-size: font(12);
-    }
   }
+}
+
+.background-prlx {
+  @include background-image('/image/group-photo2017-spring.jpg', center top);
+  width: 100%;
+  height: interval(30);
 }
 </style>
