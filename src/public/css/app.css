@@ -4182,6 +4182,9 @@ import用ファイル
   background-color: #ffffff;
   border: 2px solid #e56c2c;
   color: #e56c2c;
+}
+.tag__color--red {
+  background-color: #C41A41;
 }@charset "UTF-8";
 /*
 import用ファイル

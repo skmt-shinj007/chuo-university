@@ -111,6 +111,10 @@ export default {
       border: 2px solid color(orange);
       color: color(orange);
     }
+
+    &--red {
+      background-color: color(japanRed);
+    }
   }
 }
 </style>
