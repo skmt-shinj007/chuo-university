@@ -4,11 +4,11 @@
   <section class="history__chronology">
     <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
-    <div class="history__chronology-container" id="historySection">
+    <div class="history__chronology-container" ref="chronology">
 
       <div class="history__age">
         <div
-          id="historyAgeTag"
+          ref="ageTag"
           class="history__age-tag"
           :style="{ transform: `translateY(${scrollLimit}px)`}"
           v-text="ageChange">
@@ -17,21 +17,21 @@
 
       <div class="history__chronology-text">
 
-        <div class="history__text-inner" id="historyTaisho">
+        <div class="history__text-inner" ref="taisho">
           <!-- 大正の歴史 -->
           <div class="history__text-inner-item">
             <history-text-component :Contents="data.History.Taisho"/>
           </div>
         </div>
 
-        <div class="history__text-inner" id="historyShowa">
+        <div class="history__text-inner" ref="showa">
           <!-- 昭和の歴史 -->
           <div class="history__text-inner-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
             <history-text-component :Contents="showaHistory"/>
           </div>
         </div>
 
-        <div class="history__text-inner" id="historyHeisei">
+        <div class="history__text-inner" ref="heisei">
           <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
           <div class="history__text-inner-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
             <history-text-component :Contents="heiseiHistory"/>
@@ -94,14 +94,22 @@ export default {
     return {
       data: Data,
       ageWard: '',
-      ids: null,
       showaHistories: [],
       heiseiHistories: [],
       titleAcquisitionData: [],
       champions: [],
-      cardsMarginBottom: 0,
 
-      heights: [],
+      /**
+       * 沿革セクションの各アイテムの下余白
+       * @type { Number }
+       */
+      chronologyMarginBottom: 0,
+
+      /**
+       * refで取得できる要素の高さ（同じref名で複数個ある要素は除く）
+       * @type { Object }
+       */
+      elementsHeight: {},
 
       /**
        * チャンピオンセクションのカード個数
@@ -126,29 +134,28 @@ export default {
   },
 
   mounted() {
-    // jsでid属性を一括で取得するため、DOMのid属性を配列にする (マウント以降に可能)
-    let idName = [
-      'historySection',
-      'historyAgeTag',
-      'historyTaisho',
-      'historyShowa',
-      'historyHeisei',
-    ];
-
-    // DOM要素を取得 => global.js > methods
-    this.ids = this.getElements(idName);
-
     /**
-     * 要素の高さを取得
-     * リアルタイム取得ではないため、下記動作をするとバグる
-     * SPで画面読み込み > PC幅にしてスクロールタグを表示 > スクロール
+     * [要素の高さを取得]
+     * $refsを配列に変換。
      */
-    this.heights = this.getElementHeight(idName, 'id');
+    const elements = Object.entries(this.$refs).map(([key, value]) => ({key, value}));
+
+    // 配列（同じref名で複数個ある要素）以外の要素の高さを取得
+    elements.forEach(element => {
+      if (!Array.isArray(element.value)) {
+        this.elementsHeight[element.key] = element.value.offsetHeight;
+      }
+    });
+
+    // スクロールタグの上限設定に関係ある要素の高さがリサイズされたらプロパティを更新
+    window.addEventListener('resize', this.getScrollTargetHeight);
 
     // .history-contents の margin-bottom を数値で取得
-    this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
+    this.chronologyMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
 
-    // チャンピオンカードのDOM要素を代入
+    /**
+     * チャンピオンカードの配置を揃えるための処理
+     */
     const card = this.$refs.championCard;
 
     // チャンピオンカード > 描画後の個数と幅を取得
@@ -161,11 +168,14 @@ export default {
 
   computed: {
     /**
-     * スクロール量に応じて時代の表示を変える
+     * スクロール量に応じて時代タグのテキストを変える
+     * @return { String }  ex) 昭和
      */
     ageChange() {
-      let taishoHeight = this.heights.historyTaisho + this.cardsMarginBottom;  // 大正の沿革コンテンツの高さを代入
-      let showaHeight  = taishoHeight + this.heights.historyShowa + this.cardsMarginBottom;  // 昭和の沿革コンテンツの高さを代入
+      // 扱いやすいようにdataのプロパティを変数に代入
+      let marginBottom = this.chronologyMarginBottom;
+      let taishoHeight = this.elementsHeight.taisho + marginBottom;  // 大正の沿革ボックスの高さを代入
+      let showaHeight  = taishoHeight + this.elementsHeight.showa + marginBottom;  // 昭和の沿革ボックスの高さを代入
       let scroll = this.scrollAmount;  // スクロール量
       let age = this.ageWard;  // タグのテキスト
 
@@ -180,14 +190,17 @@ export default {
       return age;
     },
 
-    // スクロールタグのスクロール上限を設定
+    /**
+     * スクロールタグのスクロール上限を設定
+     * @return { Number }  沿革セクションの高さからタグの高さを引いた数値が返る
+     */
     scrollLimit() {
-      const scroll = this.scrollAmount;  // スクロール量
-      const sectionHeight = this.heights.historySection;  // [沿革]セクションの高さ
-      const tag = this.heights.historyAgeTag;  // スクロールタグの高さ
+      let scroll = this.scrollAmount;  // スクロール量
+      let chronologyHeight = this.elementsHeight.chronology;  // 沿革セクション全体の高さ
+      let tag = this.elementsHeight.ageTag;  // スクロールタグの高さ
 
-      if (scroll > sectionHeight) {
-        this.scrollAmount = sectionHeight - tag;
+      if (scroll > chronologyHeight) {
+        this.scrollAmount = chronologyHeight - tag;
       }
 
       return this.scrollAmount;
@@ -200,12 +213,22 @@ export default {
      */
     getCardWidth() {
       this.cardWidth = this.$refs.championCard[0].offsetWidth;
+    },
+
+    /**
+     * スクロール上限設定に関係ある要素の高さを取得
+     */
+    getScrollTargetHeight() {
+      const ref = this.$refs;
+      this.elementsHeight.ageTag = ref.ageTag.offsetHeight;
+      this.elementsHeight.chronology = ref.chronology.offsetHeight;
     }
   },
 
   beforeDestroy() {
     // 登録したイベントを解除
     window.removeEventListener('resize', this.getCardWidth);
+    window.removeEventListener('resize', this.getScrollTargetHeight);
   },
 }
 </script>
