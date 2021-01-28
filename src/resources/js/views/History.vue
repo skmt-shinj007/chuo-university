@@ -1,10 +1,10 @@
 <template>
 <div class="history">
 
-  <section class="history__time-series">
+  <section class="history__chronology">
     <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
-    <div class="history__time-series-container" id="historySection">
+    <div class="history__chronology-container" id="historySection">
 
       <div class="history__age">
         <div
@@ -15,31 +15,29 @@
         </div>
       </div>
 
-      <div class="history__time-series-wrap">
-        <div class="history__time-series-content">
+      <div class="history__chronology-text">
 
-          <div class="history__contents" id="historyTaisho">
-            <!-- 大正の歴史 -->
-            <div class="history__contents-item">
-              <history-text-component :Contents="data.History.Taisho"/>
-            </div>
+        <div class="history__text-inner" id="historyTaisho">
+          <!-- 大正の歴史 -->
+          <div class="history__text-inner-item">
+            <history-text-component :Contents="data.History.Taisho"/>
           </div>
-
-          <div class="history__contents" id="historyShowa">
-            <!-- 昭和の歴史 -->
-            <div class="history__contents-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-              <history-text-component :Contents="showaHistory"/>
-            </div>
-          </div>
-
-          <div class="history__contents" id="historyHeisei">
-            <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-            <div class="history__contents-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-              <history-text-component :Contents="heiseiHistory"/>
-            </div>
-          </div>
-
         </div>
+
+        <div class="history__text-inner" id="historyShowa">
+          <!-- 昭和の歴史 -->
+          <div class="history__text-inner-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+            <history-text-component :Contents="showaHistory"/>
+          </div>
+        </div>
+
+        <div class="history__text-inner" id="historyHeisei">
+          <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
+          <div class="history__text-inner-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+            <history-text-component :Contents="heiseiHistory"/>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -172,7 +170,12 @@ export default {
 <style lang="scss" scoped>
 .history {
 
-  &__time-series {
+  &__chronology {
+    margin-top: interval(5);
+
+    @include mq(md) {
+      margin-top: 0;
+    }
 
     &-container {
       @include flex;
@@ -218,19 +221,19 @@ export default {
     }
   }
 
-  &__contents {
+  &__text-inner {
     margin-bottom: interval(10);
 
     &:last-child {
       margin-bottom: 0;
     }
-  }
 
-  &__contents-item {
-    margin-bottom: interval(10);
+    &-item {
+      margin-bottom: interval(10);
 
-    &:last-child {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 

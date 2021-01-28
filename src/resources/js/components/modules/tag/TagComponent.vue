@@ -59,7 +59,6 @@ export default {
 
 <style lang="scss">
 .tag {
-  margin: interval(.5);
   color: color(white);
   letter-spacing: 1.8px;
   line-height: 1.9;

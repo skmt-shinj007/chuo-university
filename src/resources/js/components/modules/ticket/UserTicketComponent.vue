@@ -12,13 +12,19 @@
 
     <!-- ユーザーカテゴリーが選手の場合 -->
     <div v-if="userObj.category === 1" class="user-ticket-tag-group">
-      <position-tag-component :position="userObj.position"/>
-      <grade-tag-component :grade="userObj.grade"/>
+      <div class="user-ticket-tag">
+        <position-tag-component :position="userObj.position"/>
+      </div>
+      <div class="user-ticket-tag">
+        <grade-tag-component :grade="userObj.grade"/>
+      </div>
     </div>
 
     <!-- 選手ではない場合（スタッフ）は役職を出す -->
     <div v-else class="user-ticket-tag-group">
-      <tag-component :content="userObj.post.club"/>
+      <div class="user-ticket-tag">
+        <tag-component :content="userObj.post.club"/>
+      </div>
     </div>
   </div>
 
@@ -123,7 +129,6 @@ export default {
   &__name {
     display: block;
     font-size: font(14);
-    padding-left: interval(.5);
 
     &:first-of-type {
       display: none;
@@ -136,6 +141,14 @@ export default {
 
   &-tag-group {
     @include flex(row wrap, flex-start, center);
+  }
+
+  &-tag {
+    margin: interval(.5) interval(.5) 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &-icon {

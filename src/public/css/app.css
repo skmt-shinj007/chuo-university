@@ -4136,7 +4136,6 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .tag {
-  margin: 0.25rem;
   color: #ffffff;
   letter-spacing: 1.8px;
   line-height: 1.9;
@@ -4756,6 +4755,9 @@ import用ファイル
   align-items: stretch;
   align-content: space-around;
   padding: 0.5rem 0;
+}
+.player-card__tag {
+  margin: 0.25rem;
 }
 .player-card__post {
   position: absolute;
@@ -6065,18 +6067,11 @@ import用ファイル
 }
 @media screen and (min-width: 1025px) {
 .ticket-modal__container[data-v-358d2551] {
-    width: 60%;
+    max-width: 50rem;
+    margin: 2.5rem auto;
 }
-}
-.ticket-modal__header[data-v-358d2551] {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: stretch;
-  padding: 1rem 0;
 }
 .ticket-modal__close-btn[data-v-358d2551] {
-  margin-right: 1rem;
   position: relative;
   width: 2.5rem;
   height: 2.5rem;
@@ -6087,6 +6082,9 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }
 .ticket-modal__close-btn > i[data-v-358d2551] {
   position: relative;
@@ -6107,35 +6105,43 @@ import用ファイル
   transition: all 0.3s ease-out;
 }
 .ticket-modal__content[data-v-358d2551] {
-  padding: 0 1rem;
-}
-@media screen and (min-width: 560px) {
-.ticket-modal__content[data-v-358d2551] {
-    padding: 0.5rem 1rem;
-}
+  padding: 1rem;
 }
 @media screen and (min-width: 1025px) {
 .ticket-modal__content[data-v-358d2551] {
-    padding: 1rem 2rem;
+    padding: 1.5rem;
 }
 }
-.ticket-modal__basic-information[data-v-358d2551] {
+.ticket-modal__header[data-v-358d2551] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  padding: 2.5rem 0;
 }
 @media screen and (min-width: 560px) {
-.ticket-modal__basic-information[data-v-358d2551] {
+.ticket-modal__header[data-v-358d2551] {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
 }
 }
+.ticket-modal__header-thumbnail[data-v-358d2551] {
+  padding: 8px;
+}
+.ticket-modal__header-info[data-v-358d2551] {
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__header-info[data-v-358d2551] {
+    margin-top: 0;
+    margin-left: 2rem;
+}
+}
 .ticket-modal__thumbnail-border[data-v-358d2551] {
   width: 10rem;
-  height: 10rem;
+  height: 100%;
   border-radius: 50%;
   background-color: #ffffff;
   position: relative;
@@ -6159,11 +6165,12 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .ticket-modal__thumbnail-border[data-v-358d2551] {
-    min-width: 7.5rem;
-    max-width: 17rem;
-    width: 27%;
-    height: 100%;
-    margin-left: 5%;
+    width: 9rem;
+}
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__thumbnail-border[data-v-358d2551] {
+    width: 12rem;
 }
 }
 .ticket-modal__thumbnail-border--orange[data-v-358d2551] {
@@ -6232,13 +6239,10 @@ import用ファイル
   border-radius: 50%;
 }
 .ticket-modal__name[data-v-358d2551] {
-  margin-top: 2.5rem;
   text-align: center;
 }
 @media screen and (min-width: 560px) {
 .ticket-modal__name[data-v-358d2551] {
-    margin-top: 0;
-    margin-left: 10%;
     text-align: left;
 }
 }
@@ -6255,20 +6259,11 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 560px) {
-.ticket-modal__tag-group[data-v-358d2551] {
-    margin-top: 0;
-    margin-left: 1rem;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: stretch;
+.ticket-modal__tag[data-v-358d2551] {
+  margin-right: 0.25rem;
 }
-}
-@media screen and (min-width: 1025px) {
-.ticket-modal__tag-group[data-v-358d2551] {
-    margin-left: 10%;
-}
+.ticket-modal__tag[data-v-358d2551]:last-child {
+  margin-right: 0;
 }
 .ticket-modal__line[data-v-358d2551] {
   width: 100%;
@@ -6711,7 +6706,6 @@ import用ファイル
 .user-ticket__name {
   display: block;
   font-size: 0.875rem;
-  padding-left: 0.25rem;
 }
 .user-ticket__name:first-of-type {
   display: none;
@@ -6726,6 +6720,12 @@ import用ファイル
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
+}
+.user-ticket-tag {
+  margin: 0.25rem 0.25rem 0 0;
+}
+.user-ticket-tag:last-child {
+  margin-right: 0;
 }
 .user-ticket-icon {
   width: 1.25rem;
@@ -8270,11 +8270,7 @@ import用ファイル
   border: 2px solid #091e2f;
   border-radius: 8px;
   position: relative;
-}
-@media screen and (min-width: 560px) {
-.history-text[data-v-579f0756] {
-    padding: 0.5rem;
-}
+  padding: 16px;
 }
 .history-text__tag-modal[data-v-579f0756] {
   position: absolute;
@@ -8287,7 +8283,7 @@ import用ファイル
 }
 }
 .history-text__tag-date[data-v-579f0756] {
-  margin: 0.5rem 1rem;
+  margin: 0.5rem 0;
 }
 @media screen and (min-width: 560px) {
 .history-text__tag-date[data-v-579f0756] {
@@ -8302,7 +8298,7 @@ import用ファイル
   font-size: 1.125rem;
 }
 .history-text__text-container[data-v-579f0756] {
-  margin: 1rem;
+  margin: 1rem 0;
 }
 .history-text__text[data-v-579f0756] {
   letter-spacing: 1.8px;
@@ -9178,7 +9174,15 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.history__time-series-container[data-v-301d0ec5] {
+.history__chronology[data-v-301d0ec5] {
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 1025px) {
+.history__chronology[data-v-301d0ec5] {
+    margin-top: 0;
+}
+}
+.history__chronology-container[data-v-301d0ec5] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -9221,16 +9225,16 @@ import用ファイル
   top: 0;
   transition: all 1s ease-out;
 }
-.history__contents[data-v-301d0ec5] {
+.history__text-inner[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__contents[data-v-301d0ec5]:last-child {
+.history__text-inner[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
-.history__contents-item[data-v-301d0ec5] {
+.history__text-inner-item[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__contents-item[data-v-301d0ec5]:last-child {
+.history__text-inner-item[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
 .history__primary-titles[data-v-301d0ec5] {
