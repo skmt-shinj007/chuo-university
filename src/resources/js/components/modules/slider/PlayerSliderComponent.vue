@@ -2,7 +2,13 @@
   <div class="slider">
     <swiper ref="contentsImageSwiper" :options="params">
       <swiper-slide v-for="(player, n) in players" :key="n">
-        <player-card-component :player="player"/>
+        <player-card-component :player="player">
+          <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">
+            <div class="alumni__record">
+              <span class="alumni__record-text">{{ player.player.record }}</span>
+            </div>
+          </template>
+        </player-card-component>
       </swiper-slide>
 
       <!-- <div class="swiper-pagination" slot="pagination"></div> -->
@@ -20,9 +26,12 @@ export default {
   components: {
     PlayerCardComponent,
   },
+
   props: {
+    // playerCardに受け渡す選手データ
     players: Array,
   },
+
   computed: {
     params() {
       return {
@@ -82,6 +91,16 @@ export default {
     }
   }
 
+}
+
+// slotで差し込んだ部分のスタイル
+.alumni__record {
+  margin-left: interval(.5);
+
+  &-text {
+    font-size: font(12);
+    letter-spacing: 1.1px;
+  }
 }
 
 </style>

@@ -8,11 +8,9 @@
     <div class="hakumonkai-lead-text-wrap">
       <p class="hakumonkai-lead-text nl2br" v-text="messages.Hakumonkai.Lead"></p>
     </div>
-
-    <figure class="hakumonkai-lead-img-wrap">
-      <img class="hakumonkai-lead-img" src="/image/hakumon.jpg" alt="中央大学多摩キャンパスの白門">
-    </figure>
   </section>
+
+  <div class="background-prlx" v-prlx.background="{ speed: 0.3 }"/>
 
   <section class="hakumonkai__officer">
     <contents-title-component
@@ -24,12 +22,14 @@
     </div>
   </section>
 
-  <section class="hakumonkai__active-ob">
+  <section class="hakumonkai__active-alumni">
     <contents-title-component
       :title="messages.SectionTitles.ActiveAlumni.Main"
       :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
 
-    <div class="hakumonkai__players">
+    <player-slider-component :players="activeAlumni"/>
+
+    <!-- <div class="hakumonkai__players">
 
       <div class="hakumonkai__player-card" v-for="(alumni, n) in activeAlumni" :key="n">
         <player-card-component :player="alumni">
@@ -41,7 +41,7 @@
         </player-card-component>
       </div>
 
-    </div>
+    </div> -->
   </section>
 
   <section class="hakumonkai__message">
@@ -65,6 +65,7 @@ import ContentsTitleComponent from '../components/modules/ContentsTitleComponent
 import TileTableComponent from '../components/modules/table/TileTableComponent';
 import PlayerCardComponent from '../components/modules/card/PlayerCardComponent';
 import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
+import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent.vue';
 
 // data import
 import Data from '../config/data.json';
@@ -75,6 +76,7 @@ export default {
     TileTableComponent,
     PlayerCardComponent,
     PrimaryButtonComponent,
+    PlayerSliderComponent,
   },
   data() {
     return {
@@ -105,7 +107,7 @@ export default {
 .hakumonkai {
 
   &__page-header {
-    padding: 0 interval(2);
+    margin-top: interval(5);
   }
 
   &-lead-text-wrap {
@@ -113,31 +115,19 @@ export default {
 
     @include mq(sm) {
       margin: 0 auto interval(5) auto;
-      max-width: interval(80);
-    }
-
-    @include mq(md) {
-      max-width: interval(100);
     }
   }
 
   &-lead-text {
     font-weight: bold;
-  }
-
-  &-lead-img-wrap {
-    width: 100%;
-    max-width: interval(80);
-    margin: 0 auto;
-    @include trimming(aspect(wide));
 
     @include mq(md) {
-      max-width: interval(100);
+      text-align: center;
     }
   }
 
-  &-lead-img {
-    border-radius: radius(soft);
+  &__officer {
+    margin-top: interval(5);
   }
 
   &__players {
@@ -150,6 +140,7 @@ export default {
 
   &__player-card {
     width: 100%;
+
     margin-bottom: interval(8);
     box-shadow: 0 1px 10px 2px color(shadow);
     background-color: color(lightgray);
@@ -181,17 +172,9 @@ export default {
   }
 }
 
-// slotで差し込んだ部分のスタイル
-.player-card__record {
-  margin-left: interval(.5);
-
-  &-text {
-    font-size: font(10);
-    letter-spacing: 1.1px;
-
-    @include mq(md) {
-      font-size: font(12);
-    }
-  }
+.background-prlx {
+  @include background-image('/image/group-photo2017-spring.jpg', center top);
+  width: 100%;
+  height: interval(30);
 }
 </style>

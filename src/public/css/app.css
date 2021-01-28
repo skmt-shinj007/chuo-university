@@ -4182,6 +4182,9 @@ import用ファイル
   background-color: #ffffff;
   border: 2px solid #e56c2c;
   color: #e56c2c;
+}
+.tag__color--red {
+  background-color: #C41A41;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -5038,6 +5041,13 @@ import用ファイル
 .slider .player-card[data-v-53189f00] {
     width: 90%;
 }
+}
+.alumni__record[data-v-53189f00] {
+  margin-left: 0.25rem;
+}
+.alumni__record-text[data-v-53189f00] {
+  font-size: 0.75rem;
+  letter-spacing: 1.1px;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -7594,7 +7604,7 @@ import用ファイル
  * 親要素に position: relative; と padding-left をつける
  */
 .hakumonkai__page-header[data-v-42f1fe89] {
-  padding: 0 1rem;
+  margin-top: 2.5rem;
 }
 .hakumonkai-lead-text-wrap[data-v-42f1fe89] {
   margin-bottom: 2.5rem;
@@ -7602,44 +7612,18 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .hakumonkai-lead-text-wrap[data-v-42f1fe89] {
     margin: 0 auto 2.5rem auto;
-    max-width: 40rem;
-}
-}
-@media screen and (min-width: 1025px) {
-.hakumonkai-lead-text-wrap[data-v-42f1fe89] {
-    max-width: 50rem;
 }
 }
 .hakumonkai-lead-text[data-v-42f1fe89] {
   font-weight: bold;
 }
-.hakumonkai-lead-img-wrap[data-v-42f1fe89] {
-  width: 100%;
-  max-width: 40rem;
-  margin: 0 auto;
-  position: relative;
-}
-.hakumonkai-lead-img-wrap[data-v-42f1fe89]::before {
-  content: "";
-  display: block;
-  padding-bottom: 56%;
-}
-.hakumonkai-lead-img-wrap > img[data-v-42f1fe89] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 @media screen and (min-width: 1025px) {
-.hakumonkai-lead-img-wrap[data-v-42f1fe89] {
-    max-width: 50rem;
+.hakumonkai-lead-text[data-v-42f1fe89] {
+    text-align: center;
 }
 }
-.hakumonkai-lead-img[data-v-42f1fe89] {
-  border-radius: 2px;
+.hakumonkai__officer[data-v-42f1fe89] {
+  margin-top: 2.5rem;
 }
 .hakumonkai__players[data-v-42f1fe89] {
   display: flex;
@@ -7685,17 +7669,13 @@ import用ファイル
 .hakumonkai__message-btn[data-v-42f1fe89] {
   margin-top: 2.5rem;
 }
-.player-card__record[data-v-42f1fe89] {
-  margin-left: 0.25rem;
-}
-.player-card__record-text[data-v-42f1fe89] {
-  font-size: 0.625rem;
-  letter-spacing: 1.1px;
-}
-@media screen and (min-width: 1025px) {
-.player-card__record-text[data-v-42f1fe89] {
-    font-size: 0.75rem;
-}
+.background-prlx[data-v-42f1fe89] {
+  background-image: url("/image/group-photo2017-spring.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  height: 15rem;
 }@charset "UTF-8";
 /*
 import用ファイル

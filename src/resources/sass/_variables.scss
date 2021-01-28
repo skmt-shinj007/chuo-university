@@ -4,31 +4,32 @@
 
 // color map
 $color: (
-	darkblue:      #091e2f,
-	lightDarkblue: #10334e,
-	deepDarkblue:  #030A10,
-  orange:        #e56c2c,
-  lightgray:     #f2f2f2,
-  white:         #ffffff,
+	darkblue      : #091e2f,
+	lightDarkblue : #10334e,
+	deepDarkblue  : #030A10,
+  orange        : #e56c2c,
+  lightgray     : #f2f2f2,
+  white         : #ffffff,
 
-  shadow:      #e6e6e6,
-  darkShadow:  darken(#e6e6e6, 20%),
-  lightShadow: lighten(#e6e6e6, 10%),
+  shadow      : #e6e6e6,
+  darkShadow  : darken(#e6e6e6, 20%),
+  lightShadow : lighten(#e6e6e6, 10%),
 
-  lightGreen: #56b145,
-  deepYellow: #FDC830,
+  lightGreen : #56b145,
+  deepYellow : #FDC830,
+  japanRed   : #C41A41,
 
-  twitter: #00acee,
-  facebook: #3b5998,
+  twitter  : #00acee,
+  facebook : #3b5998,
 
   // bootstrap color
-  primary:    #007bff,
-  successful: #28a745,
-  danger:     #dc3545,
-  warning:    #ffc107,
-  info:       #17a2b8,
-  light:      #f8f9fa,
-  dark:       #343a40,
+  primary    : #007bff,
+  successful : #28a745,
+  danger     : #dc3545,
+  warning    : #ffc107,
+  info       : #17a2b8,
+  light      : #f8f9fa,
+  dark       : #343a40,
 ) !default;
 
 // breakpoint map
