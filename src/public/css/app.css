@@ -5038,6 +5038,13 @@ import用ファイル
 .slider .player-card[data-v-53189f00] {
     width: 90%;
 }
+}
+.alumni__record[data-v-53189f00] {
+  margin-left: 0.25rem;
+}
+.alumni__record-text[data-v-53189f00] {
+  font-size: 0.75rem;
+  letter-spacing: 1.1px;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -7612,6 +7619,9 @@ import用ファイル
     text-align: center;
 }
 }
+.hakumonkai__officer[data-v-42f1fe89] {
+  margin-top: 2.5rem;
+}
 .hakumonkai__players[data-v-42f1fe89] {
   display: flex;
   flex-flow: column wrap;
@@ -7655,13 +7665,6 @@ import用ファイル
 }
 .hakumonkai__message-btn[data-v-42f1fe89] {
   margin-top: 2.5rem;
-}
-.player-card__record[data-v-42f1fe89] {
-  margin-left: 0.25rem;
-}
-.player-card__record-text[data-v-42f1fe89] {
-  font-size: 0.75rem;
-  letter-spacing: 1.1px;
 }
 .background-prlx[data-v-42f1fe89] {
   background-image: url("/image/group-photo2017-spring.jpg");

@@ -22,12 +22,14 @@
     </div>
   </section>
 
-  <section class="hakumonkai__active-ob">
+  <section class="hakumonkai__active-alumni">
     <contents-title-component
       :title="messages.SectionTitles.ActiveAlumni.Main"
       :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
 
-    <div class="hakumonkai__players">
+    <player-slider-component :players="activeAlumni"/>
+
+    <!-- <div class="hakumonkai__players">
 
       <div class="hakumonkai__player-card" v-for="(alumni, n) in activeAlumni" :key="n">
         <player-card-component :player="alumni">
@@ -39,7 +41,7 @@
         </player-card-component>
       </div>
 
-    </div>
+    </div> -->
   </section>
 
   <section class="hakumonkai__message">
@@ -63,6 +65,7 @@ import ContentsTitleComponent from '../components/modules/ContentsTitleComponent
 import TileTableComponent from '../components/modules/table/TileTableComponent';
 import PlayerCardComponent from '../components/modules/card/PlayerCardComponent';
 import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
+import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent.vue';
 
 // data import
 import Data from '../config/data.json';
@@ -73,6 +76,7 @@ export default {
     TileTableComponent,
     PlayerCardComponent,
     PrimaryButtonComponent,
+    PlayerSliderComponent,
   },
   data() {
     return {
@@ -122,6 +126,10 @@ export default {
     }
   }
 
+  &__officer {
+    margin-top: interval(5);
+  }
+
   &__players {
     @include flex(column wrap, center, center);
 
@@ -161,16 +169,6 @@ export default {
 
   &__message-btn {
     margin-top: interval(5);
-  }
-}
-
-// slotで差し込んだ部分のスタイル
-.player-card__record {
-  margin-left: interval(.5);
-
-  &-text {
-    font-size: font(12);
-    letter-spacing: 1.1px;
   }
 }
 
