@@ -13506,7 +13506,7 @@ import用ファイル
 .header__navbar--hide[data-v-6832e7cf] {
   transform: translateY(-110%);
 }
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 1025px) {
 .header__navbar--hide[data-v-6832e7cf] {
     transform: translateY(0);
 }

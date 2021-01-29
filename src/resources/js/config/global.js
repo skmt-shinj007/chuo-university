@@ -91,6 +91,7 @@ export default {
      * @param data : 属性の名前が格納された配列
      * @returns { object } : 取得した要素のHTMLCollectionが格納された配列で戻る
      * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }
+     * !vueでは、ref属性から取得可能
      */
     getElements(data) {
       let elements = [];
@@ -103,33 +104,5 @@ export default {
 
       return elements;
     },
-
-    /**
-     * [要素の高さを一括取得できるメソッド]
-     * ドット記法で要素にアクセス可能
-     * @param data : 属性の名前が格納された配列
-     * @return { Array } : 各要素の高さが入った配列を返す
-     * ex) > [hoge: 23, fuga: 99]
-     */
-    getElementHeight(data, method = 'id') {
-      let heights = [];
-      let el = '';
-
-      // class指定の場合こちらが通る
-      if (method === 'class') {
-        data.forEach(element => {
-          el = document.getElementsByClassName(element).offsetHeight;
-          (el != null) ? heights[element] = el : null;
-        })
-        return heights;
-      }
-
-      // idの場合こちらが通る（デフォルト）
-      data.forEach(element => {
-        el = document.getElementById(element).offsetHeight;
-        (el != null) ? heights[element] = el : null;
-      })
-      return heights;
-    }
   },
 }
