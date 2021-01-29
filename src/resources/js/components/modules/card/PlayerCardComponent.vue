@@ -11,8 +11,13 @@
     </div>
 
     <div class="player-card__tag-group">
-      <position-tag-component :position="player.position"/>
-      <grade-tag-component v-if="player.grade" :grade="player.grade"/>
+
+      <div class="player-card__tag">
+        <position-tag-component :position="player.position"/>
+      </div>
+      <div class="player-card__tag">
+        <grade-tag-component v-if="player.grade" :grade="player.grade"/>
+      </div>
     </div>
 
     <div class="player-card__post" v-if="player.post.club">
@@ -76,6 +81,10 @@ export default {
     @include flex(row wrap);
     align-content: space-around;
     padding: interval(1) 0;
+  }
+
+  &__tag {
+    margin: interval(.5);
   }
 
   &__post {

@@ -5,30 +5,38 @@
 
         <div class="ticket-modal">
           <div class="ticket-modal__container">
-            <header class="ticket-modal__header">
-              <button class="ticket-modal__close-btn" @click="$emit('close')">
-                <i/>
-              </button>
-            </header>
+            <button class="ticket-modal__close-btn" @click="$emit('close')">
+              <i/>
+            </button>
 
             <div class="ticket-modal__content">
-              <div class="ticket-modal__basic-information">
+              <div class="ticket-modal__header">
 
-                <div class="ticket-modal__thumbnail-border" :class="border">
-                  <figure class="ticket-modal__thumbnail">
-                    <img :src="`/image/${item.img.src}`" :alt="item.img.alt">
-                  </figure>
+                <div class="ticket-modal__header-thumbnail">
+                  <div class="ticket-modal__thumbnail-border" :class="border">
+                    <figure class="ticket-modal__thumbnail">
+                      <img :src="`/image/${item.img.src}`" :alt="item.img.alt">
+                    </figure>
+                  </div>
                 </div>
 
-                <div class="ticket-modal__name">
-                  <span class="ticket-modal__name-sub">{{ item.name.en }}</span>
-                  <h4 class="ticket-modal__name-main">{{ item.name.ja }}</h4>
-                </div>
+                <div class="ticket-modal__header-info">
+                  <div class="ticket-modal__name">
+                    <span class="ticket-modal__name-sub">{{ item.name.en }}</span>
+                    <h4 class="ticket-modal__name-main">{{ item.name.ja }}</h4>
+                  </div>
 
-                <div class="ticket-modal__tag-group">
-                  <tag-component v-if="item.post.club" :content="item.post.club" :responsive="true"/>
-                  <position-tag-component :position="item.position" :responsive="true"/>
-                  <grade-tag-component :grade="item.grade" :responsive="true"/>
+                  <div class="ticket-modal__tag-group">
+                    <div class="ticket-modal__tag" v-if="item.post.club">
+                      <tag-component :content="item.post.club" :responsive="true"/>
+                    </div>
+                    <div class="ticket-modal__tag">
+                      <position-tag-component :position="item.position" :responsive="true"/>
+                    </div>
+                    <div class="ticket-modal__tag">
+                      <grade-tag-component :grade="item.grade" :responsive="true"/>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -176,51 +184,63 @@ export default {
     }
 
     @include mq(md) {
-      width: 60%;
+      max-width: interval(100);
+      margin: interval(5) auto;
+    }
+  }
+
+  &__close-btn {
+    @include close-button(interval(5));
+    position: absolute;
+    right: interval(2);
+    top: interval(2);
+  }
+
+  &__content {
+    padding: interval(2);
+
+    @include mq(md) {
+      padding: interval(3)
     }
   }
 
   &__header {
-    @include flex(row wrap, flex-end);
-    padding: interval(2) 0;
-  }
-
-  &__close-btn {
-    margin-right: interval(2);
-    @include close-button(interval(5));
-  }
-
-  &__content {
-    padding: 0 interval(2);
-
-    @include mq(sm) {
-      padding: interval(1) interval(2);
-    }
-
-    @include mq(md) {
-      padding: interval(2) interval(4);
-    }
-  }
-
-  &__basic-information {
     @include flex(column nowrap, center, center);
+    padding: interval(5) 0;
 
     @include mq(sm) {
       @include flex(row nowrap, flex-start, center);
+    }
+
+    &-thumbnail {
+      padding: pixel(1);
+
+      @include mq(sm) {
+
+      }
+    }
+
+    &-info {
+      margin-top: interval(3);
+
+      @include mq(sm) {
+        margin-top: 0;
+        margin-left: interval(4);
+      }
     }
   }
 
   &__thumbnail-border {
     width: interval(20);
-    height: interval(20);
+    height: 100%;
     @include border-gradient();
 
     @include mq(sm) {
-      min-width: interval(15);
-      max-width: interval(34);
-      width: 27%;
-      height: 100%;
-      margin-left: 5%;
+      width: interval(18);
+    }
+
+    @include mq(md) {
+      width: interval(24);
     }
 
     &--orange {
@@ -242,12 +262,9 @@ export default {
   }
 
   &__name {
-    margin-top: interval(5);
     text-align: center;
 
     @include mq(sm) {
-      margin-top: 0;
-      margin-left: 10%;
       text-align: left;
     }
   }
@@ -263,15 +280,13 @@ export default {
   &__tag-group {
     margin-top: interval(2);
     @include flex(row wrap, center, center);
+  }
 
-    @include mq(sm) {
-      margin-top: 0;
-      margin-left: interval(2);
-      @include flex(column wrap, center, stretch);
-    }
+  &__tag {
+    margin-right: interval(.5);
 
-    @include mq(md) {
-      margin-left: 10%;
+    &:last-child {
+      margin-right: 0;
     }
   }
 
