@@ -1,7 +1,7 @@
 <template>
 <div class="user-ticket">
   <div class="user-ticket-thumbnail-border" :class="borderColor">
-    <figure class="user-ticket-thumbnail-wrap">
+    <figure class="user-ticket-thumbnail">
       <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
     </figure>
   </div>
@@ -113,7 +113,7 @@ export default {
     }
   }
 
-  &-thumbnail-wrap {
+  &-thumbnail {
     width: 100%;
     @include trimming(aspect(square));
 

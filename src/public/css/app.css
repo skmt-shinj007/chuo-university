@@ -6677,16 +6677,16 @@ import用ファイル
   background: #56b145;
   background: linear-gradient(to bottom, #56b145 0%, #10334e 100%);
 }
-.user-ticket-thumbnail-wrap {
+.user-ticket-thumbnail {
   width: 100%;
   position: relative;
 }
-.user-ticket-thumbnail-wrap::before {
+.user-ticket-thumbnail::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.user-ticket-thumbnail-wrap > img {
+.user-ticket-thumbnail > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -6696,11 +6696,11 @@ import用ファイル
      object-fit: cover;
 }
 @media screen and (min-width: 560px) {
-.user-ticket-thumbnail-wrap {
+.user-ticket-thumbnail {
     width: 5rem;
 }
 }
-.user-ticket-thumbnail-wrap > img {
+.user-ticket-thumbnail > img {
   border-radius: 50%;
 }
 .user-ticket__name {
@@ -11206,15 +11206,10 @@ import用ファイル
   box-shadow: 0 3px 5px 3px #b3b3b3;
   background-color: #ffffff;
   border: 2px solid #f8f9fa;
-  border-radius: 48px;
+  border-radius: 100px;
   padding: 0.5rem;
   position: relative;
-  z-index: 1;
-}
-@media screen and (min-width: 560px) {
-.provider-ticket {
-    padding: 0.5rem 0.75rem;
-}
+  width: 17rem;
 }
 @media screen and (min-width: 1025px) {
 .provider-ticket {
@@ -11233,14 +11228,6 @@ import用ファイル
             animation: iconSlide 1.5s infinite;
 }
 }
-.provider-ticket-item {
-  max-width: 10rem;
-}
-@media screen and (min-width: 1025px) {
-.provider-ticket-item {
-    max-width: none;
-}
-}
 .provider-ticket-thumbnail-border {
   border-radius: 50%;
   background-color: #ffffff;
@@ -11249,7 +11236,8 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  margin-right: 0.25rem;
+  width: 4.5rem;
+  height: 4.5rem;
 }
 .provider-ticket-thumbnail-border::before {
   content: "";
@@ -11264,16 +11252,16 @@ import用ファイル
   background: #0179D5;
   background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
 }
-.provider-ticket-thumbnail-wrap {
+.provider-ticket-thumbnail {
   width: 100%;
   position: relative;
 }
-.provider-ticket-thumbnail-wrap::before {
+.provider-ticket-thumbnail::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.provider-ticket-thumbnail-wrap > img {
+.provider-ticket-thumbnail > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -11283,11 +11271,11 @@ import用ファイル
      object-fit: cover;
 }
 @media screen and (min-width: 560px) {
-.provider-ticket-thumbnail-wrap {
+.provider-ticket-thumbnail {
     width: 5rem;
 }
 }
-.provider-ticket-thumbnail {
+.provider-ticket-thumbnail > img {
   border-radius: 50%;
 }
 .provider-ticket__name {
@@ -11560,31 +11548,35 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.photo__gallery-images[data-v-46e3fba3] {
-  margin-bottom: 5rem;
+.photo__gallery[data-v-46e3fba3] {
+  margin-top: 2.5rem;
 }
 @media screen and (min-width: 1025px) {
+.photo__gallery[data-v-46e3fba3] {
+    margin-top: 0;
+}
+}
+.photo__provider-ticket-group[data-v-46e3fba3] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
 .photo__provider-ticket-group[data-v-46e3fba3] {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 }
 .photo__provider-ticket[data-v-46e3fba3] {
-  max-width: 25rem;
-  margin: 0 auto;
   margin-bottom: 2.5rem;
 }
-.photo__provider-ticket[data-v-46e3fba3]:last-child {
-  margin-bottom: 0;
-}
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 560px) {
 .photo__provider-ticket[data-v-46e3fba3] {
-    margin: 0;
-    width: calc(100% / 3);
+    margin-bottom: 0;
     padding: 0.5rem;
-    max-width: none;
 }
 }@charset "UTF-8";
 /*
