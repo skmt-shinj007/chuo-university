@@ -2,7 +2,7 @@
 <div class="accordion-link">
 
   <div class="accordion-link__title" @click="accordionToggle()">
-    <label class="accordion-link__label">{{ item.menuName }}</label>
+    <label class="accordion-link__label">{{ item.menuName.ja }}</label>
     <!-- <svg-vue class="accordion-link__icon" icon="plus"/> -->
     <div class="accordion-link__icon-wrap">
       <i class="accordion-link__icon" :class="{ 'accordion-link__open-icon': isOpened }"/>

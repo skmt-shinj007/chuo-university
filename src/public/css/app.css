@@ -13972,7 +13972,7 @@ import用ファイル
     text-shadow: 1px 1px #e56c2c;
 }
 .footer__menu-list-item:hover .footer__menu-list-link[data-v-060e08fe] {
-    transform: translateX(1rem);
+    transform: translateX(0.5rem);
 }
 }
 .footer__menu-list-link[data-v-060e08fe] {
