@@ -61,6 +61,7 @@ export default {
 
   &__record {
     width: 100%;
+    font-size: font(12);
   }
 
   &__key {
@@ -77,11 +78,10 @@ export default {
 
   &__select {
     width: 100%;
-    font-size: font(12);
     text-align: center;
     padding: interval(.5) interval(3) interval(.5) interval(1);
     border-radius: radius(soft);
-    @include background-image('/svg/angle-down.svg', right interval(.5) center, interval(1.5) interval(1));
+    @include background-image('/svg/angle-down.svg', right interval(.5) center, interval(1.5) interval(1.5));
 
     @include mq(sm) {
       background-size: interval(2) interval(1.5);

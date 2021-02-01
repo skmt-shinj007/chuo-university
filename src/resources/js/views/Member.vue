@@ -27,8 +27,7 @@
         class="enpty"
         v-for="n in playerTicketNumber"
         :key="`enpty-${n}`"
-        :style="{ width: `${ticketWidth}px` }"
-      />
+        :style="{ width: `${ticketWidth}px` }"/>
     </div>
 
     <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
@@ -93,14 +92,14 @@ export default {
       clickElement: null,
 
       /**
-       * 各チケットの要素数
+       * [各チケットの要素数]
        * @type { Number }
        */
       playerTicketNumber: 0,
       staffTicketNumber: 0,
 
       /**
-       * ユーザーチケットの幅 (width)
+       * [チケットのwidth]
        * @type { Number }
        */
       ticketWidth: 0,
@@ -169,7 +168,7 @@ export default {
 
   beforeDestroy() {
     /**
-     * コンポーネント破棄直前にイベントを削除
+     * 登録したイベントを破棄
      * ! 無名関数はイベント解除できないので注意
      */
     window.removeEventListener('resize', this.getTicketWidth);
@@ -232,10 +231,6 @@ export default {
     @include mq(sm) {
       margin-bottom: 0;
       padding: interval(1);
-    }
-
-    @include mq(md) {
-
     }
   }
 
