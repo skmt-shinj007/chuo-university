@@ -25,7 +25,7 @@
 
     <!-- pc -->
     <div class="footer__menu" v-for="(link, n) in links" :key="n">
-      <h3 class="footer__menu-list-title">{{ link.menuName }}</h3>
+      <h3 class="footer__menu-list-title">{{ link.menuName.en }}</h3>
       <ul class="footer__menu-list">
         <li class="footer__menu-list-item"
             v-for="(menu, i) in link.childrenMenus"
@@ -250,7 +250,7 @@ export default {
         }
 
         .footer__menu-list-link {
-          transform: translateX(interval(2));
+          transform: translateX(interval(1));
         }
       }
     }
