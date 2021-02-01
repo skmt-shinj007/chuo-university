@@ -77,6 +77,11 @@ export default {
        */
       showNextBtn: true,
 
+      /**
+       * [ボタンに応じてトランジションの名前を格納する]
+       * 次へ -> next
+       * 前へ -> prev
+       */
       transitionName: '',
     }
   },
@@ -202,10 +207,6 @@ export default {
     height: 100%;
     padding: 0 interval(2);
     position: relative;
-
-    // ↓ モーダルがスクロールできない問題を解消
-    max-height: 100%;
-    overflow-y: auto;
   }
 }
 
@@ -245,7 +246,6 @@ export default {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-    box-shadow: 0 0 15px 1px color(darkShadow);
   }
 
   &__footer {
@@ -315,7 +315,8 @@ export default {
 
 // vue transitionのアニメーション
 .modal-enter-active, .modal-leave-active {
-  transition: opacity .3s;
+  transition: opacity .5s;
+  transform: scale(1);
 }
 
 .modal-leave-active {
@@ -324,6 +325,8 @@ export default {
 
 .modal-enter, .modal-leave-to {
   opacity: 0;
+  transform: scale(0);
+  transition: opacity .5s, transform 0s .5s;
 
   .modal-window {
     opacity: 0;

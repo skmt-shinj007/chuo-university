@@ -115,7 +115,7 @@ export default {
 
   beforeDestroy() {
     // 登録したイベントを破棄
-    window.romoveEventListener('resize', this.getTicketWidth);
+    window.removeEventListener('resize', this.getTicketWidth);
   },
 }
 

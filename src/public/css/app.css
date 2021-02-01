@@ -9497,20 +9497,19 @@ import用ファイル
  */
 .view-all {
   color: #ffffff;
-  width: 60%;
-  max-width: 12.5rem;
-  margin: 2.5rem auto 0 auto;
+  width: 70%;
+  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .view-all {
-    max-width: 20rem;
+    max-width: 25rem;
 }
 }
 .view-all__btn {
   width: 100%;
   position: relative;
-  padding: 1rem 2rem;
-  border-radius: 40px;
+  padding: 1.5rem 3rem;
+  border-radius: 100px;
   transition: all 0.3s ease-out;
   box-shadow: 0 15px 13px -15px #e3631e;
   display: flex;
@@ -9531,7 +9530,6 @@ import用ファイル
 }
 @media screen and (min-width: 560px) {
 .view-all__btn {
-    max-width: 20rem;
     padding: 1.5rem 3rem;
 }
 }
@@ -9542,12 +9540,7 @@ import用ファイル
 }
 .view-all__btn-label {
   transition: all 0.3s ease-out;
-  font-size: 0.75rem;
-}
-@media screen and (min-width: 560px) {
-.view-all__btn-label {
-    font-size: 0.875rem;
-}
+  font-size: 0.875rem;
 }
 .view-all__icon {
   width: 0.75rem;
@@ -9825,6 +9818,7 @@ import用ファイル
 }
 .pull-down-table__record {
   width: 100%;
+  font-size: 0.75rem;
 }
 .pull-down-table__key {
   width: 50%;
@@ -9841,14 +9835,13 @@ import用ファイル
 }
 .pull-down-table__select {
   width: 100%;
-  font-size: 0.75rem;
   text-align: center;
   padding: 0.25rem 1.5rem 0.25rem 0.5rem;
   border-radius: 2px;
   background-image: url("/svg/angle-down.svg");
   background-repeat: no-repeat;
   background-position: right 0.25rem center;
-  background-size: 0.75rem 0.5rem;
+  background-size: 0.75rem 0.75rem;
 }
 @media screen and (min-width: 560px) {
 .pull-down-table__select {
@@ -10126,8 +10119,6 @@ import用ファイル
   height: 100%;
   padding: 0 1rem;
   position: relative;
-  max-height: 100%;
-  overflow-y: auto;
 }
 .image-modal[data-v-213a8ec6] {
   width: 100%;
@@ -10201,7 +10192,6 @@ import用ファイル
   max-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  box-shadow: 0 0 15px 1px #b3b3b3;
 }
 .image-modal__footer[data-v-213a8ec6] {
   width: 100%;
@@ -10254,13 +10244,16 @@ import用ファイル
   fill: #ffffff;
 }
 .modal-enter-active[data-v-213a8ec6], .modal-leave-active[data-v-213a8ec6] {
-  transition: opacity 0.3s;
+  transition: opacity 0.5s;
+  transform: scale(1);
 }
 .modal-leave-active[data-v-213a8ec6] {
   transition: opacity 0.3s ease 0.1s;
 }
 .modal-enter[data-v-213a8ec6], .modal-leave-to[data-v-213a8ec6] {
   opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s, transform 0s 0.5s;
 }
 .modal-enter .modal-window[data-v-213a8ec6], .modal-leave-to .modal-window[data-v-213a8ec6] {
   opacity: 0;
@@ -10552,23 +10545,22 @@ import用ファイル
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
-  margin: 0 0 1.5rem 0;
 }
 @media screen and (min-width: 560px) {
 .lattice__filter[data-v-d066a2d0] {
     justify-content: center;
-    padding: 0 0.5rem;
     width: 100%;
+    padding: 0 8px;
 }
 }
 @media screen and (min-width: 1025px) {
 .lattice__filter[data-v-d066a2d0] {
-    width: 50%;
+    width: 70%;
 }
 }
 .lattice__filter-title[data-v-d066a2d0] {
   margin-bottom: 1rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   position: relative;
   padding-left: 1.5rem;
 }
@@ -10590,48 +10582,50 @@ import用ファイル
   align-items: center;
   width: 100%;
 }
-.lattice__item-wrap[data-v-d066a2d0] {
+.lattice__img-group[data-v-d066a2d0] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.lattice__item-wrap[data-v-d066a2d0] {
+.lattice__img-group[data-v-d066a2d0] {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: stretch;
 }
 }
-.lattice__item[data-v-d066a2d0] {
+.lattice__img-wrap[data-v-d066a2d0] {
   width: 100%;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.lattice__item[data-v-d066a2d0] {
+.lattice__img-wrap[data-v-d066a2d0] {
     margin-bottom: 0;
+    padding: 8px;
     width: calc(100% / 2);
-    padding: 0.5rem;
 }
 }
 @media screen and (min-width: 1025px) {
-.lattice__item[data-v-d066a2d0] {
+.lattice__img-wrap[data-v-d066a2d0] {
     width: calc(100% / 3);
 }
 }
-.lattice__item[data-v-d066a2d0]:last-child {
+.lattice__img-wrap[data-v-d066a2d0]:last-child {
   margin-bottom: 0;
 }
-.lattice__img-wrap[data-v-d066a2d0] {
+.lattice__img[data-v-d066a2d0] {
   position: relative;
+  transition: all 0.3s ease-out;
 }
-.lattice__img-wrap[data-v-d066a2d0]::before {
+.lattice__img[data-v-d066a2d0]::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.lattice__img-wrap > img[data-v-d066a2d0] {
+.lattice__img > img[data-v-d066a2d0] {
   position: absolute;
   top: 0;
   left: 0;
@@ -10640,20 +10634,18 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.lattice__img[data-v-d066a2d0] {
+.lattice__img > img[data-v-d066a2d0] {
   box-shadow: 0 0 10px 2px #e6e6e6;
   border-radius: 2px;
-  transition: all 0.3s ease-out;
+  cursor: pointer;
 }
 @media screen and (min-width: 1025px) {
 .lattice__img[data-v-d066a2d0]:hover {
     transform: scale(1.05);
 }
 }
-@media screen and (min-width: 1025px) {
-.lattice__img[data-v-d066a2d0] {
-    cursor: pointer;
-}
+.lattice__view-all[data-v-d066a2d0] {
+  margin-top: 2.5rem;
 }@charset "UTF-8";
 /*
 import用ファイル
