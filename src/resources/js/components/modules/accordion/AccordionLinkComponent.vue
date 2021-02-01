@@ -118,10 +118,7 @@ export default {
   &__label {
     cursor: pointer;
     transition: all .3s ease-out;
-
-    @include mq(sm) {
-      font-size: font(lg);
-    }
+    font-size: font(16);
   }
 
   &__icon-wrap {
@@ -191,6 +188,7 @@ export default {
   &__children-label {
     cursor: pointer;
     transition: all .3s ease-out;
+    font-size: font(12);
   }
 
   &__children-icon {

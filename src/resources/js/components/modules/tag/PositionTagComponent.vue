@@ -43,7 +43,13 @@ export default {
       // returnする変数を定義
       let color = '';
       // ポジションに合わせて色を代入
-      (this.position === '後衛') ? color = 'lightgreen' : (this.position === '前衛') ? color = 'orange' : null;
+      if (this.position === '後衛') {
+        color = 'lightgreen';
+      } else if (this.position === '前衛') {
+        color = 'orange';
+      } else if (this.position === '日本代表監督') {
+        color = 'red';
+      }
 
       return color;
     }

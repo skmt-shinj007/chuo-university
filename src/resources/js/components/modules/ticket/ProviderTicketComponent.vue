@@ -1,8 +1,8 @@
 <template>
 <div class="provider-ticket" ref="targetElement">
-  <div class="provider-ticket-item provider-ticket-thumbnail-border">
-    <figure class="provider-ticket-thumbnail-wrap">
-      <img class="provider-ticket-thumbnail" :src="`/image/${providerObj.img.src}`" alt="userObj.img.alt">
+  <div class="provider-ticket-thumbnail-border">
+    <figure class="provider-ticket-thumbnail">
+      <img :src="`/image/${providerObj.img.src}.jpg`" alt="userObj.img.alt">
     </figure>
   </div>
 
@@ -53,14 +53,10 @@ export default {
   box-shadow: 0 3px 5px 3px color(darkShadow);
   background-color: color(white);
   border: 2px solid color(light);
-  border-radius: 48px;
+  border-radius: 100px;
   padding: interval(1);
   position: relative;
-  z-index: 1;
-
-  @include mq(sm) {
-    padding: interval(1) interval(1.5);
-  }
+  width: interval(34);
 
   @include mq(md) {
     cursor: pointer;
@@ -77,35 +73,28 @@ export default {
     }
   }
 
-  &-item {
-    max-width: interval(20);
-
-    @include mq(md) {
-      max-width: none;
-    }
-  }
-
   &-thumbnail-border {
     @include border-gradient();
-    margin-right: interval(.5);
+    width: interval(9);
+    height: interval(9);
   }
 
-  &-thumbnail-wrap {
+  &-thumbnail {
     width: 100%;
     @include trimming(aspect(square));
 
     @include mq(sm) {
       width: interval(10);
     }
-  }
 
-  &-thumbnail {
-    border-radius: radius(circle);
+    & > img {
+      border-radius: radius(circle);
+    }
   }
 
   &__name {
     display: block;
-    font-size: font(base);
+    font-size: font(14);
     padding-left: interval(.5);
   }
 

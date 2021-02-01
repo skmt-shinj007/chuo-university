@@ -1,8 +1,6 @@
 <template>
 <div class="champions-card">
-  <div class="champions-card__background">
-
-  </div>
+  <div class="champions-card__background"/>
 
   <div class="champions-card__title-wrapper">
     <h5 class="champions-card__title">Champion pair</h5>
@@ -25,11 +23,13 @@
   </div>
 
   <div class="champions-card__tournament-info">
-    <span class="champions-card__tournament-info-title">{{ messages.ContentsTitles.TournamentInformation }}</span>
+    <span class="champions-card__tournament-info-title">
+      {{ messages.ContentsTitles.TournamentInformation }}
+    </span>
+
     <table-component
       :tableItems="cardElement.TournamentInformation"
-      :valueTransparent="true"
-      font="sm"/>
+      :valueTransparent="true"/>
   </div>
 
 </div>
@@ -53,6 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .champions-card {
+  width: 100%;
   background-color: color(white);
   padding: interval(2);
   position: relative;
@@ -73,12 +74,14 @@ export default {
   }
 
   &__title {
-    font-size: font(lg);
+    @include bangers(font(26), 1.5px);
+    line-height: 1;
   }
 
   &__pair {
-    @include flex();
+    width: 100%;
     margin-bottom: interval(2);
+    font-size: font(12);
 
     @include mq(sm) {
       display: block;
@@ -86,13 +89,11 @@ export default {
   }
 
   &__player {
-    width: 50%;
-    @include flex(row nowrap, center, center);
+    @include flex(row nowrap, flex-start, center);
+    margin-top: interval(1);
 
-    @include mq(sm) {
-      width: 100%;
-      justify-content: flex-start;
-      padding-left: interval(1);
+    &:first-child {
+      margin-top: 0;
     }
   }
 
@@ -109,11 +110,8 @@ export default {
   &__tournament-info-title {
     display: block;
     margin-bottom: interval(1);
+    font-size: font(14);
     @include middle-line-text(2, 1px, color(darkblue));
-
-    @include mq(sm) {
-      font-size: font(base);
-    }
   }
 }
 </style>

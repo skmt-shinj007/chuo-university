@@ -1,48 +1,42 @@
 <template>
-<div class="primary-btn" :class="[changeSizing, variation]">
+<div class="primary-btn" :class="variation">
   <button class="primary-btn__btn" :type="btnType">
     {{ name }}
     <i class="fas fa-angle-right fa-2x primary-btn__icon"></i>
   </button>
 </div>
-
-<!--
-  ボタンテキストとボタンタイプを指定可能 (name="hoge" btnType="hoge" を親コンポーネントで指定)
-  指定なしならpropsオブジェクト内default値が適用。
-  例）<primary-button-component name="メンバーを見る" btnType="submit"/>
-
-  ボタンサイズの可変は、クラスの指定で行う。(親コンポーネントで btnSize を指定)
-  1. primary-btn-xs
-  2. primary-btn-sm
-
-  variation -> ボタンのレイアウトを変えたいときに追加のクラス名を指定する。（スタイルを追加する必要あり）
--->
 </template>
 
 <script>
 export default {
   props: {
+    /**
+     * ボタンのラベル
+     */
     name: {
       type: String,
       default: 'もっと見る',
     },
+
+    /**
+     * ボタンのタイプ
+     * button, submit 等
+     */
     btnType: {
       type: String,
       default: 'button',
     },
-    btnSize: {
-      type: String,
-      default: null,
-    },
+
+    /**
+     * 特定の時にスタイルを変えたい場合のクラス名
+     * スタイルを追加する必要がある。
+     */
     variationClass: {
       type: String,
       default: null,
     }
   },
   computed: {
-    changeSizing() {
-      return (this.btnSize) ? `primary-btn--${this.btnSize}` : null;
-    },
     variation() {
       return (this.variationClass) ? `primary-btn--${this.variationClass}` : null;
     }
@@ -53,11 +47,11 @@ export default {
 <style lang="scss">
 .primary-btn {
   width: 80%;
-  max-width: btn-size(sm-width);
-  height: btn-size(sm-height);
+  max-width: interval(30);
+  height: interval(6);
   margin: 0 auto;
   background-color: color(white);
-  font-size: font(xs);
+  font-size: font(10);
   border: 1px solid color(orange);
   border-radius: radius(soft);
   position: relative;
@@ -75,20 +69,11 @@ export default {
 
   // pc style
   @include mq(md) {
-    width: btn-size(lg-width);
-    height: btn-size(lg-height);
-    font-size: font(sm);
-
-    &--xs {
-      max-width: btn-size(xs-width);
-      height: btn-size(xs-height);
-      font-size: font(xs);
-    }
 
     &--sm {
-      width: btn-size(sm-width);
-      height: btn-size(sm-height);
-      font-size: font(xs);
+      max-width: interval(26);
+      height: interval(5);
+      font-size: font(8);
     }
   }
 

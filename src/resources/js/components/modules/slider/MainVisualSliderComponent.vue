@@ -90,16 +90,12 @@ export default {
     z-index: 10;
     color: color(white);
     padding-left: interval(2);
-    font-size: font(sm);
+    font-size: font(12);
 
     @include mq(sm) {
       left: 5%;
       padding-left: 0;
-      font-size: font(md);
-    }
-
-    @include mq(md) {
-      font-size: font(xl);
+      font-size: font(16);
     }
   }
 }

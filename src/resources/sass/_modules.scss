@@ -13,19 +13,13 @@
   @return map-get($grid-breakpoints, $key);
 }
 
-// font
-@function font($key) {
-  @return map-get($font, $key);
-}
-
-// button size
-@function btn-size($key) {
-  @return map-get($button, $key);
-}
-
-// icon size
-@function icon($key) {
-  @return map-get($icon, $key);
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+@function font($pixel) {
+  @return ($pixel / $base-font) * 1rem;
 }
 
 // aspect ratio
@@ -40,6 +34,11 @@
 
 // interval (間隔)
 @function interval($pixel) {
+  @return $base-rem * $pixel;  // 1/2rem × $pixel
+}
+
+// pixel (固定値)
+@function pixel($pixel) {
   @return $base-pixel * $pixel;  // 8px × $pixel
 }
 

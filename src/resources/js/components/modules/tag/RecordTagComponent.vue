@@ -69,11 +69,11 @@ export default {
     padding: interval(.5) 0;
 
     @include mq(sm) {
-      font-size: font(base);
+      font-size: font(14);
     }
 
     @include mq(md) {
-      font-size: font(md);
+      font-size: font(16);
     }
   }
 
@@ -91,14 +91,14 @@ export default {
 
   &__open-text {
     letter-spacing: 1px;
-    font-size: font(sm);
+    font-size: font(12);
     font-weight: bold;
     @include gradient(color(orange),color(deepYellow), horizontal);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
     @include mq(sm) {
-      font-size: font(base);
+      font-size: font(14);
     }
   }
 }

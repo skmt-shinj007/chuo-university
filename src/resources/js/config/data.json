@@ -85,13 +85,13 @@
     }
   ],
 
-  "Policy": [
+  "Concept": [
     {
-    "Title": {
-      "Main": "Symbol",
-      "Sub": "部訓"
-    },
-    "Content": "部訓が入ります。部訓が入ります。"
+      "Title": {
+        "Main": "Symbol",
+        "Sub": "部訓"
+      },
+      "Content": "部訓が入ります。部訓が入ります。"
     },
     {
       "Title": {
@@ -102,7 +102,7 @@
     },
     {
       "Title": {
-        "Main": "mission",
+        "Main": "Mission",
         "Sub": "意義"
       },
       "Content": "ソフトテニスを通じた人間育成"
@@ -676,11 +676,18 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "令和",
+        "year": 3
+      },
       "category": 1,
       "position": "前衛",
       "grade": 4,
       "undergraduate": "経済学部",
       "record": "戦績が入ります。",
+      "active": {
+
+      },
       "message": "メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。"
     },
 
@@ -700,6 +707,10 @@
       "post": {
         "club": null,
         "alumni": null
+      },
+      "graduate": {
+        "age": "令和",
+        "year": 3
       },
       "category": 1,
       "position": "後衛",
@@ -726,6 +737,10 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "令和",
+        "year": 3
+      },
       "category": 1,
       "position": "前衛",
       "grade": 4,
@@ -750,6 +765,10 @@
       "post": {
         "club": null,
         "alumni": null
+      },
+      "graduate": {
+        "age": "令和",
+        "year": 3
       },
       "category": 1,
       "position": "後衛",
@@ -801,6 +820,10 @@
         "club": "主務",
         "alumni": null
       },
+      "graduate": {
+        "age": null,
+        "year": null
+      },
       "category": 1,
       "position": "後衛",
       "grade": 3,
@@ -825,6 +848,10 @@
       "post": {
         "club": "副主将",
         "alumni": null
+      },
+      "graduate": {
+        "age": null,
+        "year": null
       },
       "category": 1,
       "position": "前衛",
@@ -851,6 +878,10 @@
         "club": "監督",
         "alumni": "理事"
       },
+      "graduate": {
+        "age": "昭和",
+        "year": 51
+      },
       "category": 2,
       "position": null,
       "grade": null,
@@ -875,6 +906,10 @@
       "post": {
         "club": "部長",
         "alumni": null
+      },
+      "graduate": {
+        "age": null,
+        "year": null
       },
       "category": 2,
       "position": null,
@@ -901,6 +936,10 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "平成",
+        "year": 28
+      },
       "category": 4,
       "position": "後衛",
       "grade": null,
@@ -925,6 +964,10 @@
       "post": {
         "club": null,
         "alumni": null
+      },
+      "graduate": {
+        "age": "平成",
+        "year": 28
       },
       "category": 4,
       "position": "前衛",
@@ -951,11 +994,15 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "平成",
+        "year": 4
+      },
       "category": 4,
-      "position": "後衛",
+      "position": "日本代表監督",
       "grade": null,
       "undergraduate": null,
-      "record": "第16回世界選手権国別対抗戦 優勝（監督）",
+      "record": "第16回世界選手権国別対抗戦 優勝",
       "message": "メッセージが入ります。"
     },
 
@@ -1054,8 +1101,8 @@
     {
       "name": "Hana",
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
-        "alt": "Hanaのサムネイル"
+        "src": "client-hana",
+        "alt": "Hanaのサムネイル画像"
       },
       "twitter": {
         "url": "https://twitter.com/SFphoto87",

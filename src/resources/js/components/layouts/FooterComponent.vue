@@ -1,6 +1,6 @@
 <template>
 <div class="footer-wrap">
-  <footer class="footer">
+  <footer class="footer wrapper">
     <div class="footer__contact">
       <contents-title-component
       :title="messages.SectionTitles.Contact.Main"
@@ -25,9 +25,9 @@
 
     <!-- pc -->
     <div class="footer__menu" v-for="(link, n) in links" :key="n">
-      <h4 class="footer__menu-list-title">{{ link.menuName }}</h4>
+      <h3 class="footer__menu-list-title">{{ link.menuName }}</h3>
       <ul class="footer__menu-list">
-        <li class="footer__menu-list-item" :class="`footer__menu-list-item--${menuClass[n]}`"
+        <li class="footer__menu-list-item"
             v-for="(menu, i) in link.childrenMenus"
             :key="i">
 
@@ -48,9 +48,9 @@
       <div class="footer__information-logo"/>
 
       <address>
-        <h4 class="footer__information-title">
+        <h3 class="footer__information-title">
           <router-link to="/">{{ messages.Information.ClubName }}</router-link>
-        </h4>
+        </h3>
         <span class="footer__information-item">{{ messages.Information.Address }}</span>
         <a class="footer__information-telephone" :href="`tel:+${telephoneNum}`">
           {{ messages.Information.TelephoneNumber }}
@@ -100,13 +100,6 @@ export default {
       links: [],
 
       /**
-       * links配列のmenuNameを取得。
-       * pcレイアウトでメニューアイテムの幅を個別に変更するため、クラスにつける文字列を配列で格納
-       * @type {Array}
-       */
-      menuClass: [],
-
-      /**
        * 電話番号のリンク [81-00-0000-0000]
        * @type {Number}
        */
@@ -123,11 +116,6 @@ export default {
   beforeMount() {
     // リンクの配列を[features.json]を元に生成
     this.$data.features.Links.forEach(element => this.links.push(element));
-
-    // メニューアイテムに付与するclass名を生成 (links > menuName参照)
-    this.links.forEach(element => {
-      this.menuClass.push(element.menuName.replace(" ", "-").toLowerCase());
-    })
 
     /**
      * メニュー配列のバリデーションを設定 (テスト的な処理)
@@ -176,21 +164,12 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  padding: 0 interval(2);
   color: color(white);
-
-  @include mq(sm) {
-    padding: 0 interval(4);
-  }
-
-  @include mq(md) {
-    max-width: device(max);
-    margin: 0 auto;
-  }
+  margin-bottom: 0;
 
   &-wrap {
     @include gradient(color(deepDarkblue), color(lightDarkblue), horizontal);
-    padding-top: interval(10);
+    padding-top: interval(5);
     padding-bottom: interval(3);
   }
 
@@ -240,7 +219,7 @@ export default {
     @include flex(row wrap, flex-start, center);
 
     &-title {
-      @include bangers(font(heading), 2.5px);
+      @include bangers(font(32), 2.5px);
       position: relative;
 
       &::after {
@@ -259,6 +238,11 @@ export default {
     &-item {
       padding: interval(1);
       cursor: pointer;
+      margin-right: interval(2);
+
+      &:last-child {
+        margin-right: 0;
+      }
 
       @include hover {
         .footer__menu-list-label {
@@ -268,14 +252,6 @@ export default {
         .footer__menu-list-link {
           transform: translateX(interval(2));
         }
-      }
-
-      &--site-map {
-        width: calc(100% / 4);
-      }
-
-      &--external-link {
-        width: calc(100% / 3);
       }
     }
 
@@ -292,7 +268,7 @@ export default {
     }
 
     &-label {
-      font-size: font(md);
+      font-size: font(14);
       cursor: pointer;
     }
 
@@ -313,10 +289,6 @@ export default {
     top: 50%;
     left: interval(2);
     transform: translateY(-50%);
-
-    @include mq(sm) {
-      width: interval(20);
-    }
   }
 
   &__information-title {
@@ -328,10 +300,6 @@ export default {
     font-weight: bold;
     line-height: 1.8;
     letter-spacing: 1.2px;
-
-    @include mq(sm) {
-      font-size: font(base);
-    }
   }
 
   &__information-telephone {
@@ -377,7 +345,7 @@ export default {
   }
 
   &__copyright {
-    font-size: font(xs);
+    font-size: font(10);
     text-align: center;
     margin-top: interval(5);
   }

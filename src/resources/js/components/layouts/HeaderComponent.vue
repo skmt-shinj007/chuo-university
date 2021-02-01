@@ -1,6 +1,6 @@
 <template>
-<header class="header" id="header">
-  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
+<header class="header">
+  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }" ref="header">
     <router-link to="/" class="header__navbar-link">
       <div class="header__title">
         <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
@@ -47,10 +47,10 @@ export default {
       features: Features,
 
       /**
-       * 要素の高さが入った配列
-       * @type { Array }
+       * ヘッダーの高さ
+       * @type { Number }
        */
-      elementsHeight: null,
+      headerHeight: 0,
 
       /**
        * [ヘッダーの表示を制御するフラグ]
@@ -95,9 +95,8 @@ export default {
   },
 
   mounted() {
-    // 要素の高さを取得
-    const idElements = ['header'];
-    this.elementsHeight = this.getElementHeight(idElements);
+    // ヘッダーの高さ取得
+    this.headerHeight = this.$refs.header.offsetHeight;
   },
 
   watch: {
@@ -105,9 +104,9 @@ export default {
      * [スクロールに応じてヘッダーの表示を制御する]
      */
     scrollAmount() {
-      let pos = this.scrollAmount;                 // 現在地（スクロール）
-      const headerHeight = this.elementsHeight.header;  // ヘッダーの高さ
-      let lastpos = this.lastScrollPosition;             // 最後のスクロール位置
+      let pos = this.scrollAmount;             // スクロール現在地
+      const headerHeight = this.headerHeight;  // ヘッダーの高さ
+      let lastpos = this.lastScrollPosition;   // 最後のスクロール位置
 
       // ヘッダーの高さ分スクロール かつ 上スクロールした際にクラスを付与
       (pos > headerHeight && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
@@ -162,7 +161,7 @@ export default {
     &--hide {
       transform: translateY(-110%);
 
-      @include mq(sm) {
+      @include mq(md) {
         transform: translateY(0);
       }
     }
@@ -181,10 +180,10 @@ export default {
 
     &-main {
       @include bangers();
-      font-size: font(lg);
+      font-size: font(14);
 
       @include mq(md) {
-        margin-bottom: interval(7);
+        margin-bottom: interval(6);
       }
     }
 
@@ -193,7 +192,7 @@ export default {
 
       @include mq(sm) {
         margin-left: interval(3);
-        font-size: font(xs);
+        font-size: font(8);
         font-weight: normal;
         letter-spacing: 1.1px;
         position: relative;
@@ -202,7 +201,6 @@ export default {
 
       @include mq(md) {
         margin: 0;
-        font-size: font(sm);
       }
     }
 

@@ -29,7 +29,7 @@ export default {
     display: block;
     width: 80%;
     text-align: center;
-    font-size: font(xs);
+    font-size: font(10);
     font-weight: normal;
     letter-spacing: 1.5px;
 

@@ -6,12 +6,12 @@
   </div>
 
   <div class="background-darkblue">
-    <section class="club__policy">
-      <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
+    <section class="club__concept">
+      <contents-title-component :title="messages.SectionTitles.Concept.Main" :subTitle="messages.SectionTitles.Concept.Sub" color="white"/>
 
-      <div class="club__policy-cards">
-        <div class="club__policy-card" v-for="(policy, n) in policies" :key="n">
-          <policy-card-component :policy="policy"/>
+      <div class="club__concept-cards">
+        <div class="club__concept-card" v-for="(concept, n) in concepts" :key="n">
+          <concept-card-component :concept="concept"/>
         </div>
       </div>
 
@@ -85,7 +85,7 @@
       <div class="club__member-number">
         <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
         <div class="club__member-number-table">
-          <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
+          <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
         </div>
       </div>
 
@@ -114,7 +114,7 @@
 import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import GoogleMapComponent from '../components/modules/GoogleMapComponent';
-import PolicyCardComponent from '../components/modules/card/PolicyCardComponent';
+import conceptCardComponent from '../components/modules/card/conceptCardComponent';
 import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
 import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
@@ -127,7 +127,7 @@ import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponen
 export default {
   components: {
     ContentsTitleComponent,
-    PolicyCardComponent,
+    conceptCardComponent,
     MainVisualSliderComponent,
     TableComponent,
     GoogleMapComponent,
@@ -142,7 +142,7 @@ export default {
     return {
       data: Data,
       mainVisualImages: [],
-      policies: [],
+      concepts: [],
       practiceInformations: [],
       courtImages: [],
       schedule: [],
@@ -162,7 +162,7 @@ export default {
     imageApiResponse.forEach(element => this.imagesData.push(element));
 
     // config/data.jsonから引っ張る
-    this.$data.data.Policy.forEach(element => this.policies.push(element));
+    this.$data.data.Concept.forEach(element => this.concepts.push(element));
     this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
     this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
     this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
@@ -314,31 +314,36 @@ const imageApiResponse = [
     height: 100vh;
   }
 
-  &__policy {
+  &__concept {
     margin: 0 auto;
 
     &-cards {
 
       @include mq(sm) {
-        @include flex(row nowrap, space-between, center);
-        max-width: interval(80);
+        max-width: interval(60);
         margin: 0 auto;
+        @include flex(row nowrap, space-between, center);
       }
 
       @include mq(md) {
         max-width: interval(100);
       }
     }
+  }
 
-    &-card {
-      margin-bottom: interval(5);
+  &__concept-card {
+    margin-bottom: interval(5);
 
-      @include mq(sm) {
-        margin-bottom: 0;
-      }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq(sm) {
+      margin-bottom: 0;
+      margin-right: interval(2);
 
       &:last-child {
-        margin-bottom: 0;
+        margin-right: 0;
       }
     }
   }
@@ -350,11 +355,11 @@ const imageApiResponse = [
     }
 
     &-imageSlider {
-      padding-top: interval(8);
+      margin-top: interval(10);
 
       @include mq(sm) {
-        max-width: interval(80);
-        margin: 0 auto;
+        max-width: pixel(80);
+        margin: interval(10) auto 0 auto;
       }
 
     }
@@ -463,6 +468,7 @@ const imageApiResponse = [
   }
 
   &__photo {
+    margin-top: interval(5);
 
     &-button {
       margin-top: interval(5);

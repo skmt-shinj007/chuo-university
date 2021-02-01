@@ -1,10 +1,22 @@
+html {
+
+  @include mq(sm) {
+    font-size: 20px;
+    width: 100vw;
+  }
+
+  @include mq(md) {
+    font-size: 24px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   width: 100vw;
-  font-size: font(base);
+  font-size: font(14);
   color: color(lightDarkblue);
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
@@ -36,12 +48,31 @@ header {
 }
 
 section {
-  padding: 0 interval(2);
+  padding: 0 pixel(2);
   max-width: device(max);
-  margin: interval(10) auto;
+  margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
-    padding: 0 interval(4);
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 pixel(4);
+  }
+}
+
+// セクションではないが、スタイルだけ適用したいとき。
+.wrapper {
+  padding: 0 pixel(2);
+  max-width: device(max);
+  margin: 0 auto interval(10) auto;
+
+  @include mq(sm) {
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 pixel(4);
   }
 }
 
@@ -50,25 +81,12 @@ h1, h2 {
 }
 
 h2 {
-  @include bangers($size:font(heading), $letterSpacing:3px);
+  @include bangers($size:font(40), $letterSpacing:3px);
   line-height: 1;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(heading-lg);
-  }
 }
 
 h3 {
-  font-size: font(base);
-
-  @include mq(sm) {
-    font-size: font(md);
-  }
-
-  @include mq(md) {
-    font-size: font(xl);
-  }
+  font-size: font(14);
 }
 
 h3, h4, h5, h6 {
@@ -77,28 +95,22 @@ h3, h4, h5, h6 {
 
 h4 {
   letter-spacing: 1.5px;
-  font-size: font(base);
+  font-size: font(14);
 
   @include mq(sm) {
-    font-size: font(md);
+    font-size: font(16);
   }
 }
 
 p {
-  font-size: font(sm);  // 12px
+  font-size: font(12);  // 12px
   line-height: 1.8;
   letter-spacing: 1.2px;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(base);
-    line-height: 2;
-  }
 }
 
 span {
   font-weight: bold;
-  font-size: font(sm);
+  font-size: font(12);
 }
 
 label {
@@ -107,13 +119,8 @@ label {
 }
 
 tr {
-  font-size: font(sm);
+  font-size: font(12);
   font-weight: bold;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(base);
-  }
 }
 
 th,td {
@@ -133,7 +140,7 @@ th,td {
 .background-darkblue {
   @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
   margin-top: 0;
-  padding: interval(10) 0;
+  padding: interval(5) 0 interval(10) 0;
 }
 
 /**
@@ -143,4 +150,16 @@ th,td {
  */
 .nl2br {
   white-space: pre-wrap;
+}
+
+/**
+ * flexの配置を左揃えにするための空要素に指定するクラス
+ * widthは各コンポーネントで指定する。
+ */
+.enpty-box {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }

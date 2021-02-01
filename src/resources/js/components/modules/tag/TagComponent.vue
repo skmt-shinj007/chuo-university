@@ -59,35 +59,34 @@ export default {
 
 <style lang="scss">
 .tag {
-  margin: interval(.5);
   color: color(white);
   letter-spacing: 1.8px;
   line-height: 1.9;
 
   &__content {
-    font-size: font(xs);
+    font-size: font(10);
 
     // レスポンシブがtrueの時
     &--responsive {
 
       @include mq(sm) {
-        font-size: font(sm);
+        font-size: font(12);
         line-height: 2;
       }
 
       @include mq(md) {
-        font-size: font(md);
+        font-size: font(16);
       }
     }
 
     // サイズ スタイル
     &--md {
-      font-size: font(base);
+      font-size: font(14);
       line-height: 2;
     }
 
     &--lg {
-      font-size: font(md);
+      font-size: font(16);
       line-height: 2;
     }
   }
@@ -110,6 +109,10 @@ export default {
       background-color: color(white);
       border: 2px solid color(orange);
       color: color(orange);
+    }
+
+    &--red {
+      background-color: color(japanRed);
     }
   }
 }

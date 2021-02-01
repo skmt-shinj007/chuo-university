@@ -12,10 +12,10 @@
   </div>
 
   <!-- 写真 -->
-  <div class="lattice__item-wrap">
-    <div class="lattice__item" v-for="(image,n) in displayImages" :key="n">
-      <figure class="lattice__img-wrap">
-        <img class="lattice__img" :src="`/image/${image.src}`" :alt="image.alt" @click="openModal(image)">
+  <div class="lattice__img-group">
+    <div class="lattice__img-wrap" v-for="(image,n) in displayImages" :key="n">
+      <figure class="lattice__img">
+        <img :src="`/image/${image.src}`" :alt="image.alt" @click="openModal(image)">
       </figure>
     </div>
   </div>
@@ -182,7 +182,9 @@ export default {
     },
     closeModal() {
       this.showModal = false;
-      document.body.classList.remove("modal-open");
+      setTimeout(() => {
+        document.body.classList.remove("modal-open");
+      }, 500);
     },
   },
 
@@ -203,46 +205,46 @@ export default {
 
   &__filter {
     @include flex(column nowrap, center, stretch);
-    margin: 0 0 interval(3) 0;
 
     @include mq(sm) {
       justify-content: center;
-      padding: 0 interval(1);
       width: 100%;
+      padding: 0 pixel(1);
     }
 
     @include mq(md) {
-      width: 50%;
+      width: 70%;
+    }
+
+    &-title {
+      margin-bottom: interval(2);
+      font-size: font(16);
+      @include middle-line-text(2, 1px, color(darkblue));
+    }
+
+    &-wrap {
+      @include flex(row nowrap, flex-start, center);
+      width: 100%;
     }
   }
 
-  &__filter-title {
-    margin-bottom: interval(2);
-    font-size: font(base);
-    @include middle-line-text(2, 1px, color(darkblue));
-  }
-
-  &__filter-wrap {
-    @include flex(row nowrap, flex-start, center);
-    width: 100%;
-  }
-
-  &__item-wrap {
+  &__img-group {
     @include flex(column nowrap, center, center);
+    margin-top: interval(5);
 
     @include mq(sm) {
       @include flex(row wrap);
     }
   }
 
-  &__item {
+  &__img-wrap {
     width: 100%;
-    margin-bottom: interval(10);
+    margin-bottom: interval(5);
 
     @include mq(sm) {
       margin-bottom: 0;
+      padding: pixel(1);
       width: calc(100% / 2);
-      padding: interval(1);
     }
 
     @include mq(md) {
@@ -254,22 +256,23 @@ export default {
     }
   }
 
-  &__img-wrap {
-    @include trimming(aspect(square));
-  }
-
   &__img {
-    box-shadow: 0 0 10px 2px color(shadow);
-    border-radius: radius(soft);
+    @include trimming(aspect(square));
     transition: all .3s ease-out;
+
+    & > img {
+      box-shadow: 0 0 10px 2px color(shadow);
+      border-radius: radius(soft);
+      cursor: pointer;
+    }
 
     @include hover {
       transform: scale(1.05);
     }
+  }
 
-    @include mq(md) {
-      cursor: pointer;
-    }
+  &__view-all {
+    margin-top: interval(5);
   }
 }
 </style>

@@ -40,19 +40,18 @@ export default {
 <style lang="scss">
 .view-all {
   color: color(white);
-  width: 60%;
-  max-width: interval(25);
-  margin: interval(5) auto 0 auto;
+  width: 70%;
+  margin: 0 auto;
 
   @include mq(sm) {
-    max-width: interval(40);
+    max-width: interval(50);
   }
 
   &__btn {
     width: 100%;
     position: relative;
-    padding: interval(2) interval(4);
-    border-radius: 40px;
+    padding: interval(3) interval(6);
+    border-radius: 100px;
     transition: all .3s ease-out;
     box-shadow: 0 15px 13px -15px darken($color: color(orange), $amount: 3%);
     @include flex(row nowrap, center, center);
@@ -68,7 +67,6 @@ export default {
     }
 
     @include mq(sm) {
-      max-width: interval(40);
       padding: interval(3) interval(6);
     }
 
@@ -79,11 +77,7 @@ export default {
 
   &__btn-label {
     transition: all .3s ease-out;
-    font-size: font(sm);
-
-    @include mq(sm) {
-      font-size: font(base);
-    }
+    font-size: font(14);
   }
 
   &__icon {

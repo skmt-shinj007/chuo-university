@@ -44,10 +44,7 @@ export default {
   border: 2px solid color(darkblue);
   border-radius: radius(hard);
   position: relative;
-
-  @include mq(sm) {
-    padding: interval(1);
-  }
+  padding: pixel(2);
 
   &__tag-modal {
     position: absolute;
@@ -60,7 +57,7 @@ export default {
   }
 
   &__tag-date {
-    margin: interval(1) interval(2);
+    margin: interval(1) 0;
 
     @include mq(sm) {
       width: interval(22);
@@ -72,12 +69,12 @@ export default {
     margin-top: interval(3);
 
     &-main {
-      font-size: font(lg);
+      font-size: font(18);
     }
   }
 
   &__text-container {
-    margin: interval(2);
+    margin: interval(2) 0;
   }
 
   &__text {

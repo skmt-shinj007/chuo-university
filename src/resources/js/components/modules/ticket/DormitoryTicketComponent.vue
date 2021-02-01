@@ -59,7 +59,7 @@ export default {
   }
 
   &__text {
-    font-size: font(sm);
+    font-size: font(12);
     font-weight: bold;
     line-height: 1.5;
   }

@@ -49,7 +49,8 @@ export default {
     width: 90%;
     background-color: rgba($color: color(white), $alpha: .6);
     border-radius: radius(normal);
-    padding: interval(.5) interval(2);
+    padding: interval(.5) interval(1);
+    line-height: 1;
     position: absolute;
     bottom: 5%;
     left: 50%;
@@ -58,11 +59,11 @@ export default {
 
   &__caption,
   &__secondary-caption {
-    font-size: font(xs);
+    font-size: font(10);
   }
 
   &__capacity-number {
-    font-size: font(md);
+    font-size: font(14);
     font-weight: bold;
   }
 }

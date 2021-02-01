@@ -48,10 +48,10 @@ export default {
   }
 
   &__content {
-    font-size: font(xs);
+    font-size: font(10);
 
     &--lg {
-      font-size: font(md);
+      font-size: font(16);
       line-height: 2;
     }
   }
