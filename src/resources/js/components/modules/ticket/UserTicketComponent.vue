@@ -1,8 +1,8 @@
 <template>
-<div class="user-ticket" ref="targetElement">
-  <div class="user-ticket-item" :class="borderColor">
-    <figure class="user-ticket-thumbnail-wrap">
-      <img class="user-ticket-thumbnail" :src="`/image/${userObj.img.src}`" alt="userObj.img.alt">
+<div class="user-ticket">
+  <div class="user-ticket-thumbnail-border" :class="borderColor">
+    <figure class="user-ticket-thumbnail">
+      <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
     </figure>
   </div>
 
@@ -12,12 +12,19 @@
 
     <!-- ユーザーカテゴリーが選手の場合 -->
     <div v-if="userObj.category === 1" class="user-ticket-tag-group">
-      <position-tag-component :position="userObj.position"/>
-      <grade-tag-component :grade="userObj.grade"/>
+      <div class="user-ticket-tag">
+        <position-tag-component :position="userObj.position"/>
+      </div>
+      <div class="user-ticket-tag">
+        <grade-tag-component :grade="userObj.grade"/>
+      </div>
     </div>
 
+    <!-- 選手ではない場合（スタッフ）は役職を出す -->
     <div v-else class="user-ticket-tag-group">
-      <tag-component :content="userObj.post.club"/>
+      <div class="user-ticket-tag">
+        <tag-component :content="userObj.post.club"/>
+      </div>
     </div>
   </div>
 
@@ -40,12 +47,14 @@ export default {
     PositionTagComponent,
     GradeTagComponent,
   },
+
   props: {
     userObj: {
       type: Object,
       default: null
     }
   },
+
   computed: {
     borderColor() {
       const borderClass = 'user-ticket-thumbnail-border';
@@ -61,31 +70,30 @@ export default {
   box-shadow: 0 3px 5px 3px color(darkShadow);
   background-color: color(white);
   border: 2px solid color(light);
-  border-radius: 48px;
+  border-radius: 100px;
   padding: interval(1);
   position: relative;
-  z-index: 1;
-
-  @include mq(sm) {
-    padding: interval(1) interval(1.5);
-  }
+  width: interval(34);
 
   @include mq(md) {
     cursor: pointer;
     box-shadow: 0 1px 3px 1px color(darkShadow);
     transition: all .3s ease-out;
+  }
 
-    &:hover {
-      box-shadow: 0 3px 5px 3px color(darkShadow);
-      transform: translateY(-2px);
+  @include hover {
+    box-shadow: 0 3px 5px 3px color(darkShadow);
+    transform: translateY(-2px);
 
-      .user-ticket-icon {
-        animation: iconSlide 1.5s infinite;
-      }
+    .user-ticket-icon {
+      animation: iconSlide 1.5s infinite;
     }
   }
 
   &-thumbnail-border {
+    width: interval(9);
+    height: interval(9);
+
     &--blue {
       @include border-gradient();
     }
@@ -105,24 +113,22 @@ export default {
     }
   }
 
-  &-thumbnail-wrap {
+  &-thumbnail {
     width: 100%;
     @include trimming(aspect(square));
 
     @include mq(sm) {
       width: interval(10);
     }
-  }
 
-  &-thumbnail {
-    border-radius: radius(circle);
+    & > img {
+      border-radius: radius(circle);
+    }
   }
 
   &__name {
     display: block;
-    font-size: font(base);
-    font-weight: bold;
-    padding-left: interval(.5);
+    font-size: font(14);
 
     &:first-of-type {
       display: none;
@@ -137,9 +143,17 @@ export default {
     @include flex(row wrap, flex-start, center);
   }
 
+  &-tag {
+    margin: interval(.5) interval(.5) 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
   &-icon {
-    width: interval(3);
-    height: interval(3);
+    width: interval(2.5);
+    height: interval(2.5);
     fill: color(darkblue);
   }
 }

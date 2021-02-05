@@ -88,13 +88,14 @@ export default {
     top: 50%;
     left: 0;
     z-index: 10;
-    max-width: 280px;
     color: color(white);
-    padding-left: interval(3);
-    font-size: font(md);
+    padding-left: interval(2);
+    font-size: font(12);
 
-    @include mq(md) {
-      left: 10%;
+    @include mq(sm) {
+      left: 5%;
+      padding-left: 0;
+      font-size: font(16);
     }
   }
 }

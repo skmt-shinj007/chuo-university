@@ -1,66 +1,73 @@
 <template>
 <div class="history">
 
-  <section class="history__time-series section-container">
+  <section class="history__chronology">
     <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
-    <div class="history__time-series-container" id="historySection">
+    <div class="history__chronology-container" ref="chronology">
 
       <div class="history__age">
         <div
-          id="historyAgeTag"
+          ref="ageTag"
           class="history__age-tag"
           :style="{ transform: `translateY(${scrollLimit}px)`}"
           v-text="ageChange">
         </div>
       </div>
 
-      <div class="history__time-series-wrap">
-        <div class="history__time-series-content">
+      <div class="history__chronology-text">
 
-          <div class="history__cards" id="historyTaisho">
-            <!-- 大正の歴史 -->
-            <div class="history__card-item">
-              <history-card-component :Contents="data.History.Taisho"/>
-            </div>
+        <div class="history__text-inner" ref="taisho">
+          <!-- 大正の歴史 -->
+          <div class="history__text-inner-item">
+            <history-text-component :Contents="data.History.Taisho"/>
           </div>
-
-          <div class="history__cards" id="historyShowa">
-            <!-- 昭和の歴史 -->
-            <div class="history__card-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-              <history-card-component :Contents="showaHistory"/>
-            </div>
-          </div>
-
-          <div class="history__cards" id="historyHeisei">
-            <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-            <div class="history__card-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-              <history-card-component :Contents="heiseiHistory"/>
-            </div>
-          </div>
-
         </div>
+
+        <div class="history__text-inner" ref="showa">
+          <!-- 昭和の歴史 -->
+          <div class="history__text-inner-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+            <history-text-component :Contents="showaHistory"/>
+          </div>
+        </div>
+
+        <div class="history__text-inner" ref="heisei">
+          <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
+          <div class="history__text-inner-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+            <history-text-component :Contents="heiseiHistory"/>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="history__primary-titles section-container">
+  <section class="history__primary-titles">
     <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
 
-    <icon-table-component :tableItems="titleAcquisitionData"/>
+    <div class="history__primary-titles-table">
+      <icon-table-component :tableItems="titleAcquisitionData"/>
+    </div>
   </section>
 
   <div class="background-darkblue">
-    <section class="history__champions section-container">
+    <section class="history__champions">
       <contents-title-component
         :title="messages.SectionTitles.Champions.Main"
         :subTitle="messages.SectionTitles.Champions.Sub"
         color="white"/>
 
-      <div class="history__champions-card-row">
-        <div class="history__champions-card" v-for="(champion, n) in champions" :key="n">
+      <div class="history__champions-card-group">
+        <div class="history__champions-card" v-for="(champion, n) in champions" :key="n" ref="championCard">
           <champions-card-component :cardElement="champion"/>
         </div>
+        <!-- カード配置を左揃えにするため、空の要素を追加 -->
+        <div
+          class="enpty"
+          v-for="n in cardNumber"
+          :key="`enpty-${n}`"
+          :style="{ width: `${cardWidth}px` }"
+        />
       </div>
     </section>
   </div>
@@ -72,14 +79,14 @@
 // import components
 import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import HistoryCardComponent from '../components/modules/card/HistoryCardComponent';
+import HistoryTextComponent from '../components/contents/HistoryTextComponent';
 import IconTableComponent from '../components/modules/table/IconTableComponent';
 import ChampionsCardComponent from '../components/modules/card/ChampionsCardComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
-    HistoryCardComponent,
+    HistoryTextComponent,
     IconTableComponent,
     ChampionsCardComponent,
   },
@@ -87,19 +94,34 @@ export default {
     return {
       data: Data,
       ageWard: '',
-      ids: null,
       showaHistories: [],
       heiseiHistories: [],
       titleAcquisitionData: [],
       champions: [],
-      height: {
-        historySection: 0,
-        scrollTag: 0,
-        historyTaisho: 0,
-        historyShowa: 0,
-        historyHeisei: 0,
-      },
-      cardsMarginBottom: 0,
+
+      /**
+       * 沿革セクションの各アイテムの下余白
+       * @type { Number }
+       */
+      chronologyMarginBottom: 0,
+
+      /**
+       * refで取得できる要素の高さ（同じref名で複数個ある要素は除く）
+       * @type { Object }
+       */
+      elementsHeight: {},
+
+      /**
+       * チャンピオンセクションのカード個数
+       * @type { Number }
+       */
+      cardNumber: 0,
+
+      /**
+       * チャンピオンカードのwidth値
+       * @type { Number }
+       */
+      cardWidth: 0,
     }
   },
 
@@ -112,39 +134,48 @@ export default {
   },
 
   mounted() {
-    // jsでid属性を一括で取得するため、DOMのid属性を配列にする
-    let idName = [
-      'historySection',
-      'historyAgeTag',
-      'historyTaisho',
-      'historyShowa',
-      'historyHeisei',
-    ];
+    /**
+     * [要素の高さを取得]
+     * $refsを配列に変換。
+     */
+    const elements = Object.entries(this.$refs).map(([key, value]) => ({key, value}));
 
-    // 要素のidを複数取得 => global.js > methods
-    this.ids = this.getElements(idName);
+    // 配列（同じref名で複数個ある要素）以外の要素の高さを取得
+    elements.forEach(element => {
+      if (!Array.isArray(element.value)) {
+        this.elementsHeight[element.key] = element.value.offsetHeight;
+      }
+    });
 
-    // .history__cards の margin-bottom を数値で取得
-    this.cardsMarginBottom = parseInt(window.getComputedStyle(this.ids.historyTaisho).marginBottom);
+    // スクロールタグの上限設定に関係ある要素の高さがリサイズされたらプロパティを更新
+    window.addEventListener('resize', this.getScrollTargetHeight);
+
+    // .history-contents の margin-bottom を数値で取得
+    this.chronologyMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
 
     /**
-     * スクロールタグのスクロール上限を設定するために、要素の高さを取得
-     * TODO:関数とか使って一括で指定できそう(help)
+     * チャンピオンカードの配置を揃えるための処理
      */
-    this.height.historySection = this.ids.historySection.offsetHeight;
-    this.height.scrollTag      = this.ids.historyAgeTag.offsetHeight;
-    this.height.historyTaisho  = this.ids.historyTaisho.offsetHeight;
-    this.height.historyShowa   = this.ids.historyShowa.offsetHeight;
-    this.height.historyHeisei  = this.ids.historyHeisei.offsetHeight;
+    const card = this.$refs.championCard;
+
+    // チャンピオンカード > 描画後の個数と幅を取得
+    this.cardNumber = card.length;
+    this.getCardWidth();
+
+    // sp, md, pc でカード幅が変わるので、リアルタイムでwidthを取得
+    window.addEventListener('resize', this.getCardWidth);
   },
 
   computed: {
     /**
-     * スクロール量に応じて時代の表示を変える
+     * スクロール量に応じて時代タグのテキストを変える
+     * @return { String }  ex) 昭和
      */
     ageChange() {
-      let taishoHeight = this.height.historyTaisho + this.cardsMarginBottom;  // 大正の沿革コンテンツの高さを代入
-      let showaHeight  = taishoHeight + this.height.historyShowa + this.cardsMarginBottom;  // 昭和の沿革コンテンツの高さを代入
+      // 扱いやすいようにdataのプロパティを変数に代入
+      let marginBottom = this.chronologyMarginBottom;
+      let taishoHeight = this.elementsHeight.taisho + marginBottom;  // 大正の沿革ボックスの高さを代入
+      let showaHeight  = taishoHeight + this.elementsHeight.showa + marginBottom;  // 昭和の沿革ボックスの高さを代入
       let scroll = this.scrollAmount;  // スクロール量
       let age = this.ageWard;  // タグのテキスト
 
@@ -158,29 +189,62 @@ export default {
 
       return age;
     },
-    // スクロールタグのスクロール上限を設定
+
+    /**
+     * スクロールタグのスクロール上限を設定
+     * @return { Number }  沿革セクションの高さからタグの高さを引いた数値が返る
+     */
     scrollLimit() {
-      if (this.scrollAmount > this.height.historySection) {
-        this.scrollAmount = this.height.historySection - this.height.scrollTag;
+      let scroll = this.scrollAmount;  // スクロール量
+      let chronologyHeight = this.elementsHeight.chronology;  // 沿革セクション全体の高さ
+      let tag = this.elementsHeight.ageTag;  // スクロールタグの高さ
+
+      if (scroll > chronologyHeight) {
+        this.scrollAmount = chronologyHeight - tag;
       }
+
       return this.scrollAmount;
     }
-  }
+  },
+
+  methods: {
+    /**
+     * カード幅を取得
+     */
+    getCardWidth() {
+      this.cardWidth = this.$refs.championCard[0].offsetWidth;
+    },
+
+    /**
+     * スクロール上限設定に関係ある要素の高さを取得
+     */
+    getScrollTargetHeight() {
+      const ref = this.$refs;
+      this.elementsHeight.ageTag = ref.ageTag.offsetHeight;
+      this.elementsHeight.chronology = ref.chronology.offsetHeight;
+    }
+  },
+
+  beforeDestroy() {
+    // 登録したイベントを解除
+    window.removeEventListener('resize', this.getCardWidth);
+    window.removeEventListener('resize', this.getScrollTargetHeight);
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .history {
 
-  &__time-series {
+  &__chronology {
+    margin-top: interval(5);
+
+    @include mq(md) {
+      margin-top: 0;
+    }
 
     &-container {
       @include flex;
-    }
-
-    &-content {
-      width: 90%;
-      margin: 0 auto;
     }
   }
 
@@ -191,7 +255,7 @@ export default {
       display: block;
       position: relative;
       width: interval(20);
-      margin: 0 interval(3);
+      margin-right: interval(2);
 
       &::before {
         display: block;
@@ -214,7 +278,7 @@ export default {
       color: color(white);
       background-color: color(darkblue);
       border-radius: radius(hard);
-      font-size: font(sm);
+      font-size: font(12);
       font-weight: bold;
       padding: interval(.5);
       position: absolute;
@@ -223,19 +287,19 @@ export default {
     }
   }
 
-  &__cards {
+  &__text-inner {
     margin-bottom: interval(10);
 
     &:last-child {
       margin-bottom: 0;
     }
-  }
 
-  &__card-item {
-    margin-bottom: interval(10);
+    &-item {
+      margin-bottom: interval(10);
 
-    &:last-child {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -244,32 +308,22 @@ export default {
   }
 
   &__champions {
-    padding: interval(10) 0;
+    margin: 0 auto;
   }
 
-  &__champions-card-row {
-    @include mq(sm) {
-      @include flex(row wrap);
-      margin: 0 auto;
-      max-width: interval(80);
-    }
-
-    @include mq(md) {
-      max-width: interval(150);
-    }
+  &__champions-card-group {
+    @include flex(row wrap, center, center);
   }
 
   &__champions-card {
-    margin: 0 interval(2) interval(5) interval(2);
+    width: interval(32);
+    padding: interval(1);
 
     @include mq(sm) {
-      margin: 0;
-      padding: interval(1);
-      width: 50%;
+
     }
 
     @include mq(md) {
-      width: 33.33%;
     }
   }
 

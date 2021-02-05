@@ -1,44 +1,97 @@
 {
-  "MenuPanels": [
+
+  "Button": {
+    "Twitter": {
+      "Name": "Twitter",
+      "Href": "https://twitter.com/home?lang=ja"
+    }
+  },
+
+  "HomeAbout": [
     {
-      "Btn": {
-        "Name": "大会結果",
-        "Size": "xs"
+      "title": {
+        "Main": "team",
+        "Sub" : "チーム紹介"
       },
-      "Image": {
-        "Src": "awards-kantoOpen.jpg",
-        "Alt": "関東オープン表彰写真"
-      }
+      "img": {
+        "src": "group-photo_toutoSpring2017",
+        "alt": "2017年東都春季リーグ戦の集合写真"
+      },
+      "button": {
+        "name": "メンバーを見る",
+        "href": ""
+      },
+      "text": "中央大学では、20名前後の選手が在籍し、全国各地から個性的な選手が集まっています。強みや特徴は個人によって様々、まさに十人十色といったチームです。メリハリをつけ、「やるときはやる」という雰囲気を大切に活動しています。\n様々なキャラクターの選手がチームのピースとなり、時にはぶつかり、励ましあう中で目標に向かって突き進んでいます。"
     },
     {
-      "Btn": {
-        "Name": "活動詳細",
-        "Size": "xs"
+      "title": {
+        "Main": "hakumonkai",
+        "Sub" : "白門会"
       },
-      "Image": {
-        "Src": "tennis_court-in_chuoUniv-02.jpg",
-        "Alt": "中央大学ソフトテニスコートの写真"
-      }
+      "img": {
+        "src": "hakumon",
+        "alt": "中央大学多摩キャンパス白門の画像"
+      },
+      "button": {
+        "name": "白門会を知る",
+        "href": ""
+      },
+      "text": "白門とは昭和初年頃からの中央大学の象徴です。\n長い歴史の中でも白門は色あせず、現代でも根付く中央大学の誇りです。白門を叩き、白門から飛び立った先輩達を本大学は「白門会」と名付けています。ソフトテニス部白門会は、歴史と伝統を受け継ぎ、中央大学の名を背負い戦う選手たちを応援します。"
     },
     {
-      "Btn": {
-        "Name": "フォトギャラリー",
-        "Size": "xs"
+      "title": {
+        "Main": "result",
+        "Sub" : "大会結果"
       },
-      "Image": {
-        "Src": "group-photo_spring2019.jpg",
-        "Alt": "春リーグ宿舎での集合写真"
-      }
+      "img": {
+        "src": "awards-kantoOpen",
+        "alt": "関東オープン表彰写真（掛川・小田桐ペア）"
+      },
+      "button": {
+        "name": "大会結果を見る",
+        "href": ""
+      },
+      "text": "中央大学選手の大会情報は、Twitterで発信しています。Twitterアカウントでは、大会情報の他にも選手の詳細情報やイベントの開催等、様々な発信をしていますのでご覧ください。\nまた、「こんな情報が欲しい！」「こんなことが知りたい！」などありましたらお問い合わせページから受け付けますのでお気軽にご連絡下さい。"
+    },
+    {
+      "title": {
+        "Main": "active",
+        "Sub" : "活動詳細"
+      },
+      "img": {
+        "src": "tennis_court-in_chuoUniv-02",
+        "alt": "中央大学ソフトテニスコートの写真"
+      },
+      "button": {
+        "name": "活動詳細を見る",
+        "href": ""
+      },
+      "text": "中央大学ソフトテニス部の活動は、個々人の判断や裁量が大きい特色があります。\n平日の練習では、授業優先の体勢を取りながらも個々人の空きコマや時間を有効に活用することで、自主練習や全体練習時間の確保が可能になっています。休日は、試合形式や展開練習など平日では行えないような練習に取り組み、技術向上に力を入れています。"
+    },
+    {
+      "title": {
+        "Main": "photo",
+        "Sub" : "フォトギャラリー"
+      },
+      "img": {
+        "src": "group-photo_spring2019",
+        "alt": "春リーグ宿舎での集合写真"
+      },
+      "button": {
+        "name": "写真を見る",
+        "href": ""
+      },
+      "text": "中央大学ソフトテニス部のフォトギャラリーです。掲載されている写真はほんの一部ですが、メンバーの笑顔やプレー写真が溢れたコンテンツになっています。是非ご覧ください。\nまた、フォトギャラリーに掲載する写真を提供をしてくださる方を募集しています。中央大学ソフトテニス部に関連のある写真を提供してくださる方は、お問い合わせフォームからご連絡お待ちしております。"
     }
   ],
 
-  "Policy": [
+  "Concept": [
     {
-    "Title": {
-      "Main": "Symbol",
-      "Sub": "部訓"
-    },
-    "Content": "部訓が入ります。部訓が入ります。"
+      "Title": {
+        "Main": "Symbol",
+        "Sub": "部訓"
+      },
+      "Content": "部訓が入ります。部訓が入ります。"
     },
     {
       "Title": {
@@ -49,7 +102,7 @@
     },
     {
       "Title": {
-        "Main": "mission",
+        "Main": "Mission",
         "Sub": "意義"
       },
       "Content": "ソフトテニスを通じた人間育成"
@@ -129,14 +182,14 @@
   "Dormitory": [
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "レストランのアイコン"
       },
       "Content": "食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。"
     },
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "お風呂のアイコン"
       },
       "Content": "南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。\n",
@@ -144,14 +197,14 @@
     },
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "ベッドのアイコン"
       },
       "Content": "ソフトテニス部には、3人部屋・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう、年次ごとに分けて配置しています。"
     },
     {
       "Icon": {
-        "Src": "restaurant",
+        "Src": "chuo-logo",
         "Alt": "洗濯機のアイコン"
       },
       "Content": "洗濯機は、ソフトテニス部の部屋がある階に4台ございます。ソフトテニス部以外にも同階に住んでいる部との供用になります。",
@@ -605,14 +658,14 @@
     }
   ],
 
-  "Players": [
+  "Users": [
     {
       "name": {
         "ja": "坂本 信治",
         "en": "Sakamoto Shinji"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player10.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -623,13 +676,21 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "令和",
+        "year": 3
+      },
       "category": 1,
       "position": "前衛",
       "grade": 4,
       "undergraduate": "経済学部",
       "record": "戦績が入ります。",
-      "message": "メッセージが入ります。"
+      "active": {
+
+      },
+      "message": "メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "宮崎 悠登",
@@ -647,6 +708,10 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "令和",
+        "year": 3
+      },
       "category": 1,
       "position": "後衛",
       "grade": 4,
@@ -654,6 +719,7 @@
       "record": "2016年ハイスクールジャパンカップ ダブルス準優勝",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "田邉 雅人",
@@ -671,6 +737,10 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "令和",
+        "year": 3
+      },
       "category": 1,
       "position": "前衛",
       "grade": 4,
@@ -678,13 +748,14 @@
       "record": "2016年国民体育大会 少年の部 優勝",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "斎藤 利貴",
         "en": "Saito Riki"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player10.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -695,6 +766,10 @@
         "club": null,
         "alumni": null
       },
+      "graduate": {
+        "age": "令和",
+        "year": 3
+      },
       "category": 1,
       "position": "後衛",
       "grade": 4,
@@ -702,6 +777,7 @@
       "record": "2016年ハイスクールジャパンカップ ベスト8",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "佐藤 辰哉",
@@ -726,34 +802,43 @@
       "record": "2016年ハイスクールジャパンカップ ベスト4",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "丸山 章",
         "en": "Maruyama Akira"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player10.jpg",
         "alt": "丸中の写真"
       },
       "from": {
         "place": "広島県",
         "almaMater": "広島県尾道高等学校"
       },
+      "post": {
+        "club": "主務",
+        "alumni": null
+      },
+      "graduate": {
+        "age": null,
+        "year": null
+      },
       "category": 1,
       "position": "後衛",
       "grade": 3,
-      "post": "主務",
       "undergraduate": "文学部",
       "record": "2017年ハイスクールジャパンカップ ベスト4",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "橋本 誠人",
         "en": "Hashimoto Masato"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player10.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -764,23 +849,25 @@
         "club": "副主将",
         "alumni": null
       },
+      "graduate": {
+        "age": null,
+        "year": null
+      },
       "category": 1,
       "position": "前衛",
       "grade": 3,
       "undergraduate": "理工学部",
       "record": "2016年ハイスクールジャパンカップ ベスト8",
       "message": "メッセージが入ります。"
-    }
-  ],
+    },
 
-  "Staff": [
     {
       "name": {
         "ja": "田中 弘",
         "en": "Tanaka hiroshi"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player10.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -791,20 +878,25 @@
         "club": "監督",
         "alumni": "理事"
       },
+      "graduate": {
+        "age": "昭和",
+        "year": 51
+      },
       "category": 2,
       "position": null,
       "grade": null,
       "undergraduate": null,
-      "record": "2016年ハイスクールジャパンカップ ベスト8",
+      "record": "女子日本代表監督 兼 ナガセケンコー監督",
       "message": "メッセージが入ります。"
     },
+
     {
       "name": {
         "ja": "高橋 直哉",
         "en": "Takahashi Naoya"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player10.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -815,12 +907,354 @@
         "club": "部長",
         "alumni": null
       },
+      "graduate": {
+        "age": null,
+        "year": null
+      },
       "category": 2,
       "position": null,
       "grade": null,
       "undergraduate": null,
       "record": null,
       "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "丸中 大明",
+        "en": "Marunaka taimei"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "宮城県",
+        "almaMater": "宮城県東北高等学校"
+      },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "graduate": {
+        "age": "平成",
+        "year": 28
+      },
+      "category": 4,
+      "position": "後衛",
+      "grade": null,
+      "undergraduate": null,
+      "record": "第16回世界選手権国別対抗戦 優勝",
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "鈴木 琢己",
+        "en": "Suzuki takumi"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "福島県",
+        "almaMater": "宮城県東北高等学校"
+      },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "graduate": {
+        "age": "平成",
+        "year": 28
+      },
+      "category": 4,
+      "position": "前衛",
+      "grade": null,
+      "undergraduate": null,
+      "record": "第16回世界選手権国別対抗戦 優勝",
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "中堀 成生",
+        "en": "Nakahori shigeo"
+      },
+      "img": {
+        "src": "hakumonkai_OB-marunaka.png",
+        "alt": "丸中の写真"
+      },
+      "from": {
+        "place": "宮城県",
+        "almaMater": "宮城県東北高等学校"
+      },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "graduate": {
+        "age": "平成",
+        "year": 4
+      },
+      "category": 4,
+      "position": "日本代表監督",
+      "grade": null,
+      "undergraduate": null,
+      "record": "第16回世界選手権国別対抗戦 優勝",
+      "message": "メッセージが入ります。"
+    },
+
+    {
+      "name": {
+        "ja": "田中 季夫",
+        "en": "tanaka yukio"
+      },
+      "img": {
+        "src": null,
+        "alt": null
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": null,
+        "alumni": "名誉会長"
+      },
+      "graduate": {
+        "age": "昭和",
+        "year": 31
+      },
+      "category": 3,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "schoolPost": "学員会体育顧問",
+      "record": null,
+      "message": null
+    },
+
+    {
+      "name": {
+        "ja": "曽根田 正美",
+        "en": "tanaka yukio"
+      },
+      "img": {
+        "src": null,
+        "alt": null
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": null,
+        "alumni": "名誉会長"
+      },
+      "graduate": {
+        "age": "昭和",
+        "year": 31
+      },
+      "category": 3,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "schoolPost": "学員会体育顧問",
+      "record": null,
+      "message": null
+    },
+
+    {
+      "name": {
+        "ja": "村上 博之",
+        "en": "tanaka yukio"
+      },
+      "img": {
+        "src": null,
+        "alt": null
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": null,
+        "alumni": "名誉会長"
+      },
+      "graduate": {
+        "age": "昭和",
+        "year": 31
+      },
+      "category": 3,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "schoolPost": "学員会体育顧問",
+      "record": null,
+      "message": null
+    }
+  ],
+
+  "Provider": [
+    {
+      "name": "Hana",
+      "img": {
+        "src": "client-hana",
+        "alt": "Hanaのサムネイル画像"
+      },
+      "twitter": {
+        "url": "https://twitter.com/SFphoto87",
+        "userName": "SFphoto87"
+      },
+      "instagram": {
+        "url": "https://www.instagram.com/sfphoto87/",
+        "userName": "sfphoto87"
+      }
+    }
+  ],
+
+  "ImageApiResponse": [
+    {
+      "id": 1,
+      "src": "player01.jpg",
+      "alt": "宮崎 悠登",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2019
+      }
+    },
+    {
+      "id": 2,
+      "src": "player14.jpeg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2019
+      }
+    },
+    {
+      "id": 3,
+      "src": "player10.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2019
+      }
+    },
+    {
+      "id": 4,
+      "src": "player02.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2019
+      }
+    },
+    {
+      "id": 5,
+      "src": "interCollege2019_match_scenery06.jpeg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2019
+      }
+    },
+    {
+      "id": 6,
+      "src": "player07.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2018
+      }
+    },
+    {
+      "id": 7,
+      "src": "player09.jpg",
+      "alt": "おると",
+      "addDate": "2020.12.02",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2017
+      }
+    },
+    {
+      "id": 8,
+      "src": "group-photo2017-spring.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2017
+      }
+    },
+    {
+      "id": 9,
+      "src": "group-photo_higashi2017.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "関東春季リーグ戦",
+        "year": 2017
+      }
+    },
+    {
+      "id": 10,
+      "src": "group-photo2017-spring.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "インカレ",
+        "year": 2017
+      }
+    },
+    {
+      "id": 11,
+      "src": "player03.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "インカレ",
+        "year": 2015
+      }
+    },
+    {
+      "id": 12,
+      "src": "player04.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "インカレ",
+        "year": 2015
+      }
+    },
+    {
+      "id": 13,
+      "src": "player08.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "インカレ",
+        "year": 2015
+      }
+    },
+    {
+      "id": 14,
+      "src": "player11.jpg",
+      "alt": "おると",
+      "addDate": "2020.11.20",
+      "shooting": {
+        "competition": "インカレ",
+        "year": 2019
+      }
     }
   ]
 }

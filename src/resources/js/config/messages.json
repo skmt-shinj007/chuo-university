@@ -1,43 +1,49 @@
 {
   "ReserveText"    : "ただいまテキストを準備中です。もう少々お待ちください。更新されない場合はお問い合わせフォームからご連絡ください。",
   "ReserveImageAlt": "イメージの補足テキストが入ります。",
+  "Copyright": "@ Chuo University Soft Tennis Team",
 
   "Header": {
     "MainTitle"       : "chuo university soft tennis team",
-    "AssistanceTitle" : "中央大学ソフトテニス部",
-    "NavItem"         : [ "Top", "Club", "Member", "Hakumonkai", "History", "Photo", "Contact" ]
+    "AssistanceTitle" : "中央大学ソフトテニス部"
   },
+
+  "Nav": {
+    "Contact": "Contact"
+  },
+
   "Footer": {
-    "Information": {
-      "ClubName"        : "クラブ名：中央大学ソフトテニス部",
-      "Address"         : "住所：東京都八王子市東中野742-1",
-      "TelephoneNumber" : "TEL：042‐594‐4243",
-      "MailAddress"     : "MAIL：xxxxxxxxxxxxx@gmail.com",
-      "Caretaker"       : "管理人：村上 博之"
-    },
-    "EndText": "@ Chuo University Soft Tennis Team"
+    "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容は、部の主務が受け付けますのでお気軽にご連絡ください。"
+  },
+
+  "Information": {
+    "ClubName"        : "中央大学ソフトテニス部白門会",
+    "Address"         : "東京都八王子市東中野742-1",
+    "TelephoneNumber" : "042‐594‐4243",
+    "PhoneCode"       : "81",
+    "MailAddress"     : "xxxxxxxxxxxxx@gmail.com"
   },
 
   "MainVisual": {
-    "Top": "CHUO\nUNIVERSITY\nSOFT\nTENNIS",
+    "Home": "CHUO\nUNIVERSITY\nSOFT\nTENNIS",
     "Member": "CHUO UNIVERSITY SOFT TENNIS\nTEAM MEMBER"
   },
 
   "SectionTitles": {
+    "News": {
+      "Main": "news",
+      "Sub" : "ニュース"
+    },
     "Support": {
       "Main": "support",
       "Sub" : "サポート"
-    },
-    "Team": {
-      "Main": "team",
-      "Sub" : "チーム紹介"
     },
     "Hakumonkai": {
       "Main": "hakumonkai",
       "Sub" : "白門会"
     },
-    "Policy": {
-      "Main": "team policy",
+    "Concept": {
+      "Main": "team concept",
       "Sub" : "方針"
     },
     "Practice": {
@@ -53,7 +59,7 @@
       "Sub" : "メンバー"
     },
     "Photo": {
-      "Main": "photo gallery",
+      "Main": "photo",
       "Sub" : "フォトギャラリー"
     },
     "History": {
@@ -75,6 +81,26 @@
     "Staff": {
       "Main": "staff",
       "Sub" : "スタッフ"
+    },
+    "Officer": {
+      "Main": "officer",
+      "Sub" : "白門会役員"
+    },
+    "ActiveAlumni": {
+      "Main": "active OB",
+      "Sub" : "活躍中の卒業生"
+    },
+    "Message": {
+      "Main": "message",
+      "Sub" : "OBの方へ"
+    },
+    "Provider": {
+      "Main": "provider",
+      "Sub" : "写真提供"
+    },
+    "Contact": {
+      "Main": "contact",
+      "Sub" : "お問い合わせ"
     }
   },
 
@@ -84,9 +110,14 @@
     "TournamentInformation" : "大会情報"
   },
 
+  "FunctionName": {
+    "Filter" : "絞り込み"
+  },
+
   "ButtonName": {
     "Member"     : "メンバーを見る",
-    "Hakumonkai" : "白門会を知る"
+    "Hakumonkai" : "白門会を知る",
+    "ToContact"  : "お問い合わせへ"
   },
 
   "TagTitles": {
@@ -99,9 +130,12 @@
     "Taisho" : "大正"
   },
 
-  "Top": {
-    "TeamDescription": "中央大学では、20名前後の選手が在籍し、全国各地から個性的な選手が集まっています。強みや特徴は個人によって様々、まさに十人十色といったチームです。メリハリをつけ、「やるときはやる」という雰囲気を大切に活動しています。\n様々なキャラクターの選手がチームのピースとなり、時にはぶつかり、励ましあう中で目標に向かって突き進んでいます。",
-    "HakumonkaiDescription": "白門とは昭和初年頃からの中央大学の象徴です。\n長い歴史の中でも白門は色あせず、現代でも根付く中央大学の誇りです。白門を叩き、白門から飛び立った先輩達を本大学は「白門会」と名付けています。ソフトテニス部白門会は、歴史と伝統を受け継ぎ、中央大学の名を背負い戦う選手たちを応援します。",
+  "Filter": {
+    "All": "全て",
+    "Years": "年月"
+  },
+
+  "Home": {
     "Support": "中央大学ソフトテニス部は、幅広い方々のサポートの下活動しています。\n中央大学、OB、メーカー様、その他関係者様の手厚いサポートを賜り、ソフトテニスに100%コミットできる環境づくりと円滑な部活動運営が可能となっています。各関係者様の多大なサポートとご協力に感謝し、謙虚かつ真摯な姿勢を忘れずに活動して参ります。"
   },
 
@@ -116,5 +150,13 @@
     "InterCollege"                   : "全日本大学対抗戦",
     "EastInterCollege"               : "東日本大学対抗戦",
     "AllJapanUniversityChampionship" : "全日本大学王座決定戦"
+  },
+
+  "Hakumonkai": {
+    "Lead": "白門会とは中央大学卒業生によるOB会の呼称です。\n白門会ソフトテニス部は、現役選手を応援すると共に納会等のイベント運営も行っています。\n伝統あるソフトテニス部の活躍をさまざまな形で支援するべく、これからも活動していきます。",
+    "Message": "白門会員様には会報をお届けしています。\n一部の会員様は、住所等が不明のまま会報のお届けができておりません。\n会員様で住所を変更された場合や会報が届けられていない方がおりましたら、お問い合わせフォームからご連絡お願い致します。",
+    "OfficerTable": {
+      "Heading": ["白門会役職", "名前", "卒業年", "学員会役職"]
+    }
   }
 }

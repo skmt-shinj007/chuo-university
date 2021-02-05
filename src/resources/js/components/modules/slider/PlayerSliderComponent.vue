@@ -2,7 +2,13 @@
   <div class="slider">
     <swiper ref="contentsImageSwiper" :options="params">
       <swiper-slide v-for="(player, n) in players" :key="n">
-        <player-card-component :player="player"/>
+        <player-card-component :player="player">
+          <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">
+            <div class="alumni__record">
+              <span class="alumni__record-text">{{ player.player.record }}</span>
+            </div>
+          </template>
+        </player-card-component>
       </swiper-slide>
 
       <!-- <div class="swiper-pagination" slot="pagination"></div> -->
@@ -20,9 +26,12 @@ export default {
   components: {
     PlayerCardComponent,
   },
+
   props: {
+    // playerCardに受け渡す選手データ
     players: Array,
   },
+
   computed: {
     params() {
       return {
@@ -36,17 +45,18 @@ export default {
         },
 
         breakpoints: {
-          // md
-          560: {
+          500: {
             slidesPerView: 2,
             slidesPerGroup: 2,
           },
-          // pc
-          992: {
+          800: {
             slidesPerView: 3,
             slidesPerGroup: 1,
           },
-
+          1440: {
+            slidesPerView: 4,
+            slidesPerGroup: 1,
+          },
         },
 
         // ナビゲーション
@@ -69,16 +79,28 @@ export default {
 
 <style lang="scss" scoped>
 .slider {
+  height: auto;
 
-  // slider の時のみ指定したい選手カードのスタイルを指定
+  // sliderの場合のplayer cardの幅を指定
   .player-card {
     margin: 0 auto;
+    width: 80%;
 
     @include mq(sm){
-      width: 60%;
+      width: 90%;
     }
   }
 
+}
+
+// slotで差し込んだ部分のスタイル
+.alumni__record {
+  margin-left: interval(.5);
+
+  &-text {
+    font-size: font(12);
+    letter-spacing: 1.1px;
+  }
 }
 
 </style>

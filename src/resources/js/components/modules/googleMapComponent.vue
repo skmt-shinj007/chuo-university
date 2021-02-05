@@ -19,10 +19,9 @@ export default {
     width: 100%;
     height: $map-height-sp;
 
-    // pc style
     @include mq(md) {
       height: $map-height-pc;
-    };
+    }
   }
 
   &__attentionText {
@@ -30,15 +29,15 @@ export default {
     display: block;
     width: 80%;
     text-align: center;
-    font-size: font(xs);
+    font-size: font(10);
+    font-weight: normal;
     letter-spacing: 1.5px;
 
-    // pc style
     @include mq(md) {
       text-align: end;
       width: 100%;
       padding: 0 interval(1);
-    };
+    }
   }
 }
 </style>

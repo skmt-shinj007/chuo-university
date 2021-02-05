@@ -37,24 +37,17 @@ export default {
 
 <style lang="scss">
 .contents-title {
-  padding-bottom: interval(5);
+  padding: interval(5) 0;
   @include flex(column nowrap, center, center);
-
-  @include mq(md) {
-    padding-bottom: interval(7);
-  }
 
   &-white {
     color: color(white);
   }
 
   &__assistance {
-    font-size: font(xs);
-
-    // pc style
-    @include mq(md) {
-      font-size: font(sm);
-    };
+    font-size: font(10);
+    letter-spacing: 2px;
+    font-weight: normal;
   }
 
   &__primary {
@@ -71,7 +64,7 @@ export default {
       width: 50px;
       height: 2px;
       position: absolute;
-      bottom: -20px;
+      bottom: - interval(2);
       left: 50%;
       transform: translateX(-50%);
       background-color: color(darkblue);

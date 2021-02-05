@@ -5,16 +5,28 @@
   </figure>
 
   <div class="player-card__information">
-    <div class="player-card__information-name-wrap">
-      <span class="player-card__information-name">{{ player.name.ja }}</span>
-      <span class="player-card__information-name-english">{{ player.name.en }}</span>
+    <div class="player-card__name">
+      <span class="player-card__name-ja">{{ player.name.ja }}</span>
+      <span class="player-card__name-en">{{ player.name.en }}</span>
     </div>
 
-    <div class="player-card__information-tags">
-      <position-tag-component :position="player.position"/>
-      <tag-component v-if="player.post.club" :content="player.post.club"/>
-      <grade-tag-component :grade="player.grade"/>
+    <div class="player-card__tag-group">
+
+      <div class="player-card__tag">
+        <position-tag-component :position="player.position"/>
+      </div>
+      <div class="player-card__tag">
+        <grade-tag-component v-if="player.grade" :grade="player.grade"/>
+      </div>
     </div>
+
+    <div class="player-card__post" v-if="player.post.club">
+      <label class="player-card__post-label">{{ player.post.club }}</label>
+    </div>
+
+    <slot name="addCardContents" :player="player">
+      <!-- 差し込み：カードに追加したい内容を親コンポーネントで記述 -->
+    </slot>
   </div>
 </div>
 </template>
@@ -42,15 +54,7 @@ export default {
 
 <style lang="scss">
 .player-card {
-  width: 60%;
-
-  @include mq(sm) {
-    width: 30%;
-  }
-
-  @include mq(md) {
-    width: 20%;
-  }
+  position: relative;
 
   &__figure {
     @include trimming(aspect(square));
@@ -61,23 +65,44 @@ export default {
   &__information {
     background-color: color(lightgrey);
     padding: interval(1);
+  }
 
-    &-name {
-      font-size: font(sm);
-      font-weight: bold;
-      margin: 0 interval(1) 0 interval(.5);
-    }
+  &__name-ja {
+    display: block;
+    margin-left: interval(.5);
+  }
 
-    &-name-english {
-      font-weight: bold;
-      font-size: font(xs);
-    }
+  &__name-en {
+    @extend .player-card__name-ja;
+    font-size: font(10);
+  }
 
-    &-tags {
-      @include flex($flow: row wrap);
-      align-content: space-around;
-      padding: interval(1) 0;
-    }
+  &__tag-group {
+    @include flex(row wrap);
+    align-content: space-around;
+    padding: interval(1) 0;
+  }
+
+  &__tag {
+    margin: interval(.5);
+  }
+
+  &__post {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: color(darkblue);
+    width: interval(6);
+    height: interval(6);
+    border: 2px solid color(white);
+    border-radius: radius(circle);
+    @include flex(row nowrap, center, center);
+  }
+
+  &__post-label {
+    color: color(white);
+    font-size: font(12);
+    line-height: 1;
   }
 }
 </style>

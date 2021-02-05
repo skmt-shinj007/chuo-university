@@ -18,7 +18,7 @@
     <div id="app">
         {{-- ヘッダーコンポーネント読み込み --}}
         <header-component></header-component>
-        <div class="Right-justified">
+        <div class="container">
             {{-- メインコンテンツ読み込み --}}
             <main>
                 <router-view></router-view>

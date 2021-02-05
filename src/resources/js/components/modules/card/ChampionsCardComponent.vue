@@ -1,8 +1,6 @@
 <template>
 <div class="champions-card">
-  <div class="champions-card__background">
-
-  </div>
+  <div class="champions-card__background"/>
 
   <div class="champions-card__title-wrapper">
     <h5 class="champions-card__title">Champion pair</h5>
@@ -25,11 +23,13 @@
   </div>
 
   <div class="champions-card__tournament-info">
-    <h3 class="champions-card__tournament-info-title">{{ messages.ContentsTitles.TournamentInformation }}</h3>
+    <span class="champions-card__tournament-info-title">
+      {{ messages.ContentsTitles.TournamentInformation }}
+    </span>
+
     <table-component
       :tableItems="cardElement.TournamentInformation"
-      :valueTransparent="true"
-      font="sm"/>
+      :valueTransparent="true"/>
   </div>
 
 </div>
@@ -53,6 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .champions-card {
+  width: 100%;
   background-color: color(white);
   padding: interval(2);
   position: relative;
@@ -65,7 +66,7 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
-    @include background-image('/svg/trophy-solid-gold.svg', center center);
+    @include background-image('/svg/trophy-solid-gold.svg');
   }
 
   &__title-wrapper {
@@ -73,12 +74,14 @@ export default {
   }
 
   &__title {
-    font-size: font(lg);
+    @include bangers(font(26), 1.5px);
+    line-height: 1;
   }
 
   &__pair {
-    @include flex();
+    width: 100%;
     margin-bottom: interval(2);
+    font-size: font(12);
 
     @include mq(sm) {
       display: block;
@@ -86,19 +89,15 @@ export default {
   }
 
   &__player {
-    width: 50%;
-    @include flex(row nowrap, center, center);
+    @include flex(row nowrap, flex-start, center);
+    margin-top: interval(1);
 
-    @include mq(sm) {
-      width: 100%;
-      justify-content: flex-start;
-      padding-left: interval(1);
+    &:first-child {
+      margin-top: 0;
     }
   }
 
   &__player-name {
-    font-size: font(sm);
-    font-weight: bold;
     letter-spacing: 1.8px;
   }
 
@@ -108,13 +107,11 @@ export default {
     fill: color(darkblue);
   }
 
-  &__tournament-info {
-    &-title {
-      position: relative;
-      padding-left: interval(3);
-      margin-bottom: interval(1);
-      @include text-before-line(interval(2), 1px, color(darkblue));
-    }
+  &__tournament-info-title {
+    display: block;
+    margin-bottom: interval(1);
+    font-size: font(14);
+    @include middle-line-text(2, 1px, color(darkblue));
   }
 }
 </style>

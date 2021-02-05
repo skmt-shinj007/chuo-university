@@ -1,20 +1,20 @@
 <template>
-<div class="history-card">
-  <div class="history-card__tag-modal">
+<div class="history-text">
+  <div class="history-text__tag-modal">
     <record-tag-component :tagTitle="messages.TagTitles.Record"/>
   </div>
 
-  <div class="history-card__title">
-    <h3 class="history-card__title-main">{{ Contents.Title.Main }}</h3>
-    <span class="history-card__title-sub">{{ Contents.Title.Sub }}</span>
+  <div class="history-text__title">
+    <h3 class="history-text__title-main">{{ Contents.Title.Main }}</h3>
+    <span class="history-text__title-sub">{{ Contents.Title.Sub }}</span>
   </div>
 
-  <div class="history-card__tag-date">
+  <div class="history-text__tag-date">
     <tag-component color="outline-orange" :content="Contents.term"/>
   </div>
 
-  <div class="history-card__text-container">
-    <p class="history-card__text nl2br" v-text="Contents.Text"/>
+  <div class="history-text__text-container">
+    <p class="history-text__text nl2br" v-text="Contents.Text"/>
   </div>
 
 </div>
@@ -22,8 +22,8 @@
 
 <script>
 // component import
-import TagComponent from '../tag/TagComponent';
-import RecordTagComponent from '../tag/RecordTagComponent';
+import TagComponent from '../modules/tag/TagComponent';
+import RecordTagComponent from '../modules/tag/RecordTagComponent';
 
 export default {
   components: {
@@ -40,23 +40,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.history-card {
+.history-text {
   border: 2px solid color(darkblue);
   border-radius: radius(hard);
   position: relative;
-
-  @include mq(sm) {
-    padding: interval(1);
-  }
+  padding: pixel(2);
 
   &__tag-modal {
     position: absolute;
-    top: - interval(3);
+    top: - interval(2.5);
     right: 5%;
+
+    @include mq(md) {
+      top: - interval(3);
+    }
   }
 
   &__tag-date {
-    margin: interval(1) interval(2);
+    margin: interval(1) 0;
 
     @include mq(sm) {
       width: interval(22);
@@ -68,17 +69,12 @@ export default {
     margin-top: interval(3);
 
     &-main {
-      font-size: font(lg);
-    }
-
-    &-sub {
-      font-size: font(sm);
-      font-weight: bold;
+      font-size: font(18);
     }
   }
 
   &__text-container {
-    margin: interval(2);
+    margin: interval(2) 0;
   }
 
   &__text {

@@ -4,79 +4,65 @@
 
 // color map
 $color: (
-	darkblue:      #091e2f,
-	lightDarkblue: #10334e,
-	deepDarkblue:  #030A10,
-  orange:        #e56c2c,
-  lightgray:     #f2f2f2,
-  white:         #ffffff,
+	darkblue      : #091e2f,
+	lightDarkblue : #10334e,
+	deepDarkblue  : #030A10,
+  orange        : #e56c2c,
+  lightgray     : #f2f2f2,
+  white         : #ffffff,
 
-  shadow:      #e6e6e6,
-  darkShadow:  darken(#e6e6e6, 20%),
-  lightShadow: lighten(#e6e6e6, 10%),
+  shadow      : #e6e6e6,
+  darkShadow  : darken(#e6e6e6, 20%),
+  lightShadow : lighten(#e6e6e6, 10%),
 
-  lightGreen: #56b145,
+  lightGreen : #56b145,
+  deepYellow : #FDC830,
+  japanRed   : #C41A41,
+
+  twitter  : #00acee,
+  facebook : #3b5998,
 
   // bootstrap color
-  primary:    #007bff,
-  successful: #28a745,
-  danger:     #dc3545,
-  warning:    #ffc107,
-  info:       #17a2b8,
-  light:      #f8f9fa,
-  dark:       #343a40,
+  primary    : #007bff,
+  successful : #28a745,
+  danger     : #dc3545,
+  warning    : #ffc107,
+  info       : #17a2b8,
+  light      : #f8f9fa,
+  dark       : #343a40,
 ) !default;
 
 // breakpoint map
 $breakpoints: (
   xs: 'screen and (min-width: 320px)',
   sm: 'screen and (min-width: 560px)',
-	md: 'screen and (min-width: 992px)',
-	lg: 'screen and (min-width: 1200px)',
+	md: 'screen and (min-width: 1025px)',
+	lg: 'screen and (min-width: 1920px)',
 ) !default;
 
-// font size map
-$font: (
-  xs:   10px,
-  sm:   12px,
-  base: 14px,
-  md:   16px,
-  lg:   18px,
-  xl:   22px,
+// display(このサイトが対応するデバイス幅)
+$display: (
+  min: 320px,
+  max: 1600px
+)!default;
 
-  heading:    32px,
-  heading-lg: 50px,
-  mv:         48px,
-  mv-lg:      80px,
-) !default;
+// 固定値で持っておきたい要素幅を指定する（max-width想定）
+$width: (
+  header: 120px,
+)!default;
+
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+$base-font: 16;
 
 /**
  * base pixel (8px)
- * rem記法を基準に設定。
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
-$base-pixel: 1rem / 2;
-
-/**
- * button size
- */
-$button: (
-  xs-width: 200px,
-  xs-height: 45px,
-
-  sm-width: 240px,
-  sm-height: 50px,
-
-  lg-width: 300px,
-  lg-height: 60px,
-);
-
-/**
- * icon size
- */
-$icon: (
-  normal: 20px,
-  lg: 32px,
-);
+$base-pixel: 8px;
+$base-rem: 1rem / 2;
 
 /**
  * google map size
@@ -93,9 +79,10 @@ $map-height-pc: map-get($map: $googleMap, $key: pc-height);
  * アスペクト比（基準を100%と想定）
  */
 $aspectRatio: (
-  square: 100%,       // 1:1
-  rectangle: 66.7%,   // 3:2
-  golden: 61.8%,      // 1:1.618
+  square    : 100%,  // 1  : 1
+  rectangle : 66.7%, // 3  : 2
+  golden    : 61.8%, // 1  : 1.618
+  wide      : 56%,   // 16 : 9
 );
 
 /**

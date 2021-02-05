@@ -82,21 +82,19 @@ export default {
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: font(sm);
+    font-size: font(10);
 
-    // tab style
     @include mq(sm) {
       line-height: 2;
-    };
+    }
   }
 
   &__secondary-caption {
-    font-size: font(xs);
+    font-size: font(10);
   }
 
   &__capacity-number {
-    font-size: font(md);
-    font-weight: bold;
+    font-size: font(16);
   }
 }
 </style>

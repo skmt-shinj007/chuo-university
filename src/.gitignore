@@ -1,6 +1,10 @@
 /node_modules
 # public配下を監視対象から除外
-public/
+/public/favicon.ico
+/public/.htaccess
+/public/web.config
+/public/robots.txt
+/public/mix-manifest.json
 /storage/*.key
 /vendor
 .env
