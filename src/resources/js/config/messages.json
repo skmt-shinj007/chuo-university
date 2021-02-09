@@ -121,7 +121,8 @@
   },
 
   "TagTitles": {
-    "Record": "戦績"
+    "Record": "戦績",
+    "RecordHover": "WATCH"
   },
 
   "Age": {
