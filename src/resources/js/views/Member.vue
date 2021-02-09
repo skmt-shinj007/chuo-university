@@ -29,9 +29,6 @@
         :key="`enpty-${n}`"
         :style="{ width: `${ticketWidth}px` }"/>
     </div>
-
-    <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
-
   </section>
 
   <section class="member__staff">
@@ -52,6 +49,9 @@
       />
     </div>
   </section>
+
+  <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
+
 </div>
 </template>
 
