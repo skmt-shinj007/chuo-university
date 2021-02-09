@@ -283,10 +283,14 @@ export default {
   &__tag-group {
     margin-top: interval(2);
     @include flex(row wrap, center, center);
+
+    @include mq(sm) {
+      @include flex(row wrap, flex-start, center);
+    }
   }
 
   &__tag {
-    margin-right: interval(.5);
+    margin: 0 interval(.5) interval(.5) 0;
 
     &:last-child {
       margin-right: 0;

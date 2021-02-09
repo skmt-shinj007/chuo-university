@@ -6259,8 +6259,16 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 560px) {
+.ticket-modal__tag-group[data-v-358d2551] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
 .ticket-modal__tag[data-v-358d2551] {
-  margin-right: 0.25rem;
+  margin: 0 0.25rem 0.25rem 0;
 }
 .ticket-modal__tag[data-v-358d2551]:last-child {
   margin-right: 0;
