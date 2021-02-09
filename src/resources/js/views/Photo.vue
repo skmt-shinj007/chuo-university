@@ -18,7 +18,7 @@
       :subTitle="messages.SectionTitles.Provider.Sub"/>
 
     <div class="photo__provider-ticket-group">
-      <div class="photo__provider-ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket">
+      <div class="photo__provider-ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
         <provider-ticket-component :providerObj="provider"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
@@ -28,6 +28,9 @@
         :key="`enpty-${n}`"
         :style="{ width: `${ticketWidth}px` }"/>
     </div>
+
+    <provider-ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
+
   </section>
 </div>
 </template>
@@ -41,12 +44,14 @@ import ProviderTicketComponent from '../components/modules/ticket/ProviderTicket
 // config json import
 import Data from '../config/data.json';
 import Features from '../config/features.json';
+import ProviderTicketModalComponent from '../components/modules/modal/ProviderTicketModalComponent.vue';
 
 export default {
   components: {
     ContentsTitleComponent,
     ImageLatticeComponent,
     ProviderTicketComponent,
+    ProviderTicketModalComponent,
   },
   data() {
     return {
@@ -80,6 +85,17 @@ export default {
        * @type { Number }
        */
       wicketWidth: 0,
+
+      /**
+       * [モーダル展開フラグ]
+       */
+      showModal: false,
+
+      /**
+       * [モーダルに渡すデータ]
+       */
+      clickElement: null,
+
     }
   },
 
@@ -110,6 +126,19 @@ export default {
      */
     getTicketWidth() {
       this.ticketWidth = this.$refs.providerTicket[0].offsetWidth;
+    },
+
+    /**
+     * [モーダル開閉処理]
+     */
+    openModal(el) {
+      this.showModal = true;
+      this.clickElement = el;
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.showModal = false;
+      document.body.classList.remove("modal-open");
     },
   },
 

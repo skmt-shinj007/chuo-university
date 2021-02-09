@@ -11296,6 +11296,474 @@ import用ファイル
 /**
  * @keyframe を定義
  */
+@-webkit-keyframes iconSlide-data-v-5885bf62 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-5885bf62 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown-data-v-5885bf62 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown-data-v-5885bf62 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-5885bf62 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-5885bf62 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@-webkit-keyframes rotation-data-v-5885bf62 {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation-data-v-5885bf62 {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.modal[data-v-5885bf62] {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 910;
+  background-color: rgba(3, 10, 16, 0.9);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.modal-window[data-v-5885bf62] {
+  height: 100%;
+  padding: 0 1rem;
+  position: relative;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.ticket-modal__container[data-v-5885bf62] {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 2.5rem auto;
+  border-radius: 8px;
+  position: relative;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__container[data-v-5885bf62] {
+    width: 80%;
+}
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__container[data-v-5885bf62] {
+    max-width: 50rem;
+    margin: 2.5rem auto;
+}
+}
+.ticket-modal__close-btn[data-v-5885bf62] {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #e56c2c;
+  box-shadow: 0 3px 10px 1px #c65418;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.ticket-modal__close-btn > i[data-v-5885bf62] {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  width: calc( 2.5rem / 2);
+  height: 3px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-out;
+}
+.ticket-modal__close-btn > i[data-v-5885bf62]::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
+.ticket-modal__content[data-v-5885bf62] {
+  padding: 1rem;
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__content[data-v-5885bf62] {
+    padding: 1.5rem;
+}
+}
+.ticket-modal__header[data-v-5885bf62] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 0;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__header[data-v-5885bf62] {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.ticket-modal__header-thumbnail[data-v-5885bf62] {
+  padding: 8px;
+}
+.ticket-modal__header-info[data-v-5885bf62] {
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__header-info[data-v-5885bf62] {
+    margin-top: 0;
+    margin-left: 2rem;
+}
+}
+.ticket-modal__thumbnail-border[data-v-5885bf62] {
+  width: 10rem;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-modal__thumbnail-border[data-v-5885bf62]::before {
+  content: "";
+  display: block;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #0179D5;
+  background: linear-gradient(to bottom, #0179D5 0%, #091E2F 100%);
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__thumbnail-border[data-v-5885bf62] {
+    width: 9rem;
+}
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__thumbnail-border[data-v-5885bf62] {
+    width: 12rem;
+}
+}
+.ticket-modal__thumbnail[data-v-5885bf62] {
+  position: relative;
+  width: 100%;
+}
+.ticket-modal__thumbnail[data-v-5885bf62]::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.ticket-modal__thumbnail > img[data-v-5885bf62] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ticket-modal__thumbnail > img[data-v-5885bf62] {
+  border-radius: 50%;
+}
+.ticket-modal__name[data-v-5885bf62] {
+  text-align: center;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__name[data-v-5885bf62] {
+    text-align: left;
+}
+}
+.ticket-modal__name-account[data-v-5885bf62] {
+  font-size: 1.125rem;
+}
+.ticket-modal__tag-group[data-v-5885bf62] {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.ticket-modal__tag-group[data-v-5885bf62] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
+.ticket-modal__tag[data-v-5885bf62] {
+  margin: 0 0.25rem 0.25rem 0;
+}
+.ticket-modal__tag[data-v-5885bf62]:last-child {
+  margin-right: 0;
+}
+.ticket-modal__line[data-v-5885bf62] {
+  width: 100%;
+  height: 2px;
+  background-color: #f2f2f2;
+}
+.modal-enter-active[data-v-5885bf62], .modal-leave-active[data-v-5885bf62] {
+  transition: opacity 0.4s;
+}
+.modal-enter-active .modal-window[data-v-5885bf62], .modal-leave-active .modal-window[data-v-5885bf62] {
+  transition: opacity 0.4s, transform 0.4s;
+}
+.modal-leave-active[data-v-5885bf62] {
+  transition: opacity 0.6s ease 0.4s;
+}
+.modal-enter[data-v-5885bf62], .modal-leave-to[data-v-5885bf62] {
+  opacity: 0;
+}
+.modal-enter .modal-window[data-v-5885bf62], .modal-leave-to .modal-window[data-v-5885bf62] {
+  opacity: 0;
+  transform: translateY(-20px);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
+ * base pixel (8px)
+ * rem だとフォントサイズに影響するため、pixelで定義
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+/**
+ * @keyframe を定義
+ */
 @-webkit-keyframes iconSlide-data-v-46e3fba3 {
 0% {
     transform: translateX(0);
