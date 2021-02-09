@@ -6259,8 +6259,16 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 560px) {
+.ticket-modal__tag-group[data-v-358d2551] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+}
 .ticket-modal__tag[data-v-358d2551] {
-  margin-right: 0.25rem;
+  margin: 0 0.25rem 0.25rem 0;
 }
 .ticket-modal__tag[data-v-358d2551]:last-child {
   margin-right: 0;
@@ -6268,44 +6276,10 @@ import用ファイル
 .ticket-modal__line[data-v-358d2551] {
   width: 100%;
   height: 2px;
-  margin-top: 2.5rem;
   background-color: #f2f2f2;
 }
 .ticket-modal__list[data-v-358d2551] {
   padding: 2.5rem 0;
-}
-.ticket-modal__list-item[data-v-358d2551] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  margin-bottom: 1rem;
-}
-.ticket-modal__list-item[data-v-358d2551]:last-child {
-  margin-bottom: 0;
-}
-.ticket-modal__list-item > span[data-v-358d2551] {
-  font-size: 0.75rem;
-}
-@media screen and (min-width: 560px) {
-.ticket-modal__list-item > span[data-v-358d2551] {
-    font-size: 1rem;
-}
-}
-.ticket-modal__list-title[data-v-358d2551] {
-  display: block;
-  width: 30%;
-  text-align: center;
-}
-.ticket-modal__list-content[data-v-358d2551] {
-  display: block;
-  width: 70%;
-  margin-left: 0.5rem;
-}
-@media screen and (min-width: 1025px) {
-.ticket-modal__list-content[data-v-358d2551] {
-    margin-left: 0;
-}
 }
 .modal-enter-active[data-v-358d2551], .modal-leave-active[data-v-358d2551] {
   transition: opacity 0.4s;

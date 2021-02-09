@@ -1,7 +1,7 @@
 <template>
   <transition name="modal" appear>
     <div class="modal" @click.self="$emit('close')">
-      <div class="modal-window" @click="$emit('close')">
+      <div class="modal-window" @click.self="$emit('close')">
 
         <div class="ticket-modal">
           <div class="ticket-modal__container">
@@ -30,10 +30,10 @@
                     <div class="ticket-modal__tag" v-if="item.post.club">
                       <tag-component :content="item.post.club" :responsive="true"/>
                     </div>
-                    <div class="ticket-modal__tag">
+                    <div class="ticket-modal__tag" v-if="item.position">
                       <position-tag-component :position="item.position" :responsive="true"/>
                     </div>
-                    <div class="ticket-modal__tag">
+                    <div class="ticket-modal__tag" v-if="item.grade">
                       <grade-tag-component :grade="item.grade" :responsive="true"/>
                     </div>
                   </div>
@@ -46,10 +46,7 @@
 
                 <!-- リストは、ユーザーカテゴリーによって内容が異なるのでslotに。 -->
                 <slot name="list">
-                <li class="ticket-modal__list-item" v-for="(listItem, n) in listItems" :key="n">
-                  <span class="ticket-modal__list-title">{{ listItem.key }}</span>
-                  <span class="ticket-modal__list-content nl2br" v-text="listItem.value"/>
-                </li>
+                  <table-component :tableItems="lists"/>
                 </slot>
 
               </ul>
@@ -70,21 +67,23 @@
 import TagComponent from '../tag/TagComponent.vue';
 import PositionTagComponent from '../tag/PositionTagComponent.vue';
 import GradeTagComponent from '../tag/GradeTagComponent.vue';
+import TableComponent from '../table/TableComponent.vue';
 
 export default {
   components: {
     TagComponent,
     PositionTagComponent,
     GradeTagComponent,
+    TableComponent,
   },
 
   data() {
     return {
       /**
-       * リストのアイテム
+       * [選手] リストのアイテム
        * @type { Array }
        */
-      listItems: [],
+      lists: [],
     }
   },
 
@@ -110,7 +109,7 @@ export default {
 
   beforeMount() {
     /**
-     * リストの配列をチケットのデータを基に作成し、配列:listItems にプッシュする
+     * リストの配列をチケットのデータを基に作成し、配列:lists にプッシュする
      */
     const lists = [
       {
@@ -118,8 +117,12 @@ export default {
         value: `${this.item.grade}年生`
       },
       {
-        key: "学部",
+        key: "所属学部",
         value: this.item.undergraduate
+      },
+      {
+        key: "役職",
+        value: this.item.post.club
       },
       {
         key: "出身地",
@@ -134,7 +137,7 @@ export default {
         value: this.item.position
       },
       {
-        key: "戦績",
+        key: "成績",
         value: this.item.record
       },
       {
@@ -142,7 +145,7 @@ export default {
         value: this.item.message
       },
     ];
-    lists.forEach(element => this.listItems.push(element));
+    lists.forEach(element => this.lists.push(element));
   },
 
 }
@@ -280,10 +283,14 @@ export default {
   &__tag-group {
     margin-top: interval(2);
     @include flex(row wrap, center, center);
+
+    @include mq(sm) {
+      @include flex(row wrap, flex-start, center);
+    }
   }
 
   &__tag {
-    margin-right: interval(.5);
+    margin: 0 interval(.5) interval(.5) 0;
 
     &:last-child {
       margin-right: 0;
@@ -293,46 +300,12 @@ export default {
   &__line {
     width: 100%;
     height: 2px;
-    margin-top: interval(5);
     // @include gradient(color(deepDarkblue), color(white), horizontal);
     background-color: color(lightgray);
   }
 
   &__list {
     padding: interval(5) 0;
-  }
-
-  &__list-item {
-    @include flex();
-    margin-bottom: interval(2);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    & > span {
-      font-size: font(12);
-
-      @include mq(sm) {
-        font-size: font(16);
-      }
-    }
-  }
-
-  &__list-title {
-    display: block;
-    width: 30%;
-    text-align: center;
-  }
-
-  &__list-content {
-    display: block;
-    width: 70%;
-    margin-left: interval(1);
-
-    @include mq(md) {
-      margin-left: 0;
-    }
   }
 }
 
