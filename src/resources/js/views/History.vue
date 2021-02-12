@@ -21,21 +21,21 @@
         <!-- 大正の歴史 -->
         <div class="history__box" ref="taisho">
           <div class="history__item">
-            <history-box-component :Contents="data.History.Taisho"/>
+            <history-box-component :data="data.History.Taisho"/>
           </div>
         </div>
 
         <!-- 昭和の歴史 -->
         <div class="history__box" ref="showa">
           <div class="history__item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-            <history-box-component :Contents="showaHistory"/>
+            <history-box-component :data="showaHistory"/>
           </div>
         </div>
 
         <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
         <div class="history__box" ref="heisei">
           <div class="history__item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-            <history-box-component :Contents="heiseiHistory"/>
+            <history-box-component :data="heiseiHistory"/>
           </div>
         </div>
 

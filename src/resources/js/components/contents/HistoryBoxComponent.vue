@@ -1,24 +1,34 @@
 <template>
 <div class="history-box">
-  <div class="history-box__tag-record" @click="openModal()">
+  <div class="history-box__tag-record" @click="openModal">
     <record-tag-component/>
   </div>
 
+  <!-- タグ押下時のモーダル -->
   <div class="history-box__modal" v-if="showModal">
-    <record-modal-component @close="closeModal"/>
+    <modal-component @close="closeModal">
+      <template v-slot:content>
+        <div class="record-modal">
+          <div class="record-modal__box" v-for="(item, n) in data.Records" :key="n">
+            <h4 class="record-modal__year">{{ item.year }}</h4>
+            <table-component :tableItems="item.data" :ratio="5"/>
+          </div>
+        </div>
+      </template>
+    </modal-component>
   </div>
 
   <div class="history-box__title">
-    <h3 class="history-box__title-main">{{ Contents.Title.Main }}</h3>
-    <span class="history-box__title-sub">{{ Contents.Title.Sub }}</span>
+    <h3 class="history-box__title-main">{{data.Title.Main }}</h3>
+    <span class="history-box__title-sub">{{ data.Title.Sub }}</span>
   </div>
 
   <div class="history-box__tag-date">
-    <tag-component color="outline-orange" :content="Contents.term"/>
+    <tag-component color="outline-orange" :content="data.Term"/>
   </div>
 
   <div class="history-box__text-container">
-    <p class="history-box__text nl2br" v-text="Contents.Text"/>
+    <p class="history-box__text nl2br" v-text="data.Text"/>
   </div>
 
 </div>
@@ -28,13 +38,18 @@
 // component import
 import TagComponent from '../modules/tag/TagComponent';
 import RecordTagComponent from '../modules/tag/RecordTagComponent';
-import RecordModalComponent from '../modules/modal/RecordModalComponent.vue';
+import ModalComponent from '../modules/modal/ModalComponent.vue';
+import TableComponent from '../modules/table/TableComponent.vue';
+
+// data import
+import Data from '../../config/data.json';
 
 export default {
   components: {
     TagComponent,
     RecordTagComponent,
-    RecordModalComponent,
+    ModalComponent,
+    TableComponent,
   },
 
   data() {
@@ -54,7 +69,7 @@ export default {
   },
 
   props: {
-    Contents: {
+    data: {
       type: Object,
       default: null
     }
@@ -117,6 +132,18 @@ export default {
   &__text {
     letter-spacing: 1.8px;
     font-weight: bold;
+  }
+}
+
+.record-modal {
+  margin-top: interval(5);
+
+  &__box {
+    margin-bottom: interval(2);
+  }
+
+  &__year {
+    color: color(white);
   }
 }
 

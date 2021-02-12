@@ -2,7 +2,12 @@
   <transition name="modal" appear>
     <div class="modal" @click.self="$emit('close')">
       <div class="modal-window" @click.self="$emit('close')">
-        aaaa
+
+        <button class="modal__btn" @click="$emit('close')">
+          <i/>
+        </button>
+
+        <slot name="content"/>
 
       </div>
     </div>
@@ -14,24 +19,8 @@
 
 
 export default {
-
-  data() {
-    return {
-
-    }
-  },
-
   props: {
-
-  },
-
-  computed: {
-
-  },
-
-  beforeMount() {
-
-  },
+  }
 
 }
 </script>
@@ -55,6 +44,27 @@ export default {
     // ↓ モーダルがスクロールできない問題を解消
     max-height: 100%;
     overflow-y: auto;
+  }
+
+  &__btn {
+    @include close-button(interval(5));
+    position: fixed;
+    top: pixel(2);
+    right: pixel(2);
+
+    @include mq(md) {
+      transition: all .3s ease-out;
+    }
+
+    @include hover {
+      background: color(orange);
+      box-shadow: 0 0 20px 2px darken(color(orange), 10%);
+
+      .nav-modal__btn-line,
+      .nav-modal__btn-line::before {
+        background-color: color(white);
+      }
+    }
   }
 }
 

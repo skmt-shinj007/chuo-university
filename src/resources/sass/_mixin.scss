@@ -251,3 +251,16 @@
     }
   }
 }
+
+// テーブルのセル幅を指定するためのスタイル
+@mixin rating($ratio) {
+  .common-table {
+    &__key {
+      width: calc(#{$ratio} * 10%);
+    }
+
+    &__value {
+      width: calc(100% - (#{$ratio} * 10%));
+    }
+  }
+}
