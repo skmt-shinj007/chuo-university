@@ -27,9 +27,7 @@
       {{ messages.ContentsTitles.TournamentInformation }}
     </span>
 
-    <table-component
-      :tableItems="cardElement.TournamentInformation"
-      :valueTransparent="true"/>
+    <table-component :tableItems="cardElement.TournamentInformation"/>
   </div>
 
 </div>
