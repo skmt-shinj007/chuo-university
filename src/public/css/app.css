@@ -8302,8 +8302,8 @@ import用ファイル
 }
 .modal__btn[data-v-57d67ae5] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: #e56c2c;
   box-shadow: 0 3px 10px 1px #c65418;
@@ -8312,14 +8312,14 @@ import用ファイル
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 1rem;
+  right: 1rem;
 }
 .modal__btn > i[data-v-57d67ae5] {
   position: relative;
   display: block;
   background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -8657,10 +8657,16 @@ import用ファイル
   font-weight: bold;
 }
 .record-modal[data-v-600734dc] {
-  margin-top: 2.5rem;
+  margin: 2.5rem 0;
+}
+@media screen and (min-width: 560px) {
+.record-modal[data-v-600734dc] {
+    width: 80%;
+    margin: 2.5rem auto;
+}
 }
 .record-modal__box[data-v-600734dc] {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .record-modal__year[data-v-600734dc] {
   color: #ffffff;

@@ -47,10 +47,10 @@ export default {
   }
 
   &__btn {
-    @include close-button(interval(5));
+    @include close-button(pixel(5));
     position: fixed;
-    top: pixel(2);
-    right: pixel(2);
+    top: interval(2);
+    right: interval(2);
 
     @include mq(md) {
       transition: all .3s ease-out;

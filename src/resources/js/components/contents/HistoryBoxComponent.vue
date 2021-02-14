@@ -135,11 +135,17 @@ export default {
   }
 }
 
+// 戦績モーダルのスタイル
 .record-modal {
-  margin-top: interval(5);
+  margin: interval(5) 0;
+
+  @include mq(sm) {
+    width: 80%;
+    margin: interval(5) auto;
+  }
 
   &__box {
-    margin-bottom: interval(2);
+    margin-bottom: interval(3);
   }
 
   &__year {
