@@ -3286,6 +3286,7 @@ import用ファイル
   width: 70%;
   background-color: #ffffff;
   white-space: pre-wrap;
+  vertical-align: middle;
 }
 .common-table .common-table--1 .common-table__key {
   width: calc(1 * 10%);

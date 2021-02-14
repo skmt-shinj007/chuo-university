@@ -129,6 +129,7 @@ export default {
     width: 70%;
     background-color: color(white);
     white-space: pre-wrap;
+    vertical-align: middle;
   }
 
   // セル幅 割合

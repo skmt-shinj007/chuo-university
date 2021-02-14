@@ -10,8 +10,8 @@
       <template v-slot:content>
         <div class="record-modal">
           <div class="record-modal__box" v-for="(item, n) in data.Records" :key="n">
-            <h4 class="record-modal__year">{{ item.year }}</h4>
-            <table-component :tableItems="item.data" :ratio="5"/>
+            <h4 class="record-modal__year">{{ data.Age + item.year }}年度</h4>
+            <table-component :tableItems="item.result" :ratio="5"/>
           </div>
         </div>
       </template>
