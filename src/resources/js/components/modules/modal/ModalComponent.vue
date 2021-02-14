@@ -3,9 +3,11 @@
     <div class="modal" @click.self="$emit('close')">
       <div class="modal-window" @click.self="$emit('close')">
 
-        <button class="modal__btn" @click="$emit('close')">
-          <i/>
-        </button>
+        <transition name="btn" appear>
+          <button class="modal__btn" @click="$emit('close')">
+            <i/>
+          </button>
+        </transition>
 
         <slot name="content"/>
 
@@ -15,9 +17,6 @@
 </template>
 
 <script>
-// component import
-
-
 export default {
   props: {
   }
@@ -90,5 +89,17 @@ export default {
     opacity: 0;
     transform: translateY(-20px);
   }
+}
+
+.btn-enter-active, .btn-leave-active {
+  transition: opacity 4s;
+}
+
+.btn-enter {
+  opacity: 0;
+}
+
+.btn-enter-to {
+  opacity: 1;
 }
 </style>
