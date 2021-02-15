@@ -3286,9 +3286,61 @@ import用ファイル
   width: 70%;
   background-color: #ffffff;
   white-space: pre-wrap;
+  vertical-align: middle;
 }
-.common-table__value--transparent {
-  background-color: rgba(255, 255, 255, 0);
+.common-table .common-table--1 .common-table__key {
+  width: calc(1 * 10%);
+}
+.common-table .common-table--1 .common-table__value {
+  width: calc(100% - (1 * 10%));
+}
+.common-table .common-table--2 .common-table__key {
+  width: calc(2 * 10%);
+}
+.common-table .common-table--2 .common-table__value {
+  width: calc(100% - (2 * 10%));
+}
+.common-table .common-table--3 .common-table__key {
+  width: calc(3 * 10%);
+}
+.common-table .common-table--3 .common-table__value {
+  width: calc(100% - (3 * 10%));
+}
+.common-table .common-table--4 .common-table__key {
+  width: calc(4 * 10%);
+}
+.common-table .common-table--4 .common-table__value {
+  width: calc(100% - (4 * 10%));
+}
+.common-table .common-table--5 .common-table__key {
+  width: calc(5 * 10%);
+}
+.common-table .common-table--5 .common-table__value {
+  width: calc(100% - (5 * 10%));
+}
+.common-table .common-table--6 .common-table__key {
+  width: calc(6 * 10%);
+}
+.common-table .common-table--6 .common-table__value {
+  width: calc(100% - (6 * 10%));
+}
+.common-table .common-table--7 .common-table__key {
+  width: calc(7 * 10%);
+}
+.common-table .common-table--7 .common-table__value {
+  width: calc(100% - (7 * 10%));
+}
+.common-table .common-table--8 .common-table__key {
+  width: calc(8 * 10%);
+}
+.common-table .common-table--8 .common-table__value {
+  width: calc(100% - (8 * 10%));
+}
+.common-table .common-table--9 .common-table__key {
+  width: calc(9 * 10%);
+}
+.common-table .common-table--9 .common-table__value {
+  width: calc(100% - (9 * 10%));
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -6073,15 +6125,14 @@ import用ファイル
 }
 .ticket-modal__close-btn[data-v-358d2551] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -6089,8 +6140,8 @@ import用ファイル
 .ticket-modal__close-btn > i[data-v-358d2551] {
   position: relative;
   display: block;
-  background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  background-color: #091e2f;
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -6100,9 +6151,17 @@ import用ファイル
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #091e2f;
   transform: rotate(90deg);
   transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__close-btn[data-v-358d2551]:hover {
+    background-color: #091e2f;
+}
+.ticket-modal__close-btn:hover > .btn-line[data-v-358d2551], .ticket-modal__close-btn:hover > .btn-line[data-v-358d2551]::before {
+    background-color: #ffffff;
+}
 }
 .ticket-modal__content[data-v-358d2551] {
   padding: 1rem;
@@ -7949,11 +8008,6 @@ import用ファイル
     font-size: 0.875rem;
 }
 }
-@media screen and (min-width: 1025px) {
-.record-tag__content[data-v-b79d4b88] {
-    font-size: 1rem;
-}
-}
 .record-tag__open[data-v-b79d4b88] {
   width: 100%;
   height: 100%;
@@ -7968,8 +8022,8 @@ import用ファイル
   letter-spacing: 1px;
   font-size: 0.75rem;
   font-weight: bold;
-  background: #e56c2c;
-  background: linear-gradient(to right, #e56c2c 0%, #FDC830 100%);
+  background: #ffffff;
+  background: linear-gradient(to right, #ffffff 0%, #f2f2f2 100%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -8015,7 +8069,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-579f0756 {
+@-webkit-keyframes iconSlide-data-v-57d67ae5 {
 0% {
     transform: translateX(0);
 }
@@ -8050,7 +8104,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-579f0756 {
+@keyframes iconSlide-data-v-57d67ae5 {
 0% {
     transform: translateX(0);
 }
@@ -8085,7 +8139,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-579f0756 {
+@-webkit-keyframes fadeoutDown-data-v-57d67ae5 {
 0% {
     transform: translateY(0);
 }
@@ -8130,7 +8184,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-579f0756 {
+@keyframes fadeoutDown-data-v-57d67ae5 {
 0% {
     transform: translateY(0);
 }
@@ -8175,7 +8229,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-579f0756 {
+@-webkit-keyframes fadeoutTop-data-v-57d67ae5 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -8185,7 +8239,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-579f0756 {
+@keyframes fadeoutTop-data-v-57d67ae5 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -8195,7 +8249,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-579f0756 {
+@-webkit-keyframes rotation-data-v-57d67ae5 {
 0% {
     transform: rotate(0);
 }
@@ -8212,7 +8266,7 @@ import用ファイル
     transform: rotate(180deg);
 }
 }
-@keyframes rotation-data-v-579f0756 {
+@keyframes rotation-data-v-57d67ae5 {
 0% {
     transform: rotate(0);
 }
@@ -8233,43 +8287,390 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.history-text[data-v-579f0756] {
+.modal[data-v-57d67ae5] {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 910;
+  background-color: rgba(3, 10, 16, 0.9);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.modal-window[data-v-57d67ae5] {
+  height: 100%;
+  padding: 0 1rem;
+  position: relative;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.modal__btn[data-v-57d67ae5] {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-out;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+.modal__btn > i[data-v-57d67ae5] {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  width: calc( 40px / 2);
+  height: 3px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-out;
+}
+.modal__btn > i[data-v-57d67ae5]::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.modal__btn[data-v-57d67ae5]:hover {
+    background-color: #e56c2c;
+}
+}
+@media screen and (min-width: 1025px) {
+.modal__btn[data-v-57d67ae5] {
+    transition: all 0.3s ease-out;
+}
+}
+.modal-enter-active[data-v-57d67ae5], .modal-leave-active[data-v-57d67ae5] {
+  transition: opacity 0.4s;
+}
+.modal-enter-active .modal-window[data-v-57d67ae5], .modal-leave-active .modal-window[data-v-57d67ae5] {
+  transition: opacity 0.4s, transform 0.4s;
+}
+.modal-leave-active[data-v-57d67ae5] {
+  transition: opacity 0.6s ease 0.4s;
+}
+.modal-enter[data-v-57d67ae5], .modal-leave-to[data-v-57d67ae5] {
+  opacity: 0;
+}
+.modal-enter .modal-window[data-v-57d67ae5], .modal-leave-to .modal-window[data-v-57d67ae5] {
+  opacity: 0;
+  transform: translateY(-20px);
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
+ * base pixel (8px)
+ * rem だとフォントサイズに影響するため、pixelで定義
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-600734dc {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-600734dc {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown-data-v-600734dc {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown-data-v-600734dc {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-600734dc {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-600734dc {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@-webkit-keyframes rotation-data-v-600734dc {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+@keyframes rotation-data-v-600734dc {
+0% {
+    transform: rotate(0);
+}
+25% {
+    transform: rotate(45deg);
+}
+50% {
+    transform: rotate(90deg);
+}
+75% {
+    transform: rotate(135deg);
+}
+100% {
+    transform: rotate(180deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.history-box[data-v-600734dc] {
   border: 2px solid #091e2f;
   border-radius: 8px;
   position: relative;
   padding: 16px;
 }
-.history-text__tag-modal[data-v-579f0756] {
+.history-box__tag-record[data-v-600734dc] {
   position: absolute;
   top: -1.25rem;
   right: 5%;
 }
 @media screen and (min-width: 1025px) {
-.history-text__tag-modal[data-v-579f0756] {
+.history-box__tag-record[data-v-600734dc] {
     top: -1.5rem;
 }
 }
-.history-text__tag-date[data-v-579f0756] {
+.history-box__tag-date[data-v-600734dc] {
   margin: 0.5rem 0;
 }
 @media screen and (min-width: 560px) {
-.history-text__tag-date[data-v-579f0756] {
+.history-box__tag-date[data-v-600734dc] {
     width: 11rem;
 }
 }
-.history-text__title[data-v-579f0756] {
+.history-box__title[data-v-600734dc] {
   text-align: center;
   margin-top: 1.5rem;
 }
-.history-text__title-main[data-v-579f0756] {
+.history-box__title-main[data-v-600734dc] {
   font-size: 1.125rem;
 }
-.history-text__text-container[data-v-579f0756] {
+.history-box__text-container[data-v-600734dc] {
   margin: 1rem 0;
 }
-.history-text__text[data-v-579f0756] {
+.history-box__text[data-v-600734dc] {
   letter-spacing: 1.8px;
   font-weight: bold;
+}
+.record-modal[data-v-600734dc] {
+  margin: 2.5rem 0;
+}
+@media screen and (min-width: 560px) {
+.record-modal[data-v-600734dc] {
+    width: 80%;
+    margin: 2.5rem auto;
+}
+}
+.record-modal__box[data-v-600734dc] {
+  margin-bottom: 1.5rem;
+}
+.record-modal__year[data-v-600734dc] {
+  color: #ffffff;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -9187,16 +9588,16 @@ import用ファイル
   top: 0;
   transition: all 1s ease-out;
 }
-.history__text-inner[data-v-301d0ec5] {
+.history__box[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__text-inner[data-v-301d0ec5]:last-child {
+.history__box[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
-.history__text-inner-item[data-v-301d0ec5] {
+.history__item[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__text-inner-item[data-v-301d0ec5]:last-child {
+.history__item[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
 .history__primary-titles[data-v-301d0ec5] {
@@ -10113,21 +10514,20 @@ import用ファイル
 }
 .image-modal__close-btn[data-v-213a8ec6] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
 }
 .image-modal__close-btn > i[data-v-213a8ec6] {
   position: relative;
   display: block;
   background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -10140,6 +10540,11 @@ import用ファイル
   background-color: #ffffff;
   transform: rotate(90deg);
   transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.image-modal__close-btn[data-v-213a8ec6]:hover {
+    background-color: #e56c2c;
+}
 }
 .image-modal__img-wrap[data-v-213a8ec6] {
   display: flex;
@@ -11554,15 +11959,14 @@ import用ファイル
 }
 .ticket-modal__close-btn[data-v-5885bf62] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -11570,8 +11974,8 @@ import用ファイル
 .ticket-modal__close-btn > i[data-v-5885bf62] {
   position: relative;
   display: block;
-  background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  background-color: #091e2f;
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -11581,9 +11985,17 @@ import用ファイル
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #091e2f;
   transform: rotate(90deg);
   transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__close-btn[data-v-5885bf62]:hover {
+    background-color: #091e2f;
+}
+.ticket-modal__close-btn:hover > .btn-line[data-v-5885bf62], .ticket-modal__close-btn:hover > .btn-line[data-v-5885bf62]::before {
+    background-color: #ffffff;
+}
 }
 .ticket-modal__content[data-v-5885bf62] {
   padding: 1rem;
@@ -13483,21 +13895,20 @@ import用ファイル
 }
 .nav-modal__btn[data-v-1f270d64] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
 }
 .nav-modal__btn > i[data-v-1f270d64] {
   position: relative;
   display: block;
   background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -13512,18 +13923,8 @@ import用ファイル
   transition: all 0.3s ease-out;
 }
 @media screen and (min-width: 1025px) {
-.nav-modal__btn[data-v-1f270d64] {
-    transition: all 0.3s ease-out;
-}
-}
-@media screen and (min-width: 1025px) {
 .nav-modal__btn[data-v-1f270d64]:hover {
-    background: #e56c2c;
-    box-shadow: 0 0 20px 2px #c65418;
-}
-.nav-modal__btn:hover .nav-modal__btn-line[data-v-1f270d64],
-.nav-modal__btn:hover .nav-modal__btn-line[data-v-1f270d64]::before {
-    background-color: #ffffff;
+    background-color: #e56c2c;
 }
 }
 .nav-modal__accordion[data-v-1f270d64] {

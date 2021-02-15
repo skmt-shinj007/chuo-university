@@ -6,7 +6,7 @@
         <div class="ticket-modal">
           <div class="ticket-modal__container">
             <button class="ticket-modal__close-btn" @click="$emit('close')">
-              <i/>
+              <i class="btn-line"/>
             </button>
 
             <div class="ticket-modal__content">
@@ -193,7 +193,7 @@ export default {
   }
 
   &__close-btn {
-    @include close-button(interval(5));
+    @include close-button($color: color(darkblue));
     position: absolute;
     right: interval(2);
     top: interval(2);

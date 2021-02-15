@@ -2,9 +2,9 @@
 <!-- ※ オブジェクトの中身は、「key」と「value」で構成し、タイトルになるカラムには key の値が入る。 -->
 <template>
   <table class="common-table">
-    <tr class="common-table__record" :class="sizing" v-for="(tableItem, n) in levelingItems" :key="n">
+    <tr class="common-table__record" :class="[sizing, rating]" v-for="(tableItem, n) in levelingItems" :key="n">
       <th class="common-table__key">{{ tableItem.key }}{{ addKeyText }}</th>
-      <td class="common-table__value" :class="background">{{ tableItem.value }}{{ addValueText }}</td>
+      <td class="common-table__value">{{ tableItem.value }}{{ addValueText }}</td>
     </tr>
   </table>
 </template>
@@ -44,11 +44,12 @@ export default {
     },
 
     /**
-     * テーブルの背景を透明にするかどうかを判定するフラグ
+     * テーブルセルのwidth比率
+     * キーのセル割合を指定する。 (ex. :ratio="7" -> キーセル70% バリューセル30%となる。
      */
-    valueTransparent: {
-      type: Boolean,
-      default: false
+    ratio: {
+      type: Number,
+      default: 0
     },
 
     /**
@@ -64,8 +65,8 @@ export default {
     /**
      * 背景を透過にするクラスを付与
      */
-    background() {
-      return (this.valueTransparent) ? `common-table__value--transparent` : null;
+    rating() {
+      return (this.ratio) ? `common-table--${this.ratio}` : null;
     },
 
     /**
@@ -128,10 +129,15 @@ export default {
     width: 70%;
     background-color: color(white);
     white-space: pre-wrap;
+    vertical-align: middle;
+  }
 
-    &--transparent {
-      background-color: rgba($color: color(white), $alpha: 0);
+  // セル幅 割合
+  @for $i from 1 to 10 {
+    .common-table--#{$i} {
+      @include rating($i);
     }
   }
+
 }
 </style>
