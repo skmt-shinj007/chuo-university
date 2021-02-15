@@ -6125,15 +6125,14 @@ import用ファイル
 }
 .ticket-modal__close-btn[data-v-358d2551] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -6141,8 +6140,8 @@ import用ファイル
 .ticket-modal__close-btn > i[data-v-358d2551] {
   position: relative;
   display: block;
-  background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  background-color: #091e2f;
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -6152,9 +6151,17 @@ import用ファイル
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #091e2f;
   transform: rotate(90deg);
   transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__close-btn[data-v-358d2551]:hover {
+    background-color: #091e2f;
+}
+.ticket-modal__close-btn:hover > .btn-line[data-v-358d2551], .ticket-modal__close-btn:hover > .btn-line[data-v-358d2551]::before {
+    background-color: #ffffff;
+}
 }
 .ticket-modal__content[data-v-358d2551] {
   padding: 1rem;
@@ -8305,12 +8312,11 @@ import用ファイル
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -8334,18 +8340,13 @@ import用ファイル
   transition: all 0.3s ease-out;
 }
 @media screen and (min-width: 1025px) {
-.modal__btn[data-v-57d67ae5] {
-    transition: all 0.3s ease-out;
+.modal__btn[data-v-57d67ae5]:hover {
+    background-color: #e56c2c;
 }
 }
 @media screen and (min-width: 1025px) {
-.modal__btn[data-v-57d67ae5]:hover {
-    background: #e56c2c;
-    box-shadow: 0 0 20px 2px #c65418;
-}
-.modal__btn:hover .nav-modal__btn-line[data-v-57d67ae5],
-.modal__btn:hover .nav-modal__btn-line[data-v-57d67ae5]::before {
-    background-color: #ffffff;
+.modal__btn[data-v-57d67ae5] {
+    transition: all 0.3s ease-out;
 }
 }
 .modal-enter-active[data-v-57d67ae5], .modal-leave-active[data-v-57d67ae5] {
@@ -10513,21 +10514,20 @@ import用ファイル
 }
 .image-modal__close-btn[data-v-213a8ec6] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
 }
 .image-modal__close-btn > i[data-v-213a8ec6] {
   position: relative;
   display: block;
   background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -10540,6 +10540,11 @@ import用ファイル
   background-color: #ffffff;
   transform: rotate(90deg);
   transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.image-modal__close-btn[data-v-213a8ec6]:hover {
+    background-color: #e56c2c;
+}
 }
 .image-modal__img-wrap[data-v-213a8ec6] {
   display: flex;
@@ -11954,15 +11959,14 @@ import用ファイル
 }
 .ticket-modal__close-btn[data-v-5885bf62] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -11970,8 +11974,8 @@ import用ファイル
 .ticket-modal__close-btn > i[data-v-5885bf62] {
   position: relative;
   display: block;
-  background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  background-color: #091e2f;
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -11981,9 +11985,17 @@ import用ファイル
   display: block;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #091e2f;
   transform: rotate(90deg);
   transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.ticket-modal__close-btn[data-v-5885bf62]:hover {
+    background-color: #091e2f;
+}
+.ticket-modal__close-btn:hover > .btn-line[data-v-5885bf62], .ticket-modal__close-btn:hover > .btn-line[data-v-5885bf62]::before {
+    background-color: #ffffff;
+}
 }
 .ticket-modal__content[data-v-5885bf62] {
   padding: 1rem;
@@ -13883,21 +13895,20 @@ import用ファイル
 }
 .nav-modal__btn[data-v-1f270d64] {
   position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: #e56c2c;
-  box-shadow: 0 3px 10px 1px #c65418;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-out;
 }
 .nav-modal__btn > i[data-v-1f270d64] {
   position: relative;
   display: block;
   background-color: #ffffff;
-  width: calc( 2.5rem / 2);
+  width: calc( 40px / 2);
   height: 3px;
   transform: rotate(-45deg);
   transition: all 0.3s ease-out;
@@ -13912,18 +13923,8 @@ import用ファイル
   transition: all 0.3s ease-out;
 }
 @media screen and (min-width: 1025px) {
-.nav-modal__btn[data-v-1f270d64] {
-    transition: all 0.3s ease-out;
-}
-}
-@media screen and (min-width: 1025px) {
 .nav-modal__btn[data-v-1f270d64]:hover {
-    background: #e56c2c;
-    box-shadow: 0 0 20px 2px #c65418;
-}
-.nav-modal__btn:hover .nav-modal__btn-line[data-v-1f270d64],
-.nav-modal__btn:hover .nav-modal__btn-line[data-v-1f270d64]::before {
-    background-color: #ffffff;
+    background-color: #e56c2c;
 }
 }
 .nav-modal__accordion[data-v-1f270d64] {

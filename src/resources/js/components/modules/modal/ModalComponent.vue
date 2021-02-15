@@ -4,7 +4,7 @@
       <div class="modal-window" @click.self="$emit('close')">
 
         <button class="modal__btn" @click="$emit('close')">
-          <i/>
+          <i class="btn-line"/>
         </button>
 
         <slot name="content"/>
@@ -44,23 +44,13 @@ export default {
   }
 
   &__btn {
-    @include close-button(pixel(5));
+    @include close-button;
     position: fixed;
     top: interval(2);
     right: interval(2);
 
     @include mq(md) {
       transition: all .3s ease-out;
-    }
-
-    @include hover {
-      background: color(orange);
-      box-shadow: 0 0 20px 2px darken(color(orange), 10%);
-
-      .nav-modal__btn-line,
-      .nav-modal__btn-line::before {
-        background-color: color(white);
-      }
     }
   }
 }

@@ -5,6 +5,15 @@
   }
 }
 
+// hover
+@mixin hover {
+  &:hover {
+    @include mq(md) {
+      @content;
+    }
+  }
+}
+
 // フォント種類：bangers
 @mixin bangers($size: font(16), $letterSpacing: 1px, $weight: bold) {
   font-family: 'Bangers', cursive;
@@ -212,29 +221,19 @@
   }
 }
 
-// hover
-@mixin hover {
-  &:hover {
-    @include mq(md) {
-      @content;
-    }
-  }
-}
-
 // close btn
-@mixin close-button($size: interval(5),) {
+@mixin close-button($size: pixel(5), $color: color(white)) {
   position: relative;
   width: $size;
   height: $size;
   border-radius: radius(circle);
-  background-color: color(orange);
-  box-shadow: 0 3px 10px 1px darken(color(orange), 10%);
   @include flex(row nowrap, center, center);
+  transition: all .3s ease-out;
 
   & > i {
     position: relative;
     display: block;
-    background-color: color(white);
+    background-color: $color;
     width: calc( #{$size} / 2);
     height: 3px;
     transform: rotate(-45deg);
@@ -245,11 +244,35 @@
       display: block;
       width: 100%;
       height: 100%;
-      background-color: color(white);
+      background-color: $color;
       transform: rotate(90deg);
       transition: all .3s ease-out;
     }
   }
+
+  @include mq(md) {
+    // ボタンの色がグレーの時
+    @if $color == color(darkblue) {
+      &:hover {
+        background-color: color(darkblue);
+      }
+
+      &:hover > .btn-line,
+      &:hover > .btn-line::before {
+        background-color: color(white);
+      }
+    }
+    // 基本のホバースタイル
+    @else {
+      &:hover {
+        background-color: color(orange);
+      }
+    }
+  }
+
+  // @include hover {
+  //
+  // }
 }
 
 // テーブルのセル幅を指定するためのスタイル
