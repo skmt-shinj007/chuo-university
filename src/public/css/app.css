@@ -8317,6 +8317,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-out;
+  background-color: #e56c2c;
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -8346,7 +8347,7 @@ import用ファイル
 }
 @media screen and (min-width: 1025px) {
 .modal__btn[data-v-57d67ae5] {
-    transition: all 0.3s ease-out;
+    background-color: rgba(0, 0, 0, 0);
 }
 }
 .modal-enter-active[data-v-57d67ae5], .modal-leave-active[data-v-57d67ae5] {

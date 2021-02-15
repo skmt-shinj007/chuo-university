@@ -45,12 +45,13 @@ export default {
 
   &__btn {
     @include close-button;
+    background-color: color(orange);
     position: fixed;
     top: interval(2);
     right: interval(2);
 
     @include mq(md) {
-      transition: all .3s ease-out;
+      background-color: rgba($color: #000000, $alpha: 0);
     }
   }
 }
