@@ -59,7 +59,7 @@
 }
 
 // 円形コンテンツのボーダーグラデーション
-@mixin border-gradient($c: white, $start-color: #0179D5, $end-color: #091E2F, $direction: vertical) {
+@mixin thumbnail-border($c: white, $start-color: #0179D5, $end-color: #091E2F, $direction: vertical) {
   border-radius: radius(circle);
   background-color: color($c);
   position: relative;
@@ -129,10 +129,11 @@
 }
 
 // テニスボール
-@mixin ball($size: 160px) {
+@mixin ball($size: 160px, $content: 'CHUO\AUNIVERSITY') {
   width: $size;
   height: $size;
-  background: linear-gradient(0deg, darken(#fff, 60%), darken(#fff, 10%), #fff);
+  background-color: color(white);
+  box-shadow: inset -1rem -1rem 3rem color(darkShadow);
   border-radius: radius(circle);
   position: relative;
 
@@ -151,7 +152,8 @@
 
   &::after {
     display: block;
-    content: 'CHUO UNIVERSITY';
+    content: $content;
+    white-space: pre;
     color: darken($color: red, $amount: .4);
     font-weight: bold;
     font-size: font(10);
@@ -269,10 +271,6 @@
       }
     }
   }
-
-  // @include hover {
-  //
-  // }
 }
 
 // テーブルのセル幅を指定するためのスタイル
@@ -285,5 +283,21 @@
     &__value {
       width: calc(100% - (#{$ratio} * 10%));
     }
+  }
+}
+
+@mixin border-gradient($w, $start-color, $end-color) {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: $w;
+    height: 2px;
+    @include gradient($start-color, $end-color, horizontal);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
   }
 }
