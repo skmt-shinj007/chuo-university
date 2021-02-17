@@ -246,7 +246,7 @@ export default {
     &-link {
       @include flex(row nowrap, flex-start, center);
       cursor: pointer;
-      transition: all .3s ease-out;
+      transition: transform .3s ease-out;
     }
 
     &-icon {
@@ -311,7 +311,7 @@ export default {
     border-radius: radius(circle);
     @include flex(row nowrap, center, center);
     cursor: pointer;
-    transition: all .3s ease-out;
+    transition: background-color .3s ease-out;
 
     @include hover {
       background-color: color(white);
