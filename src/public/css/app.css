@@ -215,38 +215,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-3ff6fe5a {
+@-webkit-keyframes bound-data-v-3ff6fe5a {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-3ff6fe5a {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-3ff6fe5a {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-3ff6fe5a {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -492,38 +532,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -780,38 +860,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-9b317ac0 {
+@-webkit-keyframes bound-data-v-9b317ac0 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-9b317ac0 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-9b317ac0 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-9b317ac0 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -1068,38 +1188,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -1374,38 +1534,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -1652,38 +1852,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-63cd6604 {
+@-webkit-keyframes bound-data-v-63cd6604 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-63cd6604 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-63cd6604 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-63cd6604 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -2039,38 +2279,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-161a410d {
+@-webkit-keyframes bound-data-v-161a410d {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-161a410d {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-161a410d {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-161a410d {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -2318,38 +2598,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-348f28a1 {
+@-webkit-keyframes bound-data-v-348f28a1 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-348f28a1 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-348f28a1 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-348f28a1 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -2642,38 +2962,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-6cd5e234 {
+@-webkit-keyframes bound-data-v-6cd5e234 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-6cd5e234 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-6cd5e234 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-6cd5e234 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -2939,38 +3299,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-30380e08 {
+@-webkit-keyframes bound-data-v-30380e08 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-30380e08 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-30380e08 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-30380e08 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -3224,38 +3624,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -3558,38 +3998,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-7fa4fe02 {
+@-webkit-keyframes bound-data-v-7fa4fe02 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-7fa4fe02 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-7fa4fe02 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-7fa4fe02 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -3852,38 +4332,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-c3a537a8 {
+@-webkit-keyframes bound-data-v-c3a537a8 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-c3a537a8 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-c3a537a8 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-c3a537a8 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -4149,38 +4669,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -4453,38 +5013,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -4729,38 +5329,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -5046,38 +5686,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-53189f00 {
+@-webkit-keyframes bound-data-v-53189f00 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-53189f00 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-53189f00 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-53189f00 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -5319,38 +5999,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-bb84db5a {
+@-webkit-keyframes bound-data-v-bb84db5a {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-bb84db5a {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-bb84db5a {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-bb84db5a {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -5615,38 +6335,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-357d3955 {
+@-webkit-keyframes bound-data-v-357d3955 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-357d3955 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-357d3955 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-357d3955 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -6047,38 +6807,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-358d2551 {
+@-webkit-keyframes bound-data-v-358d2551 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-358d2551 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-358d2551 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-358d2551 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -6572,38 +7372,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -6981,38 +7821,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-668c6779 {
+@-webkit-keyframes bound-data-v-668c6779 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-668c6779 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-668c6779 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-668c6779 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -7306,38 +8186,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -7591,38 +8511,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-42f1fe89 {
+@-webkit-keyframes bound-data-v-42f1fe89 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-42f1fe89 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-42f1fe89 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-42f1fe89 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -7919,38 +8879,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-b79d4b88 {
+@-webkit-keyframes bound-data-v-b79d4b88 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-b79d4b88 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-b79d4b88 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-b79d4b88 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -8249,38 +9249,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-57d67ae5 {
+@-webkit-keyframes bound-data-v-57d67ae5 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-57d67ae5 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-57d67ae5 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-57d67ae5 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -8582,38 +9622,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-600734dc {
+@-webkit-keyframes bound-data-v-600734dc {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-600734dc {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-600734dc {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-600734dc {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -8889,38 +9969,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -9171,38 +10291,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-3ea95d82 {
+@-webkit-keyframes bound-data-v-3ea95d82 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-3ea95d82 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-3ea95d82 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-3ea95d82 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -9500,38 +10660,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-301d0ec5 {
+@-webkit-keyframes bound-data-v-301d0ec5 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-301d0ec5 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-301d0ec5 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-301d0ec5 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -9833,38 +11033,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -10149,38 +11389,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -10440,38 +11720,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-213a8ec6 {
+@-webkit-keyframes bound-data-v-213a8ec6 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-213a8ec6 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-213a8ec6 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-213a8ec6 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -10882,38 +12202,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-d066a2d0 {
+@-webkit-keyframes bound-data-v-d066a2d0 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-d066a2d0 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-d066a2d0 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-d066a2d0 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -11243,38 +12603,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -11532,38 +12932,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -11882,38 +13322,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-5885bf62 {
+@-webkit-keyframes bound-data-v-5885bf62 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-5885bf62 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-5885bf62 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-5885bf62 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -12357,38 +13837,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-46e3fba3 {
+@-webkit-keyframes bound-data-v-46e3fba3 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-46e3fba3 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-46e3fba3 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-46e3fba3 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -12425,6 +13945,480 @@ import用ファイル
     margin-bottom: 0;
     padding: 0.5rem;
 }
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
+ * base pixel (8px)
+ * rem だとフォントサイズに影響するため、pixelで定義
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@-webkit-keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+@keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.err {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+@media screen and (min-width: 1025px) {
+.err {
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+}
+}
+.err__container {
+  width: 100%;
+}
+@media screen and (min-width: 1025px) {
+.err__container {
+    margin-bottom: 0;
+}
+}
+.err__container:first-child {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 1025px) {
+.err__container:first-child {
+    width: 50%;
+}
+}
+@media screen and (min-width: 1025px) {
+.err__container:last-child {
+    width: 50%;
+}
+}
+.err__number {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+.err__number-item {
+  display: block;
+  font-size: 5rem;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-right: 8px;
+  transform: translate(0%, -100%);
+  -webkit-animation: bound 1.5s ease-in forwards;
+          animation: bound 1.5s ease-in forwards;
+}
+.err__number-item:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.err__number-item:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.err__number-item:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.err__number-item:last-child {
+  margin-right: 0;
+}
+.err__message {
+  font-size: 0.75rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.err__tennis-ball-wrap {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+.err__tennis-ball {
+  width: 6rem;
+  height: 6rem;
+  background-color: #ffffff;
+  box-shadow: inset -1rem -1rem 3rem #b3b3b3;
+  border-radius: 50%;
+  position: relative;
+  transform: translateX(-50rem) rotate(0deg);
+  -webkit-animation: rotation 5s ease-out forwards;
+          animation: rotation 5s ease-out forwards;
+  margin-right: 1.5rem;
+}
+.err__tennis-ball::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: calc(6rem / 4);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(6rem / 25);
+  height: calc(6rem / 25);
+  background-color: #0000cc;
+  border-radius: 50%;
+}
+.err__tennis-ball::after {
+  display: block;
+  content: "SORRY,\ANOT FOUND";
+  white-space: pre;
+  color: #fd0000;
+  font-weight: bold;
+  font-size: 0.5rem;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.err__guide-text {
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.err__guide-text::before {
+  display: block;
+  content: "";
+  width: 1rem;
+  height: 1px;
+  background-color: #091e2f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.err__list {
+  width: 100%;
+  margin-top: 2.5rem;
+  border-top: 2px solid #091e2f;
+}
+.err__list-item {
+  position: relative;
+}
+.err__list-item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #10334e;
+  background: linear-gradient(to right, #10334e 0%, #091e2f 100%);
+  position: absolute;
+  bottom: 0;
+}
+.err__link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.75rem 0;
+  transition: transform 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.err__link:hover {
+    transform: translateX(0.5rem);
+}
+}
+.num-enter-active, .num-leave-active {
+  transition: opacity 2s linear;
+}
+.num-enter {
+  opacity: 0;
+}
+.num-enter-to {
+  opacity: 1;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -12642,38 +14636,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-b28ce99e {
+@-webkit-keyframes bound-data-v-b28ce99e {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-b28ce99e {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-b28ce99e {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-b28ce99e {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -13453,38 +15487,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -13786,38 +15860,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-1f270d64 {
+@-webkit-keyframes bound-data-v-1f270d64 {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-1f270d64 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-1f270d64 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-1f270d64 {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -14263,38 +16377,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-6832e7cf {
+@-webkit-keyframes bound-data-v-6832e7cf {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-6832e7cf {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-6832e7cf {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-6832e7cf {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -14692,38 +16846,78 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes rotation-data-v-060e08fe {
+@-webkit-keyframes bound-data-v-060e08fe {
 0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
 }
-25% {
-    transform: rotate(45deg);
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
-50% {
-    transform: rotate(90deg);
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
 }
 100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-060e08fe {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-060e08fe {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
 }
 }
 @keyframes rotation-data-v-060e08fe {
 0% {
-    transform: rotate(0);
-}
-25% {
-    transform: rotate(45deg);
-}
-50% {
-    transform: rotate(90deg);
-}
-75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
 }
 100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
 }
 }
 /**
@@ -14825,7 +17019,7 @@ import用ファイル
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 .footer__menu-list-icon[data-v-060e08fe] {
   width: 0.5rem;
@@ -14886,7 +17080,7 @@ import用ファイル
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 @media screen and (min-width: 1025px) {
 .footer__scroll-top[data-v-060e08fe]:hover {
@@ -15134,38 +17328,78 @@ import用ファイル
     transform: translateY(-30%);
   }
 }
-@-webkit-keyframes rotation {
+@-webkit-keyframes bound {
   0% {
-    transform: rotate(0);
+    transform: translate(0%, -100%);
   }
-  25% {
-    transform: rotate(45deg);
+  30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
   }
-  50% {
-    transform: rotate(90deg);
+  40% {
+    transform: translate(0%, -40%);
+  }
+  55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+  }
+  60% {
+    transform: translate(0%, -15%);
+  }
+  70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
   }
   75% {
-    transform: rotate(135deg);
+    transform: translate(0%, -5%);
+  }
+  95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
   }
   100% {
-    transform: rotate(180deg);
+    transform: scale(1, 1);
+  }
+}
+@keyframes bound {
+  0% {
+    transform: translate(0%, -100%);
+  }
+  30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+  }
+  40% {
+    transform: translate(0%, -40%);
+  }
+  55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+  }
+  60% {
+    transform: translate(0%, -15%);
+  }
+  70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+  }
+  75% {
+    transform: translate(0%, -5%);
+  }
+  95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes rotation {
+  0% {
+    transform: translateX(-50rem) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) rotate(1455deg);
   }
 }
 @keyframes rotation {
   0% {
-    transform: rotate(0);
-  }
-  25% {
-    transform: rotate(45deg);
-  }
-  50% {
-    transform: rotate(90deg);
-  }
-  75% {
-    transform: rotate(135deg);
+    transform: translateX(-50rem) rotate(0deg);
   }
   100% {
-    transform: rotate(180deg);
+    transform: translateX(0) rotate(1455deg);
   }
 }
 /**

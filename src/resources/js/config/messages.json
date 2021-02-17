@@ -2,6 +2,26 @@
   "ReserveText"    : "ただいまテキストを準備中です。もう少々お待ちください。更新されない場合はお問い合わせフォームからご連絡ください。",
   "ReserveImageAlt": "イメージの補足テキストが入ります。",
   "Copyright": "@ Chuo University Soft Tennis Team",
+  "Error": {
+    "NotFound": {
+      "Num": [
+        {
+          "key": 1,
+          "Number": 4
+        },
+        {
+          "key": 2,
+          "Number": 0
+        },
+        {
+          "key": 3,
+          "Number": 4
+        }
+      ],
+      "Message": "ページが見つかりませんでした。",
+      "Guide": "お探しのページはこちらにございませんか？"
+    }
+  },
 
   "Header": {
     "MainTitle"       : "chuo university soft tennis team",

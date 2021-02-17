@@ -95,18 +95,18 @@ export default {
     height: interval(9);
 
     &--blue {
-      @include border-gradient();
+      @include thumbnail-border();
     }
 
     &--orange {
-      @include border-gradient(
+      @include thumbnail-border(
         $start-color: color(orange),
         $end-color: color(lightDarkblue),
       );
     }
 
     &--green {
-      @include border-gradient(
+      @include thumbnail-border(
         $start-color: color(lightGreen),
         $end-color: color(lightDarkblue),
       );

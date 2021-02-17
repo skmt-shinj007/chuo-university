@@ -10,7 +10,9 @@ import Member from './views/Member.vue';
 import Hakumonkai from './views/Hakumonkai.vue';
 import History from './views/History.vue';
 import Photo from './views/Photo.vue';
-import Contact from './views/Contact.vue';
+
+// エラーページをインポート
+import NotFound from './views/errorPage/NotFound.vue';
 
 // テスト用ページ
 import Test from './views/Test.vue';
@@ -20,6 +22,10 @@ export default new VueRouter({
   // モードの設定
   mode: 'history',
   routes: [
+    {
+      path: '*',
+      redirect: "notFound"
+    },
     {
       path: '/',        // routeのパス設定
       name: 'home',      // 名前付きルートを設定したい場合付与
@@ -51,14 +57,20 @@ export default new VueRouter({
       component: Photo
     },
     {
-      path: '/contact',
-      name: 'contact',
-      component: Contact
-    },
-    {
       path: '/test',
       name: 'test',
       component: Test
+    },
+
+    /**
+     * エラーページ
+     * [400番台と500番台を用意する]
+     */
+    {
+      // 404
+      path: '/notFound',
+      name: 'notFound',
+      component: NotFound
     },
 
     /**

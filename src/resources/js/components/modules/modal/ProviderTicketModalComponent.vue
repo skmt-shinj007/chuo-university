@@ -173,7 +173,7 @@ export default {
   &__thumbnail-border {
     width: interval(20);
     height: 100%;
-    @include border-gradient();
+    @include thumbnail-border();
 
     @include mq(sm) {
       width: interval(18);
