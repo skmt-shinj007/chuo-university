@@ -129,7 +129,7 @@
 }
 
 // テニスボール
-@mixin ball($size: 160px, $content: 'CHUO\AUNIVERSITY') {
+@mixin ball($size: 160px, $content: 'CHUO\AUNIVERSITY', $fontSize: 10) {
   width: $size;
   height: $size;
   background-color: color(white);
@@ -156,7 +156,7 @@
     white-space: pre;
     color: darken($color: red, $amount: .4);
     font-weight: bold;
-    font-size: font(6);
+    font-size: font($fontSize);
     text-align: center;
     position: absolute;
     top: 50%;
