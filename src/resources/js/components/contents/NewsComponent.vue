@@ -21,9 +21,23 @@
 // components import
 import ContentsTitleComponent from '../modules/ContentsTitleComponent';
 
+import Api from '../../config/api';
+
 export default {
+  mixins: [ Api ],
+
   components: {
     ContentsTitleComponent,
+  },
+
+  data() {
+    return {
+
+    }
+  },
+
+  mounted() {
+
   },
 }
 </script>

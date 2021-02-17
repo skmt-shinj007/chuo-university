@@ -56,12 +56,14 @@ export default {
     ContentsTitleComponent,
     TextBoxComponent,
   },
+
   data() {
     return {
       data: Data,
       aboutItems: [],
     }
   },
+
   beforeMount() {
     this.$data.data.HomeAbout.forEach(element => this.aboutItems.push(element));
   },
