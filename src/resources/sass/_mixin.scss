@@ -286,7 +286,7 @@
   }
 }
 
-@mixin border-gradient($w, $start-color, $end-color) {
+@mixin border-gradient($w: 100%, $start-color, $end-color, $position: default) {
   position: relative;
 
   &::after {
@@ -296,8 +296,19 @@
     height: 2px;
     @include gradient($start-color, $end-color, horizontal);
     position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+
+    @if $position == top {
+      top: 0;
+    }
+
+    @else if $position == bottom {
+      bottom: 0;
+    }
+
+    @else {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
   }
 }
