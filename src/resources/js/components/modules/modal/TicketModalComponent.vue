@@ -236,7 +236,7 @@ export default {
   &__thumbnail-border {
     width: interval(20);
     height: 100%;
-    @include border-gradient();
+    @include thumbnail-border();
 
     @include mq(sm) {
       width: interval(18);
@@ -247,11 +247,11 @@ export default {
     }
 
     &--orange {
-      @include border-gradient($start-color: color(orange), $end-color: color(lightDarkblue));
+      @include thumbnail-border($start-color: color(orange), $end-color: color(lightDarkblue));
     }
 
     &--green {
-      @include border-gradient($start-color: color(lightGreen), $end-color: color(lightDarkblue));
+      @include thumbnail-border($start-color: color(lightGreen), $end-color: color(lightDarkblue));
     }
   }
 

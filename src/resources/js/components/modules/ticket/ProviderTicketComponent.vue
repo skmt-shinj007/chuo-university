@@ -74,7 +74,7 @@ export default {
   }
 
   &-thumbnail-border {
-    @include border-gradient();
+    @include thumbnail-border();
     width: interval(9);
     height: interval(9);
   }
