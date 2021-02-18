@@ -45,7 +45,6 @@ export default {
     this.features.Links.forEach(element => {
       if(element.menuName.ja === 'サイトマップ') this.menus = element.childrenMenus;
     });
-    console.log(this.menus);
   },
 
   methods: {
