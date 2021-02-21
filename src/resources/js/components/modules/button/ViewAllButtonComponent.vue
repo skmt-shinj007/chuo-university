@@ -1,103 +1,96 @@
 <template>
-<div class="c-viewAll" :class="changeSizing">
-  <button class="c-viewAll__button" :type="buttonType">
-    {{ name }}
-    <i class="fas fa-angle-right fa-2x c-viewAll__button-icon"></i>
+<div class="view-all">
+
+  <!-- button をクリックしたら親で指定されたクリックイベントが走る -->
+  <button class="view-all__btn" @click="runParentMethod">
+    <label class="view-all__btn-label">{{ btnLabel }}</label>
+    <svg-vue icon="angle-down" class="view-all__icon"/>
   </button>
+
 </div>
-
-<!--
-  ボタンテキストとボタンタイプを指定可能 (name="hoge" buttonType="hoge" を親コンポーネントで指定)
-  指定なしならpropsオブジェクト内default値が適用される。
-  例）<view-all-button-component name="メンバーを見る" buttonType="submit"/>
-
-  ボタンサイズの可変は、クラスの指定で行う。(親コンポーネントで buttonSize を指定)
-  1. c-viewAll-xs
-  2. c-viewAll-sm
--->
 </template>
 
 <script>
 export default {
   props: {
-    name: {
+    btnLabel: {
       type: String,
-      default: 'もっと見る',
+      default: "MORE"
     },
-    buttonType: {
-      type: String,
-      default: 'button',
+    btnStyle: {
+      type: Object,
+      default: null
     },
-    buttonSize: {
-      type: String,
-      default: null,
+
+    // ボタンのクリックイベントを親から受け取る
+    clickEvent: {
+      type: Function,
+      required: true,  // クリックイベントの受け渡しを必須に。
     }
   },
-  computed: {
-    changeSizing() {
-      return (this.buttonSize) ? `c-viewAll-${this.buttonSize}` : null;
+  methods: {
+    // propsで受け取った親のクリックイベントを実行
+    runParentMethod() {
+      this.clickEvent()
     }
   },
 }
 </script>
 
 <style lang="scss">
-.c-viewAll {
-  width: 80%;
-  max-width: btn-size(sm-width);
-  height: btn-size(sm-height);
+.view-all {
+  color: color(white);
+  width: 70%;
   margin: 0 auto;
-  background-color: color(white);
-  font-size: font(xs);
-  border: 1px solid color(orange);
-  border-radius: radius(soft);
-  position: relative;
 
-  // pc style
-  @include mq(md) {
-    width: btn-size(lg-width);
-    height: btn-size(lg-height);
-    font-size: font(sm);
-    background-color: rgba($color: color(white), $alpha: .6);
+  @include mq(sm) {
+    max-width: interval(50);
+  }
 
-    &-xs {
-      max-width: btn-size(xs-width);
-      height: btn-size(xs-height);
-      font-size: font(xs);
-    }
-
-    &-sm {
-      width: btn-size(sm-width);
-      height: btn-size(sm-height);
-      font-size: font(xs);
-    }
-
-    &:hover {
-      @include button-hover();  // ネストが深くなるためmixinファイルに変数としてスタイルを設定
-    }
-  };
-
-  &__button {
+  &__btn {
     width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: color(white);
-    color: color(orange);
-    border: 1px solid color(orange);
-    border-radius: radius(soft);
-    transform: translateX(4px) translateY(-4px);
+    position: relative;
+    padding: interval(3) interval(6);
+    border-radius: 100px;
     transition: all .3s ease-out;
+    box-shadow: 0 15px 13px -15px darken($color: color(orange), $amount: 3%);
+    @include flex(row nowrap, center, center);
+    @include gradient(color(deepYellow), color(orange), horizontal);
 
-    // pc style
+    @include hover {
+      box-shadow: 0 32px 30px -26px darken($color: color(orange), $amount: 3%);
+      transform: translateY(-4px);
+
+      .view-all__btn-label {
+        letter-spacing: 3px;
+      }
+    }
+
+    @include mq(sm) {
+      padding: interval(3) interval(6);
+    }
+
     @include mq(md) {
-      background-color: rgba($color: color(white), $alpha: .6);
-    };
+      box-shadow: 0 32px 30px -30px darken($color: color(orange), $amount: 3%);
+    }
+  }
 
-    &-icon {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
+  &__btn-label {
+    transition: all .3s ease-out;
+    font-size: font(14);
+  }
+
+  &__icon {
+    width: interval(1.5);
+    height: interval(1.5);
+    position: absolute;
+    top: 45%;
+    right: interval(2);
+    fill: color(white);
+    animation: fadeoutDown 1.5s infinite;
+
+    @include mq(sm) {
+      right: interval(4);
     }
   }
 }

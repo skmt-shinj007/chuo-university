@@ -5,15 +5,24 @@
   }
 }
 
-// bangers指定するときに使用。
-@mixin bangers($size: font(md), $letterSpacing: 1px, $weight: bold) {
+// hover
+@mixin hover {
+  &:hover {
+    @include mq(md) {
+      @content;
+    }
+  }
+}
+
+// フォント種類：bangers
+@mixin bangers($size: font(16), $letterSpacing: 1px, $weight: bold) {
   font-family: 'Bangers', cursive;
   font-size: $size;
   letter-spacing: $letterSpacing;
   font-weight: $weight;
 }
 
-// よく使うflexレイアウト
+// flexレイアウト
 @mixin flex($flow: row nowrap, $justify-content: flex-start, $align-items: stretch) {
   display: flex;
   flex-flow: $flow;
@@ -49,51 +58,39 @@
   }
 }
 
-// view all button hover
-@mixin button-hover() {
-  border: none;
+// 円形コンテンツのボーダーグラデーション
+@mixin thumbnail-border($c: white, $start-color: #0179D5, $end-color: #091E2F, $direction: vertical) {
+  border-radius: radius(circle);
+  background-color: color($c);
+  position: relative;
+  @include flex(row nowrap, center, center);
 
-  .c-viewAll__button {
-    transform: none;
-    border: none;
-    background-color: color(orange);
-    color: color(white);
-  }
-}
-
-// header button hover animation style
-@mixin header-button-hover($width: 40px, $height: 40px, $time: .5s) {
   &::before {
-    position: absolute;
     content: '';
-    width: $width;
-    height: $height;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    transition: $time all ease-in-out;
-  }
-
-  &:hover {
-    background-color: color(white);
-    color: color(darkblue);
-    transform: scale(1.1);
-
-    &::before {
-      border-color: color(darkblue);
-    }
-
-    .c-icon {
-      transform: rotateZ(360deg);
-    }
+    display: block;
+    width: 110%;
+    height: 110%;
+    border-radius: radius(circle);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include gradient($start-color, $end-color, $direction);
   }
 }
 
-// link decoration -text middle line
-@mixin text-before-line($width, $height, $bg-color) {
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+@mixin middle-line-text($width, $height, $bg-color) {
+  position: relative;
+  padding-left: interval($width + 1);
+
   &::before {
     display: block;
     content: '';
-    width: $width;
+    width: interval($width);
     height: $height;
     background-color: $bg-color;
     position: absolute;
@@ -103,12 +100,12 @@
   }
 }
 
-// background image
-@mixin background-image($url, $position) {
+// cssで背景指定（background-image）
+@mixin background-image($url, $position: center center, $size: cover) {
   background-image: url($url);
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: $position;
+  background-size: $size;
 }
 
 // image画像の縁を斜線で囲むレイアウト （多分使わないけど一旦保存しとく）
@@ -121,8 +118,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
     border-image-source: repeating-linear-gradient(45deg, color(white), color(white) 3px, color(darkblue) 0, color(darkblue) 6px);
     border-image-slice: 10;
     border-image-repeat: round;
@@ -132,10 +129,11 @@
 }
 
 // テニスボール
-@mixin ball {
-  width: 160px;
-  height: 160px;
-  background: linear-gradient(0deg, darken(#fff, 60%), darken(#fff, 10%), #fff);
+@mixin ball($size: 160px, $content: 'CHUO\AUNIVERSITY', $fontSize: 10) {
+  width: $size;
+  height: $size;
+  background-color: color(white);
+  box-shadow: inset -1rem -1rem 3rem color(darkShadow);
   border-radius: radius(circle);
   position: relative;
 
@@ -143,21 +141,22 @@
     display: block;
     content: '';
     position: absolute;
-    top: 40px;
+    top: calc(#{$size} / 4);
     left: 50%;
     transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
+    width: calc(#{$size} / 25);
+    height: calc(#{$size} / 25);
     background-color: darken($color: blue, $amount: 10%);
     border-radius: radius(circle);
   }
 
   &::after {
     display: block;
-    content: 'CHUO UNIVERSITY';
+    content: $content;
+    white-space: pre;
     color: darken($color: red, $amount: .4);
     font-weight: bold;
-    font-size: font(sm);
+    font-size: font($fontSize);
     text-align: center;
     position: absolute;
     top: 50%;
@@ -166,7 +165,7 @@
   }
 }
 
-// image トリミング
+// image トリミング (imgタグの一つ親のタグに指定する)
 @mixin trimming($aspect) {
   position: relative;
 
@@ -183,5 +182,133 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+// 年代タグ
+@mixin historyAgeTag($content: '時代', $position: top) {
+  &::after {
+    display: block;
+    content: $content;
+    padding: 0 interval(2);
+    border-radius: 30px;
+    background-color: color(darkblue);
+    color: color(white);
+    text-align: center;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    @if $position == top {
+      position: absolute;
+      top: interval(2);
+      left: 8%;
+      transform: translateX(-42%);
+    }
+
+    @if $position == mid {
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      transform: translate(-42%, -50%);
+    }
+
+    @if $position == bottom {
+      position: absolute;
+      bottom: interval(1);
+      left: 8%;
+      transform: translateX(-42%);
+    }
+
+  }
+}
+
+// close btn
+@mixin close-button($size: pixel(5), $color: color(white)) {
+  position: relative;
+  width: $size;
+  height: $size;
+  border-radius: radius(circle);
+  @include flex(row nowrap, center, center);
+  transition: all .3s ease-out;
+
+  & > i {
+    position: relative;
+    display: block;
+    background-color: $color;
+    width: calc( #{$size} / 2);
+    height: 3px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-out;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $color;
+      transform: rotate(90deg);
+      transition: all .3s ease-out;
+    }
+  }
+
+  @include mq(md) {
+    // ボタンの色がグレーの時
+    @if $color == color(darkblue) {
+      &:hover {
+        background-color: color(darkblue);
+      }
+
+      &:hover > .btn-line,
+      &:hover > .btn-line::before {
+        background-color: color(white);
+      }
+    }
+    // 基本のホバースタイル
+    @else {
+      &:hover {
+        background-color: color(orange);
+      }
+    }
+  }
+}
+
+// テーブルのセル幅を指定するためのスタイル
+@mixin rating($ratio) {
+  .common-table {
+    &__key {
+      width: calc(#{$ratio} * 10%);
+    }
+
+    &__value {
+      width: calc(100% - (#{$ratio} * 10%));
+    }
+  }
+}
+
+@mixin border-gradient($w: 100%, $start-color, $end-color, $position: default) {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: $w;
+    height: 2px;
+    @include gradient($start-color, $end-color, horizontal);
+    position: absolute;
+
+    @if $position == top {
+      top: 0;
+    }
+
+    @else if $position == bottom {
+      bottom: 0;
+    }
+
+    @else {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
   }
 }

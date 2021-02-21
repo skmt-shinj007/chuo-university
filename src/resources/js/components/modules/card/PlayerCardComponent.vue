@@ -1,0 +1,108 @@
+<template>
+<div class="player-card">
+  <figure class="player-card__figure">
+    <img :src="`/image/${player.img.src}`" :alt="player.img.alt">
+  </figure>
+
+  <div class="player-card__information">
+    <div class="player-card__name">
+      <span class="player-card__name-ja">{{ player.name.ja }}</span>
+      <span class="player-card__name-en">{{ player.name.en }}</span>
+    </div>
+
+    <div class="player-card__tag-group">
+
+      <div class="player-card__tag">
+        <position-tag-component :position="player.position"/>
+      </div>
+      <div class="player-card__tag">
+        <grade-tag-component v-if="player.grade" :grade="player.grade"/>
+      </div>
+    </div>
+
+    <div class="player-card__post" v-if="player.post.club">
+      <label class="player-card__post-label">{{ player.post.club }}</label>
+    </div>
+
+    <slot name="addCardContents" :player="player">
+      <!-- 差し込み：カードに追加したい内容を親コンポーネントで記述 -->
+    </slot>
+  </div>
+</div>
+</template>
+
+<script>
+// component import
+import TagComponent from '../tag/TagComponent';
+import PositionTagComponent from '../tag/PositionTagComponent';
+import GradeTagComponent from '../tag/GradeTagComponent';
+
+export default {
+  components: {
+    TagComponent,
+    PositionTagComponent,
+    GradeTagComponent,
+  },
+  props: {
+    player: {
+      type: Object,
+      default: null,
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.player-card {
+  position: relative;
+
+  &__figure {
+    @include trimming(aspect(square));
+    border-bottom: 2px solid color(darkblue);
+    background-color: color(white);
+  }
+
+  &__information {
+    background-color: color(lightgrey);
+    padding: interval(1);
+  }
+
+  &__name-ja {
+    display: block;
+    margin-left: interval(.5);
+  }
+
+  &__name-en {
+    @extend .player-card__name-ja;
+    font-size: font(10);
+  }
+
+  &__tag-group {
+    @include flex(row wrap);
+    align-content: space-around;
+    padding: interval(1) 0;
+  }
+
+  &__tag {
+    margin: interval(.5);
+  }
+
+  &__post {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: color(darkblue);
+    width: interval(6);
+    height: interval(6);
+    border: 2px solid color(white);
+    border-radius: radius(circle);
+    @include flex(row nowrap, center, center);
+  }
+
+  &__post-label {
+    color: color(white);
+    font-size: font(12);
+    line-height: 1;
+  }
+}
+</style>

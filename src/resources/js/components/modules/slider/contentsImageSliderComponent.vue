@@ -1,12 +1,20 @@
 <template>
-  <div class="c-imageSlider">
+  <div class="image-slider">
     <swiper ref="contentsImageSwiper" :options="params">
       <swiper-slide v-for="(image, n) in images" :key="n">
-        <figure class="c-imageSlider__container">
-          <img class="c-imageSlider__image" :src="`/image/${image.path}`" :alt="image.name">
-          <figcaption class="c-imageSlider__image-caption">
-            {{ image.text }}
+        <figure class="image-slider__container">
+
+          <img class="image-slider__image" :src="`/image/${image.path}`" :alt="image.name">
+
+          <figcaption v-if="image.caption" class="image-slider__caption">
+            <span class="image-slider__caption-content">{{ image.caption }}</span>
           </figcaption>
+
+          <figcaption v-if="image.capacity" class="image-slider__caption">
+            <span class="image-slider__capacity-number">{{ image.capacity }}</span>
+            <span class="image-slider__secondary-caption">人部屋</span>
+          </figcaption>
+
         </figure>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -52,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-imageSlider {
+.image-slider {
 
   &__container {
     @include trimming(aspect(rectangle));
@@ -63,23 +71,30 @@ export default {
 
   &__image {
     border-radius: radius(normal);
+  }
 
-    &-caption {
-      width: 90%;
-      background-color: rgba($color: color(white), $alpha: .6);
-      border-radius: radius(normal);
-      padding: interval(.5) interval(2);
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: font(sm);
+  &__caption {
+    width: 90%;
+    background-color: rgba($color: color(white), $alpha: .6);
+    border-radius: radius(normal);
+    padding: interval(.5) interval(2);
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: font(10);
 
-      // tab style
-      @include mq(sm) {
-        line-height: 2;
-      };
+    @include mq(sm) {
+      line-height: 2;
     }
+  }
+
+  &__secondary-caption {
+    font-size: font(10);
+  }
+
+  &__capacity-number {
+    font-size: font(16);
   }
 }
 </style>

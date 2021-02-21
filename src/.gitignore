@@ -1,8 +1,10 @@
 /node_modules
-/public/hot
-/public/storage
+# public配下を監視対象から除外
+/public/favicon.ico
+/public/.htaccess
+/public/web.config
+/public/robots.txt
 /public/mix-manifest.json
-/.DS_store
 /storage/*.key
 /vendor
 .env
@@ -12,3 +14,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.DS_store

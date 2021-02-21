@@ -1,9 +1,9 @@
 <template>
-<div class="c-sliderMainVisual">
+<div class="main-visual-slider">
     <swiper ref="mainVisualSwiper" :options="params">
       <swiper-slide v-for="(image, n) in images" :key="n">
-        <img class="c-sliderMainVisual__image" :src="`/image/${image.path}`" :alt="image.name">
-        <p class="c-sliderMainVisual__text">ここにテキストが入ります。<br>テキストもAPIでどうにかできないかな〜。</p>
+        <img class="main-visual-slider__image" :src="`/image/${image.path}`" :alt="image.name">
+        <p class="main-visual-slider__text">ここにテキストが入ります。<br>テキストもAPIでどうにかできないかな〜。</p>
       </swiper-slide>
       <!-- <div class="swiper-scrollbar" slot="scrollbar"></div> -->
       <!-- <div class="swiper-pagination" slot="pagination"></div> -->
@@ -31,13 +31,13 @@ export default {
 
         // ナビゲーション
         navigation: {
-          nextEl: '.c-sliderMainVisual .swiper-button-next',
-          prevEl: '.c-sliderMainVisual .swiper-button-prev',
+          nextEl: '.main-visual-slider .swiper-button-next',
+          prevEl: '.main-visual-slider .swiper-button-prev',
         },
 
         // ページネーション
         pagination: {
-          el: '.c-sliderMainVisual .swiper-pagination',
+          el: '.main-visual-slider .swiper-pagination',
           clickable: true,
         },
 
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-sliderMainVisual {
+.main-visual-slider {
   height: 100%;
   position: relative;
 
@@ -88,10 +88,15 @@ export default {
     top: 50%;
     left: 0;
     z-index: 10;
-    max-width: 280px;
     color: color(white);
-    padding-left: interval(3);
-    font-size: font(md);
+    padding-left: interval(2);
+    font-size: font(12);
+
+    @include mq(sm) {
+      left: 5%;
+      padding-left: 0;
+      font-size: font(16);
+    }
   }
 }
 </style>
