@@ -6,7 +6,7 @@
         <div class="image-modal">
           <header class="image-modal__header">
             <button class="image-modal__close-btn" @click="$emit('close')">
-              <i class="image-modal__close-btn-line"/>
+              <i class="btn-line"/>
             </button>
           </header>
 
@@ -223,7 +223,7 @@ export default {
   }
 
   &__close-btn {
-    @include close-button(interval(5));
+    @include close-button;
   }
 
   &__img-wrap {

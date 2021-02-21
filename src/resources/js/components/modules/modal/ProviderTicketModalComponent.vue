@@ -13,43 +13,23 @@
               <div class="ticket-modal__header">
 
                 <div class="ticket-modal__header-thumbnail">
-                  <div class="ticket-modal__thumbnail-border" :class="border">
+                  <div class="ticket-modal__thumbnail-border">
                     <figure class="ticket-modal__thumbnail">
-                      <img :src="`/image/${item.img.src}`" :alt="item.img.alt">
+                      <img :src="`/image/${item.img.src}.jpg`" :alt="item.img.alt">
                     </figure>
                   </div>
                 </div>
 
                 <div class="ticket-modal__header-info">
                   <div class="ticket-modal__name">
-                    <span class="ticket-modal__name-sub">{{ item.name.en }}</span>
-                    <h4 class="ticket-modal__name-main">{{ item.name.ja }}</h4>
-                  </div>
-
-                  <div class="ticket-modal__tag-group">
-                    <div class="ticket-modal__tag" v-if="item.post.club">
-                      <tag-component :content="item.post.club" :responsive="true"/>
-                    </div>
-                    <div class="ticket-modal__tag" v-if="item.position">
-                      <position-tag-component :position="item.position" :responsive="true"/>
-                    </div>
-                    <div class="ticket-modal__tag" v-if="item.grade">
-                      <grade-tag-component :grade="item.grade" :responsive="true"/>
-                    </div>
+                    <h4 class="ticket-modal__name-account">{{ item.name }}</h4>
                   </div>
                 </div>
               </div>
 
               <div class="ticket-modal__line"/>
 
-              <ul class="ticket-modal__list">
-
-                <!-- リストは、ユーザーカテゴリーによって内容が異なるのでslotに。 -->
-                <slot name="list">
-                  <table-component :tableItems="lists"/>
-                </slot>
-
-              </ul>
+              <!-- ここに出すコンテンツを検討 -->
             </div>
             <footer class="ticket-modal__footer">
 
@@ -98,54 +78,11 @@ export default {
   },
 
   computed: {
-    /**
-     * ポジションによってボーダー色を変えるためにクラスを付与する
-     */
-    border() {
-      const borderClass = 'ticket-modal__thumbnail-border';
-      return (this.item.position === "前衛") ? `${borderClass}--orange` : (this.item.position === "後衛") ? `${borderClass}--green` : `${borderClass}--blue`;
-    }
+
   },
 
   beforeMount() {
-    /**
-     * リストの配列をチケットのデータを基に作成し、配列:lists にプッシュする
-     */
-    const lists = [
-      {
-        key: "学年",
-        value: `${this.item.grade}年生`
-      },
-      {
-        key: "所属学部",
-        value: this.item.undergraduate
-      },
-      {
-        key: "役職",
-        value: this.item.post.club
-      },
-      {
-        key: "出身地",
-        value: this.item.from.place
-      },
-      {
-        key: "出身校",
-        value: this.item.from.almaMater
-      },
-      {
-        key: "ポジション",
-        value: this.item.position
-      },
-      {
-        key: "成績",
-        value: this.item.record
-      },
-      {
-        key: "メッセージ",
-        value: this.item.message
-      },
-    ];
-    lists.forEach(element => this.lists.push(element));
+
   },
 
 }
@@ -193,7 +130,7 @@ export default {
   }
 
   &__close-btn {
-    @include close-button($color: color(darkblue));
+    @include close-button(pixel(5), color(darkblue));
     position: absolute;
     right: interval(2);
     top: interval(2);
@@ -245,14 +182,6 @@ export default {
     @include mq(md) {
       width: interval(24);
     }
-
-    &--orange {
-      @include thumbnail-border($start-color: color(orange), $end-color: color(lightDarkblue));
-    }
-
-    &--green {
-      @include thumbnail-border($start-color: color(lightGreen), $end-color: color(lightDarkblue));
-    }
   }
 
   &__thumbnail {
@@ -272,11 +201,7 @@ export default {
     }
   }
 
-  &__name-sub {
-    font-size: font(14);
-  }
-
-  &__name-main {
+  &__name-account {
     font-size: font(18);
   }
 
@@ -302,10 +227,6 @@ export default {
     height: 2px;
     // @include gradient(color(deepDarkblue), color(white), horizontal);
     background-color: color(lightgray);
-  }
-
-  &__list {
-    padding: interval(5) 0;
   }
 }
 

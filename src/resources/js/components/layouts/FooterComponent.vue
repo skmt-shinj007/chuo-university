@@ -220,19 +220,7 @@ export default {
 
     &-title {
       @include bangers(font(32), 2.5px);
-      position: relative;
-
-      &::after {
-        content: '';
-        display: block;
-        width: 80%;
-        height: 2px;
-        @include gradient(rgba(color(lightgray), 0), color(lightgray), horizontal);
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-      }
+      @include border-gradient(80%, rgba(color(lightgray), 0), color(lightgray));
     }
 
     &-item {
@@ -258,7 +246,7 @@ export default {
     &-link {
       @include flex(row nowrap, flex-start, center);
       cursor: pointer;
-      transition: all .3s ease-out;
+      transition: transform .3s ease-out;
     }
 
     &-icon {
@@ -323,7 +311,7 @@ export default {
     border-radius: radius(circle);
     @include flex(row nowrap, center, center);
     cursor: pointer;
-    transition: all .3s ease-out;
+    transition: background-color .3s ease-out;
 
     @include hover {
       background-color: color(white);

@@ -12,7 +12,7 @@
         <header class="nav-modal__header" @click="$emit('close')">
           <svg-vue icon="hakumonkai-logo" class="nav-modal__logo"/>
           <button class="nav-modal__btn">
-            <i class="nav-modal__btn-line"/>
+            <i class="btn-line"/>
           </button>
         </header>
 
@@ -148,21 +148,7 @@ export default {
   }
 
   &__btn {
-    @include close-button(interval(5));
-
-    @include mq(md) {
-      transition: all .3s ease-out;
-    }
-
-    @include hover {
-      background: color(orange);
-      box-shadow: 0 0 20px 2px darken(color(orange), 10%);
-
-      .nav-modal__btn-line,
-      .nav-modal__btn-line::before {
-        background-color: color(white);
-      }
-    }
+    @include close-button;
   }
 
   &__accordion {

@@ -2,23 +2,18 @@
 <div class="record-tag">
   <div class="record-tag__color">
     <svg-vue icon="tennis-racket" class="record-tag__icon"/>
-    <span class="record-tag__content">{{ tagTitle }}</span>
+    <span class="record-tag__content">{{ messages.TagTitles.Record }}</span>
   </div>
 
   <div class="record-tag__open">
-    <span class="record-tag__open-text">WATCH</span>
+    <span class="record-tag__open-text">{{ messages.TagTitles.RecordHover }}</span>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-  props: {
-    tagTitle: {
-      type: String,
-      default: ''
-    }
-  },
+
 }
 </script>
 
@@ -71,10 +66,6 @@ export default {
     @include mq(sm) {
       font-size: font(14);
     }
-
-    @include mq(md) {
-      font-size: font(16);
-    }
   }
 
   &__open {
@@ -93,7 +84,7 @@ export default {
     letter-spacing: 1px;
     font-size: font(12);
     font-weight: bold;
-    @include gradient(color(orange),color(deepYellow), horizontal);
+    @include gradient(color(white),color(lightgray), horizontal);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 

@@ -6,6 +6,7 @@
 
     <div class="history__chronology-container" ref="chronology">
 
+      <!-- PC時のみ追従する時代のタグを表示 -->
       <div class="history__age">
         <div
           ref="ageTag"
@@ -17,24 +18,24 @@
 
       <div class="history__chronology-text">
 
-        <div class="history__text-inner" ref="taisho">
-          <!-- 大正の歴史 -->
-          <div class="history__text-inner-item">
-            <history-text-component :Contents="data.History.Taisho"/>
+        <!-- 大正の歴史 -->
+        <div class="history__box" ref="taisho">
+          <div class="history__item">
+            <history-box-component :data="data.History.Taisho"/>
           </div>
         </div>
 
-        <div class="history__text-inner" ref="showa">
-          <!-- 昭和の歴史 -->
-          <div class="history__text-inner-item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
-            <history-text-component :Contents="showaHistory"/>
+        <!-- 昭和の歴史 -->
+        <div class="history__box" ref="showa">
+          <div class="history__item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+            <history-box-component :data="showaHistory"/>
           </div>
         </div>
 
-        <div class="history__text-inner" ref="heisei">
-          <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-          <div class="history__text-inner-item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
-            <history-text-component :Contents="heiseiHistory"/>
+        <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
+        <div class="history__box" ref="heisei">
+          <div class="history__item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+            <history-box-component :data="heiseiHistory"/>
           </div>
         </div>
 
@@ -79,14 +80,14 @@
 // import components
 import Data from '../config/data.json';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import HistoryTextComponent from '../components/contents/HistoryTextComponent';
+import HistoryBoxComponent from '../components/contents/HistoryBoxComponent';
 import IconTableComponent from '../components/modules/table/IconTableComponent';
 import ChampionsCardComponent from '../components/modules/card/ChampionsCardComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
-    HistoryTextComponent,
+    HistoryBoxComponent,
     IconTableComponent,
     ChampionsCardComponent,
   },
@@ -287,19 +288,19 @@ export default {
     }
   }
 
-  &__text-inner {
+  &__box {
     margin-bottom: interval(10);
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    &-item {
-      margin-bottom: interval(10);
+  &__item {
+    margin-bottom: interval(10);
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 

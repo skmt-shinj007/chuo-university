@@ -29,9 +29,6 @@
         :key="`enpty-${n}`"
         :style="{ width: `${ticketWidth}px` }"/>
     </div>
-
-    <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
-
   </section>
 
   <section class="member__staff">
@@ -40,7 +37,7 @@
       :subTitle="messages.SectionTitles.Staff.Sub"/>
 
     <div class="member__user-ticket-group">
-      <div class="member__user-ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n">
+      <div class="member__user-ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
         <user-ticket-component :userObj="staffItem"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
@@ -52,6 +49,9 @@
       />
     </div>
   </section>
+
+  <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
+
 </div>
 </template>
 
@@ -60,6 +60,7 @@
 import MainVisualComponent from '../components/contents/MainVisualComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TicketModalComponent from '../components/modules/modal/TicketModalComponent.vue';
+import TableComponent from '../components/modules/table/TableComponent.vue';
 import UserTicketComponent from '../components/modules/ticket/UserTicketComponent';
 
 // data import
@@ -71,6 +72,7 @@ export default {
     ContentsTitleComponent,
     UserTicketComponent,
     TicketModalComponent,
+    TableComponent,
   },
   data() {
     return {

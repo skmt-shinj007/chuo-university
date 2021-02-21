@@ -152,21 +152,45 @@
   }
 }
 
-// 回転
-@keyframes rotation {
+@keyframes bound {
   0% {
-    transform: rotate(0);
+    transform: translate(0%,-100%);
   }
-  25% {
-    transform: rotate(45deg);
+  30% {
+    transform: translate(0%,0%) scale(1.1, 1);
   }
-  50% {
-    transform: rotate(90deg);
+  40% {
+    transform: translate(0%,-40%);
+  }
+  55% {
+    transform: translate(0%,0%) scale(1.1, 1);
+  }
+  60% {
+    transform: translate(0%,-15%);
+  }
+  70% {
+    transform: translate(0%,0%) scale(1.1, 1);
   }
   75% {
-    transform: rotate(135deg);
+    transform: translate(0%,-5%);
+  }
+  95% {
+    transform: translate(0%,0%) scale(1.1, 1);
+  }
+  100%{
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes rotation{
+  0% {
+    transform:
+      translateX(-50rem)
+      rotate(0deg);
   }
   100% {
-    transform: rotate(180deg);
+    transform:
+      translateX(0)
+      rotate(360 * 4 + 15deg);
   }
 }
