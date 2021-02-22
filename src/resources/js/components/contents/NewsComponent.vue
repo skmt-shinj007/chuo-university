@@ -51,7 +51,6 @@ export default {
       /**
        * twitter APIから取得した情報を格納
        * 非同期処理でデータを取得しているため、コンソールで確認ができないことに注意。
-       * template内で tweet を出力すると値が確認できる。
        * @type { Array }
        */
       tweets: null,
@@ -82,7 +81,6 @@ export default {
 
   methods: {
     redirect(route) {
-      console.log(this.$router);
       this.$router.push({name: route});
     },
 
