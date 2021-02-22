@@ -2,6 +2,7 @@
   "ReserveText"    : "ただいまテキストを準備中です。もう少々お待ちください。更新されない場合はお問い合わせフォームからご連絡ください。",
   "ReserveImageAlt": "イメージの補足テキストが入ります。",
   "Copyright": "@ Chuo University Soft Tennis Team",
+
   "Error": {
     "NotFound": {
       "Num": [
@@ -143,6 +144,10 @@
   "TagTitles": {
     "Record": "戦績",
     "RecordHover": "WATCH"
+  },
+
+  "Label": {
+    "Latest": "NEW"
   },
 
   "Age": {
