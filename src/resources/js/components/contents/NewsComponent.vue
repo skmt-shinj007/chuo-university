@@ -5,7 +5,9 @@
 
   <ul class="news__list" v-if="tweets">
     <li class="news__item" v-for="(tweet, i) in tweets" :key="i">
-      <a class="news__link" :href="linkUrl + tweet.id_str">{{ tweet.text }}</a>
+      <a class="news__link" :href="linkUrl + tweet.id_str" target="_blank" rel="noopener noreferrer">
+        {{ tweet.text }}
+      </a>
 
       <!-- 最も最新のツイート かつ フラグに従って表示を制御 -->
       <span class="news__latest-label" v-if="showLatestLabel && (i === 0)">
