@@ -953,24 +953,33 @@ import用ファイル
   list-style: disc;
   padding-left: 1.5rem;
 }
-.news-list__item[data-v-9b317ac0] {
+.news__item[data-v-9b317ac0] {
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
   word-wrap: break-word;
+  position: relative;
 }
-.news-list__item[data-v-9b317ac0]:last-child {
+.news__item[data-v-9b317ac0]:last-child {
   margin-bottom: 0;
 }
-.news-list__link[data-v-9b317ac0] {
+.news__link[data-v-9b317ac0] {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
 @media screen and (min-width: 1025px) {
-.news-list__link[data-v-9b317ac0]:hover {
+.news__link[data-v-9b317ac0]:hover {
     text-decoration: underline;
 }
+}
+.news__latest[data-v-9b317ac0] {
+  color: #C41A41;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-1rem, -0.5rem) rotate(-15deg);
 }@charset "UTF-8";
 /*
 import用ファイル
