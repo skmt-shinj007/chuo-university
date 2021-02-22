@@ -1,6 +1,6 @@
 <template>
 <div class="primary-btn" :class="variation">
-  <button class="primary-btn__btn" :type="btnType">
+  <button class="primary-btn__btn" :type="btnType" @click="clickEvent">
     {{ name }}
     <i class="fas fa-angle-right fa-2x primary-btn__icon"></i>
   </button>
@@ -28,6 +28,15 @@ export default {
     },
 
     /**
+     * クリックイベント
+     */
+    clickEvent: {
+      type: Function,
+      // required: true,
+      default: () => {}
+    },
+
+    /**
      * 特定の時にスタイルを変えたい場合のクラス名
      * スタイルを追加する必要がある。
      */
@@ -39,6 +48,12 @@ export default {
   computed: {
     variation() {
       return (this.variationClass) ? `primary-btn--${this.variationClass}` : null;
+    }
+  },
+
+  methods: {
+    toRoute(route) {
+      this.$router.push({ name: route })
     }
   },
 }

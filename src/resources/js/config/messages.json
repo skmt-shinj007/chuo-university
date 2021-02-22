@@ -21,6 +21,10 @@
       ],
       "Message": "ページが見つかりませんでした。",
       "Guide": "お探しのページはこちらにございませんか？"
+    },
+
+    "Api": {
+      "News": "誠に申し訳ございません、ニュースを表示できません。"
     }
   },
 
@@ -138,11 +142,12 @@
   "ButtonName": {
     "Member"     : "メンバーを見る",
     "Hakumonkai" : "白門会を知る",
-    "ToContact"  : "お問い合わせへ"
+    "ToContact"  : "お問い合わせへ",
+    "NewsRequest": "ニュースを取得"
   },
 
   "TagTitles": {
-    "Record": "戦績",
+    "Record"     : "戦績",
     "RecordHover": "WATCH"
   },
 

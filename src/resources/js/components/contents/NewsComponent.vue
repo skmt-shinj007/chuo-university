@@ -3,28 +3,41 @@
 
   <contents-title-component :title="messages.SectionTitles.News.Main" :subTitle="messages.SectionTitles.News.Sub"/>
 
-  <ul class="news__list">
+  <ul class="news__list" v-if="tweets">
     <li class="news__item" v-for="(tweet, i) in tweets" :key="i">
       <a class="news__link" :href="linkUrl + tweet.id_str">{{ tweet.text }}</a>
 
-      <!-- tweets配列の最初の要素 かつ フラグがtrueの場合に表示 -->
+      <!-- 最も最新のツイート かつ フラグに従って表示を制御 -->
       <span class="news__latest-label" v-if="showLatestLabel && (i === 0)">
         {{ messages.Label.Latest }}
       </span>
     </li>
   </ul>
+
+  <!-- ツイートが取得できなかった場合に表示 -->
+  <div class="err" v-if="showErr">
+    <span class="err__text">{{ messages.Error.Api.News }}</span>
+
+    <div class="err__btn">
+      <primary-button-component :name="messages.ButtonName.NewsRequest" :clickEvent="getResponse"/>
+    </div>
+  </div>
+
 </div>
 </template>
 
 <script>
 // components import
 import ContentsTitleComponent from '../modules/ContentsTitleComponent';
+import PrimaryButtonComponent from '../modules/button/PrimaryButtonComponent.vue';
 
+// Library import
 import axios from 'axios';
 
 export default {
   components: {
     ContentsTitleComponent,
+    PrimaryButtonComponent,
   },
 
   data() {
@@ -39,15 +52,21 @@ export default {
        * twitter APIから取得した情報を格納
        * 非同期処理でデータを取得しているため、コンソールで確認ができないことに注意。
        * template内で tweet を出力すると値が確認できる。
-       * @type { Object }
+       * @type { Array }
        */
       tweets: null,
 
       /**
        * 1ヶ月以内の投稿に「NEW」を表示するためのフラグ。
-       * @type { Boolean }}
+       * @type { Boolean }
        */
       showLatestLabel: false,
+
+      /**
+       * ツイートが取得できなかった場合に表示
+       * @type { Boolean }
+       */
+      showErr: false,
     }
   },
 
@@ -63,7 +82,8 @@ export default {
 
   methods: {
     redirect(route) {
-      return this.$router.push(route);
+      console.log(this.$router);
+      this.$router.push({name: route});
     },
 
     /**
@@ -73,6 +93,12 @@ export default {
       await axios.get('/api/twitter')
 
       .then(function (response) {
+        // 返答がオブジェクト形式ではない場合にデータを空にする。
+        if (typeof response.data !== 'object') {
+          this.showErr = true;
+          return this.tweets = null;
+        }
+
         // apiレスポンスを変数に格納。(直近のツイート3件)
         this.tweets = response.data;
 
@@ -83,17 +109,18 @@ export default {
         const currentMonth = this.tweets[0].current_date.month;  // 現在の月
 
         if ((createdYear === currentYear) && (createdMonth === currentMonth)) this.showLatestLabel = true;
+        console.log(this.tweets);
       }.bind(this))
 
       .catch(function (err) {
         // エラー情報出力
-        console.log('Error Object -> ', err);
-        console.log('Status Code -> ', err.response.status);
-        console.log('Status Text -> ', err.response.statusText);
+        console.log('!Error:', err.toJSON());
+        console.log('Status Code:', err.response.status);
+        console.log('Status Text:', err.response.statusText);
         console.log('Headers -> ', err.response.headers);
 
         if (err.response) this.redirect('notFound');
-      }.bind(this));
+      }.bind(this))
     },
   }
 }
@@ -141,9 +168,24 @@ export default {
     color: color(japanRed);
     font-weight: bold;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: - interval(.5);
+    left: interval(1);
     transform: translate(- interval(2), - interval(1)) rotate(-15deg);
+  }
+}
+
+.err {
+
+  &__text {
+    display: block;
+
+    @include mq(sm) {
+      text-align: center;
+    }
+  }
+
+  &__btn {
+    margin-top: interval(5);
   }
 }
 </style>
