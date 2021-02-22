@@ -91,10 +91,9 @@ export default {
       await axios.get('/api/twitter')
 
       .then(function (response) {
-        // 返答がオブジェクト形式ではない場合にデータを空にする。
+        // 返答がオブジェクト形式ではない場合にエラー画面を出す。
         if (typeof response.data !== 'object') {
-          this.showErr = true;
-          return this.tweets = null;
+          return this.err();
         }
 
         // apiレスポンスを変数に格納。(直近のツイート3件)
@@ -107,19 +106,26 @@ export default {
         const currentMonth = this.tweets[0].current_date.month;  // 現在の月
 
         if ((createdYear === currentYear) && (createdMonth === currentMonth)) this.showLatestLabel = true;
-        console.log(this.tweets);
       }.bind(this))
 
       .catch(function (err) {
-        // エラー情報出力
-        console.log('!Error:', err.toJSON());
-        console.log('Status Code:', err.response.status);
-        console.log('Status Text:', err.response.statusText);
-        console.log('Headers -> ', err.response.headers);
+        console.log(err);
 
-        if (err.response) this.redirect('notFound');
+        if (err.response) {
+          console.log('Err Message:', err.response.data.message);
+          console.log('Status Code:', err.response.status);
+          console.log('Status Text:', err.response.statusText);
+        }
+
+        // エラー画面出力。
+        this.err();
       }.bind(this))
     },
+
+    err() {
+      this.showErr = true;
+      this.tweets = null;
+    }
   }
 }
 </script>

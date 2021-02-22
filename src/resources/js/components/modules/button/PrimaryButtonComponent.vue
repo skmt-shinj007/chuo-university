@@ -50,12 +50,6 @@ export default {
       return (this.variationClass) ? `primary-btn--${this.variationClass}` : null;
     }
   },
-
-  methods: {
-    toRoute(route) {
-      this.$router.push({ name: route })
-    }
-  },
 }
 </script>
 
