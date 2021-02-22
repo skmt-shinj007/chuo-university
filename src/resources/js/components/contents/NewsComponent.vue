@@ -4,9 +4,13 @@
   <contents-title-component :title="messages.SectionTitles.News.Main" :subTitle="messages.SectionTitles.News.Sub"/>
 
   <ul class="news__list">
-    <li class="news__item" v-for="(tweet, n) in tweets" :key="n">
+    <li class="news__item" v-for="(tweet, i) in tweets" :key="i">
       <a class="news__link" :href="linkUrl + tweet.id_str">{{ tweet.text }}</a>
-      <span class="news__latest" v-if="showLatestLabel">{{ messages.Label.Latest }}</span>
+
+      <!-- tweets配列の最初の要素 かつ フラグがtrueの場合に表示 -->
+      <span class="news__latest-label" v-if="showLatestLabel && (i === 0)">
+        {{ messages.Label.Latest }}
+      </span>
     </li>
   </ul>
 </div>
@@ -48,18 +52,37 @@ export default {
   },
 
   beforeMount() {
-    axios.get('/api/twitter')
+    this.getResponse();
+
+    /**
+     * [リンクURL]
+     * 下記URLにツイートのIDを付与することでリンクURLを生成する。
+     */
+    this.linkUrl = 'https://twitter.com/SoftTennis_Chuo/status/';
+  },
+
+  methods: {
+    redirect(route) {
+      return this.$router.push(route);
+    },
+
+    /**
+     * サーバーからtwitter APIレスポンスを取得。
+     */
+    async getResponse() {
+      await axios.get('/api/twitter')
 
       .then(function (response) {
         // apiレスポンスを変数に格納。(直近のツイート3件)
         this.tweets = response.data;
 
-        const createdDate = this.tweets[0].created_date;
-        const currentDate = this.tweets[0].current_date;
+        // 投稿日と現在の日付を比較して、ラベルを表示させる。
+        const createdYear = this.tweets[0].created_date.year;    // 投稿年
+        const createdMonth = this.tweets[0].created_date.month;  // 投稿月
+        const currentYear = this.tweets[0].current_date.year;    // 現在の年
+        const currentMonth = this.tweets[0].current_date.month;  // 現在の月
 
-        if ((createdDate.year === currentDate.year) && (createdDate.month === currentDate.month)) {
-          this.showLatestLabel = true;
-        }
+        if ((createdYear === currentYear) && (createdMonth === currentMonth)) this.showLatestLabel = true;
       }.bind(this))
 
       .catch(function (err) {
@@ -69,23 +92,10 @@ export default {
         console.log('Status Text -> ', err.response.statusText);
         console.log('Headers -> ', err.response.headers);
 
-        if (err.response) {
-          /**
-           * クライアント側でエラー応答を受信した場合（400系, 500系）
-           * エラーページにリダイレクトさせる。
-           * TODO:APIエラーなので500系のエラーページに飛ばす。（現在は404に飛ばしている）
-           */
-          this.$router.push('notFound')
-        }
-      }.bind(this)
-    );
-
-    /**
-     * [リンクURL]
-     * 下記URLにツイートのIDを付与することでリンクURLを生成する。
-     */
-    this.linkUrl = 'https://twitter.com/SoftTennis_Chuo/status/';
-  },
+        if (err.response) this.redirect('notFound');
+      }.bind(this));
+    },
+  }
 }
 </script>
 
@@ -127,7 +137,7 @@ export default {
     }
   }
 
-  &__latest {
+  &__latest-label {
     color: color(japanRed);
     font-weight: bold;
     position: absolute;
