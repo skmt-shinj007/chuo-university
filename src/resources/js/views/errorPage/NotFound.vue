@@ -45,7 +45,6 @@ export default {
     this.features.Links.forEach(element => {
       if(element.menuName.ja === 'サイトマップ') this.menus = element.childrenMenus;
     });
-    console.log(this.menus);
   },
 
   methods: {
@@ -54,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .err {
   @include flex(column nowrap, center, center);
   background-color: color(lightgray);

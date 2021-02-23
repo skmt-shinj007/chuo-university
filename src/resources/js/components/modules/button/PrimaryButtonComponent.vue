@@ -1,6 +1,6 @@
 <template>
 <div class="primary-btn" :class="variation">
-  <button class="primary-btn__btn" :type="btnType">
+  <button class="primary-btn__btn" :type="btnType" @click="clickEvent">
     {{ name }}
     <i class="fas fa-angle-right fa-2x primary-btn__icon"></i>
   </button>
@@ -25,6 +25,15 @@ export default {
     btnType: {
       type: String,
       default: 'button',
+    },
+
+    /**
+     * クリックイベント
+     */
+    clickEvent: {
+      type: Function,
+      // required: true,
+      default: () => {}
     },
 
     /**

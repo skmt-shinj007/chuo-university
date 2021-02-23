@@ -28,6 +28,13 @@ import global from './config/global';
 Vue.mixin(global);
 
 /**
+ * axios import
+ */
+import axios from 'axios';
+import vueAxios from 'vue-axios';
+Vue.use(vueAxios, axios);
+
+/**
  * components (全ページで使う共通コンポーネント)
  */
 import HeaderComponent from './components/layouts/HeaderComponent';
