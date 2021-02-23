@@ -57,7 +57,6 @@ export default {
   padding: 0 interval(2) interval(2) interval(2);
   background-color: rgba($color: color(white), $alpha: .8);
   box-shadow: 0px 6px 8px color(shadow);
-  margin: 0 auto;
 
   @include mq(sm) {
     padding: 0 interval(3) interval(3) interval(3);
@@ -68,9 +67,17 @@ export default {
     min-height: interval(50);
   }
 
+  &__text {
+    margin-bottom: interval(5);
+  }
+
   &__button {
-    margin-top: interval(5);
     width: 100%;
+
+    @include mq(sm) {
+      max-width: interval(50);
+      margin: 0 auto;
+    }
   }
 }
 </style>

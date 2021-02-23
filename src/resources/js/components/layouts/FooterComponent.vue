@@ -8,7 +8,7 @@
       color="white"/>
 
       <div class="footer__contact-lead">
-        <p class="footer__contact-text nl2br" v-text="messages.Footer.LeadContact"/>
+        <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
       </div>
 
       <div class="footer__contact-btn">
@@ -174,17 +174,15 @@ export default {
   }
 
   &__contact-lead {
-    max-width: interval(40);
-    margin: 0 auto;
-
-    @include mq(sm) {
-      max-width: none;
-      text-align: center;
-    }
+    margin-bottom: interval(5);
+    text-align: center;
   }
 
   &__contact-btn {
-    margin-top: interval(5);
+    @include mq(sm) {
+      max-width: interval(50);
+      margin: 0 auto;
+    }
   }
 
   &__accordion-menu {

@@ -938,16 +938,16 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.primary-btn {
-  width: 80%;
-  max-width: 15rem;
-  height: 3rem;
-  margin: 0 auto;
+.primary-btn__btn, .primary-btn {
   background-color: #ffffff;
-  font-size: 0.625rem;
   border: 1px solid #e56c2c;
   border-radius: 2px;
+  transition: transform 0.3s ease-out, background-color 0.5s linear;
+}
+.primary-btn {
+  width: 100%;
   position: relative;
+  color: #e56c2c;
 }
 @media screen and (min-width: 1025px) {
 .primary-btn:hover {
@@ -956,29 +956,26 @@ import用ファイル
 .primary-btn:hover .primary-btn__btn {
     transform: none;
     border: none;
-    background-color: #e56c2c;
     color: #ffffff;
-}
-}
-@media screen and (min-width: 1025px) {
-.primary-btn--sm {
-    max-width: 13rem;
-    height: 2.5rem;
-    font-size: 0.5rem;
+    background-color: #e56c2c;
 }
 }
 .primary-btn__btn {
   width: 100%;
   height: 100%;
-  text-align: center;
-  background-color: #ffffff;
-  color: #e56c2c;
-  border: 1px solid #e56c2c;
-  border-radius: 2px;
-  transform: translateX(4px) translateY(-4px);
-  transition: all 0.3s ease-out;
+  padding: 1.25rem;
+  transform: translateX(-4px) translateY(4px);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.primary-btn__name {
+  font-size: 0.625rem;
 }
 .primary-btn__icon {
+  width: 1rem;
+  height: 1rem;
   position: absolute;
   top: 50%;
   right: 10px;
@@ -1329,14 +1326,18 @@ import用ファイル
 }
 .err__text[data-v-9b317ac0] {
   display: block;
+  margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
 .err__text[data-v-9b317ac0] {
     text-align: center;
 }
 }
+@media screen and (min-width: 560px) {
 .err__btn[data-v-9b317ac0] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1636,7 +1637,6 @@ import用ファイル
   padding: 0 1rem 1rem 1rem;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 6px 8px #e6e6e6;
-  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .text-box {
@@ -1652,9 +1652,17 @@ import用ファイル
     min-height: 25rem;
 }
 }
+.text-box__text {
+  margin-bottom: 2.5rem;
+}
 .text-box__button {
-  margin-top: 2.5rem;
   width: 100%;
+}
+@media screen and (min-width: 560px) {
+.text-box__button {
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -6602,14 +6610,29 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
+.club__member-number-table[data-v-357d3955] {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 560px) {
 .club__member-button[data-v-357d3955] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }
 .club__photo[data-v-357d3955] {
   margin-top: 2.5rem;
 }
+.club__photo-images[data-v-357d3955] {
+  margin-bottom: 2.5rem;
+}
 .club__photo-button[data-v-357d3955] {
   margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.club__photo-button[data-v-357d3955] {
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8622,11 +8645,7 @@ import用ファイル
 }
 .hakumonkai-lead-text[data-v-42f1fe89] {
   font-weight: bold;
-}
-@media screen and (min-width: 1025px) {
-.hakumonkai-lead-text[data-v-42f1fe89] {
-    text-align: center;
-}
+  text-align: center;
 }
 .hakumonkai__officer[data-v-42f1fe89] {
   margin-top: 2.5rem;
@@ -8661,19 +8680,18 @@ import用ファイル
 .hakumonkai__player-card[data-v-42f1fe89]:last-child {
   margin: 0;
 }
+.hakumonkai__message-content[data-v-42f1fe89] {
+  margin-bottom: 2.5rem;
+}
 .hakumonkai__message-text[data-v-42f1fe89] {
   text-align: center;
   font-weight: bold;
-  max-width: 29rem;
-  margin: 0 auto;
 }
-@media screen and (min-width: 1025px) {
-.hakumonkai__message-text[data-v-42f1fe89] {
-    max-width: 34rem;
-}
-}
+@media screen and (min-width: 560px) {
 .hakumonkai__message-btn[data-v-42f1fe89] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }
 .background-prlx[data-v-42f1fe89] {
   background-image: url("/image/group-photo2017-spring.jpg");
@@ -16955,17 +16973,14 @@ import用ファイル
   padding-bottom: 1.5rem;
 }
 .footer__contact-lead[data-v-060e08fe] {
-  max-width: 20rem;
-  margin: 0 auto;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 @media screen and (min-width: 560px) {
-.footer__contact-lead[data-v-060e08fe] {
-    max-width: none;
-    text-align: center;
-}
-}
 .footer__contact-btn[data-v-060e08fe] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }
 .footer__accordion-menu[data-v-060e08fe] {
   margin-top: 5rem;

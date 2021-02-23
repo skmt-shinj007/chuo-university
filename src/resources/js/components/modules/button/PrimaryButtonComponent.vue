@@ -1,8 +1,8 @@
 <template>
 <div class="primary-btn" :class="variation">
   <button class="primary-btn__btn" :type="btnType" @click="clickEvent">
-    {{ name }}
-    <i class="fas fa-angle-right fa-2x primary-btn__icon"></i>
+    <span class="primary-btn__name">{{ name }}</span>
+    <svg-vue icon="angle-right" class="primary-btn__icon"/>
   </button>
 </div>
 </template>
@@ -54,16 +54,18 @@ export default {
 </script>
 
 <style lang="scss">
-.primary-btn {
-  width: 80%;
-  max-width: interval(30);
-  height: interval(6);
-  margin: 0 auto;
+%frame {
   background-color: color(white);
-  font-size: font(10);
   border: 1px solid color(orange);
   border-radius: radius(soft);
+  transition: transform .3s ease-out, background-color .5s linear;
+}
+
+.primary-btn {
+  @extend %frame;
+  width: 100%;
   position: relative;
+  color: color(orange);
 
   @include hover {
     border: none;
@@ -71,34 +73,27 @@ export default {
     .primary-btn__btn {
       transform: none;
       border: none;
-      background-color: color(orange);
       color: color(white);
-    }
-  }
-
-  // pc style
-  @include mq(md) {
-
-    &--sm {
-      max-width: interval(26);
-      height: interval(5);
-      font-size: font(8);
+      background-color: color(orange);
     }
   }
 
   &__btn {
     width: 100%;
     height: 100%;
-    text-align: center;
-    background-color: color(white);
-    color: color(orange);
-    border: 1px solid color(orange);
-    border-radius: radius(soft);
-    transform: translateX(4px) translateY(-4px);
-    transition: all .3s ease-out;
+    padding: interval(2.5);
+    @extend %frame;
+    transform: translateX(-4px) translateY(4px);
+    @include flex(row nowrap, center, center);
+  }
+
+  &__name {
+    font-size: font(10);
   }
 
   &__icon {
+    width: interval(2);
+    height: interval(2);
     position: absolute;
     top: 50%;
     right: 10px;

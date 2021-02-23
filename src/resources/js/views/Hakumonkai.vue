@@ -28,20 +28,6 @@
       :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
 
     <player-slider-component :players="activeAlumni"/>
-
-    <!-- <div class="hakumonkai__players">
-
-      <div class="hakumonkai__player-card" v-for="(alumni, n) in activeAlumni" :key="n">
-        <player-card-component :player="alumni">
-        <template v-slot:addCardContents="componentProps">
-          <div class="player-card__record">
-            <span class="player-card__record-text">{{ componentProps.player.record }}</span>
-          </div>
-        </template>
-        </player-card-component>
-      </div>
-
-    </div> -->
   </section>
 
   <section class="hakumonkai__message">
@@ -49,11 +35,12 @@
       :title="messages.SectionTitles.Message.Main"
       :subTitle="messages.SectionTitles.Message.Sub"/>
 
-    <div class="hakumonkai__message-container">
+    <div class="hakumonkai__message-content">
       <p class="hakumonkai__message-text nl2br" v-text="messages.Hakumonkai.Message"/>
-      <div class="hakumonkai__message-btn">
-        <primary-button-component :name="messages.ButtonName.ToContact"/>
-      </div>
+    </div>
+
+    <div class="hakumonkai__message-btn">
+      <primary-button-component :name="messages.ButtonName.ToContact"/>
     </div>
   </section>
 </div>
@@ -120,10 +107,7 @@ export default {
 
   &-lead-text {
     font-weight: bold;
-
-    @include mq(md) {
-      text-align: center;
-    }
+    text-align: center;
   }
 
   &__officer {
@@ -156,19 +140,20 @@ export default {
     }
   }
 
+  &__message-content {
+    margin-bottom: interval(5);
+  }
+
   &__message-text {
     text-align: center;
     font-weight: bold;
-    max-width: interval(58);
-    margin: 0 auto;
-
-    @include mq(md) {
-      max-width: interval(68);
-    }
   }
 
   &__message-btn {
-    margin-top: interval(5);
+    @include mq(sm) {
+      max-width: interval(50);
+      margin: 0 auto;
+    }
   }
 }
 

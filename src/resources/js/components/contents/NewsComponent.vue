@@ -108,6 +108,8 @@ export default {
         const currentMonth = this.tweets[0].current_date.month;  // 現在の月
 
         if ((createdYear === currentYear) && (createdMonth === currentMonth)) this.showLatestLabel = true;
+
+        this.showErr = false;
       }.bind(this))
 
       .catch(function (err) {
@@ -184,6 +186,7 @@ export default {
 
   &__text {
     display: block;
+    margin-bottom: interval(5);
 
     @include mq(sm) {
       text-align: center;
@@ -191,7 +194,10 @@ export default {
   }
 
   &__btn {
-    margin-top: interval(5);
+    @include mq(sm) {
+      max-width: interval(50);
+      margin: 0 auto;
+    }
   }
 }
 </style>
