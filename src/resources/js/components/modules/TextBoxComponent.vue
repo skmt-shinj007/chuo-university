@@ -7,7 +7,7 @@
     <p class="nl2br" v-text="contentsText"></p>
   </div>
   <div class="text-box__button">
-    <primary-button-component :name="buttonName"/>
+    <primary-route-button-component :button="button"/>
   </div>
 </div>
 </template>
@@ -15,13 +15,14 @@
 <script>
 // components import
 import ContentsTitleComponent from './ContentsTitleComponent';
-import PrimaryButtonComponent from './button/PrimaryButtonComponent';
+import PrimaryRouteButtonComponent from './button/PrimaryRouteButtonComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
-    PrimaryButtonComponent,
+    PrimaryRouteButtonComponent,
   },
+
   props: {
     /**
      * テキストのタイトル
@@ -45,9 +46,10 @@ export default {
     },
 
     /**
-     * ボタンのラベル
+     * ボタンオブジェクト
+     * nameとrouteが格納。
      */
-    buttonName: String,
+    button: Object,
   },
 }
 </script>

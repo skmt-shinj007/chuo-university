@@ -89,7 +89,7 @@
         </div>
 
         <div class="club__member-button">
-          <primary-button-component :name="messages.ButtonName.Member"/>
+          <primary-route-button-component :button="messages.RouteButton.Member"/>
         </div>
       </div>
     </section>
@@ -103,7 +103,7 @@
     </div>
 
     <div class="club__photo-button">
-      <primary-button-component/>
+      <primary-route-button-component :button="messages.RouteButton.ViewAll.Photo"/>
     </div>
   </section>
 </div>
@@ -121,7 +121,7 @@ import TableComponent from '../components/modules/table/TableComponent';
 import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
 import DormitoryTicketComponent from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
-import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
+import PrimaryRouteButtonComponent from '../components/modules/button/PrimaryRouteButtonComponent';
 import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
 
 export default {
@@ -135,9 +135,10 @@ export default {
     CaptionBarImageComponent,
     DormitoryTicketComponent,
     PlayerSliderComponent,
-    PrimaryButtonComponent,
+    PrimaryRouteButtonComponent,
     ArrangeImagesComponent,
   },
+
   data() {
     return {
       data: Data,

@@ -21,7 +21,7 @@
     <span class="err__text">{{ messages.Error.Api.News }}</span>
 
     <div class="err__btn">
-      <primary-button-component :name="messages.ButtonName.NewsRequest" :clickEvent="getResponse"/>
+      <primary-button-component :name="messages.FunctionButton.NewsRequest" :clickEvent="getResponse"/>
     </div>
   </div>
 
