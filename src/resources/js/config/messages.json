@@ -136,50 +136,12 @@
     "Filter" : "絞り込み"
   },
 
-  "RouteButton": {
-
-    "ViewAll": {
-
-      "Member": {
-        "name":  "もっと見る",
-        "to"  : "member"
-      },
-
-      "Hakumonkai": {
-        "name":  "もっと見る",
-        "to"  : "hakumonkai"
-      },
-
-      "History": {
-        "name":  "もっと見る",
-        "to"  : "history"
-      },
-
-      "Photo": {
-        "name":  "もっと見る",
-        "to"  : "photo"
-      }
-    },
-
-    "Member": {
-      "name":  "メンバーを見る",
-      "to"  : "member"
-    },
-
-    "Hakumonkai": {
-      "name":  "白門会を知る",
-      "to"  : "hakumonkai"
-    },
-
-    "ToContact": {
-      "name":  "お問い合わせへ",
-      "to"  : "contact"
-    }
-  },
-
-  "FunctionButton": {
+  "ButtonName": {
+    "Member":  "メンバーを見る",
+    "Hakumonkai": "白門会を知る",
+    "ToContact": "お問い合わせへ",
     "NewsRequest": "ニュースを取得"
-  },
+    },
 
   "TagTitles": {
     "Record"     : "戦績",

@@ -17,7 +17,7 @@
         <div class="home__lead">
           <text-box-component
           :titles="aboutItem.title"
-          :button="aboutItem.button"
+          :buttonName="aboutItem.button.name"
           :contentsText="aboutItem.text"/>
         </div>
       </div>

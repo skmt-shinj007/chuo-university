@@ -40,7 +40,7 @@
     </div>
 
     <div class="hakumonkai__message-btn">
-      <primary-route-button-component :button="messages.RouteButton.ToContact"/>
+      <primary-button-component :name="messages.ButtonName.ToContact"/>
     </div>
   </section>
 </div>
@@ -51,7 +51,7 @@
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TileTableComponent from '../components/modules/table/TileTableComponent';
 import PlayerCardComponent from '../components/modules/card/PlayerCardComponent';
-import PrimaryRouteButtonComponent from '../components/modules/button/PrimaryRouteButtonComponent';
+import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent.vue';
 
 // data import
@@ -62,7 +62,7 @@ export default {
     ContentsTitleComponent,
     TileTableComponent,
     PlayerCardComponent,
-    PrimaryRouteButtonComponent,
+    PrimaryButtonComponent,
     PlayerSliderComponent,
   },
   data() {
