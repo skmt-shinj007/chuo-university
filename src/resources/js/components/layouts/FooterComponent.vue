@@ -12,7 +12,7 @@
       </div>
 
       <div class="footer__contact-btn">
-        <primary-link-button-component :link="messages.Links.ToContact"/>
+        <link-button-component :link="messages.Links.ToContact"/>
       </div>
     </div>
 
@@ -73,7 +73,7 @@
 <script>
 // component import
 import AccordionLinkComponent from '../modules/accordion/AccordionLinkComponent.vue';
-import PrimaryLinkButtonComponent from '../modules/button/PrimaryLinkButtonComponent';
+import LinkButtonComponent from '../modules/button/LinkButtonComponent';
 import ContentsTitleComponent from '../modules/ContentsTitleComponent.vue';
 
 // data import
@@ -83,7 +83,7 @@ import Features from '../../config/features.json';
 export default {
   components: {
     ContentsTitleComponent,
-    PrimaryLinkButtonComponent,
+    LinkButtonComponent,
     AccordionLinkComponent,
   },
 
