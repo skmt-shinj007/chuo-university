@@ -1,7 +1,7 @@
 <template>
-<div class="primary-btn" :class="variation">
-  <button class="primary-btn__btn" :type="btnType" @click="clickEvent">
-    <span class="primary-btn__name">{{ name }}</span>
+<div class="primary-btn">
+  <button class="primary-btn__btn" :type="btn.Type" @click="clickEvent">
+    <span class="primary-btn__name">{{ btn.Name }}</span>
     <svg-vue icon="angle-right" class="primary-btn__icon"/>
   </button>
 </div>
@@ -11,44 +11,20 @@
 export default {
   props: {
     /**
-     * ボタンのラベル
+     * ボタンを生成するためのデータ
+     * prop => Name, Type
      */
-    name: {
-      type: String,
-      default: 'もっと見る',
-    },
-
-    /**
-     * ボタンのタイプ
-     * button, submit 等
-     */
-    btnType: {
-      type: String,
-      default: 'button',
-    },
-
-    /**
-     * クリックイベント
-     */
-    clickEvent: {
-      type: Function,
-      // required: true,
-      default: () => {}
-    },
-
-    /**
-     * 特定の時にスタイルを変えたい場合のクラス名
-     * スタイルを追加する必要がある。
-     */
-    variationClass: {
-      type: String,
+    btn: {
+      type: Object,
       default: null,
-    }
+      required: true,
+    },
   },
-  computed: {
-    variation() {
-      return (this.variationClass) ? `primary-btn--${this.variationClass}` : null;
-    }
+
+  methods: {
+    clickEvent() {
+      this.$emit("clickEvent");
+    },
   },
 }
 </script>
@@ -98,14 +74,6 @@ export default {
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
-  }
-
-  &--rgba {
-    background-color: rgba($color: color(white), $alpha: .6);
-
-    .primary-btn__btn {
-      background-color: rgba($color: color(white), $alpha: .6);
-    }
   }
 
 }

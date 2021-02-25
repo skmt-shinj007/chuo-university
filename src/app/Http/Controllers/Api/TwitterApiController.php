@@ -70,8 +70,6 @@ class TwitterApiController extends Controller
     $response = json_encode($response);
 
     /**
-     * APIに認証をつけていないので、誰でも情報を取得できるようになっている。
-     * TODO:アクセス認証（basicかtoken）をつける。
      * URL直打ちしたら情報出てきてしまうので対策する。（http://localhost:8080/api/twitter）
      */
     return $response;

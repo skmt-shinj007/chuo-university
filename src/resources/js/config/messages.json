@@ -185,7 +185,7 @@
   "Button": {
     "NewsRequest": {
       "Name" : "ニュースを取得",
-      "type" : "button"
+      "Type" : "button"
     }
   },
 
