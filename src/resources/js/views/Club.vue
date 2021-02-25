@@ -89,7 +89,7 @@
         </div>
 
         <div class="club__member-button">
-          <link-button-component :link="messages.Links.Member"/>
+          <primary-link-button-component :link="messages.Links.Member"/>
         </div>
       </div>
     </section>
@@ -103,7 +103,7 @@
     </div>
 
     <div class="club__photo-button">
-      <link-button-component :link="messages.Links.Photo"/>
+      <primary-link-button-component :link="messages.Links.Photo"/>
     </div>
   </section>
 </div>
@@ -121,7 +121,7 @@ import TableComponent from '../components/modules/table/TableComponent';
 import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
 import DormitoryTicketComponent from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
-import LinkButtonComponent from '../components/modules/button/LinkButtonComponent';
+import PrimaryLinkButtonComponent from '../components/modules/button/PrimaryLinkButtonComponent';
 import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
 
 export default {
@@ -135,7 +135,7 @@ export default {
     CaptionBarImageComponent,
     DormitoryTicketComponent,
     PlayerSliderComponent,
-    LinkButtonComponent,
+    PrimaryLinkButtonComponent,
     ArrangeImagesComponent,
   },
   data() {

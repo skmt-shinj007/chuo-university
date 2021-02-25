@@ -7,7 +7,7 @@
     <p class="nl2br" v-text="content.text"></p>
   </div>
   <div class="text-box__button">
-    <link-button-component :link="content.button"/>
+    <primary-link-button-component :link="content.button"/>
   </div>
 </div>
 </template>
@@ -15,12 +15,12 @@
 <script>
 // components import
 import ContentsTitleComponent from './ContentsTitleComponent';
-import LinkButtonComponent from './button/LinkButtonComponent';
+import PrimaryLinkButtonComponent from './button/PrimaryLinkButtonComponent';
 
 export default {
   components: {
     ContentsTitleComponent,
-    LinkButtonComponent,
+    PrimaryLinkButtonComponent,
   },
 
   data() {

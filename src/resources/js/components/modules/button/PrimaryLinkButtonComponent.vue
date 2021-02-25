@@ -1,5 +1,5 @@
 <template>
-<div class="link" :class="variation">
+<div class="link">
 
   <a :href="link.To"
       class="link__btn"
@@ -34,23 +34,8 @@ export default {
     link: {
       type: Object,
       default: null,
-      // required: true,
+      required: true,
     },
-
-    /**
-     * 特定の時にスタイルを変えたい場合のクラス名
-     * スタイルを追加する必要がある。
-     */
-    variationClass: {
-      type: String,
-      default: null,
-    }
-  },
-
-  computed: {
-    variation() {
-      return (this.variationClass) ? `link--${this.variationClass}` : null;
-    }
   },
 
   beforeMount() {
@@ -113,14 +98,5 @@ export default {
     right: 10px;
     transform: translateY(-50%);
   }
-
-  &--rgba {
-    background-color: rgba($color: color(white), $alpha: .6);
-
-    .link__btn {
-      background-color: rgba($color: color(white), $alpha: .6);
-    }
-  }
-
 }
 </style>
