@@ -56,6 +56,18 @@
       "Main": "news",
       "Sub" : "ニュース"
     },
+    "Team": {
+      "Main": "team",
+      "Sub" : "チーム紹介"
+    },
+    "Result": {
+      "Main": "result",
+      "Sub" : "大会結果"
+    },
+    "Activity": {
+      "Main": "active",
+      "Sub" : "活動詳細"
+    },
     "Support": {
       "Main": "support",
       "Sub" : "サポート"
@@ -141,7 +153,41 @@
     "Hakumonkai": "白門会を知る",
     "ToContact": "お問い合わせへ",
     "NewsRequest": "ニュースを取得"
+  },
+
+  "Links": {
+    "Member": {
+      "Name" : "メンバーを見る",
+      "To"   : "member"
     },
+    "Hakumonkai": {
+      "Name" : "白門会を知る",
+      "To"   : "hakumonkai"
+    },
+    "ToContact": {
+      "Name" : "お問い合わせへ",
+      "To"   : "contact"
+    },
+    "TournamentResult": {
+      "Name" : "大会結果を見る",
+      "To"   : "https://twitter.com/SoftTennis_Chuo"
+    },
+    "Activity": {
+      "Name" : "活動詳細を見る",
+      "To"   : "club"
+    },
+    "Photo": {
+      "Name": "写真を見る",
+      "To": "photo"
+    }
+  },
+
+  "Button": {
+    "NewsRequest": {
+      "Name" : "ニュースを取得",
+      "type" : "button"
+    }
+  },
 
   "TagTitles": {
     "Record"     : "戦績",
