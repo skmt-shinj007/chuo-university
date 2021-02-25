@@ -32,7 +32,7 @@
 <script>
 // data import
 import Data from '../../config/data.json';
-import Features from '../../config/features.json';
+import Config from '../../config/config.json';
 
 // component import
 import NavModalComponent from '../modules/modal/NavModalComponent.vue';
@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       data: Data,
-      features: Features,
+      config: Config,
 
       /**
        * ヘッダーの高さ
@@ -90,8 +90,8 @@ export default {
 
   beforeMount() {
     // リンクのデータを生成
-    this.$data.features.Links.forEach(element => this.links.push(element));
-    this.$data.features.Sns.forEach(element => this.snsLinks.push(element));
+    this.$data.config.Links.forEach(element => this.links.push(element));
+    this.$data.config.Sns.forEach(element => this.snsLinks.push(element));
   },
 
   mounted() {

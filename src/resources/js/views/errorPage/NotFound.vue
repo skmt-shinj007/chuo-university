@@ -32,23 +32,19 @@
 
 <script>
 // import
-import Features from '../../config/features.json';
+import Config from '../../config/config.json';
 export default {
   data() {
     return {
-      features: Features,
+      config: Config,
       menus: null,
     }
   },
 
   mounted() {
-    this.features.Links.forEach(element => {
+    this.config.Links.forEach(element => {
       if(element.menuName.ja === 'サイトマップ') this.menus = element.childrenMenus;
     });
-  },
-
-  methods: {
-
   },
 }
 </script>

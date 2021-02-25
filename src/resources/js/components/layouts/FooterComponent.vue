@@ -78,7 +78,7 @@ import ContentsTitleComponent from '../modules/ContentsTitleComponent.vue';
 
 // data import
 import Data from '../../config/data.json';
-import Features from '../../config/features.json';
+import Config from '../../config/config.json';
 
 export default {
   components: {
@@ -90,11 +90,10 @@ export default {
   data() {
     return {
       data: Data,
-      features: Features,
+      config: Config,
 
       /**
-       * footer linkの全データ
-       * features.json > Linksのデータを取得
+       * リンクデータ
        * @type {Array}
        */
       links: [],
@@ -114,8 +113,8 @@ export default {
   },
 
   beforeMount() {
-    // リンクの配列を[features.json]を元に生成
-    this.$data.features.Links.forEach(element => this.links.push(element));
+    // リンクデータを生成
+    this.$data.config.Links.forEach(element => this.links.push(element));
 
     /**
      * メニュー配列のバリデーションを設定 (テスト的な処理)

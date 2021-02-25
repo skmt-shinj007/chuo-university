@@ -6,8 +6,8 @@
     <span class="lattice__filter-title">{{ messages.FunctionName.Filter }}</span>
 
     <pull-down-table-component
-      :filterItem="filter.year"
-      :pulldownMenus="years"
+      :titles="filter.year"
+      :menus="years"
       @select="select = $event"/>
   </div>
 
