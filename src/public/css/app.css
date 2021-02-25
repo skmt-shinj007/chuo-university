@@ -938,16 +938,16 @@ import用ファイル
  * テキストの前に線を入れる装飾 (- text)
  * 親要素に position: relative; と padding-left をつける
  */
-.primary-btn {
-  width: 80%;
-  max-width: 15rem;
-  height: 3rem;
-  margin: 0 auto;
+.primary-btn__btn, .primary-btn {
   background-color: #ffffff;
-  font-size: 0.625rem;
   border: 1px solid #e56c2c;
   border-radius: 2px;
+  transition: transform 0.3s ease-out, background-color 0.5s linear;
+}
+.primary-btn {
+  width: 100%;
   position: relative;
+  color: #e56c2c;
 }
 @media screen and (min-width: 1025px) {
 .primary-btn:hover {
@@ -956,39 +956,30 @@ import用ファイル
 .primary-btn:hover .primary-btn__btn {
     transform: none;
     border: none;
-    background-color: #e56c2c;
     color: #ffffff;
-}
-}
-@media screen and (min-width: 1025px) {
-.primary-btn--sm {
-    max-width: 13rem;
-    height: 2.5rem;
-    font-size: 0.5rem;
+    background-color: #e56c2c;
 }
 }
 .primary-btn__btn {
   width: 100%;
   height: 100%;
-  text-align: center;
-  background-color: #ffffff;
-  color: #e56c2c;
-  border: 1px solid #e56c2c;
-  border-radius: 2px;
-  transform: translateX(4px) translateY(-4px);
-  transition: all 0.3s ease-out;
+  padding: 1.25rem;
+  transform: translateX(-4px) translateY(4px);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.primary-btn__name {
+  font-size: 0.625rem;
 }
 .primary-btn__icon {
+  width: 1rem;
+  height: 1rem;
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-}
-.primary-btn--rgba {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-.primary-btn--rgba .primary-btn__btn {
-  background-color: rgba(255, 255, 255, 0.6);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1329,14 +1320,361 @@ import用ファイル
 }
 .err__text[data-v-9b317ac0] {
   display: block;
+  margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
 .err__text[data-v-9b317ac0] {
     text-align: center;
 }
 }
+@media screen and (min-width: 560px) {
 .err__btn[data-v-9b317ac0] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
+ * base pixel (8px)
+ * rem だとフォントサイズに影響するため、pixelで定義
+ */
+/**
+ * google map size
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-63d84db2 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-63d84db2 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown-data-v-63d84db2 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown-data-v-63d84db2 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-63d84db2 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-63d84db2 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@-webkit-keyframes bound-data-v-63d84db2 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-63d84db2 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-63d84db2 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+@keyframes rotation-data-v-63d84db2 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+/**
+ * テキストの前に線を入れる装飾 (- text)
+ * 親要素に position: relative; と padding-left をつける
+ */
+.link__btn[data-v-63d84db2], .link[data-v-63d84db2] {
+  background-color: #ffffff;
+  border: 1px solid #e56c2c;
+  border-radius: 2px;
+  transition: transform 0.3s ease-out, background-color 0.5s linear;
+}
+.link[data-v-63d84db2] {
+  width: 100%;
+  position: relative;
+  color: #e56c2c;
+}
+@media screen and (min-width: 1025px) {
+.link[data-v-63d84db2]:hover {
+    border: none;
+}
+.link:hover .link__btn[data-v-63d84db2] {
+    transform: none;
+    border: none;
+    color: #ffffff;
+    background-color: #e56c2c;
+}
+}
+.link__btn[data-v-63d84db2] {
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem;
+  transform: translateX(-4px) translateY(4px);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.link__name[data-v-63d84db2] {
+  font-size: 0.625rem;
+}
+.link__icon[data-v-63d84db2] {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.link--rgba[data-v-63d84db2] {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.link--rgba .link__btn[data-v-63d84db2] {
+  background-color: rgba(255, 255, 255, 0.6);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -1636,7 +1974,6 @@ import用ファイル
   padding: 0 1rem 1rem 1rem;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 6px 8px #e6e6e6;
-  margin: 0 auto;
 }
 @media screen and (min-width: 560px) {
 .text-box {
@@ -1652,9 +1989,17 @@ import用ファイル
     min-height: 25rem;
 }
 }
+.text-box__text {
+  margin-bottom: 2.5rem;
+}
 .text-box__button {
-  margin-top: 2.5rem;
   width: 100%;
+}
+@media screen and (min-width: 560px) {
+.text-box__button {
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -6602,14 +6947,29 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
+.club__member-number-table[data-v-357d3955] {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 560px) {
 .club__member-button[data-v-357d3955] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }
 .club__photo[data-v-357d3955] {
   margin-top: 2.5rem;
 }
+.club__photo-images[data-v-357d3955] {
+  margin-bottom: 2.5rem;
+}
 .club__photo-button[data-v-357d3955] {
   margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.club__photo-button[data-v-357d3955] {
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8622,11 +8982,7 @@ import用ファイル
 }
 .hakumonkai-lead-text[data-v-42f1fe89] {
   font-weight: bold;
-}
-@media screen and (min-width: 1025px) {
-.hakumonkai-lead-text[data-v-42f1fe89] {
-    text-align: center;
-}
+  text-align: center;
 }
 .hakumonkai__officer[data-v-42f1fe89] {
   margin-top: 2.5rem;
@@ -8661,19 +9017,18 @@ import用ファイル
 .hakumonkai__player-card[data-v-42f1fe89]:last-child {
   margin: 0;
 }
+.hakumonkai__message-content[data-v-42f1fe89] {
+  margin-bottom: 2.5rem;
+}
 .hakumonkai__message-text[data-v-42f1fe89] {
   text-align: center;
   font-weight: bold;
-  max-width: 29rem;
-  margin: 0 auto;
 }
-@media screen and (min-width: 1025px) {
-.hakumonkai__message-text[data-v-42f1fe89] {
-    max-width: 34rem;
-}
-}
+@media screen and (min-width: 560px) {
 .hakumonkai__message-btn[data-v-42f1fe89] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }
 .background-prlx[data-v-42f1fe89] {
   background-image: url("/image/group-photo2017-spring.jpg");
@@ -16955,17 +17310,14 @@ import用ファイル
   padding-bottom: 1.5rem;
 }
 .footer__contact-lead[data-v-060e08fe] {
-  max-width: 20rem;
-  margin: 0 auto;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 @media screen and (min-width: 560px) {
-.footer__contact-lead[data-v-060e08fe] {
-    max-width: none;
-    text-align: center;
-}
-}
 .footer__contact-btn[data-v-060e08fe] {
-  margin-top: 2.5rem;
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }
 .footer__accordion-menu[data-v-060e08fe] {
   margin-top: 5rem;

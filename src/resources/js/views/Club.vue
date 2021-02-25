@@ -87,10 +87,10 @@
         <div class="club__member-number-table">
           <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
         </div>
-      </div>
 
-      <div class="club__member-button">
-        <primary-button-component :name="messages.ButtonName.Member"/>
+        <div class="club__member-button">
+          <link-button-component :link="messages.Links.Member"/>
+        </div>
       </div>
     </section>
   </div>
@@ -98,12 +98,12 @@
   <section class="club__photo">
     <contents-title-component :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <div class="club__photo-images-container">
+    <div class="club__photo-images">
       <arrange-images-component :imagesData="imagesData"/>
     </div>
 
     <div class="club__photo-button">
-      <primary-button-component/>
+      <link-button-component :link="messages.Links.Photo"/>
     </div>
   </section>
 </div>
@@ -121,7 +121,7 @@ import TableComponent from '../components/modules/table/TableComponent';
 import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
 import DormitoryTicketComponent from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
-import PrimaryButtonComponent from '../components/modules/button/PrimaryButtonComponent';
+import LinkButtonComponent from '../components/modules/button/LinkButtonComponent';
 import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
 
 export default {
@@ -135,7 +135,7 @@ export default {
     CaptionBarImageComponent,
     DormitoryTicketComponent,
     PlayerSliderComponent,
-    PrimaryButtonComponent,
+    LinkButtonComponent,
     ArrangeImagesComponent,
   },
   data() {
@@ -462,16 +462,33 @@ const imageApiResponse = [
       @include middle-line-text(2, 1px, color(white));
     }
 
+    &-number-table {
+      margin-bottom: interval(5);
+    }
+
     &-button {
-      margin-top: interval(5);
+
+      @include mq(sm) {
+        max-width: interval(50);
+        margin: 0 auto;
+      }
     }
   }
 
   &__photo {
     margin-top: interval(5);
+  }
 
-    &-button {
-      margin-top: interval(5);
+  &__photo-images {
+    margin-bottom: interval(5);
+  }
+
+  &__photo-button {
+    margin-top: interval(5);
+
+    @include mq(sm) {
+      max-width: interval(50);
+      margin: 0 auto;
     }
   }
 }

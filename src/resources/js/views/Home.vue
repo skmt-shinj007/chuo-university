@@ -15,10 +15,7 @@
         </figure>
 
         <div class="home__lead">
-          <text-box-component
-          :titles="aboutItem.title"
-          :buttonName="aboutItem.button.name"
-          :contentsText="aboutItem.text"/>
+          <text-box-component :contentProps="aboutItem"/>
         </div>
       </div>
     </section>
@@ -65,6 +62,7 @@ export default {
   },
 
   beforeMount() {
+    // アバウトセクションを生成するデータを挿入。
     this.$data.data.HomeAbout.forEach(element => this.aboutItems.push(element));
   },
 }
