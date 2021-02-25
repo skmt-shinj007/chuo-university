@@ -18,9 +18,9 @@
 
         <nav class="nav-modal__main">
           <div class="nav-modal__accordion">
-            <div class="nav-modal__accordion-item" v-for="(menu, n) in accordionMenus" :key="n">
+            <div class="nav-modal__accordion-item" v-for="(link, n) in links" :key="n">
               <accordion-link-component
-                :item="menu"
+                :item="link"
                 @navClose="$emit('close')"
                 />
             </div>
@@ -59,27 +59,64 @@
 // component import
 import AccordionLinkComponent from '../accordion/AccordionLinkComponent';
 
+// data
+import Config from '../../../config/config.json';
+
 export default {
   components: {
     AccordionLinkComponent,
   },
 
-  props: {
-    /**
-     * [アコーディオン: メニューデータ]
-     */
-    accordionMenus: {
-      type: Array,
-      required: true,
-    },
+  data() {
+    return {
+      config: Config,
+
+      /**
+       * snsのメニューパネルを生成するデータ
+       * @type { Array }
+       */
+      snsLinks: [],
+
+      /**
+       * アコーディオンコンポーネントに渡すデータ
+       * @type { Array }
+       */
+      links: []
+    }
+  },
+
+  beforeMount() {
+    // アコーディオンリンクのデータを生成
+    const config = this.$data.config;
+    const messages = this.$data.messages;
+
+    let sitemap = {};
+    sitemap.name = messages.sitemap.name;
+    sitemap.childrenMenus = this.convertArray(config.route);
+    this.links.push(sitemap);
+
+    let externalLink = {};
+    externalLink.name = messages.externalLink.name;
+    externalLink.childrenMenus = this.convertArray(config.links);
+    this.links.push(externalLink);
 
     /**
-     * [sns: snsメニューパネルを生成するデータ]
+     * sns データ生成
+     * TODO：Apiを叩いてアカウント情報を持ってくる
      */
-    snsLinks: {
-      type: Array,
-      required: true
-    }
+    this.$data.config.Sns.forEach(element => this.snsLinks.push(element));
+  },
+
+  methods: {
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     */
+    convertArray(obj) {
+      return Object.keys(obj).map(function (key) {
+        return obj[key];
+      })
+    },
   },
 }
 </script>

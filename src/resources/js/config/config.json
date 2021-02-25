@@ -9,75 +9,81 @@
     }
   },
 
-  "Links": [
-    {
-      "menuName": {
-        "ja": "サイトマップ",
-        "en": "Site Map"
-      },
-      "blank": false,
-      "childrenMenus": [
-        {
-          "label": "ホーム",
-          "link": "/"
-        },
-
-        {
-          "label": "クラブ",
-          "link": "/club"
-        },
-
-        {
-          "label": "メンバー",
-          "link": "/member"
-        },
-
-        {
-          "label": "白門会",
-          "link": "/hakumonkai"
-        },
-
-        {
-          "label": "沿革",
-          "link": "/history"
-        },
-
-        {
-          "label": "フォトギャラリー",
-          "link": "/photo"
-        }
-      ]
+  "route": {
+    "home": {
+      "label": "ホーム",
+      "name" : "home",
+      "to"   : "/"
     },
 
-    {
-      "menuName": {
-        "ja": "外部リンク",
-        "en": "External Link"
-      },
-      "blank": true,
-      "childrenMenus": [
-        {
-          "label": "中央大学ホームページ",
-          "link": "https://www.chuo-u.ac.jp/"
-        },
+    "club": {
+      "label": "クラブ",
+      "name" : "club",
+      "to"   : "/club"
+    },
 
-        {
-          "label": "立命館大学ホームページ",
-          "link": "http://www5c.biglobe.ne.jp/~rst/"
-        },
+    "member": {
+      "label": "メンバー",
+      "name" : "member",
+      "to"   : "/member"
+    },
 
-        {
-          "label": "日本学生ソフトテニス連盟",
-          "link": "https://www.jssta.jp/"
-        },
+    "history": {
+      "label": "歴史",
+      "name" : "history",
+      "to"   : "/history"
+    },
 
-        {
-          "label": "関東学生ソフトテニス連盟",
-          "link": "https://kssta.net/"
-        }
-      ]
+    "hakumonkai": {
+      "label": "白門会",
+      "name" : "hakumonkai",
+      "to"   : "/hakumonkai"
+    },
+
+    "photo": {
+      "label": "フォトギャラリー",
+      "name" : "photo",
+      "to"   : "/photo"
     }
-  ],
+  },
+
+  "links": {
+    "chuoUniv": {
+      "label": "中央大学ホームページ",
+      "to": "https://www.chuo-u.ac.jp/"
+    },
+
+    "ritsumeikanUniv": {
+      "label": "立命館大学ホームページ",
+      "to": "http://www5c.biglobe.ne.jp/~rst/"
+    },
+
+    "studentFederation": {
+      "label": "日本学生ソフトテニス連盟",
+      "to": "https://www.jssta.jp/"
+    },
+
+    "kantouStudentFederation": {
+      "label": "関東学生ソフトテニス連盟",
+      "to": "https://kssta.net/"
+    }
+  },
+
+  "twitter": {
+    "name": {
+      "ja": "ツイッター",
+      "en": "twitter"
+    },
+    "url": "https://twitter.com/"
+  },
+
+  "instagram": {
+    "name": {
+      "ja": "インスタグラム",
+      "en": "instagram"
+    },
+    "url": "https://www.instagram.com/"
+  },
 
   "Sns": [
     {
@@ -89,11 +95,6 @@
       "name": "instagram",
       "link": "example.com",
       "icon": "instagram"
-    },
-    {
-      "name": "facebook",
-      "link": "example.com",
-      "icon": "facebook"
     }
   ]
 }

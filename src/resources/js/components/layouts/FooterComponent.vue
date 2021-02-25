@@ -17,32 +17,11 @@
     </div>
 
     <!-- sm, tablet -->
-    <ul class="footer__accordion-menu">
-      <li class="footer__accordion-menu-item" v-for="(link, n) in links" :key="n">
+    <ul class="footer__accordion">
+      <li class="footer__accordion-item" v-for="(link, n) in links" :key="n">
         <accordion-link-component :item="link" color="lightDarkblue"/>
       </li>
     </ul>
-
-    <!-- pc -->
-    <div class="footer__menu" v-for="(link, n) in links" :key="n">
-      <h3 class="footer__menu-list-title">{{ link.menuName.en }}</h3>
-      <ul class="footer__menu-list">
-        <li class="footer__menu-list-item"
-            v-for="(menu, i) in link.childrenMenus"
-            :key="i">
-
-          <router-link class="footer__menu-list-link" :to="menu.link" v-if="!link.blank">
-            <svg-vue class="footer__menu-list-icon" icon="angle-right"/>
-            <label class="footer__menu-list-label">{{ menu.label }}</label>
-          </router-link>
-
-          <a class="footer__menu-list-link" :href="menu.link" target="_blank" v-else>
-            <svg-vue class="footer__menu-list-icon" icon="angle-right"/>
-            <label class="footer__menu-list-label">{{ menu.label }}</label>
-          </a>
-        </li>
-      </ul>
-    </div>
 
     <div class="footer__information">
       <div class="footer__information-logo"/>
@@ -113,18 +92,19 @@ export default {
   },
 
   beforeMount() {
-    // リンクデータを生成
-    this.$data.config.Links.forEach(element => this.links.push(element));
+    const config = this.$data.config;
+    const messages = this.$data.messages;
 
-    /**
-     * メニュー配列のバリデーションを設定 (テスト的な処理)
-     * -> 同タブか別タブかを判定するプロパティ [blank]
-     */
-    this.links.forEach(element => {
-      if (!element.hasOwnProperty('blank')) {
-        alert('メニューを生成している配列に [blank] プロパティを設定してください。')
-      }
-    });
+    // リンクデータを生成
+    let sitemap = {};
+    sitemap.name = messages.sitemap.name;
+    sitemap.childrenMenus = this.convertArray(config.route);
+    this.links.push(sitemap);
+
+    let externalLink = {};
+    externalLink.name = messages.externalLink.name;
+    externalLink.childrenMenus = this.convertArray(config.links);
+    this.links.push(externalLink);
 
     /**
      * 電話番号にリンクを貼るため、最初の「0」に [国コード:81] を挿入
@@ -156,7 +136,17 @@ export default {
         // アニメーションフラグをデフォルトに戻す
         this.scrollAnimation = false;
       }, 500);
-    }
+    },
+
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     */
+    convertArray(obj) {
+      return Object.keys(obj).map(function (key) {
+        return obj[key];
+      })
+    },
   },
 }
 </script>
@@ -184,79 +174,16 @@ export default {
     }
   }
 
-  &__accordion-menu {
+  &__accordion {
     margin-top: interval(10);
-
-    // pc アコーディオンを非表示にする
-    @include mq(md) {
-      display: none;
-    }
   }
 
-  &__accordion-menu-item {
+  &__accordion-item {
     border-top: 2px solid color(lightgray);
 
     &:last-child {
       border-bottom: 2px solid color(lightgray);
     }
-  }
-
-  &__menu {
-    display: none;
-
-    @include mq(md) {
-      display: block;
-      margin-top: interval(10);
-    }
-  }
-
-  &__menu-list {
-    margin-top: interval(2);
-    padding: 0 interval(2);
-    @include flex(row wrap, flex-start, center);
-
-    &-title {
-      @include bangers(font(32), 2.5px);
-      @include border-gradient(80%, rgba(color(lightgray), 0), color(lightgray));
-    }
-
-    &-item {
-      padding: interval(1);
-      cursor: pointer;
-      margin-right: interval(2);
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      @include hover {
-        .footer__menu-list-label {
-          text-shadow: 1px 1px color(orange);
-        }
-
-        .footer__menu-list-link {
-          transform: translateX(interval(1));
-        }
-      }
-    }
-
-    &-link {
-      @include flex(row nowrap, flex-start, center);
-      cursor: pointer;
-      transition: transform .3s ease-out;
-    }
-
-    &-icon {
-      width: interval(1);
-      margin-right: interval(.5);
-      cursor: pointer;
-    }
-
-    &-label {
-      font-size: font(14);
-      cursor: pointer;
-    }
-
   }
 
   &__information {

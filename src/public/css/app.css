@@ -17319,88 +17319,14 @@ import用ファイル
     margin: 0 auto;
 }
 }
-.footer__accordion-menu[data-v-060e08fe] {
+.footer__accordion[data-v-060e08fe] {
   margin-top: 5rem;
 }
-@media screen and (min-width: 1025px) {
-.footer__accordion-menu[data-v-060e08fe] {
-    display: none;
-}
-}
-.footer__accordion-menu-item[data-v-060e08fe] {
+.footer__accordion-item[data-v-060e08fe] {
   border-top: 2px solid #f2f2f2;
 }
-.footer__accordion-menu-item[data-v-060e08fe]:last-child {
+.footer__accordion-item[data-v-060e08fe]:last-child {
   border-bottom: 2px solid #f2f2f2;
-}
-.footer__menu[data-v-060e08fe] {
-  display: none;
-}
-@media screen and (min-width: 1025px) {
-.footer__menu[data-v-060e08fe] {
-    display: block;
-    margin-top: 5rem;
-}
-}
-.footer__menu-list[data-v-060e08fe] {
-  margin-top: 1rem;
-  padding: 0 1rem;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-.footer__menu-list-title[data-v-060e08fe] {
-  font-family: "Bangers", cursive;
-  font-size: 2rem;
-  letter-spacing: 2.5px;
-  font-weight: bold;
-  position: relative;
-}
-.footer__menu-list-title[data-v-060e08fe]::after {
-  content: "";
-  display: block;
-  width: 80%;
-  height: 2px;
-  background: rgba(242, 242, 242, 0);
-  background: linear-gradient(to right, rgba(242, 242, 242, 0) 0%, #f2f2f2 100%);
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-}
-.footer__menu-list-item[data-v-060e08fe] {
-  padding: 0.5rem;
-  cursor: pointer;
-  margin-right: 1rem;
-}
-.footer__menu-list-item[data-v-060e08fe]:last-child {
-  margin-right: 0;
-}
-@media screen and (min-width: 1025px) {
-.footer__menu-list-item:hover .footer__menu-list-label[data-v-060e08fe] {
-    text-shadow: 1px 1px #e56c2c;
-}
-.footer__menu-list-item:hover .footer__menu-list-link[data-v-060e08fe] {
-    transform: translateX(0.5rem);
-}
-}
-.footer__menu-list-link[data-v-060e08fe] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s ease-out;
-}
-.footer__menu-list-icon[data-v-060e08fe] {
-  width: 0.5rem;
-  margin-right: 0.25rem;
-  cursor: pointer;
-}
-.footer__menu-list-label[data-v-060e08fe] {
-  font-size: 0.875rem;
-  cursor: pointer;
 }
 .footer__information[data-v-060e08fe] {
   position: relative;

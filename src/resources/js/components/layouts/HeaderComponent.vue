@@ -20,13 +20,9 @@
   </div>
 
   <!-- グローバルナビ（モーダル） -->
-  <nav-modal-component
-    v-if="navShow"
-    @close="closeModal"
-    :accordionMenus="links"
-    :snsLinks="snsLinks"/>
-</header>
+  <nav-modal-component v-if="navShow" @close="closeModal"/>
 
+</header>
 </template>
 
 <script>
@@ -73,25 +69,7 @@ export default {
        * @type { Boolean }
        */
       navShow: false,
-
-      /**
-       * [ナビ：リンクデータ]
-       * @type { Array }
-       */
-      links: [],
-
-      /**
-       * [ナビ：snsデータ]
-       * @type { Array }
-       */
-      snsLinks: [],
     }
-  },
-
-  beforeMount() {
-    // リンクのデータを生成
-    this.$data.config.Links.forEach(element => this.links.push(element));
-    this.$data.config.Sns.forEach(element => this.snsLinks.push(element));
   },
 
   mounted() {

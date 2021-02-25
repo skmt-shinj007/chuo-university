@@ -83,10 +83,6 @@ export default {
   },
 
   methods: {
-    redirect(route) {
-      this.$router.push({name: route});
-    },
-
     /**
      * サーバーからtwitter APIレスポンスを取得。
      */

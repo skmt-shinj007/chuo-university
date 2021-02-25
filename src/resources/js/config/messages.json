@@ -148,11 +148,30 @@
     "Filter" : "絞り込み"
   },
 
+  "Filter": {
+    "All": "全て",
+    "Years": "年月"
+  },
+
   "ButtonName": {
     "Member":  "メンバーを見る",
     "Hakumonkai": "白門会を知る",
     "ToContact": "お問い合わせへ",
     "NewsRequest": "ニュースを取得"
+  },
+
+  "sitemap": {
+    "name": {
+      "ja": "サイトマップ",
+      "en": "Site Map"
+    }
+  },
+
+  "externalLink": {
+    "name": {
+      "ja": "外部リンク",
+      "en": "External Link"
+    }
   },
 
   "Links": {
@@ -202,11 +221,6 @@
     "Heisei" : "平成",
     "Showa"  : "昭和",
     "Taisho" : "大正"
-  },
-
-  "Filter": {
-    "All": "全て",
-    "Years": "年月"
   },
 
   "Home": {
