@@ -87,7 +87,7 @@ export default {
      * サーバーからtwitter APIレスポンスを取得。
      */
     async getResponse() {
-      await axios.get('/api/twitter')
+      await axios.get('/api/twitter/timeline')
 
       .then(function (response) {
         // 返答がオブジェクト形式ではない場合にエラー画面を出す。
