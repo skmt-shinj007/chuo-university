@@ -13,7 +13,7 @@
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
-      <a class="header__btn" :href="data.Button.Twitter.Href" target="_blank">
+      <a class="header__btn" :href="twitterLink" target="_blank">
         <svg-vue icon="twitter" class="header__btn-icon"/>
       </a>
     </div>
@@ -33,6 +33,9 @@ import Config from '../../config/config.json';
 // component import
 import NavModalComponent from '../modules/modal/NavModalComponent.vue';
 
+// Library import
+import axios from 'axios';
+
 export default {
   components: {
     NavModalComponent,
@@ -50,8 +53,6 @@ export default {
 
       /**
        * [ヘッダーの表示を制御するフラグ]
-       * true  表示 (デフォ)
-       * false 非表示
        * クラスの付与で表示切り替え
        * @type { Boolean }
        */
@@ -69,7 +70,17 @@ export default {
        * @type { Boolean }
        */
       navShow: false,
+
+      /**
+       * TwitterリンクURL
+       * @type { String }
+       */
+      twitterLink: '',
     }
+  },
+
+  beforeMount() {
+    this.getAccount();
   },
 
   mounted() {
@@ -105,7 +116,27 @@ export default {
     closeModal() {
       this.navShow = false;
       document.body.classList.remove("modal-open");
-    }
+    },
+
+    async getAccount() {
+      await axios.get('/api/twitter/account')
+
+      .then(function (response) {
+        console.log(response.data);
+        const screenName = response.data.screen_name;
+        this.twitterLink = this.config.twitter.url + screenName;
+      }.bind(this))
+
+      .catch(function (err) {
+        console.log(err);
+
+        if (err.response) {
+          console.log('Err Message:', err.response.data.message);
+          console.log('Status Code:', err.response.status);
+          console.log('Status Text:', err.response.statusText);
+        }
+      }.bind(this))
+    },
   },
 }
 </script>

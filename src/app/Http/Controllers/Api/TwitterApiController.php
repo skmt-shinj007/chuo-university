@@ -8,6 +8,9 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterApiController extends Controller
 {
+  /**
+   * Twitter Apiに接続
+   */
   private function connection()
   {
     $consumer_key = env('TWITTER_API_KEY', '');
@@ -20,6 +23,7 @@ class TwitterApiController extends Controller
 
     return $connection;
   }
+
   /**
    * タイムラインを3件取得する
    * @return \Illuminate\Http\Response
@@ -71,49 +75,14 @@ class TwitterApiController extends Controller
     return $response;
   }
 
-    /**
-     * アカウント情報
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function account()
-    {
-      $user = $this->connection()->get('account/verify_credentials');
-
-      return $user;
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  /**
+   * アカウント情報
+   *
+   */
+  public function account()
+  {
+    $request = $this->connection()->get('account/verify_credentials');
+    $user = json_encode($request);
+    return $user;
+  }
 }

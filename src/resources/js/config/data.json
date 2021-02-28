@@ -1,12 +1,4 @@
 {
-
-  "Button": {
-    "Twitter": {
-      "Name": "Twitter",
-      "Href": "https://twitter.com/home?lang=ja"
-    }
-  },
-
   "HomeAbout": [
     {
       "title": "Team",
