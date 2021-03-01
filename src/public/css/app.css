@@ -2320,19 +2320,9 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.home__support-textaria[data-v-63cd6604] {
+.home__support-text[data-v-63cd6604] {
   width: 80%;
   margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.home__support-textaria[data-v-63cd6604] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 1025px) {
-.home__support-textaria[data-v-63cd6604] {
-    width: 60%;
-}
 }
 .home__background-image[data-v-63cd6604] {
   width: 100%;

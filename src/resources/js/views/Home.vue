@@ -28,7 +28,7 @@
             :subTitle="messages.SectionTitles.Support.Sub"
             color="white"/>
 
-          <div class="home__support-textaria">
+          <div class="home__support-text">
             <p class="nl2br" v-text="messages.Home.Support"/>
           </div>
         </section>
@@ -85,28 +85,17 @@ export default {
     }
   }
 
-
-
-
   &__support {
     margin-bottom: 0;
     padding-top: interval(15);
     padding-bottom: interval(20);
     color: color(white);
     @include flex(column nowrap, center, center);
+  }
 
-    &-textaria {
-      width: 80%;
-      margin: 0 auto;
-
-      @include mq(sm) {
-        width: 70%;
-      }
-
-      @include mq(md) {
-        width: 60%;
-      }
-    }
+  &__support-text {
+    width: 80%;
+    margin: 0 auto;
   }
 
   &__background-image {
