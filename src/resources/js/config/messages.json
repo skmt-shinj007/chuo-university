@@ -34,10 +34,6 @@
     "AssistanceTitle" : "中央大学ソフトテニス部"
   },
 
-  "Nav": {
-    "Contact": "Contact"
-  },
-
   "Information": {
     "ClubName"        : "中央大学ソフトテニス部白門会",
     "Address"         : "東京都八王子市東中野742-1",
@@ -184,7 +180,7 @@
       "To"   : "hakumonkai"
     },
     "ToContact": {
-      "Name" : "お問い合わせへ",
+      "Name" : "お問い合わせ",
       "To"   : "contact"
     },
     "TournamentResult": {

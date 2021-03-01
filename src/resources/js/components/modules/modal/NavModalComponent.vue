@@ -30,7 +30,7 @@
             <button class="nav-modal__menu-item">
               <!-- TODO:コンタクトページに遷移するようにする -->
               <router-link to="contact" class="nav-modal__menu-link" @click.native="$emit('close')">
-                <label class="nav-modal__menu-title">{{ messages.Nav.Contact }}</label>
+                <label class="nav-modal__menu-title">{{ messages.Links.ToContact.Name }}</label>
                 <svg-vue icon="angle-right" class="nav-modal__menu-icon"/>
               </router-link>
             </button>
