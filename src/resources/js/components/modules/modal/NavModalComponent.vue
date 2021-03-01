@@ -123,7 +123,7 @@ export default {
      * sns データ生成
      * TODO：Apiを叩いてアカウント情報を持ってくる
      */
-    this.getAccount(() => {
+    this.getTwitterAccount(() => {
       // apiレスポンスと保持データの結合
       const apiResponse = this.twitter;
       const retained = this.config.twitter;

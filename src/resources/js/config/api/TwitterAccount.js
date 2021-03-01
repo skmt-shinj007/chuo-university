@@ -14,7 +14,7 @@ export default {
      * Twitterアカウント情報を取得
      * @param { function } .finally()内で実行するプロセス共通処理
      */
-    async getAccount(callback = this.void) {
+    async getTwitterAccount(callback = this.void) {
       await axios.get('/api/twitter/account')
 
       .then(function (response) {

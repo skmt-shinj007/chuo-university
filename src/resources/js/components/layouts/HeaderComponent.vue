@@ -77,7 +77,7 @@ export default {
   },
 
   beforeMount() {
-    this.getAccount();
+    this.getTwitterAccount();
   },
 
   mounted() {
