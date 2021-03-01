@@ -9,12 +9,12 @@
     </section>
 
     <section class="home__about">
-      <div class="home__about-item" v-for="(aboutItem, n) in aboutItems" :key="n">
-        <figure class="home__img">
+      <div class="about" v-for="(aboutItem, n) in aboutItems" :key="n">
+        <figure class="about__img">
           <img :src="`/image/${aboutItem.img.src}.jpg`" :alt="aboutItem.img.alt">
         </figure>
 
-        <div class="home__lead">
+        <div class="about__lead">
           <text-box-component :contentProps="aboutItem"/>
         </div>
       </div>
@@ -85,64 +85,8 @@ export default {
     }
   }
 
-  &__about-item {
 
-    @include mq(md) {
-      position: relative;
-      @include flex(row wrap);
-      margin-top: - interval(10);
 
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-  }
-
-  // 偶数個のアバウトメニュースタイル
-  &__about-item:nth-child(even) {
-
-    @include mq(md) {
-      @include flex(row-reverse wrap);
-    }
-
-    // テキストボックスを左寄せにする
-    .home__lead {
-      @include mq(md) {
-        margin: 0 auto 0 0;
-      }
-    }
-  }
-
-  &__lead {
-    width: 90%;
-    max-width: interval(100);
-    margin: 0 auto;
-    transform: translateY(-15%);
-
-    @include mq(sm) {
-      transform: translateY(-20%);
-    }
-
-    @include mq(md) {
-      min-width: interval(60);
-      width: 60%;
-      margin: 0 0 0 auto;
-      transform: translateY(-40%);
-    }
-  }
-
-  &__img {
-    width: 100%;
-    border-top: 5px solid color(darkblue);
-    border-bottom: 5px solid color(darkblue);
-    box-shadow: 0px -5px 8px 3px color(shadow);
-    @include trimming(aspect(golden));
-
-    @include mq(md) {
-      width: 80%;
-      min-width: interval(66);
-    }
-  }
 
   &__support {
     margin-bottom: 0;
@@ -180,6 +124,64 @@ export default {
     width: 100%;
     height: 100%;
     background-color: rgba($color: color(darkblue), $alpha: .8);
+  }
+}
+
+.about {
+
+  @include mq(md) {
+    position: relative;
+    @include flex(row wrap);
+    margin-top: - interval(10);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(even) {
+
+    @include mq(md) {
+      @include flex(row-reverse wrap);
+    }
+
+    // テキストボックスを左寄せにする
+    .about__lead {
+      @include mq(md) {
+        margin: 0 auto 0 0;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-top: 5px solid color(darkblue);
+    border-bottom: 5px solid color(darkblue);
+    box-shadow: 0px -5px 8px 3px color(shadow);
+    @include trimming(aspect(golden));
+
+    @include mq(md) {
+      width: 80%;
+      min-width: interval(66);
+    }
+  }
+
+  &__lead {
+    width: 90%;
+    max-width: interval(100);
+    margin: 0 auto;
+    transform: translateY(-15%);
+
+    @include mq(sm) {
+      transform: translateY(-20%);
+    }
+
+    @include mq(md) {
+      min-width: interval(60);
+      width: 60%;
+      margin: 0 0 0 auto;
+      transform: translateY(-40%);
+    }
   }
 }
 </style>
