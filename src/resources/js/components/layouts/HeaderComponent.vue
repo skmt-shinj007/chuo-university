@@ -13,7 +13,7 @@
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
-      <a class="header__btn" :href="toProfile" target="_blank">
+      <a class="header__btn" :href="twitter.link" target="_blank">
         <svg-vue icon="twitter" class="header__btn-icon"/>
       </a>
     </div>
@@ -34,14 +34,14 @@ import Config from '../../config/config.json';
 import NavModalComponent from '../modules/modal/NavModalComponent.vue';
 
 // mixin
-import Account from '../../config/api/TwitterAccount';
+import TwitterAccount from '../../config/api/TwitterAccount';
 
 export default {
   components: {
     NavModalComponent,
   },
 
-  mixins: [Account],
+  mixins: [TwitterAccount],
 
   data() {
     return {
@@ -73,11 +73,6 @@ export default {
        * @type { Boolean }
        */
       navShow: false,
-
-      /**
-       * twitterへのURL
-       * toProfile -> twitterAccount.js記載
-       */
     }
   },
 

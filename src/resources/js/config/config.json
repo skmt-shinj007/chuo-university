@@ -74,7 +74,8 @@
       "ja": "ツイッター",
       "en": "twitter"
     },
-    "url": "https://twitter.com/"
+    "icon": "twitter",
+    "baseUrl": "https://twitter.com/"
   },
 
   "instagram": {
@@ -82,19 +83,7 @@
       "ja": "インスタグラム",
       "en": "instagram"
     },
-    "url": "https://www.instagram.com/"
-  },
-
-  "Sns": [
-    {
-      "name": "twitter",
-      "link": "example.com",
-      "icon": "twitter"
-    },
-    {
-      "name": "instagram",
-      "link": "example.com",
-      "icon": "instagram"
-    }
-  ]
+    "icon": "instagram",
+    "baseUrl": "https://www.instagram.com/"
+  }
 }

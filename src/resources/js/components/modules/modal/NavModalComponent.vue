@@ -38,9 +38,9 @@
 
           <div class="nav-modal__sns">
             <!-- snsの各プロフィールページに遷移するように修正 -->
-            <div class="nav-modal__sns-item" v-for="(sns, n) in snsLinks" :key="n" :class="`nav-modal__sns-item--${sns.name}`">
-              <a :href="sns.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
-                <svg-vue :icon="sns.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${sns.name}`"/>
+            <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
+              <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
+                <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
               </a>
             </div>
           </div>
@@ -62,26 +62,45 @@ import AccordionLinkComponent from '../accordion/AccordionLinkComponent';
 // data
 import Config from '../../../config/config.json';
 
+// mixin
+import TwitterAccount from '../../../config/api/TwitterAccount';
+
 export default {
   components: {
     AccordionLinkComponent,
   },
+
+  mixins: [TwitterAccount],
 
   data() {
     return {
       config: Config,
 
       /**
-       * snsのメニューパネルを生成するデータ
+       * snsのメニューパネルを生成する配列
        * @type { Array }
        */
-      snsLinks: [],
+      sns: [],
 
       /**
        * アコーディオンコンポーネントに渡すデータ
        * @type { Array }
        */
       links: []
+    }
+  },
+
+  computed: {
+    /**
+     * sns配列の要素が3以上になったらカットする。
+     */
+    filteringSns() {
+      if (this.sns.length > 3) {
+        return this.sns.slice(0, 3);
+      }
+      else {
+        return this.sns;
+      }
     }
   },
 
@@ -104,7 +123,16 @@ export default {
      * sns データ生成
      * TODO：Apiを叩いてアカウント情報を持ってくる
      */
-    this.$data.config.Sns.forEach(element => this.snsLinks.push(element));
+    this.getAccount(() => {
+      // apiレスポンスと保持データの結合
+      const apiResponse = this.twitter;
+      const retained = this.config.twitter;
+      this.twitter = {...apiResponse, ...retained};
+
+      // sns配列に格納
+      this.sns.push(this.twitter);
+    });
+
   },
 
   methods: {

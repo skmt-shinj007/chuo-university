@@ -3,32 +3,30 @@ export default {
   data() {
     return {
       /**
-       * Twitterプロフィールへのリンク
-       * @type { String }
+       * twitterの情報オブジェクト
        */
-      toProfile: '',
+      twitter: {}
     }
-  },
-
-  created() {
-
   },
 
   methods: {
     /**
      * Twitterアカウント情報を取得
+     * @param { function } .finally()内で実行するプロセス共通処理
      */
-    async getAccount() {
+    async getAccount(callback = this.void) {
       await axios.get('/api/twitter/account')
 
       .then(function (response) {
-        /**
-         * 情報を結合してTwitterのプロフィールへ飛ぶURLを作成する。
-         */
+        // リンクを作成
         const screenName = response.data.screen_name;
-        const baseUrl = this.config.twitter.url;
+        const baseUrl = this.config.twitter.baseUrl;
 
-        this.toProfile = baseUrl + screenName;
+        // Twitterオブジェクトにセット
+        this.twitter = {
+          ...this.twitter,
+          link: baseUrl + screenName,
+        }
 
       }.bind(this))
 
@@ -41,8 +39,23 @@ export default {
           console.log('Status Text:', err.response.statusText);
         }
 
-        this.toProfile = baseUrl;
+        // Twitterオブジェクトにセット
+        this.twitter = {
+          ...this.twitter,
+          link: this.config.twitter.baseUrl,
+        }
       }.bind(this))
+
+      .finally(function () {
+        callback();
+      }.bind(this))
+
     },
+
+    /**
+     * 何もしない関数
+     */
+    void() {},
+
   },
 }
