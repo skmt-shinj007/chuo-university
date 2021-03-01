@@ -13,7 +13,7 @@
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
-      <a class="header__btn" :href="twitterLink" target="_blank">
+      <a class="header__btn" :href="toProfile" target="_blank">
         <svg-vue icon="twitter" class="header__btn-icon"/>
       </a>
     </div>
@@ -33,13 +33,16 @@ import Config from '../../config/config.json';
 // component import
 import NavModalComponent from '../modules/modal/NavModalComponent.vue';
 
-// Library import
-import axios from 'axios';
+// mixin
+import Account from '../../config/api/TwitterAccount';
 
 export default {
   components: {
     NavModalComponent,
   },
+
+  mixins: [Account],
+
   data() {
     return {
       data: Data,
@@ -72,10 +75,9 @@ export default {
       navShow: false,
 
       /**
-       * TwitterリンクURL
-       * @type { String }
+       * twitterへのURL
+       * toProfile -> twitterAccount.js記載
        */
-      twitterLink: '',
     }
   },
 
@@ -116,26 +118,6 @@ export default {
     closeModal() {
       this.navShow = false;
       document.body.classList.remove("modal-open");
-    },
-
-    async getAccount() {
-      await axios.get('/api/twitter/account')
-
-      .then(function (response) {
-        console.log(response.data);
-        const screenName = response.data.screen_name;
-        this.twitterLink = this.config.twitter.url + screenName;
-      }.bind(this))
-
-      .catch(function (err) {
-        console.log(err);
-
-        if (err.response) {
-          console.log('Err Message:', err.response.data.message);
-          console.log('Status Code:', err.response.status);
-          console.log('Status Text:', err.response.statusText);
-        }
-      }.bind(this))
     },
   },
 }
