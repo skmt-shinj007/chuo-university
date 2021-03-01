@@ -11429,31 +11429,37 @@ import用ファイル
 /**
  * component
  */
-.history__chronology[data-v-301d0ec5] {
+.history__archive[data-v-301d0ec5] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 1025px) {
-.history__chronology[data-v-301d0ec5] {
+.history__archive[data-v-301d0ec5] {
     margin-top: 0;
 }
 }
-.history__chronology-container[data-v-301d0ec5] {
+.history__trophies[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__winner[data-v-301d0ec5] {
+  margin: 0 auto;
+}
+.archive[data-v-301d0ec5] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: stretch;
 }
-.history__age[data-v-301d0ec5] {
+.archive__age[data-v-301d0ec5] {
   display: none;
 }
 @media screen and (min-width: 1025px) {
-.history__age[data-v-301d0ec5] {
+.archive__age[data-v-301d0ec5] {
     display: block;
     position: relative;
     width: 10rem;
     margin-right: 1rem;
 }
-.history__age[data-v-301d0ec5]::before {
+.archive__age[data-v-301d0ec5]::before {
     display: block;
     content: "";
     width: 0.5rem;
@@ -11467,7 +11473,7 @@ import用ファイル
     transform: translateX(-50%);
 }
 }
-.history__age-tag[data-v-301d0ec5] {
+.archive__tag[data-v-301d0ec5] {
   width: 100%;
   text-align: center;
   color: #ffffff;
@@ -11480,31 +11486,25 @@ import用ファイル
   top: 0;
   transition: all 1s ease-out;
 }
-.history__box[data-v-301d0ec5] {
-  margin-bottom: 5rem;
+.archive__wrap[data-v-301d0ec5] {
+  margin-bottom: 7.5rem;
 }
-.history__box[data-v-301d0ec5]:last-child {
+.archive__wrap[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
-.history__item[data-v-301d0ec5] {
+.archive__content[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__item[data-v-301d0ec5]:last-child {
+.archive__content[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
-.history__primary-titles[data-v-301d0ec5] {
-  margin-bottom: 5rem;
-}
-.history__champions[data-v-301d0ec5] {
-  margin: 0 auto;
-}
-.history__champions-card-group[data-v-301d0ec5] {
+.winner__card-group[data-v-301d0ec5] {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
-.history__champions-card[data-v-301d0ec5] {
+.winner__card[data-v-301d0ec5] {
   width: 16rem;
   padding: 0.5rem;
 }@charset "UTF-8";

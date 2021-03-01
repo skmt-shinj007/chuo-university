@@ -1,40 +1,38 @@
 <template>
 <div class="history">
 
-  <section class="history__chronology">
+  <section class="history__archive">
     <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
-    <div class="history__chronology-container" ref="chronology">
+    <div class="archive" ref="archive">
 
       <!-- PC時のみ追従する時代のタグを表示 -->
-      <div class="history__age">
+      <div class="archive__age">
         <div
           ref="ageTag"
-          class="history__age-tag"
+          class="archive__tag"
           :style="{ transform: `translateY(${scrollLimit}px)`}"
-          v-text="ageChange">
-        </div>
+          v-text="ageChange"/>
       </div>
 
-      <div class="history__chronology-text">
-
+      <div class="archive__card">
         <!-- 大正の歴史 -->
-        <div class="history__box" ref="taisho">
-          <div class="history__item">
-            <history-box-component :data="data.History.Taisho"/>
+        <div class="archive__wrap" ref="taisho">
+          <div class="archive__content">
+            <history-box-component :data="data.Taisho"/>
           </div>
         </div>
 
         <!-- 昭和の歴史 -->
-        <div class="history__box" ref="showa">
-          <div class="history__item" v-for="(showaHistory, i) in showaHistories" :key="`first-${i}`">
+        <div class="archive__wrap" ref="showa">
+          <div class="archive__content" v-for="(showaHistory, i) in showa" :key="`first-${i}`">
             <history-box-component :data="showaHistory"/>
           </div>
         </div>
 
         <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
-        <div class="history__box" ref="heisei">
-          <div class="history__item" v-for="(heiseiHistory, i) in heiseiHistories" :key="`second-${i}`">
+        <div class="archive__wrap" ref="heisei">
+          <div class="archive__content" v-for="(heiseiHistory, i) in heisei" :key="`second-${i}`">
             <history-box-component :data="heiseiHistory"/>
           </div>
         </div>
@@ -43,23 +41,21 @@
     </div>
   </section>
 
-  <section class="history__primary-titles">
+  <section class="history__trophies">
     <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
 
-    <div class="history__primary-titles-table">
-      <icon-table-component :tableItems="titleAcquisitionData"/>
-    </div>
+    <icon-table-component :tableItems="trophies"/>
   </section>
 
   <div class="background-darkblue">
-    <section class="history__champions">
+    <section class="history__winner">
       <contents-title-component
         :title="messages.SectionTitles.Champions.Main"
         :subTitle="messages.SectionTitles.Champions.Sub"
         color="white"/>
 
-      <div class="history__champions-card-group">
-        <div class="history__champions-card" v-for="(champion, n) in champions" :key="n" ref="championCard">
+      <div class="winner__card-group">
+        <div class="winner__card" v-for="(champion, n) in champions" :key="n" ref="championCard">
           <champions-card-component :cardElement="champion"/>
         </div>
         <!-- カード配置を左揃えにするため、空の要素を追加 -->
@@ -94,17 +90,37 @@ export default {
   data() {
     return {
       data: Data,
+
+      /**
+       * 追従タグの時代表示
+       * @type { String }
+       */
       ageWard: '',
-      showaHistories: [],
-      heiseiHistories: [],
-      titleAcquisitionData: [],
+
+      /**
+       * 沿革 (大正時代のみオブジェクト形式)
+       * @type { Array }
+       */
+      showa: [],
+      heisei: [],
+
+      /**
+       * 過去に獲得したタイトル
+       * @type { Array }
+       */
+      trophies: [],
+
+      /**
+       * 天皇杯優勝者（中大出身）
+       * @type { Array }
+       */
       champions: [],
 
       /**
        * 沿革セクションの各アイテムの下余白
        * @type { Number }
        */
-      chronologyMarginBottom: 0,
+      archiveMarginBottom: 0,
 
       /**
        * refで取得できる要素の高さ（同じref名で複数個ある要素は除く）
@@ -127,10 +143,10 @@ export default {
   },
 
   beforeMount() {
-    // マウントされる直前に各データを data() で定義したプロパティに移管
-    this.$data.data.History.Showa.forEach(element => this.showaHistories.push(element));
-    this.$data.data.History.Heisei.forEach(element => this.heiseiHistories.push(element));
-    this.$data.data.TitleAcquisitionData.forEach(element => this.titleAcquisitionData.push(element));
+    // 各データを挿入
+    this.$data.data.Showa.forEach(element => this.showa.push(element));
+    this.$data.data.Heisei.forEach(element => this.heisei.push(element));
+    this.$data.data.Trophies.forEach(element => this.trophies.push(element));
     this.$data.data.Champions.forEach(element => this.champions.push(element));
   },
 
@@ -151,8 +167,8 @@ export default {
     // スクロールタグの上限設定に関係ある要素の高さがリサイズされたらプロパティを更新
     window.addEventListener('resize', this.getScrollTargetHeight);
 
-    // .history-contents の margin-bottom を数値で取得
-    this.chronologyMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
+    // カードのmargin-bottom を数値で取得
+    this.archiveMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
 
     /**
      * チャンピオンカードの配置を揃えるための処理
@@ -174,7 +190,7 @@ export default {
      */
     ageChange() {
       // 扱いやすいようにdataのプロパティを変数に代入
-      let marginBottom = this.chronologyMarginBottom;
+      let marginBottom = this.archiveMarginBottom;
       let taishoHeight = this.elementsHeight.taisho + marginBottom;  // 大正の沿革ボックスの高さを代入
       let showaHeight  = taishoHeight + this.elementsHeight.showa + marginBottom;  // 昭和の沿革ボックスの高さを代入
       let scroll = this.scrollAmount;  // スクロール量
@@ -182,9 +198,11 @@ export default {
 
       if (scroll < taishoHeight) {
         age = this.$data.messages.Age.Taisho;
-      } else if (scroll < showaHeight) {
+      }
+      else if (scroll < showaHeight) {
         age = this.$data.messages.Age.Showa;
-      } else {
+      }
+      else {
         age = this.$data.messages.Age.Heisei;
       }
 
@@ -197,12 +215,10 @@ export default {
      */
     scrollLimit() {
       let scroll = this.scrollAmount;  // スクロール量
-      let chronologyHeight = this.elementsHeight.chronology;  // 沿革セクション全体の高さ
+      let archiveHeight = this.elementsHeight.archive;  // 沿革セクション全体の高さ
       let tag = this.elementsHeight.ageTag;  // スクロールタグの高さ
 
-      if (scroll > chronologyHeight) {
-        this.scrollAmount = chronologyHeight - tag;
-      }
+      if (scroll > archiveHeight) this.scrollAmount = archiveHeight - tag;
 
       return this.scrollAmount;
     }
@@ -222,7 +238,7 @@ export default {
     getScrollTargetHeight() {
       const ref = this.$refs;
       this.elementsHeight.ageTag = ref.ageTag.offsetHeight;
-      this.elementsHeight.chronology = ref.chronology.offsetHeight;
+      this.elementsHeight.archive = ref.archive.offsetHeight;
     }
   },
 
@@ -236,18 +252,25 @@ export default {
 
 <style lang="scss" scoped>
 .history {
-
-  &__chronology {
+  &__archive {
     margin-top: interval(5);
 
     @include mq(md) {
       margin-top: 0;
     }
-
-    &-container {
-      @include flex;
-    }
   }
+
+  &__trophies {
+    margin-bottom: interval(10);
+  }
+
+  &__winner {
+    margin: 0 auto;
+  }
+}
+
+.archive {
+  @include flex;
 
   &__age {
     display: none;
@@ -272,51 +295,45 @@ export default {
         transform: translateX(-50%);
       }
     }
-
-    &-tag {
-      width: 100%;
-      text-align: center;
-      color: color(white);
-      background-color: color(darkblue);
-      border-radius: radius(hard);
-      font-size: font(12);
-      font-weight: bold;
-      padding: interval(.5);
-      position: absolute;
-      top: 0;
-      transition: all 1s ease-out;
-    }
   }
 
-  &__box {
-    margin-bottom: interval(10);
+  &__tag {
+    width: 100%;
+    text-align: center;
+    color: color(white);
+    background-color: color(darkblue);
+    border-radius: radius(hard);
+    font-size: font(12);
+    font-weight: bold;
+    padding: interval(.5);
+    position: absolute;
+    top: 0;
+    transition: all 1s ease-out;
+  }
+
+  &__wrap {
+    margin-bottom: interval(15);
 
     &:last-child {
       margin-bottom: 0;
     }
   }
 
-  &__item {
+  &__content {
     margin-bottom: interval(10);
 
     &:last-child {
       margin-bottom: 0;
     }
   }
+}
 
-  &__primary-titles {
-    margin-bottom: interval(10);
-  }
-
-  &__champions {
-    margin: 0 auto;
-  }
-
-  &__champions-card-group {
+.winner {
+  &__card-group {
     @include flex(row wrap, center, center);
   }
 
-  &__champions-card {
+  &__card {
     width: interval(32);
     padding: interval(1);
 
@@ -327,6 +344,5 @@ export default {
     @include mq(md) {
     }
   }
-
 }
 </style>
