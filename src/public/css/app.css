@@ -290,8 +290,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .main-visual[data-v-3ff6fe5a] {
   width: 100%;
@@ -607,8 +618,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .contents-title {
   padding: 2.5rem 0;
@@ -935,8 +957,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .primary-btn__btn, .primary-btn {
   background-color: #ffffff;
@@ -1272,8 +1305,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .news[data-v-9b317ac0] {
   padding: 0 1rem 1rem 1rem;
@@ -1624,8 +1668,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .link__btn[data-v-63d84db2], .link[data-v-63d84db2] {
   background-color: #ffffff;
@@ -1967,8 +2022,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .text-box {
   padding: 0 1rem 1rem 1rem;
@@ -2292,8 +2358,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .home[data-v-63cd6604] {
   position: relative;
@@ -2709,8 +2786,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .google-map__map[data-v-161a410d] {
   width: 100%;
@@ -3028,8 +3116,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .concept-card[data-v-348f28a1] {
   position: relative;
@@ -3392,8 +3491,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .image-slider__container[data-v-6cd5e234] {
   position: relative;
@@ -3729,8 +3839,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .main-visual-slider[data-v-30380e08] {
   height: 100%;
@@ -4054,8 +4175,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .common-table {
   width: 100%;
@@ -4428,8 +4560,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .caption-bar-image[data-v-7fa4fe02] {
   width: 100%;
@@ -4762,8 +4905,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .dormitory-ticket[data-v-c3a537a8] {
   width: 100%;
@@ -5099,8 +5253,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .tag {
   color: #ffffff;
@@ -5443,8 +5608,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .grade-tag__content {
   font-size: 0.625rem;
@@ -5759,8 +5935,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .player-card {
   position: relative;
@@ -6116,8 +6303,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .slider[data-v-53189f00] {
   height: auto;
@@ -6429,8 +6627,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .arrange-images__list-container[data-v-bb84db5a] {
   display: flex;
@@ -6765,8 +6974,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
@@ -6775,8 +6995,42 @@ import用ファイル
 .club__concept[data-v-357d3955] {
   margin: 0 auto;
 }
+.club__dormitory[data-v-357d3955] {
+  margin-bottom: 5rem;
+}
+.club__member[data-v-357d3955] {
+  margin: 0 auto;
+}
+.club__photo[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+.dormitory__slider[data-v-357d3955], .practice__slider[data-v-357d3955] {
+  margin-top: 5rem;
+}
 @media screen and (min-width: 560px) {
-.club__concept-cards[data-v-357d3955] {
+.dormitory__slider[data-v-357d3955], .practice__slider[data-v-357d3955] {
+    max-width: 640px;
+    margin: 5rem auto 0 auto;
+}
+}
+.dormitory__image[data-v-357d3955], .practice__image[data-v-357d3955] {
+  width: calc(100% / 3);
+  margin-right: 1rem;
+}
+.dormitory__image[data-v-357d3955]:last-child, .practice__image[data-v-357d3955]:last-child {
+  margin-right: 0;
+}
+.photo__button[data-v-357d3955], .member__button[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.photo__button[data-v-357d3955], .member__button[data-v-357d3955] {
+    max-width: 25rem;
+    margin: 2.5rem auto 0 auto;
+}
+}
+@media screen and (min-width: 560px) {
+.concept__card-group[data-v-357d3955] {
     max-width: 30rem;
     margin: 0 auto;
     display: flex;
@@ -6786,60 +7040,44 @@ import用ファイル
 }
 }
 @media screen and (min-width: 1025px) {
-.club__concept-cards[data-v-357d3955] {
+.concept__card-group[data-v-357d3955] {
     max-width: 50rem;
 }
 }
-.club__concept-card[data-v-357d3955] {
+.concept__card[data-v-357d3955] {
   margin-bottom: 2.5rem;
 }
-.club__concept-card[data-v-357d3955]:last-child {
+.concept__card[data-v-357d3955]:last-child {
   margin-bottom: 0;
 }
 @media screen and (min-width: 560px) {
-.club__concept-card[data-v-357d3955] {
+.concept__card[data-v-357d3955] {
     margin-bottom: 0;
     margin-right: 1rem;
 }
-.club__concept-card[data-v-357d3955]:last-child {
+.concept__card[data-v-357d3955]:last-child {
     margin-right: 0;
 }
 }
-.club__practice-map[data-v-357d3955] {
+.practice__map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
-.club__practice-imageSlider[data-v-357d3955] {
-  margin-top: 5rem;
-}
-@media screen and (min-width: 560px) {
-.club__practice-imageSlider[data-v-357d3955] {
-    max-width: 640px;
-    margin: 5rem auto 0 auto;
-}
-}
-.club__practice-rowImages[data-v-357d3955] {
+.practice__image-group[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 5rem;
 }
-.club__practice-rowImages-item[data-v-357d3955] {
-  width: calc(100% / 3);
-  margin-right: 1rem;
-}
-.club__practice-rowImages-item[data-v-357d3955]:last-child {
-  margin-right: 0;
-}
-.club__practice-schedule[data-v-357d3955] {
+.practice__schedule[data-v-357d3955] {
   margin-top: 5rem;
 }
-.club__practice-schedule-title[data-v-357d3955] {
-  margin: 0 auto 1rem auto;
+.practice__schedule-title[data-v-357d3955] {
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
-.club__practice-schedule-title[data-v-357d3955]::before {
+.practice__schedule-title[data-v-357d3955]::before {
   display: block;
   content: "";
   width: 1rem;
@@ -6850,32 +7088,32 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-.club__dormitory[data-v-357d3955] {
-  margin-bottom: 5rem;
+.practice__schedule-table[data-v-357d3955] {
+  margin-top: 1rem;
 }
 @media screen and (min-width: 560px) {
-.club__dormitory-lead-wrap[data-v-357d3955] {
+.dormitory__lead[data-v-357d3955] {
     text-align: center;
     max-width: 40rem;
     margin: 0 auto;
 }
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-lead-wrap[data-v-357d3955] {
+.dormitory__lead[data-v-357d3955] {
     max-width: 50rem;
 }
 }
-.club__dormitory-ticket-group[data-v-357d3955] {
+.dormitory__ticket-group[data-v-357d3955] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.club__dormitory-ticket-group[data-v-357d3955] {
+.dormitory__ticket-group[data-v-357d3955] {
     max-width: 40rem;
     margin: 2rem auto 0 auto;
 }
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-ticket-group[data-v-357d3955] {
+.dormitory__ticket-group[data-v-357d3955] {
     margin-top: 5rem;
     max-width: none;
     display: flex;
@@ -6884,7 +7122,7 @@ import用ファイル
     align-items: stretch;
 }
 }
-.club__dormitory-ticket[data-v-357d3955] {
+.dormitory__ticket[data-v-357d3955] {
   margin-bottom: 2.5rem;
   display: flex;
   flex-flow: row nowrap;
@@ -6892,41 +7130,30 @@ import用ファイル
   align-items: center;
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-ticket[data-v-357d3955] {
+.dormitory__ticket[data-v-357d3955] {
     width: calc(100% / 2);
 }
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-ticket[data-v-357d3955]:nth-child(odd) {
+.dormitory__ticket[data-v-357d3955]:nth-child(odd) {
     padding-right: 1rem;
 }
 }
-.club__dormitory-images[data-v-357d3955] {
+.dormitory__image-group[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: stretch;
 }
-.club__dormitory-images-item[data-v-357d3955] {
-  width: calc(100% / 3);
-  margin-right: 1rem;
-}
-.club__dormitory-images-item[data-v-357d3955]:last-child {
-  margin-right: 0;
-}
-.club__member[data-v-357d3955] {
-  margin: 0 auto;
-}
-.club__member-number[data-v-357d3955] {
+.member__number[data-v-357d3955] {
   margin-top: 5rem;
 }
-.club__member-number-title[data-v-357d3955] {
-  color: #ffffff;
-  margin-bottom: 1rem;
+.member__number-title[data-v-357d3955] {
   position: relative;
   padding-left: 1.5rem;
+  color: #ffffff;
 }
-.club__member-number-title[data-v-357d3955]::before {
+.member__number-title[data-v-357d3955]::before {
   display: block;
   content: "";
   width: 1rem;
@@ -6937,29 +7164,8 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-.club__member-number-table[data-v-357d3955] {
-  margin-bottom: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.club__member-button[data-v-357d3955] {
-    max-width: 25rem;
-    margin: 0 auto;
-}
-}
-.club__photo[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
-.club__photo-images[data-v-357d3955] {
-  margin-bottom: 2.5rem;
-}
-.club__photo-button[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.club__photo-button[data-v-357d3955] {
-    max-width: 25rem;
-    margin: 0 auto;
-}
+.member__number-table[data-v-357d3955] {
+  margin-top: 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -7252,8 +7458,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-358d2551] {
   position: fixed;
@@ -7817,8 +8034,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .user-ticket {
   display: flex;
@@ -8266,13 +8494,28 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
  */
-.member[data-v-668c6779] {
-  background-color: #f2f2f2;
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
+ */
+.member__players[data-v-668c6779] {
+  margin-top: 2.5rem;
 }
-.member__main-visual-icon[data-v-668c6779] {
+.member__staff[data-v-668c6779] {
+  padding-bottom: 5rem;
+  margin-bottom: 0;
+}
+.main-visual__icon[data-v-668c6779] {
   width: 80%;
   max-width: 20rem;
   fill: #ffffff;
@@ -8280,65 +8523,59 @@ import用ファイル
   stroke-width: 0.5rem;
 }
 @media screen and (min-width: 560px) {
-.member__main-visual-icon[data-v-668c6779] {
+.main-visual__icon[data-v-668c6779] {
     width: 50%;
 }
 }
 @media screen and (min-width: 1025px) {
-.member__main-visual-icon[data-v-668c6779] {
+.main-visual__icon[data-v-668c6779] {
     max-width: 30rem;
 }
 }
-.member__main-visual-ward[data-v-668c6779] {
+.main-visual__title[data-v-668c6779] {
   font-family: "Bangers", cursive;
   font-size: 1.5rem;
-  letter-spacing: 1px;
-  font-weight: 400;
-  color: #ffffff;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
+  font-weight: bold;
   line-height: 1.2;
   text-align: center;
   margin-top: 2.5rem;
+  text-shadow: none;
 }
 @media screen and (min-width: 560px) {
-.member__main-visual-ward[data-v-668c6779] {
+.main-visual__title[data-v-668c6779] {
     font-size: 1.75rem;
+    letter-spacing: 3px;
 }
 }
 @media screen and (min-width: 1025px) {
-.member__main-visual-ward[data-v-668c6779] {
+.main-visual__title[data-v-668c6779] {
     font-size: 3rem;
+    letter-spacing: 5px;
 }
 }
-.member__players[data-v-668c6779] {
-  margin-top: 2.5rem;
-}
-.member__user-ticket-group[data-v-668c6779] {
+.ticket-group[data-v-668c6779] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 @media screen and (min-width: 560px) {
-.member__user-ticket-group[data-v-668c6779] {
+.ticket-group[data-v-668c6779] {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
 }
-.member__user-ticket[data-v-668c6779] {
+.ticket[data-v-668c6779] {
   margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.member__user-ticket[data-v-668c6779] {
+.ticket[data-v-668c6779] {
     margin-bottom: 0;
     padding: 0.5rem;
 }
-}
-.member__staff[data-v-668c6779] {
-  padding-bottom: 5rem;
-  margin-bottom: 0;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8631,8 +8868,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .tile-table {
   width: 100%;
@@ -8956,8 +9204,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .hakumonkai__page-header[data-v-42f1fe89] {
   margin-top: 2.5rem;
@@ -9319,8 +9578,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .record-tag[data-v-b79d4b88] {
   cursor: pointer;
@@ -9689,8 +9959,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-57d67ae5] {
   position: fixed;
@@ -10062,8 +10343,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .history-box[data-v-600734dc] {
   border: 2px solid #091e2f;
@@ -10409,8 +10701,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .icon-table {
   width: 100%;
@@ -10731,8 +11034,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .champions-card[data-v-3ea95d82] {
   width: 100%;
@@ -10797,6 +11111,7 @@ import用ファイル
   font-size: 0.875rem;
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
 .champions-card__tournament-info-title[data-v-3ea95d82]::before {
   display: block;
@@ -11100,8 +11415,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .history__chronology[data-v-301d0ec5] {
   margin-top: 2.5rem;
@@ -11473,8 +11799,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .view-all {
   color: #ffffff;
@@ -11829,8 +12166,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .pull-down-table {
   display: table;
@@ -12160,8 +12508,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-213a8ec6] {
   position: fixed;
@@ -12642,8 +13001,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .lattice__filter[data-v-d066a2d0] {
   display: flex;
@@ -12668,6 +13038,7 @@ import用ファイル
   font-size: 1rem;
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
 .lattice__filter-title[data-v-d066a2d0]::before {
   display: block;
@@ -13043,8 +13414,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .sns-tag {
   margin: 0.25rem;
@@ -13372,8 +13754,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .provider-ticket {
   display: flex;
@@ -13762,8 +14155,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-5885bf62] {
   position: fixed;
@@ -14277,8 +14681,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .photo__gallery[data-v-46e3fba3] {
   margin-top: 2.5rem;
@@ -14602,8 +15017,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .err[data-v-403316a6] {
   display: flex;
@@ -14730,6 +15156,7 @@ import用ファイル
   line-height: 1.2;
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
 .err__guide-text[data-v-403316a6]::before {
   display: block;
@@ -15076,8 +15503,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .test[data-v-b28ce99e] {
   padding: 100px 0;
@@ -15927,8 +16365,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .accordion-link {
   color: #ffffff;
@@ -16300,8 +16749,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .nav-modal[data-v-1f270d64] {
   position: fixed;
@@ -16817,8 +17277,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .header__navbar[data-v-6832e7cf] {
   width: 100%;
@@ -17286,8 +17757,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .footer[data-v-060e08fe] {
   color: #ffffff;
@@ -17691,8 +18173,19 @@ import用ファイル
   }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 /* Reset box-model and set borders */
 /* ============================================ */

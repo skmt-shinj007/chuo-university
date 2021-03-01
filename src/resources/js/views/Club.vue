@@ -9,8 +9,8 @@
     <section class="club__concept">
       <contents-title-component :title="messages.SectionTitles.Concept.Main" :subTitle="messages.SectionTitles.Concept.Sub" color="white"/>
 
-      <div class="club__concept-cards">
-        <div class="club__concept-card" v-for="(concept, n) in concepts" :key="n">
+      <div class="concept__card-group">
+        <div class="concept__card" v-for="(concept, n) in concepts" :key="n">
           <concept-card-component :concept="concept"/>
         </div>
       </div>
@@ -21,29 +21,30 @@
   <section class="club__practice">
     <contents-title-component :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
 
-    <div class="club__practice-table">
+    <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
 
-    <div class="club__practice-map">
+    <div class="practice__map">
       <google-map-component/>
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="club__practice-imageSlider" v-if="windowWidth < breakpointPc">
+    <div class="practice__slider" v-if="windowWidth < breakpointPc">
       <contents-image-slider-component :images="courtImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="club__practice-rowImages" v-if="windowWidth >= breakpointPc">
-      <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
+    <div class="practice__image-group" v-if="windowWidth >= breakpointPc">
+      <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
         <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
     </div>
 
-    <div class="club__practice-schedule">
-      <h3 class="club__practice-schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
-      <div class="club__practice-schedule-table">
+    <div class="practice__schedule">
+      <h3 class="practice__schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
+
+      <div class="practice__schedule-table">
         <table-component :tableItems="schedule"/>
       </div>
     </div>
@@ -52,24 +53,24 @@
   <section class="club__dormitory">
     <contents-title-component :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
 
-    <div class="club__dormitory-lead-wrap">
+    <div class="dormitory__lead">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
 
-    <div class="club__dormitory-ticket-group">
-      <div class="club__dormitory-ticket" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
+    <div class="dormitory__ticket-group">
+      <div class="dormitory__ticket" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
         <dormitory-ticket-component :dormitoryData="dormitoryInformation"/>
       </div>
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="club__practice-imageSlider" v-if="windowWidth < breakpointPc">
+    <div class="dormitory__slider" v-if="windowWidth < breakpointPc">
       <contents-image-slider-component :images="dormitoryImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="club__dormitory-images" v-if="windowWidth >= breakpointPc">
-      <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
+    <div class="dormitory__image-group" v-if="windowWidth >= breakpointPc">
+      <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
         <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
@@ -82,13 +83,14 @@
 
       <player-slider-component :players="players"/>
 
-      <div class="club__member-number">
-        <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
-        <div class="club__member-number-table">
+      <div class="member__number">
+        <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
+
+        <div class="member__number-table">
           <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
         </div>
 
-        <div class="club__member-button">
+        <div class="member__button">
           <link-button-component :link="messages.Links.Member"/>
         </div>
       </div>
@@ -98,11 +100,9 @@
   <section class="club__photo">
     <contents-title-component :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <div class="club__photo-images">
-      <arrange-images-component :imagesData="imagesData"/>
-    </div>
+    <arrange-images-component :imagesData="imagesData"/>
 
-    <div class="club__photo-button">
+    <div class="photo__button">
       <link-button-component :link="messages.Links.Photo"/>
     </div>
   </section>
@@ -316,22 +316,63 @@ const imageApiResponse = [
 
   &__concept {
     margin: 0 auto;
+  }
 
-    &-cards {
+  &__dormitory {
+    margin-bottom: interval(10);
+  }
 
-      @include mq(sm) {
-        max-width: interval(60);
-        margin: 0 auto;
-        @include flex(row nowrap, space-between, center);
-      }
+  &__member {
+    margin: 0 auto;
+  }
 
-      @include mq(md) {
-        max-width: interval(100);
-      }
+  &__photo {
+    margin-top: interval(5);
+  }
+}
+
+%slider {
+  margin-top: interval(10);
+
+  @include mq(sm) {
+    max-width: pixel(80);
+    margin: interval(10) auto 0 auto;
+  }
+}
+
+%image {
+  width: calc(100% / 3);
+  margin-right: interval(2);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+%button {
+  margin-top: interval(5);
+
+  @include mq(sm) {
+    max-width: interval(50);
+    margin: interval(5) auto 0 auto;
+  }
+}
+
+.concept {
+  &__card-group {
+
+    @include mq(sm) {
+      max-width: interval(60);
+      margin: 0 auto;
+      @include flex(row nowrap, space-between, center);
+    }
+
+    @include mq(md) {
+      max-width: interval(100);
     }
   }
 
-  &__concept-card {
+  &__card {
     margin-bottom: interval(5);
 
     &:last-child {
@@ -346,150 +387,120 @@ const imageApiResponse = [
         margin-right: 0;
       }
     }
+
+  }
+}
+
+.practice {
+  &__map {
+    padding-top: interval(5);
   }
 
-  &__practice {
-
-    &-map {
-      padding-top: interval(5);
-    }
-
-    &-imageSlider {
-      margin-top: interval(10);
-
-      @include mq(sm) {
-        max-width: pixel(80);
-        margin: interval(10) auto 0 auto;
-      }
-
-    }
-
-    &-rowImages {
-      @include flex(row nowrap, space-between, center);
-      margin-top: interval(10);
-
-      &-item {
-        width: calc(100% / 3);
-        margin-right: interval(2);
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-
-    &-schedule {
-      margin-top: interval(10);
-    }
-
-    &-schedule-title {
-      margin: 0 auto interval(2) auto;
-      @include middle-line-text(2, 1px, color(darkblue));
-    }
+  &__slider {
+    @extend %slider;
   }
 
-  &__dormitory {
-    margin-bottom: interval(10);
+  &__image-group {
+    @include flex(row nowrap, space-between, center);
+    margin-top: interval(10);
+  }
 
-    &-lead-wrap {
+  &__image {
+    @extend %image;
+  }
 
-      @include mq(sm) {
-        text-align: center;
-        max-width: interval(80);
-        margin: 0 auto;
-      }
+  &__schedule {
+    margin-top: interval(10);
+  }
 
-      @include mq(md) {
-        max-width: interval(100);
-      }
+  &__schedule-title {
+    @include middle-line-text(2, 1px, color(darkblue));
+  }
+
+  &__schedule-table {
+    margin-top: interval(2);
+  }
+}
+
+.dormitory {
+  &__lead {
+
+    @include mq(sm) {
+      text-align: center;
+      max-width: interval(80);
+      margin: 0 auto;
     }
 
-    &-ticket-group {
-      margin-top: interval(5);
-
-      @include mq(sm) {
-        max-width: interval(80);
-        margin: interval(4) auto 0 auto;
-      }
-
-      @include mq(md) {
-        margin-top: interval(10);
-        max-width: none;
-        @include flex(row wrap);
-      }
-    }
-
-    &-ticket {
-      margin-bottom: interval(5);
-      @include flex(row nowrap, center, center);
-
-      @include mq(md) {
-        width: calc(100% / 2);
-      }
-
-      // アイテムが奇数個の場合、アイテム間に余白をつける
-      &:nth-child(odd) {
-        @include mq(md) {
-          padding-right: interval(2);
-        }
-      }
-    }
-
-    &-images {
-      @include flex();
-    }
-
-    &-images-item {
-      width: calc(100% / 3);
-      margin-right: interval(2);
-
-      &:last-child {
-        margin-right: 0;
-      }
+    @include mq(md) {
+      max-width: interval(100);
     }
   }
 
-  &__member {
-    margin: 0 auto;
-
-    &-number {
-      margin-top: interval(10);
-    }
-
-    &-number-title {
-      color: color(white);
-      margin-bottom: interval(2);
-      @include middle-line-text(2, 1px, color(white));
-    }
-
-    &-number-table {
-      margin-bottom: interval(5);
-    }
-
-    &-button {
-
-      @include mq(sm) {
-        max-width: interval(50);
-        margin: 0 auto;
-      }
-    }
-  }
-
-  &__photo {
-    margin-top: interval(5);
-  }
-
-  &__photo-images {
-    margin-bottom: interval(5);
-  }
-
-  &__photo-button {
+  &__ticket-group {
     margin-top: interval(5);
 
     @include mq(sm) {
-      max-width: interval(50);
-      margin: 0 auto;
+      max-width: interval(80);
+      margin: interval(4) auto 0 auto;
     }
+
+    @include mq(md) {
+      margin-top: interval(10);
+      max-width: none;
+      @include flex(row wrap);
+    }
+  }
+
+  &__ticket {
+    margin-bottom: interval(5);
+    @include flex(row nowrap, center, center);
+
+    @include mq(md) {
+      width: calc(100% / 2);
+    }
+
+    // アイテムが奇数個の場合、アイテム間に余白をつける
+    &:nth-child(odd) {
+      @include mq(md) {
+        padding-right: interval(2);
+      }
+    }
+  }
+
+  &__slider {
+    @extend %slider;
+  }
+
+  &__image-group {
+    @include flex();
+  }
+
+  &__image {
+    @extend %image;
+  }
+}
+
+.member {
+  &__number {
+    margin-top: interval(10);
+  }
+
+  &__number-title {
+    @include middle-line-text(2, 1px, color(white));
+  }
+
+  &__number-table {
+    margin-top: interval(2);
+  }
+
+  &__button {
+    @extend %button;
+  }
+}
+
+.photo {
+  &__button {
+    @extend %button;
   }
 }
 </style>
