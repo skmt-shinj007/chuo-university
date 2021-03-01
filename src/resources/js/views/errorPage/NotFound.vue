@@ -23,7 +23,7 @@
 
     <ul class="err__list">
       <li class="err__list-item" v-for="(menu, n) in menus" :key="n">
-        <router-link class="err__link" :to="menu.link">{{ menu.label }}</router-link>
+        <router-link class="err__link" :to="menu.to">{{ menu.label }}</router-link>
       </li>
     </ul>
   </section>
@@ -32,23 +32,34 @@
 
 <script>
 // import
-import Features from '../../config/features.json';
+import Config from '../../config/config.json';
 export default {
   data() {
     return {
-      features: Features,
-      menus: null,
+      config: Config,
+
+      /**
+       * サイトマップを生成するデータ
+       * @type { Object }
+       */
+      menus: [],
     }
   },
 
   mounted() {
-    this.features.Links.forEach(element => {
-      if(element.menuName.ja === 'サイトマップ') this.menus = element.childrenMenus;
-    });
+    this.menus = this.convertArray(this.config.route);
   },
 
   methods: {
-
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     */
+    convertArray(obj) {
+      return Object.keys(obj).map(function (key) {
+        return obj[key];
+      })
+    },
   },
 }
 </script>

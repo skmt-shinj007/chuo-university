@@ -13,38 +13,40 @@
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
-      <a class="header__btn" :href="data.Button.Twitter.Href" target="_blank">
+      <a class="header__btn" :href="twitter.link" target="_blank">
         <svg-vue icon="twitter" class="header__btn-icon"/>
       </a>
     </div>
   </div>
 
   <!-- グローバルナビ（モーダル） -->
-  <nav-modal-component
-    v-if="navShow"
-    @close="closeModal"
-    :accordionMenus="links"
-    :snsLinks="snsLinks"/>
-</header>
+  <nav-modal-component v-if="navShow" @close="closeModal"/>
 
+</header>
 </template>
 
 <script>
 // data import
 import Data from '../../config/data.json';
-import Features from '../../config/features.json';
+import Config from '../../config/config.json';
 
 // component import
 import NavModalComponent from '../modules/modal/NavModalComponent.vue';
+
+// mixin
+import TwitterAccount from '../../config/api/TwitterAccount';
 
 export default {
   components: {
     NavModalComponent,
   },
+
+  mixins: [TwitterAccount],
+
   data() {
     return {
       data: Data,
-      features: Features,
+      config: Config,
 
       /**
        * ヘッダーの高さ
@@ -54,8 +56,6 @@ export default {
 
       /**
        * [ヘッダーの表示を制御するフラグ]
-       * true  表示 (デフォ)
-       * false 非表示
        * クラスの付与で表示切り替え
        * @type { Boolean }
        */
@@ -73,25 +73,11 @@ export default {
        * @type { Boolean }
        */
       navShow: false,
-
-      /**
-       * [ナビ：リンクデータ]
-       * @type { Array }
-       */
-      links: [],
-
-      /**
-       * [ナビ：snsデータ]
-       * @type { Array }
-       */
-      snsLinks: [],
     }
   },
 
   beforeMount() {
-    // リンクのデータを生成
-    this.$data.features.Links.forEach(element => this.links.push(element));
-    this.$data.features.Sns.forEach(element => this.snsLinks.push(element));
+    this.getTwitterAccount();
   },
 
   mounted() {
@@ -127,7 +113,7 @@ export default {
     closeModal() {
       this.navShow = false;
       document.body.classList.remove("modal-open");
-    }
+    },
   },
 }
 </script>

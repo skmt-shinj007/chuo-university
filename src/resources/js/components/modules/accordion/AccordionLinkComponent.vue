@@ -2,7 +2,7 @@
 <div class="accordion-link">
 
   <div class="accordion-link__title" @click="accordionToggle()">
-    <label class="accordion-link__label">{{ item.menuName.ja }}</label>
+    <label class="accordion-link__label">{{ item.name.ja }}</label>
     <div class="accordion-link__icon-wrap">
       <i class="accordion-link__icon" :class="{ 'accordion-link__open-icon': isOpened }"/>
     </div>
@@ -10,13 +10,16 @@
 
   <collapse-transition>
     <ul class="accordion-link__children" v-if="isOpened" :class="background">
-      <li class="accordion-link__children-item" v-for="(menu, n) in childrenMenus" :key="n">
+
+      <li class="accordion-link__children-item"
+          v-for="(menu, n) in item.childrenMenus"
+          :key="n">
 
         <!-- 別タブ遷移の場合は、<a> -->
         <a class="accordion-link__link"
           target="_blank" rel="noopener noreferrer"
-          :href="menu.link"
-          v-if="item.blank"
+          :href="menu.to"
+          v-if="isExternal"
           @click="accordionReset(); $emit('navClose')">
 
           <label class="accordion-link__children-label">{{ menu.label }}</label>
@@ -24,7 +27,7 @@
         </a>
 
         <!-- 同タブ遷移の場合は、<router-link> -->
-        <router-link class="accordion-link__link" :to="menu.link" @click.native="accordionReset(); $emit('navClose')" v-else>
+        <router-link class="accordion-link__link" :to="menu.to" @click.native="accordionReset(); $emit('navClose')" v-else>
           <label class="accordion-link__children-label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
         </router-link>
@@ -51,20 +54,24 @@ export default {
   data() {
     return {
       /**
-       * [アコーディオンのメニューが入った配列]
-       * @type { Array }
-       */
-      childrenMenus: [],
-
-      /**
        * [アコーディオンの表示・非表示フラグ]
        * @type { Boolean }
        */
-      isOpened: false
+      isOpened: false,
+
+      /**
+       * [外部リンクかを判定]
+       * @type { Boolean }
+       */
+      isExternal: false,
     }
   },
 
   props: {
+    /**
+     * アコーディオンを生成するデータ
+     * prop => name(Obj), childrenMenus(Ary)
+     */
     item: {
       type: Object,
       required: true
@@ -77,13 +84,28 @@ export default {
   },
 
   beforeMount() {
-    this.item.childrenMenus.forEach(element => this.childrenMenus.push(element));
+    /**
+     * 外部リンクの判定
+     * 'http'で始まる宛先を外部リンクと判定する。
+     */
+    this.item.childrenMenus.forEach(el => {
+      if (el.to.startsWith('http')) this.isExternal = true;
+    })
   },
 
   methods: {
+    /**
+     * アコーディオンの開閉処理
+     * フラグになっている isOpened プロパティ
+     */
     accordionToggle() {
       this.isOpened = !this.isOpened;
     },
+
+    /**
+     * [アコーディオンを閉める処理]
+     * リンク押下後にアコーディオン開きっぱなしを防ぐ。
+     */
     accordionReset() {
       this.isOpened = false;
     },

@@ -2,12 +2,12 @@
   <div class="pull-down-table">
     <tr class="pull-down-table__record">
 
-      <th class="pull-down-table__key">{{ filterItem.select.title }}</th>
+      <th class="pull-down-table__key">{{ titles.select.title }}</th>
 
       <td class="pull-down-table__value">
-        <select class="pull-down-table__select" :name="filterItem.select.name" v-model="select">
+        <select class="pull-down-table__select" :name="titles.select.name" v-model="select">
           <option value="all" selected>{{ messages.Filter.All }}</option>
-          <option v-for="(pulldownMenu, n) in pulldownMenus" :key="n" :value="pulldownMenu">{{ pulldownMenu }}</option>
+          <option v-for="(menu, n) in menus" :key="n" :value="menu">{{ menu }}</option>
         </select>
       </td>
     </tr>
@@ -29,7 +29,7 @@ export default {
      * 2:selectタグに指定するname属性
      * 上記のデータを持ったオブジェクトの配列
      */
-    filterItem: {
+    titles: {
       type: Object,
       require: true
     },
@@ -38,7 +38,7 @@ export default {
      * プルダウンのメニューが入った配列
      * <option>に入る
      */
-    pulldownMenus: {
+    menus: {
       type: Array,
       require: true
     }

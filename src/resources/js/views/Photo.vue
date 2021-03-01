@@ -7,7 +7,7 @@
       :subTitle="messages.SectionTitles.Photo.Sub"/>
 
     <div class="photo__gallery-images">
-      <image-lattice-component :images="images" :filter="features.ImageFilter"/>
+      <image-lattice-component :images="images" :filter="config.filter"/>
     </div>
   </section>
 
@@ -43,7 +43,7 @@ import ProviderTicketComponent from '../components/modules/ticket/ProviderTicket
 
 // config json import
 import Data from '../config/data.json';
-import Features from '../config/features.json';
+import Config from '../config/config.json';
 import ProviderTicketModalComponent from '../components/modules/modal/ProviderTicketModalComponent.vue';
 
 export default {
@@ -60,7 +60,7 @@ export default {
        * @type { object }
        */
       data: Data,
-      features: Features,
+      config: Config,
 
       /**
        * [イメージデータ]

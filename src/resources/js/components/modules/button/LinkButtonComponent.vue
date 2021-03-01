@@ -34,7 +34,7 @@ export default {
     link: {
       type: Object,
       default: null,
-      // required: true,
+      required: true,
     },
 
     /**
@@ -59,10 +59,7 @@ export default {
      * 'http'で始まる宛先を外部リンクと判定する。
      */
     const to = this.link.To;
-
-    if (to.startsWith('http')) {
-      this.isExternal = true;
-    }
+    if (to.startsWith('http')) this.isExternal = true;
   },
 }
 </script>

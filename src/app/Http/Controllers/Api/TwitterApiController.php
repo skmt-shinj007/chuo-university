@@ -9,29 +9,29 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 class TwitterApiController extends Controller
 {
   /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
+   * Twitter Apiに接続
    */
-  public function index()
+  private function connection()
   {
-    // APIキー
-    $consumer_key = config('keys.twitter.api_key');
-
-    // シークレットAPIキー
-    $consumer_secret = config('keys.twitter.api_key_secret');
-
-    // アクセストークン
-    $access_token = config('keys.twitter.access_token');
-
-    // シークレットアクセストークン
-    $access_token_secret = config('keys.twitter.access_token_secret');
+    $consumer_key = env('TWITTER_API_KEY', '');
+    $consumer_secret = env('TWITTER_API_KEY_SECRET', '');
+    $access_token = env('TWITTER_API_ACCESS_TOKEN', '');
+    $access_token_secret = env('TWITTER_API_ACCESS_TOKEN_SECRET', '');
 
     // APIに接続
     $connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
 
+    return $connection;
+  }
+
+  /**
+   * タイムラインを3件取得する
+   * @return \Illuminate\Http\Response
+   */
+  public function getTimeline()
+  {
     // 直近3投稿の取得をリクエスト
-    $request = $connection->get('statuses/home_timeline',
+    $request = $this->connection()->get('statuses/home_timeline',
       array(
         'count' => '3',
       )
@@ -75,48 +75,14 @@ class TwitterApiController extends Controller
     return $response;
   }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  /**
+   * アカウント情報
+   *
+   */
+  public function account()
+  {
+    $request = $this->connection()->get('account/verify_credentials');
+    $user = json_encode($request);
+    return $user;
+  }
 }

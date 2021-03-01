@@ -18,9 +18,9 @@
 
         <nav class="nav-modal__main">
           <div class="nav-modal__accordion">
-            <div class="nav-modal__accordion-item" v-for="(menu, n) in accordionMenus" :key="n">
+            <div class="nav-modal__accordion-item" v-for="(link, n) in links" :key="n">
               <accordion-link-component
-                :item="menu"
+                :item="link"
                 @navClose="$emit('close')"
                 />
             </div>
@@ -30,7 +30,7 @@
             <button class="nav-modal__menu-item">
               <!-- TODO:コンタクトページに遷移するようにする -->
               <router-link to="contact" class="nav-modal__menu-link" @click.native="$emit('close')">
-                <label class="nav-modal__menu-title">{{ messages.Nav.Contact }}</label>
+                <label class="nav-modal__menu-title">{{ messages.Links.ToContact.Name }}</label>
                 <svg-vue icon="angle-right" class="nav-modal__menu-icon"/>
               </router-link>
             </button>
@@ -38,9 +38,9 @@
 
           <div class="nav-modal__sns">
             <!-- snsの各プロフィールページに遷移するように修正 -->
-            <div class="nav-modal__sns-item" v-for="(sns, n) in snsLinks" :key="n" :class="`nav-modal__sns-item--${sns.name}`">
-              <a :href="sns.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
-                <svg-vue :icon="sns.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${sns.name}`"/>
+            <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
+              <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
+                <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
               </a>
             </div>
           </div>
@@ -59,27 +59,92 @@
 // component import
 import AccordionLinkComponent from '../accordion/AccordionLinkComponent';
 
+// data
+import Config from '../../../config/config.json';
+
+// mixin
+import TwitterAccount from '../../../config/api/TwitterAccount';
+
 export default {
   components: {
     AccordionLinkComponent,
   },
 
-  props: {
+  mixins: [TwitterAccount],
+
+  data() {
+    return {
+      config: Config,
+
+      /**
+       * snsのメニューパネルを生成する配列
+       * @type { Array }
+       */
+      sns: [],
+
+      /**
+       * アコーディオンコンポーネントに渡すデータ
+       * @type { Array }
+       */
+      links: []
+    }
+  },
+
+  computed: {
     /**
-     * [アコーディオン: メニューデータ]
+     * sns配列の要素が3以上になったらカットする。
      */
-    accordionMenus: {
-      type: Array,
-      required: true,
-    },
+    filteringSns() {
+      if (this.sns.length > 3) {
+        return this.sns.slice(0, 3);
+      }
+      else {
+        return this.sns;
+      }
+    }
+  },
+
+  beforeMount() {
+    // アコーディオンリンクのデータを生成
+    const config = this.$data.config;
+    const messages = this.$data.messages;
+
+    let sitemap = {};
+    sitemap.name = messages.sitemap.name;
+    sitemap.childrenMenus = this.convertArray(config.route);
+    this.links.push(sitemap);
+
+    let externalLink = {};
+    externalLink.name = messages.externalLink.name;
+    externalLink.childrenMenus = this.convertArray(config.links);
+    this.links.push(externalLink);
 
     /**
-     * [sns: snsメニューパネルを生成するデータ]
+     * sns データ生成
+     * TODO：Apiを叩いてアカウント情報を持ってくる
      */
-    snsLinks: {
-      type: Array,
-      required: true
-    }
+    this.getTwitterAccount(() => {
+      // apiレスポンスと保持データの結合
+      const apiResponse = this.twitter;
+      const retained = this.config.twitter;
+      this.twitter = {...apiResponse, ...retained};
+
+      // sns配列に格納
+      this.sns.push(this.twitter);
+    });
+
+  },
+
+  methods: {
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     */
+    convertArray(obj) {
+      return Object.keys(obj).map(function (key) {
+        return obj[key];
+      })
+    },
   },
 }
 </script>

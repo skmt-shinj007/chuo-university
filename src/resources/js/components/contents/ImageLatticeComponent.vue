@@ -5,10 +5,7 @@
   <div class="lattice__filter">
     <span class="lattice__filter-title">{{ messages.FunctionName.Filter }}</span>
 
-    <pull-down-table-component
-      :filterItem="filter.year"
-      :pulldownMenus="years"
-      @select="select = $event"/>
+    <pull-down-table-component :titles="filter.year" :menus="years" @select="select = $event"/>
   </div>
 
   <!-- 写真 -->

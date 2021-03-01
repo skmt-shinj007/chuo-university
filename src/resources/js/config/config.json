@@ -1,0 +1,89 @@
+{
+  "filter": {
+
+    "year": {
+      "select": {
+        "name": "year",
+        "title": "年月"
+      }
+    }
+  },
+
+  "route": {
+    "home": {
+      "label": "ホーム",
+      "name" : "home",
+      "to"   : "/"
+    },
+
+    "club": {
+      "label": "クラブ",
+      "name" : "club",
+      "to"   : "/club"
+    },
+
+    "member": {
+      "label": "メンバー",
+      "name" : "member",
+      "to"   : "/member"
+    },
+
+    "history": {
+      "label": "歴史",
+      "name" : "history",
+      "to"   : "/history"
+    },
+
+    "hakumonkai": {
+      "label": "白門会",
+      "name" : "hakumonkai",
+      "to"   : "/hakumonkai"
+    },
+
+    "photo": {
+      "label": "フォトギャラリー",
+      "name" : "photo",
+      "to"   : "/photo"
+    }
+  },
+
+  "links": {
+    "chuoUniv": {
+      "label": "中央大学ホームページ",
+      "to": "https://www.chuo-u.ac.jp/"
+    },
+
+    "ritsumeikanUniv": {
+      "label": "立命館大学ホームページ",
+      "to": "http://www5c.biglobe.ne.jp/~rst/"
+    },
+
+    "studentFederation": {
+      "label": "日本学生ソフトテニス連盟",
+      "to": "https://www.jssta.jp/"
+    },
+
+    "kantouStudentFederation": {
+      "label": "関東学生ソフトテニス連盟",
+      "to": "https://kssta.net/"
+    }
+  },
+
+  "twitter": {
+    "name": {
+      "ja": "ツイッター",
+      "en": "twitter"
+    },
+    "icon": "twitter",
+    "baseUrl": "https://twitter.com/"
+  },
+
+  "instagram": {
+    "name": {
+      "ja": "インスタグラム",
+      "en": "instagram"
+    },
+    "icon": "instagram",
+    "baseUrl": "https://www.instagram.com/"
+  }
+}

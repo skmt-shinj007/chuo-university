@@ -34,10 +34,6 @@
     "AssistanceTitle" : "中央大学ソフトテニス部"
   },
 
-  "Nav": {
-    "Contact": "Contact"
-  },
-
   "Information": {
     "ClubName"        : "中央大学ソフトテニス部白門会",
     "Address"         : "東京都八王子市東中野742-1",
@@ -148,11 +144,30 @@
     "Filter" : "絞り込み"
   },
 
+  "Filter": {
+    "All": "全て",
+    "Years": "年月"
+  },
+
   "ButtonName": {
     "Member":  "メンバーを見る",
     "Hakumonkai": "白門会を知る",
     "ToContact": "お問い合わせへ",
     "NewsRequest": "ニュースを取得"
+  },
+
+  "sitemap": {
+    "name": {
+      "ja": "サイトマップ",
+      "en": "Site Map"
+    }
+  },
+
+  "externalLink": {
+    "name": {
+      "ja": "外部リンク",
+      "en": "External Link"
+    }
   },
 
   "Links": {
@@ -165,7 +180,7 @@
       "To"   : "hakumonkai"
     },
     "ToContact": {
-      "Name" : "お問い合わせへ",
+      "Name" : "お問い合わせ",
       "To"   : "contact"
     },
     "TournamentResult": {
@@ -202,11 +217,6 @@
     "Heisei" : "平成",
     "Showa"  : "昭和",
     "Taisho" : "大正"
-  },
-
-  "Filter": {
-    "All": "全て",
-    "Years": "年月"
   },
 
   "Home": {
