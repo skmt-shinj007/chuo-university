@@ -3068,6 +3068,17 @@ import用ファイル
 .support__text[data-v-63cd6604] {
   width: 80%;
   margin: 0 auto;
+}
+.scrollTop-enter-active[data-v-63cd6604], .scrollTop-leave-active[data-v-63cd6604] {
+  transition: transform 0.5s ease-out, opacity 0.3s;
+}
+.scrollTop-enter[data-v-63cd6604], .scrollTop-leave-to[data-v-63cd6604] {
+  opacity: 0;
+  transform: scale(0);
+}
+.scrollTop-enter-to[data-v-63cd6604] {
+  opacity: 1;
+  transform: scale(1);
 }@charset "UTF-8";
 /*
 import用ファイル

@@ -33,9 +33,12 @@
       </section>
     </div>
 
-    <div class="home__scroll-top" v-if="showBtn">
-      <scroll-top-button-component/>
-    </div>
+    <transition name="scrollTop">
+      <div class="home__scroll-top" v-if="showBtn">
+        <scroll-top-button-component/>
+      </div>
+    </transition>
+
   </div>
 </template>
 
@@ -60,12 +63,17 @@ export default {
   data() {
     return {
       data: Data,
+
+      /**
+       * アバウトセクションを生成するデータ
+       */
       aboutItems: [],
 
       /**
        * スクロールボタンの表示制御
+       * @type { Boolean }
        */
-      showBtn: true,
+      showBtn: false,
     }
   },
 
@@ -74,9 +82,9 @@ export default {
     this.$data.data.HomeAbout.forEach(element => this.aboutItems.push(element));
   },
 
-  methods: {
-    buttonToggle() {
-      // this.showBtn
+  watch: {
+    scrollY() {
+      (this.scrollY > 1000) ? this.showBtn = true : this.showBtn = false;
     }
   },
 }
@@ -205,6 +213,23 @@ export default {
   &__text {
     width: 80%;
     margin: 0 auto;
+  }
+}
+
+// アニメーション
+.scrollTop {
+  &-enter-active, &-leave-active {
+    transition: transform .5s ease-out, opacity .3s;
+  }
+
+  &-enter, &-leave-to {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &-enter-to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 </style>
