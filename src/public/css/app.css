@@ -18819,50 +18819,18 @@ import用ファイル
     margin: 0 auto;
 }
 }
-.footer__accordion[data-v-060e08fe] {
+.footer__list[data-v-060e08fe] {
   margin-top: 5rem;
 }
-.footer__accordion-item[data-v-060e08fe] {
+.footer__list-item[data-v-060e08fe] {
   border-top: 2px solid #091e2f;
 }
-.footer__accordion-item[data-v-060e08fe]:last-child {
+.footer__list-item[data-v-060e08fe]:last-child {
   border-bottom: 2px solid #091e2f;
 }
-.footer__information[data-v-060e08fe] {
+.footer__address[data-v-060e08fe] {
   position: relative;
   margin-top: 5rem;
-}
-.footer__information-logo[data-v-060e08fe] {
-  pointer-events: none;
-  width: 9rem;
-  height: 100%;
-  opacity: 0.2;
-  background-image: url("/svg/chuo-logo-white.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
-}
-.footer__information-title[data-v-060e08fe] {
-  margin-bottom: 0.5rem;
-}
-.footer__information-item[data-v-060e08fe], .footer__information-telephone[data-v-060e08fe] {
-  display: block;
-  font-weight: bold;
-  line-height: 1.8;
-  letter-spacing: 1.2px;
-}
-.footer__information-telephone[data-v-060e08fe] {
-  text-decoration: underline;
-}
-@media screen and (min-width: 560px) {
-.footer__information-telephone[data-v-060e08fe] {
-    pointer-events: none;
-    text-decoration: none;
-}
 }
 .footer__scroll-top[data-v-060e08fe] {
   position: absolute;
@@ -18871,7 +18839,7 @@ import用ファイル
   width: 3rem;
   height: 3rem;
   padding: 0.5rem;
-  border: 1px solid #ffffff;
+  border: 1px solid #091e2f;
   border-radius: 50%;
   display: flex;
   flex-flow: row nowrap;
@@ -18881,26 +18849,36 @@ import用ファイル
   transition: background-color 0.3s ease-out;
 }
 @media screen and (min-width: 1025px) {
-.footer__scroll-top[data-v-060e08fe]:hover {
-    background-color: #ffffff;
-}
-.footer__scroll-top:hover .footer__scroll-top-icon[data-v-060e08fe] {
-    fill: #e56c2c;
-    color: #e56c2c;
+.footer__scroll-top:hover .footer__scroll-icon[data-v-060e08fe] {
+    -webkit-animation: fadeoutTop-data-v-060e08fe 1s linear infinite;
+            animation: fadeoutTop-data-v-060e08fe 1s linear infinite;
 }
 }
-.footer__scroll-top--animation[data-v-060e08fe] {
-  opacity: 0;
-}
-.footer__scroll-top-icon[data-v-060e08fe] {
+.footer__scroll-icon[data-v-060e08fe] {
   width: 0.75rem;
-  -webkit-animation: fadeoutTop-data-v-060e08fe 1.5s linear infinite;
-          animation: fadeoutTop-data-v-060e08fe 1.5s linear infinite;
 }
 .footer__copyright[data-v-060e08fe] {
   font-size: 0.625rem;
   text-align: center;
   margin-top: 2.5rem;
+}
+.address__title[data-v-060e08fe] {
+  line-height: 2;
+}
+.address__item[data-v-060e08fe], .address__telephone[data-v-060e08fe] {
+  display: block;
+  font-weight: bold;
+  line-height: 1.8;
+  letter-spacing: 1.2px;
+}
+.address__telephone[data-v-060e08fe] {
+  text-decoration: underline;
+}
+@media screen and (min-width: 560px) {
+.address__telephone[data-v-060e08fe] {
+    pointer-events: none;
+    text-decoration: none;
+}
 }@charset "UTF-8";
 /**
  * _imports.scss === Vueファイル内で使用するmixinや関数・変数をインポート

@@ -16,29 +16,29 @@
       </div>
     </div>
 
-    <!-- sm, tablet -->
-    <ul class="footer__accordion">
-      <li class="footer__accordion-item" v-for="(link, n) in links" :key="n">
+    <ul class="footer__list">
+      <li class="footer__list-item" v-for="(link, n) in links" :key="n">
         <accordion-link-component :item="link" color="darkblue"/>
       </li>
     </ul>
 
-    <div class="footer__information">
-      <div class="footer__information-logo"/>
-
+    <div class="footer__address">
       <address>
-        <h3 class="footer__information-title">
+        <h3 class="address__title">
           <router-link to="/">{{ messages.Information.ClubName }}</router-link>
         </h3>
-        <span class="footer__information-item">{{ messages.Information.Address }}</span>
-        <a class="footer__information-telephone" :href="`tel:+${telephoneNum}`">
+
+        <span class="address__item">{{ messages.Information.Address }}</span>
+
+        <a class="address__telephone" :href="`tel:+${telephoneNum}`">
           {{ messages.Information.TelephoneNumber }}
         </a>
-        <span class="footer__information-item">{{ messages.Information.MailAddress }}</span>
+
+        <span class="address__item">{{ messages.Information.MailAddress }}</span>
       </address>
 
       <div class="footer__scroll-top" id="scrollTarget" @click="scrollTop()" :class="{ 'footer__scroll-top--animation': scrollAnimation }">
-        <svg-vue class="footer__scroll-top-icon" icon="angle-up-double"/>
+        <svg-vue class="footer__scroll-icon" icon="angle-up-double"/>
       </div>
     </div>
 
@@ -173,11 +173,11 @@ export default {
     }
   }
 
-  &__accordion {
+  &__list {
     margin-top: interval(10);
   }
 
-  &__accordion-item {
+  &__list-item {
     border-top: 2px solid color(darkblue);
 
     &:last-child {
@@ -185,42 +185,9 @@ export default {
     }
   }
 
-  &__information {
+  &__address {
     position: relative;
     margin-top: interval(10);
-  }
-
-  &__information-logo {
-    pointer-events: none;
-    width: interval(18);
-    height: 100%;
-    opacity: .2;
-    @include background-image('/svg/chuo-logo-white.svg');
-    position: absolute;
-    top: 50%;
-    left: interval(2);
-    transform: translateY(-50%);
-  }
-
-  &__information-title {
-    margin-bottom: interval(1);
-  }
-
-  &__information-item {
-    display: block;
-    font-weight: bold;
-    line-height: 1.8;
-    letter-spacing: 1.2px;
-  }
-
-  &__information-telephone {
-    @extend .footer__information-item;
-    text-decoration: underline;
-
-    @include mq(sm) {
-      pointer-events: none;
-      text-decoration: none;
-    }
   }
 
   &__scroll-top {
@@ -230,35 +197,50 @@ export default {
     width: interval(6);
     height: interval(6);
     padding: interval(1);
-    border: 1px solid color(white);
+    border: 1px solid color(darkblue);
     border-radius: radius(circle);
     @include flex(row nowrap, center, center);
     cursor: pointer;
     transition: background-color .3s ease-out;
 
     @include hover {
-      background-color: color(white);
-
-      .footer__scroll-top-icon {
-        fill: color(orange);
-        color: color(orange);
+      .footer__scroll-icon {
+        animation: fadeoutTop 1s linear infinite;
       }
-    }
-
-    &--animation {
-      opacity: 0;
     }
   }
 
-  &__scroll-top-icon {
+  &__scroll-icon {
     width: interval(1.5);
-    animation: fadeoutTop 1.5s linear infinite;
   }
 
   &__copyright {
     font-size: font(10);
     text-align: center;
     margin-top: interval(5);
+  }
+}
+
+.address {
+  &__title {
+    line-height: 2;
+  }
+
+  &__item {
+    display: block;
+    font-weight: bold;
+    line-height: 1.8;
+    letter-spacing: 1.2px;
+  }
+
+  &__telephone {
+    @extend .address__item;
+    text-decoration: underline;
+
+    @include mq(sm) {
+      pointer-events: none;
+      text-decoration: none;
+    }
   }
 }
 </style>
