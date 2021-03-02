@@ -147,7 +147,7 @@ export default {
     this.$data.data.Showa.forEach(element => this.showa.push(element));
     this.$data.data.Heisei.forEach(element => this.heisei.push(element));
     this.$data.data.Trophies.forEach(element => this.trophies.push(element));
-    this.$data.data.Champions.forEach(element => this.champions.push(element));
+    this.$data.data.champions.forEach(element => this.champions.push(element));
   },
 
   mounted() {
@@ -336,13 +336,6 @@ export default {
   &__card {
     width: interval(32);
     padding: interval(1);
-
-    @include mq(sm) {
-
-    }
-
-    @include mq(md) {
-    }
   }
 }
 </style>

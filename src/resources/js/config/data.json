@@ -1835,19 +1835,19 @@
     }
   ],
 
-  "Champions": [
+  "champions": [
     {
-      "Player01": {
-        "Name": "岩佐 正治",
-        "Belong": "東京",
+      "player01": {
+        "name": "岩佐 正治",
+        "belong": "東京",
         "OB": true
       },
-      "Player02": {
-        "Name": "石川 長一",
-        "Belong": "東京",
+      "player02": {
+        "name": "石川 長一",
+        "belong": "東京",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "昭和23年"
@@ -1863,17 +1863,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "岩佐 正治",
-        "Belong": "東京",
+      "player01": {
+        "name": "岩佐 正治",
+        "belong": "東京",
         "OB": true
       },
-      "Player02": {
-        "Name": "安友 省三",
-        "Belong": "東京",
+      "player02": {
+        "name": "安友 省三",
+        "belong": "東京",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "昭和24年"
@@ -1889,17 +1889,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "石川 恵脩",
-        "Belong": "東京",
+      "player01": {
+        "name": "石川 恵脩",
+        "belong": "東京",
         "OB": true
       },
-      "Player02": {
-        "Name": "右近 義信",
-        "Belong": "東京",
+      "player02": {
+        "name": "右近 義信",
+        "belong": "東京",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "昭和42年"
@@ -1915,17 +1915,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "竹島 満",
-        "Belong": "山口",
+      "player01": {
+        "name": "竹島 満",
+        "belong": "山口",
         "OB": true
       },
-      "Player02": {
-        "Name": "小林 元治",
-        "Belong": "東京",
+      "player02": {
+        "name": "小林 元治",
+        "belong": "東京",
         "OB": true
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "昭和45年"
@@ -1941,17 +1941,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成7年"
@@ -1967,17 +1967,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成8年"
@@ -1993,17 +1993,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成9年"
@@ -2019,17 +2019,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成11年"
@@ -2045,17 +2045,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成13年"
@@ -2071,17 +2071,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成17年"
@@ -2097,17 +2097,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成18年"
@@ -2123,17 +2123,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成21年"
@@ -2149,17 +2149,17 @@
       ]
     },
     {
-      "Player01": {
-        "Name": "中堀 成生",
-        "Belong": "広島",
+      "player01": {
+        "name": "中堀 成生",
+        "belong": "広島",
         "OB": true
       },
-      "Player02": {
-        "Name": "高川 経生",
-        "Belong": "広島",
+      "player02": {
+        "name": "高川 経生",
+        "belong": "広島",
         "OB": false
       },
-      "TournamentInformation": [
+      "information": [
         {
           "key": "年度",
           "value": "平成22年"

@@ -11092,7 +11092,7 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 .champions-card__player[data-v-3ea95d82]:first-child {
   margin-top: 0;
@@ -11107,7 +11107,7 @@ import用ファイル
 }
 .champions-card__tournament-info-title[data-v-3ea95d82] {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-size: 0.875rem;
   position: relative;
   padding-left: 1.5rem;
