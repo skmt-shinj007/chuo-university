@@ -3,25 +3,36 @@
 
   <contents-title-component :title="messages.SectionTitles.News.Main" :subTitle="messages.SectionTitles.News.Sub"/>
 
-  <ul class="news__list" v-if="tweets">
-    <li class="news__item" v-for="(tweet, i) in tweets" :key="i">
-      <a class="news__link" :href="linkUrl + tweet.id_str" target="_blank" rel="noopener noreferrer">
-        {{ tweet.text }}
-      </a>
+  <div class="news__loading" v-if="loading">
+    <!-- <transition-group name="load" tag="div"> -->
+      <div class="loading">
+        <div class="loading__obj" v-for="i in 8" :key="i"/>
+      </div>
+    <!-- </transition-group> -->
+  </div>
 
-      <!-- 最も最新のツイート かつ フラグに従って表示を制御 -->
-      <span class="news__latest-label" v-if="showLatestLabel && (i === 0)">
-        {{ messages.Label.Latest }}
-      </span>
-    </li>
-  </ul>
+  <div class="news__wrap" v-else>
+    <!-- ニュースリスト -->
+    <ul class="news__list" v-if="!showErr">
+      <li class="news__item" v-for="(tweet, i) in tweets" :key="i">
+        <a class="news__link" :href="linkUrl + tweet.id_str" target="_blank" rel="noopener noreferrer">
+          {{ tweet.text }}
+        </a>
 
-  <!-- ツイートが取得できなかった場合に表示 -->
-  <div class="err" v-if="showErr">
-    <span class="err__text">{{ messages.Error.Api.News }}</span>
+        <!-- NEW ラベル -->
+        <span class="news__latest-label" v-if="showLatest && (i === 0)">
+          {{ messages.Label.Latest }}
+        </span>
+      </li>
+    </ul>
 
-    <div class="err__btn">
-      <primary-button-component :btn="messages.Button.NewsRequest" @clickEvent="getResponse"/>
+    <!-- エラー画面 -->
+    <div class="err" v-if="showErr">
+      <span class="err__text">{{ messages.Error.Api.News }}</span>
+
+      <div class="err__btn">
+        <primary-button-component :btn="messages.Button.NewsRequest" @clickEvent="getResponse"/>
+      </div>
     </div>
   </div>
 
@@ -61,13 +72,19 @@ export default {
        * 1ヶ月以内の投稿に「NEW」を表示するためのフラグ。
        * @type { Boolean }
        */
-      showLatestLabel: false,
+      showLatest: false,
 
       /**
        * ツイートが取得できなかった場合に表示
        * @type { Boolean }
        */
       showErr: false,
+
+      /**
+       * ロード判定
+       * @type { Boolean }
+       */
+      loading: false,
     }
   },
 
@@ -87,11 +104,15 @@ export default {
      * サーバーからtwitter APIレスポンスを取得。
      */
     async getResponse() {
+      // ロード開始
+      this.loading = true;
+
       await axios.get('/api/twitter/timeline')
 
       .then(function (response) {
         // 返答がオブジェクト形式ではない場合にエラー画面を出す。
         if (typeof response.data !== 'object') {
+          console.log(response.data);
           return this.err();
         }
 
@@ -104,7 +125,7 @@ export default {
         const currentYear = this.tweets[0].current_date.year;    // 現在の年
         const currentMonth = this.tweets[0].current_date.month;  // 現在の月
 
-        if ((createdYear === currentYear) && (createdMonth === currentMonth)) this.showLatestLabel = true;
+        if ((createdYear === currentYear) && (createdMonth === currentMonth)) this.showLatest = true;
 
         this.showErr = false;
       }.bind(this))
@@ -120,6 +141,11 @@ export default {
 
         // エラー画面出力。
         this.err();
+      }.bind(this))
+
+      // 成功でもエラーでも通信後に共通の処理
+      .finally(function () {
+        this.loading = false;
       }.bind(this))
     },
 
@@ -176,6 +202,31 @@ export default {
     top: - interval(.5);
     left: interval(1);
     transform: translate(- interval(2), - interval(1)) rotate(-15deg);
+  }
+}
+
+.loading {
+  @include flex(row nowrap, center, center);
+  height: interval(10);
+
+  &__obj {
+    width: interval(1);
+    height: 80%;
+    background-color: color(lightDarkblue);
+    border-radius: radius(hard);
+    margin-right: interval(1);
+    animation: loading 0.8s infinite;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @for $i from 1 through 8 {
+      &:nth-child( #{$i} ) {
+        animation-delay: calc( 1s * #{$i} / 10 );
+      }
+    }
+
   }
 }
 
