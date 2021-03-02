@@ -37,7 +37,7 @@
           </div>
 
           <transition name="slide" tag="div">
-            <div class="nav-modal__sns" v-if="!loading">
+            <div class="nav-modal__sns" v-if="!loading && !err">
               <!-- snsの各プロフィールページに遷移するように修正 -->
               <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
                 <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">

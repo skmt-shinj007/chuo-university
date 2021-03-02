@@ -12,6 +12,12 @@ export default {
        * @type { Boolean }
        */
       loading: false,
+
+      /**
+       * エラー判定
+       * @type { Boolean }
+       */
+      err: false,
     }
   },
 
@@ -31,6 +37,11 @@ export default {
         const screenName = response.data.screen_name;
         const baseUrl = this.config.twitter.baseUrl;
 
+        // screenNameがfalsyな値の場合、エラー判定を出す
+        if (!screenName) {
+          return this.err = true;
+        }
+
         // Twitterオブジェクトにセット
         this.twitter = {
           ...this.twitter,
@@ -48,11 +59,8 @@ export default {
           console.log('Status Text:', err.response.statusText);
         }
 
-        // Twitterオブジェクトにセット
-        this.twitter = {
-          ...this.twitter,
-          link: this.config.twitter.baseUrl,
-        }
+        // エラー判定を出す
+        this.err = true;
       }.bind(this))
 
       .finally(function () {
