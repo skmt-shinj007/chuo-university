@@ -33,6 +33,9 @@
       </section>
     </div>
 
+    <div class="home__scroll-top" v-if="showBtn">
+      <scroll-top-button-component/>
+    </div>
   </div>
 </template>
 
@@ -43,6 +46,7 @@ import MainVisualComponent from '../components/contents/MainVisualComponent';
 import NewsComponent from '../components/contents/NewsComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TextBoxComponent from '../components/modules/TextBoxComponent';
+import ScrollTopButtonComponent from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
@@ -50,18 +54,30 @@ export default {
     NewsComponent,
     ContentsTitleComponent,
     TextBoxComponent,
+    ScrollTopButtonComponent,
   },
 
   data() {
     return {
       data: Data,
       aboutItems: [],
+
+      /**
+       * スクロールボタンの表示制御
+       */
+      showBtn: true,
     }
   },
 
   beforeMount() {
     // アバウトセクションを生成するデータを挿入。
     this.$data.data.HomeAbout.forEach(element => this.aboutItems.push(element));
+  },
+
+  methods: {
+    buttonToggle() {
+      // this.showBtn
+    }
   },
 }
 </script>
@@ -118,6 +134,12 @@ export default {
     @include mq(sm) {
       height: auto;
     }
+  }
+
+  &__scroll-top {
+    position: fixed;
+    bottom: interval(1);
+    right: interval(1);
   }
 }
 
