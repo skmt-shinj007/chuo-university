@@ -17334,6 +17334,15 @@ import用ファイル
 .accordion-link {
   color: #ffffff;
 }
+.accordion-link--darkblue {
+  color: #091e2f;
+}
+.accordion-link--darkblue .accordion-link__children-item {
+  border-top: 1px solid rgba(9, 30, 47, 0.3);
+}
+.accordion-link--darkblue .accordion-link__icon, .accordion-link--darkblue .accordion-link__icon::before {
+  background-color: #091e2f;
+}
 .accordion-link__title {
   display: flex;
   flex-flow: row nowrap;
@@ -17357,16 +17366,17 @@ import用ファイル
 }
 .accordion-link .accordion-link__icon::before, .accordion-link .accordion-link__icon {
   display: block;
-  background-color: #ffffff;
   width: 100%;
   height: 2px;
 }
 .accordion-link__icon {
+  background-color: #ffffff;
   position: relative;
   transition: all 0.3s ease-out;
 }
 .accordion-link__icon::before {
   content: "";
+  background-color: #ffffff;
   position: absolute;
   top: 0;
   left: 0;
@@ -17378,12 +17388,6 @@ import用ファイル
 }
 .accordion-link__open-icon::before {
   transform: rotate(0);
-}
-.accordion-link__children--lightDarkblue {
-  background-color: #10334e;
-}
-.accordion-link__children--orange {
-  background-color: #e56c2c;
 }
 .accordion-link__children-item {
   border-top: 1px solid rgba(242, 242, 242, 0.2);
@@ -18798,12 +18802,10 @@ import用ファイル
  * component
  */
 .footer[data-v-060e08fe] {
-  color: #ffffff;
   margin-bottom: 0;
 }
 .footer-wrap[data-v-060e08fe] {
-  background: #030A10;
-  background: linear-gradient(to right, #030A10 0%, #10334e 100%);
+  background-color: #f2f2f2;
   padding-top: 2.5rem;
   padding-bottom: 1.5rem;
 }
@@ -18821,10 +18823,10 @@ import用ファイル
   margin-top: 5rem;
 }
 .footer__accordion-item[data-v-060e08fe] {
-  border-top: 2px solid #f2f2f2;
+  border-top: 2px solid #091e2f;
 }
 .footer__accordion-item[data-v-060e08fe]:last-child {
-  border-bottom: 2px solid #f2f2f2;
+  border-bottom: 2px solid #091e2f;
 }
 .footer__information[data-v-060e08fe] {
   position: relative;

@@ -1,11 +1,11 @@
 <template>
 <div class="footer-wrap">
   <footer class="footer wrapper">
+
     <div class="footer__contact">
       <contents-title-component
       :title="messages.SectionTitles.Contact.Main"
-      :subTitle="messages.SectionTitles.Contact.Sub"
-      color="white"/>
+      :subTitle="messages.SectionTitles.Contact.Sub"/>
 
       <div class="footer__contact-lead">
         <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
@@ -19,7 +19,7 @@
     <!-- sm, tablet -->
     <ul class="footer__accordion">
       <li class="footer__accordion-item" v-for="(link, n) in links" :key="n">
-        <accordion-link-component :item="link" color="lightDarkblue"/>
+        <accordion-link-component :item="link" color="darkblue"/>
       </li>
     </ul>
 
@@ -153,11 +153,10 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  color: color(white);
   margin-bottom: 0;
 
   &-wrap {
-    @include gradient(color(deepDarkblue), color(lightDarkblue), horizontal);
+    background-color: color(lightgray);
     padding-top: interval(5);
     padding-bottom: interval(3);
   }
@@ -179,10 +178,10 @@ export default {
   }
 
   &__accordion-item {
-    border-top: 2px solid color(lightgray);
+    border-top: 2px solid color(darkblue);
 
     &:last-child {
-      border-bottom: 2px solid color(lightgray);
+      border-bottom: 2px solid color(darkblue);
     }
   }
 
