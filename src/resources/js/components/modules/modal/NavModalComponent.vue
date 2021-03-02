@@ -36,14 +36,16 @@
             </button>
           </div>
 
-          <div class="nav-modal__sns">
-            <!-- snsの各プロフィールページに遷移するように修正 -->
-            <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
-              <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
-                <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
-              </a>
+          <transition name="slide" tag="div">
+            <div class="nav-modal__sns" v-if="!loading && !err">
+              <!-- snsの各プロフィールページに遷移するように修正 -->
+              <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
+                <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
+                  <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
+                </a>
+              </div>
             </div>
-          </div>
+          </transition>
         </nav>
 
         <footer class="nav-modal__footer">
@@ -121,7 +123,6 @@ export default {
 
     /**
      * sns データ生成
-     * TODO：Apiを叩いてアカウント情報を持ってくる
      */
     this.getTwitterAccount(() => {
       // apiレスポンスと保持データの結合
@@ -328,25 +329,41 @@ export default {
 }
 
 // モーダル開閉アニメーション
-.modal-enter-active, .modal-leave-active {
-  transition: opacity 0.4s;
+.modal {
+  &-enter-active, &-leave-active {
+    transition: opacity 0.4s;
 
-  // オーバーレイに包含されているモーダルウィンドウのトランジション
-  .modal-window {
-    transition: opacity 0.4s, transform 0.4s;
+    .modal-window {
+      transition: opacity 0.4s, transform 0.4s;
+    }
   }
-}
 
-.modal-leave-active {
-  transition: opacity 0.6s ease 0.4s;
-}
+  &-leave-active {
+    transition: opacity 0.6s ease 0.4s;
+  }
 
-.modal-enter, .modal-leave-to {
-  opacity: 0;
-
-  .modal-window {
+  &-enter, &-leave-to {
     opacity: 0;
-    transform: translateY(-20px);
+
+    .modal-window {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
   }
 }
+
+// SNSリンクの表示アニメーション
+.slide {
+  &-enter-active {
+    transition: opacity 0.6s;
+    transition: transform .8s;
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+
 </style>
