@@ -1,6 +1,6 @@
 <template>
 <header class="header">
-  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }" ref="header">
+  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
     <router-link to="/" class="header__navbar-link">
       <div class="header__title">
         <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
@@ -80,25 +80,21 @@ export default {
     this.getTwitterAccount();
   },
 
-  mounted() {
-    // ヘッダーの高さ取得
-    this.headerHeight = this.$refs.header.offsetHeight;
-  },
-
   watch: {
     /**
      * [スクロールに応じてヘッダーの表示を制御する]
      */
-    scrollAmount() {
-      let pos = this.scrollAmount;             // スクロール現在地
-      const headerHeight = this.headerHeight;  // ヘッダーの高さ
+    scrollY() {
+      let pos = this.scrollY;             // スクロール現在地
       let lastpos = this.lastScrollPosition;   // 最後のスクロール位置
 
-      // ヘッダーの高さ分スクロール かつ 上スクロールした際にクラスを付与
-      (pos > headerHeight && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
+      /**
+       * 60pxスクロール かつ 上スクロールした際にクラスを付与
+       */
+      (pos > 60 && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
 
       // 最後のスクロール位置を更新
-      this.lastScrollPosition = this.scrollAmount;
+      this.lastScrollPosition = this.scrollY;
     }
   },
 
