@@ -1,52 +1,52 @@
 <template>
-<div class="footer-wrap">
-  <footer class="footer wrapper">
+<footer class="footer">
 
-    <div class="footer__contact">
-      <contents-title-component
-      :title="messages.SectionTitles.Contact.Main"
-      :subTitle="messages.SectionTitles.Contact.Sub"/>
+  <section class="footer__contact">
+    <contents-title-component
+    :title="messages.SectionTitles.Contact.Main"
+    :subTitle="messages.SectionTitles.Contact.Sub"/>
 
-      <div class="footer__contact-lead">
-        <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
-      </div>
-
-      <div class="footer__contact-btn">
-        <link-button-component :link="messages.Links.ToContact"/>
-      </div>
+    <div class="footer__contact-lead">
+      <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
     </div>
 
+    <div class="footer__contact-btn">
+      <link-button-component :link="messages.Links.ToContact"/>
+    </div>
+  </section>
+
+  <section class="footer__accordion">
     <ul class="footer__list">
       <li class="footer__list-item" v-for="(link, n) in links" :key="n">
         <accordion-link-component :item="link" color="darkblue"/>
       </li>
     </ul>
+  </section>
 
-    <div class="footer__address">
-      <address>
-        <h3 class="address__title">
-          <router-link to="/">{{ messages.Information.ClubName }}</router-link>
-        </h3>
+  <section class="footer__address">
+    <address>
+      <h3 class="address__title">
+        <router-link to="/">{{ messages.Information.ClubName }}</router-link>
+      </h3>
 
-        <span class="address__item">{{ messages.Information.Address }}</span>
+      <span class="address__item">{{ messages.Information.Address }}</span>
 
-        <a class="address__telephone" :href="`tel:+${telephoneNum}`">
-          {{ messages.Information.TelephoneNumber }}
-        </a>
+      <a class="address__telephone" :href="`tel:+${telephoneNum}`">
+        {{ messages.Information.TelephoneNumber }}
+      </a>
 
-        <span class="address__item">{{ messages.Information.MailAddress }}</span>
-      </address>
+      <span class="address__item">{{ messages.Information.MailAddress }}</span>
+    </address>
 
-      <div class="footer__scroll-top" id="scrollTarget" @click="scrollTop()" :class="{ 'footer__scroll-top--animation': scrollAnimation }">
-        <svg-vue class="footer__scroll-icon" icon="angle-up-double"/>
-      </div>
-    </div>
+    <!-- <div class="footer__scroll-top" id="scrollTarget" @click="scrollTop()" :class="{ 'footer__scroll-top--animation': scrollAnimation }">
+      <svg-vue class="footer__scroll-icon" icon="angle-up-double"/>
+    </div> -->
+  </section>
 
-    <div class="footer__copyright">
-      {{ messages.Copyright }}
-    </div>
-  </footer>
-</div>
+  <section class="footer__copyright">
+    {{ messages.Copyright }}
+  </section>
+</footer>
 </template>
 
 <script>
@@ -154,12 +154,9 @@ export default {
 <style lang="scss" scoped>
 .footer {
   margin-bottom: 0;
-
-  &-wrap {
-    background-color: color(lightgray);
-    padding-top: interval(5);
-    padding-bottom: interval(3);
-  }
+  padding-top: interval(5);
+  padding-bottom: interval(3);
+  background-color: color(lightgray);
 
   &__contact-lead {
     margin-bottom: interval(5);
@@ -187,7 +184,7 @@ export default {
 
   &__address {
     position: relative;
-    margin-top: interval(10);
+    margin-bottom: 0;
   }
 
   &__scroll-top {
@@ -217,7 +214,7 @@ export default {
   &__copyright {
     font-size: font(10);
     text-align: center;
-    margin-top: interval(5);
+    margin: interval(3) auto 0 auto;
   }
 }
 

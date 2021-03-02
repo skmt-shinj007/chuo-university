@@ -2593,40 +2593,50 @@ import用ファイル
 }
 }
 .home__support[data-v-63cd6604] {
+  height: 100%;
   margin-bottom: 0;
-  padding-top: 7.5rem;
-  padding-bottom: 10rem;
   color: #ffffff;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
-.home__support-text[data-v-63cd6604] {
-  width: 80%;
-  margin: 0 auto;
+@media screen and (min-width: 560px) {
+.home__support[data-v-63cd6604] {
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
 }
-.home__background-image[data-v-63cd6604] {
+}
+.home__background[data-v-63cd6604] {
+  position: relative;
   width: 100%;
   height: 100vh;
+  background-color: rgba(9, 30, 47, 0.8);
+}
+.home__background[data-v-63cd6604]::before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
   background-image: url("/image/player09.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 @media screen and (min-width: 560px) {
-.home__background-image[data-v-63cd6604] {
-    height: auto;
+.home__background[data-v-63cd6604]::before {
     background-image: url("/image/player11.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 }
-.home__background-darkblue[data-v-63cd6604] {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(9, 30, 47, 0.8);
+@media screen and (min-width: 560px) {
+.home__background[data-v-63cd6604] {
+    height: auto;
+}
 }
 @media screen and (min-width: 1025px) {
 .about[data-v-63cd6604] {
@@ -2699,6 +2709,10 @@ import用ファイル
     margin: 0 0 0 auto;
     transform: translateY(-40%);
 }
+}
+.support__text[data-v-63cd6604] {
+  width: 80%;
+  margin: 0 auto;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -18803,11 +18817,9 @@ import用ファイル
  */
 .footer[data-v-060e08fe] {
   margin-bottom: 0;
-}
-.footer-wrap[data-v-060e08fe] {
-  background-color: #f2f2f2;
   padding-top: 2.5rem;
   padding-bottom: 1.5rem;
+  background-color: #f2f2f2;
 }
 .footer__contact-lead[data-v-060e08fe] {
   margin-bottom: 2.5rem;
@@ -18830,7 +18842,7 @@ import用ファイル
 }
 .footer__address[data-v-060e08fe] {
   position: relative;
-  margin-top: 5rem;
+  margin-bottom: 0;
 }
 .footer__scroll-top[data-v-060e08fe] {
   position: absolute;
@@ -18860,7 +18872,7 @@ import用ファイル
 .footer__copyright[data-v-060e08fe] {
   font-size: 0.625rem;
   text-align: center;
-  margin-top: 2.5rem;
+  margin: 1.5rem auto 0 auto;
 }
 .address__title[data-v-060e08fe] {
   line-height: 2;
