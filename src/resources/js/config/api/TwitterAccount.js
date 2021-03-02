@@ -5,7 +5,13 @@ export default {
       /**
        * twitterの情報オブジェクト
        */
-      twitter: {}
+      twitter: {},
+
+      /**
+       * ローディング判定
+       * @type { Boolean }
+       */
+      loading: false,
     }
   },
 
@@ -15,6 +21,9 @@ export default {
      * @param { function } .finally()内で実行するプロセス共通処理
      */
     async getTwitterAccount(callback = this.void) {
+      // ロード開始
+      this.loading = true;
+
       await axios.get('/api/twitter/account')
 
       .then(function (response) {
@@ -47,6 +56,8 @@ export default {
       }.bind(this))
 
       .finally(function () {
+        // 非同期処理が終わったらloadingフラグをfalseに変更。
+        this.loading = false;
         callback();
       }.bind(this))
 
@@ -54,6 +65,7 @@ export default {
 
     /**
      * 何もしない関数
+     * getTwitterAccount関数のデフォルト引数で使用
      */
     void() {},
 
