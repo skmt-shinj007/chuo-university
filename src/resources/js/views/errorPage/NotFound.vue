@@ -19,10 +19,10 @@
   </section>
 
   <section class="err__container">
-    <h3 class="err__guide-text nl2br">{{ messages.Error.NotFound.Guide }}</h3>
+    <h3 class="err__guide nl2br">{{ messages.Error.NotFound.Guide }}</h3>
 
-    <ul class="err__list">
-      <li class="err__list-item" v-for="(menu, n) in menus" :key="n">
+    <ul class="err__sitemap">
+      <li class="err__sitemap-item" v-for="(menu, n) in menus" :key="n">
         <router-link class="err__link" :to="menu.to">{{ menu.label }}</router-link>
       </li>
     </ul>
@@ -148,20 +148,20 @@ export default {
     margin-right: interval(3);
   }
 
-  &__guide-text {
+  &__guide {
     font-size: font(14);
     letter-spacing: 1px;
     line-height: 1.2;
     @include middle-line-text(2, 1px, color(darkblue));
   }
 
-  &__list {
+  &__sitemap {
     width: 100%;
     margin-top: interval(5);
     border-top: 2px solid color(darkblue);
   }
 
-  &__list-item {
+  &__sitemap-item {
     @include border-gradient(100%, color(lightDarkblue), color(darkblue), bottom);
   }
 

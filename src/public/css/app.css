@@ -15127,7 +15127,7 @@ import用ファイル
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.err__guide-text[data-v-403316a6] {
+.err__guide[data-v-403316a6] {
   font-size: 0.875rem;
   letter-spacing: 1px;
   line-height: 1.2;
@@ -15135,7 +15135,7 @@ import用ファイル
   padding-left: 1.5rem;
   color: #091e2f;
 }
-.err__guide-text[data-v-403316a6]::before {
+.err__guide[data-v-403316a6]::before {
   display: block;
   content: "";
   width: 1rem;
@@ -15146,15 +15146,15 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-.err__list[data-v-403316a6] {
+.err__sitemap[data-v-403316a6] {
   width: 100%;
   margin-top: 2.5rem;
   border-top: 2px solid #091e2f;
 }
-.err__list-item[data-v-403316a6] {
+.err__sitemap-item[data-v-403316a6] {
   position: relative;
 }
-.err__list-item[data-v-403316a6]::after {
+.err__sitemap-item[data-v-403316a6]::after {
   content: "";
   display: block;
   width: 100%;
