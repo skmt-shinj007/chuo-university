@@ -1,52 +1,52 @@
 <template>
-<div class="footer-wrap">
-  <footer class="footer wrapper">
-    <div class="footer__contact">
-      <contents-title-component
-      :title="messages.SectionTitles.Contact.Main"
-      :subTitle="messages.SectionTitles.Contact.Sub"
-      color="white"/>
+<footer class="footer">
 
-      <div class="footer__contact-lead">
-        <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
-      </div>
+  <section class="footer__contact">
+    <contents-title-component
+    :title="messages.SectionTitles.Contact.Main"
+    :subTitle="messages.SectionTitles.Contact.Sub"/>
 
-      <div class="footer__contact-btn">
-        <link-button-component :link="messages.Links.ToContact"/>
-      </div>
+    <div class="footer__contact-lead">
+      <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
     </div>
 
-    <!-- sm, tablet -->
-    <ul class="footer__accordion">
-      <li class="footer__accordion-item" v-for="(link, n) in links" :key="n">
-        <accordion-link-component :item="link" color="lightDarkblue"/>
+    <div class="footer__contact-btn">
+      <link-button-component :link="messages.Links.ToContact"/>
+    </div>
+  </section>
+
+  <section class="footer__accordion">
+    <ul class="footer__list">
+      <li class="footer__list-item" v-for="(link, n) in links" :key="n">
+        <accordion-link-component :item="link" color="darkblue"/>
       </li>
     </ul>
+  </section>
 
-    <div class="footer__information">
-      <div class="footer__information-logo"/>
+  <section class="footer__address">
+    <address>
+      <h3 class="address__title">
+        <router-link to="/">{{ messages.Information.ClubName }}</router-link>
+      </h3>
 
-      <address>
-        <h3 class="footer__information-title">
-          <router-link to="/">{{ messages.Information.ClubName }}</router-link>
-        </h3>
-        <span class="footer__information-item">{{ messages.Information.Address }}</span>
-        <a class="footer__information-telephone" :href="`tel:+${telephoneNum}`">
-          {{ messages.Information.TelephoneNumber }}
-        </a>
-        <span class="footer__information-item">{{ messages.Information.MailAddress }}</span>
-      </address>
+      <span class="address__item">{{ messages.Information.Address }}</span>
 
-      <div class="footer__scroll-top" id="scrollTarget" @click="scrollTop()" :class="{ 'footer__scroll-top--animation': scrollAnimation }">
-        <svg-vue class="footer__scroll-top-icon" icon="angle-up-double"/>
-      </div>
-    </div>
+      <a class="address__telephone" :href="`tel:+${telephoneNum}`">
+        {{ messages.Information.TelephoneNumber }}
+      </a>
 
-    <div class="footer__copyright">
-      {{ messages.Copyright }}
-    </div>
-  </footer>
-</div>
+      <span class="address__item">{{ messages.Information.MailAddress }}</span>
+    </address>
+
+    <!-- <div class="footer__scroll-top" id="scrollTarget" @click="scrollTop()" :class="{ 'footer__scroll-top--animation': scrollAnimation }">
+      <svg-vue class="footer__scroll-icon" icon="angle-up-double"/>
+    </div> -->
+  </section>
+
+  <section class="footer__copyright">
+    {{ messages.Copyright }}
+  </section>
+</footer>
 </template>
 
 <script>
@@ -153,14 +153,10 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  color: color(white);
   margin-bottom: 0;
-
-  &-wrap {
-    @include gradient(color(deepDarkblue), color(lightDarkblue), horizontal);
-    padding-top: interval(5);
-    padding-bottom: interval(3);
-  }
+  padding-top: interval(5);
+  padding-bottom: interval(3);
+  background-color: color(lightgray);
 
   &__contact-lead {
     margin-bottom: interval(5);
@@ -174,54 +170,21 @@ export default {
     }
   }
 
-  &__accordion {
+  &__list {
     margin-top: interval(10);
   }
 
-  &__accordion-item {
-    border-top: 2px solid color(lightgray);
+  &__list-item {
+    border-top: 2px solid color(darkblue);
 
     &:last-child {
-      border-bottom: 2px solid color(lightgray);
+      border-bottom: 2px solid color(darkblue);
     }
   }
 
-  &__information {
+  &__address {
     position: relative;
-    margin-top: interval(10);
-  }
-
-  &__information-logo {
-    pointer-events: none;
-    width: interval(18);
-    height: 100%;
-    opacity: .2;
-    @include background-image('/svg/chuo-logo-white.svg');
-    position: absolute;
-    top: 50%;
-    left: interval(2);
-    transform: translateY(-50%);
-  }
-
-  &__information-title {
-    margin-bottom: interval(1);
-  }
-
-  &__information-item {
-    display: block;
-    font-weight: bold;
-    line-height: 1.8;
-    letter-spacing: 1.2px;
-  }
-
-  &__information-telephone {
-    @extend .footer__information-item;
-    text-decoration: underline;
-
-    @include mq(sm) {
-      pointer-events: none;
-      text-decoration: none;
-    }
+    margin-bottom: 0;
   }
 
   &__scroll-top {
@@ -231,35 +194,50 @@ export default {
     width: interval(6);
     height: interval(6);
     padding: interval(1);
-    border: 1px solid color(white);
+    border: 1px solid color(darkblue);
     border-radius: radius(circle);
     @include flex(row nowrap, center, center);
     cursor: pointer;
     transition: background-color .3s ease-out;
 
     @include hover {
-      background-color: color(white);
-
-      .footer__scroll-top-icon {
-        fill: color(orange);
-        color: color(orange);
+      .footer__scroll-icon {
+        animation: fadeoutTop 1s linear infinite;
       }
-    }
-
-    &--animation {
-      opacity: 0;
     }
   }
 
-  &__scroll-top-icon {
+  &__scroll-icon {
     width: interval(1.5);
-    animation: fadeoutTop 1.5s linear infinite;
   }
 
   &__copyright {
     font-size: font(10);
     text-align: center;
-    margin-top: interval(5);
+    margin: interval(3) auto 0 auto;
+  }
+}
+
+.address {
+  &__title {
+    line-height: 2;
+  }
+
+  &__item {
+    display: block;
+    font-weight: bold;
+    line-height: 1.8;
+    letter-spacing: 1.2px;
+  }
+
+  &__telephone {
+    @extend .address__item;
+    text-decoration: underline;
+
+    @include mq(sm) {
+      pointer-events: none;
+      text-decoration: none;
+    }
   }
 }
 </style>

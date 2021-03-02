@@ -20,19 +20,17 @@
       </div>
     </section>
 
-    <div class="home__background-image">
-      <div class="home__background-darkblue">
-        <section class="home__support">
-          <contents-title-component
-            :title="messages.SectionTitles.Support.Main"
-            :subTitle="messages.SectionTitles.Support.Sub"
-            color="white"/>
+    <div class="home__background">
+      <section class="home__support">
+        <contents-title-component
+          :title="messages.SectionTitles.Support.Main"
+          :subTitle="messages.SectionTitles.Support.Sub"
+          color="white"/>
 
-          <div class="home__support-text">
-            <p class="nl2br" v-text="messages.Home.Support"/>
-          </div>
-        </section>
-      </div>
+        <div class="support__text">
+          <p class="nl2br" v-text="messages.Home.Support"/>
+        </div>
+      </section>
     </div>
 
   </div>
@@ -86,33 +84,40 @@ export default {
   }
 
   &__support {
+    height: 100%;
     margin-bottom: 0;
-    padding-top: interval(15);
-    padding-bottom: interval(20);
     color: color(white);
     @include flex(column nowrap, center, center);
-  }
-
-  &__support-text {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  &__background-image {
-    width: 100%;
-    height: 100vh;
-    @include background-image("/image/player09.jpg");
 
     @include mq(sm) {
-      height: auto;
-      @include background-image("/image/player11.jpg");
+      padding-top: interval(5);
+      padding-bottom: interval(10);
     }
   }
 
-  &__background-darkblue {
+  &__background {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba($color: color(darkblue), $alpha: .8);
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      @include background-image("/image/player09.jpg");
+
+      @include mq(sm) {
+        @include background-image("/image/player11.jpg", center center);
+      }
+    }
+
+    @include mq(sm) {
+      height: auto;
+    }
   }
 }
 
@@ -171,6 +176,13 @@ export default {
       margin: 0 0 0 auto;
       transform: translateY(-40%);
     }
+  }
+}
+
+.support {
+  &__text {
+    width: 80%;
+    margin: 0 auto;
   }
 }
 </style>

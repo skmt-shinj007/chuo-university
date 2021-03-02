@@ -1,5 +1,5 @@
 <template>
-<div class="accordion-link">
+<div class="accordion-link" :class="colorClass">
 
   <div class="accordion-link__title" @click="accordionToggle()">
     <label class="accordion-link__label">{{ item.name.ja }}</label>
@@ -9,11 +9,9 @@
   </div>
 
   <collapse-transition>
-    <ul class="accordion-link__children" v-if="isOpened" :class="background">
+    <ul class="accordion-link__children" v-if="isOpened">
 
-      <li class="accordion-link__children-item"
-          v-for="(menu, n) in item.childrenMenus"
-          :key="n">
+      <li class="accordion-link__children-item" v-for="(menu, n) in item.childrenMenus" :key="n">
 
         <!-- 別タブ遷移の場合は、<a> -->
         <a class="accordion-link__link"
@@ -112,8 +110,8 @@ export default {
   },
 
   computed: {
-    background() {
-      return (this.color) ? `accordion-link__children--${this.color}` : null;
+    colorClass() {
+      return (this.color) ? `accordion-link--${this.color}` : null;
     }
   }
 }
@@ -123,6 +121,21 @@ export default {
 
 .accordion-link {
   color: color(white);
+
+  &--darkblue {
+    color: color(darkblue);
+
+    .accordion-link {
+      &__children-item {
+        border-top: 1px solid rgba(color(darkblue), .3);
+      }
+
+      &__icon, &__icon::before {
+        background-color: color(darkblue);
+      }
+
+    }
+  }
 
   &__title {
     @include flex(row nowrap, space-between, center);
@@ -148,20 +161,21 @@ export default {
 
   %icon {
     display: block;
-    background-color: color(white);
     width: 100%;
     height: 2px;
   }
 
   // アコーディオンが閉じている時のアイコン
   &__icon {
+    @extend %icon;
+    background-color: color(white);
     position: relative;
     transition: all .3s ease-out;
-    @extend %icon;
 
     &::before {
       content: '';
       @extend %icon;
+      background-color: color(white);
       position: absolute;
       top: 0;
       left: 0;
@@ -176,17 +190,6 @@ export default {
 
     &::before {
       transform: rotate(0);
-    }
-  }
-
-  &__children {
-
-    &--lightDarkblue {
-      background-color: color(lightDarkblue);
-    }
-
-    &--orange {
-      background-color: color(orange);
     }
   }
 

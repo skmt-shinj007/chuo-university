@@ -19,10 +19,7 @@
         <nav class="nav-modal__main">
           <div class="nav-modal__accordion">
             <div class="nav-modal__accordion-item" v-for="(link, n) in links" :key="n">
-              <accordion-link-component
-                :item="link"
-                @navClose="$emit('close')"
-                />
+              <accordion-link-component :item="link" @navClose="$emit('close')"/>
             </div>
           </div>
 
