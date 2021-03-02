@@ -6,9 +6,7 @@
       :title="messages.SectionTitles.Photo.Main"
       :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <div class="photo__gallery-images">
-      <image-lattice-component :images="images" :filter="config.filter"/>
-    </div>
+    <images-component :images="images" :filter="config.filter"/>
   </section>
 
   <!-- プロバイダー -->
@@ -17,8 +15,8 @@
       :title="messages.SectionTitles.Provider.Main"
       :subTitle="messages.SectionTitles.Provider.Sub"/>
 
-    <div class="photo__provider-ticket-group">
-      <div class="photo__provider-ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
+    <div class="ticket-group">
+      <div class="ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
         <provider-ticket-component :providerObj="provider"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
@@ -37,19 +35,19 @@
 
 <script>
 // component import
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
-import ImageLatticeComponent from '../components/contents/ImageLatticeComponent';
+import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
+import ImagesComponent from '../components/contents/ImagesComponent';
 import ProviderTicketComponent from '../components/modules/ticket/ProviderTicketComponent';
+import ProviderTicketModalComponent from '../components/modules/modal/ProviderTicketModalComponent';
 
 // config json import
 import Data from '../config/data.json';
 import Config from '../config/config.json';
-import ProviderTicketModalComponent from '../components/modules/modal/ProviderTicketModalComponent.vue';
 
 export default {
   components: {
     ContentsTitleComponent,
-    ImageLatticeComponent,
+    ImagesComponent,
     ProviderTicketComponent,
     ProviderTicketModalComponent,
   },
@@ -175,22 +173,22 @@ export default {
       margin-top: 0;
     }
   }
+}
 
-  &__provider-ticket-group {
-    @include flex(column nowrap, center, center);
+.ticket-group {
+  @include flex(column nowrap, center, center);
 
-    @include mq(sm) {
-      @include flex(row wrap, center, center);
-    }
+  @include mq(sm) {
+    @include flex(row wrap, center, center);
   }
+}
 
-  &__provider-ticket {
-    margin-bottom: interval(5);
+.ticket {
+  margin-bottom: interval(5);
 
-    @include mq(sm) {
-      margin-bottom: 0;
-      padding: interval(1);
-    }
+  @include mq(sm) {
+    margin-bottom: 0;
+    padding: interval(1);
   }
 }
 </style>

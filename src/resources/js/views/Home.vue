@@ -9,12 +9,12 @@
     </section>
 
     <section class="home__about">
-      <div class="home__about-item" v-for="(aboutItem, n) in aboutItems" :key="n">
-        <figure class="home__img">
+      <div class="about" v-for="(aboutItem, n) in aboutItems" :key="n">
+        <figure class="about__img">
           <img :src="`/image/${aboutItem.img.src}.jpg`" :alt="aboutItem.img.alt">
         </figure>
 
-        <div class="home__lead">
+        <div class="about__lead">
           <text-box-component :contentProps="aboutItem"/>
         </div>
       </div>
@@ -28,7 +28,7 @@
             :subTitle="messages.SectionTitles.Support.Sub"
             color="white"/>
 
-          <div class="home__support-textaria">
+          <div class="home__support-text">
             <p class="nl2br" v-text="messages.Home.Support"/>
           </div>
         </section>
@@ -85,31 +85,73 @@ export default {
     }
   }
 
-  &__about-item {
+  &__support {
+    margin-bottom: 0;
+    padding-top: interval(15);
+    padding-bottom: interval(20);
+    color: color(white);
+    @include flex(column nowrap, center, center);
+  }
 
-    @include mq(md) {
-      position: relative;
-      @include flex(row wrap);
-      margin-top: - interval(10);
+  &__support-text {
+    width: 80%;
+    margin: 0 auto;
+  }
 
-      &:first-child {
-        margin-top: 0;
-      }
+  &__background-image {
+    width: 100%;
+    height: 100vh;
+    @include background-image("/image/player09.jpg");
+
+    @include mq(sm) {
+      height: auto;
+      @include background-image("/image/player11.jpg");
     }
   }
 
-  // 偶数個のアバウトメニュースタイル
-  &__about-item:nth-child(even) {
+  &__background-darkblue {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: color(darkblue), $alpha: .8);
+  }
+}
+
+.about {
+
+  @include mq(md) {
+    position: relative;
+    @include flex(row wrap);
+    margin-top: - interval(10);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(even) {
 
     @include mq(md) {
       @include flex(row-reverse wrap);
     }
 
     // テキストボックスを左寄せにする
-    .home__lead {
+    .about__lead {
       @include mq(md) {
         margin: 0 auto 0 0;
       }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-top: 5px solid color(darkblue);
+    border-bottom: 5px solid color(darkblue);
+    box-shadow: 0px -5px 8px 3px color(shadow);
+    @include trimming(aspect(golden));
+
+    @include mq(md) {
+      width: 80%;
+      min-width: interval(66);
     }
   }
 
@@ -129,57 +171,6 @@ export default {
       margin: 0 0 0 auto;
       transform: translateY(-40%);
     }
-  }
-
-  &__img {
-    width: 100%;
-    border-top: 5px solid color(darkblue);
-    border-bottom: 5px solid color(darkblue);
-    box-shadow: 0px -5px 8px 3px color(shadow);
-    @include trimming(aspect(golden));
-
-    @include mq(md) {
-      width: 80%;
-      min-width: interval(66);
-    }
-  }
-
-  &__support {
-    margin-bottom: 0;
-    padding-top: interval(15);
-    padding-bottom: interval(20);
-    color: color(white);
-    @include flex(column nowrap, center, center);
-
-    &-textaria {
-      width: 80%;
-      margin: 0 auto;
-
-      @include mq(sm) {
-        width: 70%;
-      }
-
-      @include mq(md) {
-        width: 60%;
-      }
-    }
-  }
-
-  &__background-image {
-    width: 100%;
-    height: 100vh;
-    @include background-image("/image/player09.jpg");
-
-    @include mq(sm) {
-      height: auto;
-      @include background-image("/image/player11.jpg");
-    }
-  }
-
-  &__background-darkblue {
-    width: 100%;
-    height: 100%;
-    background-color: rgba($color: color(darkblue), $alpha: .8);
   }
 }
 </style>

@@ -3,8 +3,8 @@
   <div class="member__main-visual">
     <main-visual-component>
       <template v-slot:inner>
-        <svg-vue class="member__main-visual-icon" icon="chuo-logo"/>
-        <span class="member__main-visual-ward nl2br" v-text="messages.MainVisual.Member"/>
+        <svg-vue class="main-visual__icon" icon="chuo-logo"/>
+        <span class="main-visual__title">{{ messages.MainVisual.Member }}</span>
       </template>
     </main-visual-component>
   </div>
@@ -14,8 +14,8 @@
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
-    <div class="member__user-ticket-group">
-      <div class="member__user-ticket" ref="playerTicket"
+    <div class="ticket-group">
+      <div class="ticket" ref="playerTicket"
           v-for="(player, n) in players"
           :key="n"
           @click="openModal(player)">
@@ -36,8 +36,8 @@
       :title="messages.SectionTitles.Staff.Main"
       :subTitle="messages.SectionTitles.Staff.Sub"/>
 
-    <div class="member__user-ticket-group">
-      <div class="member__user-ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
+    <div class="ticket-group">
+      <div class="ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
         <user-ticket-component :userObj="staffItem"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
@@ -180,9 +180,19 @@ export default {
 
 <style lang="scss" scoped>
 .member {
-  background-color: color(lightgray);
 
-  &__main-visual-icon {
+  &__players {
+    margin-top: interval(5);
+  }
+
+  &__staff {
+    padding-bottom: interval(10);
+    margin-bottom: 0;
+  }
+}
+
+.main-visual {
+  &__icon {
     width: 80%;
     max-width: interval(40);
     fill: color(white);
@@ -198,47 +208,39 @@ export default {
     }
   }
 
-  &__main-visual-ward {
-    @include bangers(font(24), 1px, 400);
-    color: color(white);
-    letter-spacing: 1.8px;
+  &__title {
+    @include bangers(font(24), 2px, bold);
     line-height: 1.2;
     text-align: center;
     margin-top: interval(5);
+    text-shadow: none;
 
     @include mq(sm) {
       font-size: font(28);
+      letter-spacing: 3px;
     }
 
     @include mq(md) {
       font-size: font(48);
+      letter-spacing: 5px;
     }
   }
+}
 
-  &__players {
-    margin-top: interval(5);
+.ticket-group {
+  @include flex(column nowrap, center, center);
+
+  @include mq(sm) {
+    @include flex(row wrap, center, center);
   }
+}
 
-  &__user-ticket-group {
-    @include flex(column nowrap, center, center);
+.ticket {
+  margin-bottom: interval(5);
 
-    @include mq(sm) {
-      @include flex(row wrap, center, center);
-    }
-  }
-
-  &__user-ticket {
-    margin-bottom: interval(5);
-
-    @include mq(sm) {
-      margin-bottom: 0;
-      padding: interval(1);
-    }
-  }
-
-  &__staff {
-    padding-bottom: interval(10);
+  @include mq(sm) {
     margin-bottom: 0;
+    padding: interval(1);
   }
 }
 </style>

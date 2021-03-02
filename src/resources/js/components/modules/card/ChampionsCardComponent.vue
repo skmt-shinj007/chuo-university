@@ -3,22 +3,22 @@
   <div class="champions-card__background"/>
 
   <div class="champions-card__title-wrapper">
-    <h5 class="champions-card__title">Champion pair</h5>
+    <h5 class="champions-card__title">{{ messages.card.winner }}</h5>
   </div>
 
   <div class="champions-card__pair">
     <!-- 後衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ cardElement.Player01.Name }}</span>
-      <span class="champions-card__player-name">({{ cardElement.Player01.Belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.Player01.OB"/>
+      <span class="champions-card__player-name">{{ cardElement.player01.name }}</span>
+      <span class="champions-card__player-name">({{ cardElement.player01.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.player01.OB"/>
     </div>
 
     <!-- 前衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ cardElement.Player02.Name }}</span>
-      <span class="champions-card__player-name">({{ cardElement.Player02.Belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.Player02.OB"/>
+      <span class="champions-card__player-name">{{ cardElement.player02.name }}</span>
+      <span class="champions-card__player-name">({{ cardElement.player02.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.player02.OB"/>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
       {{ messages.ContentsTitles.TournamentInformation }}
     </span>
 
-    <table-component :tableItems="cardElement.TournamentInformation"/>
+    <table-component :tableItems="cardElement.information"/>
   </div>
 
 </div>
@@ -40,6 +40,7 @@ export default {
   components: {
     TableComponent,
   },
+
   props: {
     cardElement: {
       type: Object,
@@ -88,7 +89,7 @@ export default {
 
   &__player {
     @include flex(row nowrap, flex-start, center);
-    margin-top: interval(1);
+    margin-top: interval(.5);
 
     &:first-child {
       margin-top: 0;
@@ -107,7 +108,7 @@ export default {
 
   &__tournament-info-title {
     display: block;
-    margin-bottom: interval(1);
+    margin-bottom: interval(.5);
     font-size: font(14);
     @include middle-line-text(2, 1px, color(darkblue));
   }

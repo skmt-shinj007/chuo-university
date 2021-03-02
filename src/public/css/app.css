@@ -290,8 +290,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .main-visual[data-v-3ff6fe5a] {
   width: 100%;
@@ -607,8 +618,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .contents-title {
   padding: 2.5rem 0;
@@ -935,8 +957,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .primary-btn__btn, .primary-btn {
   background-color: #ffffff;
@@ -1272,8 +1305,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .news[data-v-9b317ac0] {
   padding: 0 1rem 1rem 1rem;
@@ -1624,8 +1668,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .link__btn[data-v-63d84db2], .link[data-v-63d84db2] {
   background-color: #ffffff;
@@ -1967,8 +2022,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .text-box {
   padding: 0 1rem 1rem 1rem;
@@ -2292,8 +2358,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .home[data-v-63cd6604] {
   position: relative;
@@ -2310,78 +2387,6 @@ import用ファイル
     margin-bottom: -2.5rem;
 }
 }
-@media screen and (min-width: 1025px) {
-.home__about-item[data-v-63cd6604] {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    margin-top: -5rem;
-}
-.home__about-item[data-v-63cd6604]:first-child {
-    margin-top: 0;
-}
-}
-@media screen and (min-width: 1025px) {
-.home__about-item[data-v-63cd6604]:nth-child(even) {
-    display: flex;
-    flex-flow: row-reverse wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-}
-@media screen and (min-width: 1025px) {
-.home__about-item:nth-child(even) .home__lead[data-v-63cd6604] {
-    margin: 0 auto 0 0;
-}
-}
-.home__lead[data-v-63cd6604] {
-  width: 90%;
-  max-width: 50rem;
-  margin: 0 auto;
-  transform: translateY(-15%);
-}
-@media screen and (min-width: 560px) {
-.home__lead[data-v-63cd6604] {
-    transform: translateY(-20%);
-}
-}
-@media screen and (min-width: 1025px) {
-.home__lead[data-v-63cd6604] {
-    min-width: 30rem;
-    width: 60%;
-    margin: 0 0 0 auto;
-    transform: translateY(-40%);
-}
-}
-.home__img[data-v-63cd6604] {
-  width: 100%;
-  border-top: 5px solid #091e2f;
-  border-bottom: 5px solid #091e2f;
-  box-shadow: 0px -5px 8px 3px #e6e6e6;
-  position: relative;
-}
-.home__img[data-v-63cd6604]::before {
-  content: "";
-  display: block;
-  padding-bottom: 61.8%;
-}
-.home__img > img[data-v-63cd6604] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-@media screen and (min-width: 1025px) {
-.home__img[data-v-63cd6604] {
-    width: 80%;
-    min-width: 33rem;
-}
-}
 .home__support[data-v-63cd6604] {
   margin-bottom: 0;
   padding-top: 7.5rem;
@@ -2392,19 +2397,9 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.home__support-textaria[data-v-63cd6604] {
+.home__support-text[data-v-63cd6604] {
   width: 80%;
   margin: 0 auto;
-}
-@media screen and (min-width: 560px) {
-.home__support-textaria[data-v-63cd6604] {
-    width: 70%;
-}
-}
-@media screen and (min-width: 1025px) {
-.home__support-textaria[data-v-63cd6604] {
-    width: 60%;
-}
 }
 .home__background-image[data-v-63cd6604] {
   width: 100%;
@@ -2427,6 +2422,78 @@ import用ファイル
   width: 100%;
   height: 100%;
   background-color: rgba(9, 30, 47, 0.8);
+}
+@media screen and (min-width: 1025px) {
+.about[data-v-63cd6604] {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: -5rem;
+}
+.about[data-v-63cd6604]:first-child {
+    margin-top: 0;
+}
+}
+@media screen and (min-width: 1025px) {
+.about[data-v-63cd6604]:nth-child(even) {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+}
+@media screen and (min-width: 1025px) {
+.about:nth-child(even) .about__lead[data-v-63cd6604] {
+    margin: 0 auto 0 0;
+}
+}
+.about__img[data-v-63cd6604] {
+  width: 100%;
+  border-top: 5px solid #091e2f;
+  border-bottom: 5px solid #091e2f;
+  box-shadow: 0px -5px 8px 3px #e6e6e6;
+  position: relative;
+}
+.about__img[data-v-63cd6604]::before {
+  content: "";
+  display: block;
+  padding-bottom: 61.8%;
+}
+.about__img > img[data-v-63cd6604] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 1025px) {
+.about__img[data-v-63cd6604] {
+    width: 80%;
+    min-width: 33rem;
+}
+}
+.about__lead[data-v-63cd6604] {
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto;
+  transform: translateY(-15%);
+}
+@media screen and (min-width: 560px) {
+.about__lead[data-v-63cd6604] {
+    transform: translateY(-20%);
+}
+}
+@media screen and (min-width: 1025px) {
+.about__lead[data-v-63cd6604] {
+    min-width: 30rem;
+    width: 60%;
+    margin: 0 0 0 auto;
+    transform: translateY(-40%);
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -2719,8 +2786,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .google-map__map[data-v-161a410d] {
   width: 100%;
@@ -3038,8 +3116,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .concept-card[data-v-348f28a1] {
   position: relative;
@@ -3402,8 +3491,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .image-slider__container[data-v-6cd5e234] {
   position: relative;
@@ -3739,8 +3839,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .main-visual-slider[data-v-30380e08] {
   height: 100%;
@@ -4064,8 +4175,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .common-table {
   width: 100%;
@@ -4438,8 +4560,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .caption-bar-image[data-v-7fa4fe02] {
   width: 100%;
@@ -4772,8 +4905,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .dormitory-ticket[data-v-c3a537a8] {
   width: 100%;
@@ -5109,8 +5253,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .tag {
   color: #ffffff;
@@ -5453,8 +5608,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .grade-tag__content {
   font-size: 0.625rem;
@@ -5769,8 +5935,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .player-card {
   position: relative;
@@ -6126,8 +6303,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .slider[data-v-53189f00] {
   height: auto;
@@ -6439,8 +6627,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .arrange-images__list-container[data-v-bb84db5a] {
   display: flex;
@@ -6775,8 +6974,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .club__mainVisualSlider[data-v-357d3955] {
   width: 100%;
@@ -6785,8 +6995,42 @@ import用ファイル
 .club__concept[data-v-357d3955] {
   margin: 0 auto;
 }
+.club__dormitory[data-v-357d3955] {
+  margin-bottom: 5rem;
+}
+.club__member[data-v-357d3955] {
+  margin: 0 auto;
+}
+.club__photo[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+.dormitory__slider[data-v-357d3955], .practice__slider[data-v-357d3955] {
+  margin-top: 5rem;
+}
 @media screen and (min-width: 560px) {
-.club__concept-cards[data-v-357d3955] {
+.dormitory__slider[data-v-357d3955], .practice__slider[data-v-357d3955] {
+    max-width: 640px;
+    margin: 5rem auto 0 auto;
+}
+}
+.dormitory__image[data-v-357d3955], .practice__image[data-v-357d3955] {
+  width: calc(100% / 3);
+  margin-right: 1rem;
+}
+.dormitory__image[data-v-357d3955]:last-child, .practice__image[data-v-357d3955]:last-child {
+  margin-right: 0;
+}
+.photo__button[data-v-357d3955], .member__button[data-v-357d3955] {
+  margin-top: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.photo__button[data-v-357d3955], .member__button[data-v-357d3955] {
+    max-width: 25rem;
+    margin: 2.5rem auto 0 auto;
+}
+}
+@media screen and (min-width: 560px) {
+.concept__card-group[data-v-357d3955] {
     max-width: 30rem;
     margin: 0 auto;
     display: flex;
@@ -6796,60 +7040,44 @@ import用ファイル
 }
 }
 @media screen and (min-width: 1025px) {
-.club__concept-cards[data-v-357d3955] {
+.concept__card-group[data-v-357d3955] {
     max-width: 50rem;
 }
 }
-.club__concept-card[data-v-357d3955] {
+.concept__card[data-v-357d3955] {
   margin-bottom: 2.5rem;
 }
-.club__concept-card[data-v-357d3955]:last-child {
+.concept__card[data-v-357d3955]:last-child {
   margin-bottom: 0;
 }
 @media screen and (min-width: 560px) {
-.club__concept-card[data-v-357d3955] {
+.concept__card[data-v-357d3955] {
     margin-bottom: 0;
     margin-right: 1rem;
 }
-.club__concept-card[data-v-357d3955]:last-child {
+.concept__card[data-v-357d3955]:last-child {
     margin-right: 0;
 }
 }
-.club__practice-map[data-v-357d3955] {
+.practice__map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
-.club__practice-imageSlider[data-v-357d3955] {
-  margin-top: 5rem;
-}
-@media screen and (min-width: 560px) {
-.club__practice-imageSlider[data-v-357d3955] {
-    max-width: 640px;
-    margin: 5rem auto 0 auto;
-}
-}
-.club__practice-rowImages[data-v-357d3955] {
+.practice__image-group[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 5rem;
 }
-.club__practice-rowImages-item[data-v-357d3955] {
-  width: calc(100% / 3);
-  margin-right: 1rem;
-}
-.club__practice-rowImages-item[data-v-357d3955]:last-child {
-  margin-right: 0;
-}
-.club__practice-schedule[data-v-357d3955] {
+.practice__schedule[data-v-357d3955] {
   margin-top: 5rem;
 }
-.club__practice-schedule-title[data-v-357d3955] {
-  margin: 0 auto 1rem auto;
+.practice__schedule-title[data-v-357d3955] {
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
-.club__practice-schedule-title[data-v-357d3955]::before {
+.practice__schedule-title[data-v-357d3955]::before {
   display: block;
   content: "";
   width: 1rem;
@@ -6860,32 +7088,32 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-.club__dormitory[data-v-357d3955] {
-  margin-bottom: 5rem;
+.practice__schedule-table[data-v-357d3955] {
+  margin-top: 1rem;
 }
 @media screen and (min-width: 560px) {
-.club__dormitory-lead-wrap[data-v-357d3955] {
+.dormitory__lead[data-v-357d3955] {
     text-align: center;
     max-width: 40rem;
     margin: 0 auto;
 }
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-lead-wrap[data-v-357d3955] {
+.dormitory__lead[data-v-357d3955] {
     max-width: 50rem;
 }
 }
-.club__dormitory-ticket-group[data-v-357d3955] {
+.dormitory__ticket-group[data-v-357d3955] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.club__dormitory-ticket-group[data-v-357d3955] {
+.dormitory__ticket-group[data-v-357d3955] {
     max-width: 40rem;
     margin: 2rem auto 0 auto;
 }
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-ticket-group[data-v-357d3955] {
+.dormitory__ticket-group[data-v-357d3955] {
     margin-top: 5rem;
     max-width: none;
     display: flex;
@@ -6894,7 +7122,7 @@ import用ファイル
     align-items: stretch;
 }
 }
-.club__dormitory-ticket[data-v-357d3955] {
+.dormitory__ticket[data-v-357d3955] {
   margin-bottom: 2.5rem;
   display: flex;
   flex-flow: row nowrap;
@@ -6902,41 +7130,30 @@ import用ファイル
   align-items: center;
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-ticket[data-v-357d3955] {
+.dormitory__ticket[data-v-357d3955] {
     width: calc(100% / 2);
 }
 }
 @media screen and (min-width: 1025px) {
-.club__dormitory-ticket[data-v-357d3955]:nth-child(odd) {
+.dormitory__ticket[data-v-357d3955]:nth-child(odd) {
     padding-right: 1rem;
 }
 }
-.club__dormitory-images[data-v-357d3955] {
+.dormitory__image-group[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: stretch;
 }
-.club__dormitory-images-item[data-v-357d3955] {
-  width: calc(100% / 3);
-  margin-right: 1rem;
-}
-.club__dormitory-images-item[data-v-357d3955]:last-child {
-  margin-right: 0;
-}
-.club__member[data-v-357d3955] {
-  margin: 0 auto;
-}
-.club__member-number[data-v-357d3955] {
+.member__number[data-v-357d3955] {
   margin-top: 5rem;
 }
-.club__member-number-title[data-v-357d3955] {
-  color: #ffffff;
-  margin-bottom: 1rem;
+.member__number-title[data-v-357d3955] {
   position: relative;
   padding-left: 1.5rem;
+  color: #ffffff;
 }
-.club__member-number-title[data-v-357d3955]::before {
+.member__number-title[data-v-357d3955]::before {
   display: block;
   content: "";
   width: 1rem;
@@ -6947,29 +7164,8 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-.club__member-number-table[data-v-357d3955] {
-  margin-bottom: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.club__member-button[data-v-357d3955] {
-    max-width: 25rem;
-    margin: 0 auto;
-}
-}
-.club__photo[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
-.club__photo-images[data-v-357d3955] {
-  margin-bottom: 2.5rem;
-}
-.club__photo-button[data-v-357d3955] {
-  margin-top: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.club__photo-button[data-v-357d3955] {
-    max-width: 25rem;
-    margin: 0 auto;
-}
+.member__number-table[data-v-357d3955] {
+  margin-top: 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -7262,8 +7458,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-358d2551] {
   position: fixed;
@@ -7827,8 +8034,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .user-ticket {
   display: flex;
@@ -8276,13 +8494,28 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
  */
-.member[data-v-668c6779] {
-  background-color: #f2f2f2;
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
+ */
+.member__players[data-v-668c6779] {
+  margin-top: 2.5rem;
 }
-.member__main-visual-icon[data-v-668c6779] {
+.member__staff[data-v-668c6779] {
+  padding-bottom: 5rem;
+  margin-bottom: 0;
+}
+.main-visual__icon[data-v-668c6779] {
   width: 80%;
   max-width: 20rem;
   fill: #ffffff;
@@ -8290,65 +8523,59 @@ import用ファイル
   stroke-width: 0.5rem;
 }
 @media screen and (min-width: 560px) {
-.member__main-visual-icon[data-v-668c6779] {
+.main-visual__icon[data-v-668c6779] {
     width: 50%;
 }
 }
 @media screen and (min-width: 1025px) {
-.member__main-visual-icon[data-v-668c6779] {
+.main-visual__icon[data-v-668c6779] {
     max-width: 30rem;
 }
 }
-.member__main-visual-ward[data-v-668c6779] {
+.main-visual__title[data-v-668c6779] {
   font-family: "Bangers", cursive;
   font-size: 1.5rem;
-  letter-spacing: 1px;
-  font-weight: 400;
-  color: #ffffff;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
+  font-weight: bold;
   line-height: 1.2;
   text-align: center;
   margin-top: 2.5rem;
+  text-shadow: none;
 }
 @media screen and (min-width: 560px) {
-.member__main-visual-ward[data-v-668c6779] {
+.main-visual__title[data-v-668c6779] {
     font-size: 1.75rem;
+    letter-spacing: 3px;
 }
 }
 @media screen and (min-width: 1025px) {
-.member__main-visual-ward[data-v-668c6779] {
+.main-visual__title[data-v-668c6779] {
     font-size: 3rem;
+    letter-spacing: 5px;
 }
 }
-.member__players[data-v-668c6779] {
-  margin-top: 2.5rem;
-}
-.member__user-ticket-group[data-v-668c6779] {
+.ticket-group[data-v-668c6779] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 @media screen and (min-width: 560px) {
-.member__user-ticket-group[data-v-668c6779] {
+.ticket-group[data-v-668c6779] {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
 }
-.member__user-ticket[data-v-668c6779] {
+.ticket[data-v-668c6779] {
   margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.member__user-ticket[data-v-668c6779] {
+.ticket[data-v-668c6779] {
     margin-bottom: 0;
     padding: 0.5rem;
 }
-}
-.member__staff[data-v-668c6779] {
-  padding-bottom: 5rem;
-  margin-bottom: 0;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8641,8 +8868,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .tile-table {
   width: 100%;
@@ -8966,23 +9204,22 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
  */
-.hakumonkai__page-header[data-v-42f1fe89] {
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
+ */
+.hakumonkai__header[data-v-42f1fe89] {
   margin-top: 2.5rem;
-}
-.hakumonkai-lead-text-wrap[data-v-42f1fe89] {
-  margin-bottom: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.hakumonkai-lead-text-wrap[data-v-42f1fe89] {
-    margin: 0 auto 2.5rem auto;
-}
-}
-.hakumonkai-lead-text[data-v-42f1fe89] {
-  font-weight: bold;
-  text-align: center;
 }
 .hakumonkai__officer[data-v-42f1fe89] {
   margin-top: 2.5rem;
@@ -9001,35 +9238,6 @@ import用ファイル
     align-items: stretch;
 }
 }
-.hakumonkai__player-card[data-v-42f1fe89] {
-  width: 100%;
-  margin-bottom: 4rem;
-  box-shadow: 0 1px 10px 2px #e6e6e6;
-  background-color: #f2f2f2;
-}
-@media screen and (min-width: 560px) {
-.hakumonkai__player-card[data-v-42f1fe89] {
-    width: calc(100% / 3);
-    margin-right: 1rem;
-    margin-bottom: 0;
-}
-}
-.hakumonkai__player-card[data-v-42f1fe89]:last-child {
-  margin: 0;
-}
-.hakumonkai__message-content[data-v-42f1fe89] {
-  margin-bottom: 2.5rem;
-}
-.hakumonkai__message-text[data-v-42f1fe89] {
-  text-align: center;
-  font-weight: bold;
-}
-@media screen and (min-width: 560px) {
-.hakumonkai__message-btn[data-v-42f1fe89] {
-    max-width: 25rem;
-    margin: 0 auto;
-}
-}
 .background-prlx[data-v-42f1fe89] {
   background-image: url("/image/group-photo2017-spring.jpg");
   background-repeat: no-repeat;
@@ -9037,6 +9245,31 @@ import用ファイル
   background-size: cover;
   width: 100%;
   height: 15rem;
+}
+.lead__text-wrap[data-v-42f1fe89] {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.lead__text-wrap[data-v-42f1fe89] {
+    margin: 0 auto 2.5rem auto;
+}
+}
+.lead__text[data-v-42f1fe89] {
+  font-weight: bold;
+  text-align: center;
+}
+.message__content[data-v-42f1fe89] {
+  margin-bottom: 2.5rem;
+}
+.message__text[data-v-42f1fe89] {
+  text-align: center;
+  font-weight: bold;
+}
+@media screen and (min-width: 560px) {
+.message__button[data-v-42f1fe89] {
+    max-width: 25rem;
+    margin: 0 auto;
+}
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -9329,8 +9562,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .record-tag[data-v-b79d4b88] {
   cursor: pointer;
@@ -9699,8 +9943,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-57d67ae5] {
   position: fixed;
@@ -10072,8 +10327,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .history-box[data-v-600734dc] {
   border: 2px solid #091e2f;
@@ -10419,8 +10685,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .icon-table {
   width: 100%;
@@ -10741,8 +11018,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .champions-card[data-v-3ea95d82] {
   width: 100%;
@@ -10788,7 +11076,7 @@ import用ファイル
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 .champions-card__player[data-v-3ea95d82]:first-child {
   margin-top: 0;
@@ -10803,10 +11091,11 @@ import用ファイル
 }
 .champions-card__tournament-info-title[data-v-3ea95d82] {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   font-size: 0.875rem;
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
 .champions-card__tournament-info-title[data-v-3ea95d82]::before {
   display: block;
@@ -11110,34 +11399,51 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
  */
-.history__chronology[data-v-301d0ec5] {
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
+ */
+.history__archive[data-v-301d0ec5] {
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 1025px) {
-.history__chronology[data-v-301d0ec5] {
+.history__archive[data-v-301d0ec5] {
     margin-top: 0;
 }
 }
-.history__chronology-container[data-v-301d0ec5] {
+.history__trophies[data-v-301d0ec5] {
+  margin-bottom: 5rem;
+}
+.history__winner[data-v-301d0ec5] {
+  margin: 0 auto;
+}
+.archive[data-v-301d0ec5] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: stretch;
 }
-.history__age[data-v-301d0ec5] {
+.archive__age[data-v-301d0ec5] {
   display: none;
 }
 @media screen and (min-width: 1025px) {
-.history__age[data-v-301d0ec5] {
+.archive__age[data-v-301d0ec5] {
     display: block;
     position: relative;
     width: 10rem;
     margin-right: 1rem;
 }
-.history__age[data-v-301d0ec5]::before {
+.archive__age[data-v-301d0ec5]::before {
     display: block;
     content: "";
     width: 0.5rem;
@@ -11151,7 +11457,7 @@ import用ファイル
     transform: translateX(-50%);
 }
 }
-.history__age-tag[data-v-301d0ec5] {
+.archive__tag[data-v-301d0ec5] {
   width: 100%;
   text-align: center;
   color: #ffffff;
@@ -11164,31 +11470,25 @@ import用ファイル
   top: 0;
   transition: all 1s ease-out;
 }
-.history__box[data-v-301d0ec5] {
-  margin-bottom: 5rem;
+.archive__wrap[data-v-301d0ec5] {
+  margin-bottom: 7.5rem;
 }
-.history__box[data-v-301d0ec5]:last-child {
+.archive__wrap[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
-.history__item[data-v-301d0ec5] {
+.archive__content[data-v-301d0ec5] {
   margin-bottom: 5rem;
 }
-.history__item[data-v-301d0ec5]:last-child {
+.archive__content[data-v-301d0ec5]:last-child {
   margin-bottom: 0;
 }
-.history__primary-titles[data-v-301d0ec5] {
-  margin-bottom: 5rem;
-}
-.history__champions[data-v-301d0ec5] {
-  margin: 0 auto;
-}
-.history__champions-card-group[data-v-301d0ec5] {
+.winner__card-group[data-v-301d0ec5] {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
-.history__champions-card[data-v-301d0ec5] {
+.winner__card[data-v-301d0ec5] {
   width: 16rem;
   padding: 0.5rem;
 }@charset "UTF-8";
@@ -11483,8 +11783,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .view-all {
   color: #ffffff;
@@ -11839,8 +12150,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .pull-down-table {
   display: table;
@@ -12170,8 +12492,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-213a8ec6] {
   position: fixed;
@@ -12397,7 +12730,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-d066a2d0 {
+@-webkit-keyframes iconSlide-data-v-7ec9af9b {
 0% {
     transform: translateX(0);
 }
@@ -12432,7 +12765,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-d066a2d0 {
+@keyframes iconSlide-data-v-7ec9af9b {
 0% {
     transform: translateX(0);
 }
@@ -12467,7 +12800,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-d066a2d0 {
+@-webkit-keyframes fadeoutDown-data-v-7ec9af9b {
 0% {
     transform: translateY(0);
 }
@@ -12512,7 +12845,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-d066a2d0 {
+@keyframes fadeoutDown-data-v-7ec9af9b {
 0% {
     transform: translateY(0);
 }
@@ -12557,7 +12890,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-d066a2d0 {
+@-webkit-keyframes fadeoutTop-data-v-7ec9af9b {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -12567,7 +12900,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-d066a2d0 {
+@keyframes fadeoutTop-data-v-7ec9af9b {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -12577,7 +12910,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes bound-data-v-d066a2d0 {
+@-webkit-keyframes bound-data-v-7ec9af9b {
 0% {
     transform: translate(0%, -100%);
 }
@@ -12606,7 +12939,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@keyframes bound-data-v-d066a2d0 {
+@keyframes bound-data-v-7ec9af9b {
 0% {
     transform: translate(0%, -100%);
 }
@@ -12635,7 +12968,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@-webkit-keyframes rotation-data-v-d066a2d0 {
+@-webkit-keyframes rotation-data-v-7ec9af9b {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -12643,7 +12976,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@keyframes rotation-data-v-d066a2d0 {
+@keyframes rotation-data-v-7ec9af9b {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -12652,34 +12985,46 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
  */
-.lattice__filter[data-v-d066a2d0] {
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
+ */
+.images__filter[data-v-7ec9af9b] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: stretch;
 }
 @media screen and (min-width: 560px) {
-.lattice__filter[data-v-d066a2d0] {
+.images__filter[data-v-7ec9af9b] {
     justify-content: center;
     width: 100%;
     padding: 0 8px;
 }
 }
 @media screen and (min-width: 1025px) {
-.lattice__filter[data-v-d066a2d0] {
+.images__filter[data-v-7ec9af9b] {
     width: 70%;
 }
 }
-.lattice__filter-title[data-v-d066a2d0] {
+.images__filter-name[data-v-7ec9af9b] {
   margin-bottom: 1rem;
   font-size: 1rem;
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
-.lattice__filter-title[data-v-d066a2d0]::before {
+.images__filter-name[data-v-7ec9af9b]::before {
   display: block;
   content: "";
   width: 1rem;
@@ -12690,14 +13035,7 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-.lattice__filter-wrap[data-v-d066a2d0] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-}
-.lattice__img-group[data-v-d066a2d0] {
+.images__group[data-v-7ec9af9b] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -12705,42 +13043,42 @@ import用ファイル
   margin-top: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.lattice__img-group[data-v-d066a2d0] {
+.images__group[data-v-7ec9af9b] {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: stretch;
 }
 }
-.lattice__img-wrap[data-v-d066a2d0] {
+.images__box[data-v-7ec9af9b] {
   width: 100%;
   margin-bottom: 2.5rem;
 }
+.images__box[data-v-7ec9af9b]:last-child {
+  margin-bottom: 0;
+}
 @media screen and (min-width: 560px) {
-.lattice__img-wrap[data-v-d066a2d0] {
+.images__box[data-v-7ec9af9b] {
     margin-bottom: 0;
     padding: 8px;
     width: calc(100% / 2);
 }
 }
 @media screen and (min-width: 1025px) {
-.lattice__img-wrap[data-v-d066a2d0] {
+.images__box[data-v-7ec9af9b] {
     width: calc(100% / 3);
 }
 }
-.lattice__img-wrap[data-v-d066a2d0]:last-child {
-  margin-bottom: 0;
-}
-.lattice__img[data-v-d066a2d0] {
+.images__img[data-v-7ec9af9b] {
   position: relative;
   transition: all 0.3s ease-out;
 }
-.lattice__img[data-v-d066a2d0]::before {
+.images__img[data-v-7ec9af9b]::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.lattice__img > img[data-v-d066a2d0] {
+.images__img > img[data-v-7ec9af9b] {
   position: absolute;
   top: 0;
   left: 0;
@@ -12749,17 +13087,17 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.lattice__img > img[data-v-d066a2d0] {
+.images__img > img[data-v-7ec9af9b] {
   box-shadow: 0 0 10px 2px #e6e6e6;
   border-radius: 2px;
   cursor: pointer;
 }
 @media screen and (min-width: 1025px) {
-.lattice__img[data-v-d066a2d0]:hover {
+.images__img[data-v-7ec9af9b]:hover {
     transform: scale(1.05);
 }
 }
-.lattice__view-all[data-v-d066a2d0] {
+.images__button[data-v-7ec9af9b] {
   margin-top: 2.5rem;
 }@charset "UTF-8";
 /*
@@ -13053,8 +13391,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .sns-tag {
   margin: 0.25rem;
@@ -13382,8 +13731,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .provider-ticket {
   display: flex;
@@ -13772,8 +14132,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .modal[data-v-5885bf62] {
   position: fixed;
@@ -14287,8 +14658,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .photo__gallery[data-v-46e3fba3] {
   margin-top: 2.5rem;
@@ -14298,25 +14680,25 @@ import用ファイル
     margin-top: 0;
 }
 }
-.photo__provider-ticket-group[data-v-46e3fba3] {
+.ticket-group[data-v-46e3fba3] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 @media screen and (min-width: 560px) {
-.photo__provider-ticket-group[data-v-46e3fba3] {
+.ticket-group[data-v-46e3fba3] {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
 }
-.photo__provider-ticket[data-v-46e3fba3] {
+.ticket[data-v-46e3fba3] {
   margin-bottom: 2.5rem;
 }
 @media screen and (min-width: 560px) {
-.photo__provider-ticket[data-v-46e3fba3] {
+.ticket[data-v-46e3fba3] {
     margin-bottom: 0;
     padding: 0.5rem;
 }
@@ -14612,8 +14994,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .err[data-v-403316a6] {
   display: flex;
@@ -14734,14 +15127,15 @@ import用ファイル
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.err__guide-text[data-v-403316a6] {
+.err__guide[data-v-403316a6] {
   font-size: 0.875rem;
   letter-spacing: 1px;
   line-height: 1.2;
   position: relative;
   padding-left: 1.5rem;
+  color: #091e2f;
 }
-.err__guide-text[data-v-403316a6]::before {
+.err__guide[data-v-403316a6]::before {
   display: block;
   content: "";
   width: 1rem;
@@ -14752,15 +15146,15 @@ import用ファイル
   left: 0;
   transform: translateY(-50%);
 }
-.err__list[data-v-403316a6] {
+.err__sitemap[data-v-403316a6] {
   width: 100%;
   margin-top: 2.5rem;
   border-top: 2px solid #091e2f;
 }
-.err__list-item[data-v-403316a6] {
+.err__sitemap-item[data-v-403316a6] {
   position: relative;
 }
-.err__list-item[data-v-403316a6]::after {
+.err__sitemap-item[data-v-403316a6]::after {
   content: "";
   display: block;
   width: 100%;
@@ -15086,8 +15480,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .test[data-v-b28ce99e] {
   padding: 100px 0;
@@ -15937,8 +16342,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .accordion-link {
   color: #ffffff;
@@ -16310,8 +16726,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .nav-modal[data-v-1f270d64] {
   position: fixed;
@@ -16827,8 +17254,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .header__navbar[data-v-6832e7cf] {
   width: 100%;
@@ -17296,8 +17734,19 @@ import用ファイル
 }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 .footer[data-v-060e08fe] {
   color: #ffffff;
@@ -17701,8 +18150,19 @@ import用ファイル
   }
 }
 /**
- * テキストの前に線を入れる装飾 (- text)
- * 親要素に position: relative; と padding-left をつける
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * component
  */
 /* Reset box-model and set borders */
 /* ============================================ */

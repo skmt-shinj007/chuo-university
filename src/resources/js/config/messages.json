@@ -44,7 +44,7 @@
 
   "MainVisual": {
     "Home": "CHUO\nUNIVERSITY\nSOFT\nTENNIS",
-    "Member": "CHUO UNIVERSITY SOFT TENNIS\nTEAM MEMBER"
+    "Member": "CHUO UNIVERSITY SOFT TENNIS TEAM MEMBER"
   },
 
   "SectionTitles": {
@@ -217,6 +217,10 @@
     "Heisei" : "平成",
     "Showa"  : "昭和",
     "Taisho" : "大正"
+  },
+
+  "card": {
+    "winner": "Winner"
   },
 
   "Home": {
