@@ -25,7 +25,7 @@ export default {
        * [現在のスクロール量]
        * @type { Number }
        */
-      scrollAmount: null,
+      scrollY: null,
 
       /**
      * [ユーザーカテゴリー情報]
@@ -57,7 +57,7 @@ export default {
      * [スクロール量をリアルタイムで取得]
      * @type { function }
      */
-    this.scrollAmount = window.scrollY;
+    this.scrollY = window.scrollY;
     window.addEventListener('scroll', this.getScroll);
   },
 
@@ -74,7 +74,7 @@ export default {
      * https://gray-code.com/javascript/unset-event-listener/
     */
     getScroll() {
-      this.scrollAmount = window.scrollY;
+      this.scrollY = window.scrollY;
     },
 
     /**

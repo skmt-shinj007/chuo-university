@@ -193,7 +193,7 @@ export default {
       let marginBottom = this.archiveMarginBottom;
       let taishoHeight = this.elementsHeight.taisho + marginBottom;  // 大正の沿革ボックスの高さを代入
       let showaHeight  = taishoHeight + this.elementsHeight.showa + marginBottom;  // 昭和の沿革ボックスの高さを代入
-      let scroll = this.scrollAmount;  // スクロール量
+      let scroll = this.scrollY;  // スクロール量
       let age = this.ageWard;  // タグのテキスト
 
       if (scroll < taishoHeight) {
@@ -214,13 +214,13 @@ export default {
      * @return { Number }  沿革セクションの高さからタグの高さを引いた数値が返る
      */
     scrollLimit() {
-      let scroll = this.scrollAmount;  // スクロール量
+      let scroll = this.scrollY;  // スクロール量
       let archiveHeight = this.elementsHeight.archive;  // 沿革セクション全体の高さ
       let tag = this.elementsHeight.ageTag;  // スクロールタグの高さ
 
-      if (scroll > archiveHeight) this.scrollAmount = archiveHeight - tag;
+      if (scroll > archiveHeight) this.scrollY = archiveHeight - tag;
 
-      return this.scrollAmount;
+      return this.scrollY;
     }
   },
 
