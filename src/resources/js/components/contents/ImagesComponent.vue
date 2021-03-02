@@ -1,17 +1,17 @@
 <template>
-<div class="lattice">
+<div class="images">
 
   <!-- フィルター機能 -->
-  <div class="lattice__filter">
-    <span class="lattice__filter-title">{{ messages.FunctionName.Filter }}</span>
+  <div class="images__filter">
+    <span class="images__filter-name">{{ messages.FunctionName.Filter }}</span>
 
     <pull-down-table-component :titles="filter.year" :menus="years" @select="select = $event"/>
   </div>
 
   <!-- 写真 -->
-  <div class="lattice__img-group">
-    <div class="lattice__img-wrap" v-for="(image,n) in displayImages" :key="n">
-      <figure class="lattice__img">
+  <div class="images__group">
+    <div class="images__box" v-for="(image,n) in displayImages" :key="n">
+      <figure class="images__img">
         <img :src="`/image/${image.src}`" :alt="image.alt" @click="openModal(image)">
       </figure>
     </div>
@@ -22,10 +22,10 @@
     v-if="showModal"
     @close="closeModal"
     :selectIndex="selectImageIndex"
-    :images="filteringImages"/>
+    :images="filterImages"/>
 
   <!-- もっと見るボタン -->
-  <div class="lattice__view-all" v-if="buttonShow">
+  <div class="images__button" v-if="buttonShow">
     <view-all-button-component :clickEvent="viewMore"/>
   </div>
 
@@ -121,7 +121,7 @@ export default {
      * 返り値 => 絞り込みの値によってimages配列をフィルタリングした配列を返す
      * [表示枚数制御]と処理を切り分け => フィルタリングされた配列の要素数を使用するため。
      */
-    filteringImages() {
+    filterImages() {
       if (this.select !== "all") {
 
         // 絞り込みの選択値を変数に代入
@@ -141,19 +141,19 @@ export default {
     /**
      * [表示枚数制御]
      * フィルタリング処理後の配列を count プロパティを参照して切り取る。
-     * filteringImagesで返された配列をcount数で切り取っているだけ。
+     * filterImagesで返された配列をcount数で切り取っているだけ。
      */
     displayImages() {
-      return this.filteringImages.slice(0, this.count);
+      return this.filterImages.slice(0, this.count);
     },
 
     /**
      * [ボタン表示制御] 処理
-     * this.filteringImages.length：写真データの最大要素数
+     * this.filterImages.length：写真データの最大要素数
      * this.count：表示枚数
      */
     buttonShow() {
-      if (this.filteringImages.length > this.count) {
+      if (this.filterImages.length > this.count) {
         return true;
       } else {
         return false;
@@ -174,7 +174,7 @@ export default {
     openModal(el) {
       this.showModal = true;
 
-      this.selectImageIndex = this.filteringImages.indexOf(el);
+      this.selectImageIndex = this.filterImages.indexOf(el);
       document.body.classList.add("modal-open");
     },
     closeModal() {
@@ -198,7 +198,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.lattice {
+.images {
 
   &__filter {
     @include flex(column nowrap, center, stretch);
@@ -212,20 +212,15 @@ export default {
     @include mq(md) {
       width: 70%;
     }
-
-    &-title {
-      margin-bottom: interval(2);
-      font-size: font(16);
-      @include middle-line-text(2, 1px, color(darkblue));
-    }
-
-    &-wrap {
-      @include flex(row nowrap, flex-start, center);
-      width: 100%;
-    }
   }
 
-  &__img-group {
+  &__filter-name {
+    margin-bottom: interval(2);
+    font-size: font(16);
+    @include middle-line-text(2, 1px, color(darkblue));
+  }
+
+  &__group {
     @include flex(column nowrap, center, center);
     margin-top: interval(5);
 
@@ -234,9 +229,13 @@ export default {
     }
   }
 
-  &__img-wrap {
+  &__box {
     width: 100%;
     margin-bottom: interval(5);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @include mq(sm) {
       margin-bottom: 0;
@@ -246,10 +245,6 @@ export default {
 
     @include mq(md) {
       width: calc(100% / 3);
-    }
-
-    &:last-child {
-      margin-bottom: 0;
     }
   }
 
@@ -268,7 +263,7 @@ export default {
     }
   }
 
-  &__view-all {
+  &__button {
     margin-top: interval(5);
   }
 }
