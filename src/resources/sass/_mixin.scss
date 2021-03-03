@@ -240,8 +240,9 @@
  */
 
 // scroll button common style
-@mixin scroll-button ($position: interval(2),$size: interval(6) ) {
+@mixin scroll-top ($position: interval(2),$size: interval(6) ) {
   position: fixed;
+  z-index: 10;
   bottom: $position;
   right: $position;
   width: $size;

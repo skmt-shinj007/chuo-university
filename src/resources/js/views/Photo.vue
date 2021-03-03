@@ -29,6 +29,10 @@
 
     <provider-ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
 
+    <div class="photo__scroll-top">
+      <scroll-top-button/>
+    </div>
+
   </section>
 </div>
 </template>
@@ -43,6 +47,7 @@ import ProviderTicketModalComponent from '../components/modules/modal/ProviderTi
 // config json import
 import Data from '../config/data.json';
 import Config from '../config/config.json';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
@@ -50,6 +55,7 @@ export default {
     ImagesComponent,
     ProviderTicketComponent,
     ProviderTicketModalComponent,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -172,6 +178,10 @@ export default {
     @include mq(md) {
       margin-top: 0;
     }
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 

@@ -69,6 +69,10 @@
     </section>
   </div>
 
+  <div class="history__scroll-top">
+    <scroll-top-button/>
+  </div>
+
 </div>
 </template>
 
@@ -79,6 +83,7 @@ import ContentsTitleComponent from '../components/modules/ContentsTitleComponent
 import HistoryBoxComponent from '../components/contents/HistoryBoxComponent';
 import IconTableComponent from '../components/modules/table/IconTableComponent';
 import ChampionsCardComponent from '../components/modules/card/ChampionsCardComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
@@ -86,6 +91,7 @@ export default {
     HistoryBoxComponent,
     IconTableComponent,
     ChampionsCardComponent,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -266,6 +272,10 @@ export default {
 
   &__winner {
     margin: 0 auto;
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 

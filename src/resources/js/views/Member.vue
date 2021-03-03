@@ -52,12 +52,17 @@
 
   <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
 
+  <div class="member__scroll-top">
+    <scroll-top-button/>
+  </div>
+
 </div>
 </template>
 
 <script>
 // component import
 import MainVisualComponent from '../components/contents/MainVisualComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TicketModalComponent from '../components/modules/modal/TicketModalComponent.vue';
 import TableComponent from '../components/modules/table/TableComponent.vue';
@@ -73,6 +78,7 @@ export default {
     UserTicketComponent,
     TicketModalComponent,
     TableComponent,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -188,6 +194,10 @@ export default {
   &__staff {
     padding-bottom: interval(10);
     margin-bottom: 0;
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 

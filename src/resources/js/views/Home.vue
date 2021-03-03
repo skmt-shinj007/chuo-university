@@ -34,7 +34,7 @@
     </div>
 
     <div class="home__scroll-top">
-      <scroll-top-button-component/>
+      <scroll-top-button/>
     </div>
 
   </div>
@@ -47,7 +47,7 @@ import MainVisualComponent from '../components/contents/MainVisualComponent';
 import NewsComponent from '../components/contents/NewsComponent';
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import TextBoxComponent from '../components/modules/TextBoxComponent';
-import ScrollTopButtonComponent from '../components/modules/button/ScrollTopButtonComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
@@ -55,7 +55,7 @@ export default {
     NewsComponent,
     ContentsTitleComponent,
     TextBoxComponent,
-    ScrollTopButtonComponent,
+    ScrollTopButton,
   },
 
   data() {
@@ -131,7 +131,7 @@ export default {
   }
 
   &__scroll-top {
-    @include scroll-button();
+    @include scroll-top();
   }
 }
 

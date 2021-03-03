@@ -106,12 +106,18 @@
       <link-button-component :link="messages.Links.Photo"/>
     </div>
   </section>
+
+  <div class="club__scroll-top">
+    <scroll-top-button/>
+  </div>
 </div>
 </template>
 
 <script>
-// component import
+// data
 import Data from '../config/data.json';
+
+// component import
 import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
 import GoogleMapComponent from '../components/modules/GoogleMapComponent';
 import conceptCardComponent from '../components/modules/card/conceptCardComponent';
@@ -123,6 +129,7 @@ import DormitoryTicketComponent from '../components/modules/ticket/DormitoryTick
 import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
 import LinkButtonComponent from '../components/modules/button/LinkButtonComponent';
 import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
+import scrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
 
 export default {
   components: {
@@ -137,6 +144,7 @@ export default {
     PlayerSliderComponent,
     LinkButtonComponent,
     ArrangeImagesComponent,
+    scrollTopButton,
   },
   data() {
     return {
@@ -328,6 +336,10 @@ const imageApiResponse = [
 
   &__photo {
     margin-top: interval(5);
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 

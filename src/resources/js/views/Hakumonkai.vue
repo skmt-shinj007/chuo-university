@@ -41,6 +41,10 @@
       <link-button-component :link="messages.Links.ToContact"/>
     </div>
   </section>
+
+  <div class="hakumonkai__scroll-top">
+    <scroll-top-button/>
+  </div>
 </div>
 </template>
 
@@ -54,6 +58,7 @@ import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComp
 
 // data import
 import Data from '../config/data.json';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
@@ -62,6 +67,7 @@ export default {
     PlayerCardComponent,
     LinkButtonComponent,
     PlayerSliderComponent,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -105,6 +111,10 @@ export default {
     @include mq(sm) {
       @include flex(row nowrap, flex-start, stretch);
     }
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 
