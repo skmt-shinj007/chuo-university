@@ -49,31 +49,23 @@ export default {
     },
   },
 
+  watch: {
+    windowWidth() {
+      this.getWidth();
+    },
+  },
+
   mounted() {
-    /**
-     * 1.描画後にチケットの幅を取得（デフォ値を代入）
-     * 2.チケットのサイズをリアルタイムで取得
-     */
     this.getWidth();
-    window.addEventListener('resize', this.getWidth);
   },
 
   methods: {
     /**
-     * [チケットの幅を変数にぶち込む]
-     * removeEventListener > 無名関数だと解除できないので処理をメソッドとして登録
+     * [写真の幅を変数にぶち込む]
      */
     getWidth() {
       this.itemWidth = this.$refs.item[0].offsetWidth;
     },
-  },
-
-  beforeDestroy() {
-    /**
-     * 登録したイベントを破棄
-     * ! 無名関数はイベント解除できないので注意
-     */
-    window.removeEventListener('resize', this.getWidth);
   },
 }
 </script>
