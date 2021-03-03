@@ -1,7 +1,7 @@
 <template>
 <div class="news">
 
-  <contents-title :title="messages.SectionTitles.News.Main" :subTitle="messages.SectionTitles.News.Sub"/>
+  <contents-title :title="messages.SectionTitles.News"/>
 
   <div class="news__loading" v-if="loading">
     <!-- <transition-group name="load" tag="div"> -->

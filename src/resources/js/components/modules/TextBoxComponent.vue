@@ -1,7 +1,7 @@
 <template>
 <div class="text-box">
   <div class="text-box__title">
-    <contents-title :title="content.title.Main" :subTitle="content.title.Sub"/>
+    <contents-title :title="content.title"/>
   </div>
   <div class="text-box__text">
     <p class="nl2br" v-text="content.text"></p>

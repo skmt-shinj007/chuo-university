@@ -2,7 +2,7 @@
 <div class="history">
 
   <section class="history__archive">
-    <contents-title :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
+    <contents-title :title="messages.SectionTitles.History"/>
 
     <div class="archive" ref="archive">
 
@@ -42,17 +42,14 @@
   </section>
 
   <section class="history__trophies">
-    <contents-title :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
+    <contents-title :title="messages.SectionTitles.PrimaryTitles"/>
 
     <icon-table :tableItems="trophies"/>
   </section>
 
   <div class="background-darkblue">
     <section class="history__winner">
-      <contents-title
-        :title="messages.SectionTitles.Champions.Main"
-        :subTitle="messages.SectionTitles.Champions.Sub"
-        color="white"/>
+      <contents-title :title="messages.SectionTitles.Champions" color="white"/>
 
       <div class="winner__card-group">
         <div class="winner__card" v-for="(champion, n) in champions" :key="n" ref="championCard">

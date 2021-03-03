@@ -10,9 +10,7 @@
   </div>
 
   <section class="member__players">
-    <contents-title
-      :title="messages.SectionTitles.Players.Main"
-      :subTitle="messages.SectionTitles.Players.Sub"/>
+    <contents-title :title="messages.SectionTitles.Players"/>
 
     <div class="ticket-group">
       <div class="ticket" ref="playerTicket"
@@ -32,9 +30,7 @@
   </section>
 
   <section class="member__staff">
-    <contents-title
-      :title="messages.SectionTitles.Staff.Main"
-      :subTitle="messages.SectionTitles.Staff.Sub"/>
+    <contents-title :title="messages.SectionTitles.Staff"/>
 
     <div class="ticket-group">
       <div class="ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">

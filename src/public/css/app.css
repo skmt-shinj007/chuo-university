@@ -682,27 +682,27 @@ import用ファイル
 /**
  * component
  */
-.contents-title {
+.title {
   padding: 2.5rem 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
-.contents-title-white {
+.title-white {
   color: #ffffff;
 }
-.contents-title__assistance {
+.title__assistance {
   font-size: 0.625rem;
   letter-spacing: 2px;
   font-weight: normal;
 }
-.contents-title__primary {
+.title__primary {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   position: relative;
 }
-.contents-title__primary::after {
+.title__primary::after {
   content: "";
   display: block;
   width: 50px;
@@ -713,7 +713,7 @@ import用ファイル
   transform: translateX(-50%);
   background-color: #091e2f;
 }
-.contents-title.contents-title-white .contents-title__primary::after {
+.title-white .title__primary::after {
   background-color: #ffffff;
 }@charset "UTF-8";
 /*

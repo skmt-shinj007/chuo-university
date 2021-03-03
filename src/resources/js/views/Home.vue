@@ -22,10 +22,7 @@
 
     <div class="home__background">
       <section class="home__support">
-        <contents-title
-          :title="messages.SectionTitles.Support.Main"
-          :subTitle="messages.SectionTitles.Support.Sub"
-          color="white"/>
+        <contents-title :title="messages.SectionTitles.Support" color="white"/>
 
         <div class="support__text">
           <p class="nl2br" v-text="messages.Home.Support"/>

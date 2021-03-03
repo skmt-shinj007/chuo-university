@@ -7,7 +7,7 @@
 
   <div class="background-darkblue">
     <section class="club__concept">
-      <contents-title :title="messages.SectionTitles.Concept.Main" :subTitle="messages.SectionTitles.Concept.Sub" color="white"/>
+      <contents-title :title="messages.SectionTitles.Concept" color="white"/>
 
       <div class="concept__card-group">
         <div class="concept__card" v-for="(concept, n) in concepts" :key="n">
@@ -19,7 +19,7 @@
   </div>
 
   <section class="club__practice">
-    <contents-title :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
+    <contents-title :title="messages.SectionTitles.Practice"/>
 
     <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
@@ -51,7 +51,7 @@
   </section>
 
   <section class="club__dormitory">
-    <contents-title :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
+    <contents-title :title="messages.SectionTitles.Dormitory"/>
 
     <div class="dormitory__lead">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
@@ -79,7 +79,7 @@
 
   <div class="background-darkblue">
     <section class="club__member">
-      <contents-title :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
+      <contents-title :title="messages.SectionTitles.Member" color="white"/>
 
       <player-slider :players="players"/>
 
@@ -98,7 +98,7 @@
   </div>
 
   <section class="club__photo">
-    <contents-title :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
+    <contents-title :title="messages.SectionTitles.Photo"/>
 
     <arrange-images :imagesData="imagesData"/>
 
