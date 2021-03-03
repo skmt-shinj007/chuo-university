@@ -15,29 +15,6 @@ export default {
 <style lang="scss" scoped>
 .google-map {
 
-  &__map {
-    width: 100%;
-    height: $map-height-sp;
 
-    @include mq(md) {
-      height: $map-height-pc;
-    }
-  }
-
-  &__attentionText {
-    margin: interval(1) auto 0 auto;
-    display: block;
-    width: 80%;
-    text-align: center;
-    font-size: font(10);
-    font-weight: normal;
-    letter-spacing: 1.5px;
-
-    @include mq(md) {
-      text-align: end;
-      width: 100%;
-      padding: 0 interval(1);
-    }
-  }
 }
 </style>

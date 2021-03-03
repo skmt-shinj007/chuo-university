@@ -15,9 +15,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -366,9 +363,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -730,9 +724,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -1103,9 +1094,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -1544,9 +1532,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -1923,9 +1908,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -2295,9 +2277,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -2803,9 +2782,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -3116,32 +3092,7 @@ import用ファイル
  */
 /**
  * component
- */
-.google-map__map[data-v-161a410d] {
-  width: 100%;
-  height: 300px;
-}
-@media screen and (min-width: 1025px) {
-.google-map__map[data-v-161a410d] {
-    height: 400px;
-}
-}
-.google-map__attentionText[data-v-161a410d] {
-  margin: 0.5rem auto 0 auto;
-  display: block;
-  width: 80%;
-  text-align: center;
-  font-size: 0.625rem;
-  font-weight: normal;
-  letter-spacing: 1.5px;
-}
-@media screen and (min-width: 1025px) {
-.google-map__attentionText[data-v-161a410d] {
-    text-align: end;
-    width: 100%;
-    padding: 0 0.5rem;
-}
-}@charset "UTF-8";
+ */@charset "UTF-8";
 /*
 import用ファイル
 グローバルに使用する変数やmixinをインポート
@@ -3156,9 +3107,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -3558,9 +3506,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -3931,9 +3876,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -4290,9 +4232,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -4702,9 +4641,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -5070,9 +5006,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -5443,9 +5376,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -5825,9 +5755,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -6175,9 +6102,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -6570,9 +6494,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -6917,9 +6838,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -7289,9 +7207,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -7687,6 +7602,26 @@ import用ファイル
 .practice__map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
+.practice__map > iframe[data-v-357d3955] {
+  width: 100%;
+  height: 20rem;
+}
+.practice__map-text[data-v-357d3955] {
+  margin: 0.5rem auto 0 auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  font-size: 0.625rem;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+}
+@media screen and (min-width: 1025px) {
+.practice__map-text[data-v-357d3955] {
+    text-align: end;
+    width: 100%;
+    padding: 0 0.5rem;
+}
+}
 .practice__image-group[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
@@ -7806,9 +7741,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -8409,9 +8341,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -8894,9 +8823,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -9301,9 +9227,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -9660,9 +9583,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -10051,9 +9971,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -10457,9 +10374,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -10868,9 +10782,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -11251,9 +11162,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -11607,9 +11515,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -12013,9 +11918,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -12432,9 +12334,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -12824,9 +12723,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -13189,9 +13085,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -13709,9 +13602,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -14140,9 +14030,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -14503,9 +14390,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -14929,9 +14813,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -15482,9 +15363,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -15849,9 +15727,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -16360,9 +16235,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -17249,9 +17121,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -17660,9 +17529,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -18223,9 +18089,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -18728,9 +18591,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -19116,9 +18976,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
