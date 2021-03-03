@@ -13,10 +13,10 @@
     <div class="player-card__tag-group">
 
       <div class="player-card__tag">
-        <position-tag-component :position="player.position"/>
+        <position-tag :position="player.position"/>
       </div>
       <div class="player-card__tag">
-        <grade-tag-component v-if="player.grade" :grade="player.grade"/>
+        <grade-tag v-if="player.grade" :grade="player.grade"/>
       </div>
     </div>
 
@@ -33,16 +33,15 @@
 
 <script>
 // component import
-import TagComponent from '../tag/TagComponent';
-import PositionTagComponent from '../tag/PositionTagComponent';
-import GradeTagComponent from '../tag/GradeTagComponent';
+import PositionTag from '../tag/PositionTagComponent';
+import GradeTag from '../tag/GradeTagComponent';
 
 export default {
   components: {
-    TagComponent,
-    PositionTagComponent,
-    GradeTagComponent,
+    PositionTag,
+    GradeTag,
   },
+
   props: {
     player: {
       type: Object,

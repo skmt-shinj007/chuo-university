@@ -1,20 +1,20 @@
 <template>
 <div class="grade-tag">
-  <tag-component>
+  <tag>
     <span class="grade-tag__content" :class="[sizing, {'grade-tag__content--responsive': responsive}]">
       {{ grade }}年生
     </span>
-  </tag-component>
+  </tag>
 </div>
 </template>
 
 <script>
 // component import
-import TagComponent from './TagComponent'
+import Tag from './TagComponent'
 
 export default {
   components: {
-    TagComponent
+    Tag
   },
 
   props: {
