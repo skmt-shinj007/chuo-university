@@ -2,16 +2,16 @@
 <div class="club">
 
   <div class="club__mainVisualSlider">
-    <main-visual-slider-component :images="mainVisualImages"/>
+    <main-visual-slider :images="mainVisualImages"/>
   </div>
 
   <div class="background-darkblue">
     <section class="club__concept">
-      <contents-title-component :title="messages.SectionTitles.Concept.Main" :subTitle="messages.SectionTitles.Concept.Sub" color="white"/>
+      <contents-title :title="messages.SectionTitles.Concept.Main" :subTitle="messages.SectionTitles.Concept.Sub" color="white"/>
 
       <div class="concept__card-group">
         <div class="concept__card" v-for="(concept, n) in concepts" :key="n">
-          <concept-card-component :concept="concept"/>
+          <concept-card :concept="concept"/>
         </div>
       </div>
 
@@ -19,25 +19,25 @@
   </div>
 
   <section class="club__practice">
-    <contents-title-component :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
+    <contents-title :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
 
     <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
 
     <div class="practice__map">
-      <google-map-component/>
+      <google-map/>
     </div>
 
     <!-- PCデバイス幅 以下 -->
     <div class="practice__slider" v-if="windowWidth < breakpointPc">
-      <contents-image-slider-component :images="courtImages"/>
+      <contents-image-slider :images="courtImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
     <div class="practice__image-group" v-if="windowWidth >= breakpointPc">
       <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
-        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
+        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
       </div>
     </div>
 
@@ -51,7 +51,7 @@
   </section>
 
   <section class="club__dormitory">
-    <contents-title-component :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
+    <contents-title :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
 
     <div class="dormitory__lead">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
@@ -59,19 +59,19 @@
 
     <div class="dormitory__ticket-group">
       <div class="dormitory__ticket" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-ticket-component :dormitoryData="dormitoryInformation"/>
+        <dormitory-ticket :dormitoryData="dormitoryInformation"/>
       </div>
     </div>
 
     <!-- PCデバイス幅 以下 -->
     <div class="dormitory__slider" v-if="windowWidth < breakpointPc">
-      <contents-image-slider-component :images="dormitoryImages"/>
+      <contents-image-slider :images="dormitoryImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
     <div class="dormitory__image-group" v-if="windowWidth >= breakpointPc">
       <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
-        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
       </div>
     </div>
 
@@ -79,9 +79,9 @@
 
   <div class="background-darkblue">
     <section class="club__member">
-      <contents-title-component :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
+      <contents-title :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
 
-      <player-slider-component :players="players"/>
+      <player-slider :players="players"/>
 
       <div class="member__number">
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
@@ -91,19 +91,19 @@
         </div>
 
         <div class="member__button">
-          <link-button-component :link="messages.Links.Member"/>
+          <link-button :link="messages.Links.Member"/>
         </div>
       </div>
     </section>
   </div>
 
   <section class="club__photo">
-    <contents-title-component :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
+    <contents-title :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <arrange-images-component :imagesData="imagesData"/>
+    <arrange-images :imagesData="imagesData"/>
 
     <div class="photo__button">
-      <link-button-component :link="messages.Links.Photo"/>
+      <link-button :link="messages.Links.Photo"/>
     </div>
   </section>
 
@@ -118,32 +118,32 @@
 import Data from '../config/data.json';
 
 // component import
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import GoogleMapComponent from '../components/modules/GoogleMapComponent';
-import conceptCardComponent from '../components/modules/card/conceptCardComponent';
-import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
-import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import GoogleMap from '../components/modules/GoogleMapComponent';
+import conceptCard from '../components/modules/card/conceptCardComponent';
+import ContentsImageSlider from '../components/modules/slider/contentsImageSliderComponent';
+import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
-import DormitoryTicketComponent from '../components/modules/ticket/DormitoryTicketComponent';
-import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
-import LinkButtonComponent from '../components/modules/button/LinkButtonComponent';
-import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
+import CaptionBarImage from '../components/modules/CaptionBarImageComponent';
+import DormitoryTicket from '../components/modules/ticket/DormitoryTicketComponent';
+import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
+import LinkButton from '../components/modules/button/LinkButtonComponent';
+import ArrangeImages from '../components/contents/ArrangeImagesComponent';
 import scrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
 
 export default {
   components: {
-    ContentsTitleComponent,
-    conceptCardComponent,
-    MainVisualSliderComponent,
+    ContentsTitle,
+    conceptCard,
+    MainVisualSlider,
     TableComponent,
-    GoogleMapComponent,
-    ContentsImageSliderComponent,
-    CaptionBarImageComponent,
-    DormitoryTicketComponent,
-    PlayerSliderComponent,
-    LinkButtonComponent,
-    ArrangeImagesComponent,
+    GoogleMap,
+    ContentsImageSlider,
+    CaptionBarImage,
+    DormitoryTicket,
+    PlayerSlider,
+    LinkButton,
+    ArrangeImages,
     scrollTopButton,
   },
   data() {
