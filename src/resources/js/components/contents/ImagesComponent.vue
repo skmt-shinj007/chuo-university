@@ -5,7 +5,7 @@
   <div class="images__filter">
     <span class="images__filter-name">{{ messages.FunctionName.Filter }}</span>
 
-    <pull-down-table-component :titles="filter.year" :menus="years" @select="select = $event"/>
+    <pull-down-table :titles="filter.year" :menus="years" @select="select = $event"/>
   </div>
 
   <!-- 写真 -->
@@ -18,7 +18,7 @@
   </div>
 
   <!-- 写真クリック後のモーダル -->
-  <image-modal-component
+  <image-modal
     v-if="showModal"
     @close="closeModal"
     :selectIndex="selectImageIndex"
@@ -26,7 +26,7 @@
 
   <!-- もっと見るボタン -->
   <div class="images__button" v-if="buttonShow">
-    <view-all-button-component :clickEvent="viewMore"/>
+    <view-all-button :clickEvent="viewMore"/>
   </div>
 
 </div>
@@ -34,15 +34,15 @@
 
 <script>
 // component import
-import ViewAllButtonComponent from '../modules/button/ViewAllButtonComponent';
-import PullDownTableComponent from '../modules/table/PullDownTableComponent';
-import ImageModalComponent from '../modules/modal/ImageModalComponent';
+import ViewAllButton from '../modules/button/ViewAllButtonComponent';
+import PullDownTable from '../modules/table/PullDownTableComponent';
+import ImageModal from '../modules/modal/ImageModalComponent';
 
 export default {
   components: {
-    ViewAllButtonComponent,
-    PullDownTableComponent,
-    ImageModalComponent,
+    ViewAllButton,
+    PullDownTable,
+    ImageModal,
   },
 
   data() {

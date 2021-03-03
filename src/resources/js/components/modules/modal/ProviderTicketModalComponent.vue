@@ -44,17 +44,11 @@
 
 <script>
 // component import
-import TagComponent from '../tag/TagComponent.vue';
-import PositionTagComponent from '../tag/PositionTagComponent.vue';
-import GradeTagComponent from '../tag/GradeTagComponent.vue';
-import TableComponent from '../table/TableComponent.vue';
+
 
 export default {
   components: {
-    TagComponent,
-    PositionTagComponent,
-    GradeTagComponent,
-    TableComponent,
+
   },
 
   data() {
