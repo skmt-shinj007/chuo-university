@@ -111,7 +111,7 @@
   <section class="club__photo">
     <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <arrange-images :images="imagesData"/>
+    <arrange-images :images="images"/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
@@ -169,7 +169,7 @@ export default {
       dormitoryImages: [],
       players: [],
       memberNumber: [],
-      imagesData: [],
+      images: [],
     }
   },
 
@@ -178,7 +178,7 @@ export default {
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
-    imageApiResponse.forEach(element => this.imagesData.push(element));
+    this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
 
     // config/data.jsonから引っ張る
     this.$data.data.Concept.forEach(element => this.concepts.push(element));
@@ -273,56 +273,6 @@ const memberNumberData = [
     key: 1,
     value: 6,
   }
-];
-
-/**
- * test Api response : 画像ストレージからのAPIレスポンス（想定）
- */
-const imageApiResponse = [
-  {
-    path: 'player01.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player02.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player03.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player04.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player05.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player06.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player07.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player08.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player09.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player10.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player11.jpg',
-    alt: '写真の補足テキスト',
-  },
 ];
 </script>
 

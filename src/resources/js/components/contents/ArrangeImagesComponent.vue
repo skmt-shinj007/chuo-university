@@ -3,8 +3,8 @@
   <ul class="arrange-images__list">
     <li class="arrange-images__list-item" ref="item" v-for="(image, n) in filterImages" :key="n">
       <!-- img要素をクリックしたらモーダルで拡大表示する -->
-      <figure class="arrange-images__image">
-        <img :src="`/image/${image.path}`" :alt="image.alt">
+      <figure class="arrange-images__image" @click="openModal(image)">
+        <img :src="`/image/${image.src}`" :alt="image.alt">
       </figure>
     </li>
 
@@ -16,23 +16,49 @@
       :style="{ width: `${itemWidth}px` }"/>
 
   </ul>
+
+  <image-modal
+    v-if="showModal"
+    @close="closeModal"
+    :selectIndex="selectImageIndex"
+    :images="filterImages"/>
 </div>
 </template>
 
 <script>
+// component
+import ImageModal from '../modules/modal/ImageModalComponent';
+
 export default {
+  components: {
+    ImageModal,
+  },
+
   data() {
     return {
       /**
        * 写真の表示枚数
+       * @type { Number }
        */
-      display: 10,
+      count: 10,
 
       /**
        * リストアイテムの幅
-       * 空要素を足すときに使用。
+       * @type { Number }
        */
       itemWidth: 0,
+
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      showModal: false,
+
+      /**
+       * [選択した画像のインデックス番号]
+       * @type { Number }
+       */
+      selectImageIndex: 0,
     }
   },
 
@@ -45,7 +71,7 @@ export default {
 
   computed: {
     filterImages() {
-      return this.images.slice(0, this.display);  // 配列の要素をを10個にスライス
+      return this.images.slice(0, this.count);  // 配列の要素をを10個にスライス
     },
   },
 
@@ -65,6 +91,22 @@ export default {
      */
     getWidth() {
       this.itemWidth = this.$refs.item[0].offsetWidth;
+    },
+
+    /**
+     * [モーダル表示切り替え]
+     */
+    openModal(el) {
+      this.showModal = true;
+
+      this.selectImageIndex = this.filterImages.indexOf(el);
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.showModal = false;
+      setTimeout(() => {
+        document.body.classList.remove("modal-open");
+      }, 500);
     },
   },
 }
