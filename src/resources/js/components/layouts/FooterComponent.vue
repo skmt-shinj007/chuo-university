@@ -2,7 +2,7 @@
 <footer class="footer">
 
   <section class="footer__contact">
-    <contents-title-component
+    <contents-title
     :title="messages.SectionTitles.Contact.Main"
     :subTitle="messages.SectionTitles.Contact.Sub"/>
 
@@ -11,14 +11,14 @@
     </div>
 
     <div class="footer__contact-btn">
-      <link-button-component :link="messages.Links.ToContact"/>
+      <link-button :link="messages.Links.ToContact"/>
     </div>
   </section>
 
   <section class="footer__accordion">
     <ul class="footer__list">
       <li class="footer__list-item" v-for="(link, n) in links" :key="n">
-        <accordion-link-component :item="link" color="darkblue"/>
+        <accordion-link :item="link" color="darkblue"/>
       </li>
     </ul>
   </section>
@@ -47,9 +47,9 @@
 
 <script>
 // component import
-import AccordionLinkComponent from '../modules/accordion/AccordionLinkComponent.vue';
-import LinkButtonComponent from '../modules/button/LinkButtonComponent';
-import ContentsTitleComponent from '../modules/ContentsTitleComponent.vue';
+import AccordionLink from '../modules/accordion/AccordionLinkComponent.vue';
+import LinkButton from '../modules/button/LinkButtonComponent';
+import ContentsTitle from '../modules/ContentsTitleComponent.vue';
 
 // data import
 import Data from '../../config/data.json';
@@ -57,9 +57,9 @@ import Config from '../../config/config.json';
 
 export default {
   components: {
-    ContentsTitleComponent,
-    LinkButtonComponent,
-    AccordionLinkComponent,
+    ContentsTitle,
+    LinkButton,
+    AccordionLink,
   },
 
   data() {

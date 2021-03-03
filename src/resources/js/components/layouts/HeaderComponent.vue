@@ -20,7 +20,7 @@
   </div>
 
   <!-- グローバルナビ（モーダル） -->
-  <nav-modal-component v-if="navShow" @close="closeModal"/>
+  <nav-modal v-if="navShow" @close="closeModal"/>
 
 </header>
 </template>
@@ -31,14 +31,14 @@ import Data from '../../config/data.json';
 import Config from '../../config/config.json';
 
 // component import
-import NavModalComponent from '../modules/modal/NavModalComponent.vue';
+import NavModal from '../modules/modal/NavModalComponent.vue';
 
 // mixin
 import TwitterAccount from '../../config/api/TwitterAccount';
 
 export default {
   components: {
-    NavModalComponent,
+    NavModal,
   },
 
   mixins: [TwitterAccount],
