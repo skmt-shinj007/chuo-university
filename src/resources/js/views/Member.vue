@@ -109,6 +109,7 @@ export default {
       ticketWidth: 0,
     }
   },
+
   beforeMount() {
     // TODO:以下DBから情報を引っ張る
 
@@ -140,11 +141,9 @@ export default {
     this.staffTicketNumber = staffTicket.length;
 
     /**
-     * 1.描画後にチケットの幅を取得（デフォ値を代入）
-     * 2.チケットのサイズをリアルタイムで取得
+     * 初期描画時のにチケットの幅を取得
      */
     this.getTicketWidth();
-    window.addEventListener('resize', this.getTicketWidth);
   },
 
   methods: {
@@ -170,13 +169,11 @@ export default {
     },
   },
 
-  beforeDestroy() {
-    /**
-     * 登録したイベントを破棄
-     * ! 無名関数はイベント解除できないので注意
-     */
-    window.removeEventListener('resize', this.getTicketWidth);
-  },
+  watch: {
+    windowWidth() {
+      this.getTicketWidth();
+    }
+  }
 }
 </script>
 
