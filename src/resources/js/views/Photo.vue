@@ -2,22 +2,22 @@
 <div class="photo">
   <!-- フォトギャラリー -->
   <section class="photo__gallery">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.Photo.Main"
       :subTitle="messages.SectionTitles.Photo.Sub"/>
 
-    <images-component :images="images" :filter="config.filter"/>
+    <images :images="images" :filter="config.filter"/>
   </section>
 
   <!-- プロバイダー -->
   <section class="photo__provider">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.Provider.Main"
       :subTitle="messages.SectionTitles.Provider.Sub"/>
 
     <div class="ticket-group">
       <div class="ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
-        <provider-ticket-component :providerObj="provider"/>
+        <provider-ticket :providerObj="provider"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
@@ -27,29 +27,35 @@
         :style="{ width: `${ticketWidth}px` }"/>
     </div>
 
-    <provider-ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
+    <provider-ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
+
+    <div class="photo__scroll-top">
+      <scroll-top-button/>
+    </div>
 
   </section>
 </div>
 </template>
 
 <script>
-// component import
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import ImagesComponent from '../components/contents/ImagesComponent';
-import ProviderTicketComponent from '../components/modules/ticket/ProviderTicketComponent';
-import ProviderTicketModalComponent from '../components/modules/modal/ProviderTicketModalComponent';
-
 // config json import
 import Data from '../config/data.json';
 import Config from '../config/config.json';
 
+// component import
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import Images from '../components/contents/ImagesComponent';
+import ProviderTicket from '../components/modules/ticket/ProviderTicketComponent';
+import ProviderTicketModal from '../components/modules/modal/ProviderTicketModalComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
+
 export default {
   components: {
-    ContentsTitleComponent,
-    ImagesComponent,
-    ProviderTicketComponent,
-    ProviderTicketModalComponent,
+    ContentsTitle,
+    Images,
+    ProviderTicket,
+    ProviderTicketModal,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -172,6 +178,10 @@ export default {
     @include mq(md) {
       margin-top: 0;
     }
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 

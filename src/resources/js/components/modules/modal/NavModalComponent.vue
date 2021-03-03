@@ -19,7 +19,7 @@
         <nav class="nav-modal__main">
           <div class="nav-modal__accordion">
             <div class="nav-modal__accordion-item" v-for="(link, n) in links" :key="n">
-              <accordion-link-component :item="link" @navClose="$emit('close')"/>
+              <accordion-link :item="link" @navClose="$emit('close')"/>
             </div>
           </div>
 
@@ -56,7 +56,7 @@
 
 <script>
 // component import
-import AccordionLinkComponent from '../accordion/AccordionLinkComponent';
+import AccordionLink from '../accordion/AccordionLinkComponent';
 
 // data
 import Config from '../../../config/config.json';
@@ -66,7 +66,7 @@ import TwitterAccount from '../../../config/api/TwitterAccount';
 
 export default {
   components: {
-    AccordionLinkComponent,
+    AccordionLink,
   },
 
   mixins: [TwitterAccount],

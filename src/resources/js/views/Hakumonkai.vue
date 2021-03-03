@@ -1,7 +1,7 @@
 <template>
 <div class="hakumonkai">
   <section class="hakumonkai__header">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.Hakumonkai.Main"
       :subTitle="messages.SectionTitles.Hakumonkai.Sub"/>
 
@@ -13,23 +13,23 @@
   <div class="background-prlx" v-prlx.background="{ speed: 0.3 }"/>
 
   <section class="hakumonkai__officer">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.Officer.Main"
       :subTitle="messages.SectionTitles.Officer.Sub"/>
 
-    <tile-table-component :tableItemHeading="tableHeading" :tableItems="officer"/>
+    <tile-table :tableItemHeading="tableHeading" :tableItems="officer"/>
   </section>
 
   <section class="hakumonkai__active">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.ActiveAlumni.Main"
       :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
 
-    <player-slider-component :players="activeAlumni"/>
+    <player-slider :players="activeAlumni"/>
   </section>
 
   <section class="hakumonkai__message">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.Message.Main"
       :subTitle="messages.SectionTitles.Message.Sub"/>
 
@@ -38,30 +38,36 @@
     </div>
 
     <div class="message__button">
-      <link-button-component :link="messages.Links.ToContact"/>
+      <link-button :link="messages.Links.ToContact"/>
     </div>
   </section>
+
+  <div class="hakumonkai__scroll-top">
+    <scroll-top-button/>
+  </div>
 </div>
 </template>
 
 <script>
 // components import
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import TileTableComponent from '../components/modules/table/TileTableComponent';
-import PlayerCardComponent from '../components/modules/card/PlayerCardComponent';
-import LinkButtonComponent from '../components/modules/button/LinkButtonComponent';
-import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent.vue';
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import TileTable from '../components/modules/table/TileTableComponent';
+import PlayerCard from '../components/modules/card/PlayerCardComponent';
+import LinkButton from '../components/modules/button/LinkButtonComponent';
+import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 // data import
 import Data from '../config/data.json';
 
 export default {
   components: {
-    ContentsTitleComponent,
-    TileTableComponent,
-    PlayerCardComponent,
-    LinkButtonComponent,
-    PlayerSliderComponent,
+    ContentsTitle,
+    TileTable,
+    PlayerCard,
+    LinkButton,
+    PlayerSlider,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -105,6 +111,10 @@ export default {
     @include mq(sm) {
       @include flex(row nowrap, flex-start, stretch);
     }
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 

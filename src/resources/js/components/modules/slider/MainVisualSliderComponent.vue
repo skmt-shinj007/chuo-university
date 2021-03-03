@@ -16,6 +16,7 @@ export default {
   props: {
     images: Array,
   },
+
   computed: {
     params() {
       return {

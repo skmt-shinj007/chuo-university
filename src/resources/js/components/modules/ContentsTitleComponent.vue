@@ -8,11 +8,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-
-    }
-  },
   props: {
     color: {
       type: String,
@@ -27,6 +22,7 @@ export default {
       default: 'タイトル',
     },
   },
+
   computed: {
     colorChange() {
       return (this.color) ? `contents-title-${this.color}` : null;

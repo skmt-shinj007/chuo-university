@@ -17,6 +17,7 @@ export default {
       default: null
     }
   },
+
   computed: {
     imagesArraySlice() {
       return this.imagesData.slice(0, 10);  // 配列の要素をを10個にスライス

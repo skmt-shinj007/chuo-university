@@ -1,12 +1,12 @@
 <template>
 <div class="history-box">
   <div class="history-box__tag-record" @click="openModal">
-    <record-tag-component/>
+    <record-tag/>
   </div>
 
   <!-- タグ押下時のモーダル -->
   <div class="history-box__modal" v-if="showModal">
-    <modal-component @close="closeModal">
+    <modal @close="closeModal">
       <template v-slot:content>
         <div class="record-modal">
           <div class="record-modal__box" v-for="(item, n) in data.Records" :key="n">
@@ -15,7 +15,7 @@
           </div>
         </div>
       </template>
-    </modal-component>
+    </modal>
   </div>
 
   <div class="history-box__title">
@@ -24,7 +24,7 @@
   </div>
 
   <div class="history-box__tag-date">
-    <tag-component color="outline-orange" :content="data.Term"/>
+    <tag color="outline-orange" :content="data.Term"/>
   </div>
 
   <div class="history-box__text-container">
@@ -36,9 +36,9 @@
 
 <script>
 // component import
-import TagComponent from '../modules/tag/TagComponent';
-import RecordTagComponent from '../modules/tag/RecordTagComponent';
-import ModalComponent from '../modules/modal/ModalComponent.vue';
+import Tag from '../modules/tag/TagComponent';
+import RecordTag from '../modules/tag/RecordTagComponent';
+import Modal from '../modules/modal/ModalComponent.vue';
 import TableComponent from '../modules/table/TableComponent.vue';
 
 // data import
@@ -46,9 +46,9 @@ import Data from '../../config/data.json';
 
 export default {
   components: {
-    TagComponent,
-    RecordTagComponent,
-    ModalComponent,
+    Tag,
+    RecordTag,
+    Modal,
     TableComponent,
   },
 

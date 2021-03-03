@@ -22,6 +22,7 @@ export default {
       type: Array,
       default: null
     },
+
     tableItemHeading: {
       type: Array,
       default: null

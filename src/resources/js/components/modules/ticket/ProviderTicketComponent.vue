@@ -12,9 +12,9 @@
     <!-- SNSタグは 2つ まで -->
     <div class="provider-ticket-tag-group">
       <!-- twitter -->
-      <sns-tag-component sns="twitter" content="Twitter"/>
+      <sns-tag sns="twitter" content="Twitter"/>
       <!-- instagram -->
-      <sns-tag-component sns="instagram" content="Instagram"/>
+      <sns-tag sns="instagram" content="Instagram"/>
     </div>
   </div>
 
@@ -27,11 +27,11 @@
 
 <script>
 // component import
-import SnsTagComponent from '../tag/SnsTagComponent';
+import SnsTag from '../tag/SnsTagComponent';
 
 export default {
   components: {
-    SnsTagComponent,
+    SnsTag,
   },
 
   props: {

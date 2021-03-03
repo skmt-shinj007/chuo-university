@@ -53,7 +53,7 @@
   }
 }
 
-// image trim (imgタグの一つ親のタグに指定する)
+// image trimming (imgタグの一つ親のタグに指定する)
 @mixin trimming($aspect) {
   position: relative;
 
@@ -233,6 +233,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+/**
+ * page
+ */
+
+// scroll button common style
+@mixin scroll-top ($position: interval(2),$size: interval(6) ) {
+  position: fixed;
+  z-index: 10;
+  bottom: $position;
+  right: $position;
+  width: $size;
+  height: $size;
 }
 
 /**

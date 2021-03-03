@@ -28,13 +28,13 @@
 
                   <div class="ticket-modal__tag-group">
                     <div class="ticket-modal__tag" v-if="item.post.club">
-                      <tag-component :content="item.post.club" :responsive="true"/>
+                      <tag :content="item.post.club" :responsive="true"/>
                     </div>
                     <div class="ticket-modal__tag" v-if="item.position">
-                      <position-tag-component :position="item.position" :responsive="true"/>
+                      <position-tag :position="item.position" :responsive="true"/>
                     </div>
                     <div class="ticket-modal__tag" v-if="item.grade">
-                      <grade-tag-component :grade="item.grade" :responsive="true"/>
+                      <grade-tag :grade="item.grade" :responsive="true"/>
                     </div>
                   </div>
                 </div>
@@ -64,16 +64,16 @@
 
 <script>
 // component import
-import TagComponent from '../tag/TagComponent.vue';
-import PositionTagComponent from '../tag/PositionTagComponent.vue';
-import GradeTagComponent from '../tag/GradeTagComponent.vue';
+import Tag from '../tag/TagComponent.vue';
+import PositionTag from '../tag/PositionTagComponent.vue';
+import GradeTag from '../tag/GradeTagComponent.vue';
 import TableComponent from '../table/TableComponent.vue';
 
 export default {
   components: {
-    TagComponent,
-    PositionTagComponent,
-    GradeTagComponent,
+    Tag,
+    PositionTag,
+    GradeTag,
     TableComponent,
   },
 

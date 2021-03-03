@@ -27,6 +27,7 @@ export default {
       default: 0,
     },
   },
+
   computed: {
     radiusClass() {
       return (this.radius) ? `c-image__image-radius` : null;

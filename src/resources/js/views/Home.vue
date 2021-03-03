@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <div class="home__main-visual">
-      <main-visual-component/>
+      <main-visual/>
     </div>
 
     <section class="home__news">
-      <news-component/>
+      <news/>
     </section>
 
     <section class="home__about">
@@ -15,14 +15,14 @@
         </figure>
 
         <div class="about__lead">
-          <text-box-component :contentProps="aboutItem"/>
+          <text-box :contentProps="aboutItem"/>
         </div>
       </div>
     </section>
 
     <div class="home__background">
       <section class="home__support">
-        <contents-title-component
+        <contents-title
           :title="messages.SectionTitles.Support.Main"
           :subTitle="messages.SectionTitles.Support.Sub"
           color="white"/>
@@ -33,28 +33,40 @@
       </section>
     </div>
 
+    <div class="home__scroll-top">
+      <scroll-top-button/>
+    </div>
+
   </div>
 </template>
 
 <script>
-// component import
+// data
 import Data from '../config/data.json';
-import MainVisualComponent from '../components/contents/MainVisualComponent';
-import NewsComponent from '../components/contents/NewsComponent';
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import TextBoxComponent from '../components/modules/TextBoxComponent';
+
+// component import
+import MainVisual from '../components/contents/MainVisualComponent';
+import News from '../components/contents/NewsComponent';
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import TextBox from '../components/modules/TextBoxComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
-    MainVisualComponent,
-    NewsComponent,
-    ContentsTitleComponent,
-    TextBoxComponent,
+    MainVisual,
+    News,
+    ContentsTitle,
+    TextBox,
+    ScrollTopButton,
   },
 
   data() {
     return {
       data: Data,
+
+      /**
+       * アバウトセクションを生成するデータ
+       */
       aboutItems: [],
     }
   },
@@ -118,6 +130,10 @@ export default {
     @include mq(sm) {
       height: auto;
     }
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 

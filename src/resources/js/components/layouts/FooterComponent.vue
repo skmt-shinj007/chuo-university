@@ -2,7 +2,7 @@
 <footer class="footer">
 
   <section class="footer__contact">
-    <contents-title-component
+    <contents-title
     :title="messages.SectionTitles.Contact.Main"
     :subTitle="messages.SectionTitles.Contact.Sub"/>
 
@@ -11,14 +11,14 @@
     </div>
 
     <div class="footer__contact-btn">
-      <link-button-component :link="messages.Links.ToContact"/>
+      <link-button :link="messages.Links.ToContact"/>
     </div>
   </section>
 
   <section class="footer__accordion">
     <ul class="footer__list">
       <li class="footer__list-item" v-for="(link, n) in links" :key="n">
-        <accordion-link-component :item="link" color="darkblue"/>
+        <accordion-link :item="link" color="darkblue"/>
       </li>
     </ul>
   </section>
@@ -37,10 +37,6 @@
 
       <span class="address__item">{{ messages.Information.MailAddress }}</span>
     </address>
-
-    <!-- <div class="footer__scroll-top" id="scrollTarget" @click="scrollTop()" :class="{ 'footer__scroll-top--animation': scrollAnimation }">
-      <svg-vue class="footer__scroll-icon" icon="angle-up-double"/>
-    </div> -->
   </section>
 
   <section class="footer__copyright">
@@ -51,9 +47,9 @@
 
 <script>
 // component import
-import AccordionLinkComponent from '../modules/accordion/AccordionLinkComponent.vue';
-import LinkButtonComponent from '../modules/button/LinkButtonComponent';
-import ContentsTitleComponent from '../modules/ContentsTitleComponent.vue';
+import AccordionLink from '../modules/accordion/AccordionLinkComponent.vue';
+import LinkButton from '../modules/button/LinkButtonComponent';
+import ContentsTitle from '../modules/ContentsTitleComponent.vue';
 
 // data import
 import Data from '../../config/data.json';
@@ -61,9 +57,9 @@ import Config from '../../config/config.json';
 
 export default {
   components: {
-    ContentsTitleComponent,
-    LinkButtonComponent,
-    AccordionLinkComponent,
+    ContentsTitle,
+    LinkButton,
+    AccordionLink,
   },
 
   data() {
@@ -82,12 +78,6 @@ export default {
        * @type {Number}
        */
       telephoneNum: '',
-
-      /**
-       * スクロールボタンのアニメーションを制御するフラグ
-       * @type {Boolean}
-       */
-      scrollAnimation: false
     }
   },
 
@@ -118,26 +108,6 @@ export default {
   },
 
   methods: {
-    scrollTop() {
-      // cssアニメーションを行うため、ボタンにクラスをつける
-      this.scrollAnimation = true;
-
-      // css アニメーションが完了次第実行 css fadeout -> .3s
-      setTimeout(() => {
-        /**
-         * ページ最上部までスクロール
-         * ! (safari,IE)非対応
-         */
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        })
-
-        // アニメーションフラグをデフォルトに戻す
-        this.scrollAnimation = false;
-      }, 500);
-    },
-
     /**
      * オブジェクトから配列に変換する処理
      * @param { Object }
@@ -185,30 +155,6 @@ export default {
   &__address {
     position: relative;
     margin-bottom: 0;
-  }
-
-  &__scroll-top {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: interval(6);
-    height: interval(6);
-    padding: interval(1);
-    border: 1px solid color(darkblue);
-    border-radius: radius(circle);
-    @include flex(row nowrap, center, center);
-    cursor: pointer;
-    transition: background-color .3s ease-out;
-
-    @include hover {
-      .footer__scroll-icon {
-        animation: fadeoutTop 1s linear infinite;
-      }
-    }
-  }
-
-  &__scroll-icon {
-    width: interval(1.5);
   }
 
   &__copyright {

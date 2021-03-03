@@ -1,26 +1,26 @@
 <template>
 <div class="text-box">
   <div class="text-box__title">
-    <contents-title-component :title="content.title.Main" :subTitle="content.title.Sub"/>
+    <contents-title :title="content.title.Main" :subTitle="content.title.Sub"/>
   </div>
   <div class="text-box__text">
     <p class="nl2br" v-text="content.text"></p>
   </div>
   <div class="text-box__button">
-    <link-button-component :link="content.button"/>
+    <link-button :link="content.button"/>
   </div>
 </div>
 </template>
 
 <script>
 // components import
-import ContentsTitleComponent from './ContentsTitleComponent';
-import LinkButtonComponent from './button/LinkButtonComponent';
+import ContentsTitle from './ContentsTitleComponent';
+import LinkButton from './button/LinkButtonComponent';
 
 export default {
   components: {
-    ContentsTitleComponent,
-    LinkButtonComponent,
+    ContentsTitle,
+    LinkButton,
   },
 
   data() {

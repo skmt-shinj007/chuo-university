@@ -2,7 +2,7 @@
 <div class="history">
 
   <section class="history__archive">
-    <contents-title-component :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
+    <contents-title :title="messages.SectionTitles.History.Main" :subTitle="messages.SectionTitles.History.Sub"/>
 
     <div class="archive" ref="archive">
 
@@ -19,21 +19,21 @@
         <!-- 大正の歴史 -->
         <div class="archive__wrap" ref="taisho">
           <div class="archive__content">
-            <history-box-component :data="data.Taisho"/>
+            <history-box :data="data.Taisho"/>
           </div>
         </div>
 
         <!-- 昭和の歴史 -->
         <div class="archive__wrap" ref="showa">
           <div class="archive__content" v-for="(showaHistory, i) in showa" :key="`first-${i}`">
-            <history-box-component :data="showaHistory"/>
+            <history-box :data="showaHistory"/>
           </div>
         </div>
 
         <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
         <div class="archive__wrap" ref="heisei">
           <div class="archive__content" v-for="(heiseiHistory, i) in heisei" :key="`second-${i}`">
-            <history-box-component :data="heiseiHistory"/>
+            <history-box :data="heiseiHistory"/>
           </div>
         </div>
 
@@ -42,21 +42,21 @@
   </section>
 
   <section class="history__trophies">
-    <contents-title-component :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
+    <contents-title :title="messages.SectionTitles.PrimaryTitles.Main" :subTitle="messages.SectionTitles.PrimaryTitles.Sub"/>
 
-    <icon-table-component :tableItems="trophies"/>
+    <icon-table :tableItems="trophies"/>
   </section>
 
   <div class="background-darkblue">
     <section class="history__winner">
-      <contents-title-component
+      <contents-title
         :title="messages.SectionTitles.Champions.Main"
         :subTitle="messages.SectionTitles.Champions.Sub"
         color="white"/>
 
       <div class="winner__card-group">
         <div class="winner__card" v-for="(champion, n) in champions" :key="n" ref="championCard">
-          <champions-card-component :cardElement="champion"/>
+          <champions-card :cardElement="champion"/>
         </div>
         <!-- カード配置を左揃えにするため、空の要素を追加 -->
         <div
@@ -69,23 +69,31 @@
     </section>
   </div>
 
+  <div class="history__scroll-top">
+    <scroll-top-button/>
+  </div>
+
 </div>
 </template>
 
 <script>
-// import components
+// data
 import Data from '../config/data.json';
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import HistoryBoxComponent from '../components/contents/HistoryBoxComponent';
-import IconTableComponent from '../components/modules/table/IconTableComponent';
-import ChampionsCardComponent from '../components/modules/card/ChampionsCardComponent';
+
+// import components
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import HistoryBox from '../components/contents/HistoryBoxComponent';
+import IconTable from '../components/modules/table/IconTableComponent';
+import ChampionsCard from '../components/modules/card/ChampionsCardComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
-    ContentsTitleComponent,
-    HistoryBoxComponent,
-    IconTableComponent,
-    ChampionsCardComponent,
+    ContentsTitle,
+    HistoryBox,
+    IconTable,
+    ChampionsCard,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -193,7 +201,7 @@ export default {
       let marginBottom = this.archiveMarginBottom;
       let taishoHeight = this.elementsHeight.taisho + marginBottom;  // 大正の沿革ボックスの高さを代入
       let showaHeight  = taishoHeight + this.elementsHeight.showa + marginBottom;  // 昭和の沿革ボックスの高さを代入
-      let scroll = this.scrollAmount;  // スクロール量
+      let scroll = this.scrollY;  // スクロール量
       let age = this.ageWard;  // タグのテキスト
 
       if (scroll < taishoHeight) {
@@ -214,13 +222,13 @@ export default {
      * @return { Number }  沿革セクションの高さからタグの高さを引いた数値が返る
      */
     scrollLimit() {
-      let scroll = this.scrollAmount;  // スクロール量
+      let scroll = this.scrollY;  // スクロール量
       let archiveHeight = this.elementsHeight.archive;  // 沿革セクション全体の高さ
       let tag = this.elementsHeight.ageTag;  // スクロールタグの高さ
 
-      if (scroll > archiveHeight) this.scrollAmount = archiveHeight - tag;
+      if (scroll > archiveHeight) this.scrollY = archiveHeight - tag;
 
-      return this.scrollAmount;
+      return this.scrollY;
     }
   },
 
@@ -266,6 +274,10 @@ export default {
 
   &__winner {
     margin: 0 auto;
+  }
+
+  &__scroll-top {
+    @include scroll-top();
   }
 }
 
