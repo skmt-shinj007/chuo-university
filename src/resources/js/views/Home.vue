@@ -131,11 +131,7 @@ export default {
   }
 
   &__scroll-top {
-    position: fixed;
-    bottom: interval(2);
-    right: interval(2);
-    width: interval(6);
-    height: interval(6);
+    @include scroll-button();
   }
 }
 
