@@ -9,10 +9,17 @@
 <script>
 export default {
   props: {
+    /**
+     * カラー
+     */
     color: {
       type: String,
       default: '',
     },
+
+    /**
+     * タイトル文言
+     */
     title: {
       type: Object,
       default: 'null',
