@@ -1,19 +1,16 @@
 <template>
   <div class="image-slider">
-    <swiper ref="contentsImageSwiper" :options="params">
+    <swiper :options="params">
       <swiper-slide v-for="(image, n) in images" :key="n">
         <figure class="image-slider__container">
 
           <img class="image-slider__image" :src="`/image/${image.path}`" :alt="image.name">
 
-          <figcaption v-if="image.caption" class="image-slider__caption">
-            <span class="image-slider__caption-content">{{ image.caption }}</span>
-          </figcaption>
-
-          <figcaption v-if="image.capacity" class="image-slider__caption">
-            <span class="image-slider__capacity-number">{{ image.capacity }}</span>
-            <span class="image-slider__secondary-caption">人部屋</span>
-          </figcaption>
+          <slot name="caption" :image="image">
+            <figcaption class="image-slider__caption">
+              <span class="image-slider__caption-content">{{ image.caption }}</span>
+            </figcaption>
+          </slot>
 
         </figure>
       </swiper-slide>
@@ -57,6 +54,10 @@ export default {
       }
     }
   },
+
+  beforeMount() {
+    console.log(this.images);
+  },
 }
 </script>
 
@@ -92,10 +93,6 @@ export default {
 
   &__secondary-caption {
     font-size: font(10);
-  }
-
-  &__capacity-number {
-    font-size: font(16);
   }
 }
 </style>

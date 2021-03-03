@@ -14,7 +14,6 @@
           <concept-card :concept="concept"/>
         </div>
       </div>
-
     </section>
   </div>
 
@@ -33,7 +32,7 @@
 
     <!-- PCデバイス幅 以下 -->
     <div class="practice__slider" v-if="windowWidth < breakpointPc">
-      <contents-image-slider :images="courtImages"/>
+      <image-slider :images="courtImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
@@ -67,13 +66,20 @@
 
     <!-- PCデバイス幅 以下 -->
     <div class="dormitory__slider" v-if="windowWidth < breakpointPc">
-      <contents-image-slider :images="dormitoryImages"/>
+      <image-slider :images="dormitoryImages">
+        <template v-slot:caption="image">
+          <figcaption class="dormitory__caption">
+            <span class="dormitory__caption-number">{{ image.image.caption }}</span>
+            <span class="dormitory__caption-text">人部屋</span>
+          </figcaption>
+        </template>
+      </image-slider>
     </div>
 
     <!-- PCデバイス幅 -->
     <div class="dormitory__image-group" v-if="windowWidth >= breakpointPc">
       <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
-        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.caption"/>
       </div>
     </div>
 
@@ -122,8 +128,8 @@ import Data from '../config/data.json';
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import GoogleMap from '../components/modules/GoogleMapComponent';
-import conceptCard from '../components/modules/card/conceptCardComponent';
-import ContentsImageSlider from '../components/modules/slider/contentsImageSliderComponent';
+import ConceptCard from '../components/modules/card/ConceptCardComponent';
+import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
 import CaptionBarImage from '../components/modules/CaptionBarImageComponent';
@@ -131,22 +137,22 @@ import DormitoryTicket from '../components/modules/ticket/DormitoryTicketCompone
 import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ArrangeImages from '../components/contents/ArrangeImagesComponent';
-import scrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
 
 export default {
   components: {
     ContentsTitle,
-    conceptCard,
+    ConceptCard,
     MainVisualSlider,
     TableComponent,
     GoogleMap,
-    ContentsImageSlider,
+    ImageSlider,
     CaptionBarImage,
     DormitoryTicket,
     PlayerSlider,
     LinkButton,
     ArrangeImages,
-    scrollTopButton,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -230,17 +236,17 @@ const dormitoryImageApiResponse = [
   {
     path: 'dormitory-02.jpg',
     name: '中央大学南平寮の3人部屋',
-    capacity: 3,
+    caption: 3,
   },
   {
     path: 'dormitory-01.jpg',
     name: '中央大学南平寮の4人部屋',
-    capacity: 4,
+    caption: 4,
   },
   {
     path: 'dormitory-03.jpg',
     name: '中央大学南平寮の4人部屋',
-    capacity: 4,
+    caption: 4,
   }
 ];
 
@@ -504,6 +510,30 @@ const imageApiResponse = [
 
   &__slider {
     @extend %slider;
+  }
+
+  &__caption {
+    width: 90%;
+    background-color: rgba($color: color(white), $alpha: .6);
+    border-radius: radius(normal);
+    padding: interval(.5) interval(2);
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: font(10);
+
+    @include mq(sm) {
+      line-height: 2;
+    }
+  }
+
+  &__caption-number {
+    font-size: font(16);
+  }
+
+  &__caption-text {
+    font-size: font(10);
   }
 
   &__image-group {
