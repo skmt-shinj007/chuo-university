@@ -1,16 +1,16 @@
 <template>
 <div class="member">
   <div class="member__main-visual">
-    <main-visual-component>
+    <main-visual>
       <template v-slot:inner>
         <svg-vue class="main-visual__icon" icon="chuo-logo"/>
         <span class="main-visual__title">{{ messages.MainVisual.Member }}</span>
       </template>
-    </main-visual-component>
+    </main-visual>
   </div>
 
   <section class="member__players">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.Players.Main"
       :subTitle="messages.SectionTitles.Players.Sub"/>
 
@@ -20,7 +20,7 @@
           :key="n"
           @click="openModal(player)">
 
-        <user-ticket-component :userObj="player"/>
+        <user-ticket :userObj="player"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
@@ -32,13 +32,13 @@
   </section>
 
   <section class="member__staff">
-    <contents-title-component
+    <contents-title
       :title="messages.SectionTitles.Staff.Main"
       :subTitle="messages.SectionTitles.Staff.Sub"/>
 
     <div class="ticket-group">
       <div class="ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
-        <user-ticket-component :userObj="staffItem"/>
+        <user-ticket :userObj="staffItem"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
@@ -50,7 +50,7 @@
     </div>
   </section>
 
-  <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
+  <ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
 
   <div class="member__scroll-top">
     <scroll-top-button/>
@@ -61,22 +61,22 @@
 
 <script>
 // component import
-import MainVisualComponent from '../components/contents/MainVisualComponent';
+import MainVisual from '../components/contents/MainVisualComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import TicketModalComponent from '../components/modules/modal/TicketModalComponent.vue';
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import TicketModal from '../components/modules/modal/TicketModalComponent.vue';
 import TableComponent from '../components/modules/table/TableComponent.vue';
-import UserTicketComponent from '../components/modules/ticket/UserTicketComponent';
+import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
 // data import
 import Data from '../config/data.json';
 
 export default {
   components: {
-    MainVisualComponent,
-    ContentsTitleComponent,
-    UserTicketComponent,
-    TicketModalComponent,
+    MainVisual,
+    ContentsTitle,
+    UserTicket,
+    TicketModal,
     TableComponent,
     ScrollTopButton,
   },

@@ -13,17 +13,17 @@
     <!-- ユーザーカテゴリーが選手の場合 -->
     <div v-if="userObj.category === 1" class="user-ticket-tag-group">
       <div class="user-ticket-tag">
-        <position-tag-component :position="userObj.position"/>
+        <position-tag :position="userObj.position"/>
       </div>
       <div class="user-ticket-tag">
-        <grade-tag-component :grade="userObj.grade"/>
+        <grade-tag :grade="userObj.grade"/>
       </div>
     </div>
 
     <!-- 選手ではない場合（スタッフ）は役職を出す -->
     <div v-else class="user-ticket-tag-group">
       <div class="user-ticket-tag">
-        <tag-component :content="userObj.post.club"/>
+        <tag :content="userObj.post.club"/>
       </div>
     </div>
   </div>
@@ -37,15 +37,15 @@
 
 <script>
 // component import
-import TagComponent from '../tag/TagComponent';
-import PositionTagComponent from '../tag/PositionTagComponent';
-import GradeTagComponent from '../tag/GradeTagComponent';
+import Tag from '../tag/TagComponent';
+import PositionTag from '../tag/PositionTagComponent';
+import GradeTag from '../tag/GradeTagComponent';
 
 export default {
   components: {
-    TagComponent,
-    PositionTagComponent,
-    GradeTagComponent,
+    Tag,
+    PositionTag,
+    GradeTag,
   },
 
   props: {
