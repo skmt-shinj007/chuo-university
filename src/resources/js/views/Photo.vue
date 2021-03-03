@@ -114,9 +114,8 @@ export default {
     // チケットの要素数を取得 (チケットが一枚の時はenpty要素を増やさない)
     if(ticket.length > 1) this.ticketNumber = ticket.length;
 
-    // チケットのwidthを取得
+    // 初期描画時のチケットwidthを取得
     this.getTicketWidth();
-    window.addEventListener('resize', this.getTicketWidth);
   },
 
   methods: {
@@ -142,9 +141,10 @@ export default {
     },
   },
 
-  beforeDestroy() {
-    // 登録したイベントを破棄
-    window.removeEventListener('resize', this.getTicketWidth);
+  watch: {
+    windowWidth() {
+      this.getTicketWidth();
+    }
   },
 }
 

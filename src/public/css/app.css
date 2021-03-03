@@ -7329,6 +7329,12 @@ import用ファイル
 .prev-leave[data-v-213a8ec6] {
   transform: translateX(0);
   opacity: 0;
+}
+.button-enter-active[data-v-213a8ec6], .button-leave-active[data-v-213a8ec6] {
+  transition: opacity 0.5s;
+}
+.button-enter[data-v-213a8ec6], .button-leave-to[data-v-213a8ec6] {
+  opacity: 0;
 }@charset "UTF-8";
 /*
 import用ファイル
