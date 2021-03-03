@@ -38,7 +38,7 @@
     <!-- PCデバイス幅 -->
     <div class="practice__image-group" v-if="windowWidth >= breakpointPc">
       <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
-        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
+        <caption-image :image="image"/>
       </div>
     </div>
 
@@ -68,10 +68,8 @@
     <div class="dormitory__slider" v-if="windowWidth < breakpointPc">
       <image-slider :images="dormitoryImages">
         <template v-slot:caption="image">
-          <figcaption class="dormitory__caption">
-            <span class="dormitory__caption-number">{{ image.image.caption }}</span>
-            <span class="dormitory__caption-text">人部屋</span>
-          </figcaption>
+          <span class="dormitory__caption">{{ image.image.caption }}</span>
+          <span class="dormitory__caption-sub">人部屋</span>
         </template>
       </image-slider>
     </div>
@@ -79,7 +77,12 @@
     <!-- PCデバイス幅 -->
     <div class="dormitory__image-group" v-if="windowWidth >= breakpointPc">
       <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
-        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.caption"/>
+        <caption-image :image="image">
+          <template v-slot:caption="image">
+            <span class="dormitory__caption">{{ image.image.caption }}</span>
+            <span class="dormitory__caption-sub">人部屋</span>
+          </template>
+        </caption-image>
       </div>
     </div>
 
@@ -132,7 +135,7 @@ import ConceptCard from '../components/modules/card/ConceptCardComponent';
 import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import CaptionBarImage from '../components/modules/CaptionBarImageComponent';
+import CaptionImage from '../components/modules/CaptionImageComponent';
 import DormitoryTicket from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
@@ -147,7 +150,7 @@ export default {
     TableComponent,
     GoogleMap,
     ImageSlider,
-    CaptionBarImage,
+    CaptionImage,
     DormitoryTicket,
     PlayerSlider,
     LinkButton,
@@ -513,26 +516,10 @@ const imageApiResponse = [
   }
 
   &__caption {
-    width: 90%;
-    background-color: rgba($color: color(white), $alpha: .6);
-    border-radius: radius(normal);
-    padding: interval(.5) interval(2);
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: font(10);
-
-    @include mq(sm) {
-      line-height: 2;
-    }
-  }
-
-  &__caption-number {
     font-size: font(16);
   }
 
-  &__caption-text {
+  &__caption-sub {
     font-size: font(10);
   }
 

@@ -6,11 +6,11 @@
 
           <img class="image-slider__image" :src="`/image/${image.path}`" :alt="image.name">
 
-          <slot name="caption" :image="image">
-            <figcaption class="image-slider__caption">
-              <span class="image-slider__caption-content">{{ image.caption }}</span>
-            </figcaption>
-          </slot>
+          <figcaption class="image-slider__bar">
+            <slot name="caption" :image="image">
+              <span class="image-slider__caption">{{ image.caption }}</span>
+            </slot>
+          </figcaption>
 
         </figure>
       </swiper-slide>
@@ -75,7 +75,7 @@ export default {
     border-radius: radius(normal);
   }
 
-  &__caption {
+  &__bar {
     width: 90%;
     background-color: rgba($color: color(white), $alpha: .6);
     border-radius: radius(normal);
@@ -89,10 +89,6 @@ export default {
     @include mq(sm) {
       line-height: 2;
     }
-  }
-
-  &__secondary-caption {
-    font-size: font(10);
   }
 }
 </style>

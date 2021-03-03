@@ -32,403 +32,6 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-9745667e {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@keyframes iconSlide-data-v-9745667e {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@-webkit-keyframes fadeoutDown-data-v-9745667e {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@keyframes fadeoutDown-data-v-9745667e {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@-webkit-keyframes fadeoutTop-data-v-9745667e {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@keyframes fadeoutTop-data-v-9745667e {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@-webkit-keyframes bound-data-v-9745667e {
-0% {
-    transform: translate(0%, -100%);
-}
-30% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-40% {
-    transform: translate(0%, -40%);
-}
-55% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-60% {
-    transform: translate(0%, -15%);
-}
-70% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-75% {
-    transform: translate(0%, -5%);
-}
-95% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-100% {
-    transform: scale(1, 1);
-}
-}
-@keyframes bound-data-v-9745667e {
-0% {
-    transform: translate(0%, -100%);
-}
-30% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-40% {
-    transform: translate(0%, -40%);
-}
-55% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-60% {
-    transform: translate(0%, -15%);
-}
-70% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-75% {
-    transform: translate(0%, -5%);
-}
-95% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-100% {
-    transform: scale(1, 1);
-}
-}
-@-webkit-keyframes rotation-data-v-9745667e {
-0% {
-    transform: translateX(-50rem) rotate(0deg);
-}
-100% {
-    transform: translateX(0) rotate(1455deg);
-}
-}
-@keyframes rotation-data-v-9745667e {
-0% {
-    transform: translateX(-50rem) rotate(0deg);
-}
-100% {
-    transform: translateX(0) rotate(1455deg);
-}
-}
-@-webkit-keyframes loading-data-v-9745667e {
-0% {
-    height: 0;
-}
-50% {
-    height: 80%;
-}
-100% {
-    height: 0;
-}
-}
-@keyframes loading-data-v-9745667e {
-0% {
-    height: 0;
-}
-50% {
-    height: 80%;
-}
-100% {
-    height: 0;
-}
-}
-/**
- * common mixin (サイト内でどこでも使う可能性がある)
- */
-/**
- * gradation
- */
-/**
- * element
- */
-/**
- * 装飾用 mixin
- */
-/**
- * page
- */
-/**
- * component
- */
-.concept-card[data-v-9745667e] {
-  position: relative;
-  width: 50%;
-  margin: 0 auto;
-  color: #ffffff;
-  border: 3px solid #ffffff;
-  border-radius: 4px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  background: #10334e;
-  background: radial-gradient(ellipse at center, #10334e 0%, #030A10 100%);
-}
-@media screen and (min-width: 560px) {
-.concept-card[data-v-9745667e] {
-    width: 8rem;
-}
-}
-.concept-card[data-v-9745667e]::before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-@media screen and (min-width: 1025px) {
-.concept-card:hover .concept-card__title[data-v-9745667e],
-.concept-card:hover .concept-card__subTitle[data-v-9745667e] {
-    opacity: 0;
-}
-.concept-card:hover .concept-card__text[data-v-9745667e] {
-    opacity: 1;
-}
-}
-.concept-card-inner[data-v-9745667e] {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.concept-card__subTitle[data-v-9745667e] {
-  font-size: 0.625rem;
-  letter-spacing: 2px;
-  transition: all 0.5s ease-in-out;
-}
-.concept-card__title[data-v-9745667e] {
-  font-size: 1rem;
-  transition: all 0.5s ease-in-out;
-}
-.concept-card__text[data-v-9745667e] {
-  color: #ffffff;
-  padding: 0.5rem;
-  text-align: center;
-}
-@media screen and (min-width: 1025px) {
-.concept-card__text[data-v-9745667e] {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    font-weight: bold;
-    transition: all 0.5s ease-in-out;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * ベースとなるフォントサイズ = 16px
- * modules.scssでremに変換して出力
- */
-/**
- * base pixel (8px)
- * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数とキーフレームを定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-/**
- * font size
- * @param 指定したいピクセル数を入力
- * @return 単位をremに変換し出力
- */
-/**
- * @keyframe を定義
- */
 @-webkit-keyframes iconSlide-data-v-3ff6fe5a {
 0% {
     transform: translateX(0);
@@ -3523,6 +3126,403 @@ import用ファイル
 /**
  * @keyframe を定義
  */
+@-webkit-keyframes iconSlide-data-v-9745667e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-9745667e {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown-data-v-9745667e {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown-data-v-9745667e {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-9745667e {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-9745667e {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@-webkit-keyframes bound-data-v-9745667e {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-9745667e {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-9745667e {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+@keyframes rotation-data-v-9745667e {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+@-webkit-keyframes loading-data-v-9745667e {
+0% {
+    height: 0;
+}
+50% {
+    height: 80%;
+}
+100% {
+    height: 0;
+}
+}
+@keyframes loading-data-v-9745667e {
+0% {
+    height: 0;
+}
+50% {
+    height: 80%;
+}
+100% {
+    height: 0;
+}
+}
+/**
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * page
+ */
+/**
+ * component
+ */
+.concept-card[data-v-9745667e] {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 4px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #10334e;
+  background: radial-gradient(ellipse at center, #10334e 0%, #030A10 100%);
+}
+@media screen and (min-width: 560px) {
+.concept-card[data-v-9745667e] {
+    width: 8rem;
+}
+}
+.concept-card[data-v-9745667e]::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+@media screen and (min-width: 1025px) {
+.concept-card:hover .concept-card__title[data-v-9745667e],
+.concept-card:hover .concept-card__subTitle[data-v-9745667e] {
+    opacity: 0;
+}
+.concept-card:hover .concept-card__text[data-v-9745667e] {
+    opacity: 1;
+}
+}
+.concept-card-inner[data-v-9745667e] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.concept-card__subTitle[data-v-9745667e] {
+  font-size: 0.625rem;
+  letter-spacing: 2px;
+  transition: all 0.5s ease-in-out;
+}
+.concept-card__title[data-v-9745667e] {
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+.concept-card__text[data-v-9745667e] {
+  color: #ffffff;
+  padding: 0.5rem;
+  text-align: center;
+}
+@media screen and (min-width: 1025px) {
+.concept-card__text[data-v-9745667e] {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
+ * base pixel (8px)
+ * rem だとフォントサイズに影響するため、pixelで定義
+ */
+/**
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+/**
+ * @keyframe を定義
+ */
 @-webkit-keyframes iconSlide-data-v-7186e4cc {
 0% {
     transform: translateX(0);
@@ -3838,7 +3838,7 @@ import用ファイル
 .image-slider__image[data-v-7186e4cc] {
   border-radius: 4px;
 }
-.image-slider__caption[data-v-7186e4cc] {
+.image-slider__bar[data-v-7186e4cc] {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
@@ -3850,12 +3850,9 @@ import用ファイル
   font-size: 0.625rem;
 }
 @media screen and (min-width: 560px) {
-.image-slider__caption[data-v-7186e4cc] {
+.image-slider__bar[data-v-7186e4cc] {
     line-height: 2;
 }
-}
-.image-slider__secondary-caption[data-v-7186e4cc] {
-  font-size: 0.625rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -4655,7 +4652,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-7fa4fe02 {
+@-webkit-keyframes iconSlide-data-v-6c61d285 {
 0% {
     transform: translateX(0);
 }
@@ -4690,7 +4687,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-7fa4fe02 {
+@keyframes iconSlide-data-v-6c61d285 {
 0% {
     transform: translateX(0);
 }
@@ -4725,7 +4722,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-7fa4fe02 {
+@-webkit-keyframes fadeoutDown-data-v-6c61d285 {
 0% {
     transform: translateY(0);
 }
@@ -4770,7 +4767,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-7fa4fe02 {
+@keyframes fadeoutDown-data-v-6c61d285 {
 0% {
     transform: translateY(0);
 }
@@ -4815,7 +4812,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-7fa4fe02 {
+@-webkit-keyframes fadeoutTop-data-v-6c61d285 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -4825,7 +4822,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-7fa4fe02 {
+@keyframes fadeoutTop-data-v-6c61d285 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -4835,7 +4832,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes bound-data-v-7fa4fe02 {
+@-webkit-keyframes bound-data-v-6c61d285 {
 0% {
     transform: translate(0%, -100%);
 }
@@ -4864,7 +4861,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@keyframes bound-data-v-7fa4fe02 {
+@keyframes bound-data-v-6c61d285 {
 0% {
     transform: translate(0%, -100%);
 }
@@ -4893,7 +4890,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@-webkit-keyframes rotation-data-v-7fa4fe02 {
+@-webkit-keyframes rotation-data-v-6c61d285 {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -4901,7 +4898,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@keyframes rotation-data-v-7fa4fe02 {
+@keyframes rotation-data-v-6c61d285 {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -4909,7 +4906,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@-webkit-keyframes loading-data-v-7fa4fe02 {
+@-webkit-keyframes loading-data-v-6c61d285 {
 0% {
     height: 0;
 }
@@ -4920,7 +4917,7 @@ import用ファイル
     height: 0;
 }
 }
-@keyframes loading-data-v-7fa4fe02 {
+@keyframes loading-data-v-6c61d285 {
 0% {
     height: 0;
 }
@@ -4949,16 +4946,16 @@ import用ファイル
 /**
  * component
  */
-.caption-bar-image[data-v-7fa4fe02] {
+.caption-image[data-v-6c61d285] {
   width: 100%;
   position: relative;
 }
-.caption-bar-image[data-v-7fa4fe02]::before {
+.caption-image[data-v-6c61d285]::before {
   content: "";
   display: block;
   padding-bottom: 66.7%;
 }
-.caption-bar-image > img[data-v-7fa4fe02] {
+.caption-image > img[data-v-6c61d285] {
   position: absolute;
   top: 0;
   left: 0;
@@ -4967,11 +4964,11 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.caption-bar-image__image[data-v-7fa4fe02] {
+.caption-image__image[data-v-6c61d285] {
   border-radius: 2px;
   box-shadow: 0 0 6px #b3b3b3;
 }
-.caption-bar-image__bar[data-v-7fa4fe02] {
+.caption-image__bar[data-v-6c61d285] {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
@@ -4982,12 +4979,9 @@ import用ファイル
   left: 50%;
   transform: translateX(-50%);
 }
-.caption-bar-image__caption[data-v-7fa4fe02], .caption-bar-image__secondary-caption[data-v-7fa4fe02] {
+.caption-image__caption[data-v-6c61d285] {
   font-size: 0.625rem;
-}
-.caption-bar-image__capacity-number[data-v-7fa4fe02] {
-  font-size: 0.875rem;
-  font-weight: bold;
+  line-height: 1.2;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -7697,25 +7691,9 @@ import用ファイル
 }
 }
 .dormitory__caption[data-v-357d3955] {
-  width: 90%;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 4px;
-  padding: 0.25rem 1rem;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.625rem;
-}
-@media screen and (min-width: 560px) {
-.dormitory__caption[data-v-357d3955] {
-    line-height: 2;
-}
-}
-.dormitory__caption-number[data-v-357d3955] {
   font-size: 1rem;
 }
-.dormitory__caption-text[data-v-357d3955] {
+.dormitory__caption-sub[data-v-357d3955] {
   font-size: 0.625rem;
 }
 .dormitory__image-group[data-v-357d3955] {
