@@ -59,8 +59,8 @@
     </div>
 
     <div class="dormitory__ticket-group">
-      <div class="dormitory__ticket" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-ticket :dormitoryData="dormitoryInformation"/>
+      <div class="dormitory__ticket" v-for="(information, n) in dormitoryInformations" :key="n">
+        <dormitory-ticket :dormitoryData="information"/>
       </div>
     </div>
 
@@ -111,7 +111,7 @@
   <section class="club__photo">
     <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <arrange-images :imagesData="imagesData"/>
+    <arrange-images :images="imagesData"/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
