@@ -9,13 +9,25 @@
     </section>
 
     <section class="home__about">
-      <div class="about" v-for="(aboutItem, n) in aboutItems" :key="n">
+      <div class="about" v-for="(item, n) in aboutContents" :key="n">
+
         <figure class="about__img">
-          <img :src="`/image/${aboutItem.img.src}.jpg`" :alt="aboutItem.img.alt">
+          <img :src="`/image/${item.img.src}.jpg`" :alt="item.img.alt">
         </figure>
 
-        <div class="about__lead">
-          <text-box :contentProps="aboutItem"/>
+        <div class="about__box">
+          <div class="about__content">
+            <div class="about__title">
+              <contents-title :title="item.title"/>
+            </div>
+            <div class="about__text">
+              <p class="nl2br" v-text="item.text"></p>
+            </div>
+            <div class="about__button">
+              <link-button :link="item.button"/>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -45,7 +57,7 @@ import Data from '../config/data.json';
 import MainVisual from '../components/contents/MainVisualComponent';
 import News from '../components/contents/NewsComponent';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
-import TextBox from '../components/modules/TextBoxComponent';
+import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
@@ -53,7 +65,7 @@ export default {
     MainVisual,
     News,
     ContentsTitle,
-    TextBox,
+    LinkButton,
     ScrollTopButton,
   },
 
@@ -64,13 +76,41 @@ export default {
       /**
        * アバウトセクションを生成するデータ
        */
-      aboutItems: [],
+      aboutContents: [],
     }
   },
 
   beforeMount() {
-    // アバウトセクションを生成するデータを挿入。
-    this.$data.data.HomeAbout.forEach(element => this.aboutItems.push(element));
+    // アバウトセクションを生成するデータを挿入
+    this.$data.data.HomeAbout.forEach(element => this.aboutContents.push(element));
+
+    // タイトルとボタンのデータを置き換える。
+    this.aboutContents.forEach(element => {
+      let el = element;
+
+      // messagesのutton, title オブジェクトを配列に変換する。
+      let LinkLists = this.convertArray(this.$data.messages.Links);
+      let titles = this.convertArray(this.$data.messages.SectionTitles);
+
+      LinkLists.forEach(element => {
+        if (el.button === element.key) el.button = element.value;
+      });
+
+      titles.forEach(element => {
+        if (el.title === element.key) el.title = element.value;
+      });
+    });
+  },
+
+  methods: {
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     * @return [{key:hoge, value:hoge}, {key:hoge, value:hoge}, ...]
+     */
+    convertArray(obj) {
+      return Object.entries(obj).map(([key, value]) => ({key, value}));
+    },
   },
 }
 </script>
@@ -153,7 +193,7 @@ export default {
     }
 
     // テキストボックスを左寄せにする
-    .about__lead {
+    .about__box {
       @include mq(md) {
         margin: 0 auto 0 0;
       }
@@ -173,7 +213,7 @@ export default {
     }
   }
 
-  &__lead {
+  &__box {
     width: 90%;
     max-width: interval(100);
     margin: 0 auto;
@@ -188,6 +228,34 @@ export default {
       width: 60%;
       margin: 0 0 0 auto;
       transform: translateY(-40%);
+    }
+  }
+
+  &__content {
+    padding: 0 interval(2) interval(2) interval(2);
+    background-color: rgba($color: color(white), $alpha: .8);
+    box-shadow: 0px 6px 8px color(shadow);
+
+    @include mq(sm) {
+      padding: 0 interval(3) interval(3) interval(3);
+    }
+
+    @include mq(md) {
+      @include flex(column nowrap, center, center);
+      min-height: interval(50);
+    }
+  }
+
+  &__text {
+    margin-bottom: interval(5);
+  }
+
+  &__button {
+    width: 100%;
+
+    @include mq(sm) {
+      max-width: interval(50);
+      margin: 0 auto;
     }
   }
 }
