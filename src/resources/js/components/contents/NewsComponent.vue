@@ -1,7 +1,7 @@
 <template>
 <div class="news">
 
-  <contents-title-component :title="messages.SectionTitles.News.Main" :subTitle="messages.SectionTitles.News.Sub"/>
+  <contents-title :title="messages.SectionTitles.News.Main" :subTitle="messages.SectionTitles.News.Sub"/>
 
   <div class="news__loading" v-if="loading">
     <!-- <transition-group name="load" tag="div"> -->
@@ -31,7 +31,7 @@
       <span class="err__text">{{ messages.Error.Api.News }}</span>
 
       <div class="err__btn">
-        <primary-button-component :btn="messages.Button.NewsRequest" @clickEvent="getResponse"/>
+        <primary-button :btn="messages.Button.NewsRequest" @clickEvent="getResponse"/>
       </div>
     </div>
   </div>
@@ -41,16 +41,16 @@
 
 <script>
 // components import
-import ContentsTitleComponent from '../modules/ContentsTitleComponent';
-import PrimaryButtonComponent from '../modules/button/PrimaryButtonComponent.vue';
+import ContentsTitle from '../modules/ContentsTitleComponent';
+import PrimaryButton from '../modules/button/PrimaryButtonComponent.vue';
 
 // Library import
 import axios from 'axios';
 
 export default {
   components: {
-    ContentsTitleComponent,
-    PrimaryButtonComponent,
+    ContentsTitle,
+    PrimaryButton,
   },
 
   data() {
