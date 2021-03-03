@@ -2578,8 +2578,8 @@ import用ファイル
  * component
  */
 .scroll-top[data-v-10d75cdd] {
-  width: 3rem;
-  height: 3rem;
+  width: 100%;
+  height: 100%;
   padding: 0.5rem;
   background-color: #e56c2c;
   border-radius: 50%;
@@ -2588,9 +2588,19 @@ import用ファイル
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s ease-out;
 }
 @media screen and (min-width: 1025px) {
+.scroll-top[data-v-10d75cdd] {
+    background-color: rgba(229, 108, 44, 0.7);
+    transition: background-color 0.3s ease-out, -webkit-animation 0.5s;
+    transition: background-color 0.3s ease-out, animation 0.5s;
+    transition: background-color 0.3s ease-out, animation 0.5s, -webkit-animation 0.5s;
+}
+}
+@media screen and (min-width: 1025px) {
+.scroll-top[data-v-10d75cdd]:hover {
+    background-color: #e56c2c;
+}
 .scroll-top:hover .scroll-top__icon[data-v-10d75cdd] {
     -webkit-animation: fadeoutTop-data-v-10d75cdd 1s linear infinite;
             animation: fadeoutTop-data-v-10d75cdd 1s linear infinite;
@@ -2599,6 +2609,17 @@ import用ファイル
 .scroll-top__icon[data-v-10d75cdd] {
   width: 0.75rem;
   color: #ffffff;
+}
+.scrollTop-enter-active[data-v-10d75cdd], .scrollTop-leave-active[data-v-10d75cdd] {
+  transition: transform 0.5s ease-out, opacity 0.3s;
+}
+.scrollTop-enter[data-v-10d75cdd], .scrollTop-leave-to[data-v-10d75cdd] {
+  opacity: 0;
+  transform: scale(0);
+}
+.scrollTop-enter-to[data-v-10d75cdd] {
+  opacity: 1;
+  transform: scale(1);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -2990,8 +3011,10 @@ import用ファイル
 }
 .home__scroll-top[data-v-63cd6604] {
   position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
 }
 @media screen and (min-width: 1025px) {
 .about[data-v-63cd6604] {
@@ -3068,17 +3091,6 @@ import用ファイル
 .support__text[data-v-63cd6604] {
   width: 80%;
   margin: 0 auto;
-}
-.scrollTop-enter-active[data-v-63cd6604], .scrollTop-leave-active[data-v-63cd6604] {
-  transition: transform 0.5s ease-out, opacity 0.3s;
-}
-.scrollTop-enter[data-v-63cd6604], .scrollTop-leave-to[data-v-63cd6604] {
-  opacity: 0;
-  transform: scale(0);
-}
-.scrollTop-enter-to[data-v-63cd6604] {
-  opacity: 1;
-  transform: scale(1);
 }@charset "UTF-8";
 /*
 import用ファイル
