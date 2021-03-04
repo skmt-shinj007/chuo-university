@@ -180,12 +180,9 @@ export default {
      */
     const card = this.$refs.championCard;
 
-    // チャンピオンカード > 描画後の個数と幅を取得
+    // 初期描画時の個数と幅を取得
     this.cardNumber = card.length;
     this.getCardWidth();
-
-    // sp, md, pc でカード幅が変わるので、リアルタイムでwidthを取得
-    window.addEventListener('resize', this.getCardWidth);
   },
 
   computed: {
@@ -247,11 +244,11 @@ export default {
     }
   },
 
-  beforeDestroy() {
-    // 登録したイベントを解除
-    window.removeEventListener('resize', this.getCardWidth);
-    window.removeEventListener('resize', this.getScrollTargetHeight);
-  },
+  watch: {
+    windowWidth() {
+      this.getCardWidth();
+    }
+  }
 }
 </script>
 
