@@ -19,7 +19,7 @@
         <!-- 大正の歴史 -->
         <div class="archive__wrap" ref="taisho">
           <div class="archive__content">
-            <history-box :data="data.Taisho"/>
+            <history-box :data="taisho"/>
           </div>
         </div>
 
@@ -106,6 +106,7 @@ export default {
        * 沿革 (大正時代のみオブジェクト形式)
        * @type { Array }
        */
+      taisho: {},
       showa: [],
       heisei: [],
 
@@ -149,6 +150,7 @@ export default {
 
   beforeMount() {
     // 各データを挿入
+    this.taisho = this.$data.data.Taisho;
     this.$data.data.Showa.forEach(element => this.showa.push(element));
     this.$data.data.Heisei.forEach(element => this.heisei.push(element));
     this.$data.data.Trophies.forEach(element => this.trophies.push(element));
