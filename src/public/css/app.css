@@ -12798,7 +12798,7 @@ import用ファイル
   padding: 0.25rem;
   position: absolute;
   top: 0;
-  transition: all 1s ease-out;
+  transition: transform 0.8s ease-out;
 }
 .archive__wrap[data-v-301d0ec5] {
   margin-bottom: 7.5rem;

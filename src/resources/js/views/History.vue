@@ -12,7 +12,7 @@
           ref="ageTag"
           class="archive__tag"
           :style="{ transform: `translateY(${scrollLimit}px)`}"
-          v-text="ageChange"/>
+          v-text="age"/>
       </div>
 
       <div class="archive__card">
@@ -25,14 +25,14 @@
 
         <!-- 昭和の歴史 -->
         <div class="archive__wrap" ref="showa">
-          <div class="archive__content" v-for="(showaHistory, i) in showa" :key="`first-${i}`">
+          <div class="archive__content" v-for="(showaHistory, i) in showa" :key="`showa-${i}`">
             <history-box :data="showaHistory"/>
           </div>
         </div>
 
         <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
         <div class="archive__wrap" ref="heisei">
-          <div class="archive__content" v-for="(heiseiHistory, i) in heisei" :key="`second-${i}`">
+          <div class="archive__content" v-for="(heiseiHistory, i) in heisei" :key="`heisei-${i}`">
             <history-box :data="heiseiHistory"/>
           </div>
         </div>
@@ -58,9 +58,9 @@
         <!-- カード配置を左揃えにするため、空の要素を追加 -->
         <div
           class="enpty"
-          v-for="n in cardNumber"
+          v-for="n in card.length"
           :key="`enpty-${n}`"
-          :style="{ width: `${cardWidth}px` }"
+          :style="{ width: `${card.width}px` }"
         />
       </div>
     </section>
@@ -97,30 +97,12 @@ export default {
       data: Data,
 
       /**
-       * 追従タグの時代表示
-       * @type { String }
-       */
-      ageWard: '',
-
-      /**
        * 沿革 (大正時代のみオブジェクト形式)
        * @type { Array }
        */
       taisho: {},
       showa: [],
       heisei: [],
-
-      /**
-       * 過去に獲得したタイトル
-       * @type { Array }
-       */
-      trophies: [],
-
-      /**
-       * 天皇杯優勝者（中大出身）
-       * @type { Array }
-       */
-      champions: [],
 
       /**
        * 沿革セクションの各アイテムの下余白
@@ -135,16 +117,26 @@ export default {
       elementsHeight: {},
 
       /**
-       * チャンピオンセクションのカード個数
-       * @type { Number }
+       * カード
+       * width: カード幅
+       * length: 要素数
        */
-      cardNumber: 0,
+      card: {
+        width: 0,
+        length: 0,
+      },
 
       /**
-       * チャンピオンカードのwidth値
-       * @type { Number }
+       * 過去に獲得したタイトル
+       * @type { Array }
        */
-      cardWidth: 0,
+      trophies: [],
+
+      /**
+       * 天皇杯優勝者（中大出身）
+       * @type { Array }
+       */
+      champions: [],
     }
   },
 
@@ -158,24 +150,7 @@ export default {
   },
 
   mounted() {
-    /**
-     * [要素の高さを取得]
-     * $refsを配列に変換。
-     */
-    const elements = Object.entries(this.$refs).map(([key, value]) => ({key, value}));
-
-    // 配列（同じref名で複数個ある要素）以外の要素の高さを取得
-    elements.forEach(element => {
-      if (!Array.isArray(element.value)) {
-        this.elementsHeight[element.key] = element.value.offsetHeight;
-      }
-    });
-
-    // スクロールタグの上限設定に関係ある要素の高さがリサイズされたらプロパティを更新
-    window.addEventListener('resize', this.getScrollTargetHeight);
-
-    // カードのmargin-bottom を数値で取得
-    this.archiveMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
+    this.getTargetHeight();
 
     /**
      * チャンピオンカードの配置を揃えるための処理
@@ -183,7 +158,7 @@ export default {
     const card = this.$refs.championCard;
 
     // 初期描画時の個数と幅を取得
-    this.cardNumber = card.length;
+    this.card.length = card.length;
     this.getCardWidth();
   },
 
@@ -192,25 +167,22 @@ export default {
      * スクロール量に応じて時代タグのテキストを変える
      * @return { String }  ex) 昭和
      */
-    ageChange() {
+    age() {
       // 扱いやすいようにdataのプロパティを変数に代入
       let marginBottom = this.archiveMarginBottom;
       let taishoHeight = this.elementsHeight.taisho + marginBottom;  // 大正の沿革ボックスの高さを代入
-      let showaHeight  = taishoHeight + this.elementsHeight.showa + marginBottom;  // 昭和の沿革ボックスの高さを代入
+      let showaHeight  = this.elementsHeight.showa + taishoHeight + marginBottom;  // 昭和の沿革ボックスの高さを代入
       let scroll = this.scrollY;  // スクロール量
-      let age = this.ageWard;  // タグのテキスト
 
       if (scroll < taishoHeight) {
-        age = this.$data.messages.Age.Taisho;
+        return this.$data.messages.Age.Taisho;
       }
       else if (scroll < showaHeight) {
-        age = this.$data.messages.Age.Showa;
+        return this.$data.messages.Age.Showa;
       }
       else {
-        age = this.$data.messages.Age.Heisei;
+        return this.$data.messages.Age.Heisei;
       }
-
-      return age;
     },
 
     /**
@@ -219,12 +191,12 @@ export default {
      */
     scrollLimit() {
       let scroll = this.scrollY;  // スクロール量
-      let archiveHeight = this.elementsHeight.archive;  // 沿革セクション全体の高さ
+      let archiveHeight = this.elementsHeight.archive;  // 沿革セクションの高さ
       let tag = this.elementsHeight.ageTag;  // スクロールタグの高さ
 
-      if (scroll > archiveHeight) this.scrollY = archiveHeight - tag;
+      if (scroll >= archiveHeight) scroll = archiveHeight - tag;
 
-      return this.scrollY;
+      return scroll;
     }
   },
 
@@ -233,21 +205,31 @@ export default {
      * カード幅を取得
      */
     getCardWidth() {
-      this.cardWidth = this.$refs.championCard[0].offsetWidth;
+      this.card.width = this.$refs.championCard[0].offsetWidth;
     },
 
     /**
-     * スクロール上限設定に関係ある要素の高さを取得
+     * 要素の高さを取得
      */
-    getScrollTargetHeight() {
-      const ref = this.$refs;
-      this.elementsHeight.ageTag = ref.ageTag.offsetHeight;
-      this.elementsHeight.archive = ref.archive.offsetHeight;
+    getTargetHeight() {
+      // refsオブジェクトを配列に変換
+      const elements = Object.entries(this.$refs).map(([key, value]) => ({key, value}));
+
+      // 要素の高さを取得（複数個を除く）
+      elements.forEach(element => {
+        if (!Array.isArray(element.value)) {
+          this.elementsHeight[element.key] = element.value.offsetHeight;
+        }
+      });
+
+      // 沿革ボックスのmargin-bottom を数値で取得
+      this.archiveMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
     }
   },
 
   watch: {
     windowWidth() {
+      this.getTargetHeight();
       this.getCardWidth();
     }
   }
@@ -316,7 +298,7 @@ export default {
     padding: interval(.5);
     position: absolute;
     top: 0;
-    transition: all 1s ease-out;
+    transition: transform .8s ease-out;
   }
 
   &__wrap {
