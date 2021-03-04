@@ -2617,10 +2617,10 @@
 
   "Provider": [
     {
-      "name": "Hana",
+      "name": "HaNa",
       "img": {
-        "src": "client-hana",
-        "alt": "Hanaのサムネイル画像"
+        "src": "HaNa",
+        "alt": "HaNaのサムネイル画像"
       },
       "twitter": {
         "url": "https://twitter.com/SFphoto87",
@@ -2646,7 +2646,7 @@
     },
     {
       "id": 2,
-      "src": "player14.jpeg",
+      "src": "player14.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
@@ -2676,7 +2676,7 @@
     },
     {
       "id": 5,
-      "src": "interCollege2019_match_scenery06.jpeg",
+      "src": "interCollege2019_match_scenery06.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
