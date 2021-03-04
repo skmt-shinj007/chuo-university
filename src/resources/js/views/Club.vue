@@ -7,37 +7,38 @@
 
   <div class="background-darkblue">
     <section class="club__concept">
-      <contents-title :title="messages.SectionTitles.Concept.Main" :subTitle="messages.SectionTitles.Concept.Sub" color="white"/>
+      <contents-title :title="messages.SectionTitles.Concept" color="white"/>
 
       <div class="concept__card-group">
         <div class="concept__card" v-for="(concept, n) in concepts" :key="n">
           <concept-card :concept="concept"/>
         </div>
       </div>
-
     </section>
   </div>
 
   <section class="club__practice">
-    <contents-title :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
+    <contents-title :title="messages.SectionTitles.Practice"/>
 
     <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
 
     <div class="practice__map">
-      <google-map/>
+      <!-- google map 埋め込み（中央大学多摩キャンパス ソフトテニスコート） -->
+      <iframe class="practice__map-content" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.2667723739717!2d139.3969191414313!3d35.63922419623377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e3e36092b1eb%3A0xbda5deeac6e07b45!2z5Lit5aSu5aSn5a2mIOWkmuaRqeOCreODo-ODs-ODkeOCuSDjgr3jg5Xjg4jjg4bjg4vjgrnjgrPjg7zjg4g!5e0!3m2!1sja!2sjp!4v1606833350051!5m2!1sja!2sjp" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <span class="practice__map-text">{{ messages.Club.AttentionText }}</span>
     </div>
 
     <!-- PCデバイス幅 以下 -->
     <div class="practice__slider" v-if="windowWidth < breakpointPc">
-      <contents-image-slider :images="courtImages"/>
+      <image-slider :images="courtImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
     <div class="practice__image-group" v-if="windowWidth >= breakpointPc">
       <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
-        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
+        <caption-image :image="image"/>
       </div>
     </div>
 
@@ -51,27 +52,37 @@
   </section>
 
   <section class="club__dormitory">
-    <contents-title :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
+    <contents-title :title="messages.SectionTitles.Dormitory"/>
 
     <div class="dormitory__lead">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
 
     <div class="dormitory__ticket-group">
-      <div class="dormitory__ticket" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-ticket :dormitoryData="dormitoryInformation"/>
+      <div class="dormitory__ticket" v-for="(information, n) in dormitoryInformations" :key="n">
+        <dormitory-ticket :dormitoryData="information"/>
       </div>
     </div>
 
     <!-- PCデバイス幅 以下 -->
     <div class="dormitory__slider" v-if="windowWidth < breakpointPc">
-      <contents-image-slider :images="dormitoryImages"/>
+      <image-slider :images="dormitoryImages">
+        <template v-slot:caption="image">
+          <span class="dormitory__caption">{{ image.image.caption }}</span>
+          <span class="dormitory__caption-sub">人部屋</span>
+        </template>
+      </image-slider>
     </div>
 
     <!-- PCデバイス幅 -->
     <div class="dormitory__image-group" v-if="windowWidth >= breakpointPc">
       <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
-        <caption-bar-image :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+        <caption-image :image="image">
+          <template v-slot:caption="image">
+            <span class="dormitory__caption">{{ image.image.caption }}</span>
+            <span class="dormitory__caption-sub">人部屋</span>
+          </template>
+        </caption-image>
       </div>
     </div>
 
@@ -79,7 +90,7 @@
 
   <div class="background-darkblue">
     <section class="club__member">
-      <contents-title :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
+      <contents-title :title="messages.SectionTitles.Member" color="white"/>
 
       <player-slider :players="players"/>
 
@@ -98,9 +109,9 @@
   </div>
 
   <section class="club__photo">
-    <contents-title :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
+    <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <arrange-images :imagesData="imagesData"/>
+    <arrange-images :images="images"/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
@@ -120,31 +131,31 @@ import Data from '../config/data.json';
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import GoogleMap from '../components/modules/GoogleMapComponent';
-import conceptCard from '../components/modules/card/conceptCardComponent';
-import ContentsImageSlider from '../components/modules/slider/contentsImageSliderComponent';
+import ConceptCard from '../components/modules/card/ConceptCardComponent';
+import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import CaptionBarImage from '../components/modules/CaptionBarImageComponent';
+import CaptionImage from '../components/modules/CaptionImageComponent';
 import DormitoryTicket from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ArrangeImages from '../components/contents/ArrangeImagesComponent';
-import scrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
 
 export default {
   components: {
     ContentsTitle,
-    conceptCard,
+    ConceptCard,
     MainVisualSlider,
     TableComponent,
     GoogleMap,
-    ContentsImageSlider,
-    CaptionBarImage,
+    ImageSlider,
+    CaptionImage,
     DormitoryTicket,
     PlayerSlider,
     LinkButton,
     ArrangeImages,
-    scrollTopButton,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -158,7 +169,7 @@ export default {
       dormitoryImages: [],
       players: [],
       memberNumber: [],
-      imagesData: [],
+      images: [],
     }
   },
 
@@ -167,7 +178,7 @@ export default {
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
-    imageApiResponse.forEach(element => this.imagesData.push(element));
+    this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
 
     // config/data.jsonから引っ張る
     this.$data.data.Concept.forEach(element => this.concepts.push(element));
@@ -228,17 +239,17 @@ const dormitoryImageApiResponse = [
   {
     path: 'dormitory-02.jpg',
     name: '中央大学南平寮の3人部屋',
-    capacity: 3,
+    caption: 3,
   },
   {
     path: 'dormitory-01.jpg',
     name: '中央大学南平寮の4人部屋',
-    capacity: 4,
+    caption: 4,
   },
   {
     path: 'dormitory-03.jpg',
     name: '中央大学南平寮の4人部屋',
-    capacity: 4,
+    caption: 4,
   }
 ];
 
@@ -262,56 +273,6 @@ const memberNumberData = [
     key: 1,
     value: 6,
   }
-];
-
-/**
- * test Api response : 画像ストレージからのAPIレスポンス（想定）
- */
-const imageApiResponse = [
-  {
-    path: 'player01.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player02.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player03.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player04.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player05.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player06.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player07.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player08.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player09.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player10.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player11.jpg',
-    alt: '写真の補足テキスト',
-  },
 ];
 </script>
 
@@ -406,6 +367,27 @@ const imageApiResponse = [
 .practice {
   &__map {
     padding-top: interval(5);
+
+    & > iframe {
+      width: 100%;
+      height: interval(40);
+    }
+  }
+
+  &__map-text {
+    margin: interval(1) auto 0 auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    font-size: font(10);
+    font-weight: normal;
+    letter-spacing: 1.5px;
+
+    @include mq(md) {
+      text-align: end;
+      width: 100%;
+      padding: 0 interval(1);
+    }
   }
 
   &__slider {
@@ -481,6 +463,14 @@ const imageApiResponse = [
 
   &__slider {
     @extend %slider;
+  }
+
+  &__caption {
+    font-size: font(16);
+  }
+
+  &__caption-sub {
+    font-size: font(10);
   }
 
   &__image-group {

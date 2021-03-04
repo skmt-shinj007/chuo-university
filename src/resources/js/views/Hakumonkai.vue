@@ -1,9 +1,7 @@
 <template>
 <div class="hakumonkai">
   <section class="hakumonkai__header">
-    <contents-title
-      :title="messages.SectionTitles.Hakumonkai.Main"
-      :subTitle="messages.SectionTitles.Hakumonkai.Sub"/>
+    <contents-title :title="messages.SectionTitles.Hakumonkai"/>
 
     <div class="lead__text-wrap">
       <p class="lead__text nl2br" v-text="messages.Hakumonkai.Lead"></p>
@@ -13,25 +11,19 @@
   <div class="background-prlx" v-prlx.background="{ speed: 0.3 }"/>
 
   <section class="hakumonkai__officer">
-    <contents-title
-      :title="messages.SectionTitles.Officer.Main"
-      :subTitle="messages.SectionTitles.Officer.Sub"/>
+    <contents-title :title="messages.SectionTitles.Officer"/>
 
     <tile-table :tableItemHeading="tableHeading" :tableItems="officer"/>
   </section>
 
   <section class="hakumonkai__active">
-    <contents-title
-      :title="messages.SectionTitles.ActiveAlumni.Main"
-      :subTitle="messages.SectionTitles.ActiveAlumni.Sub"/>
+    <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
 
     <player-slider :players="activeAlumni"/>
   </section>
 
   <section class="hakumonkai__message">
-    <contents-title
-      :title="messages.SectionTitles.Message.Main"
-      :subTitle="messages.SectionTitles.Message.Sub"/>
+    <contents-title :title="messages.SectionTitles.Message"/>
 
     <div class="message__content">
       <p class="message__text nl2br" v-text="messages.Hakumonkai.Message"/>

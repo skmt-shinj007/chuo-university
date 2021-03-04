@@ -2,18 +2,14 @@
 <div class="photo">
   <!-- フォトギャラリー -->
   <section class="photo__gallery">
-    <contents-title
-      :title="messages.SectionTitles.Photo.Main"
-      :subTitle="messages.SectionTitles.Photo.Sub"/>
+    <contents-title :title="messages.SectionTitles.Photo"/>
 
     <images :images="images" :filter="config.filter"/>
   </section>
 
   <!-- プロバイダー -->
   <section class="photo__provider">
-    <contents-title
-      :title="messages.SectionTitles.Provider.Main"
-      :subTitle="messages.SectionTitles.Provider.Sub"/>
+    <contents-title :title="messages.SectionTitles.Provider"/>
 
     <div class="ticket-group">
       <div class="ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
@@ -118,9 +114,8 @@ export default {
     // チケットの要素数を取得 (チケットが一枚の時はenpty要素を増やさない)
     if(ticket.length > 1) this.ticketNumber = ticket.length;
 
-    // チケットのwidthを取得
+    // 初期描画時のチケットwidthを取得
     this.getTicketWidth();
-    window.addEventListener('resize', this.getTicketWidth);
   },
 
   methods: {
@@ -146,9 +141,10 @@ export default {
     },
   },
 
-  beforeDestroy() {
-    // 登録したイベントを破棄
-    window.removeEventListener('resize', this.getTicketWidth);
+  watch: {
+    windowWidth() {
+      this.getTicketWidth();
+    }
   },
 }
 

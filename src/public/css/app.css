@@ -15,9 +15,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -368,9 +365,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -682,27 +676,27 @@ import用ファイル
 /**
  * component
  */
-.contents-title {
+.title {
   padding: 2.5rem 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
-.contents-title-white {
+.title-white {
   color: #ffffff;
 }
-.contents-title__assistance {
+.title__assistance {
   font-size: 0.625rem;
   letter-spacing: 2px;
   font-weight: normal;
 }
-.contents-title__primary {
+.title__primary {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   position: relative;
 }
-.contents-title__primary::after {
+.title__primary::after {
   content: "";
   display: block;
   width: 50px;
@@ -713,7 +707,7 @@ import用ファイル
   transform: translateX(-50%);
   background-color: #091e2f;
 }
-.contents-title.contents-title-white .contents-title__primary::after {
+.title-white .title__primary::after {
   background-color: #ffffff;
 }@charset "UTF-8";
 /*
@@ -730,9 +724,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -1103,9 +1094,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -1544,9 +1532,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -1923,370 +1908,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数とキーフレームを定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-/**
- * font size
- * @param 指定したいピクセル数を入力
- * @return 単位をremに変換し出力
- */
-/**
- * @keyframe を定義
- */
-@-webkit-keyframes iconSlide {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@keyframes iconSlide {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@-webkit-keyframes fadeoutDown {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@keyframes fadeoutDown {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@-webkit-keyframes fadeoutTop {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@keyframes fadeoutTop {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@-webkit-keyframes bound {
-0% {
-    transform: translate(0%, -100%);
-}
-30% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-40% {
-    transform: translate(0%, -40%);
-}
-55% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-60% {
-    transform: translate(0%, -15%);
-}
-70% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-75% {
-    transform: translate(0%, -5%);
-}
-95% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-100% {
-    transform: scale(1, 1);
-}
-}
-@keyframes bound {
-0% {
-    transform: translate(0%, -100%);
-}
-30% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-40% {
-    transform: translate(0%, -40%);
-}
-55% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-60% {
-    transform: translate(0%, -15%);
-}
-70% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-75% {
-    transform: translate(0%, -5%);
-}
-95% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-100% {
-    transform: scale(1, 1);
-}
-}
-@-webkit-keyframes rotation {
-0% {
-    transform: translateX(-50rem) rotate(0deg);
-}
-100% {
-    transform: translateX(0) rotate(1455deg);
-}
-}
-@keyframes rotation {
-0% {
-    transform: translateX(-50rem) rotate(0deg);
-}
-100% {
-    transform: translateX(0) rotate(1455deg);
-}
-}
-@-webkit-keyframes loading {
-0% {
-    height: 0;
-}
-50% {
-    height: 80%;
-}
-100% {
-    height: 0;
-}
-}
-@keyframes loading {
-0% {
-    height: 0;
-}
-50% {
-    height: 80%;
-}
-100% {
-    height: 0;
-}
-}
-/**
- * common mixin (サイト内でどこでも使う可能性がある)
- */
-/**
- * gradation
- */
-/**
- * element
- */
-/**
- * 装飾用 mixin
- */
-/**
- * page
- */
-/**
- * component
- */
-.text-box {
-  padding: 0 1rem 1rem 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 6px 8px #e6e6e6;
-}
-@media screen and (min-width: 560px) {
-.text-box {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-}
-}
-@media screen and (min-width: 1025px) {
-.text-box {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 25rem;
-}
-}
-.text-box__text {
-  margin-bottom: 2.5rem;
-}
-.text-box__button {
-  width: 100%;
-}
-@media screen and (min-width: 560px) {
-.text-box__button {
-    max-width: 25rem;
-    margin: 0 auto;
-}
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * ベースとなるフォントサイズ = 16px
- * modules.scssでremに変換して出力
- */
-/**
- * base pixel (8px)
- * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -2656,9 +2277,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -3063,7 +2681,7 @@ import用ファイル
 }
 }
 @media screen and (min-width: 1025px) {
-.about:nth-child(even) .about__lead[data-v-63cd6604] {
+.about:nth-child(even) .about__box[data-v-63cd6604] {
     margin: 0 auto 0 0;
 }
 }
@@ -3094,23 +2712,54 @@ import用ファイル
     min-width: 33rem;
 }
 }
-.about__lead[data-v-63cd6604] {
+.about__box[data-v-63cd6604] {
   width: 90%;
   max-width: 50rem;
   margin: 0 auto;
   transform: translateY(-15%);
 }
 @media screen and (min-width: 560px) {
-.about__lead[data-v-63cd6604] {
+.about__box[data-v-63cd6604] {
     transform: translateY(-20%);
 }
 }
 @media screen and (min-width: 1025px) {
-.about__lead[data-v-63cd6604] {
+.about__box[data-v-63cd6604] {
     min-width: 30rem;
     width: 60%;
     margin: 0 0 0 auto;
     transform: translateY(-40%);
+}
+}
+.about__content[data-v-63cd6604] {
+  padding: 0 1rem 1rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 6px 8px #e6e6e6;
+}
+@media screen and (min-width: 560px) {
+.about__content[data-v-63cd6604] {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+}
+@media screen and (min-width: 1025px) {
+.about__content[data-v-63cd6604] {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 25rem;
+}
+}
+.about__text[data-v-63cd6604] {
+  margin-bottom: 2.5rem;
+}
+.about__button[data-v-63cd6604] {
+  width: 100%;
+}
+@media screen and (min-width: 560px) {
+.about__button[data-v-63cd6604] {
+    max-width: 25rem;
+    margin: 0 auto;
 }
 }
 .support__text[data-v-63cd6604] {
@@ -3131,9 +2780,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -3446,32 +3092,7 @@ import用ファイル
  */
 /**
  * component
- */
-.google-map__map[data-v-161a410d] {
-  width: 100%;
-  height: 300px;
-}
-@media screen and (min-width: 1025px) {
-.google-map__map[data-v-161a410d] {
-    height: 400px;
-}
-}
-.google-map__attentionText[data-v-161a410d] {
-  margin: 0.5rem auto 0 auto;
-  display: block;
-  width: 80%;
-  text-align: center;
-  font-size: 0.625rem;
-  font-weight: normal;
-  letter-spacing: 1.5px;
-}
-@media screen and (min-width: 1025px) {
-.google-map__attentionText[data-v-161a410d] {
-    text-align: end;
-    width: 100%;
-    padding: 0 0.5rem;
-}
-}@charset "UTF-8";
+ */@charset "UTF-8";
 /*
 import用ファイル
 グローバルに使用する変数やmixinをインポート
@@ -3486,9 +3107,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -3508,7 +3126,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-348f28a1 {
+@-webkit-keyframes iconSlide-data-v-9745667e {
 0% {
     transform: translateX(0);
 }
@@ -3543,7 +3161,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-348f28a1 {
+@keyframes iconSlide-data-v-9745667e {
 0% {
     transform: translateX(0);
 }
@@ -3578,7 +3196,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-348f28a1 {
+@-webkit-keyframes fadeoutDown-data-v-9745667e {
 0% {
     transform: translateY(0);
 }
@@ -3623,7 +3241,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-348f28a1 {
+@keyframes fadeoutDown-data-v-9745667e {
 0% {
     transform: translateY(0);
 }
@@ -3668,7 +3286,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-348f28a1 {
+@-webkit-keyframes fadeoutTop-data-v-9745667e {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -3678,7 +3296,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-348f28a1 {
+@keyframes fadeoutTop-data-v-9745667e {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -3688,7 +3306,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes bound-data-v-348f28a1 {
+@-webkit-keyframes bound-data-v-9745667e {
 0% {
     transform: translate(0%, -100%);
 }
@@ -3717,7 +3335,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@keyframes bound-data-v-348f28a1 {
+@keyframes bound-data-v-9745667e {
 0% {
     transform: translate(0%, -100%);
 }
@@ -3746,7 +3364,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@-webkit-keyframes rotation-data-v-348f28a1 {
+@-webkit-keyframes rotation-data-v-9745667e {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -3754,7 +3372,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@keyframes rotation-data-v-348f28a1 {
+@keyframes rotation-data-v-9745667e {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -3762,7 +3380,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@-webkit-keyframes loading-data-v-348f28a1 {
+@-webkit-keyframes loading-data-v-9745667e {
 0% {
     height: 0;
 }
@@ -3773,7 +3391,7 @@ import用ファイル
     height: 0;
 }
 }
-@keyframes loading-data-v-348f28a1 {
+@keyframes loading-data-v-9745667e {
 0% {
     height: 0;
 }
@@ -3802,7 +3420,7 @@ import用ファイル
 /**
  * component
  */
-.concept-card[data-v-348f28a1] {
+.concept-card[data-v-9745667e] {
   position: relative;
   width: 50%;
   margin: 0 auto;
@@ -3817,25 +3435,25 @@ import用ファイル
   background: radial-gradient(ellipse at center, #10334e 0%, #030A10 100%);
 }
 @media screen and (min-width: 560px) {
-.concept-card[data-v-348f28a1] {
+.concept-card[data-v-9745667e] {
     width: 8rem;
 }
 }
-.concept-card[data-v-348f28a1]::before {
+.concept-card[data-v-9745667e]::before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 @media screen and (min-width: 1025px) {
-.concept-card:hover .concept-card__title[data-v-348f28a1],
-.concept-card:hover .concept-card__subTitle[data-v-348f28a1] {
+.concept-card:hover .concept-card__title[data-v-9745667e],
+.concept-card:hover .concept-card__subTitle[data-v-9745667e] {
     opacity: 0;
 }
-.concept-card:hover .concept-card__text[data-v-348f28a1] {
+.concept-card:hover .concept-card__text[data-v-9745667e] {
     opacity: 1;
 }
 }
-.concept-card-inner[data-v-348f28a1] {
+.concept-card-inner[data-v-9745667e] {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -3846,22 +3464,22 @@ import用ファイル
   justify-content: center;
   align-items: center;
 }
-.concept-card__subTitle[data-v-348f28a1] {
+.concept-card__subTitle[data-v-9745667e] {
   font-size: 0.625rem;
   letter-spacing: 2px;
   transition: all 0.5s ease-in-out;
 }
-.concept-card__title[data-v-348f28a1] {
+.concept-card__title[data-v-9745667e] {
   font-size: 1rem;
   transition: all 0.5s ease-in-out;
 }
-.concept-card__text[data-v-348f28a1] {
+.concept-card__text[data-v-9745667e] {
   color: #ffffff;
   padding: 0.5rem;
   text-align: center;
 }
 @media screen and (min-width: 1025px) {
-.concept-card__text[data-v-348f28a1] {
+.concept-card__text[data-v-9745667e] {
     opacity: 0;
     position: absolute;
     top: 50%;
@@ -3888,9 +3506,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -3908,7 +3523,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-6cd5e234 {
+@-webkit-keyframes iconSlide-data-v-7186e4cc {
 0% {
     transform: translateX(0);
 }
@@ -3943,7 +3558,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-6cd5e234 {
+@keyframes iconSlide-data-v-7186e4cc {
 0% {
     transform: translateX(0);
 }
@@ -3978,7 +3593,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-6cd5e234 {
+@-webkit-keyframes fadeoutDown-data-v-7186e4cc {
 0% {
     transform: translateY(0);
 }
@@ -4023,7 +3638,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-6cd5e234 {
+@keyframes fadeoutDown-data-v-7186e4cc {
 0% {
     transform: translateY(0);
 }
@@ -4068,7 +3683,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-6cd5e234 {
+@-webkit-keyframes fadeoutTop-data-v-7186e4cc {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -4078,7 +3693,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-6cd5e234 {
+@keyframes fadeoutTop-data-v-7186e4cc {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -4088,7 +3703,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes bound-data-v-6cd5e234 {
+@-webkit-keyframes bound-data-v-7186e4cc {
 0% {
     transform: translate(0%, -100%);
 }
@@ -4117,7 +3732,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@keyframes bound-data-v-6cd5e234 {
+@keyframes bound-data-v-7186e4cc {
 0% {
     transform: translate(0%, -100%);
 }
@@ -4146,7 +3761,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@-webkit-keyframes rotation-data-v-6cd5e234 {
+@-webkit-keyframes rotation-data-v-7186e4cc {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -4154,7 +3769,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@keyframes rotation-data-v-6cd5e234 {
+@keyframes rotation-data-v-7186e4cc {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -4162,7 +3777,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@-webkit-keyframes loading-data-v-6cd5e234 {
+@-webkit-keyframes loading-data-v-7186e4cc {
 0% {
     height: 0;
 }
@@ -4173,7 +3788,7 @@ import用ファイル
     height: 0;
 }
 }
-@keyframes loading-data-v-6cd5e234 {
+@keyframes loading-data-v-7186e4cc {
 0% {
     height: 0;
 }
@@ -4202,16 +3817,16 @@ import用ファイル
 /**
  * component
  */
-.image-slider__container[data-v-6cd5e234] {
+.image-slider__container[data-v-7186e4cc] {
   position: relative;
   position: relative;
 }
-.image-slider__container[data-v-6cd5e234]::before {
+.image-slider__container[data-v-7186e4cc]::before {
   content: "";
   display: block;
   padding-bottom: 66.7%;
 }
-.image-slider__container > img[data-v-6cd5e234] {
+.image-slider__container > img[data-v-7186e4cc] {
   position: absolute;
   top: 0;
   left: 0;
@@ -4220,10 +3835,10 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.image-slider__image[data-v-6cd5e234] {
+.image-slider__image[data-v-7186e4cc] {
   border-radius: 4px;
 }
-.image-slider__caption[data-v-6cd5e234] {
+.image-slider__bar[data-v-7186e4cc] {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
@@ -4235,15 +3850,9 @@ import用ファイル
   font-size: 0.625rem;
 }
 @media screen and (min-width: 560px) {
-.image-slider__caption[data-v-6cd5e234] {
+.image-slider__bar[data-v-7186e4cc] {
     line-height: 2;
 }
-}
-.image-slider__secondary-caption[data-v-6cd5e234] {
-  font-size: 0.625rem;
-}
-.image-slider__capacity-number[data-v-6cd5e234] {
-  font-size: 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -4259,9 +3868,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -4620,9 +4226,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -5032,9 +4635,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -5052,7 +4652,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-7fa4fe02 {
+@-webkit-keyframes iconSlide-data-v-6c61d285 {
 0% {
     transform: translateX(0);
 }
@@ -5087,7 +4687,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-7fa4fe02 {
+@keyframes iconSlide-data-v-6c61d285 {
 0% {
     transform: translateX(0);
 }
@@ -5122,7 +4722,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-7fa4fe02 {
+@-webkit-keyframes fadeoutDown-data-v-6c61d285 {
 0% {
     transform: translateY(0);
 }
@@ -5167,7 +4767,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-7fa4fe02 {
+@keyframes fadeoutDown-data-v-6c61d285 {
 0% {
     transform: translateY(0);
 }
@@ -5212,7 +4812,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-7fa4fe02 {
+@-webkit-keyframes fadeoutTop-data-v-6c61d285 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -5222,7 +4822,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-7fa4fe02 {
+@keyframes fadeoutTop-data-v-6c61d285 {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -5232,7 +4832,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes bound-data-v-7fa4fe02 {
+@-webkit-keyframes bound-data-v-6c61d285 {
 0% {
     transform: translate(0%, -100%);
 }
@@ -5261,7 +4861,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@keyframes bound-data-v-7fa4fe02 {
+@keyframes bound-data-v-6c61d285 {
 0% {
     transform: translate(0%, -100%);
 }
@@ -5290,7 +4890,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@-webkit-keyframes rotation-data-v-7fa4fe02 {
+@-webkit-keyframes rotation-data-v-6c61d285 {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -5298,7 +4898,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@keyframes rotation-data-v-7fa4fe02 {
+@keyframes rotation-data-v-6c61d285 {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -5306,7 +4906,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@-webkit-keyframes loading-data-v-7fa4fe02 {
+@-webkit-keyframes loading-data-v-6c61d285 {
 0% {
     height: 0;
 }
@@ -5317,7 +4917,7 @@ import用ファイル
     height: 0;
 }
 }
-@keyframes loading-data-v-7fa4fe02 {
+@keyframes loading-data-v-6c61d285 {
 0% {
     height: 0;
 }
@@ -5346,16 +4946,16 @@ import用ファイル
 /**
  * component
  */
-.caption-bar-image[data-v-7fa4fe02] {
+.caption-image[data-v-6c61d285] {
   width: 100%;
   position: relative;
 }
-.caption-bar-image[data-v-7fa4fe02]::before {
+.caption-image[data-v-6c61d285]::before {
   content: "";
   display: block;
   padding-bottom: 66.7%;
 }
-.caption-bar-image > img[data-v-7fa4fe02] {
+.caption-image > img[data-v-6c61d285] {
   position: absolute;
   top: 0;
   left: 0;
@@ -5364,11 +4964,11 @@ import用ファイル
   -o-object-fit: cover;
      object-fit: cover;
 }
-.caption-bar-image__image[data-v-7fa4fe02] {
+.caption-image__image[data-v-6c61d285] {
   border-radius: 2px;
   box-shadow: 0 0 6px #b3b3b3;
 }
-.caption-bar-image__bar[data-v-7fa4fe02] {
+.caption-image__bar[data-v-6c61d285] {
   width: 90%;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 4px;
@@ -5379,12 +4979,9 @@ import用ファイル
   left: 50%;
   transform: translateX(-50%);
 }
-.caption-bar-image__caption[data-v-7fa4fe02], .caption-bar-image__secondary-caption[data-v-7fa4fe02] {
+.caption-image__caption[data-v-6c61d285] {
   font-size: 0.625rem;
-}
-.caption-bar-image__capacity-number[data-v-7fa4fe02] {
-  font-size: 0.875rem;
-  font-weight: bold;
+  line-height: 1.2;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -5400,9 +4997,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -5773,9 +5367,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -6155,9 +5746,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -6505,9 +6093,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -6900,9 +6485,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -7249,7 +6831,525 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
+ * アスペクト比（基準を100%と想定）
+ */
+/**
+ * radius
+ */
+/**
+ * サイト内で扱うsass関数とキーフレームを定義するファイル。
+ * _variables.scssで定義した変数を呼び出しやすい形に変換
+ */
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+/**
+ * @keyframe を定義
+ */
+@-webkit-keyframes iconSlide-data-v-213a8ec6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@keyframes iconSlide-data-v-213a8ec6 {
+0% {
+    transform: translateX(0);
+}
+10% {
+    transform: translateX(10%);
+}
+20% {
+    transform: translateX(20%);
+}
+30% {
+    transform: translateX(30%);
+}
+40% {
+    transform: translateX(40%);
+}
+50% {
+    transform: translateX(50%);
+}
+60% {
+    transform: translateX(40%);
+}
+70% {
+    transform: translateX(30%);
+}
+80% {
+    transform: translateX(20%);
+}
+90% {
+    transform: translateX(10%);
+}
+100% {
+    transform: translateX(0);
+}
+}
+@-webkit-keyframes fadeoutDown-data-v-213a8ec6 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@keyframes fadeoutDown-data-v-213a8ec6 {
+0% {
+    transform: translateY(0);
+}
+10% {
+    opacity: 0.9;
+    transform: translateY(10%);
+}
+20% {
+    opacity: 0.8;
+    transform: translateY(20%);
+}
+30% {
+    opacity: 0.7;
+    transform: translateY(30%);
+}
+40% {
+    opacity: 0.6;
+    transform: translateY(40%);
+}
+50% {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+60% {
+    opacity: 0.4;
+    transform: translateY(60%);
+}
+70% {
+    opacity: 0.3;
+    transform: translateY(70%);
+}
+80% {
+    opacity: 0.2;
+    transform: translateY(80%);
+}
+90% {
+    opacity: 0.1;
+    transform: translateY(90%);
+}
+100% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+}
+@-webkit-keyframes fadeoutTop-data-v-213a8ec6 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@keyframes fadeoutTop-data-v-213a8ec6 {
+0% {
+    opacity: 1;
+    transform: translateY(0);
+}
+100% {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+}
+@-webkit-keyframes bound-data-v-213a8ec6 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@keyframes bound-data-v-213a8ec6 {
+0% {
+    transform: translate(0%, -100%);
+}
+30% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+40% {
+    transform: translate(0%, -40%);
+}
+55% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+60% {
+    transform: translate(0%, -15%);
+}
+70% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+75% {
+    transform: translate(0%, -5%);
+}
+95% {
+    transform: translate(0%, 0%) scale(1.1, 1);
+}
+100% {
+    transform: scale(1, 1);
+}
+}
+@-webkit-keyframes rotation-data-v-213a8ec6 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+@keyframes rotation-data-v-213a8ec6 {
+0% {
+    transform: translateX(-50rem) rotate(0deg);
+}
+100% {
+    transform: translateX(0) rotate(1455deg);
+}
+}
+@-webkit-keyframes loading-data-v-213a8ec6 {
+0% {
+    height: 0;
+}
+50% {
+    height: 80%;
+}
+100% {
+    height: 0;
+}
+}
+@keyframes loading-data-v-213a8ec6 {
+0% {
+    height: 0;
+}
+50% {
+    height: 80%;
+}
+100% {
+    height: 0;
+}
+}
+/**
+ * common mixin (サイト内でどこでも使う可能性がある)
+ */
+/**
+ * gradation
+ */
+/**
+ * element
+ */
+/**
+ * 装飾用 mixin
+ */
+/**
+ * page
+ */
+/**
+ * component
+ */
+.modal[data-v-213a8ec6] {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(3, 10, 16, 0.9);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.modal__window[data-v-213a8ec6] {
+  height: 100%;
+  padding: 0 1rem;
+  position: relative;
+}
+.image-modal[data-v-213a8ec6] {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.image-modal__header[data-v-213a8ec6] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+  position: fixed;
+  top: 1rem;
+}
+.image-modal__close-btn[data-v-213a8ec6] {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-out;
+}
+.image-modal__close-btn > i[data-v-213a8ec6] {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  width: calc( 40px / 2);
+  height: 3px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-out;
+}
+.image-modal__close-btn > i[data-v-213a8ec6]::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: rotate(90deg);
+  transition: all 0.3s ease-out;
+}
+@media screen and (min-width: 1025px) {
+.image-modal__close-btn[data-v-213a8ec6]:hover {
+    background-color: #e56c2c;
+}
+}
+.image-modal__img-wrap[data-v-213a8ec6] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 100%;
+  padding: 2.5rem 0;
+}
+@media screen and (min-width: 560px) {
+.image-modal__img-wrap[data-v-213a8ec6] {
+    width: 90%;
+}
+}
+@media screen and (min-width: 1025px) {
+.image-modal__img-wrap[data-v-213a8ec6] {
+    width: 80%;
+}
+}
+.image-modal__img[data-v-213a8ec6] {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.image-modal__footer[data-v-213a8ec6] {
+  width: 100%;
+  padding: 0 1rem;
+}
+.image-modal__prev-btn-area[data-v-213a8ec6] {
+  padding: 0.5rem;
+  position: fixed;
+  left: 5%;
+  bottom: 10%;
+}
+.image-modal__next-btn-area[data-v-213a8ec6] {
+  padding: 0.5rem;
+  position: fixed;
+  right: 5%;
+  bottom: 10%;
+}
+.image-modal .image-modal__next-btn[data-v-213a8ec6], .image-modal .image-modal__prev-btn[data-v-213a8ec6] {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.image-modal .image-modal__next-btn[data-v-213a8ec6]::before, .image-modal .image-modal__prev-btn[data-v-213a8ec6]::before {
+  width: 150%;
+  text-align: center;
+  font-size: 0.625rem;
+  display: block;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.image-modal__prev-btn[data-v-213a8ec6]::before {
+  content: "\524D\3078";
+  right: -130%;
+}
+.image-modal__next-btn[data-v-213a8ec6]::before {
+  content: "\6B21\3078";
+  left: -130%;
+}
+.image-modal__icon[data-v-213a8ec6] {
+  width: 0.75rem;
+  color: #ffffff;
+  fill: #ffffff;
+}
+.modal-enter-active[data-v-213a8ec6], .modal-leave-active[data-v-213a8ec6] {
+  transition: opacity 0.5s;
+  transform: scale(1);
+}
+.modal-leave-active[data-v-213a8ec6] {
+  transition: opacity 0.3s ease 0.1s;
+}
+.modal-enter[data-v-213a8ec6], .modal-leave-to[data-v-213a8ec6] {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s, transform 0s 0.5s;
+}
+.modal-enter .modal-window[data-v-213a8ec6], .modal-leave-to .modal-window[data-v-213a8ec6] {
+  opacity: 0;
+}
+.next-enter-active[data-v-213a8ec6],
+.prev-enter-active[data-v-213a8ec6] {
+  transition: all 0.5s ease-out;
+}
+.next-enter[data-v-213a8ec6] {
+  transform: translateX(50%);
+  opacity: 0;
+}
+.next-enter-to[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 1;
+}
+.next-leave[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 0;
+}
+.prev-enter[data-v-213a8ec6] {
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.prev-enter-to[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 1;
+}
+.prev-leave[data-v-213a8ec6] {
+  transform: translateX(0);
+  opacity: 0;
+}
+.button-enter-active[data-v-213a8ec6], .button-leave-active[data-v-213a8ec6] {
+  transition: opacity 0.5s;
+}
+.button-enter[data-v-213a8ec6], .button-leave-to[data-v-213a8ec6] {
+  opacity: 0;
+}@charset "UTF-8";
+/*
+import用ファイル
+グローバルに使用する変数やmixinをインポート
+*/
+/**
+ * サイトで使用するマップを定義します
+ */
+/**
+ * ベースとなるフォントサイズ = 16px
+ * modules.scssでremに変換して出力
+ */
+/**
+ * base pixel (8px)
+ * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -7563,26 +7663,26 @@ import用ファイル
 /**
  * component
  */
-.arrange-images__list-container[data-v-bb84db5a] {
+.arrange-images__list[data-v-bb84db5a] {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-.arrange-images__list[data-v-bb84db5a] {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
   justify-content: center;
-  align-items: stretch;
-  width: 50%;
+  align-items: center;
 }
-.arrange-images__list[data-v-bb84db5a]::before {
+.arrange-images__list-item[data-v-bb84db5a] {
+  width: 16rem;
+  padding: 0.25rem;
+}
+.arrange-images__image[data-v-bb84db5a] {
+  cursor: pointer;
+  position: relative;
+}
+.arrange-images__image[data-v-bb84db5a]::before {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-.arrange-images__list > img[data-v-bb84db5a] {
+.arrange-images__image > img[data-v-bb84db5a] {
   position: absolute;
   top: 0;
   left: 0;
@@ -7590,20 +7690,6 @@ import用ファイル
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-@media screen and (min-width: 560px) {
-.arrange-images__list[data-v-bb84db5a] {
-    width: 33.3%;
-}
-}
-@media screen and (min-width: 1025px) {
-.arrange-images__list[data-v-bb84db5a] {
-    width: 20%;
-}
-}
-.arrange-images__list-item[data-v-bb84db5a] {
-  padding: 0.5rem;
-  cursor: pointer;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -7619,9 +7705,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -8017,6 +8100,26 @@ import用ファイル
 .practice__map[data-v-357d3955] {
   padding-top: 2.5rem;
 }
+.practice__map > iframe[data-v-357d3955] {
+  width: 100%;
+  height: 20rem;
+}
+.practice__map-text[data-v-357d3955] {
+  margin: 0.5rem auto 0 auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  font-size: 0.625rem;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+}
+@media screen and (min-width: 1025px) {
+.practice__map-text[data-v-357d3955] {
+    text-align: end;
+    width: 100%;
+    padding: 0 0.5rem;
+}
+}
 .practice__image-group[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
@@ -8094,6 +8197,12 @@ import用ファイル
     padding-right: 1rem;
 }
 }
+.dormitory__caption[data-v-357d3955] {
+  font-size: 1rem;
+}
+.dormitory__caption-sub[data-v-357d3955] {
+  font-size: 0.625rem;
+}
 .dormitory__image-group[data-v-357d3955] {
   display: flex;
   flex-flow: row nowrap;
@@ -8136,9 +8245,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -8739,9 +8845,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -9224,9 +9327,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -9631,9 +9731,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -9990,9 +10087,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -10381,9 +10475,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -10787,9 +10878,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -11198,9 +11286,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -11581,9 +11666,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -11937,9 +12019,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -12345,9 +12424,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -12722,7 +12798,7 @@ import用ファイル
   padding: 0.25rem;
   position: absolute;
   top: 0;
-  transition: all 1s ease-out;
+  transition: transform 0.8s ease-out;
 }
 .archive__wrap[data-v-301d0ec5] {
   margin-bottom: 7.5rem;
@@ -12760,9 +12836,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -13154,9 +13227,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -13519,527 +13589,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
- */
-/**
- * アスペクト比（基準を100%と想定）
- */
-/**
- * radius
- */
-/**
- * サイト内で扱うsass関数とキーフレームを定義するファイル。
- * _variables.scssで定義した変数を呼び出しやすい形に変換
- */
-/**
- * font size
- * @param 指定したいピクセル数を入力
- * @return 単位をremに変換し出力
- */
-/**
- * @keyframe を定義
- */
-@-webkit-keyframes iconSlide-data-v-213a8ec6 {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@keyframes iconSlide-data-v-213a8ec6 {
-0% {
-    transform: translateX(0);
-}
-10% {
-    transform: translateX(10%);
-}
-20% {
-    transform: translateX(20%);
-}
-30% {
-    transform: translateX(30%);
-}
-40% {
-    transform: translateX(40%);
-}
-50% {
-    transform: translateX(50%);
-}
-60% {
-    transform: translateX(40%);
-}
-70% {
-    transform: translateX(30%);
-}
-80% {
-    transform: translateX(20%);
-}
-90% {
-    transform: translateX(10%);
-}
-100% {
-    transform: translateX(0);
-}
-}
-@-webkit-keyframes fadeoutDown-data-v-213a8ec6 {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@keyframes fadeoutDown-data-v-213a8ec6 {
-0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-}
-100% {
-    opacity: 0;
-    transform: translateY(100%);
-}
-}
-@-webkit-keyframes fadeoutTop-data-v-213a8ec6 {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@keyframes fadeoutTop-data-v-213a8ec6 {
-0% {
-    opacity: 1;
-    transform: translateY(0);
-}
-100% {
-    opacity: 0;
-    transform: translateY(-30%);
-}
-}
-@-webkit-keyframes bound-data-v-213a8ec6 {
-0% {
-    transform: translate(0%, -100%);
-}
-30% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-40% {
-    transform: translate(0%, -40%);
-}
-55% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-60% {
-    transform: translate(0%, -15%);
-}
-70% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-75% {
-    transform: translate(0%, -5%);
-}
-95% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-100% {
-    transform: scale(1, 1);
-}
-}
-@keyframes bound-data-v-213a8ec6 {
-0% {
-    transform: translate(0%, -100%);
-}
-30% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-40% {
-    transform: translate(0%, -40%);
-}
-55% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-60% {
-    transform: translate(0%, -15%);
-}
-70% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-75% {
-    transform: translate(0%, -5%);
-}
-95% {
-    transform: translate(0%, 0%) scale(1.1, 1);
-}
-100% {
-    transform: scale(1, 1);
-}
-}
-@-webkit-keyframes rotation-data-v-213a8ec6 {
-0% {
-    transform: translateX(-50rem) rotate(0deg);
-}
-100% {
-    transform: translateX(0) rotate(1455deg);
-}
-}
-@keyframes rotation-data-v-213a8ec6 {
-0% {
-    transform: translateX(-50rem) rotate(0deg);
-}
-100% {
-    transform: translateX(0) rotate(1455deg);
-}
-}
-@-webkit-keyframes loading-data-v-213a8ec6 {
-0% {
-    height: 0;
-}
-50% {
-    height: 80%;
-}
-100% {
-    height: 0;
-}
-}
-@keyframes loading-data-v-213a8ec6 {
-0% {
-    height: 0;
-}
-50% {
-    height: 80%;
-}
-100% {
-    height: 0;
-}
-}
-/**
- * common mixin (サイト内でどこでも使う可能性がある)
- */
-/**
- * gradation
- */
-/**
- * element
- */
-/**
- * 装飾用 mixin
- */
-/**
- * page
- */
-/**
- * component
- */
-.modal[data-v-213a8ec6] {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: rgba(3, 10, 16, 0.9);
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-.modal__window[data-v-213a8ec6] {
-  height: 100%;
-  padding: 0 1rem;
-  position: relative;
-}
-.image-modal[data-v-213a8ec6] {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.image-modal__header[data-v-213a8ec6] {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 1rem;
-  position: fixed;
-  top: 1rem;
-}
-.image-modal__close-btn[data-v-213a8ec6] {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease-out;
-}
-.image-modal__close-btn > i[data-v-213a8ec6] {
-  position: relative;
-  display: block;
-  background-color: #ffffff;
-  width: calc( 40px / 2);
-  height: 3px;
-  transform: rotate(-45deg);
-  transition: all 0.3s ease-out;
-}
-.image-modal__close-btn > i[data-v-213a8ec6]::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  transform: rotate(90deg);
-  transition: all 0.3s ease-out;
-}
-@media screen and (min-width: 1025px) {
-.image-modal__close-btn[data-v-213a8ec6]:hover {
-    background-color: #e56c2c;
-}
-}
-.image-modal__img-wrap[data-v-213a8ec6] {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-height: 100%;
-  padding: 2.5rem 0;
-}
-@media screen and (min-width: 560px) {
-.image-modal__img-wrap[data-v-213a8ec6] {
-    width: 90%;
-}
-}
-@media screen and (min-width: 1025px) {
-.image-modal__img-wrap[data-v-213a8ec6] {
-    width: 80%;
-}
-}
-.image-modal__img[data-v-213a8ec6] {
-  width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.image-modal__footer[data-v-213a8ec6] {
-  width: 100%;
-  padding: 0 1rem;
-}
-.image-modal__prev-btn-area[data-v-213a8ec6] {
-  padding: 0.5rem;
-  position: fixed;
-  left: 5%;
-  bottom: 10%;
-}
-.image-modal__next-btn-area[data-v-213a8ec6] {
-  padding: 0.5rem;
-  position: fixed;
-  right: 5%;
-  bottom: 10%;
-}
-.image-modal .image-modal__next-btn[data-v-213a8ec6], .image-modal .image-modal__prev-btn[data-v-213a8ec6] {
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  border: 1px solid #ffffff;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.image-modal .image-modal__next-btn[data-v-213a8ec6]::before, .image-modal .image-modal__prev-btn[data-v-213a8ec6]::before {
-  width: 150%;
-  text-align: center;
-  font-size: 0.625rem;
-  display: block;
-  color: #ffffff;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.image-modal__prev-btn[data-v-213a8ec6]::before {
-  content: "\524D\3078";
-  right: -130%;
-}
-.image-modal__next-btn[data-v-213a8ec6]::before {
-  content: "\6B21\3078";
-  left: -130%;
-}
-.image-modal__icon[data-v-213a8ec6] {
-  width: 0.75rem;
-  color: #ffffff;
-  fill: #ffffff;
-}
-.modal-enter-active[data-v-213a8ec6], .modal-leave-active[data-v-213a8ec6] {
-  transition: opacity 0.5s;
-  transform: scale(1);
-}
-.modal-leave-active[data-v-213a8ec6] {
-  transition: opacity 0.3s ease 0.1s;
-}
-.modal-enter[data-v-213a8ec6], .modal-leave-to[data-v-213a8ec6] {
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity 0.5s, transform 0s 0.5s;
-}
-.modal-enter .modal-window[data-v-213a8ec6], .modal-leave-to .modal-window[data-v-213a8ec6] {
-  opacity: 0;
-}
-.next-enter-active[data-v-213a8ec6],
-.prev-enter-active[data-v-213a8ec6] {
-  transition: all 0.5s ease-out;
-}
-.next-enter[data-v-213a8ec6] {
-  transform: translateX(50%);
-  opacity: 0;
-}
-.next-enter-to[data-v-213a8ec6] {
-  transform: translateX(0);
-  opacity: 1;
-}
-.next-leave[data-v-213a8ec6] {
-  transform: translateX(0);
-  opacity: 0;
-}
-.prev-enter[data-v-213a8ec6] {
-  transform: translateX(-50%);
-  opacity: 0;
-}
-.prev-enter-to[data-v-213a8ec6] {
-  transform: translateX(0);
-  opacity: 1;
-}
-.prev-leave[data-v-213a8ec6] {
-  transform: translateX(0);
-  opacity: 0;
-}@charset "UTF-8";
-/*
-import用ファイル
-グローバルに使用する変数やmixinをインポート
-*/
-/**
- * サイトで使用するマップを定義します
- */
-/**
- * ベースとなるフォントサイズ = 16px
- * modules.scssでremに変換して出力
- */
-/**
- * base pixel (8px)
- * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -14470,9 +14019,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -14833,9 +14379,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -15259,9 +14802,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -15812,9 +15352,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -16179,9 +15716,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -16690,9 +16224,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -17579,9 +17110,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -17990,9 +17518,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）
@@ -18553,9 +18078,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -19058,9 +18580,6 @@ import用ファイル
  * rem だとフォントサイズに影響するため、pixelで定義
  */
 /**
- * google map size
- */
-/**
  * アスペクト比（基準を100%と想定）
  */
 /**
@@ -19446,9 +18965,6 @@ import用ファイル
 /**
  * base pixel (8px)
  * rem だとフォントサイズに影響するため、pixelで定義
- */
-/**
- * google map size
  */
 /**
  * アスペクト比（基準を100%と想定）

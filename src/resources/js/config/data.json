@@ -2183,7 +2183,7 @@
         "en": "Sakamoto Shinji"
       },
       "img": {
-        "src": "player10.jpg",
+        "src": "player31.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2244,7 +2244,7 @@
         "en": "Tanabe Masato"
       },
       "img": {
-        "src": "player09.jpg",
+        "src": "player33.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2273,7 +2273,7 @@
         "en": "Saito Riki"
       },
       "img": {
-        "src": "player10.jpg",
+        "src": "player34.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2302,7 +2302,7 @@
         "en": "Satou Tatsuya"
       },
       "img": {
-        "src": "player16.jpg",
+        "src": "player35.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2327,7 +2327,7 @@
         "en": "Maruyama Akira"
       },
       "img": {
-        "src": "player10.jpg",
+        "src": "player36.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2385,7 +2385,7 @@
         "en": "Tanaka hiroshi"
       },
       "img": {
-        "src": "player10.jpg",
+        "src": "player41.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2414,7 +2414,7 @@
         "en": "Takahashi Naoya"
       },
       "img": {
-        "src": "player10.jpg",
+        "src": "player38.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2443,7 +2443,7 @@
         "en": "Marunaka taimei"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player19.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2472,7 +2472,7 @@
         "en": "Suzuki takumi"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player23.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2501,7 +2501,7 @@
         "en": "Nakahori shigeo"
       },
       "img": {
-        "src": "hakumonkai_OB-marunaka.png",
+        "src": "player27.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2617,10 +2617,10 @@
 
   "Provider": [
     {
-      "name": "Hana",
+      "name": "HaNa",
       "img": {
-        "src": "client-hana",
-        "alt": "Hanaのサムネイル画像"
+        "src": "HaNa",
+        "alt": "HaNaのサムネイル画像"
       },
       "twitter": {
         "url": "https://twitter.com/SFphoto87",
@@ -2646,7 +2646,7 @@
     },
     {
       "id": 2,
-      "src": "player14.jpeg",
+      "src": "player14.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {
@@ -2676,7 +2676,7 @@
     },
     {
       "id": 5,
-      "src": "interCollege2019_match_scenery06.jpeg",
+      "src": "interCollege2019_match_scenery06.jpg",
       "alt": "おると",
       "addDate": "2020.11.20",
       "shooting": {

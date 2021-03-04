@@ -1,13 +1,13 @@
 <template>
-<div class="concept-card">
-  <div class="concept-card-inner">
-    <span class="concept-card__subTitle" v-if="windowWidth > breakpointPc">
-      {{ concept.Title.Sub }}
-    </span>  <!-- tablet以下非表示 -->
-    <span class="concept-card__title">{{ concept.Title.Main }}</span>
-    <p class="concept-card__text">{{ concept.Content }}</p>
+  <div class="concept-card">
+    <div class="concept-card-inner">
+      <span class="concept-card__subTitle" v-if="windowWidth > breakpointPc">
+        {{ concept.Title.Sub }}
+      </span>  <!-- tablet以下非表示 -->
+      <span class="concept-card__title">{{ concept.Title.Main }}</span>
+      <p class="concept-card__text">{{ concept.Content }}</p>
+    </div>
   </div>
-</div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div class="slider">
-    <swiper ref="contentsImageSwiper" :options="params">
+    <swiper :options="params">
       <swiper-slide v-for="(player, n) in players" :key="n">
         <player-card :player="player">
           <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">

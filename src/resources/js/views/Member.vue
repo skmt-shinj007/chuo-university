@@ -10,9 +10,7 @@
   </div>
 
   <section class="member__players">
-    <contents-title
-      :title="messages.SectionTitles.Players.Main"
-      :subTitle="messages.SectionTitles.Players.Sub"/>
+    <contents-title :title="messages.SectionTitles.Players"/>
 
     <div class="ticket-group">
       <div class="ticket" ref="playerTicket"
@@ -32,9 +30,7 @@
   </section>
 
   <section class="member__staff">
-    <contents-title
-      :title="messages.SectionTitles.Staff.Main"
-      :subTitle="messages.SectionTitles.Staff.Sub"/>
+    <contents-title :title="messages.SectionTitles.Staff"/>
 
     <div class="ticket-group">
       <div class="ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
@@ -113,6 +109,7 @@ export default {
       ticketWidth: 0,
     }
   },
+
   beforeMount() {
     // TODO:以下DBから情報を引っ張る
 
@@ -144,11 +141,9 @@ export default {
     this.staffTicketNumber = staffTicket.length;
 
     /**
-     * 1.描画後にチケットの幅を取得（デフォ値を代入）
-     * 2.チケットのサイズをリアルタイムで取得
+     * 初期描画時のにチケットの幅を取得
      */
     this.getTicketWidth();
-    window.addEventListener('resize', this.getTicketWidth);
   },
 
   methods: {
@@ -174,13 +169,11 @@ export default {
     },
   },
 
-  beforeDestroy() {
-    /**
-     * 登録したイベントを破棄
-     * ! 無名関数はイベント解除できないので注意
-     */
-    window.removeEventListener('resize', this.getTicketWidth);
-  },
+  watch: {
+    windowWidth() {
+      this.getTicketWidth();
+    }
+  }
 }
 </script>
 

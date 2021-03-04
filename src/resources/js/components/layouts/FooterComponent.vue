@@ -2,9 +2,7 @@
 <footer class="footer">
 
   <section class="footer__contact">
-    <contents-title
-    :title="messages.SectionTitles.Contact.Main"
-    :subTitle="messages.SectionTitles.Contact.Sub"/>
+    <contents-title :title="messages.SectionTitles.Contact"/>
 
     <div class="footer__contact-lead">
       <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
