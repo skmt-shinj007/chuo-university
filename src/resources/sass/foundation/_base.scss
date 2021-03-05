@@ -64,8 +64,6 @@ section {
 // セクションではないが、スタイルだけ適用したいとき。
 .wrapper {
   padding: 0 pixel(2);
-  max-width: device(max);
-  margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
     padding: 0 pixel(3);

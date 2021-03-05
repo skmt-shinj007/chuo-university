@@ -43,8 +43,16 @@
   },
 
   "MainVisual": {
-    "Home": "CHUO\nUNIVERSITY\nSOFT\nTENNIS",
-    "Member": "CHUO UNIVERSITY SOFT TENNIS TEAM MEMBER"
+    "Home": {
+      "text1" : "CHUO",
+      "text2" : "UNIVERSITY",
+      "text3" : "SOFT",
+      "text4" : "TENNIS"
+    },
+    "Member": {
+      "text1" : "TEAM",
+      "text2" : "MEMBER"
+    }
   },
 
   "SectionTitles": {

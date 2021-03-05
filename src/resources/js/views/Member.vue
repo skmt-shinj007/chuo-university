@@ -3,8 +3,18 @@
   <div class="member__main-visual">
     <main-visual>
       <template v-slot:inner>
-        <svg-vue class="main-visual__icon" icon="chuo-logo"/>
-        <span class="main-visual__title">{{ messages.MainVisual.Member }}</span>
+        <div class="main-visual__wrap">
+          <svg-vue class="main-visual__icon" icon="chuo-logo"/>
+          <div class="main-visual__text-group">
+            <div class="main-visual__text" v-for="(text, n) in texts" :key="n">
+              <span
+                class="main-visual__item delay"
+                v-for="(t, n) in text"
+                :key="n"
+                v-text="t"/>
+            </div>
+          </div>
+        </div>
       </template>
     </main-visual>
   </div>
@@ -79,6 +89,12 @@ export default {
   data() {
     return {
       data: Data,
+
+      /**
+       *
+       */
+      texts: {},
+
       users: [],     // 全ユーザー
       players: [],  // プレイヤー
       staff: [],    // スタッフ
@@ -125,6 +141,8 @@ export default {
     this.users.forEach(element => {
       (element.category === this.staffNum) ? this.staff.push(element) : null;
     });
+
+    this.texts = this.messages.MainVisual.Member;
   },
 
   mounted() {
@@ -195,37 +213,70 @@ export default {
 }
 
 .main-visual {
+
+  &__wrap {
+    @include flex(column nowrap, center, center);
+
+    @include mq(sm) {
+      flex-direction: row;
+    }
+  }
+
   &__icon {
-    width: 80%;
-    max-width: interval(40);
+    width: interval(36);
     fill: color(white);
     stroke: color(orange);
     stroke-width: interval(1);
 
     @include mq(sm) {
-      width: 50%;
-    }
-
-    @include mq(md) {
-      max-width: interval(60);
+      width: interval(28);
     }
   }
 
-  &__title {
-    @include bangers(font(24), 2px, bold);
-    line-height: 1.2;
-    text-align: center;
-    margin-top: interval(5);
-    text-shadow: none;
+  &__text-group {
+    margin-top: interval(2);
 
     @include mq(sm) {
-      font-size: font(28);
-      letter-spacing: 3px;
+      margin: 0 0 0 interval(1);
+      flex-grow: 2;
+    }
+
+    @include mq(md) {
+      margin-left: interval(3);
+    }
+  }
+
+  &__text {
+    text-align: center;
+
+    @include mq(sm) {
+      text-align: left;
+    }
+  }
+
+  &__item {
+    text-shadow: none;
+    line-height: 1.2;
+    font-size: font(40);
+    margin-right: interval(1);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include mq(sm) {
+      font-size: font(36);
+      margin-right: interval(.5);
     }
 
     @include mq(md) {
       font-size: font(48);
-      letter-spacing: 5px;
+    }
+  }
+
+  @for $i from 1 through 2 {
+    &__item:nth-child(#{$i}) {
+      animation-delay: $i * 100ms + 200ms;
     }
   }
 }

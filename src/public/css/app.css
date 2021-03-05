@@ -102,6 +102,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-3ff6fe5a {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-3ff6fe5a {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-3ff6fe5a {
 0% {
     transform: translateY(0);
@@ -329,25 +349,62 @@ import用ファイル
 .main-visual[data-v-3ff6fe5a] {
   width: 100%;
   height: 100vh;
-  padding: 0 1rem;
   background: #030A10;
   background: linear-gradient(to right, #030A10 0%, #091e2f 100%);
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.main-visual__title[data-v-3ff6fe5a] {
+.main-visual__item[data-v-3ff6fe5a] {
   color: #ffffff;
-  white-space: pre-wrap;
-  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
   font-size: 3rem;
+  line-height: 1.2;
   text-shadow: 3px 3px 0px #e56c2c;
+  -webkit-animation: textIn-data-v-3ff6fe5a 0.8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
+          animation: textIn-data-v-3ff6fe5a 0.8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
 }
-@media screen and (min-width: 560px) {
-.main-visual__title[data-v-3ff6fe5a] {
-    line-height: 1.2;
+.main-visual__item[data-v-3ff6fe5a]:nth-child(1) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
 }
+.main-visual__item[data-v-3ff6fe5a]:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(3) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(4) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(5) {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(6) {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(7) {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(8) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(9) {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(10) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -450,6 +507,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown {
@@ -811,6 +888,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown {
@@ -1181,6 +1278,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-9b317ac0 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-9b317ac0 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-9b317ac0 {
@@ -1619,6 +1736,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-63d84db2 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-63d84db2 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-63d84db2 {
 0% {
     transform: translateY(0);
@@ -1995,6 +2132,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-10d75cdd {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-10d75cdd {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-10d75cdd {
 0% {
     transform: translateY(0);
@@ -2364,6 +2521,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-63cd6604 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-63cd6604 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-63cd6604 {
@@ -2869,6 +3046,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-161a410d {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-161a410d {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-161a410d {
 0% {
     transform: translateY(0);
@@ -3194,6 +3391,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-9745667e {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-9745667e {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-9745667e {
@@ -3593,6 +3810,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-7186e4cc {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-7186e4cc {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-7186e4cc {
 0% {
     transform: translateY(0);
@@ -3957,6 +4194,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-30380e08 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-30380e08 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-30380e08 {
 0% {
     transform: translateY(0);
@@ -4313,6 +4570,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown {
@@ -4722,6 +4999,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-6c61d285 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-6c61d285 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-6c61d285 {
 0% {
     transform: translateY(0);
@@ -5084,6 +5381,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-c3a537a8 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-c3a537a8 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-c3a537a8 {
@@ -5454,6 +5771,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown {
@@ -5833,6 +6170,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
@@ -6180,6 +6537,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown {
@@ -6572,6 +6949,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-53189f00 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-53189f00 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-53189f00 {
 0% {
     transform: translateY(0);
@@ -6916,6 +7313,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-213a8ec6 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-213a8ec6 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-213a8ec6 {
@@ -7439,6 +7856,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-bb84db5a {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-bb84db5a {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-bb84db5a {
 0% {
     transform: translateY(0);
@@ -7792,6 +8229,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-357d3955 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-357d3955 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-357d3955 {
@@ -8332,6 +8789,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-358d2551 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-358d2551 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-358d2551 {
@@ -8932,6 +9409,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
@@ -9414,6 +9911,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-668c6779 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-668c6779 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-668c6779 {
 0% {
     transform: translateY(0);
@@ -9653,44 +10170,77 @@ import用ファイル
   width: 3rem;
   height: 3rem;
 }
+.main-visual__wrap[data-v-668c6779] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.main-visual__wrap[data-v-668c6779] {
+    flex-direction: row;
+}
+}
 .main-visual__icon[data-v-668c6779] {
-  width: 80%;
-  max-width: 20rem;
+  width: 18rem;
   fill: #ffffff;
   stroke: #e56c2c;
   stroke-width: 0.5rem;
 }
 @media screen and (min-width: 560px) {
 .main-visual__icon[data-v-668c6779] {
-    width: 50%;
+    width: 14rem;
 }
 }
-@media screen and (min-width: 1025px) {
-.main-visual__icon[data-v-668c6779] {
-    max-width: 30rem;
-}
-}
-.main-visual__title[data-v-668c6779] {
-  font-family: "Bangers", cursive;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-  margin-top: 2.5rem;
-  text-shadow: none;
+.main-visual__text-group[data-v-668c6779] {
+  margin-top: 1rem;
 }
 @media screen and (min-width: 560px) {
-.main-visual__title[data-v-668c6779] {
-    font-size: 1.75rem;
-    letter-spacing: 3px;
+.main-visual__text-group[data-v-668c6779] {
+    margin: 0 0 0 0.5rem;
+    flex-grow: 2;
 }
 }
 @media screen and (min-width: 1025px) {
-.main-visual__title[data-v-668c6779] {
-    font-size: 3rem;
-    letter-spacing: 5px;
+.main-visual__text-group[data-v-668c6779] {
+    margin-left: 1.5rem;
 }
+}
+.main-visual__text[data-v-668c6779] {
+  text-align: center;
+}
+@media screen and (min-width: 560px) {
+.main-visual__text[data-v-668c6779] {
+    text-align: left;
+}
+}
+.main-visual__item[data-v-668c6779] {
+  text-shadow: none;
+  line-height: 1.2;
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+}
+.main-visual__item[data-v-668c6779]:last-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 560px) {
+.main-visual__item[data-v-668c6779] {
+    font-size: 2.25rem;
+    margin-right: 0.25rem;
+}
+}
+@media screen and (min-width: 1025px) {
+.main-visual__item[data-v-668c6779] {
+    font-size: 3rem;
+}
+}
+.main-visual__item[data-v-668c6779]:nth-child(1) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+.main-visual__item[data-v-668c6779]:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
 }
 .ticket-group[data-v-668c6779] {
   display: flex;
@@ -9816,6 +10366,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown {
@@ -10174,6 +10744,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-42f1fe89 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-42f1fe89 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-42f1fe89 {
@@ -10562,6 +11152,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-b79d4b88 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-b79d4b88 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-b79d4b88 {
@@ -10965,6 +11575,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-57d67ae5 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-57d67ae5 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-57d67ae5 {
@@ -11373,6 +12003,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-600734dc {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-600734dc {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-600734dc {
 0% {
     transform: translateY(0);
@@ -11753,6 +12403,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
@@ -12106,6 +12776,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-3ea95d82 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-3ea95d82 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-3ea95d82 {
@@ -12509,6 +13199,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-301d0ec5 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-301d0ec5 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-301d0ec5 {
@@ -12925,6 +13635,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
@@ -13314,6 +14044,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
@@ -13676,6 +14426,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-7ec9af9b {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-7ec9af9b {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-7ec9af9b {
@@ -14106,6 +14876,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
@@ -14466,6 +15256,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown {
@@ -14889,6 +15699,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-5885bf62 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-5885bf62 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-5885bf62 {
@@ -15439,6 +16269,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-46e3fba3 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-46e3fba3 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-46e3fba3 {
 0% {
     transform: translateY(0);
@@ -15803,6 +16653,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-403316a6 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-403316a6 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-403316a6 {
@@ -16311,6 +17181,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-b28ce99e {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-b28ce99e {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-b28ce99e {
@@ -17197,6 +18087,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown {
 0% {
     transform: translateY(0);
@@ -17605,6 +18515,26 @@ import用ファイル
 }
 100% {
     transform: translateX(0);
+}
+}
+@-webkit-keyframes textIn-data-v-1f270d64 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-1f270d64 {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutDown-data-v-1f270d64 {
@@ -18165,6 +19095,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-6832e7cf {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-6832e7cf {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-6832e7cf {
 0% {
     transform: translateY(0);
@@ -18667,6 +19617,26 @@ import用ファイル
     transform: translateX(0);
 }
 }
+@-webkit-keyframes textIn-data-v-060e08fe {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
+@keyframes textIn-data-v-060e08fe {
+0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+}
+100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+}
 @-webkit-keyframes fadeoutDown-data-v-060e08fe {
 0% {
     transform: translateY(0);
@@ -19052,6 +20022,26 @@ import用ファイル
   }
   100% {
     transform: translateX(0);
+  }
+}
+@-webkit-keyframes textIn {
+  0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes textIn {
+  0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 @-webkit-keyframes fadeoutDown {
@@ -19809,8 +20799,6 @@ section {
 
 .wrapper {
   padding: 0 16px;
-  max-width: 1600px;
-  margin: 0 auto 5rem auto;
 }
 @media screen and (min-width: 560px) {
   .wrapper {

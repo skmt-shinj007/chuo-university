@@ -93,6 +93,23 @@
   }
 }
 
+// main visual text
+@keyframes textIn {
+  0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+  }
+
+  50% {
+
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
 // fadeout 下方向
 @keyframes fadeoutDown {
   0% {
