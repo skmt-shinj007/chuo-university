@@ -165,9 +165,14 @@ th,td {
 /**
  * 表示の際にふわっと表示させるアニメーションに指定するクラス
  */
-.animated {
+.fadeUp {
   opacity: 0;
   transition:
     1.0s opacity cubic-bezier(0.39, 0.575, 0.565, 1),
     1.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.fade {
+  opacity: 0;
+  transition: 1.0s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
 }

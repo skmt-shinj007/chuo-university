@@ -92,7 +92,7 @@ export default {
      * スクロールアニメーション
      * @param2 {el} ディレクティブを指定した要素のDOMが入る。
      */
-    handleScroll(evt, el) {
+    fadeUp(evt, el) {
       // アニメーションの
       let top = el.getBoundingClientRect().top;
       let trigger = this.windowHeight / 2;
@@ -100,7 +100,7 @@ export default {
       if (top < trigger) {
         el.setAttribute(
           'style',
-          'opacity: 1; transform: translate3d(0, -10px, 0)'
+          'opacity: 1; transform: translate3d(0, -10px, 0);'
         )
       }
     }
