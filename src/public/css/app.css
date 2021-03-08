@@ -10162,6 +10162,29 @@ import用ファイル
   padding-bottom: 5rem;
   margin-bottom: 0;
 }
+.member__ticket-group[data-v-668c6779] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.member__ticket-group[data-v-668c6779] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+}
+.member__ticket[data-v-668c6779] {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.member__ticket[data-v-668c6779] {
+    margin-bottom: 0;
+    padding: 0.5rem;
+}
+}
 .member__scroll-top[data-v-668c6779] {
   position: fixed;
   z-index: 10;
@@ -10242,28 +10265,12 @@ import用ファイル
   -webkit-animation-delay: 400ms;
           animation-delay: 400ms;
 }
-.ticket-group[data-v-668c6779] {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+.ticket-enter-active[data-v-668c6779] {
+  transition: opacity 0.5s, transform 0.5s ease-out;
 }
-@media screen and (min-width: 560px) {
-.ticket-group[data-v-668c6779] {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-}
-.ticket[data-v-668c6779] {
-  margin-bottom: 2.5rem;
-}
-@media screen and (min-width: 560px) {
-.ticket[data-v-668c6779] {
-    margin-bottom: 0;
-    padding: 0.5rem;
-}
+.ticket-enter[data-v-668c6779] {
+  transform: translateY(-50px);
+  opacity: 0;
 }@charset "UTF-8";
 /*
 import用ファイル

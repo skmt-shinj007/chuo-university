@@ -22,14 +22,18 @@
   <section class="member__players">
     <contents-title :title="messages.SectionTitles.Players"/>
 
-    <div class="ticket-group">
-      <div class="ticket" ref="playerTicket"
-          v-for="(player, n) in players"
-          :key="n"
-          @click="openModal(player)">
+    <div class="member__ticket-group">
 
-        <user-ticket :userObj="player"/>
+      <div
+        class="member__ticket"
+        ref="playerTicket"
+        v-for="player in players"
+        :key="player.id"
+        @click="openModal(player)">
+
+          <user-ticket :userObj="player"/>
       </div>
+
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
         class="enpty"
@@ -42,10 +46,18 @@
   <section class="member__staff">
     <contents-title :title="messages.SectionTitles.Staff"/>
 
-    <div class="ticket-group">
-      <div class="ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
-        <user-ticket :userObj="staffItem"/>
+    <div class="member__ticket-group">
+
+      <div
+        class="member__ticket"
+        ref="staffTicket"
+        v-for="user in staff"
+        :key="user.id"
+        @click="openModal(staffItem)">
+
+          <user-ticket :userObj="user"/>
       </div>
+
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
         class="enpty"
@@ -91,7 +103,8 @@ export default {
       data: Data,
 
       /**
-       *
+       * メインビジュアルのテキスト
+       * @type { Object }
        */
       texts: {},
 
@@ -146,13 +159,14 @@ export default {
   },
 
   mounted() {
+    let refs = this.$refs;
     /**
      * [チケットレイアウトの配置]
      * justify-content: center; は余った要素が真ん中よりになるので、左寄せに揃えるための処理
      * 解決策 -> チケットの数だけ空divを追加する。
      */
-    const playerTicket = this.$refs.playerTicket;
-    const staffTicket = this.$refs.staffTicket;
+    const playerTicket = refs.playerTicket;
+    const staffTicket = refs.staffTicket;
 
     // チケットの個数を変数に格納
     this.playerTicketNumber = playerTicket.length;
@@ -184,6 +198,7 @@ export default {
      */
     getTicketWidth() {
       this.ticketWidth = this.$refs.playerTicket[0].offsetWidth;
+      // console.log(this.ticketWidth);
     },
   },
 
@@ -205,6 +220,23 @@ export default {
   &__staff {
     padding-bottom: interval(10);
     margin-bottom: 0;
+  }
+
+  &__ticket-group {
+    @include flex(column nowrap, center, center);
+
+    @include mq(sm) {
+      @include flex(row wrap, center, center);
+    }
+  }
+
+  &__ticket {
+    margin-bottom: interval(5);
+
+    @include mq(sm) {
+      margin-bottom: 0;
+      padding: interval(1);
+    }
   }
 
   &__scroll-top {
@@ -281,20 +313,14 @@ export default {
   }
 }
 
-.ticket-group {
-  @include flex(column nowrap, center, center);
-
-  @include mq(sm) {
-    @include flex(row wrap, center, center);
-  }
-}
-
 .ticket {
-  margin-bottom: interval(5);
+  &-enter-active {
+    transition: opacity .5s, transform .5s ease-out;
+  }
 
-  @include mq(sm) {
-    margin-bottom: 0;
-    padding: interval(1);
+  &-enter {
+    transform: translateY(-50px);
+    opacity: 0;
   }
 }
 </style>
