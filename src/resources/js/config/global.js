@@ -87,5 +87,22 @@ export default {
       this.windowWidth = window.innerWidth;
       this.windowHeight = window.innerHeight;
     },
+
+    /**
+     * スクロールアニメーション
+     * @param2 {el} ディレクティブを指定した要素のDOMが入る。
+     */
+    handleScroll(evt, el) {
+      // アニメーションの
+      let top = el.getBoundingClientRect().top;
+      let trigger = this.windowHeight / 2;
+
+      if (top < trigger) {
+        el.setAttribute(
+          'style',
+          'opacity: 1; transform: translate3d(0, -10px, 0)'
+        )
+      }
+    }
   },
 }
