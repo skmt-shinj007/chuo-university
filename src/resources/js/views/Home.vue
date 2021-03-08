@@ -9,14 +9,14 @@
     </section>
 
     <section class="home__about">
-      <div class="about" v-for="(item, n) in aboutContents" :key="n">
+      <div class="about" v-for="(item, n) in aboutContents" :key="n" ref="about">
 
         <figure class="about__img">
           <img :src="`/image/${item.img.src}.jpg`" :alt="item.img.alt">
         </figure>
 
         <div class="about__box">
-          <div class="about__content">
+          <div class="about__content animated" v-scroll="handleScroll">
             <div class="about__title">
               <contents-title :title="item.title"/>
             </div>
@@ -100,6 +100,13 @@ export default {
         if (el.title === element.key) el.title = element.value;
       });
     });
+  },
+
+  mounted() {
+    this.$refs.about.forEach((element) => {
+      let top = element.getBoundingClientRect().top;
+      console.log(element);
+    })
   },
 
   methods: {
