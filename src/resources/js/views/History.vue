@@ -25,16 +25,28 @@
 
         <!-- 昭和の歴史 -->
         <div class="archive__wrap" ref="showa">
-          <div class="archive__content" v-for="(showaHistory, i) in showa" :key="`showa-${i}`">
+          <div
+            class="archive__content fade"
+            v-for="(showaHistory, i) in showa"
+            :key="`showa-${i}`"
+            v-scroll="fade">
+
             <history-box :data="showaHistory"/>
           </div>
         </div>
 
         <!-- 平成の歴史 (今後コンテンツが増える可能性を考慮し、配列ループで表示) -->
         <div class="archive__wrap" ref="heisei">
-          <div class="archive__content" v-for="(heiseiHistory, i) in heisei" :key="`heisei-${i}`">
-            <history-box :data="heiseiHistory"/>
-          </div>
+          <transition name="scroll">
+            <div
+              class="archive__content fade"
+              v-for="(heiseiHistory, i) in heisei"
+              :key="`heisei-${i}`"
+              v-scroll="fade">
+
+              <history-box :data="heiseiHistory"/>
+            </div>
+          </transition>
         </div>
 
       </div>
@@ -224,6 +236,18 @@ export default {
 
       // 沿革ボックスのmargin-bottom を数値で取得
       this.archiveMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
+    },
+
+    fade(evt, el) {
+      let top = el.getBoundingClientRect().top;
+      let trigger = this.windowHeight / 2;
+
+      if (top < trigger) {
+        el.setAttribute(
+          'style',
+          'opacity: 1;'
+        )
+      }
     }
   },
 
