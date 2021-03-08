@@ -19,7 +19,8 @@ export default {
        * [現在のデバイス幅]
        * @type { Number }
        */
-      windowWidth: null,
+      windowWidth: 0,
+      windowHeight: 0,
 
       /**
        * [現在のスクロール量]
@@ -45,11 +46,12 @@ export default {
 
   created() {
     /**
-     * [ウインドウ幅をリアルタイムで取得]
+     * [ウインドウサイズ取得]
+     * 処理をリサイズイベントに登録する
      * @type { function }
      */
-    this.windowWidth = window.innerWidth;
-    window.addEventListener('resize', this.getWindowWidth);
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
   },
 
   mounted() {
@@ -57,13 +59,13 @@ export default {
      * [スクロール量をリアルタイムで取得]
      * @type { function }
      */
-    this.scrollY = window.scrollY;
+    this.getScroll();
     window.addEventListener('scroll', this.getScroll);
   },
 
   beforeDestroy() {
     // コンポーネント破棄直前に追加したイベントをリスナーから削除
-    window.removeEventListener('resize', this.getWindowWidth);
+    window.removeEventListener('resize', this.handleResize);
     window.removeEventListener('scroll', this.getScroll);
   },
 
@@ -81,8 +83,9 @@ export default {
      * [windowサイズを取得]
      * イベント解除を考えて、メソッドとして登録
      */
-    getWindowWidth() {
+    handleResize() {
       this.windowWidth = window.innerWidth;
+      this.windowHeight = window.innerHeight;
     },
   },
 }
