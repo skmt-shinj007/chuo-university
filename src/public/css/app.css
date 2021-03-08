@@ -3323,7 +3323,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-9745667e {
+@-webkit-keyframes iconSlide-data-v-0da5752f {
 0% {
     transform: translateX(0);
 }
@@ -3358,7 +3358,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-9745667e {
+@keyframes iconSlide-data-v-0da5752f {
 0% {
     transform: translateX(0);
 }
@@ -3393,7 +3393,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes textIn-data-v-9745667e {
+@-webkit-keyframes textIn-data-v-0da5752f {
 0% {
     transform: scale(2) translateY(-20px);
     opacity: 0;
@@ -3403,7 +3403,7 @@ import用ファイル
     opacity: 1;
 }
 }
-@keyframes textIn-data-v-9745667e {
+@keyframes textIn-data-v-0da5752f {
 0% {
     transform: scale(2) translateY(-20px);
     opacity: 0;
@@ -3413,7 +3413,7 @@ import用ファイル
     opacity: 1;
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-9745667e {
+@-webkit-keyframes fadeoutDown-data-v-0da5752f {
 0% {
     transform: translateY(0);
 }
@@ -3458,7 +3458,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@keyframes fadeoutDown-data-v-9745667e {
+@keyframes fadeoutDown-data-v-0da5752f {
 0% {
     transform: translateY(0);
 }
@@ -3503,7 +3503,7 @@ import用ファイル
     transform: translateY(100%);
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-9745667e {
+@-webkit-keyframes fadeoutTop-data-v-0da5752f {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -3513,7 +3513,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-9745667e {
+@keyframes fadeoutTop-data-v-0da5752f {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -3523,7 +3523,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes bound-data-v-9745667e {
+@-webkit-keyframes bound-data-v-0da5752f {
 0% {
     transform: translate(0%, -100%);
 }
@@ -3552,7 +3552,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@keyframes bound-data-v-9745667e {
+@keyframes bound-data-v-0da5752f {
 0% {
     transform: translate(0%, -100%);
 }
@@ -3581,7 +3581,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@-webkit-keyframes rotation-data-v-9745667e {
+@-webkit-keyframes rotation-data-v-0da5752f {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -3589,7 +3589,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@keyframes rotation-data-v-9745667e {
+@keyframes rotation-data-v-0da5752f {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -3597,7 +3597,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@-webkit-keyframes loading-data-v-9745667e {
+@-webkit-keyframes loading-data-v-0da5752f {
 0% {
     height: 0;
 }
@@ -3608,7 +3608,7 @@ import用ファイル
     height: 0;
 }
 }
-@keyframes loading-data-v-9745667e {
+@keyframes loading-data-v-0da5752f {
 0% {
     height: 0;
 }
@@ -3637,75 +3637,46 @@ import用ファイル
 /**
  * component
  */
-.concept-card[data-v-9745667e] {
-  position: relative;
-  width: 50%;
-  margin: 0 auto;
-  color: #ffffff;
-  border: 3px solid #ffffff;
-  border-radius: 4px;
+.concept__tab-group[data-v-0da5752f] {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  background: #10334e;
-  background: radial-gradient(ellipse at center, #10334e 0%, #030A10 100%);
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
 }
-@media screen and (min-width: 560px) {
-.concept-card[data-v-9745667e] {
-    width: 8rem;
+.concept__tab[data-v-0da5752f] {
+  background-color: #f2f2f2;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 2px;
+  margin-right: 0.25rem;
+  transform: translateY(0.5rem);
 }
+.concept__tab[data-v-0da5752f]:last-child {
+  margin-right: 0;
 }
-.concept-card[data-v-9745667e]::before {
+.concept__radio[data-v-0da5752f] {
+  display: none;
+}
+.concept__label[data-v-0da5752f] {
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+.concept__content-list[data-v-0da5752f] {
+  position: relative;
+  color: #ffffff;
+  border-radius: 2px;
+  background-color: #091e2f;
+}
+.concept__content-list[data-v-0da5752f]::before {
   content: "";
   display: block;
-  padding-top: 100%;
+  padding-bottom: 100%;
 }
-@media screen and (min-width: 1025px) {
-.concept-card:hover .concept-card__title[data-v-9745667e],
-.concept-card:hover .concept-card__subTitle[data-v-9745667e] {
-    opacity: 0;
-}
-.concept-card:hover .concept-card__text[data-v-9745667e] {
-    opacity: 1;
-}
-}
-.concept-card-inner[data-v-9745667e] {
-  width: 100%;
-  height: 100%;
+.concept__text[data-v-0da5752f] {
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.concept-card__subTitle[data-v-9745667e] {
-  font-size: 0.625rem;
-  letter-spacing: 2px;
-  transition: all 0.5s ease-in-out;
-}
-.concept-card__title[data-v-9745667e] {
-  font-size: 1rem;
-  transition: all 0.5s ease-in-out;
-}
-.concept-card__text[data-v-9745667e] {
-  color: #ffffff;
-  padding: 0.5rem;
-  text-align: center;
-}
-@media screen and (min-width: 1025px) {
-.concept-card__text[data-v-9745667e] {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    font-weight: bold;
-    transition: all 0.5s ease-in-out;
-}
+  padding: 1rem;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -8522,36 +8493,6 @@ import用ファイル
 .photo__button[data-v-357d3955], .member__button[data-v-357d3955] {
     max-width: 25rem;
     margin: 2.5rem auto 0 auto;
-}
-}
-@media screen and (min-width: 560px) {
-.concept__card-group[data-v-357d3955] {
-    max-width: 30rem;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-}
-}
-@media screen and (min-width: 1025px) {
-.concept__card-group[data-v-357d3955] {
-    max-width: 50rem;
-}
-}
-.concept__card[data-v-357d3955] {
-  margin-bottom: 2.5rem;
-}
-.concept__card[data-v-357d3955]:last-child {
-  margin-bottom: 0;
-}
-@media screen and (min-width: 560px) {
-.concept__card[data-v-357d3955] {
-    margin-bottom: 0;
-    margin-right: 1rem;
-}
-.concept__card[data-v-357d3955]:last-child {
-    margin-right: 0;
 }
 }
 .practice__map[data-v-357d3955] {

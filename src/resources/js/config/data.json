@@ -48,27 +48,30 @@
     }
   ],
 
-  "Concept": [
+  "concepts": [
     {
-      "Title": {
-        "Main": "Symbol",
-        "Sub": "部訓"
+      "id": 1,
+      "label": {
+        "ja": "部訓",
+        "en": "symbol"
       },
-      "Content": "部訓が入ります。部訓が入ります。"
+      "content": "部訓が入ります。部訓が入ります。"
     },
     {
-      "Title": {
-        "Main": "Target",
-        "Sub": "目標"
+      "id": 2,
+      "label": {
+        "ja": "目標",
+        "en": "target"
       },
-      "Content": "全日本大学対抗戦優勝"
+      "content": "全日本大学対抗戦優勝"
     },
     {
-      "Title": {
-        "Main": "Mission",
-        "Sub": "意義"
+      "id": 3,
+      "label": {
+        "ja": "目的",
+        "en": "mission"
       },
-      "Content": "ソフトテニスを通じた人間育成"
+      "content": "ソフトテニスを通じた人間育成"
     }
   ],
 

@@ -5,17 +5,13 @@
     <main-visual-slider :images="mainVisualImages"/>
   </div>
 
-  <div class="background-darkblue">
-    <section class="club__concept">
-      <contents-title :title="messages.SectionTitles.Concept" color="white"/>
+  <section class="club__concept">
+    <contents-title :title="messages.SectionTitles.Concept"/>
 
-      <div class="concept__card-group">
-        <div class="concept__card" v-for="(concept, n) in concepts" :key="n">
-          <concept-card :concept="concept"/>
-        </div>
-      </div>
-    </section>
-  </div>
+    <div class="club__concept-content">
+      <concept :items="concepts"/>
+    </div>
+  </section>
 
   <section class="club__practice">
     <contents-title :title="messages.SectionTitles.Practice"/>
@@ -131,7 +127,7 @@ import Data from '../config/data.json';
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import GoogleMap from '../components/modules/GoogleMapComponent';
-import ConceptCard from '../components/modules/card/ConceptCardComponent';
+import Concept from '../components/contents/ConceptComponent';
 import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
@@ -145,7 +141,7 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 export default {
   components: {
     ContentsTitle,
-    ConceptCard,
+    Concept,
     MainVisualSlider,
     TableComponent,
     GoogleMap,
@@ -157,6 +153,7 @@ export default {
     ArrangeImages,
     ScrollTopButton,
   },
+
   data() {
     return {
       data: Data,
@@ -181,7 +178,7 @@ export default {
     this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
 
     // config/data.jsonから引っ張る
-    this.$data.data.Concept.forEach(element => this.concepts.push(element));
+    this.$data.data.concepts.forEach(element => this.concepts.push(element));
     this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
     this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
     this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
@@ -200,7 +197,7 @@ export default {
  */
 const mainVisualApiResponse = [
   {
-    path: 'tennisBall-vertical.jpg',
+    path: 'player28.jpg',
     name: 'altテキストを入れます',
     text: '感謝と謙虚な心を忘れずに、日本一。これが中央大学ソフトテニス部の永遠の目標です',
   },
@@ -332,36 +329,7 @@ const memberNumberData = [
 }
 
 .concept {
-  &__card-group {
 
-    @include mq(sm) {
-      max-width: interval(60);
-      margin: 0 auto;
-      @include flex(row nowrap, space-between, center);
-    }
-
-    @include mq(md) {
-      max-width: interval(100);
-    }
-  }
-
-  &__card {
-    margin-bottom: interval(5);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include mq(sm) {
-      margin-bottom: 0;
-      margin-right: interval(2);
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-  }
 }
 
 .practice {
