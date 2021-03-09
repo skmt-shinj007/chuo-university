@@ -91,6 +91,7 @@ import Data from '../config/data.json';
 
 // mixin
 import Risize from '../config/resize';
+import Scroll from '../config/scroll';
 
 // import components
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
@@ -100,7 +101,7 @@ import ChampionsCard from '../components/modules/card/ChampionsCardComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
-  mixins: [Risize],
+  mixins: [Risize, Scroll],
 
   components: {
     ContentsTitle,
