@@ -11,9 +11,12 @@ export default {
       messages: Messages,
       /**
        * [ブレイクポイント]
-       * @type { Number }
+       * @type { Object }
        */
-      breakpointPc: 1025,
+      breakpoints: {
+        sm: 560,
+        md: 1025,
+      },
 
       /**
        * [現在のデバイス幅]

@@ -27,12 +27,12 @@
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="practice__slider" v-if="windowWidth < breakpointPc">
+    <div class="practice__slider" v-if="windowWidth < breakpoints.md">
       <image-slider :images="courtImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="practice__image-group" v-if="windowWidth >= breakpointPc">
+    <div class="practice__image-group" v-if="windowWidth >= breakpoints.md">
       <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
         <caption-image :image="image"/>
       </div>
@@ -61,7 +61,7 @@
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="dormitory__slider" v-if="windowWidth < breakpointPc">
+    <div class="dormitory__slider" v-if="windowWidth < breakpoints.md">
       <image-slider :images="dormitoryImages">
         <template v-slot:caption="image">
           <span class="dormitory__caption">{{ image.image.caption }}</span>
@@ -71,7 +71,7 @@
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="dormitory__image-group" v-if="windowWidth >= breakpointPc">
+    <div class="dormitory__image-group" v-if="windowWidth >= breakpoints.md">
       <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
         <caption-image :image="image">
           <template v-slot:caption="image">
@@ -278,10 +278,6 @@ const memberNumberData = [
   &__mainVisualSlider {
     width: 100%;
     height: 100vh;
-  }
-
-  &__concept {
-    margin: 0 auto;
   }
 
   &__dormitory {
