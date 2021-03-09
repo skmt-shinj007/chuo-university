@@ -78,6 +78,9 @@
 </template>
 
 <script>
+// mixin
+import Risize from '../config/resize';
+
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
@@ -98,6 +101,9 @@ export default {
     TableComponent,
     ScrollTopButton,
   },
+
+  mixins: [Risize],
+
   data() {
     return {
       data: Data,

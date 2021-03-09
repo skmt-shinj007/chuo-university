@@ -38,6 +38,9 @@
 import Data from '../config/data.json';
 import Config from '../config/config.json';
 
+// mixin
+import Risize from '../config/resize';
+
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import Images from '../components/contents/ImagesComponent';
@@ -53,6 +56,9 @@ export default {
     ProviderTicketModal,
     ScrollTopButton,
   },
+
+  mixins: [Risize],
+
   data() {
     return {
       /**

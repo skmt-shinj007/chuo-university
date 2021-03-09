@@ -124,6 +124,9 @@
 // data
 import Data from '../config/data.json';
 
+// mixin
+import Risize from '../config/resize';
+
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import GoogleMap from '../components/modules/GoogleMapComponent';
@@ -153,6 +156,8 @@ export default {
     ArrangeImages,
     ScrollTopButton,
   },
+
+  mixins: [Risize],
 
   data() {
     return {

@@ -29,10 +29,15 @@
 // component
 import ImageModal from '../modules/modal/ImageModalComponent';
 
+// mixin
+import Risize from '../../config/resize';
+
 export default {
   components: {
     ImageModal,
   },
+
+  mixins: [Risize],
 
   data() {
     return {

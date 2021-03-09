@@ -2,28 +2,13 @@
  * 全コンポーネントで読み込むオプションを定義
  */
 
-// メッセージを格納するJSONファイルをインポート
+// サイト内で使用するテキスト群
 import Messages from './messages.json';
 
 export default {
   data() {
     return {
       messages: Messages,
-      /**
-       * [ブレイクポイント]
-       * @type { Object }
-       */
-      breakpoints: {
-        sm: 560,
-        md: 1025,
-      },
-
-      /**
-       * [現在のデバイス幅]
-       * @type { Number }
-       */
-      windowWidth: 0,
-      windowHeight: 0,
 
       /**
        * [現在のスクロール量]
@@ -47,16 +32,6 @@ export default {
     }
   },
 
-  created() {
-    /**
-     * [ウインドウサイズ取得]
-     * 処理をリサイズイベントに登録する
-     * @type { function }
-     */
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
-  },
-
   mounted() {
     /**
      * [スクロール量をリアルタイムで取得]
@@ -68,7 +43,6 @@ export default {
 
   beforeDestroy() {
     // コンポーネント破棄直前に追加したイベントをリスナーから削除
-    window.removeEventListener('resize', this.handleResize);
     window.removeEventListener('scroll', this.getScroll);
   },
 
@@ -80,15 +54,6 @@ export default {
     */
     getScroll() {
       this.scrollY = window.scrollY;
-    },
-
-    /**
-     * [windowサイズを取得]
-     * イベント解除を考えて、メソッドとして登録
-     */
-    handleResize() {
-      this.windowWidth = window.innerWidth;
-      this.windowHeight = window.innerHeight;
     },
 
     /**

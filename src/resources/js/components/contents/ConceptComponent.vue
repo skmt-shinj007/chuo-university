@@ -40,7 +40,12 @@
 </template>
 
 <script>
+// mixin
+import Risize from '../../config/resize';
+
 export default {
+  mixins: [Risize],
+
   data() {
     return {
       /**

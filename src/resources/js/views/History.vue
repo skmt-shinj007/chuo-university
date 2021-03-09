@@ -89,6 +89,9 @@
 // data
 import Data from '../config/data.json';
 
+// mixin
+import Risize from '../config/resize';
+
 // import components
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import HistoryBox from '../components/contents/HistoryBoxComponent';
@@ -97,6 +100,8 @@ import ChampionsCard from '../components/modules/card/ChampionsCardComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
+  mixins: [Risize],
+
   components: {
     ContentsTitle,
     HistoryBox,
@@ -104,6 +109,7 @@ export default {
     ChampionsCard,
     ScrollTopButton,
   },
+
   data() {
     return {
       data: Data,
