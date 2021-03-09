@@ -3901,10 +3901,6 @@ import用ファイル
 @media screen and (min-width: 560px) {
 .concept__ball-group[data-v-0da5752f] {
     margin-right: 0.5rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    align-items: center;
 }
 }
 .concept__ball[data-v-0da5752f] {

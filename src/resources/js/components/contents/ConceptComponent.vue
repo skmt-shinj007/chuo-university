@@ -114,7 +114,6 @@ export default {
 
     @include mq(sm) {
       margin-right: interval(1);
-      @include flex(row nowrap, flex-end, center);
     }
   }
 
