@@ -89,6 +89,13 @@
 // data
 import Data from '../config/data.json';
 
+/**
+ * mixin
+ * resize.js は animation.js に組み込まれているので無駄にインポートしない。
+ */
+import Scroll from '../config/scroll';
+import Animation from '../config/animation';
+
 // import components
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import HistoryBox from '../components/contents/HistoryBoxComponent';
@@ -97,6 +104,8 @@ import ChampionsCard from '../components/modules/card/ChampionsCardComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
+  mixins: [Scroll, Animation],
+
   components: {
     ContentsTitle,
     HistoryBox,
@@ -104,6 +113,7 @@ export default {
     ChampionsCard,
     ScrollTopButton,
   },
+
   data() {
     return {
       data: Data,
@@ -237,18 +247,6 @@ export default {
       // 沿革ボックスのmargin-bottom を数値で取得
       this.archiveMarginBottom = parseInt(window.getComputedStyle(this.$refs.taisho).marginBottom);
     },
-
-    fade(evt, el) {
-      let top = el.getBoundingClientRect().top;
-      let trigger = this.windowHeight / 2;
-
-      if (top < trigger) {
-        el.setAttribute(
-          'style',
-          'opacity: 1;'
-        )
-      }
-    }
   },
 
   watch: {

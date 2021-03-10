@@ -43,7 +43,7 @@ export default {
   &__item {
     color: color(white);
     display: inline-block;
-    font-size: font(48);
+    font-size: font(47);
     line-height: 1.2;
     text-shadow: 3px 3px 0px color(orange);
     animation: textIn 0.8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;

@@ -34,6 +34,19 @@
   font-weight: $weight;
 }
 
+@mixin fonts($size: font(16), $weight: bold, $height, $spacing) {
+  font-size: $size;
+  font-weight: $weight;
+
+  @if $height {
+    line-height: $height;
+  }
+
+  @if $spacing {
+    letter-spacing: $spacing;
+  }
+}
+
 // h3 text decoration (- text)
 @mixin middle-line-text($width, $height, $color) {
   position: relative;

@@ -11,7 +11,11 @@
 </template>
 
 <script>
+import Risize from '../config/resize';
+
 export default {
+  mixins: [Risize],
+
   data() {
     return {
       windowWidth: window.innerWidth,

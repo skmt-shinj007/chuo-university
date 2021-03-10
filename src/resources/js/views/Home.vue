@@ -16,7 +16,7 @@
         </figure>
 
         <div class="about__box">
-          <div class="about__content fadeUp" v-scroll="fadeUp">
+          <div class="about__content fadeUp" v-fade:[dir.up]>
             <div class="about__title">
               <contents-title :title="item.title"/>
             </div>
@@ -53,6 +53,9 @@
 // data
 import Data from '../config/data.json';
 
+// mixin
+import Animation from '../config/animation';
+
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
 import News from '../components/contents/NewsComponent';
@@ -68,6 +71,8 @@ export default {
     LinkButton,
     ScrollTopButton,
   },
+
+  mixins: [Animation],
 
   data() {
     return {
@@ -100,13 +105,6 @@ export default {
         if (el.title === element.key) el.title = element.value;
       });
     });
-  },
-
-  mounted() {
-    this.$refs.about.forEach((element) => {
-      let top = element.getBoundingClientRect().top;
-      console.log(element);
-    })
   },
 
   methods: {

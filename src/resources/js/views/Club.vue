@@ -5,22 +5,18 @@
     <main-visual-slider :images="mainVisualImages"/>
   </div>
 
-  <div class="background-darkblue">
-    <section class="club__concept">
-      <contents-title :title="messages.SectionTitles.Concept" color="white"/>
+  <section class="club__concept">
+    <contents-title :title="messages.SectionTitles.Concept"/>
 
-      <div class="concept__card-group">
-        <div class="concept__card" v-for="(concept, n) in concepts" :key="n">
-          <concept-card :concept="concept"/>
-        </div>
-      </div>
-    </section>
-  </div>
+    <div class="club__concept-content" v-fade:[dir.up]>
+      <concept :items="concepts"/>
+    </div>
+  </section>
 
   <section class="club__practice">
     <contents-title :title="messages.SectionTitles.Practice"/>
 
-    <div class="practice__table">
+    <div class="practice__table" v-fade:[dir.up]>
       <table-component :tableItems="practiceInformations"/>
     </div>
 
@@ -31,18 +27,18 @@
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="practice__slider" v-if="windowWidth < breakpointPc">
+    <div class="practice__slider" v-if="windowWidth < breakpoints.md">
       <image-slider :images="courtImages"/>
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="practice__image-group" v-if="windowWidth >= breakpointPc">
+    <div class="practice__image-group" v-if="windowWidth >= breakpoints.md">
       <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
         <caption-image :image="image"/>
       </div>
     </div>
 
-    <div class="practice__schedule">
+    <div class="practice__schedule" v-fade:[dir.up]>
       <h3 class="practice__schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
 
       <div class="practice__schedule-table">
@@ -58,14 +54,18 @@
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
 
-    <div class="dormitory__ticket-group">
-      <div class="dormitory__ticket" v-for="(information, n) in dormitoryInformations" :key="n">
+    <div class="dormitory__ticket-group" v-fade:[dir.up]>
+      <div
+        class="dormitory__ticket"
+        v-for="(information, n) in dormitoryInformations"
+        :key="n">
+
         <dormitory-ticket :dormitoryData="information"/>
       </div>
     </div>
 
     <!-- PCデバイス幅 以下 -->
-    <div class="dormitory__slider" v-if="windowWidth < breakpointPc">
+    <div class="dormitory__slider" v-if="windowWidth < breakpoints.md">
       <image-slider :images="dormitoryImages">
         <template v-slot:caption="image">
           <span class="dormitory__caption">{{ image.image.caption }}</span>
@@ -75,7 +75,7 @@
     </div>
 
     <!-- PCデバイス幅 -->
-    <div class="dormitory__image-group" v-if="windowWidth >= breakpointPc">
+    <div class="dormitory__image-group" v-if="windowWidth >= breakpoints.md">
       <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
         <caption-image :image="image">
           <template v-slot:caption="image">
@@ -92,9 +92,9 @@
     <section class="club__member">
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
 
-      <player-slider :players="players"/>
+      <player-slider :players="players" v-fade:[dir.up]/>
 
-      <div class="member__number">
+      <div class="member__number" v-fade:[dir.right]>
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
 
         <div class="member__number-table">
@@ -111,7 +111,7 @@
   <section class="club__photo">
     <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <arrange-images :images="images"/>
+    <arrange-images :images="images" v-fade:[dir.up]/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
@@ -128,10 +128,13 @@
 // data
 import Data from '../config/data.json';
 
+// mixin
+import Animation from '../config/animation';
+
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import GoogleMap from '../components/modules/GoogleMapComponent';
-import ConceptCard from '../components/modules/card/ConceptCardComponent';
+import Concept from '../components/contents/ConceptComponent';
 import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
@@ -145,7 +148,7 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 export default {
   components: {
     ContentsTitle,
-    ConceptCard,
+    Concept,
     MainVisualSlider,
     TableComponent,
     GoogleMap,
@@ -157,6 +160,9 @@ export default {
     ArrangeImages,
     ScrollTopButton,
   },
+
+  mixins: [Animation],
+
   data() {
     return {
       data: Data,
@@ -181,7 +187,7 @@ export default {
     this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
 
     // config/data.jsonから引っ張る
-    this.$data.data.Concept.forEach(element => this.concepts.push(element));
+    this.$data.data.concepts.forEach(element => this.concepts.push(element));
     this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
     this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
     this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
@@ -200,7 +206,7 @@ export default {
  */
 const mainVisualApiResponse = [
   {
-    path: 'tennisBall-vertical.jpg',
+    path: 'player28.jpg',
     name: 'altテキストを入れます',
     text: '感謝と謙虚な心を忘れずに、日本一。これが中央大学ソフトテニス部の永遠の目標です',
   },
@@ -283,10 +289,6 @@ const memberNumberData = [
     height: 100vh;
   }
 
-  &__concept {
-    margin: 0 auto;
-  }
-
   &__dormitory {
     margin-bottom: interval(10);
   }
@@ -328,39 +330,6 @@ const memberNumberData = [
   @include mq(sm) {
     max-width: interval(50);
     margin: interval(5) auto 0 auto;
-  }
-}
-
-.concept {
-  &__card-group {
-
-    @include mq(sm) {
-      max-width: interval(60);
-      margin: 0 auto;
-      @include flex(row nowrap, space-between, center);
-    }
-
-    @include mq(md) {
-      max-width: interval(100);
-    }
-  }
-
-  &__card {
-    margin-bottom: interval(5);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include mq(sm) {
-      margin-bottom: 0;
-      margin-right: interval(2);
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
   }
 }
 
