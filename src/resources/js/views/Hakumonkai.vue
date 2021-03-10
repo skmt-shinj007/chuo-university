@@ -10,19 +10,19 @@
 
   <div class="background-prlx" v-prlx.background="{ speed: 0.3 }"/>
 
-  <section class="hakumonkai__officer">
+  <section class="hakumonkai__officer" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Officer"/>
 
-    <tile-table :tableItemHeading="tableHeading" :tableItems="officer" v-fade:[dir.up]/>
+    <tile-table :tableItemHeading="tableHeading" :tableItems="officer"/>
   </section>
 
-  <section class="hakumonkai__active">
+  <section class="hakumonkai__active" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
 
-    <player-slider :players="activeAlumni" v-fade:[dir.up]/>
+    <player-slider :players="activeAlumni"/>
   </section>
 
-  <section class="hakumonkai__message">
+  <section class="hakumonkai__message" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Message"/>
 
     <div class="message__content">
