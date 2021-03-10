@@ -5,7 +5,7 @@
     <main-visual-slider :images="mainVisualImages"/>
   </div>
 
-  <section class="club__concept">
+  <section class="club__concept" v-scroll="fadeUp">
     <contents-title :title="messages.SectionTitles.Concept"/>
 
     <div class="club__concept-content">
@@ -125,7 +125,7 @@
 import Data from '../config/data.json';
 
 // mixin
-import Risize from '../config/resize';
+import Animation from '../config/animation';
 
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
@@ -157,7 +157,7 @@ export default {
     ScrollTopButton,
   },
 
-  mixins: [Risize],
+  mixins: [Animation],
 
   data() {
     return {
