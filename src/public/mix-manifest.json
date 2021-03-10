@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
     "/js/app.js": "/js/app.js?id=45a93ac521cfbd35c02c",
     "/css/app.css": "/css/app.css?id=74784cbffc39e8f04da8"
+=======
+    "/js/app.js": "/js/app.js?id=0c95cad6c565a3aa169d",
+    "/css/app.css": "/css/app.css?id=9bb01f16928d1c0ebba7"
+>>>>>>> upstream/development
 }
