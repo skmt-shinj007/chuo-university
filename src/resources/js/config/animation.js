@@ -30,9 +30,9 @@ export default {
      */
     fade(evt, el) {
       let top = el.getBoundingClientRect().top;
-      let trigger = this.windowHeight / 2;
+      let point = this.windowHeight / 1.5;
 
-      if (top < trigger) {
+      if (top < parseInt(point)) {
         el.setAttribute(
           'style',
           'opacity: 1;'

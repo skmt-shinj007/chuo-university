@@ -5,18 +5,18 @@
     <main-visual-slider :images="mainVisualImages"/>
   </div>
 
-  <section class="club__concept" v-fade:[dir.up]>
+  <section class="club__concept">
     <contents-title :title="messages.SectionTitles.Concept"/>
 
-    <div class="club__concept-content">
+    <div class="club__concept-content" v-fade:[dir.up]>
       <concept :items="concepts"/>
     </div>
   </section>
 
-  <section class="club__practice" v-fade:[dir.up]>
+  <section class="club__practice">
     <contents-title :title="messages.SectionTitles.Practice"/>
 
-    <div class="practice__table">
+    <div class="practice__table" v-fade:[dir.up]>
       <table-component :tableItems="practiceInformations"/>
     </div>
 
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="practice__schedule" v-fade:[dir.right]>
+    <div class="practice__schedule" v-fade:[dir.up]>
       <h3 class="practice__schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
 
       <div class="practice__schedule-table">
@@ -47,15 +47,19 @@
     </div>
   </section>
 
-  <section class="club__dormitory" v-fade:[dir.up]>
+  <section class="club__dormitory">
     <contents-title :title="messages.SectionTitles.Dormitory"/>
 
     <div class="dormitory__lead">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
 
-    <div class="dormitory__ticket-group">
-      <div class="dormitory__ticket" v-for="(information, n) in dormitoryInformations" :key="n">
+    <div class="dormitory__ticket-group" v-fade:[dir.up]>
+      <div
+        class="dormitory__ticket"
+        v-for="(information, n) in dormitoryInformations"
+        :key="n">
+
         <dormitory-ticket :dormitoryData="information"/>
       </div>
     </div>
@@ -85,10 +89,10 @@
   </section>
 
   <div class="background-darkblue">
-    <section class="club__member" v-fade:[dir.up]>
+    <section class="club__member">
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
 
-      <player-slider :players="players"/>
+      <player-slider :players="players" v-fade:[dir.up]/>
 
       <div class="member__number" v-fade:[dir.right]>
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
@@ -104,10 +108,10 @@
     </section>
   </div>
 
-  <section class="club__photo" v-fade:[dir.up]>
+  <section class="club__photo">
     <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <arrange-images :images="images"/>
+    <arrange-images :images="images" v-fade:[dir.up]/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>

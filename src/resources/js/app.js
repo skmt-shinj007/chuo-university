@@ -58,11 +58,11 @@ Vue.directive('fade', {
     el.classList.add(binding.arg);
 
     let fade = function () {
-      let windowHeight = window.innerHeight;
-      let top = el.getBoundingClientRect().top;
-      let trigger = windowHeight / 2;
+      let windowHeight = window.innerHeight;  // ブラウザ表示領域
+      let top = el.getBoundingClientRect().top;  // 対象要素の位置
+      let point = windowHeight / 1.5;  // アニメーション開始位置
 
-      if (top < trigger) {
+      if (top < parseInt(point)) {
         el.setAttribute(
           'style',
           'opacity: 1; transform: translate3d(0, 0, 0);'
