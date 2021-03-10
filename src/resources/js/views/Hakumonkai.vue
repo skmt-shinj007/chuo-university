@@ -13,13 +13,13 @@
   <section class="hakumonkai__officer">
     <contents-title :title="messages.SectionTitles.Officer"/>
 
-    <tile-table :tableItemHeading="tableHeading" :tableItems="officer"/>
+    <tile-table :tableItemHeading="tableHeading" :tableItems="officer" v-fade:[dir.up]/>
   </section>
 
   <section class="hakumonkai__active">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
 
-    <player-slider :players="activeAlumni"/>
+    <player-slider :players="activeAlumni" v-fade:[dir.up]/>
   </section>
 
   <section class="hakumonkai__message">
@@ -52,6 +52,9 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 // data import
 import Data from '../config/data.json';
 
+// mixin
+import Animation from '../config/animation';
+
 export default {
   components: {
     ContentsTitle,
@@ -61,6 +64,9 @@ export default {
     PlayerSlider,
     ScrollTopButton,
   },
+
+  mixins: [Animation],
+
   data() {
     return {
       data:Data,
