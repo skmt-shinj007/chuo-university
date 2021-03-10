@@ -2,24 +2,18 @@
 <div class="photo">
   <!-- フォトギャラリー -->
   <section class="photo__gallery">
-    <contents-title-component
-      :title="messages.SectionTitles.Photo.Main"
-      :subTitle="messages.SectionTitles.Photo.Sub"/>
+    <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <div class="photo__gallery-images">
-      <image-lattice-component :images="images" :filter="features.ImageFilter"/>
-    </div>
+    <images :images="images" :filter="config.filter"/>
   </section>
 
   <!-- プロバイダー -->
   <section class="photo__provider">
-    <contents-title-component
-      :title="messages.SectionTitles.Provider.Main"
-      :subTitle="messages.SectionTitles.Provider.Sub"/>
+    <contents-title :title="messages.SectionTitles.Provider"/>
 
-    <div class="photo__provider-ticket-group">
-      <div class="photo__provider-ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
-        <provider-ticket-component :providerObj="provider"/>
+    <div class="ticket-group">
+      <div class="ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
+        <provider-ticket :providerObj="provider"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
@@ -29,29 +23,35 @@
         :style="{ width: `${ticketWidth}px` }"/>
     </div>
 
-    <provider-ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
+    <provider-ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
+
+    <div class="photo__scroll-top">
+      <scroll-top-button/>
+    </div>
 
   </section>
 </div>
 </template>
 
 <script>
-// component import
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent.vue';
-import ImageLatticeComponent from '../components/contents/ImageLatticeComponent';
-import ProviderTicketComponent from '../components/modules/ticket/ProviderTicketComponent';
-
 // config json import
 import Data from '../config/data.json';
-import Features from '../config/features.json';
-import ProviderTicketModalComponent from '../components/modules/modal/ProviderTicketModalComponent.vue';
+import Config from '../config/config.json';
+
+// component import
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import Images from '../components/contents/ImagesComponent';
+import ProviderTicket from '../components/modules/ticket/ProviderTicketComponent';
+import ProviderTicketModal from '../components/modules/modal/ProviderTicketModalComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
-    ContentsTitleComponent,
-    ImageLatticeComponent,
-    ProviderTicketComponent,
-    ProviderTicketModalComponent,
+    ContentsTitle,
+    Images,
+    ProviderTicket,
+    ProviderTicketModal,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -60,7 +60,7 @@ export default {
        * @type { object }
        */
       data: Data,
-      features: Features,
+      config: Config,
 
       /**
        * [イメージデータ]
@@ -114,9 +114,8 @@ export default {
     // チケットの要素数を取得 (チケットが一枚の時はenpty要素を増やさない)
     if(ticket.length > 1) this.ticketNumber = ticket.length;
 
-    // チケットのwidthを取得
+    // 初期描画時のチケットwidthを取得
     this.getTicketWidth();
-    window.addEventListener('resize', this.getTicketWidth);
   },
 
   methods: {
@@ -142,9 +141,10 @@ export default {
     },
   },
 
-  beforeDestroy() {
-    // 登録したイベントを破棄
-    window.removeEventListener('resize', this.getTicketWidth);
+  watch: {
+    windowWidth() {
+      this.getTicketWidth();
+    }
   },
 }
 
@@ -176,21 +176,25 @@ export default {
     }
   }
 
-  &__provider-ticket-group {
-    @include flex(column nowrap, center, center);
-
-    @include mq(sm) {
-      @include flex(row wrap, center, center);
-    }
+  &__scroll-top {
+    @include scroll-top();
   }
+}
 
-  &__provider-ticket {
-    margin-bottom: interval(5);
+.ticket-group {
+  @include flex(column nowrap, center, center);
 
-    @include mq(sm) {
-      margin-bottom: 0;
-      padding: interval(1);
-    }
+  @include mq(sm) {
+    @include flex(row wrap, center, center);
+  }
+}
+
+.ticket {
+  margin-bottom: interval(5);
+
+  @include mq(sm) {
+    margin-bottom: 0;
+    padding: interval(1);
   }
 }
 </style>

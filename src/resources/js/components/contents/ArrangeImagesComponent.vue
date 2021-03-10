@@ -1,25 +1,112 @@
 <template>
 <div class="arrange-images">
-  <ul class="arrange-images__list-container">
-    <li class="arrange-images__list" v-for="(imageData, n) in imagesArraySlice" :key="n">
+  <ul class="arrange-images__list">
+    <li class="arrange-images__list-item" ref="item" v-for="(image, n) in filterImages" :key="n">
       <!-- img要素をクリックしたらモーダルで拡大表示する -->
-      <img class="arrange-images__list-item" :src="`/image/${imageData.path}`" :alt="imageData.alt">
+      <figure class="arrange-images__image" @click="openModal(image)">
+        <img :src="`/image/${image.src}`" :alt="image.alt">
+      </figure>
     </li>
+
+    <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
+    <div
+      class="enpty"
+      v-for="n in 10"
+      :key="`enpty-${n}`"
+      :style="{ width: `${itemWidth}px` }"/>
+
   </ul>
+
+  <image-modal
+    v-if="showModal"
+    @close="closeModal"
+    :selectIndex="selectImageIndex"
+    :images="filterImages"/>
 </div>
 </template>
 
 <script>
+// component
+import ImageModal from '../modules/modal/ImageModalComponent';
+
 export default {
+  components: {
+    ImageModal,
+  },
+
+  data() {
+    return {
+      /**
+       * 写真の表示枚数
+       * @type { Number }
+       */
+      count: 10,
+
+      /**
+       * リストアイテムの幅
+       * @type { Number }
+       */
+      itemWidth: 0,
+
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      showModal: false,
+
+      /**
+       * [選択した画像のインデックス番号]
+       * @type { Number }
+       */
+      selectImageIndex: 0,
+    }
+  },
+
   props: {
-    imagesData: {
+    images: {
       type: Array,
       default: null
     }
   },
+
   computed: {
-    imagesArraySlice() {
-      return this.imagesData.slice(0, 10);  // 配列の要素をを10個にスライス
+    filterImages() {
+      return this.images.slice(0, this.count);  // 配列の要素をを10個にスライス
+    },
+  },
+
+  watch: {
+    windowWidth() {
+      this.getWidth();
+    },
+  },
+
+  mounted() {
+    this.getWidth();
+  },
+
+  methods: {
+    /**
+     * [写真の幅を変数にぶち込む]
+     */
+    getWidth() {
+      this.itemWidth = this.$refs.item[0].offsetWidth;
+    },
+
+    /**
+     * [モーダル表示切り替え]
+     */
+    openModal(el) {
+      this.showModal = true;
+
+      this.selectImageIndex = this.filterImages.indexOf(el);
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.showModal = false;
+      setTimeout(() => {
+        document.body.classList.remove("modal-open");
+      }, 500);
     },
   },
 }
@@ -28,27 +115,18 @@ export default {
 <style lang="scss" scoped>
 .arrange-images {
 
-  &__list-container {
-    @include flex(row wrap);
-  }
-
   &__list {
-    @include trimming(aspect(square));
-    @include flex(row nowrap, center);
-    width: 50%;
-
-    @include mq(sm) {
-      width: 33.3%;
-    }
-
-    @include mq(md) {
-      width: 20%;
-    }
+    @include flex(row wrap, center, center);
   }
 
   &__list-item {
-    padding: interval(1);
+    width: interval(32);
+    padding: interval(.5);
+  }
+
+  &__image {
     cursor: pointer;
+    @include trimming(aspect(square));
   }
 }
 

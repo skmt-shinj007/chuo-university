@@ -1,26 +1,24 @@
 <template>
 <div class="member">
   <div class="member__main-visual">
-    <main-visual-component>
+    <main-visual>
       <template v-slot:inner>
-        <svg-vue class="member__main-visual-icon" icon="chuo-logo"/>
-        <span class="member__main-visual-ward nl2br" v-text="messages.MainVisual.Member"/>
+        <svg-vue class="main-visual__icon" icon="chuo-logo"/>
+        <span class="main-visual__title">{{ messages.MainVisual.Member }}</span>
       </template>
-    </main-visual-component>
+    </main-visual>
   </div>
 
   <section class="member__players">
-    <contents-title-component
-      :title="messages.SectionTitles.Players.Main"
-      :subTitle="messages.SectionTitles.Players.Sub"/>
+    <contents-title :title="messages.SectionTitles.Players"/>
 
-    <div class="member__user-ticket-group">
-      <div class="member__user-ticket" ref="playerTicket"
+    <div class="ticket-group">
+      <div class="ticket" ref="playerTicket"
           v-for="(player, n) in players"
           :key="n"
           @click="openModal(player)">
 
-        <user-ticket-component :userObj="player"/>
+        <user-ticket :userObj="player"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
@@ -32,13 +30,11 @@
   </section>
 
   <section class="member__staff">
-    <contents-title-component
-      :title="messages.SectionTitles.Staff.Main"
-      :subTitle="messages.SectionTitles.Staff.Sub"/>
+    <contents-title :title="messages.SectionTitles.Staff"/>
 
-    <div class="member__user-ticket-group">
-      <div class="member__user-ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
-        <user-ticket-component :userObj="staffItem"/>
+    <div class="ticket-group">
+      <div class="ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
+        <user-ticket :userObj="staffItem"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
@@ -50,29 +46,35 @@
     </div>
   </section>
 
-  <ticket-modal-component v-if="showModal" @close="closeModal" :item="clickElement"/>
+  <ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
+
+  <div class="member__scroll-top">
+    <scroll-top-button/>
+  </div>
 
 </div>
 </template>
 
 <script>
 // component import
-import MainVisualComponent from '../components/contents/MainVisualComponent';
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import TicketModalComponent from '../components/modules/modal/TicketModalComponent.vue';
+import MainVisual from '../components/contents/MainVisualComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import TicketModal from '../components/modules/modal/TicketModalComponent.vue';
 import TableComponent from '../components/modules/table/TableComponent.vue';
-import UserTicketComponent from '../components/modules/ticket/UserTicketComponent';
+import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
 // data import
 import Data from '../config/data.json';
 
 export default {
   components: {
-    MainVisualComponent,
-    ContentsTitleComponent,
-    UserTicketComponent,
-    TicketModalComponent,
+    MainVisual,
+    ContentsTitle,
+    UserTicket,
+    TicketModal,
     TableComponent,
+    ScrollTopButton,
   },
   data() {
     return {
@@ -107,6 +109,7 @@ export default {
       ticketWidth: 0,
     }
   },
+
   beforeMount() {
     // TODO:以下DBから情報を引っ張る
 
@@ -138,11 +141,9 @@ export default {
     this.staffTicketNumber = staffTicket.length;
 
     /**
-     * 1.描画後にチケットの幅を取得（デフォ値を代入）
-     * 2.チケットのサイズをリアルタイムで取得
+     * 初期描画時のにチケットの幅を取得
      */
     this.getTicketWidth();
-    window.addEventListener('resize', this.getTicketWidth);
   },
 
   methods: {
@@ -168,21 +169,33 @@ export default {
     },
   },
 
-  beforeDestroy() {
-    /**
-     * 登録したイベントを破棄
-     * ! 無名関数はイベント解除できないので注意
-     */
-    window.removeEventListener('resize', this.getTicketWidth);
-  },
+  watch: {
+    windowWidth() {
+      this.getTicketWidth();
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .member {
-  background-color: color(lightgray);
 
-  &__main-visual-icon {
+  &__players {
+    margin-top: interval(5);
+  }
+
+  &__staff {
+    padding-bottom: interval(10);
+    margin-bottom: 0;
+  }
+
+  &__scroll-top {
+    @include scroll-top();
+  }
+}
+
+.main-visual {
+  &__icon {
     width: 80%;
     max-width: interval(40);
     fill: color(white);
@@ -198,47 +211,39 @@ export default {
     }
   }
 
-  &__main-visual-ward {
-    @include bangers(font(24), 1px, 400);
-    color: color(white);
-    letter-spacing: 1.8px;
+  &__title {
+    @include bangers(font(24), 2px, bold);
     line-height: 1.2;
     text-align: center;
     margin-top: interval(5);
+    text-shadow: none;
 
     @include mq(sm) {
       font-size: font(28);
+      letter-spacing: 3px;
     }
 
     @include mq(md) {
       font-size: font(48);
+      letter-spacing: 5px;
     }
   }
+}
 
-  &__players {
-    margin-top: interval(5);
+.ticket-group {
+  @include flex(column nowrap, center, center);
+
+  @include mq(sm) {
+    @include flex(row wrap, center, center);
   }
+}
 
-  &__user-ticket-group {
-    @include flex(column nowrap, center, center);
+.ticket {
+  margin-bottom: interval(5);
 
-    @include mq(sm) {
-      @include flex(row wrap, center, center);
-    }
-  }
-
-  &__user-ticket {
-    margin-bottom: interval(5);
-
-    @include mq(sm) {
-      margin-bottom: 0;
-      padding: interval(1);
-    }
-  }
-
-  &__staff {
-    padding-bottom: interval(10);
+  @include mq(sm) {
     margin-bottom: 0;
+    padding: interval(1);
   }
 }
 </style>

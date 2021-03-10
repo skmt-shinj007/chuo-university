@@ -1,6 +1,6 @@
 <template>
 <header class="header">
-  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }" ref="header">
+  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
     <router-link to="/" class="header__navbar-link">
       <div class="header__title">
         <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
@@ -13,38 +13,40 @@
         <svg-vue icon="bars" class="header__btn-icon"/>
       </button>
 
-      <a class="header__btn" :href="data.Button.Twitter.Href" target="_blank">
+      <a class="header__btn" :href="twitter.link" target="_blank">
         <svg-vue icon="twitter" class="header__btn-icon"/>
       </a>
     </div>
   </div>
 
   <!-- グローバルナビ（モーダル） -->
-  <nav-modal-component
-    v-if="navShow"
-    @close="closeModal"
-    :accordionMenus="links"
-    :snsLinks="snsLinks"/>
-</header>
+  <nav-modal v-if="navShow" @close="closeModal"/>
 
+</header>
 </template>
 
 <script>
 // data import
 import Data from '../../config/data.json';
-import Features from '../../config/features.json';
+import Config from '../../config/config.json';
 
 // component import
-import NavModalComponent from '../modules/modal/NavModalComponent.vue';
+import NavModal from '../modules/modal/NavModalComponent.vue';
+
+// mixin
+import TwitterAccount from '../../config/api/TwitterAccount';
 
 export default {
   components: {
-    NavModalComponent,
+    NavModal,
   },
+
+  mixins: [TwitterAccount],
+
   data() {
     return {
       data: Data,
-      features: Features,
+      config: Config,
 
       /**
        * ヘッダーの高さ
@@ -54,8 +56,6 @@ export default {
 
       /**
        * [ヘッダーの表示を制御するフラグ]
-       * true  表示 (デフォ)
-       * false 非表示
        * クラスの付与で表示切り替え
        * @type { Boolean }
        */
@@ -73,46 +73,28 @@ export default {
        * @type { Boolean }
        */
       navShow: false,
-
-      /**
-       * [ナビ：リンクデータ]
-       * @type { Array }
-       */
-      links: [],
-
-      /**
-       * [ナビ：snsデータ]
-       * @type { Array }
-       */
-      snsLinks: [],
     }
   },
 
   beforeMount() {
-    // リンクのデータを生成
-    this.$data.features.Links.forEach(element => this.links.push(element));
-    this.$data.features.Sns.forEach(element => this.snsLinks.push(element));
-  },
-
-  mounted() {
-    // ヘッダーの高さ取得
-    this.headerHeight = this.$refs.header.offsetHeight;
+    this.getTwitterAccount();
   },
 
   watch: {
     /**
      * [スクロールに応じてヘッダーの表示を制御する]
      */
-    scrollAmount() {
-      let pos = this.scrollAmount;             // スクロール現在地
-      const headerHeight = this.headerHeight;  // ヘッダーの高さ
+    scrollY() {
+      let pos = this.scrollY;             // スクロール現在地
       let lastpos = this.lastScrollPosition;   // 最後のスクロール位置
 
-      // ヘッダーの高さ分スクロール かつ 上スクロールした際にクラスを付与
-      (pos > headerHeight && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
+      /**
+       * 60pxスクロール かつ 上スクロールした際にクラスを付与
+       */
+      (pos > 60 && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
 
       // 最後のスクロール位置を更新
-      this.lastScrollPosition = this.scrollAmount;
+      this.lastScrollPosition = this.scrollY;
     }
   },
 
@@ -127,7 +109,7 @@ export default {
     closeModal() {
       this.navShow = false;
       document.body.classList.remove("modal-open");
-    }
+    },
   },
 }
 </script>

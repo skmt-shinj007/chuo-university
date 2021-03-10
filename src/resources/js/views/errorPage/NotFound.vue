@@ -19,11 +19,11 @@
   </section>
 
   <section class="err__container">
-    <h3 class="err__guide-text nl2br">{{ messages.Error.NotFound.Guide }}</h3>
+    <h3 class="err__guide nl2br">{{ messages.Error.NotFound.Guide }}</h3>
 
-    <ul class="err__list">
-      <li class="err__list-item" v-for="(menu, n) in menus" :key="n">
-        <router-link class="err__link" :to="menu.link">{{ menu.label }}</router-link>
+    <ul class="err__sitemap">
+      <li class="err__sitemap-item" v-for="(menu, n) in menus" :key="n">
+        <router-link class="err__link" :to="menu.to">{{ menu.label }}</router-link>
       </li>
     </ul>
   </section>
@@ -32,29 +32,39 @@
 
 <script>
 // import
-import Features from '../../config/features.json';
+import Config from '../../config/config.json';
 export default {
   data() {
     return {
-      features: Features,
-      menus: null,
+      config: Config,
+
+      /**
+       * サイトマップを生成するデータ
+       * @type { Object }
+       */
+      menus: [],
     }
   },
 
   mounted() {
-    this.features.Links.forEach(element => {
-      if(element.menuName.ja === 'サイトマップ') this.menus = element.childrenMenus;
-    });
-    console.log(this.menus);
+    this.menus = this.convertArray(this.config.route);
   },
 
   methods: {
-
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     */
+    convertArray(obj) {
+      return Object.keys(obj).map(function (key) {
+        return obj[key];
+      })
+    },
   },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .err {
   @include flex(column nowrap, center, center);
   background-color: color(lightgray);
@@ -138,20 +148,20 @@ export default {
     margin-right: interval(3);
   }
 
-  &__guide-text {
+  &__guide {
     font-size: font(14);
     letter-spacing: 1px;
     line-height: 1.2;
     @include middle-line-text(2, 1px, color(darkblue));
   }
 
-  &__list {
+  &__sitemap {
     width: 100%;
     margin-top: interval(5);
     border-top: 2px solid color(darkblue);
   }
 
-  &__list-item {
+  &__sitemap-item {
     @include border-gradient(100%, color(lightDarkblue), color(darkblue), bottom);
   }
 

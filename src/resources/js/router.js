@@ -61,6 +61,11 @@ export default new VueRouter({
       name: 'test',
       component: Test
     },
+    {
+      path: '/contact',
+      name: 'contact',
+      redirect: '/blade/contact'
+    },
 
     /**
      * エラーページ

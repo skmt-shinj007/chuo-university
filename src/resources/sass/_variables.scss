@@ -65,17 +65,6 @@ $base-pixel: 8px;
 $base-rem: 1rem / 2;
 
 /**
- * google map size
- */
-$googleMap: (
-	sp-height: 300px,
-	pc-height: 400px,
-);
-$map-width: map-get($map: $googleMap, $key: width);
-$map-height-sp: map-get($map: $googleMap, $key: sp-height);
-$map-height-pc: map-get($map: $googleMap, $key: pc-height);
-
-/**
  * アスペクト比（基準を100%と想定）
  */
 $aspectRatio: (

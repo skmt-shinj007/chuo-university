@@ -2,6 +2,8 @@
   "ReserveText"    : "ただいまテキストを準備中です。もう少々お待ちください。更新されない場合はお問い合わせフォームからご連絡ください。",
   "ReserveImageAlt": "イメージの補足テキストが入ります。",
   "Copyright": "@ Chuo University Soft Tennis Team",
+  "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容を確認次第、担当者からご連絡させていただきますのでお気軽にご連絡ください。",
+
   "Error": {
     "NotFound": {
       "Num": [
@@ -20,20 +22,16 @@
       ],
       "Message": "ページが見つかりませんでした。",
       "Guide": "お探しのページはこちらにございませんか？"
+    },
+
+    "Api": {
+      "News": "誠に申し訳ございません、ニュースを表示できません。"
     }
   },
 
   "Header": {
     "MainTitle"       : "chuo university soft tennis team",
     "AssistanceTitle" : "中央大学ソフトテニス部"
-  },
-
-  "Nav": {
-    "Contact": "Contact"
-  },
-
-  "Footer": {
-    "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容は、部の主務が受け付けますのでお気軽にご連絡ください。"
   },
 
   "Information": {
@@ -46,13 +44,25 @@
 
   "MainVisual": {
     "Home": "CHUO\nUNIVERSITY\nSOFT\nTENNIS",
-    "Member": "CHUO UNIVERSITY SOFT TENNIS\nTEAM MEMBER"
+    "Member": "CHUO UNIVERSITY SOFT TENNIS TEAM MEMBER"
   },
 
   "SectionTitles": {
     "News": {
       "Main": "news",
       "Sub" : "ニュース"
+    },
+    "Team": {
+      "Main": "team",
+      "Sub" : "チーム紹介"
+    },
+    "Result": {
+      "Main": "result",
+      "Sub" : "大会結果"
+    },
+    "Activity": {
+      "Main": "active",
+      "Sub" : "活動詳細"
     },
     "Support": {
       "Main": "support",
@@ -134,15 +144,73 @@
     "Filter" : "絞り込み"
   },
 
+  "Filter": {
+    "All": "全て",
+    "Years": "年月"
+  },
+
   "ButtonName": {
-    "Member"     : "メンバーを見る",
-    "Hakumonkai" : "白門会を知る",
-    "ToContact"  : "お問い合わせへ"
+    "Member":  "メンバーを見る",
+    "Hakumonkai": "白門会を知る",
+    "ToContact": "お問い合わせへ",
+    "NewsRequest": "ニュースを取得"
+  },
+
+  "sitemap": {
+    "name": {
+      "ja": "サイトマップ",
+      "en": "Site Map"
+    }
+  },
+
+  "externalLink": {
+    "name": {
+      "ja": "外部リンク",
+      "en": "External Link"
+    }
+  },
+
+  "Links": {
+    "Member": {
+      "Name" : "メンバーを見る",
+      "To"   : "member"
+    },
+    "Hakumonkai": {
+      "Name" : "白門会を知る",
+      "To"   : "hakumonkai"
+    },
+    "ToContact": {
+      "Name" : "お問い合わせ",
+      "To"   : "contact"
+    },
+    "TournamentResult": {
+      "Name" : "大会結果を見る",
+      "To"   : "https://twitter.com/SoftTennis_Chuo"
+    },
+    "Activity": {
+      "Name" : "活動詳細を見る",
+      "To"   : "club"
+    },
+    "Photo": {
+      "Name": "写真を見る",
+      "To": "photo"
+    }
+  },
+
+  "Button": {
+    "NewsRequest": {
+      "Name" : "ニュースを取得",
+      "Type" : "button"
+    }
   },
 
   "TagTitles": {
-    "Record": "戦績",
+    "Record"     : "戦績",
     "RecordHover": "WATCH"
+  },
+
+  "Label": {
+    "Latest": "NEW"
   },
 
   "Age": {
@@ -151,9 +219,8 @@
     "Taisho" : "大正"
   },
 
-  "Filter": {
-    "All": "全て",
-    "Years": "年月"
+  "card": {
+    "winner": "Winner"
   },
 
   "Home": {
@@ -174,8 +241,8 @@
   },
 
   "Hakumonkai": {
-    "Lead": "白門会とは中央大学卒業生によるOB会の呼称です。\n白門会ソフトテニス部は、現役選手を応援すると共に納会等のイベント運営も行っています。\n伝統あるソフトテニス部の活躍をさまざまな形で支援するべく、これからも活動していきます。",
-    "Message": "白門会員様には会報をお届けしています。\n一部の会員様は、住所等が不明のまま会報のお届けができておりません。\n会員様で住所を変更された場合や会報が届けられていない方がおりましたら、お問い合わせフォームからご連絡お願い致します。",
+    "Lead": "中央大学卒業生によるOB会を白門会と呼称しています。中大OBは、現役選手を応援すると共に納会等のイベント運営も行っています。\n伝統あるソフトテニス部の活躍をさまざまな形で支援するべく、これからも活動していきます。",
+    "Message": "白門会員様には会報をお届けしています。一部の会員様は、住所等が不明のまま会報のお届けができておりません。\n会員様で住所を変更された場合や会報が届けられていない方がおりましたら、お問い合わせフォームからご連絡お願い致します。",
     "OfficerTable": {
       "Heading": ["白門会役職", "名前", "卒業年", "学員会役職"]
     }

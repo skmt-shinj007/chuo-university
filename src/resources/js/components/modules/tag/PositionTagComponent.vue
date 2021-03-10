@@ -1,16 +1,16 @@
 <template>
 <div class="position-tag">
-  <tag-component :color="positionColor" :content="position" :size="size" :responsive="responsive"/>
+  <tag :color="positionColor" :content="position" :size="size" :responsive="responsive"/>
 </div>
 </template>
 
 <script>
 // component import
-import TagComponent from './TagComponent'
+import Tag from './TagComponent'
 
 export default {
   components: {
-    TagComponent
+    Tag
   },
 
   props: {

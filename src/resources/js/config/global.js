@@ -25,7 +25,7 @@ export default {
        * [現在のスクロール量]
        * @type { Number }
        */
-      scrollAmount: null,
+      scrollY: null,
 
       /**
      * [ユーザーカテゴリー情報]
@@ -57,7 +57,7 @@ export default {
      * [スクロール量をリアルタイムで取得]
      * @type { function }
      */
-    this.scrollAmount = window.scrollY;
+    this.scrollY = window.scrollY;
     window.addEventListener('scroll', this.getScroll);
   },
 
@@ -74,7 +74,7 @@ export default {
      * https://gray-code.com/javascript/unset-event-listener/
     */
     getScroll() {
-      this.scrollAmount = window.scrollY;
+      this.scrollY = window.scrollY;
     },
 
     /**
@@ -83,26 +83,6 @@ export default {
      */
     getWindowWidth() {
       this.windowWidth = window.innerWidth;
-    },
-
-    /**
-     * [id属性をjsで一括取得]
-     * キー表記でアクセスすることで element が取得可能 => this.ids['id名']
-     * @param data : 属性の名前が格納された配列
-     * @returns { object } : 取得した要素のHTMLCollectionが格納された配列で戻る
-     * @link { https://infoteck-life.com/a0186-js-dom-id-multiple/ }
-     * !vueでは、ref属性から取得可能
-     */
-    getElements(data) {
-      let elements = [];
-      let el = '';
-
-      data.forEach(element => {
-        el = document.getElementById(element);
-        (el != null) ? elements[element] = el : null;
-      })
-
-      return elements;
     },
   },
 }

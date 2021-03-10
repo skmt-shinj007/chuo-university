@@ -18,11 +18,8 @@
 
         <nav class="nav-modal__main">
           <div class="nav-modal__accordion">
-            <div class="nav-modal__accordion-item" v-for="(menu, n) in accordionMenus" :key="n">
-              <accordion-link-component
-                :item="menu"
-                @navClose="$emit('close')"
-                />
+            <div class="nav-modal__accordion-item" v-for="(link, n) in links" :key="n">
+              <accordion-link :item="link" @navClose="$emit('close')"/>
             </div>
           </div>
 
@@ -30,20 +27,22 @@
             <button class="nav-modal__menu-item">
               <!-- TODO:コンタクトページに遷移するようにする -->
               <router-link to="contact" class="nav-modal__menu-link" @click.native="$emit('close')">
-                <label class="nav-modal__menu-title">{{ messages.Nav.Contact }}</label>
+                <label class="nav-modal__menu-title">{{ messages.Links.ToContact.Name }}</label>
                 <svg-vue icon="angle-right" class="nav-modal__menu-icon"/>
               </router-link>
             </button>
           </div>
 
-          <div class="nav-modal__sns">
-            <!-- snsの各プロフィールページに遷移するように修正 -->
-            <div class="nav-modal__sns-item" v-for="(sns, n) in snsLinks" :key="n" :class="`nav-modal__sns-item--${sns.name}`">
-              <a :href="sns.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
-                <svg-vue :icon="sns.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${sns.name}`"/>
-              </a>
+          <transition name="slide" tag="div">
+            <div class="nav-modal__sns" v-if="!loading && !err">
+              <!-- snsの各プロフィールページに遷移するように修正 -->
+              <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
+                <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
+                  <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
+                </a>
+              </div>
             </div>
-          </div>
+          </transition>
         </nav>
 
         <footer class="nav-modal__footer">
@@ -57,29 +56,93 @@
 
 <script>
 // component import
-import AccordionLinkComponent from '../accordion/AccordionLinkComponent';
+import AccordionLink from '../accordion/AccordionLinkComponent';
+
+// data
+import Config from '../../../config/config.json';
+
+// mixin
+import TwitterAccount from '../../../config/api/TwitterAccount';
 
 export default {
   components: {
-    AccordionLinkComponent,
+    AccordionLink,
   },
 
-  props: {
+  mixins: [TwitterAccount],
+
+  data() {
+    return {
+      config: Config,
+
+      /**
+       * snsのメニューパネルを生成する配列
+       * @type { Array }
+       */
+      sns: [],
+
+      /**
+       * アコーディオンコンポーネントに渡すデータ
+       * @type { Array }
+       */
+      links: []
+    }
+  },
+
+  computed: {
     /**
-     * [アコーディオン: メニューデータ]
+     * sns配列の要素が3以上になったらカットする。
      */
-    accordionMenus: {
-      type: Array,
-      required: true,
-    },
+    filteringSns() {
+      if (this.sns.length > 3) {
+        return this.sns.slice(0, 3);
+      }
+      else {
+        return this.sns;
+      }
+    }
+  },
+
+  beforeMount() {
+    // アコーディオンリンクのデータを生成
+    const config = this.$data.config;
+    const messages = this.$data.messages;
+
+    let sitemap = {};
+    sitemap.name = messages.sitemap.name;
+    sitemap.childrenMenus = this.convertArray(config.route);
+    this.links.push(sitemap);
+
+    let externalLink = {};
+    externalLink.name = messages.externalLink.name;
+    externalLink.childrenMenus = this.convertArray(config.links);
+    this.links.push(externalLink);
 
     /**
-     * [sns: snsメニューパネルを生成するデータ]
+     * sns データ生成
      */
-    snsLinks: {
-      type: Array,
-      required: true
-    }
+    this.getTwitterAccount(() => {
+      // apiレスポンスと保持データの結合
+      const apiResponse = this.twitter;
+      const retained = this.config.twitter;
+      this.twitter = {...apiResponse, ...retained};
+
+      // sns配列に格納
+      this.sns.push(this.twitter);
+    });
+
+  },
+
+  methods: {
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     */
+    convertArray(obj) {
+      return Object.keys(obj).map(function (key) {
+        return obj[key];
+      })
+    },
   },
 }
 </script>
@@ -263,25 +326,41 @@ export default {
 }
 
 // モーダル開閉アニメーション
-.modal-enter-active, .modal-leave-active {
-  transition: opacity 0.4s;
+.modal {
+  &-enter-active, &-leave-active {
+    transition: opacity 0.4s;
 
-  // オーバーレイに包含されているモーダルウィンドウのトランジション
-  .modal-window {
-    transition: opacity 0.4s, transform 0.4s;
+    .modal-window {
+      transition: opacity 0.4s, transform 0.4s;
+    }
   }
-}
 
-.modal-leave-active {
-  transition: opacity 0.6s ease 0.4s;
-}
+  &-leave-active {
+    transition: opacity 0.6s ease 0.4s;
+  }
 
-.modal-enter, .modal-leave-to {
-  opacity: 0;
-
-  .modal-window {
+  &-enter, &-leave-to {
     opacity: 0;
-    transform: translateY(-20px);
+
+    .modal-window {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
   }
 }
+
+// SNSリンクの表示アニメーション
+.slide {
+  &-enter-active {
+    transition: opacity 0.6s;
+    transition: transform .8s;
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+
 </style>
