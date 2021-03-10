@@ -5,7 +5,7 @@
     <main-visual-slider :images="mainVisualImages"/>
   </div>
 
-  <section class="club__concept" v-scroll="fadeUp">
+  <section class="club__concept" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Concept"/>
 
     <div class="club__concept-content">
@@ -13,7 +13,7 @@
     </div>
   </section>
 
-  <section class="club__practice">
+  <section class="club__practice fadeUp" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Practice"/>
 
     <div class="practice__table">
@@ -327,10 +327,6 @@ const memberNumberData = [
     max-width: interval(50);
     margin: interval(5) auto 0 auto;
   }
-}
-
-.concept {
-
 }
 
 .practice {

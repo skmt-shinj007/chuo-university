@@ -35,16 +35,10 @@ import vueAxios from 'vue-axios';
 Vue.use(vueAxios, axios);
 
 /**
- * スクロールアニメーションのカスタムディレクティブを作成。
+ * スクロールのカスタムディレクティブを作成。
  */
 Vue.directive('scroll', {
   inserted: function (el, binding) {
-    /**
-     * メソッド名の文字列をクラスに追加。
-     * 新しいアニメーションの場合は、base.scssにスタイルを追加。
-     */
-    el.classList.add(binding.expression);
-
     let f = function (evt) {
       if (binding.value(evt, el)) {
         window.removeEventListener('scroll', f)
@@ -52,6 +46,32 @@ Vue.directive('scroll', {
     }
 
     window.addEventListener('scroll', f)
+  }
+})
+
+Vue.directive('fade', {
+  inserted: function (el, binding) {
+    // エラー処理
+    if (typeof binding.arg !== 'string') return console.log('[fade directive] arguments is not String');
+
+    // 引数に合わせてクラス付与
+    el.classList.add(binding.arg);
+
+    let fade = function () {
+      let windowHeight = window.innerHeight;
+      let top = el.getBoundingClientRect().top;
+      let trigger = windowHeight / 2;
+
+      if (top < trigger) {
+        el.setAttribute(
+          'style',
+          'opacity: 1; transform: translate3d(0, 0, 0);'
+        )
+        window.removeEventListener('scroll', fade);
+      }
+    }
+
+    window.addEventListener('scroll', fade);
   }
 })
 

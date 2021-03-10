@@ -22306,15 +22306,26 @@ th, td {
   margin-bottom: 0;
 }
 
-/**
- * 表示の際にふわっと表示させるアニメーションに指定するクラス
- */
-.fadeUp {
+.fade, .fadeLeft, .fadeRight, .fadeDown, .fadeUp {
   opacity: 0;
   transition: 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1), 1.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-.fade {
-  opacity: 0;
-  transition: 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1);
+/**
+ * 表示の際にふわっと表示させるアニメーションに指定するクラス
+ */
+.fadeUp {
+  transform: translate3d(0, 10px, 0);
+}
+
+.fadeDown {
+  transform: translate3d(0, -10px, 0);
+}
+
+.fadeRight {
+  transform: translate3d(10px, 0, 0);
+}
+
+.fadeLeft {
+  transform: translate3d(-10px, 0, 0);
 }

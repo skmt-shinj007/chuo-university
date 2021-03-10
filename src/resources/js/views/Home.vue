@@ -16,7 +16,7 @@
         </figure>
 
         <div class="about__box">
-          <div class="about__content fadeUp" v-scroll="fadeUp">
+          <div class="about__content fadeUp" v-fade:[dir.up]>
             <div class="about__title">
               <contents-title :title="item.title"/>
             </div>
