@@ -16,7 +16,6 @@ export default {
      * @param2 {el} ディレクティブを指定した要素のDOMが入る。
      */
     fadeUp(evt, el) {
-      // アニメーションの
       let top = el.getBoundingClientRect().top;
       let trigger = this.windowHeight / 2;
 
