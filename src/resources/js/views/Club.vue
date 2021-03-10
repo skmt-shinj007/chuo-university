@@ -5,18 +5,18 @@
     <main-visual-slider :images="mainVisualImages"/>
   </div>
 
-  <section class="club__concept">
+  <section class="club__concept" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Concept"/>
 
-    <div class="club__concept-content" v-fade:[dir.up]>
+    <div class="club__concept-content">
       <concept :items="concepts"/>
     </div>
   </section>
 
-  <section class="club__practice">
+  <section class="club__practice" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Practice"/>
 
-    <div class="practice__table" v-fade:[dir.up]>
+    <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
 
@@ -47,7 +47,7 @@
     </div>
   </section>
 
-  <section class="club__dormitory">
+  <section class="club__dormitory" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Dormitory"/>
 
     <div class="dormitory__lead">
@@ -89,12 +89,12 @@
   </section>
 
   <div class="background-darkblue">
-    <section class="club__member">
+    <section class="club__member" v-fade:[dir.up]>
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
 
-      <player-slider :players="players" v-fade:[dir.up]/>
+      <player-slider :players="players"/>
 
-      <div class="member__number" v-fade:[dir.right]>
+      <div class="member__number">
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
 
         <div class="member__number-table">
@@ -108,10 +108,10 @@
     </section>
   </div>
 
-  <section class="club__photo">
+  <section class="club__photo" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <arrange-images :images="images" v-fade:[dir.up]/>
+    <arrange-images :images="images"/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
