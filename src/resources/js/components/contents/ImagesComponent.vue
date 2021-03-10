@@ -10,7 +10,7 @@
 
   <!-- 写真 -->
   <div class="images__group">
-    <div class="images__box" v-for="(image,n) in displayImages" :key="n">
+    <div class="images__box" v-for="image in displayImages" :key="image.id">
       <figure class="images__img">
         <img :src="`/image/${image.src}`" :alt="image.alt" @click="openModal(image)">
       </figure>
@@ -51,7 +51,7 @@ export default {
       select: "all", // 絞り込みの選択値
       count: 0,         // イメージの表示枚数（こいつで表示枚数を管理する）
       // TODO：初期表示枚数の値を変更
-      defaultCountNumber: 10, // イメージ表示枚数のデフォルト値
+      defaultCount: 10, // イメージ表示枚数のデフォルト値
 
       /**
        * [モーダル表示フラグ]
@@ -112,7 +112,7 @@ export default {
     /**
      * イメージの表示枚数はcountで管理するので、初期表示枚数をcountに代入
      */
-    this.count = this.defaultCountNumber;
+    this.count = this.defaultCount;
   },
 
   computed: {
@@ -123,25 +123,22 @@ export default {
      */
     filterImages() {
       if (this.select !== "all") {
-
-        // 絞り込みの選択値を変数に代入
         let selected = this.select;
 
-        // 絞り込み -> フィルタリングされた配列を count の数だけ返す。 -> dataに定義
-        return this.images.filter( function(value) {
-          return value.shooting.year === selected;
+        // 絞り込み -> 選択した年と撮影年が合致する写真を返す。
+        let images = this.images.filter((value) => {
+          return (value.shooting.year === selected)
         });
 
-      } else {
-        // 絞り込まない -> フィルタリングされていない配列を count の数だけ返す。
-        return this.images;
+        return images;
       }
+
+      return this.images;
     },
 
     /**
      * [表示枚数制御]
      * フィルタリング処理後の配列を count プロパティを参照して切り取る。
-     * filterImagesで返された配列をcount数で切り取っているだけ。
      */
     displayImages() {
       return this.filterImages.slice(0, this.count);
@@ -149,15 +146,9 @@ export default {
 
     /**
      * [ボタン表示制御] 処理
-     * this.filterImages.length：写真データの最大要素数
-     * this.count：表示枚数
      */
     buttonShow() {
-      if (this.filterImages.length > this.count) {
-        return true;
-      } else {
-        return false;
-      }
+      return (this.filterImages.length > this.count) ? true : false;
     }
   },
 
@@ -191,7 +182,7 @@ export default {
      * プルダウンの選択値が切り替わる時に発火。
      */
     select() {
-      this.count = this.defaultCountNumber;
+      this.count = this.defaultCount;
     }
   }
 }
@@ -265,6 +256,25 @@ export default {
 
   &__button {
     margin-top: interval(5);
+  }
+}
+
+.fade {
+  &-enter-active,
+  &-leave-active {
+    transition:
+      1.0s opacity cubic-bezier(0.39, 0.575, 0.565, 1),
+      1.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  &-enter {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  &-leave-to {
+    opacity: 0;
+    transform: translateX(10px);
   }
 }
 </style>

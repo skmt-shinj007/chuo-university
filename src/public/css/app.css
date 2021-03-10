@@ -15863,6 +15863,17 @@ import用ファイル
 }
 .images__button[data-v-7ec9af9b] {
   margin-top: 2.5rem;
+}
+.fade-enter-active[data-v-7ec9af9b], .fade-leave-active[data-v-7ec9af9b] {
+  transition: 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1), 1.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.fade-enter[data-v-7ec9af9b] {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.fade-leave-to[data-v-7ec9af9b] {
+  opacity: 0;
+  transform: translateX(10px);
 }@charset "UTF-8";
 /*
 import用ファイル
