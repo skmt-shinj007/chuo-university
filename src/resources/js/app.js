@@ -39,11 +39,18 @@ Vue.use(vueAxios, axios);
  */
 Vue.directive('scroll', {
   inserted: function (el, binding) {
+    /**
+     * メソッド名の文字列をクラスに追加。
+     * 新しいアニメーションの場合は、base.scssにスタイルを追加。
+     */
+    el.classList.add(binding.expression);
+
     let f = function (evt) {
       if (binding.value(evt, el)) {
         window.removeEventListener('scroll', f)
       }
     }
+
     window.addEventListener('scroll', f)
   }
 })
