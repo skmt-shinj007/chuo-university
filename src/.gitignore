@@ -1,5 +1,8 @@
 /node_modules
-# public配下を監視対象から除外
+# public配下を監視対象から除外]
+src/public/css/app.css
+src/public/js/app.js
+src/public/mix-manifest.json
 /public/favicon.ico
 /public/.htaccess
 /public/web.config
