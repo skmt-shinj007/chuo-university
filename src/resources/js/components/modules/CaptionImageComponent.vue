@@ -1,6 +1,6 @@
 <template>
 <figure class="caption-image">
-  <img class="caption-image__image" :src="`/image/${image.path}`" :alt="image.alt">
+  <img class="caption-image__image" :src="`/image/${image.src}`" :alt="image.alt">
 
   <figcaption class="caption-image__bar">
     <slot name="caption" :image="image">

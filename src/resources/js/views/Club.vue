@@ -206,14 +206,14 @@ export default {
  */
 const mainVisualApiResponse = [
   {
-    path: 'player28.jpg',
-    name: 'altテキストを入れます',
-    text: '感謝と謙虚な心を忘れずに、日本一。これが中央大学ソフトテニス部の永遠の目標です',
+    src     : 'player41.jpg',
+    alt     : 'altテキストを入れます',
+    caption : '感謝と謙虚な心を忘れずに、日本一。',
   },
   {
-    path: 'tennisBall.jpg',
-    name: 'altテキストを入れます',
-    text: '感謝と謙虚な心を忘れずに、日本一。これが中央大学ソフトテニス部の永遠の目標です',
+    src     : 'training01.jpg',
+    alt     : 'altテキストを入れます',
+    caption : 'テキストは AMAZON EC2 を使用します。',
   }
 ];
 
@@ -222,19 +222,19 @@ const mainVisualApiResponse = [
  */
 const courtImageApiResponse = [
   {
-    path: 'tennis_court-in_chuoUniv-01.jpg',
-    name: '中央大学ソフトテニスコートの画像',
-    caption: '多摩校舎ソフトテニスコート（第二体育館）',
+    src     : 'court01.jpg',
+    alt     : '中央大学多摩キャンパスソフトテニスコート',
+    caption : '多摩校舎ソフトテニスコート（第二体育館）',
   },
   {
-    path: 'tennis_court-in_chuoUniv-03.jpg',
-    name: '中央大学ソフトテニスコートの画像',
-    caption: 'ソフトテニスコート（1,2,3）',
+    src     : 'court03.jpg',
+    alt     : '中央大学多摩キャンパスソフトテニスコート',
+    caption : 'ソフトテニスコート（1,2,3）',
   },
   {
-    path: 'tennis_court-in_chuoUniv-02.jpg',
-    name: '中央大学ソフトテニスコートの画像',
-    caption: 'ソフトテニスコート（4,5,6）',
+    src     : 'court02.jpg',
+    alt     : '中央大学多摩キャンパスソフトテニスコート',
+    caption : 'ソフトテニスコート（4,5,6）',
   }
 ];
 
@@ -243,19 +243,19 @@ const courtImageApiResponse = [
  */
 const dormitoryImageApiResponse = [
   {
-    path: 'dormitory-02.jpg',
-    name: '中央大学南平寮の3人部屋',
-    caption: 3,
+    src     : 'room01.jpg',
+    alt     : '中央大学南平寮',
+    caption : 4,
   },
   {
-    path: 'dormitory-01.jpg',
-    name: '中央大学南平寮の4人部屋',
-    caption: 4,
+    src     : 'room02.jpg',
+    alt     : '中央大学南平寮',
+    caption : 4,
   },
   {
-    path: 'dormitory-03.jpg',
-    name: '中央大学南平寮の4人部屋',
-    caption: 4,
+    src     : 'room03.jpg',
+    alt     : '中央大学南平寮',
+    caption : 3,
   }
 ];
 
