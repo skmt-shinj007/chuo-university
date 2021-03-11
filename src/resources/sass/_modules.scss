@@ -100,60 +100,9 @@
     opacity: 0;
   }
 
-  50% {
-
-  }
-
   100% {
     transform: scale(1) translateY(0);
     opacity: 1;
-  }
-}
-
-// fadeout 下方向
-@keyframes fadeoutDown {
-  0% {
-    transform: translateY(0);
-  }
-  10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-  }
-  20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-  }
-  30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-  }
-  40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-  }
-  60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-  }
-  70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-  }
-  80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-  }
-  90% {
-    opacity: 0.1;
-    transform: translateY(90%);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100%);
   }
 }
 

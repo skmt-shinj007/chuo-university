@@ -4,7 +4,7 @@
   <!-- button をクリックしたら親で指定されたクリックイベントが走る -->
   <button class="view-all__btn" @click="runParentMethod">
     <label class="view-all__btn-label">{{ btnLabel }}</label>
-    <svg-vue icon="angle-down" class="view-all__icon"/>
+    <svg-vue icon="plus" class="view-all__icon"/>
   </button>
 
 </div>
@@ -63,6 +63,7 @@ export default {
 
       .view-all__btn-label {
         letter-spacing: 3px;
+        transform: scale(1.1);
       }
     }
 
@@ -84,10 +85,10 @@ export default {
     width: interval(1.5);
     height: interval(1.5);
     position: absolute;
-    top: 45%;
+    top: 50%;
+    transform: translateY(-50%);
     right: interval(2);
     fill: color(white);
-    animation: fadeoutDown 1.5s infinite;
 
     @include mq(sm) {
       right: interval(4);
