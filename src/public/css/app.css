@@ -328,34 +328,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-3ff6fe5a {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-3ff6fe5a {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -763,34 +735,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -1170,34 +1114,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -1588,34 +1504,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-9b317ac0 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-9b317ac0 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -2074,34 +1962,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-63d84db2 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-63d84db2 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -2498,34 +2358,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-10d75cdd {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-10d75cdd {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -2915,34 +2747,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-63cd6604 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-63cd6604 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -3468,34 +3272,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-161a410d {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-161a410d {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -3841,34 +3617,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-0da5752f {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-0da5752f {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -4425,34 +4173,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-7186e4cc {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-7186e4cc {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -4837,34 +4557,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-30380e08 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-30380e08 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -5241,34 +4933,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -5698,34 +5362,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-6c61d285 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-6c61d285 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -6108,34 +5744,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-c3a537a8 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-c3a537a8 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -6526,34 +6134,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -6953,34 +6533,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -7348,34 +6900,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -7788,34 +7312,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-53189f00 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-53189f00 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -8180,34 +7676,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-213a8ec6 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-213a8ec6 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -8751,34 +8219,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-bb84db5a {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-bb84db5a {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -9152,34 +8592,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-357d3955 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-357d3955 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -9707,34 +9119,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-358d2551 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-358d2551 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -10355,34 +9739,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -10885,34 +10241,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-668c6779 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-668c6779 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -11377,34 +10705,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -11781,34 +11081,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-42f1fe89 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-42f1fe89 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -12217,34 +11489,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-b79d4b88 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-b79d4b88 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -12668,34 +11912,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-57d67ae5 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-57d67ae5 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -13124,34 +12340,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-600734dc {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-600734dc {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -13552,34 +12740,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -13953,34 +13113,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-3ea95d82 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-3ea95d82 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -14404,34 +13536,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-301d0ec5 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-301d0ec5 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -14868,34 +13972,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -15305,34 +14381,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -15715,34 +14763,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-7ec9af9b {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-7ec9af9b {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -16200,34 +15220,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -16608,34 +15600,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -17079,34 +16043,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-5885bf62 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-5885bf62 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -17677,34 +16613,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-46e3fba3 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-46e3fba3 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -18089,34 +16997,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-403316a6 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-403316a6 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -18645,34 +17525,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-b28ce99e {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-b28ce99e {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -19579,34 +18431,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -20035,34 +18859,6 @@ import用ファイル
 }
 100% {
     height: 0;
-}
-}
-@-webkit-keyframes boundBall-data-v-1f270d64 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-1f270d64 {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
 }
 }
 /**
@@ -20643,34 +19439,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-6832e7cf {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-6832e7cf {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -21193,34 +19961,6 @@ import用ファイル
     height: 0;
 }
 }
-@-webkit-keyframes boundBall-data-v-060e08fe {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
-@keyframes boundBall-data-v-060e08fe {
-0%, 100% {
-    transform: scale(1);
-}
-30% {
-    transform: scale(0.86, 0.94);
-}
-60% {
-    transform: scale(1);
-}
-90% {
-    transform: scale(1.15, 0.9);
-}
-}
 /**
  * common mixin (サイト内でどこでも使う可能性がある)
  */
@@ -21626,34 +20366,6 @@ import用ファイル
   }
   100% {
     height: 0;
-  }
-}
-@-webkit-keyframes boundBall {
-  0%, 100% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(0.86, 0.94);
-  }
-  60% {
-    transform: scale(1);
-  }
-  90% {
-    transform: scale(1.15, 0.9);
-  }
-}
-@keyframes boundBall {
-  0%, 100% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(0.86, 0.94);
-  }
-  60% {
-    transform: scale(1);
-  }
-  90% {
-    transform: scale(1.15, 0.9);
   }
 }
 /**
