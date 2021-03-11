@@ -2,7 +2,7 @@
 <div class="primary-btn">
   <button class="primary-btn__btn" :type="btn.Type" @click="clickEvent">
     <span class="primary-btn__name">{{ btn.Name }}</span>
-    <svg-vue icon="angle-right" class="primary-btn__icon"/>
+    <svg-vue icon="angle_right" class="primary-btn__icon"/>
   </button>
 </div>
 </template>
@@ -52,6 +52,10 @@ export default {
       color: color(white);
       background-color: color(orange);
     }
+
+    .primary-icon__icon {
+      fill: color(white);
+    }
   }
 
   &__btn {
@@ -68,12 +72,12 @@ export default {
   }
 
   &__icon {
-    width: interval(2);
-    height: interval(2);
+    width: interval(1.5);
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: interval(1);
     transform: translateY(-50%);
+    fill: color(orange);
   }
 
 }

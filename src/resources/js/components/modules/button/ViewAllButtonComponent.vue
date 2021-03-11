@@ -87,7 +87,7 @@ export default {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: interval(2);
+    right: interval(3);
     fill: color(white);
 
     @include mq(sm) {

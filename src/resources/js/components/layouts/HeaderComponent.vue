@@ -10,7 +10,7 @@
 
     <div class="header__menus">
       <button class="header__btn" @click="openModal">
-        <svg-vue icon="bars" class="header__btn-icon"/>
+        <svg-vue icon="menu" class="header__btn-icon"/>
       </button>
 
       <a class="header__btn" :href="twitter.link" target="_blank">
@@ -247,13 +247,15 @@ export default {
 
       .header__btn-icon {
         transform: rotateZ(360deg);
-        color: color(darkblue);
+        fill: color(lightDarkblue);
+        color: color(lightDarkblue);
       }
     }
   }
 
   &__btn-icon {
-    width: interval(2);
+    width: interval(2.5);
+    fill: color(white);
     color: color(white);
     transition: .3s all ease-out;
   }
