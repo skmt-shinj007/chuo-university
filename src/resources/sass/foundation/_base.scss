@@ -64,8 +64,6 @@ section {
 // セクションではないが、スタイルだけ適用したいとき。
 .wrapper {
   padding: 0 pixel(2);
-  max-width: device(max);
-  margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
     padding: 0 pixel(3);
@@ -162,4 +160,38 @@ th,td {
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+%animation {
+  opacity: 0;
+  transition:
+    1.0s opacity cubic-bezier(0.39, 0.575, 0.565, 1),
+    1.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/**
+ * 表示の際にふわっと表示させるアニメーションに指定するクラス
+ */
+.fadeUp {
+  @extend %animation;
+  transform: translate3d(0, 10px, 0);
+}
+
+.fadeDown {
+  @extend %animation;
+  transform: translate3d(0, -10px, 0);
+}
+
+.fadeRight {
+  @extend %animation;
+  transform: translate3d(10px, 0, 0);
+}
+
+.fadeLeft {
+  @extend %animation;
+  transform: translate3d(-10px, 0, 0);
+}
+
+.fade {
+  @extend %animation;
 }

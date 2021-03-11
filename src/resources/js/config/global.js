@@ -2,30 +2,13 @@
  * 全コンポーネントで読み込むオプションを定義
  */
 
-// メッセージを格納するJSONファイルをインポート
+// サイト内で使用するテキスト群
 import Messages from './messages.json';
 
 export default {
   data() {
     return {
       messages: Messages,
-      /**
-       * [ブレイクポイント]
-       * @type { Number }
-       */
-      breakpointPc: 1025,
-
-      /**
-       * [現在のデバイス幅]
-       * @type { Number }
-       */
-      windowWidth: null,
-
-      /**
-       * [現在のスクロール量]
-       * @type { Number }
-       */
-      scrollY: null,
 
       /**
      * [ユーザーカテゴリー情報]
@@ -41,48 +24,5 @@ export default {
       activeAlumniNum: 4,
       alumniNum: 5
     }
-  },
-
-  created() {
-    /**
-     * [ウインドウ幅をリアルタイムで取得]
-     * @type { function }
-     */
-    this.windowWidth = window.innerWidth;
-    window.addEventListener('resize', this.getWindowWidth);
-  },
-
-  mounted() {
-    /**
-     * [スクロール量をリアルタイムで取得]
-     * @type { function }
-     */
-    this.scrollY = window.scrollY;
-    window.addEventListener('scroll', this.getScroll);
-  },
-
-  beforeDestroy() {
-    // コンポーネント破棄直前に追加したイベントをリスナーから削除
-    window.removeEventListener('resize', this.getWindowWidth);
-    window.removeEventListener('scroll', this.getScroll);
-  },
-
-  methods: {
-    /**
-     * [スクロール量を取得]
-     * イベント解除を考えて、メソッドとして登録
-     * https://gray-code.com/javascript/unset-event-listener/
-    */
-    getScroll() {
-      this.scrollY = window.scrollY;
-    },
-
-    /**
-     * [windowサイズを取得]
-     * イベント解除を考えて、メソッドとして登録
-     */
-    getWindowWidth() {
-      this.windowWidth = window.innerWidth;
-    },
   },
 }

@@ -7,7 +7,12 @@
 </template>
 
 <script>
+// mixin
+import Scroll from '../../../config/scroll';
+
 export default {
+  mixins: [Scroll],
+
   data() {
     return {
       /**

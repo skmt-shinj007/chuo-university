@@ -8,7 +8,7 @@
   </section>
 
   <!-- プロバイダー -->
-  <section class="photo__provider">
+  <section class="photo__provider" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Provider"/>
 
     <div class="ticket-group">
@@ -24,12 +24,12 @@
     </div>
 
     <provider-ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
-
-    <div class="photo__scroll-top">
-      <scroll-top-button/>
-    </div>
-
   </section>
+
+
+  <div class="photo__scroll-top">
+    <scroll-top-button/>
+  </div>
 </div>
 </template>
 
@@ -37,6 +37,9 @@
 // config json import
 import Data from '../config/data.json';
 import Config from '../config/config.json';
+
+// mixin
+import Animation from '../config/animation';
 
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
@@ -53,6 +56,9 @@ export default {
     ProviderTicketModal,
     ScrollTopButton,
   },
+
+  mixins: [Animation],
+
   data() {
     return {
       /**

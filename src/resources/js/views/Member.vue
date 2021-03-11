@@ -3,8 +3,18 @@
   <div class="member__main-visual">
     <main-visual>
       <template v-slot:inner>
-        <svg-vue class="main-visual__icon" icon="chuo-logo"/>
-        <span class="main-visual__title">{{ messages.MainVisual.Member }}</span>
+        <div class="main-visual__wrap">
+          <svg-vue class="main-visual__icon" icon="chuo-logo"/>
+          <div class="main-visual__text-group">
+            <div class="main-visual__text" v-for="(text, n) in texts" :key="n">
+              <span
+                class="main-visual__item delay"
+                v-for="(t, n) in text"
+                :key="n"
+                v-text="t"/>
+            </div>
+          </div>
+        </div>
       </template>
     </main-visual>
   </div>
@@ -12,14 +22,18 @@
   <section class="member__players">
     <contents-title :title="messages.SectionTitles.Players"/>
 
-    <div class="ticket-group">
-      <div class="ticket" ref="playerTicket"
-          v-for="(player, n) in players"
-          :key="n"
-          @click="openModal(player)">
+    <div class="member__ticket-group">
 
-        <user-ticket :userObj="player"/>
+      <div
+        class="member__ticket"
+        ref="playerTicket"
+        v-for="player in players"
+        :key="player.id"
+        @click="openModal(player)">
+
+          <user-ticket :userObj="player"/>
       </div>
+
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
         class="enpty"
@@ -32,10 +46,18 @@
   <section class="member__staff">
     <contents-title :title="messages.SectionTitles.Staff"/>
 
-    <div class="ticket-group">
-      <div class="ticket" ref="staffTicket" v-for="(staffItem, n) in staff" :key="n" @click="openModal(staffItem)">
-        <user-ticket :userObj="staffItem"/>
+    <div class="member__ticket-group">
+
+      <div
+        class="member__ticket"
+        ref="staffTicket"
+        v-for="user in staff"
+        :key="user.id"
+        @click="openModal(staffItem)">
+
+          <user-ticket :userObj="user"/>
       </div>
+
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
         class="enpty"
@@ -56,6 +78,9 @@
 </template>
 
 <script>
+// mixin
+import Risize from '../config/resize';
+
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
@@ -76,9 +101,19 @@ export default {
     TableComponent,
     ScrollTopButton,
   },
+
+  mixins: [Risize],
+
   data() {
     return {
       data: Data,
+
+      /**
+       * メインビジュアルのテキスト
+       * @type { Object }
+       */
+      texts: {},
+
       users: [],     // 全ユーザー
       players: [],  // プレイヤー
       staff: [],    // スタッフ
@@ -125,16 +160,19 @@ export default {
     this.users.forEach(element => {
       (element.category === this.staffNum) ? this.staff.push(element) : null;
     });
+
+    this.texts = this.messages.MainVisual.Member;
   },
 
   mounted() {
+    let refs = this.$refs;
     /**
      * [チケットレイアウトの配置]
      * justify-content: center; は余った要素が真ん中よりになるので、左寄せに揃えるための処理
      * 解決策 -> チケットの数だけ空divを追加する。
      */
-    const playerTicket = this.$refs.playerTicket;
-    const staffTicket = this.$refs.staffTicket;
+    const playerTicket = refs.playerTicket;
+    const staffTicket = refs.staffTicket;
 
     // チケットの個数を変数に格納
     this.playerTicketNumber = playerTicket.length;
@@ -166,6 +204,7 @@ export default {
      */
     getTicketWidth() {
       this.ticketWidth = this.$refs.playerTicket[0].offsetWidth;
+      // console.log(this.ticketWidth);
     },
   },
 
@@ -189,61 +228,105 @@ export default {
     margin-bottom: 0;
   }
 
+  &__ticket-group {
+    @include flex(column nowrap, center, center);
+
+    @include mq(sm) {
+      @include flex(row wrap, center, center);
+    }
+  }
+
+  &__ticket {
+    margin-bottom: interval(5);
+
+    @include mq(sm) {
+      margin-bottom: 0;
+      padding: interval(1);
+    }
+  }
+
   &__scroll-top {
     @include scroll-top();
   }
 }
 
 .main-visual {
+
+  &__wrap {
+    @include flex(column nowrap, center, center);
+
+    @include mq(sm) {
+      flex-direction: row;
+    }
+  }
+
   &__icon {
-    width: 80%;
-    max-width: interval(40);
+    width: interval(36);
     fill: color(white);
     stroke: color(orange);
     stroke-width: interval(1);
 
     @include mq(sm) {
-      width: 50%;
-    }
-
-    @include mq(md) {
-      max-width: interval(60);
+      width: interval(28);
     }
   }
 
-  &__title {
-    @include bangers(font(24), 2px, bold);
-    line-height: 1.2;
-    text-align: center;
-    margin-top: interval(5);
-    text-shadow: none;
+  &__text-group {
+    margin-top: interval(2);
 
     @include mq(sm) {
-      font-size: font(28);
-      letter-spacing: 3px;
+      margin: 0 0 0 interval(1);
+      flex-grow: 2;
+    }
+
+    @include mq(md) {
+      margin-left: interval(3);
+    }
+  }
+
+  &__text {
+    text-align: center;
+
+    @include mq(sm) {
+      text-align: left;
+    }
+  }
+
+  &__item {
+    text-shadow: none;
+    line-height: 1.2;
+    font-size: font(40);
+    margin-right: interval(1);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include mq(sm) {
+      font-size: font(36);
+      margin-right: interval(.5);
     }
 
     @include mq(md) {
       font-size: font(48);
-      letter-spacing: 5px;
+    }
+  }
+
+  @for $i from 1 through 2 {
+    &__item:nth-child(#{$i}) {
+      animation-delay: $i * 100ms + 200ms;
     }
   }
 }
 
-.ticket-group {
-  @include flex(column nowrap, center, center);
-
-  @include mq(sm) {
-    @include flex(row wrap, center, center);
-  }
-}
-
 .ticket {
-  margin-bottom: interval(5);
+  &-enter-active {
+    transition: opacity .5s, transform .5s ease-out;
+  }
 
-  @include mq(sm) {
-    margin-bottom: 0;
-    padding: interval(1);
+  &-enter {
+    transform: translateY(-50px);
+    opacity: 0;
   }
 }
 </style>

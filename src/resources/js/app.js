@@ -35,6 +35,47 @@ import vueAxios from 'vue-axios';
 Vue.use(vueAxios, axios);
 
 /**
+ * スクロールのカスタムディレクティブを作成。
+ */
+Vue.directive('scroll', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('scroll', f)
+      }
+    }
+
+    window.addEventListener('scroll', f)
+  }
+})
+
+Vue.directive('fade', {
+  inserted: function (el, binding) {
+    // エラー処理
+    if (typeof binding.arg !== 'string') return console.log('[fade directive] arguments is not String');
+
+    // 引数に合わせてクラス付与
+    el.classList.add(binding.arg);
+
+    let fade = function () {
+      let windowHeight = window.innerHeight;  // ブラウザ表示領域
+      let top = el.getBoundingClientRect().top;  // 対象要素の位置
+      let point = windowHeight / 1.5;  // アニメーション開始位置
+
+      if (top < parseInt(point)) {
+        el.setAttribute(
+          'style',
+          'opacity: 1; transform: translate3d(0, 0, 0);'
+        )
+        window.removeEventListener('scroll', fade);
+      }
+    }
+
+    window.addEventListener('scroll', fade);
+  }
+})
+
+/**
  * components (全ページで使う共通コンポーネント)
  */
 import HeaderComponent from './components/layouts/HeaderComponent';

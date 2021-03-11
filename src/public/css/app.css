@@ -102,94 +102,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-3ff6fe5a {
+@-webkit-keyframes textIn-data-v-3ff6fe5a {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-3ff6fe5a {
+@keyframes textIn-data-v-3ff6fe5a {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-3ff6fe5a {
@@ -329,25 +259,62 @@ import用ファイル
 .main-visual[data-v-3ff6fe5a] {
   width: 100%;
   height: 100vh;
-  padding: 0 1rem;
   background: #030A10;
   background: linear-gradient(to right, #030A10 0%, #091e2f 100%);
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.main-visual__title[data-v-3ff6fe5a] {
+.main-visual__item[data-v-3ff6fe5a] {
   color: #ffffff;
-  white-space: pre-wrap;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 3rem;
+  display: inline-block;
+  font-size: 2.9375rem;
+  line-height: 1.2;
   text-shadow: 3px 3px 0px #e56c2c;
+  -webkit-animation: textIn-data-v-3ff6fe5a 0.8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
+          animation: textIn-data-v-3ff6fe5a 0.8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
 }
-@media screen and (min-width: 560px) {
-.main-visual__title[data-v-3ff6fe5a] {
-    line-height: 1.2;
+.main-visual__item[data-v-3ff6fe5a]:nth-child(1) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
 }
+.main-visual__item[data-v-3ff6fe5a]:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(3) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(4) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(5) {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(6) {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(7) {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(8) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(9) {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+.main-visual__item[data-v-3ff6fe5a]:nth-child(10) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -452,94 +419,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -813,94 +710,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -1183,94 +1010,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-9b317ac0 {
+@-webkit-keyframes textIn-data-v-9b317ac0 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-9b317ac0 {
+@keyframes textIn-data-v-9b317ac0 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-9b317ac0 {
@@ -1619,94 +1376,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-63d84db2 {
+@-webkit-keyframes textIn-data-v-63d84db2 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-63d84db2 {
+@keyframes textIn-data-v-63d84db2 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-63d84db2 {
@@ -1995,94 +1682,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-10d75cdd {
+@-webkit-keyframes textIn-data-v-10d75cdd {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-10d75cdd {
+@keyframes textIn-data-v-10d75cdd {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-10d75cdd {
@@ -2366,94 +1983,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-63cd6604 {
+@-webkit-keyframes textIn-data-v-63cd6604 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-63cd6604 {
+@keyframes textIn-data-v-63cd6604 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-63cd6604 {
@@ -2869,94 +2416,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-161a410d {
+@-webkit-keyframes textIn-data-v-161a410d {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-161a410d {
+@keyframes textIn-data-v-161a410d {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-161a410d {
@@ -3126,7 +2603,7 @@ import用ファイル
 /**
  * @keyframe を定義
  */
-@-webkit-keyframes iconSlide-data-v-9745667e {
+@-webkit-keyframes iconSlide-data-v-0da5752f {
 0% {
     transform: translateX(0);
 }
@@ -3161,7 +2638,7 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@keyframes iconSlide-data-v-9745667e {
+@keyframes iconSlide-data-v-0da5752f {
 0% {
     transform: translateX(0);
 }
@@ -3196,97 +2673,27 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-9745667e {
+@-webkit-keyframes textIn-data-v-0da5752f {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-9745667e {
+@keyframes textIn-data-v-0da5752f {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@-webkit-keyframes fadeoutTop-data-v-9745667e {
+@-webkit-keyframes fadeoutTop-data-v-0da5752f {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -3296,7 +2703,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@keyframes fadeoutTop-data-v-9745667e {
+@keyframes fadeoutTop-data-v-0da5752f {
 0% {
     opacity: 1;
     transform: translateY(0);
@@ -3306,7 +2713,7 @@ import用ファイル
     transform: translateY(-30%);
 }
 }
-@-webkit-keyframes bound-data-v-9745667e {
+@-webkit-keyframes bound-data-v-0da5752f {
 0% {
     transform: translate(0%, -100%);
 }
@@ -3335,7 +2742,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@keyframes bound-data-v-9745667e {
+@keyframes bound-data-v-0da5752f {
 0% {
     transform: translate(0%, -100%);
 }
@@ -3364,7 +2771,7 @@ import用ファイル
     transform: scale(1, 1);
 }
 }
-@-webkit-keyframes rotation-data-v-9745667e {
+@-webkit-keyframes rotation-data-v-0da5752f {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -3372,7 +2779,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@keyframes rotation-data-v-9745667e {
+@keyframes rotation-data-v-0da5752f {
 0% {
     transform: translateX(-50rem) rotate(0deg);
 }
@@ -3380,7 +2787,7 @@ import用ファイル
     transform: translateX(0) rotate(1455deg);
 }
 }
-@-webkit-keyframes loading-data-v-9745667e {
+@-webkit-keyframes loading-data-v-0da5752f {
 0% {
     height: 0;
 }
@@ -3391,7 +2798,7 @@ import用ファイル
     height: 0;
 }
 }
-@keyframes loading-data-v-9745667e {
+@keyframes loading-data-v-0da5752f {
 0% {
     height: 0;
 }
@@ -3420,75 +2827,212 @@ import用ファイル
 /**
  * component
  */
-.concept-card[data-v-9745667e] {
-  position: relative;
-  width: 50%;
-  margin: 0 auto;
-  color: #ffffff;
-  border: 3px solid #ffffff;
-  border-radius: 4px;
+.concept__ball-group[data-v-0da5752f] {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background: #10334e;
-  background: radial-gradient(ellipse at center, #10334e 0%, #030A10 100%);
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
 }
 @media screen and (min-width: 560px) {
-.concept-card[data-v-9745667e] {
-    width: 8rem;
+.concept__ball-group[data-v-0da5752f] {
+    margin-right: 0.5rem;
 }
 }
-.concept-card[data-v-9745667e]::before {
+.concept__ball[data-v-0da5752f] {
+  width: 5rem;
+  height: 5rem;
+  background-color: #ffffff;
+  box-shadow: inset -1rem -1rem 3rem #b3b3b3;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s ease-out;
+}
+.concept__ball[data-v-0da5752f]:nth-child(1) {
+  transform: rotate(10deg);
+  margin-right: 0.5rem;
+}
+.concept__ball[data-v-0da5752f]:nth-child(1)::after {
+  transform: rotate(-10deg) translateX(10px);
+}
+.concept__ball[data-v-0da5752f]:nth-child(2) {
+  margin-right: 0.25rem;
+  transform: rotate(-8deg);
+}
+.concept__ball[data-v-0da5752f]:nth-child(2)::after {
+  transform: rotate(8deg) translateX(-8px);
+}
+.concept__ball[data-v-0da5752f]:last-child {
+  transform: rotate(5deg);
+  margin-right: 0;
+}
+.concept__ball[data-v-0da5752f]:last-child::after {
+  transform: rotate(-5deg) translateX(5px);
+}
+.concept__ball[data-v-0da5752f]::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: calc(5rem / 4);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(5rem / 25);
+  height: calc(5rem / 25);
+  background-color: #0000cc;
+  border-radius: 50%;
+}
+.concept__ball[data-v-0da5752f]::after {
   content: "";
   display: block;
-  padding-top: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -100%;
+  margin: auto;
+  width: 60px;
+  height: 10px;
+  border-radius: 50%;
+  background: #b3b3b3;
+  filter: blur(6px);
+  opacity: 0.9;
+  transition: transform 0.3s ease-in;
 }
 @media screen and (min-width: 1025px) {
-.concept-card:hover .concept-card__title[data-v-9745667e],
-.concept-card:hover .concept-card__subTitle[data-v-9745667e] {
-    opacity: 0;
-}
-.concept-card:hover .concept-card__text[data-v-9745667e] {
-    opacity: 1;
+.concept__ball[data-v-0da5752f] {
+    cursor: pointer;
 }
 }
-.concept-card-inner[data-v-9745667e] {
-  width: 100%;
-  height: 100%;
+@media screen and (min-width: 1025px) {
+.concept__ball[data-v-0da5752f]:hover {
+    transform: rotate(0);
+}
+.concept__ball[data-v-0da5752f]:hover::after {
+    transform: rotate(0);
+}
+}
+.concept__radio[data-v-0da5752f] {
+  display: none;
+}
+.concept__ball-label[data-v-0da5752f] {
+  font-size: 0.625rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: #fd0000;
+  text-align: center;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.concept__content[data-v-0da5752f] {
+  color: #ffffff;
+  background-color: #091e2f;
+  border-radius: 2px;
+}
+@media screen and (min-width: 560px) {
+.concept__content[data-v-0da5752f] {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+}
+.concept__tab-group[data-v-0da5752f] {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+@media screen and (min-width: 560px) {
+.concept__tab-group[data-v-0da5752f] {
+    flex-direction: column;
+    width: 30%;
+}
+}
+.concept__tab[data-v-0da5752f] {
+  background-color: #10334e;
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+  width: calc(100% / 3);
+  border-radius: 2px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
-.concept-card__subTitle[data-v-9745667e] {
-  font-size: 0.625rem;
-  letter-spacing: 2px;
-  transition: all 0.5s ease-in-out;
+.concept__tab[data-v-0da5752f]:last-child {
+  border: none;
 }
-.concept-card__title[data-v-9745667e] {
-  font-size: 1rem;
-  transition: all 0.5s ease-in-out;
+@media screen and (min-width: 560px) {
+.concept__tab[data-v-0da5752f] {
+    height: calc(100% / 3);
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
 }
-.concept-card__text[data-v-9745667e] {
-  color: #ffffff;
-  padding: 0.5rem;
-  text-align: center;
 }
 @media screen and (min-width: 1025px) {
-.concept-card__text[data-v-9745667e] {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    font-weight: bold;
-    transition: all 0.5s ease-in-out;
+.concept__tab[data-v-0da5752f] {
+    cursor: pointer;
 }
+}
+.concept__label[data-v-0da5752f] {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.concept__list[data-v-0da5752f] {
+  border-radius: 2px;
+}
+@media screen and (min-width: 560px) {
+.concept__list[data-v-0da5752f] {
+    width: 70%;
+}
+}
+.concept__item[data-v-0da5752f] {
+  padding: 1rem;
+}
+.concept__keyword[data-v-0da5752f] {
+  font-size: 0.875rem;
+  display: block;
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+.concept__keyword[data-v-0da5752f]::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+}
+.concept .active[data-v-0da5752f] {
+  background-color: #091e2f;
+}
+.next-enter-active[data-v-0da5752f] {
+  transition: transform 0.8s;
+}
+.next-enter[data-v-0da5752f] {
+  transform: translateX(50%);
+}
+.prev-enter-active[data-v-0da5752f] {
+  transition: transform 0.8s;
+}
+.prev-enter[data-v-0da5752f] {
+  transform: translateX(-50%);
+}
+.up-enter-active[data-v-0da5752f] {
+  transition: transform 0.8s;
+}
+.up-enter[data-v-0da5752f] {
+  transform: translateY(-50%);
+}
+.down-enter-active[data-v-0da5752f] {
+  transition: transform 0.8s;
+}
+.down-enter[data-v-0da5752f] {
+  transform: translateY(50%);
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -3593,94 +3137,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-7186e4cc {
+@-webkit-keyframes textIn-data-v-7186e4cc {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-7186e4cc {
+@keyframes textIn-data-v-7186e4cc {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-7186e4cc {
@@ -3957,94 +3431,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-30380e08 {
+@-webkit-keyframes textIn-data-v-30380e08 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-30380e08 {
+@keyframes textIn-data-v-30380e08 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-30380e08 {
@@ -4315,94 +3719,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -4722,94 +4056,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-6c61d285 {
+@-webkit-keyframes textIn-data-v-6c61d285 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-6c61d285 {
+@keyframes textIn-data-v-6c61d285 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-6c61d285 {
@@ -5086,94 +4350,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-c3a537a8 {
+@-webkit-keyframes textIn-data-v-c3a537a8 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-c3a537a8 {
+@keyframes textIn-data-v-c3a537a8 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-c3a537a8 {
@@ -5456,94 +4650,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -5833,94 +4957,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -6182,94 +5236,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -6572,94 +5556,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-53189f00 {
+@-webkit-keyframes textIn-data-v-53189f00 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-53189f00 {
+@keyframes textIn-data-v-53189f00 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-53189f00 {
@@ -6918,94 +5832,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-213a8ec6 {
+@-webkit-keyframes textIn-data-v-213a8ec6 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-213a8ec6 {
+@keyframes textIn-data-v-213a8ec6 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-213a8ec6 {
@@ -7439,94 +6283,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-bb84db5a {
+@-webkit-keyframes textIn-data-v-bb84db5a {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-bb84db5a {
+@keyframes textIn-data-v-bb84db5a {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-bb84db5a {
@@ -7794,94 +6568,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-357d3955 {
+@-webkit-keyframes textIn-data-v-357d3955 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-357d3955 {
+@keyframes textIn-data-v-357d3955 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-357d3955 {
@@ -8022,9 +6726,6 @@ import用ファイル
   width: 100%;
   height: 100vh;
 }
-.club__concept[data-v-357d3955] {
-  margin: 0 auto;
-}
 .club__dormitory[data-v-357d3955] {
   margin-bottom: 5rem;
 }
@@ -8065,36 +6766,6 @@ import用ファイル
 .photo__button[data-v-357d3955], .member__button[data-v-357d3955] {
     max-width: 25rem;
     margin: 2.5rem auto 0 auto;
-}
-}
-@media screen and (min-width: 560px) {
-.concept__card-group[data-v-357d3955] {
-    max-width: 30rem;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-}
-}
-@media screen and (min-width: 1025px) {
-.concept__card-group[data-v-357d3955] {
-    max-width: 50rem;
-}
-}
-.concept__card[data-v-357d3955] {
-  margin-bottom: 2.5rem;
-}
-.concept__card[data-v-357d3955]:last-child {
-  margin-bottom: 0;
-}
-@media screen and (min-width: 560px) {
-.concept__card[data-v-357d3955] {
-    margin-bottom: 0;
-    margin-right: 1rem;
-}
-.concept__card[data-v-357d3955]:last-child {
-    margin-right: 0;
 }
 }
 .practice__map[data-v-357d3955] {
@@ -8334,94 +7005,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-358d2551 {
+@-webkit-keyframes textIn-data-v-358d2551 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-358d2551 {
+@keyframes textIn-data-v-358d2551 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-358d2551 {
@@ -8932,94 +7533,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -9414,94 +7945,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-668c6779 {
+@-webkit-keyframes textIn-data-v-668c6779 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-668c6779 {
+@keyframes textIn-data-v-668c6779 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-668c6779 {
@@ -9645,6 +8106,29 @@ import用ファイル
   padding-bottom: 5rem;
   margin-bottom: 0;
 }
+.member__ticket-group[data-v-668c6779] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 560px) {
+.member__ticket-group[data-v-668c6779] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+}
+.member__ticket[data-v-668c6779] {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 560px) {
+.member__ticket[data-v-668c6779] {
+    margin-bottom: 0;
+    padding: 0.5rem;
+}
+}
 .member__scroll-top[data-v-668c6779] {
   position: fixed;
   z-index: 10;
@@ -9653,67 +8137,84 @@ import用ファイル
   width: 3rem;
   height: 3rem;
 }
-.main-visual__icon[data-v-668c6779] {
-  width: 80%;
-  max-width: 20rem;
-  fill: #ffffff;
-  stroke: #e56c2c;
-  stroke-width: 0.5rem;
-}
-@media screen and (min-width: 560px) {
-.main-visual__icon[data-v-668c6779] {
-    width: 50%;
-}
-}
-@media screen and (min-width: 1025px) {
-.main-visual__icon[data-v-668c6779] {
-    max-width: 30rem;
-}
-}
-.main-visual__title[data-v-668c6779] {
-  font-family: "Bangers", cursive;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  font-weight: bold;
-  line-height: 1.2;
-  text-align: center;
-  margin-top: 2.5rem;
-  text-shadow: none;
-}
-@media screen and (min-width: 560px) {
-.main-visual__title[data-v-668c6779] {
-    font-size: 1.75rem;
-    letter-spacing: 3px;
-}
-}
-@media screen and (min-width: 1025px) {
-.main-visual__title[data-v-668c6779] {
-    font-size: 3rem;
-    letter-spacing: 5px;
-}
-}
-.ticket-group[data-v-668c6779] {
+.main-visual__wrap[data-v-668c6779] {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
 @media screen and (min-width: 560px) {
-.ticket-group[data-v-668c6779] {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+.main-visual__wrap[data-v-668c6779] {
+    flex-direction: row;
 }
 }
-.ticket[data-v-668c6779] {
-  margin-bottom: 2.5rem;
+.main-visual__icon[data-v-668c6779] {
+  width: 18rem;
+  fill: #ffffff;
+  stroke: #e56c2c;
+  stroke-width: 0.5rem;
 }
 @media screen and (min-width: 560px) {
-.ticket[data-v-668c6779] {
-    margin-bottom: 0;
-    padding: 0.5rem;
+.main-visual__icon[data-v-668c6779] {
+    width: 14rem;
 }
+}
+.main-visual__text-group[data-v-668c6779] {
+  margin-top: 1rem;
+}
+@media screen and (min-width: 560px) {
+.main-visual__text-group[data-v-668c6779] {
+    margin: 0 0 0 0.5rem;
+    flex-grow: 2;
+}
+}
+@media screen and (min-width: 1025px) {
+.main-visual__text-group[data-v-668c6779] {
+    margin-left: 1.5rem;
+}
+}
+.main-visual__text[data-v-668c6779] {
+  text-align: center;
+}
+@media screen and (min-width: 560px) {
+.main-visual__text[data-v-668c6779] {
+    text-align: left;
+}
+}
+.main-visual__item[data-v-668c6779] {
+  text-shadow: none;
+  line-height: 1.2;
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
+}
+.main-visual__item[data-v-668c6779]:last-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 560px) {
+.main-visual__item[data-v-668c6779] {
+    font-size: 2.25rem;
+    margin-right: 0.25rem;
+}
+}
+@media screen and (min-width: 1025px) {
+.main-visual__item[data-v-668c6779] {
+    font-size: 3rem;
+}
+}
+.main-visual__item[data-v-668c6779]:nth-child(1) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+.main-visual__item[data-v-668c6779]:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+.ticket-enter-active[data-v-668c6779] {
+  transition: opacity 0.5s, transform 0.5s ease-out;
+}
+.ticket-enter[data-v-668c6779] {
+  transform: translateY(-50px);
+  opacity: 0;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -9818,94 +8319,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -10176,94 +8607,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-42f1fe89 {
+@-webkit-keyframes textIn-data-v-42f1fe89 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-42f1fe89 {
+@keyframes textIn-data-v-42f1fe89 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-42f1fe89 {
@@ -10564,94 +8925,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-b79d4b88 {
+@-webkit-keyframes textIn-data-v-b79d4b88 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-b79d4b88 {
+@keyframes textIn-data-v-b79d4b88 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-b79d4b88 {
@@ -10967,94 +9258,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-57d67ae5 {
+@-webkit-keyframes textIn-data-v-57d67ae5 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-57d67ae5 {
+@keyframes textIn-data-v-57d67ae5 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-57d67ae5 {
@@ -11373,94 +9594,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-600734dc {
+@-webkit-keyframes textIn-data-v-600734dc {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-600734dc {
+@keyframes textIn-data-v-600734dc {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-600734dc {
@@ -11753,94 +9904,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -12108,94 +10189,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-3ea95d82 {
+@-webkit-keyframes textIn-data-v-3ea95d82 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-3ea95d82 {
+@keyframes textIn-data-v-3ea95d82 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-3ea95d82 {
@@ -12511,94 +10522,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-301d0ec5 {
+@-webkit-keyframes textIn-data-v-301d0ec5 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-301d0ec5 {
+@keyframes textIn-data-v-301d0ec5 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-301d0ec5 {
@@ -12925,94 +10866,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -13180,6 +11051,7 @@ import用ファイル
 }
 .view-all__btn:hover .view-all__btn-label {
     letter-spacing: 3px;
+    transform: scale(1.1);
 }
 }
 @media screen and (min-width: 560px) {
@@ -13200,11 +11072,10 @@ import用ファイル
   width: 0.75rem;
   height: 0.75rem;
   position: absolute;
-  top: 45%;
+  top: 50%;
+  transform: translateY(-50%);
   right: 1rem;
   fill: #ffffff;
-  -webkit-animation: fadeoutDown 1.5s infinite;
-          animation: fadeoutDown 1.5s infinite;
 }
 @media screen and (min-width: 560px) {
 .view-all__icon {
@@ -13314,94 +11185,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -13678,94 +11479,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-7ec9af9b {
+@-webkit-keyframes textIn-data-v-7ec9af9b {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-7ec9af9b {
+@keyframes textIn-data-v-7ec9af9b {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-7ec9af9b {
@@ -14002,6 +11733,13 @@ import用ファイル
 }
 .images__button[data-v-7ec9af9b] {
   margin-top: 2.5rem;
+}
+.fade-enter-active[data-v-7ec9af9b] {
+  transition: 1.5s opacity cubic-bezier(0.39, 0.575, 0.565, 1), 1.8s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.fade-enter[data-v-7ec9af9b] {
+  transform: translate3d(0, 10px, 0);
+  opacity: 0;
 }@charset "UTF-8";
 /*
 import用ファイル
@@ -14106,94 +11844,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -14468,94 +12136,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -14891,94 +12489,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-5885bf62 {
+@-webkit-keyframes textIn-data-v-5885bf62 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-5885bf62 {
+@keyframes textIn-data-v-5885bf62 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-5885bf62 {
@@ -15439,94 +12967,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-46e3fba3 {
+@-webkit-keyframes textIn-data-v-46e3fba3 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-46e3fba3 {
+@keyframes textIn-data-v-46e3fba3 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-46e3fba3 {
@@ -15805,94 +13263,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-403316a6 {
+@-webkit-keyframes textIn-data-v-403316a6 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-403316a6 {
+@keyframes textIn-data-v-403316a6 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-403316a6 {
@@ -16313,94 +13701,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-b28ce99e {
+@-webkit-keyframes textIn-data-v-b28ce99e {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-b28ce99e {
+@keyframes textIn-data-v-b28ce99e {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-b28ce99e {
@@ -17197,94 +14515,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop {
@@ -17607,94 +14855,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-1f270d64 {
+@-webkit-keyframes textIn-data-v-1f270d64 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-1f270d64 {
+@keyframes textIn-data-v-1f270d64 {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-1f270d64 {
@@ -18165,94 +15343,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-6832e7cf {
+@-webkit-keyframes textIn-data-v-6832e7cf {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-6832e7cf {
+@keyframes textIn-data-v-6832e7cf {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-6832e7cf {
@@ -18667,94 +15775,24 @@ import用ファイル
     transform: translateX(0);
 }
 }
-@-webkit-keyframes fadeoutDown-data-v-060e08fe {
+@-webkit-keyframes textIn-data-v-060e08fe {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
-@keyframes fadeoutDown-data-v-060e08fe {
+@keyframes textIn-data-v-060e08fe {
 0% {
-    transform: translateY(0);
-}
-10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-}
-20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-}
-30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-}
-40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-}
-50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-}
-60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-}
-70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-}
-80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-}
-90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
 }
 100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 }
 @-webkit-keyframes fadeoutTop-data-v-060e08fe {
@@ -19054,94 +16092,24 @@ import用ファイル
     transform: translateX(0);
   }
 }
-@-webkit-keyframes fadeoutDown {
+@-webkit-keyframes textIn {
   0% {
-    transform: translateY(0);
-  }
-  10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-  }
-  20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-  }
-  30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-  }
-  40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-  }
-  60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-  }
-  70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-  }
-  80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-  }
-  90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
   }
   100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
-@keyframes fadeoutDown {
+@keyframes textIn {
   0% {
-    transform: translateY(0);
-  }
-  10% {
-    opacity: 0.9;
-    transform: translateY(10%);
-  }
-  20% {
-    opacity: 0.8;
-    transform: translateY(20%);
-  }
-  30% {
-    opacity: 0.7;
-    transform: translateY(30%);
-  }
-  40% {
-    opacity: 0.6;
-    transform: translateY(40%);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(50%);
-  }
-  60% {
-    opacity: 0.4;
-    transform: translateY(60%);
-  }
-  70% {
-    opacity: 0.3;
-    transform: translateY(70%);
-  }
-  80% {
-    opacity: 0.2;
-    transform: translateY(80%);
-  }
-  90% {
-    opacity: 0.1;
-    transform: translateY(90%);
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
   }
   100% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 @-webkit-keyframes fadeoutTop {
@@ -19809,8 +16777,6 @@ section {
 
 .wrapper {
   padding: 0 16px;
-  max-width: 1600px;
-  margin: 0 auto 5rem auto;
 }
 @media screen and (min-width: 560px) {
   .wrapper {
@@ -19917,4 +16883,28 @@ th, td {
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.fade, .fadeLeft, .fadeRight, .fadeDown, .fadeUp {
+  opacity: 0;
+  transition: 1s opacity cubic-bezier(0.39, 0.575, 0.565, 1), 1.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/**
+ * 表示の際にふわっと表示させるアニメーションに指定するクラス
+ */
+.fadeUp {
+  transform: translate3d(0, 10px, 0);
+}
+
+.fadeDown {
+  transform: translate3d(0, -10px, 0);
+}
+
+.fadeRight {
+  transform: translate3d(10px, 0, 0);
+}
+
+.fadeLeft {
+  transform: translate3d(-10px, 0, 0);
 }
