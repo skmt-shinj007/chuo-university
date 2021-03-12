@@ -21,13 +21,13 @@
           @click="accordionReset(); $emit('navClose')">
 
           <label class="accordion-link__children-label">{{ menu.label }}</label>
-          <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
+          <svg-vue class="accordion-link__children-icon" icon="angle_right"/>
         </a>
 
         <!-- 同タブ遷移の場合は、<router-link> -->
         <router-link class="accordion-link__link" :to="menu.to" @click.native="accordionReset(); $emit('navClose')" v-else>
           <label class="accordion-link__children-label">{{ menu.label }}</label>
-          <svg-vue class="accordion-link__children-icon" icon="angle-right"/>
+          <svg-vue class="accordion-link__children-icon" icon="angle_right"/>
         </router-link>
 
       </li>
@@ -134,6 +134,9 @@ export default {
         background-color: color(darkblue);
       }
 
+      &__children-icon {
+        fill: color(darkblue);
+      }
     }
   }
 
@@ -216,7 +219,8 @@ export default {
   }
 
   &__children-icon {
-    width: interval(1);
+    width: interval(1.5);
+    fill: color(white);
     cursor: pointer;
   }
 }

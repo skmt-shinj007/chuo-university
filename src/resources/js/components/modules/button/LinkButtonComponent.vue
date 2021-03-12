@@ -8,12 +8,12 @@
       v-if="isExternal">
 
     <span class="link__name">{{ link.Name }}</span>
-    <svg-vue icon="angle-right" class="link__icon"/>
+    <svg-vue icon="angle_right" class="link__icon"/>
   </a>
 
   <router-link :to="{ name: link.To }" class="link__btn" v-else>
     <span class="link__name">{{ link.Name }}</span>
-    <svg-vue icon="angle-right" class="link__icon"/>
+    <svg-vue icon="angle_right" class="link__icon"/>
   </router-link>
 </div>
 </template>
@@ -87,6 +87,10 @@ export default {
       color: color(white);
       background-color: color(orange);
     }
+
+    .link__icon {
+      fill: color(white);
+    }
   }
 
   &__btn {
@@ -94,8 +98,8 @@ export default {
     height: 100%;
     padding: interval(2.5);
     @extend %frame;
-    transform: translateX(-4px) translateY(4px);
     @include flex(row nowrap, center, center);
+    transform: translateX(-4px) translateY(4px);
   }
 
   &__name {
@@ -103,11 +107,11 @@ export default {
   }
 
   &__icon {
-    width: interval(2);
-    height: interval(2);
+    width: interval(1.5);
+    fill: color(orange);
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: interval(2);
     transform: translateY(-50%);
   }
 

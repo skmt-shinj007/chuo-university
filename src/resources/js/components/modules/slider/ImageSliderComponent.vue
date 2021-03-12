@@ -4,7 +4,7 @@
       <swiper-slide v-for="(image, n) in images" :key="n">
         <figure class="image-slider__container">
 
-          <img class="image-slider__image" :src="`/image/${image.path}`" :alt="image.name">
+          <img class="image-slider__image" :src="`/image/${image.src}`" :alt="image.alt">
 
           <figcaption class="image-slider__bar">
             <slot name="caption" :image="image">

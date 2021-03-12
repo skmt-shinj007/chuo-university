@@ -29,7 +29,7 @@
   </div>
 
   <div class="user-ticket-item">
-    <svg-vue class="user-ticket-icon" icon="angle-right"/>
+    <svg-vue class="user-ticket-icon" icon="angle_right"/>
   </div>
 
 </div>
@@ -152,8 +152,8 @@ export default {
   }
 
   &-icon {
-    width: interval(2.5);
-    height: interval(2.5);
+    width: interval(1.5);
+    height: interval(1.5);
     fill: color(darkblue);
   }
 }

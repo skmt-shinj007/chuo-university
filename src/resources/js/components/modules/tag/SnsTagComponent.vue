@@ -1,7 +1,6 @@
 <template>
   <div class="sns-tag">
     <div class="sns-tag__color" :class="snsClass">
-      <!-- <svg-vue class="sns-tag__icon" :icon="sns"/> -->
       <span class="sns-tag__content" :class="sizeClass">{{ content }}</span>
     </div>
   </div>

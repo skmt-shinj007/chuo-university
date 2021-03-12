@@ -28,7 +28,7 @@
               <!-- TODO:コンタクトページに遷移するようにする -->
               <router-link to="contact" class="nav-modal__menu-link" @click.native="$emit('close')">
                 <label class="nav-modal__menu-title">{{ messages.Links.ToContact.Name }}</label>
-                <svg-vue icon="angle-right" class="nav-modal__menu-icon"/>
+                <svg-vue icon="angle_right" class="nav-modal__menu-icon"/>
               </router-link>
             </button>
           </div>
@@ -261,6 +261,7 @@ export default {
 
   &__menu-icon {
     width: interval(1);
+    fill: color(white);
     cursor: pointer;
   }
 
