@@ -15,11 +15,21 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
+        $current_date = Carbon::now();
+
         DB::table('users')->insert([
             [
                 'user_id' => 1,
-                'created_at' => Carbon::now(),
-            ]
+                'created_at' => $current_date,
+            ],
+            [
+                'user_id' => 2,
+                'created_at' => $current_date,
+            ],
+            [
+                'user_id' => 3,
+                'created_at' => $current_date,
+            ],
         ]);
     }
 }
