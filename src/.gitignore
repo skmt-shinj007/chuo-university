@@ -1,13 +1,23 @@
-/node_modules
-# public配下を監視対象から除外
-/public
+# public
+/public/css
+/public/js
+/public/mix-manifest.json
+
+# laravel
 /storage/*.key
-/vendor
 .env
 .env.backup
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
+
+# composer
+/vendor
+
+# node
+/node_modules
 npm-debug.log
 yarn-error.log
+
+# mac
 .DS_store
