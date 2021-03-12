@@ -4,25 +4,26 @@
   <!-- フィルター機能 -->
   <div class="images__filter">
     <span class="images__filter-name">{{ messages.FunctionName.Filter }}</span>
-
-    <pull-down-table :titles="filter.year" :menus="years" @select="select = $event"/>
+    <pull-down-table :titles="filter.year" :menus="menus" @select="select = $event"/>
   </div>
 
   <!-- 写真 -->
-  <div class="images__group">
-    <div class="images__box" v-for="(image,n) in displayImages" :key="n">
-      <figure class="images__img">
-        <img :src="`/image/${image.src}`" :alt="image.alt" @click="openModal(image)">
-      </figure>
+  <transition name="fade" appear>
+    <div class="images__group">
+      <div class="images__box" v-for="image in cutLists" :key="image.id">
+        <figure class="images__img">
+          <img :src="`/image/${image.src}`" :alt="image.alt" @click="openModal(image)">
+        </figure>
+      </div>
     </div>
-  </div>
+  </transition>
 
   <!-- 写真クリック後のモーダル -->
   <image-modal
     v-if="showModal"
     @close="closeModal"
-    :selectIndex="selectImageIndex"
-    :images="filterImages"/>
+    :selectIndex="index"
+    :images="filtering"/>
 
   <!-- もっと見るボタン -->
   <div class="images__button" v-if="buttonShow">
@@ -47,11 +48,27 @@ export default {
 
   data() {
     return {
-      years: [],        // 撮影年の配列（プルダウンのメニューになる）
-      select: "all", // 絞り込みの選択値
-      count: 0,         // イメージの表示枚数（こいつで表示枚数を管理する）
-      // TODO：初期表示枚数の値を変更
-      defaultCountNumber: 10, // イメージ表示枚数のデフォルト値
+      /**
+       * 絞り込みのメニュー
+       * @type { Array }
+       */
+      menus: [],
+
+      /**
+       * 絞り込みの選択値
+       * @default all
+       * @type { String }
+       */
+      select: "all",
+
+      /**
+       * イメージの表示枚数を管理
+       * @type { Number }
+       */
+      count: {
+        default: 10,
+        current: 0,
+      },
 
       /**
        * [モーダル表示フラグ]
@@ -63,7 +80,7 @@ export default {
        * [選択した画像のインデックス番号]
        * @type { Number }
        */
-      selectImageIndex: null,
+      index: null,
     }
   },
 
@@ -101,63 +118,50 @@ export default {
     });
 
     /**
-     * [years配列を生成]
-     * フィルター機能のプルダウンで使用するメニュー
-     * 1:撮影年を写真のデータから抽出して years 配列にセット
-     * 2:years配列の重複した値を削除
+     * [絞り込みメニュー生成]
+     * 1:撮影年を抽出
+     * 2:メニューデータの重複した値を削除
      */
-    this.images.forEach(element => this.years.push(element.shooting.year));
-    this.years = Array.from(new Set(this.years));
+    this.images.forEach(element => this.menus.push(element.shooting.year));
+    this.menus = Array.from(new Set(this.menus));
 
     /**
-     * イメージの表示枚数はcountで管理するので、初期表示枚数をcountに代入
+     * 初期描画時のリスト表示枚数を代入
      */
-    this.count = this.defaultCountNumber;
+    this.count.current = this.count.default;
   },
 
   computed: {
     /**
-     * [絞り込み機能] 処理
-     * 返り値 => 絞り込みの値によってimages配列をフィルタリングした配列を返す
-     * [表示枚数制御]と処理を切り分け => フィルタリングされた配列の要素数を使用するため。
+     * フィルタリング
+     * @return 絞り込みの値によってimagesをフィルタリングした配列を返す
      */
-    filterImages() {
+    filtering() {
       if (this.select !== "all") {
-
-        // 絞り込みの選択値を変数に代入
         let selected = this.select;
 
-        // 絞り込み -> フィルタリングされた配列を count の数だけ返す。 -> dataに定義
-        return this.images.filter( function(value) {
-          return value.shooting.year === selected;
+        // 絞り込み -> 選択した年と撮影年が合致する写真を返す。
+        let images = this.images.filter((value) => {
+          return (value.shooting.year === selected)
         });
-
-      } else {
-        // 絞り込まない -> フィルタリングされていない配列を count の数だけ返す。
-        return this.images;
+        return images;
       }
+      return this.images;
     },
 
     /**
      * [表示枚数制御]
-     * フィルタリング処理後の配列を count プロパティを参照して切り取る。
-     * filterImagesで返された配列をcount数で切り取っているだけ。
+     * フィルタリング処理後の配列を count.currentを参照して切り取る。
      */
-    displayImages() {
-      return this.filterImages.slice(0, this.count);
+    cutLists() {
+      return this.filtering.slice(0, this.count.current);
     },
 
     /**
      * [ボタン表示制御] 処理
-     * this.filterImages.length：写真データの最大要素数
-     * this.count：表示枚数
      */
     buttonShow() {
-      if (this.filterImages.length > this.count) {
-        return true;
-      } else {
-        return false;
-      }
+      return (this.filtering.length > this.count.current) ? true : false;
     }
   },
 
@@ -165,7 +169,7 @@ export default {
     // もっと見るボタンのクリックイベント
     viewMore() {
       // TODO：ボタンクリック時に増やす枚数を変更
-      return this.count += 1;
+      return this.count.current += 1;
     },
 
     /**
@@ -173,10 +177,10 @@ export default {
      */
     openModal(el) {
       this.showModal = true;
-
-      this.selectImageIndex = this.filterImages.indexOf(el);
+      this.index = this.filtering.indexOf(el);
       document.body.classList.add("modal-open");
     },
+
     closeModal() {
       this.showModal = false;
       setTimeout(() => {
@@ -188,10 +192,10 @@ export default {
   watch: {
     /**
      * [count初期化]
-     * プルダウンの選択値が切り替わる時に発火。
+     * 絞り込み後のリスト表示枚数をデフォ値にリセット
      */
     select() {
-      this.count = this.defaultCountNumber;
+      this.count.current = this.count.default;
     }
   }
 }
@@ -265,6 +269,19 @@ export default {
 
   &__button {
     margin-top: interval(5);
+  }
+}
+
+.fade {
+  &-enter-active {
+    transition:
+      1.5s opacity cubic-bezier(0.39, 0.575, 0.565, 1),
+      1.8s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  &-enter {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
   }
 }
 </style>

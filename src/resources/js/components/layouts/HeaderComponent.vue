@@ -35,13 +35,14 @@ import NavModal from '../modules/modal/NavModalComponent.vue';
 
 // mixin
 import TwitterAccount from '../../config/api/TwitterAccount';
+import Scroll from '../../config/scroll';
 
 export default {
   components: {
     NavModal,
   },
 
-  mixins: [TwitterAccount],
+  mixins: [TwitterAccount, Scroll],
 
   data() {
     return {

@@ -9,14 +9,14 @@
     </section>
 
     <section class="home__about">
-      <div class="about" v-for="(item, n) in aboutContents" :key="n">
+      <div class="about" v-for="(item, n) in aboutContents" :key="n" ref="about">
 
         <figure class="about__img">
           <img :src="`/image/${item.img.src}.jpg`" :alt="item.img.alt">
         </figure>
 
         <div class="about__box">
-          <div class="about__content">
+          <div class="about__content fadeUp" v-fade:[dir.up]>
             <div class="about__title">
               <contents-title :title="item.title"/>
             </div>
@@ -53,6 +53,9 @@
 // data
 import Data from '../config/data.json';
 
+// mixin
+import Animation from '../config/animation';
+
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
 import News from '../components/contents/NewsComponent';
@@ -68,6 +71,8 @@ export default {
     LinkButton,
     ScrollTopButton,
   },
+
+  mixins: [Animation],
 
   data() {
     return {
