@@ -15680,6 +15680,21 @@ import用ファイル
 }
 .header__title[data-v-6832e7cf] {
   cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+@media screen and (min-width: 1025px) {
+.header__title[data-v-6832e7cf] {
+    margin: 0;
+    padding: 0 1rem;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+}
+}
+.header__title-main[data-v-6832e7cf] {
   font-family: "Bangers", cursive;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -15687,9 +15702,42 @@ import用ファイル
   font-size: 0.875rem;
 }
 @media screen and (min-width: 1025px) {
-.header__title[data-v-6832e7cf] {
-    -ms-writing-mode: tb-rl;
-        writing-mode: vertical-rl;
+.header__title-main[data-v-6832e7cf] {
+    margin-bottom: 3rem;
+}
+}
+.header__title-assistance[data-v-6832e7cf] {
+  display: none;
+}
+@media screen and (min-width: 560px) {
+.header__title-assistance[data-v-6832e7cf] {
+    margin-left: 1.5rem;
+    font-size: 0.5rem;
+    font-weight: normal;
+    letter-spacing: 1.1px;
+    position: relative;
+    display: block;
+}
+}
+@media screen and (min-width: 1025px) {
+.header__title-assistance[data-v-6832e7cf] {
+    margin: 0;
+}
+}
+.header__title-assistance[data-v-6832e7cf]::before {
+  display: none;
+}
+@media screen and (min-width: 1025px) {
+.header__title-assistance[data-v-6832e7cf]::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1rem;
+    background-color: #091e2f;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 }
 .header__menus[data-v-6832e7cf] {
