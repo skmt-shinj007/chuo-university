@@ -8,7 +8,7 @@
   </section>
 
   <!-- プロバイダー -->
-  <section class="photo__provider" v-fade:[dir.up]>
+  <section class="photo__provider">
     <contents-title :title="messages.SectionTitles.Provider"/>
 
     <div class="ticket-group">
@@ -25,7 +25,6 @@
 
     <provider-ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
   </section>
-
 
   <div class="photo__scroll-top">
     <scroll-top-button/>

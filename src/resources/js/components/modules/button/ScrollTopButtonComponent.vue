@@ -1,7 +1,7 @@
 <template>
   <transition name="scrollTop">
     <button class="scroll-top" @click="scrollTop()" v-if="showBtn">
-      <svg-vue class="scroll-top__icon" icon="angle-up-double"/>
+      <svg-vue class="scroll-top__icon" icon="angle-up"/>
     </button>
   </transition>
 </template>
@@ -64,8 +64,8 @@ export default {
   }
 
   &__icon {
-    width: interval(1.5);
-    color: color(white);
+    width: interval(2);
+    fill: color(white);
   }
 }
 

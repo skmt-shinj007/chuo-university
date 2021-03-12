@@ -51,7 +51,7 @@ export default {
 
   &__icon {
     width: interval(3);
-    height: interval(3);
+    fill: color(lightDarkblue);
   }
 
   &__text-wrap {

@@ -117,7 +117,7 @@ export default {
 }
 
 .background-prlx {
-  @include background-image('/image/group-photo2017-spring.jpg', center top);
+  @include background-image('/image/training01_wide.jpg', center top);
   width: 100%;
   height: interval(30);
 }

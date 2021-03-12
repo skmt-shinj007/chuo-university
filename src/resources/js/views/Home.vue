@@ -87,7 +87,7 @@ export default {
 
   beforeMount() {
     // アバウトセクションを生成するデータを挿入
-    this.$data.data.HomeAbout.forEach(element => this.aboutContents.push(element));
+    this.$data.data.about.forEach(element => this.aboutContents.push(element));
 
     // タイトルとボタンのデータを置き換える。
     this.aboutContents.forEach(element => {

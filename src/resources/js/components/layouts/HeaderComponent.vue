@@ -9,12 +9,12 @@
     </router-link>
 
     <div class="header__menus">
-      <button class="header__btn" @click="openModal">
-        <svg-vue icon="bars" class="header__btn-icon"/>
+      <button class="header__button" @click="openModal">
+        <svg-vue icon="menu" class="header__icon"/>
       </button>
 
-      <a class="header__btn" :href="twitter.link" target="_blank">
-        <svg-vue icon="twitter" class="header__btn-icon"/>
+      <a class="header__button" :href="twitter.link" target="_blank">
+        <svg-vue icon="twitter" class="header__icon"/>
       </a>
     </div>
   </div>
@@ -212,7 +212,7 @@ export default {
     }
   }
 
-  &__btn {
+  &__button {
     @include flex(row nowrap, center, center);
     background-color: color(darkblue);
     width: interval(5);
@@ -245,15 +245,17 @@ export default {
         border-color: color(darkblue);
       }
 
-      .header__btn-icon {
+      .header__icon {
         transform: rotateZ(360deg);
-        color: color(darkblue);
+        fill: color(lightDarkblue);
+        color: color(lightDarkblue);
       }
     }
   }
 
-  &__btn-icon {
-    width: interval(2);
+  &__icon {
+    width: interval(2.5);
+    fill: color(white);
     color: color(white);
     transition: .3s all ease-out;
   }

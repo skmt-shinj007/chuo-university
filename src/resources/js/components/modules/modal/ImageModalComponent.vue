@@ -21,7 +21,7 @@
             <transition name="button">
               <div class="image-modal__prev-btn-area" @click="prevImage" v-if="showPrevBtn">
                   <button class="image-modal__prev-btn">
-                    <svg-vue icon="arrow-left" class="image-modal__icon"/>
+                    <svg-vue icon="arrow_left" class="image-modal__icon"/>
                   </button>
               </div>
             </transition>
@@ -29,7 +29,7 @@
             <transition name="button">
               <div class="image-modal__next-btn-area" @click="nextImage" v-if="showNextBtn">
                   <button class="image-modal__next-btn">
-                    <svg-vue icon="arrow-right" class="image-modal__icon"/>
+                    <svg-vue icon="arrow_right" class="image-modal__icon"/>
                   </button>
               </div>
             </transition>
