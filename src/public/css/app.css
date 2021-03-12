@@ -15706,7 +15706,7 @@ import用ファイル
     align-items: stretch;
 }
 }
-.header__btn[data-v-6832e7cf] {
+.header__button[data-v-6832e7cf] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -15721,10 +15721,10 @@ import用ファイル
   margin-right: 0.5rem;
 }
 @media screen and (min-width: 1025px) {
-.header__btn[data-v-6832e7cf] {
+.header__button[data-v-6832e7cf] {
     margin: 0 0 0.5rem 0;
 }
-.header__btn[data-v-6832e7cf]::before {
+.header__button[data-v-6832e7cf]::before {
     content: "";
     position: absolute;
     width: 2.5rem;
@@ -15735,20 +15735,20 @@ import用ファイル
 }
 }
 @media screen and (min-width: 1025px) {
-.header__btn[data-v-6832e7cf]:hover {
+.header__button[data-v-6832e7cf]:hover {
     background-color: #ffffff;
     transform: scale(1.1);
 }
-.header__btn[data-v-6832e7cf]:hover::before {
+.header__button[data-v-6832e7cf]:hover::before {
     border-color: #091e2f;
 }
-.header__btn:hover .header__btn-icon[data-v-6832e7cf] {
+.header__button:hover .header__icon[data-v-6832e7cf] {
     transform: rotateZ(360deg);
     fill: #10334e;
     color: #10334e;
 }
 }
-.header__btn-icon[data-v-6832e7cf] {
+.header__icon[data-v-6832e7cf] {
   width: 1.25rem;
   fill: #ffffff;
   color: #ffffff;
