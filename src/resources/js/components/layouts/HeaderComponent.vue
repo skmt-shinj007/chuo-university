@@ -2,10 +2,7 @@
 <header class="header">
   <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
     <router-link to="/" class="header__navbar-link">
-      <div class="header__title">
-        <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
-        <span class="header__title-assistance">{{ messages.Header.AssistanceTitle }}</span>
-      </div>
+      <span class="header__title">{{ messages.Header.MainTitle }}</span>
     </router-link>
 
     <div class="header__menus">
@@ -152,55 +149,11 @@ export default {
 
   &__title {
     cursor: pointer;
-    @include flex(row nowrap, center, center);
-    margin-right: interval(1);
+    @include bangers();
+    font-size: font(14);
 
     @include mq(md) {
-      margin: 0;
-      padding: 0 interval(2);
       writing-mode: vertical-rl;
-    }
-
-    &-main {
-      @include bangers();
-      font-size: font(14);
-
-      @include mq(md) {
-        margin-bottom: interval(6);
-      }
-    }
-
-    &-assistance {
-      display: none;
-
-      @include mq(sm) {
-        margin-left: interval(3);
-        font-size: font(8);
-        font-weight: normal;
-        letter-spacing: 1.1px;
-        position: relative;
-        display: block;
-      }
-
-      @include mq(md) {
-        margin: 0;
-      }
-    }
-
-    &-assistance::before {
-      display: none;
-
-      @include mq(md) {
-        content: '';
-        display: block;
-        width: 1px;
-        height: interval(2);
-        background-color: color(darkblue);
-        position: absolute;
-        top: - interval(4);
-        left: 50%;
-        transform: translateX(-50%);
-      }
     }
   }
 
