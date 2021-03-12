@@ -1,23 +1,21 @@
 <template>
 <header class="header">
   <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
-    <div class="header__wrap">
-      <router-link to="/" class="header__navbar-link">
-        <div class="header__title">
-          <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
-          <span class="header__title-assistance">{{ messages.Header.AssistanceTitle }}</span>
-        </div>
-      </router-link>
-
-      <div class="header__menus">
-        <button class="header__button" @click="openModal">
-          <svg-vue icon="menu" class="header__icon"/>
-        </button>
-
-        <a class="header__button" :href="twitter.link" target="_blank">
-          <svg-vue icon="twitter" class="header__icon"/>
-        </a>
+    <router-link to="/" class="header__navbar-link">
+      <div class="header__title">
+        <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
+        <span class="header__title-assistance">{{ messages.Header.AssistanceTitle }}</span>
       </div>
+    </router-link>
+
+    <div class="header__menus">
+      <button class="header__button" @click="openModal">
+        <svg-vue icon="menu" class="header__icon"/>
+      </button>
+
+      <a class="header__button" :href="twitter.link" target="_blank">
+        <svg-vue icon="twitter" class="header__icon"/>
+      </a>
     </div>
   </div>
 
