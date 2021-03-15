@@ -1,6 +1,6 @@
 <template>
-<header class="header">
-  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
+<header class="header" :class="{ 'header--hide': !isShow }">
+  <div class="header__navbar">
     <div class="header__logo">
       <router-link to="/" class="header__link">
         <span class="header__title">{{ messages.Header.MainTitle }}</span>
@@ -52,21 +52,15 @@ export default {
       config: Config,
 
       /**
-       * ヘッダーの高さ
-       * @type { Number }
-       */
-      headerHeight: 0,
-
-      /**
        * [ヘッダーの表示を制御するフラグ]
        * クラスの付与で表示切り替え
        * @type { Boolean }
        */
-      headerShow: true,
+      isShow: true,
 
       /**
        * [スクロール位置]
-       * ヘッダーの表示切り替えで使用
+       * ヘッダーの表示で使用
        * @type { Number }
        */
       lastScrollPosition: 0,
@@ -92,9 +86,9 @@ export default {
       let lastpos = this.lastScrollPosition;   // 最後のスクロール位置
 
       /**
-       * 60pxスクロール かつ 上スクロールした際にクラスを付与
+       * 60pxスクロール かつ 上スクロールした際にヘッダーを非表示
        */
-      (pos > 60 && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
+      (pos > 60 && pos > lastpos) ? this.isShow = false : this.isShow = true;
 
       // 最後のスクロール位置を更新
       this.lastScrollPosition = this.scrollY;
@@ -120,7 +114,7 @@ export default {
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  height: pixel(8);
+  height: interval(8);
   padding: 0 pixel(2);
   position: fixed;
   top: 0;
@@ -128,11 +122,24 @@ export default {
   z-index: 900;
   background-color: color(white);
   box-shadow: 0px 2px 6px color(shadow);
+  transition: transform .3s ease-out;
+
+  &--hide {
+    transform: translateY(-110%);
+
+    @include mq(md) {
+      transform: translateY(0);
+    }
+  }
+
+  @include mq(sm) {
+    padding: pixel(1) pixel(2);
+  }
 
   @include  mq(md) {
     width: width(header);
     height: 100vh;
-    padding: pixel(2) 0;
+    padding: 3vh 0;
     position: fixed;
     left: 0;
     box-shadow: 2px 0px 10px color(shadow);
@@ -141,19 +148,10 @@ export default {
   &__navbar {
     position: relative;
     height: 100%;
-    transition: all .3s ease-out;
     @include flex(row nowrap, space-between, center);
 
     @include mq(md) {
       display: block;
-    }
-
-    &--hide {
-      transform: translateY(-110%);
-
-      @include mq(md) {
-        transform: translateY(0);
-      }
     }
   }
 
@@ -179,12 +177,11 @@ export default {
   }
 
   &__title {
-    @include bangers();
-    font-size: font(14);
+    @include bangers(font(14));
 
     @include mq(md) {
       margin-bottom: pixel(6);
-      font-size: 3vh;
+      font-size: min(3vh, 32px);
     }
   }
 
@@ -202,7 +199,7 @@ export default {
 
     @include mq(md) {
       margin: 0;
-      font-size: 1.5vh;
+      font-size: min(1.5vh, 16px);
 
       &::before {
         content: '';
@@ -266,23 +263,6 @@ export default {
     fill: color(white);
     color: color(white);
     transition: .3s all ease-out;
-  }
-
-  &__nav-modal {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(black, $alpha: .5);
-    z-index: 998;
-    position: fixed;
-    top: 0;
-    right: 0;
-    color: color(white);
-    transform: translateX(-100%);
-    transition: all .3s ease-out;
-
-    &--open {
-      transform: translateX(0);
-    }
   }
 }
 </style>
