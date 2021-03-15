@@ -5,8 +5,8 @@
 
         <div class="image-modal">
           <header class="image-modal__header">
-            <button class="image-modal__close-btn" @click="$emit('close')">
-              <i class="btn-line"/>
+            <button class="image-modal__button" @click="$emit('close')">
+              <svg-vue icon="close"/>
             </button>
           </header>
 
@@ -228,7 +228,7 @@ export default {
     top: interval(2);
   }
 
-  &__close-btn {
+  &__button {
     @include close-button;
   }
 
