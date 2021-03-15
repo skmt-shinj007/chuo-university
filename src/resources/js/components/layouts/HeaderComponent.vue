@@ -1,15 +1,15 @@
 <template>
-<header class="header">
-  <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
-    <div class="header__wrap">
-      <router-link to="/" class="header__navbar-link">
-        <div class="header__title">
-          <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
-          <span class="header__title-assistance">{{ messages.Header.AssistanceTitle }}</span>
-        </div>
+<header class="header" :class="{ 'header--hide': !isShow }">
+  <div class="header__navbar">
+    <div class="header__logo">
+      <router-link to="/" class="header__link">
+        <span class="header__title">{{ messages.Header.MainTitle }}</span>
+        <span class="header__title-sub">{{ messages.Header.AssistanceTitle }}</span>
       </router-link>
+    </div>
 
-      <div class="header__menus">
+    <div class="header__menus">
+      <div class="header__button-group">
         <button class="header__button" @click="openModal">
           <svg-vue icon="menu" class="header__icon"/>
         </button>
@@ -52,21 +52,15 @@ export default {
       config: Config,
 
       /**
-       * ヘッダーの高さ
-       * @type { Number }
-       */
-      headerHeight: 0,
-
-      /**
        * [ヘッダーの表示を制御するフラグ]
        * クラスの付与で表示切り替え
        * @type { Boolean }
        */
-      headerShow: true,
+      isShow: true,
 
       /**
        * [スクロール位置]
-       * ヘッダーの表示切り替えで使用
+       * ヘッダーの表示で使用
        * @type { Number }
        */
       lastScrollPosition: 0,
@@ -92,9 +86,9 @@ export default {
       let lastpos = this.lastScrollPosition;   // 最後のスクロール位置
 
       /**
-       * 60pxスクロール かつ 上スクロールした際にクラスを付与
+       * 60pxスクロール かつ 上スクロールした際にヘッダーを非表示
        */
-      (pos > 60 && pos > lastpos) ? this.headerShow = true : this.headerShow = false;
+      (pos > 60 && pos > lastpos) ? this.isShow = false : this.isShow = true;
 
       // 最後のスクロール位置を更新
       this.lastScrollPosition = this.scrollY;
@@ -119,87 +113,102 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  width: 100%;
+  height: interval(8);
+  padding: 0 pixel(2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 900;
+  background-color: color(white);
+  box-shadow: 0px 2px 6px color(shadow);
+  transition: transform .3s ease-out;
+
+  &--hide {
+    transform: translateY(-110%);
+
+    @include mq(md) {
+      transform: translateY(0);
+    }
+  }
+
+  @include mq(sm) {
+    padding: pixel(1) pixel(2);
+  }
+
+  @include  mq(md) {
+    width: width(header);
+    height: 100vh;
+    padding: 3vh 0;
+    position: fixed;
+    left: 0;
+    box-shadow: 2px 0px 10px color(shadow);
+  }
 
   &__navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 900;
-    height: interval(8);
-    background-color: color(white);
-    padding: 0 interval(2);
-    box-shadow: 0px 2px 6px color(shadow);
-    transition: all .3s ease-out;
-    transform: translateY(0);
+    position: relative;
+    height: 100%;
     @include flex(row nowrap, space-between, center);
 
     @include mq(md) {
-      position: fixed;
-      left: 0;
-      width: width(header);
-      height: 100vh;
-      box-shadow: 2px 0px 10px color(shadow);
-      @include flex(column nowrap, space-around, center);
+      display: block;
     }
+  }
 
-    &--hide {
-      transform: translateY(-110%);
+  &__logo {
+    margin-right: pixel(1);
 
-      @include mq(md) {
-        transform: translateY(0);
-      }
+    @include mq(md) {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    @include flex(row nowrap, center, center);
+
+    @include mq(md) {
+      writing-mode: vertical-rl;
     }
   }
 
   &__title {
-    cursor: pointer;
-    @include flex(row nowrap, center, center);
-    margin-right: interval(1);
+    @include bangers(font(14));
+
+    @include mq(md) {
+      margin-bottom: pixel(6);
+      font-size: min(3vh, 32px);
+    }
+  }
+
+  &__title-sub {
+    display: none;
+
+    @include mq(sm) {
+      margin-left: pixel(2);
+      font-size: font(8);
+      font-weight: normal;
+      letter-spacing: 1.1px;
+      position: relative;
+      display: block;
+    }
 
     @include mq(md) {
       margin: 0;
-      padding: 0 interval(2);
-      writing-mode: vertical-rl;
-    }
+      font-size: min(1.5vh, 16px);
 
-    &-main {
-      @include bangers();
-      font-size: font(14);
-
-      @include mq(md) {
-        margin-bottom: interval(6);
-      }
-    }
-
-    &-assistance {
-      display: none;
-
-      @include mq(sm) {
-        margin-left: interval(3);
-        font-size: font(8);
-        font-weight: normal;
-        letter-spacing: 1.1px;
-        position: relative;
-        display: block;
-      }
-
-      @include mq(md) {
-        margin: 0;
-      }
-    }
-
-    &-assistance::before {
-      display: none;
-
-      @include mq(md) {
+      &::before {
         content: '';
         display: block;
         width: 1px;
-        height: interval(2);
+        height: pixel(2);
         background-color: color(darkblue);
         position: absolute;
-        top: - interval(4);
+        top: - pixel(4);
         left: 50%;
         transform: translateX(-50%);
       }
@@ -207,6 +216,15 @@ export default {
   }
 
   &__menus {
+    @include mq(md) {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__button-group {
     @include flex(row nowrap, space-around);
 
     @include mq(md) {
@@ -215,42 +233,27 @@ export default {
   }
 
   &__button {
+    position: relative;
     @include flex(row nowrap, center, center);
     background-color: color(darkblue);
     width: interval(5);
     height: interval(5);
     border-radius: radius(circle);
-    box-shadow: 1px 3px 6px 3px darken(color(shadow), 10%);
     cursor: pointer;
-    transition: .3s all ease-in-out;
-    margin-right: interval(1);
+    transition: all .3s ease-in-out;
+    margin-right: pixel(1);
+
+    &:last-child {
+      margin: 0;
+    }
 
     @include mq(md) {
-      margin: 0 0 interval(1) 0;
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: interval(5);
-        height: interval(5);
-        border-radius: radius(circle);
-        border: 2px solid transparent;
-        transition: .3s all ease-in-out;
-      }
+      margin: 0 0 pixel(1) 0;
     }
 
     @include hover {
-      background-color: color(white);
-      transform: scale(1.1);
-
-      &::before {
-        border-color: color(darkblue);
-      }
-
       .header__icon {
         transform: rotateZ(360deg);
-        fill: color(lightDarkblue);
-        color: color(lightDarkblue);
       }
     }
   }
@@ -260,23 +263,6 @@ export default {
     fill: color(white);
     color: color(white);
     transition: .3s all ease-out;
-  }
-
-  &__nav-modal {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(black, $alpha: .5);
-    z-index: 998;
-    position: fixed;
-    top: 0;
-    right: 0;
-    color: color(white);
-    transform: translateX(-100%);
-    transition: all .3s ease-out;
-
-    &--open {
-      transform: translateX(0);
-    }
   }
 }
 </style>
