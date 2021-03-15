@@ -6,7 +6,7 @@ html {
   }
 
   @include mq(md) {
-    font-size: 24px;
+    font-size: 2vw;
   }
 }
 
@@ -49,7 +49,6 @@ header {
 
 section {
   padding: 0 pixel(2);
-  max-width: device(max);
   margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
@@ -57,20 +56,21 @@ section {
   }
 
   @include mq(md) {
-    padding: 0 pixel(4);
+    padding: 0 3vw;
   }
 }
 
 // セクションではないが、スタイルだけ適用したいとき。
 .wrapper {
   padding: 0 pixel(2);
+  margin: 0 auto interval(10) auto;
 
   @include mq(sm) {
     padding: 0 pixel(3);
   }
 
   @include mq(md) {
-    padding: 0 pixel(4);
+    padding: 0 3vw;
   }
 }
 
