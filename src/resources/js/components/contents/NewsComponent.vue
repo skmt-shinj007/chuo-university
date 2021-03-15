@@ -244,7 +244,7 @@ export default {
 
   &__btn {
     @include mq(sm) {
-      max-width: interval(50);
+      max-width: 80%;
       margin: 0 auto;
     }
   }
