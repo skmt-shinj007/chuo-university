@@ -234,7 +234,6 @@ export default {
 
   &__button {
     position: relative;
-    @include flex(row nowrap, center, center);
     background-color: color(darkblue);
     width: interval(5);
     height: interval(5);
@@ -248,18 +247,24 @@ export default {
     }
 
     @include mq(md) {
+      max-width: pixel(10);
+      max-height: pixel(10);
       margin: 0 0 pixel(1) 0;
     }
 
     @include hover {
       .header__icon {
-        transform: rotateZ(360deg);
+        transform: translate(-50%, -50%) rotateZ(360deg);
       }
     }
   }
 
   &__icon {
-    width: interval(2.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(0);
+    width: 50%;
     fill: color(white);
     color: color(white);
     transition: .3s all ease-out;
