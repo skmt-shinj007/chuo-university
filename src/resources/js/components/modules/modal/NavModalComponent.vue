@@ -149,6 +149,8 @@ export default {
 
 <style lang="scss" scoped>
 .nav-modal {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   bottom: 0;
