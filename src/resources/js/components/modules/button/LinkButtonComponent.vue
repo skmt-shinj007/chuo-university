@@ -99,7 +99,7 @@ export default {
     padding: interval(2.5);
     @extend %frame;
     @include flex(row nowrap, center, center);
-    transform: translateX(-4px) translateY(4px);
+    transform: translateX(- interval(.5)) translateY(interval(.5));
   }
 
   &__name {

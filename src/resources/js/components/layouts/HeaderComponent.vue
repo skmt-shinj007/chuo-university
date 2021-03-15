@@ -247,6 +247,8 @@ export default {
     }
 
     @include mq(md) {
+      width: interval(7);
+      height: interval(7);
       max-width: pixel(10);
       max-height: pixel(10);
       margin: 0 0 pixel(1) 0;

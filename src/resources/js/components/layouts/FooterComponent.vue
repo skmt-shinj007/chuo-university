@@ -133,7 +133,7 @@ export default {
 
   &__contact-btn {
     @include mq(sm) {
-      max-width: 60%;
+      max-width: interval(50);
       margin: 0 auto;
     }
   }
