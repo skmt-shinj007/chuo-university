@@ -1,21 +1,23 @@
 <template>
 <header class="header">
   <div class="header__navbar" :class="{ 'header__navbar--hide': headerShow }">
-    <router-link to="/" class="header__navbar-link">
-      <div class="header__title">
-        <span class="header__title-main">{{ messages.Header.MainTitle }}</span>
-        <span class="header__title-assistance">{{ messages.Header.AssistanceTitle }}</span>
-      </div>
-    </router-link>
+    <div class="header__logo">
+      <router-link to="/" class="header__link">
+        <span class="header__title">{{ messages.Header.MainTitle }}</span>
+        <span class="header__title-sub">{{ messages.Header.AssistanceTitle }}</span>
+      </router-link>
+    </div>
 
     <div class="header__menus">
-      <button class="header__button" @click="openModal">
-        <svg-vue icon="menu" class="header__icon"/>
-      </button>
+      <div class="header__button-group">
+        <button class="header__button" @click="openModal">
+          <svg-vue icon="menu" class="header__icon"/>
+        </button>
 
-      <a class="header__button" :href="twitter.link" target="_blank">
-        <svg-vue icon="twitter" class="header__icon"/>
-      </a>
+        <a class="header__button" :href="twitter.link" target="_blank">
+          <svg-vue icon="twitter" class="header__icon"/>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -117,28 +119,33 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  width: 100%;
+  height: pixel(8);
+  padding: 0 pixel(2);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 900;
+  background-color: color(white);
+  box-shadow: 0px 2px 6px color(shadow);
+
+  @include  mq(md) {
+    width: width(header);
+    height: 100vh;
+    padding: pixel(2) 0;
+    position: fixed;
+    left: 0;
+    box-shadow: 2px 0px 10px color(shadow);
+  }
 
   &__navbar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 900;
-    height: interval(8);
-    background-color: color(white);
-    padding: 0 interval(2);
-    box-shadow: 0px 2px 6px color(shadow);
+    position: relative;
+    height: 100%;
     transition: all .3s ease-out;
-    transform: translateY(0);
     @include flex(row nowrap, space-between, center);
 
     @include mq(md) {
-      position: fixed;
-      left: 0;
-      width: width(header);
-      height: 100vh;
-      box-shadow: 2px 0px 10px color(shadow);
-      @include flex(column nowrap, space-around, center);
+      display: block;
     }
 
     &--hide {
@@ -150,54 +157,61 @@ export default {
     }
   }
 
-  &__title {
+  &__logo {
+    margin-right: pixel(1);
+
+    @include mq(md) {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      margin-right: 0;
+    }
+  }
+
+  &__link {
     cursor: pointer;
     @include flex(row nowrap, center, center);
-    margin-right: interval(1);
+
+    @include mq(md) {
+      writing-mode: vertical-rl;
+    }
+  }
+
+  &__title {
+    @include bangers();
+    font-size: font(14);
+
+    @include mq(md) {
+      margin-bottom: pixel(6);
+      font-size: 3vh;
+    }
+  }
+
+  &__title-sub {
+    display: none;
+
+    @include mq(sm) {
+      margin-left: pixel(2);
+      font-size: font(8);
+      font-weight: normal;
+      letter-spacing: 1.1px;
+      position: relative;
+      display: block;
+    }
 
     @include mq(md) {
       margin: 0;
-      padding: 0 interval(2);
-      writing-mode: vertical-rl;
-    }
+      font-size: 1.5vh;
 
-    &-main {
-      @include bangers();
-      font-size: font(14);
-
-      @include mq(md) {
-        margin-bottom: interval(6);
-      }
-    }
-
-    &-assistance {
-      display: none;
-
-      @include mq(sm) {
-        margin-left: interval(3);
-        font-size: font(8);
-        font-weight: normal;
-        letter-spacing: 1.1px;
-        position: relative;
-        display: block;
-      }
-
-      @include mq(md) {
-        margin: 0;
-      }
-    }
-
-    &-assistance::before {
-      display: none;
-
-      @include mq(md) {
+      &::before {
         content: '';
         display: block;
         width: 1px;
-        height: interval(2);
+        height: pixel(2);
         background-color: color(darkblue);
         position: absolute;
-        top: - interval(4);
+        top: - pixel(4);
         left: 50%;
         transform: translateX(-50%);
       }
@@ -205,6 +219,15 @@ export default {
   }
 
   &__menus {
+    @include mq(md) {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__button-group {
     @include flex(row nowrap, space-around);
 
     @include mq(md) {
@@ -213,42 +236,27 @@ export default {
   }
 
   &__button {
+    position: relative;
     @include flex(row nowrap, center, center);
     background-color: color(darkblue);
     width: interval(5);
     height: interval(5);
     border-radius: radius(circle);
-    box-shadow: 1px 3px 6px 3px darken(color(shadow), 10%);
     cursor: pointer;
-    transition: .3s all ease-in-out;
-    margin-right: interval(1);
+    transition: all .3s ease-in-out;
+    margin-right: pixel(1);
+
+    &:last-child {
+      margin: 0;
+    }
 
     @include mq(md) {
-      margin: 0 0 interval(1) 0;
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: interval(5);
-        height: interval(5);
-        border-radius: radius(circle);
-        border: 2px solid transparent;
-        transition: .3s all ease-in-out;
-      }
+      margin: 0 0 pixel(1) 0;
     }
 
     @include hover {
-      background-color: color(white);
-      transform: scale(1.1);
-
-      &::before {
-        border-color: color(darkblue);
-      }
-
       .header__icon {
         transform: rotateZ(360deg);
-        fill: color(lightDarkblue);
-        color: color(lightDarkblue);
       }
     }
   }
