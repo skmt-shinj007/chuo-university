@@ -234,6 +234,7 @@ export default {
 
   &__text {
     display: block;
+    font-size: font(12);
     margin-bottom: interval(5);
 
     @include mq(sm) {
