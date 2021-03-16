@@ -262,7 +262,7 @@ export default {
   }
 
   &__menu-icon {
-    width: interval(1);
+    width: interval(1.5);
     fill: color(white);
     cursor: pointer;
   }
@@ -273,7 +273,7 @@ export default {
     margin-top: interval(5);
 
     @include mq(sm) {
-      max-width: interval(45);
+      max-width: interval(40);
       margin: interval(5) 0 0 auto;
     }
   }
