@@ -5,9 +5,11 @@
 
         <div class="ticket-modal">
           <div class="ticket-modal__container">
-            <button class="ticket-modal__close-btn" @click="$emit('close')">
-              <i class="btn-line"/>
-            </button>
+            <div class="ticket-modal__close">
+              <button class="ticket-modal__button" @click="$emit('close')">
+                <svg-vue icon="close"/>
+              </button>
+            </div>
 
             <div class="ticket-modal__content">
               <div class="ticket-modal__header">
@@ -123,11 +125,14 @@ export default {
     }
   }
 
-  &__close-btn {
-    @include close-button(pixel(5), color(darkblue));
+  &__close {
     position: absolute;
     right: interval(2);
     top: interval(2);
+  }
+
+  &__button {
+    @include close-button($color: color(darkblue));
   }
 
   &__content {

@@ -12,7 +12,7 @@
         <header class="nav-modal__header" @click="$emit('close')">
           <svg-vue icon="hakumonkai-logo" class="nav-modal__logo"/>
           <button class="nav-modal__btn">
-            <i class="btn-line"/>
+            <svg-vue icon="close"/>
           </button>
         </header>
 
@@ -258,11 +258,11 @@ export default {
   &__menu-title {
     cursor: pointer;
     transition: all .3s ease-out;
-    font-size: font(16);
+    font-size: font(14);
   }
 
   &__menu-icon {
-    width: interval(1);
+    width: interval(1.5);
     fill: color(white);
     cursor: pointer;
   }
@@ -273,7 +273,7 @@ export default {
     margin-top: interval(5);
 
     @include mq(sm) {
-      max-width: interval(45);
+      max-width: interval(40);
       margin: interval(5) 0 0 auto;
     }
   }

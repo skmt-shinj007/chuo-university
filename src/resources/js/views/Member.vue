@@ -264,7 +264,7 @@ export default {
     width: interval(36);
     fill: color(white);
     stroke: color(orange);
-    stroke-width: interval(1);
+    stroke-width: pixel(1);
 
     @include mq(sm) {
       width: interval(28);

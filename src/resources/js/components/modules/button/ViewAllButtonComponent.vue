@@ -40,7 +40,6 @@ export default {
 <style lang="scss">
 .view-all {
   color: color(white);
-  width: 70%;
   margin: 0 auto;
 
   @include mq(sm) {
@@ -51,7 +50,7 @@ export default {
     width: 100%;
     position: relative;
     padding: interval(3) interval(6);
-    border-radius: 100px;
+    border-radius: 200px;
     transition: all .3s ease-out;
     box-shadow: 0 15px 13px -15px darken($color: color(orange), $amount: 3%);
     @include flex(row nowrap, center, center);

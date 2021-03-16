@@ -155,7 +155,7 @@ export default {
   &__label {
     cursor: pointer;
     transition: all .3s ease-out;
-    font-size: font(16);
+    font-size: font(14);
   }
 
   &__icon-wrap {
