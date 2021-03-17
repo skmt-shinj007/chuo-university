@@ -102,10 +102,12 @@ export default {
 
     &-button-next {
       @include background-image('data:image/svg+xml;utf8,#{$arrow-right}', center center, interval(3));
+      right: interval(.5);
     }
 
     &-button-prev {
       @include background-image('data:image/svg+xml;utf8,#{$arrow-left}', center center, interval(3));
+      left: interval(.5);
     }
 
     &-pagination-bullets {
