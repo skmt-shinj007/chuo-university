@@ -14,9 +14,9 @@
 
         </figure>
       </swiper-slide>
+      <div class="swiper-button swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button swiper-button-next" slot="button-next"></div>
       <div class="swiper-pagination" slot="pagination"></div>
-      <!-- <div class="swiper-button swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button swiper-button-next" slot="button-next"></div> -->
     </swiper>
   </div>
 </template>
@@ -31,26 +31,20 @@ export default {
     params() {
       return {
         loop: true, // ループ
-        speed: 1500,  // スライドする時間
-        effect: "coverflow",  // スライドタイプ
+        speed: 800,  // スライドする時間
+        effect: "fade",  // スライドタイプ
         autoHeight: true,
 
-        autoplay: {
-          delay: 2500,
-        },
-
-        // ナビゲーション
         navigation: {
-          nextEl: '.c-imageSlider .swiper-button-next',
-          prevEl: '.c-imageSlider .swiper-button-prev',
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
 
-        // ページネーション
         pagination: {
-          el: '.c-imageSlider .swiper-pagination',
+          el: '.swiper-pagination',
           clickable: true,
-          type: 'progressbar',
-        },
+          type: 'bullets',
+        }
       }
     }
   },
@@ -61,7 +55,7 @@ export default {
 .image-slider {
 
   &__container {
-    @include trimming(aspect(rectangle));
+    @include trimming(aspect(golden));
 
     // 上のincludeで指定済みだが、&-caption でポジション指定しているので関係がわかりやすくなるように記述。
     position: relative;
@@ -84,6 +78,38 @@ export default {
 
     @include mq(sm) {
       line-height: 2;
+    }
+  }
+
+  .swiper {
+    &-container {
+      padding-bottom: interval(4);
+    }
+
+    &-button-next,
+    &-button-prev {
+      width: interval(6);
+      height: interval(6);
+      border: 1px solid color(lightgray);
+      border-radius: radius(circle);
+      outline: none;
+      transform: translateY(- interval(2));
+
+      &::after {
+        content: '';
+      }
+    }
+
+    &-button-next {
+      @include background-image('data:image/svg+xml;utf8,#{$arrow-right}', center center, interval(3));
+    }
+
+    &-button-prev {
+      @include background-image('data:image/svg+xml;utf8,#{$arrow-left}', center center, interval(3));
+    }
+
+    &-pagination-bullets {
+      bottom: 0;
     }
   }
 }

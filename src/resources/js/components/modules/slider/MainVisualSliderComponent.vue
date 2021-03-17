@@ -42,15 +42,21 @@ export default {
     params() {
       return {
         loop: true,
-        speed: 2000,
+        speed: 400,
         effect: "fade",
         autoplay: {
-          delay: 3500,
-          disableOnInteraction: false,  // スワイプ後に自動再生がオンのまま
+          delay: 4500,
+          disableOnInteraction: false,
         },
-        scrollbar: {
-          el: '.swiper-scrollbar',
+        on: {
+          // cssアニメーションに合わせる
+          slideChange() {
+            if (this.realIndex > 0) {
+              this.params.autoplay.delay = 4100;
+            }
+          },
         },
+        allowTouchMove: false,
       }
     },
 
@@ -95,7 +101,6 @@ export default {
     position: absolute;
     top: 50%;
     left: interval(2);
-    z-index: 10;
     color: color(white);
 
     @include mq(md) {
@@ -126,10 +131,13 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      width: 50%;
+      width: 100%;
       height: 100%;
       background-color: color(white);
-      border-radius: 1000px 0 0 1000px;
+      border-radius: 1000px;
+      transform: scaleX(0);
+      transform-origin: 0 0;
+      animation: gauge 4.5s linear infinite;
     }
   }
 
