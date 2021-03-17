@@ -107,7 +107,7 @@
     </section>
   </div>
 
-  <section class="club__photo">
+  <section class="club__photo fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.Photo"/>
     <images-list :images="images"/>
 
