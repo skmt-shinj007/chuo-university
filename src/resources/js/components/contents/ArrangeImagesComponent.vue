@@ -125,8 +125,12 @@ export default {
   }
 
   &__list-item {
-    width: interval(32);
-    padding: interval(.5);
+    border: 1px solid color(lightgray);
+    width: interval(18);
+
+    @include mq(md) {
+      width: interval(20);
+    }
   }
 
   &__image {
