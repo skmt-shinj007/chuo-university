@@ -19,7 +19,7 @@
   <section class="hakumonkai__active" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
 
-    <player-slider :players="activeAlumni"/>
+    <player-slider :players="activeAlumni" color="darkblue"/>
   </section>
 
   <section class="hakumonkai__message" v-fade:[dir.up]>

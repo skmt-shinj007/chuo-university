@@ -1,6 +1,6 @@
 <template>
   <div class="slider">
-    <swiper :options="params">
+    <swiper :options="params" :class="coloring">
       <swiper-slide v-for="(player, n) in players" :key="n">
         <player-card :player="player">
           <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">
@@ -11,9 +11,10 @@
         </player-card>
       </swiper-slide>
 
-      <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-      <!-- <div class="swiper-button swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button swiper-button-next" slot="button-next"></div> -->
+      <!-- swiper components -->
+      <div class="swiper-button swiper-button-prev" slot="button-prev"/>
+      <div class="swiper-button swiper-button-next" slot="button-next"/>
+      <div class="swiper-pagination" slot="pagination"/>
     </swiper>
   </div>
 </template>
@@ -30,18 +31,33 @@ export default {
   props: {
     // playerCardに受け渡す選手データ
     players: Array,
+
+    color: {
+      type: String,
+      default: '',
+    },
   },
 
   computed: {
     params() {
       return {
         loop: true, // ループ
-        speed: 1500,  // スライドする時間
-        // effect: "coverflow",  // スライドタイプ
+        speed: 1000,  // スライドする時間
         autoHeight: true,
 
         autoplay: {
           delay: 2500,
+        },
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: false,
+          type: 'bullets',
         },
 
         breakpoints: {
@@ -58,20 +74,11 @@ export default {
             slidesPerGroup: 1,
           },
         },
-
-        // ナビゲーション
-        navigation: {
-          nextEl: '.c-imageSlider .swiper-button-next',
-          prevEl: '.c-imageSlider .swiper-button-prev',
-        },
-
-        // ページネーション
-        pagination: {
-          el: '.c-imageSlider .swiper-pagination',
-          clickable: true,
-          type: 'progressbar',
-        },
       }
+    },
+
+    coloring() {
+      return (this.color) ? `swiper--${this.color}` : null;
     }
   },
 }
@@ -91,6 +98,18 @@ export default {
     }
   }
 
+  .swiper {
+    @include swiper-pagination(color(white), interval(3));
+    @include swiper-button();
+  }
+
+  // swiper modifier
+  .swiper--darkblue {
+    .swiper {
+      @include swiper-pagination();
+      @include swiper-button(color(lightDarkblue));
+    }
+  }
 }
 
 // slotで差し込んだ部分のスタイル

@@ -14,9 +14,11 @@
 
         </figure>
       </swiper-slide>
-      <div class="swiper-button swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button swiper-button-next" slot="button-next"></div>
-      <div class="swiper-pagination" slot="pagination"></div>
+
+      <!-- swiper components -->
+      <div class="swiper-button swiper-button-prev" slot="button-prev"/>
+      <div class="swiper-button swiper-button-next" slot="button-next"/>
+      <div class="swiper-pagination" slot="pagination"/>
     </swiper>
   </div>
 </template>
@@ -82,53 +84,8 @@ export default {
   }
 
   .swiper {
-    &-container {
-      padding-bottom: interval(3);
-    }
-
-    &-button-next,
-    &-button-prev {
-      width: interval(6);
-      height: interval(6);
-      border: 1px solid color(lightgray);
-      border-radius: radius(circle);
-      outline: none;
-      transform: translateY(- interval(2));
-
-      &::after {
-        content: '';
-      }
-    }
-
-    &-button-next {
-      @include background-image('data:image/svg+xml;utf8,#{$arrow-right}', center center, interval(3));
-      right: interval(.5);
-    }
-
-    &-button-prev {
-      @include background-image('data:image/svg+xml;utf8,#{$arrow-left}', center center, interval(3));
-      left: interval(.5);
-    }
-
-    &-pagination-bullets {
-      bottom: 0;
-
-      // ページネーションの丸は、スロットで読まれるためディープセレクタにすることでスタイルが当たる
-      &::v-deep .swiper-pagination-bullet {
-        opacity: 1;
-        position: relative;
-        width: interval(5);
-        height: 3px;
-        border-radius: 0;
-        margin: 0 interval(.5);
-        background-color: rgba(color(darkblue), .2);
-        transition: background-color .3s ease;
-      }
-
-      &::v-deep .swiper-pagination-bullet-active {
-        background-color: color(lightDarkblue);
-      }
-    }
+    @include swiper-pagination();
+    @include swiper-button();
   }
 }
 </style>
