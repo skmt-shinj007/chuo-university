@@ -1,6 +1,6 @@
 <template>
   <div class="slider">
-    <swiper :options="params" :class="coloring">
+    <swiper :options="option" :class="coloring">
       <swiper-slide v-for="(player, n) in players" :key="n">
         <player-card :player="player">
           <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">
@@ -36,51 +36,58 @@ export default {
       type: String,
       default: '',
     },
+
+    option: {
+      type: Object,
+      default: () => {
+        return {
+          loop: true, // ループ
+          speed: 1000,  // スライドする時間
+          autoHeight: true,
+
+          autoplay: {
+            delay: 2500,
+          },
+
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: 'bullets',
+          },
+
+          breakpoints: {
+            500: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+            860: {
+              slidesPerView: 3,
+              slidesPerGroup: 1,
+            },
+            1440: {
+              slidesPerView: 5,
+              slidesPerGroup: 1,
+            },
+          },
+        }
+      },
+    }
   },
 
   computed: {
-    params() {
-      return {
-        loop: true, // ループ
-        speed: 1000,  // スライドする時間
-        autoHeight: true,
-
-        autoplay: {
-          delay: 2500,
-        },
-
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: false,
-          type: 'bullets',
-        },
-
-        breakpoints: {
-          500: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-          },
-          860: {
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-          },
-          1440: {
-            slidesPerView: 5,
-            slidesPerGroup: 1,
-          },
-        },
-      }
-    },
-
     coloring() {
       return (this.color) ? `swiper--${this.color}` : null;
     }
   },
+
+  mounted() {
+    console.log(this.option);
+  }
 }
 </script>
 

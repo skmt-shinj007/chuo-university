@@ -19,7 +19,7 @@
   <section class="hakumonkai__active" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
 
-    <player-slider :players="activeAlumni" color="darkblue"/>
+    <player-slider :players="activeAlumni" color="darkblue" :option="swiperOptions"/>
   </section>
 
   <section class="hakumonkai__message" v-fade:[dir.up]>
@@ -75,6 +75,7 @@ export default {
       activeAlumni: [],
     }
   },
+
   beforeMount() {
     // 役員テーブルの [見出し] 配列を取得
     this.$data.messages.Hakumonkai.OfficerTable.Heading.forEach(element => this.tableHeading.push(element));
@@ -88,6 +89,42 @@ export default {
     this.$data.data.Users.forEach(element => {
       (element.category === this.activeAlumniNum) ? this.activeAlumni.push(element) : null;
     });
+  },
+
+  computed: {
+    swiperOptions() {
+      return {
+        loop: true,
+        speed: 1000,
+        autoHeight: true,
+
+        autoplay: {
+          delay: 2500,
+        },
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'bullets',
+        },
+
+        breakpoints: {
+          560: {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+          },
+          860: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+          }
+        },
+      }
+    }
   },
 }
 </script>
