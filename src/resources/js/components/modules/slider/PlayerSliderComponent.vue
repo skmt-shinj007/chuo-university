@@ -65,12 +65,12 @@ export default {
             slidesPerView: 2,
             slidesPerGroup: 2,
           },
-          800: {
+          860: {
             slidesPerView: 3,
             slidesPerGroup: 1,
           },
           1440: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             slidesPerGroup: 1,
           },
         },

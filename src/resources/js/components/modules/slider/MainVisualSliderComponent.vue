@@ -50,11 +50,11 @@ export default {
         },
         on: {
           // cssアニメーションに合わせる
-          slideChange() {
-            if (this.realIndex > 0) {
-              this.params.autoplay.delay = 4100;
-            }
-          },
+          // slideChange() {
+          //   if (this.realIndex > 0) {
+          //     this.params.autoplay.delay = 4100;
+          //   }
+          // },
         },
         allowTouchMove: false,
       }
@@ -122,7 +122,7 @@ export default {
     width: interval(8);
     height: pixel(.5);
     margin: 0 interval(1);
-    background-color: rgba($color: #000000, $alpha: .5);
+    background-color: rgba($color: color(darkblue), $alpha: .5);
     border-radius: 1000px;
 
     &::before {
@@ -131,13 +131,10 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 50%;
       height: 100%;
       background-color: color(white);
-      border-radius: 1000px;
-      transform: scaleX(0);
-      transform-origin: 0 0;
-      animation: gauge 4.5s linear infinite;
+      border-radius: 1000px 0 0 1000px;
     }
   }
 
