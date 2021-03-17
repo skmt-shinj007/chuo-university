@@ -42,7 +42,7 @@ export default {
 
         pagination: {
           el: '.swiper-pagination',
-          clickable: true,
+          clickable: false,
           type: 'bullets',
         }
       }
@@ -83,7 +83,7 @@ export default {
 
   .swiper {
     &-container {
-      padding-bottom: interval(4);
+      padding-bottom: interval(3);
     }
 
     &-button-next,
@@ -110,6 +110,22 @@ export default {
 
     &-pagination-bullets {
       bottom: 0;
+
+      // ページネーションの丸は、スロットで読まれるためディープセレクタにすることでスタイルが当たる
+      &::v-deep .swiper-pagination-bullet {
+        opacity: 1;
+        position: relative;
+        width: interval(5);
+        height: 3px;
+        border-radius: 0;
+        margin: 0 interval(.5);
+        background-color: rgba(color(darkblue), .2);
+        transition: background-color .3s ease;
+      }
+
+      &::v-deep .swiper-pagination-bullet-active {
+        background-color: color(lightDarkblue);
+      }
     }
   }
 }
