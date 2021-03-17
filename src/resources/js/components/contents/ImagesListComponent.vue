@@ -1,9 +1,9 @@
 <template>
-<div class="arrange-images">
-  <ul class="arrange-images__list">
-    <li class="arrange-images__list-item" ref="item" v-for="(image, n) in filterImages" :key="n">
+<div class="images-list">
+  <ul class="images-list__list">
+    <li class="images-list__item" ref="item" v-for="(image, n) in filterImages" :key="n">
       <!-- img要素をクリックしたらモーダルで拡大表示する -->
-      <figure class="arrange-images__image" @click="openModal(image)">
+      <figure class="images-list__image" @click="openModal(image)">
         <img :src="`/image/${image.src}`" :alt="image.alt">
       </figure>
     </li>
@@ -20,7 +20,7 @@
   <image-modal
     v-if="showModal"
     @close="closeModal"
-    :selectIndex="selectImageIndex"
+    :selectIndex="selectIndex"
     :images="filterImages"/>
 </div>
 </template>
@@ -63,7 +63,7 @@ export default {
        * [選択した画像のインデックス番号]
        * @type { Number }
        */
-      selectImageIndex: 0,
+      selectIndex: 0,
     }
   },
 
@@ -104,7 +104,7 @@ export default {
     openModal(el) {
       this.showModal = true;
 
-      this.selectImageIndex = this.filterImages.indexOf(el);
+      this.selectIndex = this.filterImages.indexOf(el);
       document.body.classList.add("modal-open");
     },
     closeModal() {
@@ -118,13 +118,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.arrange-images {
+.images-list {
 
   &__list {
     @include flex(row wrap, center, center);
   }
 
-  &__list-item {
+  &__item {
     border: 1px solid color(lightgray);
     width: interval(18);
 

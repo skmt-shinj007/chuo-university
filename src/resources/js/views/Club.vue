@@ -91,7 +91,6 @@
   <div class="background-darkblue">
     <section class="club__member" v-fade:[dir.up]>
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
-
       <player-slider :players="players"/>
 
       <div class="member__number">
@@ -108,10 +107,9 @@
     </section>
   </div>
 
-  <section class="club__photo" v-fade:[dir.up]>
+  <section class="club__photo">
     <contents-title :title="messages.SectionTitles.Photo"/>
-
-    <arrange-images :images="images"/>
+    <images-list :images="images"/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
@@ -142,7 +140,7 @@ import CaptionImage from '../components/modules/CaptionImageComponent';
 import DormitoryTicket from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
-import ArrangeImages from '../components/contents/ArrangeImagesComponent';
+import ImagesList from '../components/contents/ImagesListComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
 
 export default {
@@ -157,7 +155,7 @@ export default {
     DormitoryTicket,
     PlayerSlider,
     LinkButton,
-    ArrangeImages,
+    ImagesList,
     ScrollTopButton,
   },
 
