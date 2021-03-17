@@ -285,3 +285,73 @@
     @include gradient($start-color, $end-color, $direction);
   }
 }
+
+/**
+ * swiper
+ */
+
+// next/prev button
+@mixin swiper-button($color: color(lightgray), $size: interval(6)) {
+  &-button-next,
+  &-button-prev {
+    width: $size;
+    height: $size;
+    border: 1px solid $color;
+    border-radius: radius(circle);
+    outline: none;
+    transform: translateY(- interval(2));
+
+    &::after {
+      content: '';
+    }
+  }
+
+  &-button-next {
+    right: interval(.5);
+
+    @if $color == color(lightDarkblue) {
+      @include background-image('data:image/svg+xml;utf8,#{$arrow-right-darkblue}', center center, calc(#{$size} / 2));
+    }
+    @else if $color == color(lightgray) {
+      @include background-image('data:image/svg+xml;utf8,#{$arrow-right}', center center, calc(#{$size} / 2));
+    }
+  }
+
+  &-button-prev {
+    left: interval(.5);
+
+    @if $color == color(lightDarkblue) {
+      @include background-image('data:image/svg+xml;utf8,#{$arrow-left-darkblue}', center center, calc(#{$size} / 2));
+    }
+    @else if $color == color(lightgray) {
+      @include background-image('data:image/svg+xml;utf8,#{$arrow-left}', center center, calc(#{$size} / 2));
+    }
+  }
+}
+
+// pagination
+@mixin swiper-pagination($color: color(lightDarkblue), $size: interval(5)) {
+  &-container {
+    padding-bottom: interval(3);
+  }
+
+  &-pagination-bullets {
+    bottom: 0;
+
+    // ページネーションの丸は、スロットで読まれるためディープセレクタにする
+    &::v-deep .swiper-pagination-bullet {
+      opacity: 1;
+      position: relative;
+      width: $size;
+      height: 3px;
+      border-radius: 0;
+      margin: 0 interval(.5);
+      transition: background-color .3s ease;
+      background-color: rgba($color, .2);
+    }
+
+    &::v-deep .swiper-pagination-bullet-active {
+      background-color: $color;
+    }
+  }
+}

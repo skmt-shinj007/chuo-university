@@ -206,15 +206,23 @@ export default {
  */
 const mainVisualApiResponse = [
   {
+    id      : 1,
     src     : 'player41.jpg',
     alt     : 'altテキストを入れます',
     caption : '感謝と謙虚な心を忘れずに、日本一。',
   },
   {
+    id      : 2,
     src     : 'training01.jpg',
     alt     : 'altテキストを入れます',
     caption : 'テキストは AMAZON EC2 を使用します。',
-  }
+  },
+  {
+    id      : 3,
+    src     : 'player43.jpg',
+    alt     : 'altテキストを入れます',
+    caption : 'テキストは AMAZON EC2 を使用します。',
+  },
 ];
 
 /**
