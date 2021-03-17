@@ -203,99 +203,99 @@ class PrefecturesSeeder extends Seeder
             ],
             [
                 'prefecture_id' => 32,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '島根県',
+                'name_kana' => 'シマネケン',
+                'name_en' => 'shimane'
             ],
             [
                 'prefecture_id' => 33,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '岡山県',
+                'name_kana' => 'オカヤマケン',
+                'name_en' => 'okayama'
             ],
             [
                 'prefecture_id' => 34,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '広島県',
+                'name_kana' => 'ヒロシマケン',
+                'name_en' => 'hiroshima'
             ],
             [
                 'prefecture_id' => 35,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '山口県',
+                'name_kana' => 'ヤマグチケン',
+                'name_en' => 'yamaguchi'
             ],
             [
                 'prefecture_id' => 36,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '徳島県',
+                'name_kana' => 'トクシマケン',
+                'name_en' => 'tokushima'
             ],
             [
                 'prefecture_id' => 37,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '香川県',
+                'name_kana' => 'カガワケン',
+                'name_en' => 'kagawa'
             ],
             [
                 'prefecture_id' => 38,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '愛媛県',
+                'name_kana' => 'エヒメケン',
+                'name_en' => 'ehime'
             ],
             [
                 'prefecture_id' => 39,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '高知県',
+                'name_kana' => 'コウチケン',
+                'name_en' => 'kouchi'
             ],
             [
                 'prefecture_id' => 40,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '福岡県',
+                'name_kana' => 'フクオカケン',
+                'name_en' => 'fukuoka'
             ],
             [
                 'prefecture_id' => 41,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '佐賀県',
+                'name_kana' => 'サガケン',
+                'name_en' => 'saga'
             ],
             [
                 'prefecture_id' => 42,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '長崎県',
+                'name_kana' => 'ナガサキケン',
+                'name_en' => 'nagasaki'
             ],
             [
                 'prefecture_id' => 43,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '熊本県',
+                'name_kana' => 'クマモトケン',
+                'name_en' => 'kumamoto'
             ],
             [
                 'prefecture_id' => 44,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '大分県',
+                'name_kana' => 'オオイタケン',
+                'name_en' => 'oita'
             ],
             [
                 'prefecture_id' => 45,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '宮崎県',
+                'name_kana' => 'ミヤザキケン',
+                'name_en' => 'miyazaki'
             ],
             [
                 'prefecture_id' => 46,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '鹿児島県',
+                'name_kana' => 'カゴシマケン',
+                'name_en' => 'kagoshima'
             ],
             [
                 'prefecture_id' => 47,
-                'name_ja' => '',
-                'name_kana' => '',
-                'name_en' => ''
+                'name_ja' => '沖縄県',
+                'name_kana' => 'オキナワケン',
+                'name_en' => 'okinawa'
             ]
         ]);
     }

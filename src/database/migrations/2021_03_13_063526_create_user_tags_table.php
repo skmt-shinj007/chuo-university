@@ -14,8 +14,11 @@ class CreateUserTagsTable extends Migration
     public function up()
     {
         Schema::create('user_tags', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('user_id')->comment('ユーザーID');
+            $table->unsignedTinyInteger('tag_id')->comment('タグID');
+
+            // 外部キー
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });
     }
 
