@@ -7,7 +7,6 @@
 
   <section class="club__concept" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Concept"/>
-
     <div class="club__concept-content">
       <concept :items="concepts"/>
     </div>
@@ -15,7 +14,6 @@
 
   <section class="club__practice" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Practice"/>
-
     <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
@@ -85,7 +83,6 @@
         </caption-image>
       </div>
     </div>
-
   </section>
 
   <div class="background-darkblue">
@@ -102,7 +99,6 @@
           <link-button :link="messages.Links.Member"/>
         </div>
       </div>
-
     </section>
   </div>
 

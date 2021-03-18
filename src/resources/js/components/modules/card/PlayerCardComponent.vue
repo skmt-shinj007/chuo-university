@@ -11,7 +11,6 @@
     </div>
 
     <div class="player-card__tag-group">
-
       <div class="player-card__tag">
         <position-tag :position="player.position"/>
       </div>
