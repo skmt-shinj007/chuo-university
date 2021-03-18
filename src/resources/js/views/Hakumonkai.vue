@@ -2,7 +2,6 @@
 <div class="hakumonkai">
   <section class="hakumonkai__header">
     <contents-title :title="messages.SectionTitles.Hakumonkai"/>
-
     <div class="lead__text-wrap">
       <p class="lead__text nl2br" v-text="messages.Hakumonkai.Lead"></p>
     </div>
@@ -12,23 +11,19 @@
 
   <section class="hakumonkai__officer" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Officer"/>
-
     <tile-table :tableItemHeading="tableHeading" :tableItems="officer"/>
   </section>
 
-  <section class="hakumonkai__active" v-fade:[dir.up]>
+  <section class="hakumonkai__active fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
-
     <player-slider :players="activeAlumni" color="darkblue" :option="swiperOptions"/>
   </section>
 
   <section class="hakumonkai__message" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Message"/>
-
     <div class="message__content">
       <p class="message__text nl2br" v-text="messages.Hakumonkai.Message"/>
     </div>
-
     <div class="message__button">
       <link-button :link="messages.Links.ToContact"/>
     </div>
@@ -94,9 +89,9 @@ export default {
   computed: {
     swiperOptions() {
       return {
-        loop: true,
         speed: 1000,
         autoHeight: true,
+        spaceBetween: 16,
 
         autoplay: {
           delay: 2500,

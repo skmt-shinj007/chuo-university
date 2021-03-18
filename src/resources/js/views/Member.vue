@@ -201,7 +201,6 @@ export default {
      */
     getTicketWidth() {
       this.ticketWidth = this.$refs.playerTicket[0].offsetWidth;
-      // console.log(this.ticketWidth);
     },
   },
 

@@ -1,5 +1,5 @@
 <template>
-<div class="player-card">
+<div class="player-card" @click="open">
   <figure class="player-card__figure">
     <img :src="`/image/${player.img.src}`" :alt="player.img.alt">
   </figure>
@@ -28,8 +28,6 @@
       <!-- 差し込み：カードに追加したい内容を親コンポーネントで記述 -->
     </slot>
   </div>
-
-
 </div>
 </template>
 
@@ -50,12 +48,29 @@ export default {
       default: null,
     }
   },
+
+  methods: {
+    /**
+     * [モーダルを開ける]
+     */
+    open() {
+      console.log('click');
+      this.$emit('modal', this.player);
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .player-card {
   position: relative;
+  cursor: pointer;
+  border-radius: radius(hard);
+  transition: transform .3s linear;
+
+  @include hover {
+    transform: scale(0.95);
+  }
 
   &__figure {
     @include trimming(aspect(square));

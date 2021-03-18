@@ -95,15 +95,14 @@
 
       <div class="member__number">
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
-
         <div class="member__number-table">
           <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
         </div>
-
         <div class="member__button">
           <link-button :link="messages.Links.Member"/>
         </div>
       </div>
+
     </section>
   </div>
 
