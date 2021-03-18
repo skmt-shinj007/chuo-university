@@ -30,7 +30,7 @@ export default {
   right: 0;
   left: 0;
   z-index: 910;
-  background-color: rgba(color(deepDarkblue), $alpha: .9);
+  background-color: rgba(color(deepDarkblue), $alpha: .95);
   @include flex(column nowrap);
 
   &-window {
@@ -46,7 +46,12 @@ export default {
   &__close {
     position: fixed;
     top: interval(2);
-    right: interval(2);
+    right: interval(3);
+    z-index: 10;
+
+    @include mq(md) {
+      right: interval(4)
+    }
   }
 
   &__button {
@@ -79,7 +84,6 @@ export default {
 
   .modal-window {
     opacity: 0;
-    transform: translateY(-20px);
   }
 }
 </style>

@@ -28,6 +28,8 @@
       <!-- 差し込み：カードに追加したい内容を親コンポーネントで記述 -->
     </slot>
   </div>
+
+
 </div>
 </template>
 
@@ -47,7 +49,7 @@ export default {
       type: Object,
       default: null,
     }
-  }
+  },
 }
 </script>
 

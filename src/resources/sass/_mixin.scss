@@ -116,6 +116,14 @@
     background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
     background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
   }
+  // 斜め
+  @else if $orientation == diagonal{
+    background: -moz-linear-gradient(45deg,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, right top, left bottom, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(45deg,  $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(45deg,  $start-color 0%,$end-color 100%);
+    background: linear-gradient(to top right,  $start-color 0%,$end-color 100%);
+  }
   @else{
     background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
@@ -266,7 +274,7 @@
 }
 
 // ticket thumbnail border
-@mixin thumbnail-border($c: white, $start-color: #0179D5, $end-color: #091E2F, $direction: vertical) {
+@mixin thumbnail-border($c: white, $color: color(blue), $direction: diagonal) {
   border-radius: radius(circle);
   background-color: color($c);
   position: relative;
@@ -275,14 +283,14 @@
   &::before {
     content: '';
     display: block;
-    width: 110%;
-    height: 110%;
+    width: 108%;
+    height: 108%;
     border-radius: radius(circle);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    @include gradient($start-color, $end-color, $direction);
+    @include gradient(color(darkblue), $color, $direction);
   }
 }
 

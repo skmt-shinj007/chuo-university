@@ -99,17 +99,11 @@ export default {
     }
 
     &--orange {
-      @include thumbnail-border(
-        $start-color: color(orange),
-        $end-color: color(lightDarkblue),
-      );
+      @include thumbnail-border($color: color(orange));
     }
 
     &--green {
-      @include thumbnail-border(
-        $start-color: color(lightGreen),
-        $end-color: color(lightDarkblue),
-      );
+      @include thumbnail-border($color: color(lightGreen));
     }
   }
 

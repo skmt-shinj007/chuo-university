@@ -89,7 +89,7 @@
   </section>
 
   <div class="background-darkblue">
-    <section class="club__member" v-fade:[dir.up]>
+    <section class="club__member fade" v-scroll="fade">
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
       <player-slider :players="players"/>
 

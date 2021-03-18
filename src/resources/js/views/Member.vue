@@ -68,7 +68,7 @@
     </div>
   </section>
 
-  <ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
+  <user-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
 
   <div class="member__scroll-top">
     <scroll-top-button/>
@@ -85,7 +85,7 @@ import Risize from '../config/resize';
 import MainVisual from '../components/contents/MainVisualComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
-import TicketModal from '../components/modules/modal/TicketModalComponent.vue';
+import UserModal from '../components/modules/modal/UserModalComponent.vue';
 import TableComponent from '../components/modules/table/TableComponent.vue';
 import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
@@ -97,7 +97,7 @@ export default {
     MainVisual,
     ContentsTitle,
     UserTicket,
-    TicketModal,
+    UserModal,
     TableComponent,
     ScrollTopButton,
   },
@@ -165,14 +165,13 @@ export default {
   },
 
   mounted() {
-    let refs = this.$refs;
     /**
      * [チケットレイアウトの配置]
      * justify-content: center; は余った要素が真ん中よりになるので、左寄せに揃えるための処理
      * 解決策 -> チケットの数だけ空divを追加する。
      */
-    const playerTicket = refs.playerTicket;
-    const staffTicket = refs.staffTicket;
+    const playerTicket = this.$refs.playerTicket;
+    const staffTicket = this.$refs.staffTicket;
 
     // チケットの個数を変数に格納
     this.playerTicketNumber = playerTicket.length;
