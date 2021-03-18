@@ -17,6 +17,7 @@
       <div class="swiper-pagination" slot="pagination"/>
     </swiper>
 
+    <!-- pleyerCardにモーダルを描画すると、swiperのtransformが邪魔してモーダルがバグる -->
     <user-modal v-if="showModal" @close="closeModal" :item="clickEl"/>
   </div>
 </template>
@@ -126,16 +127,6 @@ export default {
 <style lang="scss" scoped>
 .slider {
   height: auto;
-
-  // sliderの場合のplayer cardの幅を指定
-  .player-card {
-    // margin: 0 auto;
-    // width: 80%;
-
-    // @include mq(sm){
-    //   width: 90%;
-    // }
-  }
 
   .swiper {
     @include swiper-pagination(color(white), interval(3));
