@@ -2,7 +2,7 @@
   <div class="slider">
     <swiper :options="option" :class="coloring">
       <swiper-slide v-for="(player, n) in players" :key="n">
-        <player-card :player="player">
+        <player-card :player="player" @modal="openModal($event)">
           <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">
             <div class="alumni__record">
               <span class="alumni__record-text">{{ player.player.record }}</span>
@@ -16,16 +16,21 @@
       <div class="swiper-button swiper-button-next" slot="button-next"/>
       <div class="swiper-pagination" slot="pagination"/>
     </swiper>
+
+    <!-- pleyerCardにモーダルを描画すると、swiperのtransformが邪魔してモーダルがバグる -->
+    <user-modal v-if="showModal" @close="closeModal" :item="clickEl"/>
   </div>
 </template>
 
 <script>
 // components import
 import PlayerCard from '../card/PlayerCardComponent';
+import UserModal from '../modal/UserModalComponent';
 
 export default {
   components: {
     PlayerCard,
+    UserModal,
   },
 
   props: {
@@ -41,9 +46,12 @@ export default {
       type: Object,
       default: () => {
         return {
-          loop: true, // ループ
-          speed: 1000,  // スライドする時間
+          /**
+           * ループさせると仮想的なDOMが作られるので、スライド内のクリックイベントが動作しない。
+           */
+          speed: 1000,
           autoHeight: true,
+          spaceBetween: 16,
 
           autoplay: {
             delay: 2500,
@@ -79,31 +87,46 @@ export default {
     }
   },
 
+  data() {
+    return {
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      showModal: false,
+
+      /**
+       * クリックしたカードのデータを格納
+       * @type { Object }
+       */
+      clickEl: null,
+    }
+  },
+
   computed: {
     coloring() {
       return (this.color) ? `swiper--${this.color}` : null;
     }
   },
 
-  mounted() {
-    console.log(this.option);
-  }
+  methods: {
+    // モーダル開閉処理
+    openModal(el) {
+      this.showModal = true;
+      this.clickEl = el;
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.showModal = false;
+      document.body.classList.remove("modal-open");
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .slider {
   height: auto;
-
-  // sliderの場合のplayer cardの幅を指定
-  .player-card {
-    margin: 0 auto;
-    width: 80%;
-
-    @include mq(sm){
-      width: 90%;
-    }
-  }
 
   .swiper {
     @include swiper-pagination(color(white), interval(3));

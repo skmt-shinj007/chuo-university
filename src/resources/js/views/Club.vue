@@ -7,7 +7,6 @@
 
   <section class="club__concept" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Concept"/>
-
     <div class="club__concept-content">
       <concept :items="concepts"/>
     </div>
@@ -15,7 +14,6 @@
 
   <section class="club__practice" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Practice"/>
-
     <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
@@ -85,21 +83,18 @@
         </caption-image>
       </div>
     </div>
-
   </section>
 
   <div class="background-darkblue">
-    <section class="club__member" v-fade:[dir.up]>
+    <section class="club__member fade" v-scroll="fade">
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
       <player-slider :players="players"/>
 
       <div class="member__number">
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
-
         <div class="member__number-table">
           <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
         </div>
-
         <div class="member__button">
           <link-button :link="messages.Links.Member"/>
         </div>

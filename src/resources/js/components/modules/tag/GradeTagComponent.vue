@@ -55,7 +55,7 @@ export default {
     &--responsive {
 
       @include mq(sm) {
-        font-size: font(12);
+        font-size: font(10);
         line-height: 2;
       }
 
