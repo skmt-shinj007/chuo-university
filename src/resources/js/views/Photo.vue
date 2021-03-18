@@ -23,7 +23,14 @@
         :style="{ width: `${ticketWidth}px` }"/>
     </div>
 
-    <provider-ticket-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
+    <user-modal v-if="showModal" @close="closeModal" :item="clickElement">
+      <template v-slot:content>
+        <div class="provider">
+          <!-- TODO:ここに出すコンテンツを考える。 -->
+          ここに出すコンテンツを考える。
+        </div>
+      </template>
+    </user-modal>
   </section>
 
   <div class="photo__scroll-top">
@@ -44,15 +51,15 @@ import Animation from '../config/animation';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import Images from '../components/contents/ImagesComponent';
 import ProviderTicket from '../components/modules/ticket/ProviderTicketComponent';
-import ProviderTicketModal from '../components/modules/modal/ProviderTicketModalComponent';
+import UserModal from '../components/modules/modal/UserModalComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
     ContentsTitle,
     Images,
+    UserModal,
     ProviderTicket,
-    ProviderTicketModal,
     ScrollTopButton,
   },
 

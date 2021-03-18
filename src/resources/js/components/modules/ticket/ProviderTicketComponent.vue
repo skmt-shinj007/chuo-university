@@ -2,12 +2,12 @@
 <div class="provider-ticket" ref="targetElement">
   <div class="provider-ticket-thumbnail-border">
     <figure class="provider-ticket-thumbnail">
-      <img :src="`/image/${providerObj.img.src}.jpg`" alt="userObj.img.alt">
+      <img :src="`/image/${providerObj.img.src}`" alt="userObj.img.alt">
     </figure>
   </div>
 
   <div class="provider-ticket-item">
-    <span class="provider-ticket__name">{{ providerObj.name }}</span>
+    <span class="provider-ticket__name">{{ providerObj.name.ja }}</span>
 
     <!-- SNSタグは 2つ まで -->
     <div class="provider-ticket-tag-group">

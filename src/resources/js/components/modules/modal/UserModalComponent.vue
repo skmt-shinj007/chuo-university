@@ -14,7 +14,7 @@
             <div class="user-modal__info">
               <div class="user-modal__name">
                 <h4 class="user-modal__name-main">{{ item.name.ja }}</h4>
-                <span class="user-modal__name-sub">{{ item.name.en }}</span>
+                <span class="user-modal__name-sub" v-if="item.name.en">{{ item.name.en }}</span>
               </div>
 
               <div class="user-modal__tag-group">
@@ -33,14 +33,12 @@
 
           <div class="user-modal__line"/>
 
-          <ul class="user-modal__list">
-
-            <!-- リストは、ユーザーカテゴリーによって内容が異なるのでslotに。 -->
-            <slot name="list">
+          <slot name="content">
+            <ul class="user-modal__list">
               <table-component :tableItems="lists"/>
-            </slot>
+            </ul>
+          </slot>
 
-          </ul>
         </div>
       </div>
     </template>
