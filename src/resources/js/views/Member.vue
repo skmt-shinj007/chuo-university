@@ -23,7 +23,6 @@
     <contents-title :title="messages.SectionTitles.Players"/>
 
     <div class="member__ticket-group">
-
       <div
         class="member__ticket"
         ref="playerTicket"
@@ -47,13 +46,12 @@
     <contents-title :title="messages.SectionTitles.Staff"/>
 
     <div class="member__ticket-group">
-
       <div
         class="member__ticket"
         ref="staffTicket"
         v-for="user in staff"
         :key="user.id"
-        @click="openModal(staffItem)">
+        @click="openModal(user)">
 
           <user-ticket :userObj="user"/>
       </div>
