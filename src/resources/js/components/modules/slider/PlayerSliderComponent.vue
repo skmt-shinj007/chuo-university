@@ -84,10 +84,6 @@ export default {
       return (this.color) ? `swiper--${this.color}` : null;
     }
   },
-
-  mounted() {
-    console.log(this.option);
-  }
 }
 </script>
 
