@@ -63,6 +63,7 @@ export default {
 
       /**
        * イメージの表示枚数を管理
+       * TODO:デフォルト枚数を変更
        * @type { Number }
        */
       count: {
@@ -166,10 +167,9 @@ export default {
   },
 
   methods: {
-    // もっと見るボタンのクリックイベント
+    // ボタンクリック後に表示枚数を増やす
     viewMore() {
-      // TODO：ボタンクリック時に増やす枚数を変更
-      return this.count.current += 1;
+      return this.count.current += 12;
     },
 
     /**
@@ -225,7 +225,7 @@ export default {
   }
 
   &__group {
-    @include flex(column nowrap, center, center);
+    @include flex(row wrap, flex-start, center);
     margin-top: interval(5);
 
     @include mq(sm) {
@@ -234,17 +234,10 @@ export default {
   }
 
   &__box {
-    width: 100%;
-    margin-bottom: interval(5);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+    width: calc(100% / 2);
 
     @include mq(sm) {
-      margin-bottom: 0;
       padding: pixel(1);
-      width: calc(100% / 2);
     }
 
     @include mq(md) {
@@ -257,9 +250,13 @@ export default {
     transition: all .3s ease-out;
 
     & > img {
-      box-shadow: 0 0 10px 2px color(shadow);
+      border: 1px solid color(white);
       border-radius: radius(soft);
       cursor: pointer;
+
+      @include mq(sm) {
+        border: none;
+      }
     }
 
     @include hover {
