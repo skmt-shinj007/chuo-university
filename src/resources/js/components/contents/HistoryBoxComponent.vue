@@ -19,8 +19,8 @@
   </div>
 
   <div class="history-box__title">
-    <h3 class="history-box__title-main">{{data.Title.Main }}</h3>
     <span class="history-box__title-sub">{{ data.Title.Sub }}</span>
+    <h3 class="history-box__title-main">{{data.Title.Main }}</h3>
   </div>
 
   <div class="history-box__tag-date">
@@ -41,9 +41,6 @@ import RecordTag from '../modules/tag/RecordTagComponent';
 import Modal from '../modules/modal/ModalComponent.vue';
 import TableComponent from '../modules/table/TableComponent.vue';
 
-// data import
-import Data from '../../config/data.json';
-
 export default {
   components: {
     Tag,
@@ -59,12 +56,6 @@ export default {
        * @type { Boolean }
        */
       showModal: false,
-
-      /**
-       * [モーダルに渡すデータ]
-       * @type { Object }
-       */
-      clickElement: null,
     }
   },
 
@@ -93,7 +84,8 @@ export default {
 
 <style lang="scss" scoped>
 .history-box {
-  border: 2px solid color(darkblue);
+  background-color: color(lightgray);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
   border-radius: radius(hard);
   position: relative;
   padding: pixel(2);
@@ -117,11 +109,30 @@ export default {
   }
 
   &__title {
-    text-align: center;
+    @include flex(column nowrap, center, center);
     margin-top: interval(3);
 
     &-main {
+      position: relative;
       font-size: font(18);
+      transform: translateY(- interval(2.5));
+
+      &::after {
+        content: '';
+        display: block;
+        background-color: color(darkblue);
+        width: interval(3);
+        height: 2px;
+        position: absolute;
+        bottom: - interval(.5);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &-sub {
+      font-size: font(26);
+      opacity: .1;
     }
   }
 
