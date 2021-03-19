@@ -2,19 +2,19 @@
 <div class="dormitory-ticket">
 
   <div class="dormitory-ticket__icon-wrap">
-    <svg-vue class="dormitory-ticket__icon" :icon="dormitoryData.Icon.Src" :alt="dormitoryData.Icon.Alt"/>
+    <svg-vue class="dormitory-ticket__icon" :icon="information.Icon.Src" :alt="information.Icon.Alt"/>
   </div>
 
   <div class="dormitory-ticket__text-wrap">
-    <p class="dormitory-ticket__text nl2br" v-text="dormitoryData.Content"/>
+    <p class="dormitory-ticket__text nl2br" v-text="information.Content"/>
 
-    <div class="dormitory-ticket__complement-text" v-if="dormitoryData.Price">
-      <span class="dormitory-ticket__laundry-price" v-text="dormitoryData.Price.Wash"></span>
-      <span class="dormitory-ticket__laundry-price" v-text="dormitoryData.Price.Dry"></span>
+    <div class="dormitory-ticket__complement-text" v-if="information.Price">
+      <span class="dormitory-ticket__laundry-price" v-text="information.Price.Wash"></span>
+      <span class="dormitory-ticket__laundry-price" v-text="information.Price.Dry"></span>
     </div>
 
-    <div class="dormitory-ticket__complement-text" v-if="dormitoryData.BathTime">
-      <span class="dormitory-ticket__bath-time" v-text="dormitoryData.BathTime"/>
+    <div class="dormitory-ticket__complement-text" v-if="information.BathTime">
+      <span class="dormitory-ticket__bath-time" v-text="information.BathTime"/>
     </div>
   </div>
 </div>
@@ -23,7 +23,7 @@
 <script>
 export default {
   props: {
-    dormitoryData: {
+    information: {
       type: Object,
       default: null
     }
@@ -69,8 +69,17 @@ export default {
   }
 
   &__laundry-price {
-    display: block;
+    margin-right: interval(1);
     line-height: 1.5;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include mq(md) {
+      margin: 0;
+      display: block;
+    }
   }
 
   &__bath-time {
