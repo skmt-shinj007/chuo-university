@@ -1,124 +1,187 @@
 <template>
 <footer class="footer">
-  <div class="footer__main-contents">
-    <div class="footer__sitemap">
-      <footer-title-component class="footer__titles" footerTitle="SITE MAP"/>
-      <footer-sitemap-component/>
+
+  <section class="footer__contact">
+    <contents-title :title="messages.SectionTitles.Contact"/>
+
+    <div class="footer__contact-lead">
+      <p class="footer__contact-text nl2br" v-text="messages.LeadContact"/>
     </div>
 
-    <div class="footer__external-link">
-      <footer-title-component class="footer__titles" footerTitle="EXTERNAL LINK"/>
-      <footer-externallink-component/>
+    <div class="footer__contact-btn">
+      <link-button :link="messages.Links.ToContact"/>
     </div>
+  </section>
 
-    <div class="footer__information">
-      <footer-title-component class="footer__titles" footerTitle="INFORMATION"/>
-      <ul class="footer__information-list">
-        <li class="footer__information-list-item">{{ messages.Footer.Information.ClubName }}</li>
-        <li class="footer__information-list-item">{{ messages.Footer.Information.Address }}</li>
-        <li class="footer__information-list-item">{{ messages.Footer.Information.TelephoneNumber }}</li>
-        <li class="footer__information-list-item">{{ messages.Footer.Information.MailAddress }}</li>
-        <li class="footer__information-list-item">{{ messages.Footer.Information.Caretaker }}</li>
-      </ul>
-    </div>
-  </div>
+  <section class="footer__accordion">
+    <ul class="footer__list">
+      <li class="footer__list-item" v-for="(link, n) in links" :key="n">
+        <accordion-link :item="link" color="darkblue"/>
+      </li>
+    </ul>
+  </section>
 
-  <div class="footer__end">
-    {{ messages.Footer.EndText }}
-  </div>
+  <section class="footer__address">
+    <address>
+      <h3 class="address__title">
+        <router-link to="/">{{ messages.Information.ClubName }}</router-link>
+      </h3>
+
+      <span class="address__item">{{ messages.Information.Address }}</span>
+
+      <a class="address__telephone" :href="`tel:+${telephoneNum}`">
+        {{ messages.Information.TelephoneNumber }}
+      </a>
+
+      <span class="address__item">{{ messages.Information.MailAddress }}</span>
+    </address>
+  </section>
+
+  <section class="footer__copyright">
+    {{ messages.Copyright }}
+  </section>
 </footer>
 </template>
 
 <script>
 // component import
-import FooterTitleComponent from '../modules/FooterTitleComponent';
-import FooterSitemapComponent from '../modules/FooterSitemapComponent';
-import FooterExternallinkComponent from '../modules/FooterExternallinkComponent';
+import AccordionLink from '../modules/accordion/AccordionLinkComponent.vue';
+import LinkButton from '../modules/button/LinkButtonComponent';
+import ContentsTitle from '../modules/ContentsTitleComponent.vue';
+
+// data import
+import Data from '../../config/data.json';
+import Config from '../../config/config.json';
 
 export default {
   components: {
-    FooterTitleComponent,
-    FooterSitemapComponent,
-    FooterExternallinkComponent,
+    ContentsTitle,
+    LinkButton,
+    AccordionLink,
+  },
+
+  data() {
+    return {
+      data: Data,
+      config: Config,
+
+      /**
+       * リンクデータ
+       * @type {Array}
+       */
+      links: [],
+
+      /**
+       * 電話番号のリンク [81-00-0000-0000]
+       * @type {Number}
+       */
+      telephoneNum: '',
+    }
+  },
+
+  beforeMount() {
+    const config = this.$data.config;
+    const messages = this.$data.messages;
+
+    // リンクデータを生成
+    let sitemap = {};
+    sitemap.name = messages.sitemap.name;
+    sitemap.childrenMenus = this.convertArray(config.route);
+    this.links.push(sitemap);
+
+    let externalLink = {};
+    externalLink.name = messages.externalLink.name;
+    externalLink.childrenMenus = this.convertArray(config.links);
+    this.links.push(externalLink);
+
+    /**
+     * 電話番号にリンクを貼るため、最初の「0」に [国コード:81] を挿入
+     * https://webliker.info/65145/#toc_4
+     */
+    const phoneNum = this.messages.Information.TelephoneNumber.slice(1);
+    const phoneCode = this.messages.Information.PhoneCode;
+    const phoneAry = [phoneCode, phoneNum];
+
+    this.telephoneNum = phoneAry.join('-');
+  },
+
+  methods: {
+    /**
+     * オブジェクトから配列に変換する処理
+     * @param { Object }
+     */
+    convertArray(obj) {
+      return Object.keys(obj).map(function (key) {
+        return obj[key];
+      })
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .footer {
-  background-color: color(darkblue);
-  color: color(white);
-  font-weight: bold;
+  margin-bottom: 0;
+  padding-top: interval(5);
+  padding-bottom: interval(3);
+  background-color: color(lightgray);
 
-  &__main-contents {
-    margin-bottom: interval(3);
-
-    // tablet style
-    @include mq(sm) {
-      @include flex($justify-content: center);
-    };
-  }
-
-  &__titles {
-    margin-bottom: interval(3);
-    @include bangers();
-  }
-
-  &__sitemap {
-    padding-top: interval(10);
-
-    // tablet style
-    @include mq(sm) {
-      padding-top: 0;
-      margin-top: interval(5);
-      padding: 0 interval(2);
-    };
-  }
-
-  &__external-link {
-    margin-top: interval(5);
-
-    // tablet style
-    @include mq(sm) {
-      padding: 0 interval(2);
-    };
-  }
-
-  &__information {
-    margin-top: interval(5);
-
-    // tablet style
-    @include mq(sm) {
-      padding: 0 interval(2);
-    };
-
-    &-list {
-      width: 50%;
-      max-width: 300px;
-      margin: 0 auto;
-
-      // tablet style
-      @include mq(sm) {
-        width: 100%;
-        max-width: none;
-      };
-    }
-
-    &-list-item {
-      margin-bottom: interval(0.5);
-      font-size: font(xs);
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  &__end {
-    padding: interval(3) 0;
+  &__contact-lead {
+    margin-bottom: interval(5);
     text-align: center;
-    font-weight: normal;
-    font-size: font(xs);
+  }
+
+  &__contact-btn {
+    @include mq(sm) {
+      max-width: interval(50);
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    margin-top: interval(10);
+  }
+
+  &__list-item {
+    border-top: 2px solid color(darkblue);
+
+    &:last-child {
+      border-bottom: 2px solid color(darkblue);
+    }
+  }
+
+  &__address {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  &__copyright {
+    font-size: font(10);
+    text-align: center;
+    margin: interval(3) auto 0 auto;
+  }
+}
+
+.address {
+  &__title {
+    line-height: 2;
+  }
+
+  &__item {
+    display: block;
+    font-weight: bold;
+    line-height: 1.8;
+    letter-spacing: 1.2px;
+  }
+
+  &__telephone {
+    @extend .address__item;
+    text-decoration: underline;
+
+    @include mq(sm) {
+      pointer-events: none;
+      text-decoration: none;
+    }
   }
 }
 </style>

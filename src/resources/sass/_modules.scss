@@ -13,19 +13,13 @@
   @return map-get($grid-breakpoints, $key);
 }
 
-// font
-@function font($key) {
-  @return map-get($font, $key);
-}
-
-// button size
-@function btn-size($key) {
-  @return map-get($button, $key);
-}
-
-// icon size
-@function icon($key) {
-  @return map-get($icon, $key);
+/**
+ * font size
+ * @param 指定したいピクセル数を入力
+ * @return 単位をremに変換し出力
+ */
+@function font($pixel) {
+  @return ($pixel / $base-font) * 1rem;
 }
 
 // aspect ratio
@@ -40,14 +34,41 @@
 
 // interval (間隔)
 @function interval($pixel) {
+  @return $base-rem * $pixel;  // 1/2rem × $pixel
+}
+
+// pixel (固定値)
+@function pixel($pixel) {
   @return $base-pixel * $pixel;  // 8px × $pixel
 }
 
-/**
- * @keyframe を定義
- */
+// デバイス幅 (displayマップ)
+@function device($key) {
+  @return map-get($display, $key);
+}
 
-// 要素ホバー時にアイコンを横揺れさせるアニメーション
+// パーツ固定値
+@function width($key) {
+  @return map-get($width, $key);
+}
+
+/**
+ * background svg path
+ */
+$angle-down: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 5 14 14" fill="%2310334e"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/></svg>';
+
+$arrow-right: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"><path d="M0 0h24v24H0z" fill="none"/><path fill="%23f2f2f2" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>';
+
+$arrow-left: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"><path d="M0 0h24v24H0z" fill="none"/><path fill="%23f2f2f2" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
+
+
+$arrow-right-darkblue: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"><path d="M0 0h24v24H0z" fill="none"/><path fill="%2310334e" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>';
+
+$arrow-left-darkblue: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"><path d="M0 0h24v24H0z" fill="none"/><path fill="%2310334e" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
+
+/**
+ * @keyframes
+ */
 @keyframes iconSlide {
   0% {
     transform: translateX(0);
@@ -81,5 +102,91 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+// main visual text
+@keyframes textIn {
+  0% {
+    transform: scale(2) translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+// fadeOut 上 (footer スクロールボタン)
+@keyframes fadeoutTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+}
+
+@keyframes bound {
+  0% {
+    transform: translate(0%,-100%);
+  }
+  30% {
+    transform: translate(0%,0%) scale(1.1, 1);
+  }
+  40% {
+    transform: translate(0%,-40%);
+  }
+  55% {
+    transform: translate(0%,0%) scale(1.1, 1);
+  }
+  60% {
+    transform: translate(0%,-15%);
+  }
+  70% {
+    transform: translate(0%,0%) scale(1.1, 1);
+  }
+  75% {
+    transform: translate(0%,-5%);
+  }
+  95% {
+    transform: translate(0%,0%) scale(1.1, 1);
+  }
+  100%{
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes rotation{
+  0% {
+    transform:
+      translateX(-50rem)
+      rotate(0deg);
+  }
+  100% {
+    transform:
+      translateX(0)
+      rotate(360 * 4 + 15deg);
+  }
+}
+
+@keyframes loading {
+  0%{
+    height: 0;
+  }
+  50%{
+    height: 80%;
+  }
+  100%{
+    height: 0;
+  }
+}
+
+@keyframes gauge {
+  100% {
+    transform: scaleX(1);
   }
 }

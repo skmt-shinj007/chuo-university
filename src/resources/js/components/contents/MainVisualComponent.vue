@@ -1,14 +1,34 @@
 <template>
-<div class="main-visual">
+<div class="main-visual wrapper">
   <slot name="inner">
-  <span class="main-visual__title" v-text="messages.MainVisual.Top"></span>
+    <div class="main-visual__wrap">
+      <div class="main-visual__text" v-for="(text, i) in texts" :key="i">
+        <span
+          class="main-visual__item delay"
+          v-for="(t, n) in text"
+          :key="n"
+          v-text="t"/>
+      </div>
+    </div>
   </slot>
 </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      /**
+       *
+       */
+      texts: {},
+    }
+  },
 
+  beforeMount() {
+    this.texts = {...this.messages.MainVisual.Home}
+    console.log()
+  },
 }
 </script>
 
@@ -17,26 +37,22 @@ export default {
   width: 100%;
   height: 100vh;
   @include gradient(color(deepDarkblue), color(darkblue), horizontal);
-  @include flex(
-    $flow:column nowrap,
-    $justify-content:center,
-    $align-items:center
-  );
+  @include flex(row nowrap, center, center);
+  position: relative;
 
-
-  &__title {
+  &__item {
     color: color(white);
-    white-space: pre-wrap;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: font(mv);
-    font-weight: bold;
+    display: inline-block;
+    font-size: font(47);
+    line-height: 1.2;
     text-shadow: 3px 3px 0px color(orange);
+    animation: textIn 0.8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
+  }
 
-    // pc style
-    @include mq(md) {
-      line-height: 1.2;
-      font-size: font(mv-lg);
-    };
+  @for $i from 1 through 10 {
+    &__item:nth-child(#{$i}) {
+      animation-delay: $i * 100ms + 200ms;
+    }
   }
 }
 </style>

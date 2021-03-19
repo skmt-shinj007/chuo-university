@@ -1,35 +1,33 @@
 <template>
 <div class="champions-card">
-  <div class="champions-card__background">
-
-  </div>
+  <div class="champions-card__background"/>
 
   <div class="champions-card__title-wrapper">
-    <h5 class="champions-card__title">Champion pair</h5>
+    <h5 class="champions-card__title">{{ messages.card.winner }}</h5>
   </div>
 
   <div class="champions-card__pair">
     <!-- 後衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ cardElement.Player01.Name }}</span>
-      <span class="champions-card__player-name">({{ cardElement.Player01.Belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.Player01.OB"/>
+      <span class="champions-card__player-name">{{ cardElement.player01.name }}</span>
+      <span class="champions-card__player-name">({{ cardElement.player01.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.player01.OB"/>
     </div>
 
     <!-- 前衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ cardElement.Player02.Name }}</span>
-      <span class="champions-card__player-name">({{ cardElement.Player02.Belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.Player02.OB"/>
+      <span class="champions-card__player-name">{{ cardElement.player02.name }}</span>
+      <span class="champions-card__player-name">({{ cardElement.player02.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.player02.OB"/>
     </div>
   </div>
 
   <div class="champions-card__tournament-info">
-    <h3 class="champions-card__tournament-info-title">{{ messages.ContentsTitles.TournamentInformation }}</h3>
-    <table-component
-      :tableItems="cardElement.TournamentInformation"
-      :valueTransparent="true"
-      font="sm"/>
+    <span class="champions-card__tournament-info-title">
+      {{ messages.ContentsTitles.TournamentInformation }}
+    </span>
+
+    <table-component :tableItems="cardElement.information"/>
   </div>
 
 </div>
@@ -42,6 +40,7 @@ export default {
   components: {
     TableComponent,
   },
+
   props: {
     cardElement: {
       type: Object,
@@ -53,6 +52,7 @@ export default {
 
 <style lang="scss" scoped>
 .champions-card {
+  width: 100%;
   background-color: color(white);
   padding: interval(2);
   position: relative;
@@ -65,7 +65,7 @@ export default {
     position: absolute;
     bottom: 0;
     right: 0;
-    @include background-image('/svg/trophy-solid-gold.svg', center center);
+    @include background-image('/svg/trophy-solid-gold.svg');
   }
 
   &__title-wrapper {
@@ -73,12 +73,14 @@ export default {
   }
 
   &__title {
-    font-size: font(lg);
+    @include bangers(font(26), 1.5px);
+    line-height: 1;
   }
 
   &__pair {
-    @include flex();
+    width: 100%;
     margin-bottom: interval(2);
+    font-size: font(12);
 
     @include mq(sm) {
       display: block;
@@ -86,19 +88,15 @@ export default {
   }
 
   &__player {
-    width: 50%;
-    @include flex(row nowrap, center, center);
+    @include flex(row nowrap, flex-start, center);
+    margin-top: interval(.5);
 
-    @include mq(sm) {
-      width: 100%;
-      justify-content: flex-start;
-      padding-left: interval(1);
+    &:first-child {
+      margin-top: 0;
     }
   }
 
   &__player-name {
-    font-size: font(sm);
-    font-weight: bold;
     letter-spacing: 1.8px;
   }
 
@@ -108,13 +106,11 @@ export default {
     fill: color(darkblue);
   }
 
-  &__tournament-info {
-    &-title {
-      position: relative;
-      padding-left: interval(3);
-      margin-bottom: interval(1);
-      @include text-before-line(interval(2), 1px, color(darkblue));
-    }
+  &__tournament-info-title {
+    display: block;
+    margin-bottom: interval(.5);
+    font-size: font(14);
+    @include middle-line-text(2, 1px, color(darkblue));
   }
 }
 </style>

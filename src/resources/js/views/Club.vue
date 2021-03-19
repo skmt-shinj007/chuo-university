@@ -1,142 +1,166 @@
 <template>
 <div class="club">
 
-  <section class="club__mainVisualSlider">
-    <main-visual-slider-component :images="mainVisualImages"/>
-  </section>
-
-  <div class="background-darkblue">
-    <section class="club__policy section-container">
-      <contents-title-component :title="messages.SectionTitles.Policy.Main" :subTitle="messages.SectionTitles.Policy.Sub" color="white"/>
-
-      <div class="club__policy-cards">
-        <!-- TODO:コンポーネントに直接 v-for しない -->
-        <policy-card-component
-        v-for="(policy, n) in policies"
-        :key="n"
-        :policy="policy"/>
-      </div>
-    </section>
+  <div class="club__mainVisualSlider">
+    <main-visual-slider :images="mainVisualImages"/>
   </div>
 
-  <section class="club__practice section-container">
-    <contents-title-component :title="messages.SectionTitles.Practice.Main" :subTitle="messages.SectionTitles.Practice.Sub"/>
+  <section class="club__concept" v-fade:[dir.up]>
+    <contents-title :title="messages.SectionTitles.Concept"/>
+    <div class="club__concept-content">
+      <concept :items="concepts"/>
+    </div>
+  </section>
 
-    <div class="club__practice-table">
+  <section class="club__practice" v-fade:[dir.up]>
+    <contents-title :title="messages.SectionTitles.Practice"/>
+    <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
 
-    <div class="club__practice-map">
-      <google-map-component/>
+    <div class="practice__map">
+      <!-- google map 埋め込み（中央大学多摩キャンパス ソフトテニスコート） -->
+      <iframe class="practice__map-content" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621.2667723739717!2d139.3969191414313!3d35.63922419623377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e3e36092b1eb%3A0xbda5deeac6e07b45!2z5Lit5aSu5aSn5a2mIOWkmuaRqeOCreODo-ODs-ODkeOCuSDjgr3jg5Xjg4jjg4bjg4vjgrnjgrPjg7zjg4g!5e0!3m2!1sja!2sjp!4v1606833350051!5m2!1sja!2sjp" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <span class="practice__map-text">{{ messages.Club.AttentionText }}</span>
     </div>
 
-    <!-- 画面幅992px以下で表示（tablet以下） -->
-    <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
-      <contents-image-slider-component :images="courtImages"/>
+    <!-- PCデバイス幅 以下 -->
+    <div class="practice__slider" v-if="windowWidth < breakpoints.md">
+      <image-slider :images="courtImages"/>
     </div>
 
-    <!-- 画面幅993pxから表示（pcから） -->
-    <div class="club__practice-rowImages" v-if="windowWidth >= pcWidth">
-      <div class="club__practice-rowImages-item" v-for="(image, n) in courtImages" :key="n">
-        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :barCaption="image.caption"/>
+    <!-- PCデバイス幅 -->
+    <div class="practice__image-group" v-if="windowWidth >= breakpoints.md">
+      <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
+        <caption-image :image="image"/>
       </div>
     </div>
 
-    <div class="club__practice-schedule">
-      <h3 class="club__practice-schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
-      <table-component :tableItems="schedule"/>
+    <div class="practice__schedule" v-fade:[dir.up]>
+      <h3 class="practice__schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
+
+      <div class="practice__schedule-table">
+        <table-component :tableItems="schedule"/>
+      </div>
     </div>
   </section>
 
-  <section class="club__dormitory section-container">
-    <contents-title-component :title="messages.SectionTitles.Dormitory.Main" :subTitle="messages.SectionTitles.Dormitory.Sub"/>
+  <section class="club__dormitory" v-fade:[dir.up]>
+    <contents-title :title="messages.SectionTitles.Dormitory"/>
 
-    <div class="club__dormitory-lead-wrap">
+    <div class="dormitory__lead">
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
 
-    <div class="club__dormitory-cards">
-      <div class="club__dormitory-card-item" v-for="(dormitoryInformation, n) in dormitoryInformations" :key="n">
-        <dormitory-card-component :dormitoryData="dormitoryInformation"/>
+    <div class="dormitory__ticket-group" v-fade:[dir.up]>
+      <div
+        class="dormitory__ticket"
+        v-for="(information, n) in dormitoryInformations"
+        :key="n">
+
+        <dormitory-ticket :dormitoryData="information"/>
       </div>
     </div>
 
-    <div class="club__practice-imageSlider" v-if="windowWidth < pcWidth">
-      <contents-image-slider-component :images="dormitoryImages"/>
+    <!-- PCデバイス幅 以下 -->
+    <div class="dormitory__slider" v-if="windowWidth < breakpoints.md">
+      <image-slider :images="dormitoryImages">
+        <template v-slot:caption="image">
+          <span class="dormitory__caption">{{ image.image.caption }}</span>
+          <span class="dormitory__caption-sub">人部屋</span>
+        </template>
+      </image-slider>
     </div>
 
-    <div class="club__dormitory-images" v-if="windowWidth >= pcWidth">
-      <div class="club__dormitory-images-item" v-for="(image, n) in dormitoryImages" :key="n">
-        <caption-bar-image-component :imageUrl="`/image/${image.path}`" :alt="image.name" :capacityNum="image.capacity"/>
+    <!-- PCデバイス幅 -->
+    <div class="dormitory__image-group" v-if="windowWidth >= breakpoints.md">
+      <div class="dormitory__image" v-for="(image, n) in dormitoryImages" :key="n">
+        <caption-image :image="image">
+          <template v-slot:caption="image">
+            <span class="dormitory__caption">{{ image.image.caption }}</span>
+            <span class="dormitory__caption-sub">人部屋</span>
+          </template>
+        </caption-image>
       </div>
     </div>
   </section>
 
-  <div class="club__member-bg">
-    <section class="club__member section-container">
-      <contents-title-component :title="messages.SectionTitles.Member.Main" :subTitle="messages.SectionTitles.Member.Sub" color="white"/>
+  <div class="background-darkblue">
+    <section class="club__member fade" v-scroll="fade">
+      <contents-title :title="messages.SectionTitles.Member" color="white"/>
+      <player-slider :players="players"/>
 
-      <player-slider-component :players="players"/>
-
-      <div class="club__member-number">
-        <h3 class="club__member-number-title">{{ messages.ContentsTitles.Numbers }}</h3>
-        <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名"/>
-      </div>
-
-      <div class="club__member-button">
-        <view-all-button-component :name="messages.ButtonName.Member"/>
+      <div class="member__number">
+        <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
+        <div class="member__number-table">
+          <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
+        </div>
+        <div class="member__button">
+          <link-button :link="messages.Links.Member"/>
+        </div>
       </div>
     </section>
   </div>
 
-  <section class="club__photo section-container">
-    <contents-title-component :title="messages.SectionTitles.Photo.Main" :subTitle="messages.SectionTitles.Photo.Sub"/>
+  <section class="club__photo fade" v-scroll="fade">
+    <contents-title :title="messages.SectionTitles.Photo"/>
+    <images-list :images="images"/>
 
-    <div class="club__photo-images-container">
-      <arrange-images-component :imagesData="imagesData"/>
-    </div>
-
-    <div class="club__photo-button">
-      <view-all-button-component/>
+    <div class="photo__button">
+      <link-button :link="messages.Links.Photo"/>
     </div>
   </section>
+
+  <div class="club__scroll-top">
+    <scroll-top-button/>
+  </div>
 </div>
 </template>
 
 <script>
-// component import
+// data
 import Data from '../config/data.json';
-import ContentsTitleComponent from '../components/modules/ContentsTitleComponent';
-import GoogleMapComponent from '../components/modules/GoogleMapComponent';
-import PolicyCardComponent from '../components/modules/card/PolicyCardComponent';
-import ContentsImageSliderComponent from '../components/modules/slider/contentsImageSliderComponent';
-import MainVisualSliderComponent from '../components/modules/slider/MainVisualSliderComponent';
+
+// mixin
+import Animation from '../config/animation';
+
+// component import
+import ContentsTitle from '../components/modules/ContentsTitleComponent';
+import GoogleMap from '../components/modules/GoogleMapComponent';
+import Concept from '../components/contents/ConceptComponent';
+import ImageSlider from '../components/modules/slider/ImageSliderComponent';
+import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import CaptionBarImageComponent from '../components/modules/CaptionBarImageComponent';
-import DormitoryCardComponent from '../components/modules/card/DormitoryCardComponent';
-import PlayerSliderComponent from '../components/modules/slider/PlayerSliderComponent';
-import ViewAllButtonComponent from '../components/modules/button/ViewAllButtonComponent';
-import ArrangeImagesComponent from '../components/contents/ArrangeImagesComponent';
+import CaptionImage from '../components/modules/CaptionImageComponent';
+import DormitoryTicket from '../components/modules/ticket/DormitoryTicketComponent';
+import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
+import LinkButton from '../components/modules/button/LinkButtonComponent';
+import ImagesList from '../components/contents/ImagesListComponent';
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
 
 export default {
   components: {
-    ContentsTitleComponent,
-    PolicyCardComponent,
-    MainVisualSliderComponent,
+    ContentsTitle,
+    Concept,
+    MainVisualSlider,
     TableComponent,
-    GoogleMapComponent,
-    ContentsImageSliderComponent,
-    CaptionBarImageComponent,
-    DormitoryCardComponent,
-    PlayerSliderComponent,
-    ViewAllButtonComponent,
-    ArrangeImagesComponent,
+    GoogleMap,
+    ImageSlider,
+    CaptionImage,
+    DormitoryTicket,
+    PlayerSlider,
+    LinkButton,
+    ImagesList,
+    ScrollTopButton,
   },
+
+  mixins: [Animation],
+
   data() {
     return {
       data: Data,
       mainVisualImages: [],
-      policies: [],
+      concepts: [],
       practiceInformations: [],
       courtImages: [],
       schedule: [],
@@ -144,7 +168,7 @@ export default {
       dormitoryImages: [],
       players: [],
       memberNumber: [],
-      imagesData: [],
+      images: [],
     }
   },
 
@@ -153,16 +177,19 @@ export default {
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
     dormitoryImageApiResponse.forEach(element => this.dormitoryImages.push(element));
-    imageApiResponse.forEach(element => this.imagesData.push(element));
+    this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
 
     // config/data.jsonから引っ張る
-    this.$data.data.Policy.forEach(element => this.policies.push(element));
+    this.$data.data.concepts.forEach(element => this.concepts.push(element));
     this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
     this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
     this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
 
     // TODO:DBから情報を引っ張る
-    this.$data.data.Players.forEach(element => this.players.push(element));
+    // ユーザーカテゴリーで [選手] を抽出
+    this.$data.data.Users.forEach(element => {
+      (element.category === this.playerNum) ? this.players.push(element) : null;
+    });
     memberNumberData.forEach(element => this.memberNumber.push(element));
   },
 }
@@ -172,15 +199,23 @@ export default {
  */
 const mainVisualApiResponse = [
   {
-    path: 'tennisBall-vertical.jpg',
-    name: 'altテキストを入れます',
-    text: '感謝と謙虚な心を忘れずに、日本一。これが中央大学ソフトテニス部の永遠の目標です',
+    id      : 1,
+    src     : 'player41.jpg',
+    alt     : 'altテキストを入れます',
+    caption : '感謝と謙虚な心を忘れずに、日本一。',
   },
   {
-    path: 'tennisBall.jpg',
-    name: 'altテキストを入れます',
-    text: '感謝と謙虚な心を忘れずに、日本一。これが中央大学ソフトテニス部の永遠の目標です',
-  }
+    id      : 2,
+    src     : 'training01.jpg',
+    alt     : 'altテキストを入れます',
+    caption : 'テキストは AMAZON EC2 を使用します。',
+  },
+  {
+    id      : 3,
+    src     : 'player43.jpg',
+    alt     : 'altテキストを入れます',
+    caption : 'テキストは AMAZON EC2 を使用します。',
+  },
 ];
 
 /**
@@ -188,19 +223,19 @@ const mainVisualApiResponse = [
  */
 const courtImageApiResponse = [
   {
-    path: 'tennis_court-in_chuoUniv-01.jpg',
-    name: '中央大学ソフトテニスコートの画像',
-    caption: '多摩校舎ソフトテニスコート（第二体育館）',
+    src     : 'court01.jpg',
+    alt     : '中央大学多摩キャンパスソフトテニスコート',
+    caption : '多摩校舎ソフトテニスコート（第二体育館）',
   },
   {
-    path: 'tennis_court-in_chuoUniv-03.jpg',
-    name: '中央大学ソフトテニスコートの画像',
-    caption: 'ソフトテニスコート（1,2,3）',
+    src     : 'court03.jpg',
+    alt     : '中央大学多摩キャンパスソフトテニスコート',
+    caption : 'ソフトテニスコート（1,2,3）',
   },
   {
-    path: 'tennis_court-in_chuoUniv-02.jpg',
-    name: '中央大学ソフトテニスコートの画像',
-    caption: 'ソフトテニスコート（4,5,6）',
+    src     : 'court02.jpg',
+    alt     : '中央大学多摩キャンパスソフトテニスコート',
+    caption : 'ソフトテニスコート（4,5,6）',
   }
 ];
 
@@ -209,19 +244,19 @@ const courtImageApiResponse = [
  */
 const dormitoryImageApiResponse = [
   {
-    path: 'dormitory-02.jpg',
-    name: '中央大学南平寮の3人部屋',
-    capacity: 3,
+    src     : 'room01.jpg',
+    alt     : '中央大学南平寮',
+    caption : 4,
   },
   {
-    path: 'dormitory-01.jpg',
-    name: '中央大学南平寮の4人部屋',
-    capacity: 4,
+    src     : 'room02.jpg',
+    alt     : '中央大学南平寮',
+    caption : 4,
   },
   {
-    path: 'dormitory-03.jpg',
-    name: '中央大学南平寮の4人部屋',
-    capacity: 4,
+    src     : 'room03.jpg',
+    alt     : '中央大学南平寮',
+    caption : 3,
   }
 ];
 
@@ -246,56 +281,6 @@ const memberNumberData = [
     value: 6,
   }
 ];
-
-/**
- * test Api response : 画像ストレージからのAPIレスポンス（想定）
- */
-const imageApiResponse = [
-  {
-    path: 'player01.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player02.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player03.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player04.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player05.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player06.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player07.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player08.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player09.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player10.jpg',
-    alt: '写真の補足テキスト',
-  },
-  {
-    path: 'player11.jpg',
-    alt: '写真の補足テキスト',
-  },
-];
 </script>
 
 <style lang="scss" scoped>
@@ -305,164 +290,189 @@ const imageApiResponse = [
     height: 100vh;
   }
 
-  &__policy {
-    padding: interval(10) 0;
-    margin-top: 0;
-
-    &-cards {
-
-      // tablet style
-      @include mq(sm) {
-        margin: 0 interval(3);
-        @include flex($justify-content: space-around);
-      };
-    }
-  }
-
-  &__practice {
-
-    &-map {
-      padding-top: interval(5);
-    }
-
-    &-imageSlider {
-      padding-top: interval(8);
-      width: 90%;
-      margin: 0 auto;
-
-      // tab
-      @include mq(sm) {
-        width: 70%;
-      };
-
-    }
-
-    &-rowImages {
-      @include flex($justify-content: space-around);
-      margin-top: interval(10);
-
-      &-item {
-        width: 30%;
-      }
-    }
-
-    &-schedule {
-      margin-top: interval(10);
-    }
-
-    &-schedule-title {
-      width: 90%;
-      margin: 0 auto interval(2) auto;
-      padding-left: interval(3);
-      position: relative;
-      @include text-before-line(interval(2), 1px, color(darkblue));
-
-      @include mq(sm) {
-        width: 80%;
-      };
-    }
-  }
-
   &__dormitory {
-
-    &-lead-wrap {
-      width: 90%;
-      margin: 0 auto;
-
-      @include mq(sm) {
-        width: 80%;
-      };
-
-      @include mq(md) {
-        text-align: center;
-      };
-    }
-
-    &-cards {
-      margin-top: interval(4);
-
-      @include mq(md) {
-        @include flex(row wrap);
-      };
-    }
-
-    &-card-item {
-      width: 90%;
-      margin: 0 auto;
-      @include flex(row nowrap, center, center);
-
-      @include mq(sm) {
-        width: 70%;
-      };
-
-      @include mq(md) {
-        width: 50%;
-        max-width: 500px;
-      };
-    }
-
-    &-images {
-      @include flex($justify-content: space-around);
-      margin-top: interval(10);
-    }
-
-    &-images-item {
-      width: 30%;
-    }
+    margin-bottom: interval(10);
   }
 
   &__member {
-    padding: interval(5) 0;
-
-    @include mq(md) {
-      padding: interval(10) 0;
-    }
-
-    &-bg {
-      @include gradient();
-    }
-
-    &-number {
-      margin-top: interval(10);
-    }
-
-    &-number-title {
-      width: 90%;
-      color: color(white);
-      margin: 0 auto interval(2) auto;
-      padding-left: interval(3);
-      position: relative;
-      @include text-before-line(interval(2), 1px, color(white));
-
-      @include mq(sm) {
-        width: 80%;
-      };
-    }
-
-    &-button {
-      margin-top: interval(5);
-    }
+    margin: 0 auto;
   }
 
   &__photo {
-    margin: interval(10) auto;
+    margin-top: interval(5);
+  }
+
+  &__scroll-top {
+    @include scroll-top();
+  }
+}
+
+%slider {
+  margin-top: interval(10);
+
+  @include mq(sm) {
+    max-width: pixel(80);
+    margin: interval(10) auto 0 auto;
+  }
+}
+
+%image {
+  width: calc(100% / 3);
+  margin-right: interval(2);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+%button {
+  margin-top: interval(5);
+
+  @include mq(sm) {
+    max-width: interval(50);
+    margin: interval(5) auto 0 auto;
+  }
+}
+
+.practice {
+  &__map {
+    padding-top: interval(5);
+
+    & > iframe {
+      width: 100%;
+      height: interval(40);
+    }
+  }
+
+  &__map-text {
+    margin: interval(1) auto 0 auto;
+    display: block;
+    width: 80%;
+    text-align: center;
+    font-size: font(10);
+    font-weight: normal;
+    letter-spacing: 1.5px;
 
     @include mq(md) {
-      margin-top: interval(20);
+      text-align: end;
+      width: 100%;
+      padding: 0 interval(1);
     }
+  }
 
-    &-images-container {
-      width: 90%;
+  &__slider {
+    @extend %slider;
+  }
+
+  &__image-group {
+    @include flex(row nowrap, space-between, center);
+    margin-top: interval(10);
+  }
+
+  &__image {
+    @extend %image;
+  }
+
+  &__schedule {
+    margin-top: interval(10);
+  }
+
+  &__schedule-title {
+    @include middle-line-text(2, 1px, color(darkblue));
+  }
+
+  &__schedule-table {
+    margin-top: interval(2);
+  }
+}
+
+.dormitory {
+  &__lead {
+
+    @include mq(sm) {
+      text-align: center;
+      max-width: interval(80);
       margin: 0 auto;
     }
 
-    &-button {
-      margin-top: interval(5);
-
-      @include mq(sm) {
-        margin-top: interval(7);
-      };
+    @include mq(md) {
+      max-width: interval(100);
     }
+  }
+
+  &__ticket-group {
+    margin-top: interval(5);
+
+    @include mq(sm) {
+      max-width: interval(80);
+      margin: interval(4) auto 0 auto;
+    }
+
+    @include mq(md) {
+      margin-top: interval(10);
+      max-width: none;
+      @include flex(row wrap);
+    }
+  }
+
+  &__ticket {
+    margin-bottom: interval(5);
+    @include flex(row nowrap, center, center);
+
+    @include mq(md) {
+      width: calc(100% / 2);
+    }
+
+    // アイテムが奇数個の場合、アイテム間に余白をつける
+    &:nth-child(odd) {
+      @include mq(md) {
+        padding-right: interval(2);
+      }
+    }
+  }
+
+  &__slider {
+    @extend %slider;
+  }
+
+  &__caption {
+    font-size: font(16);
+  }
+
+  &__caption-sub {
+    font-size: font(10);
+  }
+
+  &__image-group {
+    @include flex();
+  }
+
+  &__image {
+    @extend %image;
+  }
+}
+
+.member {
+  &__number {
+    margin-top: interval(10);
+  }
+
+  &__number-title {
+    @include middle-line-text(2, 1px, color(white));
+  }
+
+  &__number-table {
+    margin-top: interval(2);
+  }
+
+  &__button {
+    @extend %button;
+  }
+}
+
+.photo {
+  &__button {
+    @extend %button;
   }
 }
 </style>

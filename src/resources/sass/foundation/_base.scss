@@ -1,10 +1,22 @@
+html {
+
+  @include mq(sm) {
+    font-size: 20px;
+    width: 100vw;
+  }
+
+  @include mq(md) {
+    font-size: 1.4vw;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   width: 100vw;
-  font-size: font(base);
+  font-size: font(14);
   color: color(lightDarkblue);
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,14 +30,48 @@ body {
 }
 
 // main要素とfooter要素を右詰めするクラス
-.Right-justified {
+.container {
 
-  // pc style
+  /**
+   * サイドヘッダーは固定幅でもつ
+   * _variables.scss > $width map
+   */
   @include mq(md) {
-    width: 90%;
+    width: calc(100% - #{width(header)});
     position: absolute;
     right: 0;
-  };
+  }
+}
+
+header {
+  width: 100%;
+}
+
+section {
+  padding: 0 pixel(2);
+  margin: 0 auto interval(10) auto;
+
+  @include mq(sm) {
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 3vw;
+  }
+}
+
+// セクションではないが、スタイルだけ適用したいとき。
+.wrapper {
+  padding: 0 pixel(2);
+  margin: 0 auto interval(10) auto;
+
+  @include mq(sm) {
+    padding: 0 pixel(3);
+  }
+
+  @include mq(md) {
+    padding: 0 3vw;
+  }
 }
 
 h1, h2 {
@@ -33,72 +79,46 @@ h1, h2 {
 }
 
 h2 {
-  @include bangers($size:font(heading), $letterSpacing:3px);
+  @include bangers($size:font(40), $letterSpacing:3px);
   line-height: 1;
+}
 
-  // pc style
-  @include mq(md) {
-    font-size: font(heading-lg);
-  };
+h3 {
+  font-size: font(14);
 }
 
 h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+h4 {
+  letter-spacing: 1.5px;
+  font-size: font(14);
+
+  @include mq(sm) {
+    font-size: font(16);
+  }
+}
+
 p {
-  font-size: font(sm);  // 12px
+  font-size: font(12);  // 12px
   line-height: 1.8;
   letter-spacing: 1.2px;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(base);
-    line-height: 2;
-  };
 }
 
-.background-darkblue {
-  background-color: color(darkblue);
-  margin-top: 0;
+span {
+  font-weight: bold;
+  font-size: font(12);
 }
 
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: interval(10);
-
-  // pc style
-  @include mq(md) {
-    margin-top: interval(20);
-  };
-}
-
-.card-inner-margin {
-  padding: interval(2);
-
-  // pc style
-  @include mq(md) {
-    padding: interval(3);
-  };
-}
-/**
- * 改行したい文字列に指定。
- * 大抵 <p> のクラスに指定。（他タグでも問題ない）
- * 前提：messages.jsonの対象の文字列に改行コード（\n）を入れる。
- */
-.nl2br {
-  white-space: pre-wrap;
+label {
+  letter-spacing: 1.2px;
+  font-weight: bold;
 }
 
 tr {
-  font-size: font(sm);
+  font-size: font(12);
   font-weight: bold;
-
-  // pc style
-  @include mq(md) {
-    font-size: font(base);
-  };
 }
 
 th,td {
@@ -108,5 +128,70 @@ th,td {
   // tablet style
   @include mq(sm) {
     line-height: 2;
-  };
+  }
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.background-darkblue {
+  @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
+  margin-top: 0;
+  padding: interval(5) 0 interval(10) 0;
+}
+
+/**
+ * 改行したい文字列に指定。
+ * 大抵 <p> のクラスに指定。（他タグでも問題ない）
+ * 前提：messages.jsonの対象の文字列に改行コード（\n）を入れる。
+ */
+.nl2br {
+  white-space: pre-wrap;
+}
+
+/**
+ * flexの配置を左揃えにするための空要素に指定するクラス
+ * widthは各コンポーネントで指定する。
+ */
+.enpty-box {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+%animation {
+  opacity: 0;
+  transition:
+    1.0s opacity cubic-bezier(0.39, 0.575, 0.565, 1),
+    1.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/**
+ * 表示の際にふわっと表示させるアニメーションに指定するクラス
+ */
+.fadeUp {
+  @extend %animation;
+  transform: translate3d(0, 10px, 0);
+}
+
+.fadeDown {
+  @extend %animation;
+  transform: translate3d(0, -10px, 0);
+}
+
+.fadeRight {
+  @extend %animation;
+  transform: translate3d(10px, 0, 0);
+}
+
+.fadeLeft {
+  @extend %animation;
+  transform: translate3d(-10px, 0, 0);
+}
+
+.fade {
+  @extend %animation;
 }

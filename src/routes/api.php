@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/twitter/timeline', 'App\Http\Controllers\Api\TwitterApiController@getTimeline');
+Route::get('/twitter/account', 'App\Http\Controllers\Api\TwitterApiController@account');
