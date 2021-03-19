@@ -236,12 +236,12 @@ export default {
   &__box {
     width: calc(100% / 2);
 
-    @include mq(sm) {
-      padding: pixel(1);
-    }
-
     @include mq(md) {
       width: calc(100% / 3);
+    }
+
+    @include mq(lg) {
+      width: calc(100% / 4);
     }
   }
 
@@ -253,14 +253,10 @@ export default {
       border: 1px solid color(white);
       border-radius: radius(soft);
       cursor: pointer;
-
-      @include mq(sm) {
-        border: none;
-      }
     }
 
     @include hover {
-      transform: scale(1.05);
+      transform: scale(.95);
     }
   }
 
