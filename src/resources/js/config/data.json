@@ -2638,11 +2638,34 @@
 
   "Provider": [
     {
-      "name": "HaNa",
-      "img": {
-        "src": "HaNa",
-        "alt": "HaNaのサムネイル画像"
+      "id": 1,
+      "name": {
+        "ja": "HaNa",
+        "en": null
       },
+      "img": {
+        "src": "HaNa.jpg",
+        "alt": "HaNaのプロフィール画像"
+      },
+      "from": {
+        "place": null,
+        "almaMater": null
+      },
+      "post": {
+        "club": null,
+        "alumni": null
+      },
+      "graduate": {
+        "age": null,
+        "year": 31
+      },
+      "category": null,
+      "position": null,
+      "grade": null,
+      "undergraduate": null,
+      "schoolPost": null,
+      "record": null,
+      "message": null,
       "twitter": {
         "url": "https://twitter.com/SFphoto87",
         "userName": "SFphoto87"

@@ -31,7 +31,7 @@ class TwitterApiController extends Controller
   public function getTimeline()
   {
     // 直近3投稿の取得をリクエスト
-    $request = $this->connection()->get('statuses/home_timeline',
+    $request = $this->connection()->get('statuses/user_timeline',
       array(
         'count' => '3',
       )
@@ -39,11 +39,6 @@ class TwitterApiController extends Controller
 
     // フロントに返すレスポンスを定義
     $response = $request;
-
-    // 開発用: データが見やすいようにjson_encode関数にオプション付与
-    function json_dev($data) {
-      return json_encode($data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-    }
 
     /**
      * ツイート時間を datetime に変換。

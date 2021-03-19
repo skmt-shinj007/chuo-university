@@ -3,9 +3,11 @@
     <div class="modal" @click.self="$emit('close')">
       <div class="modal-window" @click.self="$emit('close')">
 
-        <button class="modal__btn" @click="$emit('close')">
-          <i class="btn-line"/>
-        </button>
+        <div class="modal__close">
+          <button class="modal__button" @click="$emit('close')">
+            <svg-vue icon="close"/>
+          </button>
+        </div>
 
         <slot name="content"/>
 
@@ -28,7 +30,7 @@ export default {
   right: 0;
   left: 0;
   z-index: 910;
-  background-color: rgba(color(deepDarkblue), $alpha: .9);
+  background-color: rgba(color(deepDarkblue), $alpha: .95);
   @include flex(column nowrap);
 
   &-window {
@@ -41,12 +43,20 @@ export default {
     overflow-y: auto;
   }
 
-  &__btn {
-    @include close-button;
-    background-color: color(orange);
+  &__close {
     position: fixed;
     top: interval(2);
-    right: interval(2);
+    right: interval(3);
+    z-index: 10;
+
+    @include mq(md) {
+      right: interval(4)
+    }
+  }
+
+  &__button {
+    @include close-button;
+    background-color: color(orange);
 
     @include mq(md) {
       background-color: rgba($color: #000000, $alpha: 0);
@@ -74,7 +84,6 @@ export default {
 
   .modal-window {
     opacity: 0;
-    transform: translateY(-20px);
   }
 }
 </style>

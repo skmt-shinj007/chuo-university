@@ -125,8 +125,12 @@ export default {
   position: relative;
 
   &__news {
-    transform: translateY(-50px);
-    max-width: interval(100);
+    transform: translateY(- interval(15));
+    margin-bottom: 0;
+
+    @include mq(md) {
+      max-width: 80%;
+    }
   }
 
   &__about {
@@ -259,7 +263,7 @@ export default {
     width: 100%;
 
     @include mq(sm) {
-      max-width: interval(50);
+      max-width: 80%;
       margin: 0 auto;
     }
   }

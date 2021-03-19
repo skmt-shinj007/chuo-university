@@ -1,8 +1,8 @@
 <template>
   <div class="slider">
-    <swiper :options="params">
+    <swiper :options="option" :class="coloring">
       <swiper-slide v-for="(player, n) in players" :key="n">
-        <player-card :player="player">
+        <player-card :player="player" @modal="openModal($event)">
           <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">
             <div class="alumni__record">
               <span class="alumni__record-text">{{ player.player.record }}</span>
@@ -11,68 +11,115 @@
         </player-card>
       </swiper-slide>
 
-      <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-      <!-- <div class="swiper-button swiper-button-prev" slot="button-prev"></div>
-      <div class="swiper-button swiper-button-next" slot="button-next"></div> -->
+      <!-- swiper components -->
+      <div class="swiper-button swiper-button-prev" slot="button-prev"/>
+      <div class="swiper-button swiper-button-next" slot="button-next"/>
+      <div class="swiper-pagination" slot="pagination"/>
     </swiper>
+
+    <!-- pleyerCardにモーダルを描画すると、swiperのtransformが邪魔してモーダルがバグる -->
+    <user-modal v-if="showModal" @close="closeModal" :item="clickEl"/>
   </div>
 </template>
 
 <script>
 // components import
 import PlayerCard from '../card/PlayerCardComponent';
+import UserModal from '../modal/UserModalComponent';
 
 export default {
   components: {
     PlayerCard,
+    UserModal,
   },
 
   props: {
     // playerCardに受け渡す選手データ
     players: Array,
+
+    color: {
+      type: String,
+      default: '',
+    },
+
+    option: {
+      type: Object,
+      default: () => {
+        return {
+          /**
+           * ループさせると仮想的なDOMが作られるので、スライド内のクリックイベントが動作しない。
+           */
+          speed: 1000,
+          autoHeight: true,
+          spaceBetween: 16,
+
+          autoplay: {
+            delay: 2500,
+          },
+
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            type: 'bullets',
+          },
+
+          breakpoints: {
+            500: {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+            },
+            860: {
+              slidesPerView: 3,
+              slidesPerGroup: 1,
+            },
+            1440: {
+              slidesPerView: 5,
+              slidesPerGroup: 1,
+            },
+          },
+        }
+      },
+    }
+  },
+
+  data() {
+    return {
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      showModal: false,
+
+      /**
+       * クリックしたカードのデータを格納
+       * @type { Object }
+       */
+      clickEl: null,
+    }
   },
 
   computed: {
-    params() {
-      return {
-        loop: true, // ループ
-        speed: 1500,  // スライドする時間
-        // effect: "coverflow",  // スライドタイプ
-        autoHeight: true,
-
-        autoplay: {
-          delay: 2500,
-        },
-
-        breakpoints: {
-          500: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-          },
-          800: {
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-          },
-          1440: {
-            slidesPerView: 4,
-            slidesPerGroup: 1,
-          },
-        },
-
-        // ナビゲーション
-        navigation: {
-          nextEl: '.c-imageSlider .swiper-button-next',
-          prevEl: '.c-imageSlider .swiper-button-prev',
-        },
-
-        // ページネーション
-        pagination: {
-          el: '.c-imageSlider .swiper-pagination',
-          clickable: true,
-          type: 'progressbar',
-        },
-      }
+    coloring() {
+      return (this.color) ? `swiper--${this.color}` : null;
     }
+  },
+
+  methods: {
+    // モーダル開閉処理
+    openModal(el) {
+      this.showModal = true;
+      this.clickEl = el;
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.showModal = false;
+      document.body.classList.remove("modal-open");
+    },
   },
 }
 </script>
@@ -81,16 +128,18 @@ export default {
 .slider {
   height: auto;
 
-  // sliderの場合のplayer cardの幅を指定
-  .player-card {
-    margin: 0 auto;
-    width: 80%;
-
-    @include mq(sm){
-      width: 90%;
-    }
+  .swiper {
+    @include swiper-pagination(color(white), interval(3));
+    @include swiper-button();
   }
 
+  // swiper modifier
+  .swiper--darkblue {
+    .swiper {
+      @include swiper-pagination();
+      @include swiper-button(color(lightDarkblue));
+    }
+  }
 }
 
 // slotで差し込んだ部分のスタイル

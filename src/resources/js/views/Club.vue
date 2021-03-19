@@ -7,7 +7,6 @@
 
   <section class="club__concept" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Concept"/>
-
     <div class="club__concept-content">
       <concept :items="concepts"/>
     </div>
@@ -15,7 +14,6 @@
 
   <section class="club__practice" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Practice"/>
-
     <div class="practice__table">
       <table-component :tableItems="practiceInformations"/>
     </div>
@@ -85,22 +83,18 @@
         </caption-image>
       </div>
     </div>
-
   </section>
 
   <div class="background-darkblue">
-    <section class="club__member" v-fade:[dir.up]>
+    <section class="club__member fade" v-scroll="fade">
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
-
       <player-slider :players="players"/>
 
       <div class="member__number">
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
-
         <div class="member__number-table">
           <table-component :tableItems="memberNumber" addKeyText="年生" addValueText="名" size="lg"/>
         </div>
-
         <div class="member__button">
           <link-button :link="messages.Links.Member"/>
         </div>
@@ -108,10 +102,9 @@
     </section>
   </div>
 
-  <section class="club__photo" v-fade:[dir.up]>
+  <section class="club__photo fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.Photo"/>
-
-    <arrange-images :images="images"/>
+    <images-list :images="images"/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
@@ -142,7 +135,7 @@ import CaptionImage from '../components/modules/CaptionImageComponent';
 import DormitoryTicket from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
-import ArrangeImages from '../components/contents/ArrangeImagesComponent';
+import ImagesList from '../components/contents/ImagesListComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
 
 export default {
@@ -157,7 +150,7 @@ export default {
     DormitoryTicket,
     PlayerSlider,
     LinkButton,
-    ArrangeImages,
+    ImagesList,
     ScrollTopButton,
   },
 
@@ -206,15 +199,23 @@ export default {
  */
 const mainVisualApiResponse = [
   {
+    id      : 1,
     src     : 'player41.jpg',
     alt     : 'altテキストを入れます',
     caption : '感謝と謙虚な心を忘れずに、日本一。',
   },
   {
+    id      : 2,
     src     : 'training01.jpg',
     alt     : 'altテキストを入れます',
     caption : 'テキストは AMAZON EC2 を使用します。',
-  }
+  },
+  {
+    id      : 3,
+    src     : 'player43.jpg',
+    alt     : 'altテキストを入れます',
+    caption : 'テキストは AMAZON EC2 を使用します。',
+  },
 ];
 
 /**

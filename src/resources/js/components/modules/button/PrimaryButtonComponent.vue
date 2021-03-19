@@ -63,7 +63,7 @@ export default {
     height: 100%;
     padding: interval(2.5);
     @extend %frame;
-    transform: translateX(-4px) translateY(4px);
+    transform: translateX(- interval(.5)) translateY(interval(.5));
     @include flex(row nowrap, center, center);
   }
 
