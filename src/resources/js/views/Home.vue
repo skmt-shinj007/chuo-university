@@ -11,17 +11,17 @@
     <section class="home__about">
       <div class="about" v-for="(item, n) in aboutContents" :key="n" ref="about">
 
-        <figure class="about__img">
+        <figure class="about__img" v-fade:[dir.left]>
           <img :src="`/image/${item.img.src}.jpg`" :alt="item.img.alt">
         </figure>
 
         <div class="about__box">
-          <div class="about__content fadeUp" v-fade:[dir.up]>
+          <div class="about__content" v-fade:[dir.up]>
             <div class="about__title">
               <contents-title :title="item.title"/>
             </div>
             <div class="about__text">
-              <p class="nl2br" v-text="item.text"></p>
+              <p class="nl2br" v-text="item.text"/>
             </div>
             <div class="about__button">
               <link-button :link="item.button"/>
@@ -33,9 +33,8 @@
     </section>
 
     <div class="home__background">
-      <section class="home__support">
+      <section class="home__support" v-fade:[dir.up]>
         <contents-title :title="messages.SectionTitles.Support" color="white"/>
-
         <div class="support__text">
           <p class="nl2br" v-text="messages.Home.Support"/>
         </div>

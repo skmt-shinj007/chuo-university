@@ -53,7 +53,6 @@ export default {
      * [モーダルを開ける]
      */
     open() {
-      console.log('click');
       this.$emit('modal', this.player);
     },
   },

@@ -19,7 +19,8 @@ export default {
   data() {
     return {
       /**
-       *
+       * メインビジュアルのテキストオブジェクト
+       * @type { Object }
        */
       texts: {},
     }
@@ -27,7 +28,6 @@ export default {
 
   beforeMount() {
     this.texts = {...this.messages.MainVisual.Home}
-    console.log()
   },
 }
 </script>

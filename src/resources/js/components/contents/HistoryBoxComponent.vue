@@ -10,7 +10,7 @@
       <template v-slot:content>
         <div class="record-modal">
           <div class="record-modal__box" v-for="(item, n) in data.Records" :key="n">
-            <h4 class="record-modal__year">{{ data.Age + item.year }}年度</h4>
+            <h4 class="record-modal__year">{{ data.age + item.year }}年度</h4>
             <table-component :tableItems="item.result" :ratio="5"/>
           </div>
         </div>
@@ -19,16 +19,16 @@
   </div>
 
   <div class="history-box__title">
-    <h3 class="history-box__title-main">{{data.Title.Main }}</h3>
-    <span class="history-box__title-sub">{{ data.Title.Sub }}</span>
+    <span class="history-box__title-sub">{{ data.title.sub }}</span>
+    <h3 class="history-box__title-main">{{data.title.main }}</h3>
   </div>
 
-  <div class="history-box__tag-date">
-    <tag color="outline-orange" :content="data.Term"/>
+  <div class="history-box__tag">
+    <tag color="outline-orange" :content="term" size="md"/>
   </div>
 
   <div class="history-box__text-container">
-    <p class="history-box__text nl2br" v-text="data.Text"/>
+    <p class="history-box__text nl2br" v-text="data.text"/>
   </div>
 
 </div>
@@ -40,9 +40,6 @@ import Tag from '../modules/tag/TagComponent';
 import RecordTag from '../modules/tag/RecordTagComponent';
 import Modal from '../modules/modal/ModalComponent.vue';
 import TableComponent from '../modules/table/TableComponent.vue';
-
-// data import
-import Data from '../../config/data.json';
 
 export default {
   components: {
@@ -59,19 +56,29 @@ export default {
        * @type { Boolean }
        */
       showModal: false,
-
-      /**
-       * [モーダルに渡すデータ]
-       * @type { Object }
-       */
-      clickElement: null,
     }
   },
 
   props: {
+    /**
+     * 歴史のブロックデータ
+     */
     data: {
       type: Object,
       default: null
+    }
+  },
+
+  computed: {
+    /**
+     * [タグ]:歴史カードの期間
+     * @return { String }  ex) 昭和7年 - 昭和23年
+     */
+    term() {
+      const data = this.data;
+      let start = String(data.term.start);
+      if (start === '1') start = '元';
+      return `${data.age} ${start}年 - ${data.term.end}年`;
     }
   },
 
@@ -93,7 +100,8 @@ export default {
 
 <style lang="scss" scoped>
 .history-box {
-  border: 2px solid color(darkblue);
+  background-color: color(lightgray);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
   border-radius: radius(hard);
   position: relative;
   padding: pixel(2);
@@ -108,20 +116,43 @@ export default {
     }
   }
 
-  &__tag-date {
+  &__tag {
     margin: interval(1) 0;
 
     @include mq(sm) {
-      width: interval(22);
+      width: 40%;
+    }
+
+    @include mq(md) {
+      width: interval(26)
     }
   }
 
   &__title {
-    text-align: center;
+    @include flex(column nowrap, center, center);
     margin-top: interval(3);
 
     &-main {
+      position: relative;
       font-size: font(18);
+      transform: translateY(- interval(2.5));
+
+      &::after {
+        content: '';
+        display: block;
+        background-color: color(darkblue);
+        width: interval(3);
+        height: 2px;
+        position: absolute;
+        bottom: - interval(.5);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &-sub {
+      font-size: font(26);
+      opacity: .1;
     }
   }
 

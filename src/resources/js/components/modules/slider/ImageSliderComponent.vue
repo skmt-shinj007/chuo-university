@@ -44,7 +44,7 @@ export default {
 
         pagination: {
           el: '.swiper-pagination',
-          clickable: false,
+          clickable: true,
           type: 'bullets',
         }
       }
@@ -64,7 +64,7 @@ export default {
   }
 
   &__image {
-    border-radius: radius(normal);
+    border-radius: radius(soft);
   }
 
   &__bar {
