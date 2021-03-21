@@ -119,7 +119,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 30,
                 'alma_mater' => '和歌山県和歌山北高等学校',
-                'achievement' => 'TODO',
+                'achievement' => '2011 全日本小学生ソフトテニス選手権大会 優勝',
             ],
             [
                 'user_id' => 8,
@@ -209,7 +209,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 2,
                 'alma_mater' => '宮城県東北高等学校',
-                'achievement' => 'TODO',
+                'achievement' => '2018 全日本高校選抜 優勝',
             ],
             [
                 'user_id' => 14,
@@ -224,7 +224,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 7,
                 'alma_mater' => '宮城県東北高等学校',
-                'achievement' => 'TODO',
+                'achievement' => '2018 全日本高校選抜 優勝',
             ],
             [
                 'user_id' => 15,
