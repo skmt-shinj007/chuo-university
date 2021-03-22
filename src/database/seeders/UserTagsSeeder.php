@@ -172,7 +172,7 @@ class UserTagsSeeder extends Seeder
             ],
             [
                 'user_id' => 28,
-                'tag_id' => 15,
+                'tag_id' => 23,
             ],
             [
                 'user_id' => 29,
@@ -188,7 +188,7 @@ class UserTagsSeeder extends Seeder
             ],
             [
                 'user_id' => 30,
-                'tag_id' => 17,
+                'tag_id' => 15,
             ],
             [
                 'user_id' => 31,
@@ -243,16 +243,8 @@ class UserTagsSeeder extends Seeder
                 'tag_id' => 13,
             ],
             [
-                'user_id' => 37,
-                'tag_id' => 21,
-            ],
-            [
                 'user_id' => 38,
                 'tag_id' => 13,
-            ],
-            [
-                'user_id' => 38,
-                'tag_id' => 21,
             ],
             [
                 'user_id' => 39,
@@ -268,7 +260,7 @@ class UserTagsSeeder extends Seeder
             ],
             [
                 'user_id' => 40,
-                'tag_id' => 21,
+                'tag_id' => 22,
             ],
             [
                 'user_id' => 41,
@@ -311,6 +303,14 @@ class UserTagsSeeder extends Seeder
                 'tag_id' => 21,
             ],
             [
+                'user_id' => 45,
+                'tag_id' => 7,77
+            ],
+            [
+                'user_id' => 45,
+                'tag_id' => 10,
+            ],
+            [
                 'user_id' => 46,
                 'tag_id' => 13,
             ],
@@ -337,10 +337,6 @@ class UserTagsSeeder extends Seeder
             [
                 'user_id' => 49,
                 'tag_id' => 13,
-            ],
-            [
-                'user_id' => 49,
-                'tag_id' => 22,
             ],
             [
                 'user_id' => 50,
@@ -351,12 +347,72 @@ class UserTagsSeeder extends Seeder
                 'tag_id' => 8,
             ],
             [
+                'user_id' => 50,
+                'tag_id' => 21,
+            ],
+            [
                 'user_id' => 51,
                 'tag_id' => 13,
             ],
             [
                 'user_id' => 52,
                 'tag_id' => 13,
+            ],
+            [
+                'user_id' => 53,
+                'tag_id' => 13,
+            ],
+            [
+                'user_id' => 53,
+                'tag_id' => 21,
+            ],
+            [
+                'user_id' => 54,
+                'tag_id' => 13,
+            ],
+            [
+                'user_id' => 54,
+                'tag_id' => 21,
+            ],
+            [
+                'user_id' => 55,
+                'tag_id' => 13,
+            ],
+            [
+                'user_id' => 55,
+                'tag_id' => 21,
+            ],
+            [
+                'user_id' => 56,
+                'tag_id' => 13,
+            ],
+            [
+                'user_id' => 56,
+                'tag_id' => 21,
+            ],
+            [
+                'user_id' => 57,
+                'tag_id' => 13,
+            ],
+            [
+                'user_id' => 57,
+                'tag_id' => 21,
+            ],
+            [
+                'user_id' => 58,
+                'tag_id' => 13,
+            ],
+            [
+                'user_id' => 58,
+                'tag_id' => 21,
+            ],
+            [
+                'user_id' => 59,
+                'tag_id' => 13,
+            ],
+            [
+                'user_id' => 59,
+                'tag_id' => 21,
             ],
         ]);
     }
