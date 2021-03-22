@@ -304,7 +304,7 @@ class UserTagsSeeder extends Seeder
             ],
             [
                 'user_id' => 45,
-                'tag_id' => 7,77
+                'tag_id' => 7,
             ],
             [
                 'user_id' => 45,
