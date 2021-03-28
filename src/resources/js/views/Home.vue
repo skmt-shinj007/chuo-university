@@ -165,10 +165,10 @@ export default {
       z-index: -1;
       width: 100%;
       height: 100%;
-      @include background-image("/image/player09.jpg");
+      @include background-image("/image/support_sp.jpg");
 
       @include mq(sm) {
-        @include background-image("/image/player11.jpg", center center);
+        @include background-image("/image/support_pc.jpg", center center);
       }
     }
 
