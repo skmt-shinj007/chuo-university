@@ -226,7 +226,7 @@ const mainVisualApiResponse = [
  */
 const courtImageApiResponse = [
   {
-    src     : 'court01.jpg',
+    src     : 'court05.jpg',
     alt     : '中央大学多摩キャンパスソフトテニスコート',
     caption : '多摩校舎ソフトテニスコート（第二体育館）',
   },
@@ -236,7 +236,7 @@ const courtImageApiResponse = [
     caption : 'ソフトテニスコート（1,2,3）',
   },
   {
-    src     : 'court02.jpg',
+    src     : 'court04.jpg',
     alt     : '中央大学多摩キャンパスソフトテニスコート',
     caption : 'ソフトテニスコート（4,5,6）',
   }
