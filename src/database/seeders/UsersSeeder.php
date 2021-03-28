@@ -254,6 +254,30 @@ class UsersSeeder extends Seeder
                 'user_id' => 59,
                 'created_at' => $current_date,
             ],
+            [
+                'user_id' => 60,
+                'created_at' => $current_date,
+            ],
+            [
+                'user_id' => 61,
+                'created_at' => $current_date,
+            ],
+            [
+                'user_id' => 62,
+                'created_at' => $current_date,
+            ],
+            [
+                'user_id' => 63,
+                'created_at' => $current_date,
+            ],
+            [
+                'user_id' => 64,
+                'created_at' => $current_date,
+            ],
+            [
+                'user_id' => 65,
+                'created_at' => $current_date,
+            ],
         ]);
     }
 }
