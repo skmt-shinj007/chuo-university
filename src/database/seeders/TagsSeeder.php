@@ -125,6 +125,11 @@ class TagsSeeder extends Seeder
                 'name_ja' => '監事',
                 'name_en' => 'auditor'
             ],
+            [
+                'tag_id' => 23,
+                'name_ja' => '相談役',
+                'name_en' => 'counsellor'
+            ],
         ]);
     }
 }

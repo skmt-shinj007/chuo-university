@@ -149,7 +149,7 @@ export default {
 }
 
 .background-prlx {
-  @include background-image('/image/training01_wide.jpg', center top);
+  @include background-image('/image/hakumon03.jpg', center top);
   width: 100%;
   height: interval(30);
 }

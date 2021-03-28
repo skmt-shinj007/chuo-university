@@ -13,7 +13,7 @@
     {
       "title": "Hakumonkai",
       "img": {
-        "src": "hakumon",
+        "src": "hakumon01",
         "alt": "中央大学多摩キャンパス白門"
       },
       "button": "Hakumonkai",
@@ -31,7 +31,7 @@
     {
       "title": "Activity",
       "img": {
-        "src": "court03",
+        "src": "activity",
         "alt": "中央大学ソフトテニスコート"
       },
       "button": "Activity",
@@ -2244,7 +2244,7 @@
         "en": "Miyazaki Yuto"
       },
       "img": {
-        "src": "player01.jpg",
+        "src": "asahi_emu.jpg",
         "alt": "オルト！！"
       },
       "from": {
@@ -2274,7 +2274,7 @@
         "en": "Tanabe Masato"
       },
       "img": {
-        "src": "player33.jpg",
+        "src": "hayashi_tamio.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2304,7 +2304,7 @@
         "en": "Saito Riki"
       },
       "img": {
-        "src": "player34.jpg",
+        "src": "okabe_takaya.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2334,7 +2334,7 @@
         "en": "Satou Tatsuya"
       },
       "img": {
-        "src": "player35.jpg",
+        "src": "hamada_jin.jpg",
         "alt": "丸中の写真"
       },
       "from": {
@@ -2390,7 +2390,7 @@
         "en": "Hashimoto Masato"
       },
       "img": {
-        "src": "player10.jpg",
+        "src": "hashimoto_masato.jpg",
         "alt": "丸中の写真"
       },
       "from": {
