@@ -23,17 +23,27 @@
 
   <section class="footer__address">
     <address>
-      <h3 class="address__title">
-        <router-link to="/">{{ messages.Information.ClubName }}</router-link>
-      </h3>
+      <div class="address__wrap">
+        <svg-vue icon="groups" class="address__icon"/>
+        <h3 class="address__title"><router-link to="/">{{ messages.Information.ClubName }}</router-link></h3>
+      </div>
 
-      <span class="address__item">{{ messages.Information.Address }}</span>
+      <div class="address__wrap">
+        <svg-vue icon="place" class="address__icon"/>
+        <span>{{ messages.Information.Address }}</span>
+      </div>
 
-      <a class="address__telephone" :href="`tel:+${telephoneNum}`">
-        {{ messages.Information.TelephoneNumber }}
-      </a>
+      <div class="address__wrap">
+        <svg-vue icon="phone" class="address__icon"/>
+        <a class="address__telephone" :href="`tel:+${telephoneNum}`">
+          {{ messages.Information.TelephoneNumber }}
+        </a>
+      </div>
 
-      <span class="address__item">{{ messages.Information.MailAddress }}</span>
+      <div class="address__wrap">
+        <svg-vue icon="mail_outline" class="address__icon"/>
+        <span>{{ messages.Information.MailAddress }}</span>
+      </div>
     </address>
   </section>
 
@@ -163,19 +173,35 @@ export default {
 }
 
 .address {
+  &__wrap {
+    @include flex(row nowrap, flex-start, center);
+    margin-bottom: interval(.5);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & > span {
+      line-height: 1.8;
+      letter-spacing: 1.1px;
+    }
+  }
+
+  &__icon {
+    width: interval(2);
+    height: interval(2);
+    fill: color(darkblue);
+    margin-right: interval(1);
+  }
+
   &__title {
     line-height: 2;
   }
 
-  &__item {
-    display: block;
+  &__telephone {
     font-weight: bold;
     line-height: 1.8;
     letter-spacing: 1.2px;
-  }
-
-  &__telephone {
-    @extend .address__item;
     text-decoration: underline;
 
     @include mq(sm) {
