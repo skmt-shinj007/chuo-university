@@ -42,8 +42,9 @@
 
       <div class="address__wrap">
         <svg-vue icon="mail_outline" class="address__icon"/>
-        <span ref="mailAddress" @click="copy">{{ messages.Information.MailAddress }}</span>
+        <span class="address__mail" ref="mailAddress" @click="copy">{{ messages.Information.MailAddress }}</span>
 
+        <!-- クリップボードにコピーした際に表示するメッセージ -->
         <transition name="copyComplate">
           <div class="address__copied" v-if="copied">
             <div class="address__message"/>
@@ -143,7 +144,7 @@ export default {
      * クリップボードにコピー
      * @param
      */
-    copy(el) {
+    copy() {
       const target = this.$refs.mailAddress.textContent;
 
       navigator.clipboard.writeText(target)
@@ -240,6 +241,11 @@ export default {
       pointer-events: none;
       text-decoration: none;
     }
+  }
+
+  &__mail {
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   &__copied {
