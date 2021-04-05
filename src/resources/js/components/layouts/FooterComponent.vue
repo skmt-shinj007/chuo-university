@@ -42,7 +42,13 @@
 
       <div class="address__wrap">
         <svg-vue icon="mail_outline" class="address__icon"/>
-        <span>{{ messages.Information.MailAddress }}</span>
+        <span ref="mailAddress" @click="copy">{{ messages.Information.MailAddress }}</span>
+
+        <transition name="copyComplate">
+          <div class="address__copied" v-if="copied">
+            <div class="address__message"/>
+          </div>
+        </transition>
       </div>
     </address>
   </section>
@@ -62,12 +68,14 @@ import ContentsTitle from '../modules/ContentsTitleComponent.vue';
 // data import
 import Data from '../../config/data.json';
 import Config from '../../config/config.json';
+import Modal from '../modules/modal/ModalComponent.vue';
 
 export default {
   components: {
     ContentsTitle,
     LinkButton,
     AccordionLink,
+    Modal,
   },
 
   data() {
@@ -86,6 +94,11 @@ export default {
        * @type {Number}
        */
       telephoneNum: '',
+
+      /**
+       * コピーのクリックフラグ
+       */
+      copied: false,
     }
   },
 
@@ -123,6 +136,24 @@ export default {
     convertArray(obj) {
       return Object.keys(obj).map(function (key) {
         return obj[key];
+      })
+    },
+
+    /**
+     * クリップボードにコピー
+     * @param
+     */
+    copy(el) {
+      const target = this.$refs.mailAddress.textContent;
+
+      navigator.clipboard.writeText(target)
+      .then(() => {
+        this.copied = true;
+      })
+      .finally(() => {
+        setTimeout(() => {
+          this.copied = false;
+        }, 1000);
       })
     },
   },
@@ -176,6 +207,7 @@ export default {
   &__wrap {
     @include flex(row nowrap, flex-start, center);
     margin-bottom: interval(.5);
+    position: relative;
 
     &:last-child {
       margin-bottom: 0;
@@ -208,6 +240,29 @@ export default {
       pointer-events: none;
       text-decoration: none;
     }
+  }
+
+  &__copied {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__message {
+    @include ball(interval(20), 'メールアドレスを\A コピーしました!', 10);
+  }
+}
+
+.copyComplate {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity .5s;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
   }
 }
 </style>
