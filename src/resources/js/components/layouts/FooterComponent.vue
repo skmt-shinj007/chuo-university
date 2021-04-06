@@ -42,14 +42,15 @@
 
       <div class="address__wrap">
         <svg-vue icon="mail_outline" class="address__icon"/>
-        <span class="address__mail" ref="mailAddress" @click="copy">{{ messages.Information.MailAddress }}</span>
+        <span class="address__mail" ref="mailAddress">
+          {{ messages.Information.MailAddress }}
 
-        <!-- クリップボードにコピーした際に表示するメッセージ -->
-        <transition name="copyComplate">
-          <div class="address__copied" v-if="copied">
-            <div class="address__message"/>
-          </div>
-        </transition>
+          <transition name="copyComplate">
+            <div class="address__copy" v-if="copied">
+              <span class="address__copy-message">{{ messages.ui.copied }}</span>
+            </div>
+          </transition>
+        </span>
       </div>
     </address>
   </section>
@@ -99,7 +100,7 @@ export default {
       /**
        * コピーのクリックフラグ
        */
-      copied: false,
+      copied: true,
     }
   },
 
@@ -137,24 +138,6 @@ export default {
     convertArray(obj) {
       return Object.keys(obj).map(function (key) {
         return obj[key];
-      })
-    },
-
-    /**
-     * クリップボードにコピー
-     * @param
-     */
-    copy() {
-      const target = this.$refs.mailAddress.textContent;
-
-      navigator.clipboard.writeText(target)
-      .then(() => {
-        this.copied = true;
-      })
-      .finally(() => {
-        setTimeout(() => {
-          this.copied = false;
-        }, 1000);
       })
     },
   },
@@ -200,7 +183,7 @@ export default {
   &__copyright {
     font-size: font(10);
     text-align: center;
-    margin: interval(3) auto 0 auto;
+    margin: interval(5) auto 0 auto;
   }
 }
 
@@ -244,22 +227,43 @@ export default {
   }
 
   &__mail {
+    position: relative;
     text-decoration: underline;
     cursor: pointer;
   }
 
-  &__copied {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  $size: interval(8);
+  &__copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(70%, -100%);
 
-  &__message {
-    @include ball(interval(20), 'メールアドレスを\A コピーしました!', 10);
+    &-message {
+      position: relative;
+      display: inline-block;
+      width: $size;
+      height: $size;
+      line-height: $size;
+      text-align: center;
+      color: color(white);
+      background: color(darkblue);
+      border-radius: radius(circle);
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: - interval(1.5);
+        left: - interval(1.5);
+        border: interval(2) solid transparent;
+        border-left: interval(2) solid color(darkblue);
+        transform: rotate(135deg);
+      }
+    }
   }
 }
 
+// transition
 .copyComplate {
   &-enter-active,
   &-leave-active {
