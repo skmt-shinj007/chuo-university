@@ -42,12 +42,16 @@
 
       <div class="address__wrap">
         <svg-vue icon="mail_outline" class="address__icon"/>
-        <span class="address__mail" ref="mailAddress">
-          {{ messages.Information.MailAddress }}
+        <span class="address__mail"
+          v-clipboard:copy="mail.address"
+          v-clipboard:success="successful"
+          v-clipboard:error="err">
+
+          {{ mail.address }}
 
           <transition name="copyComplate">
-            <div class="address__copy" v-if="copied">
-              <span class="address__copy-message">{{ messages.ui.copied }}</span>
+            <div class="address__copy" v-if="mail.complate">
+              <span class="address__copy-message">{{ mail.message }}</span>
             </div>
           </transition>
         </span>
@@ -62,22 +66,20 @@
 </template>
 
 <script>
+// config / data
+import Data from '../../config/data.json';
+import Config from '../../config/config.json';
+
 // component import
 import AccordionLink from '../modules/accordion/AccordionLinkComponent.vue';
 import LinkButton from '../modules/button/LinkButtonComponent';
 import ContentsTitle from '../modules/ContentsTitleComponent.vue';
-
-// data import
-import Data from '../../config/data.json';
-import Config from '../../config/config.json';
-import Modal from '../modules/modal/ModalComponent.vue';
 
 export default {
   components: {
     ContentsTitle,
     LinkButton,
     AccordionLink,
-    Modal,
   },
 
   data() {
@@ -98,13 +100,19 @@ export default {
       telephoneNum: '',
 
       /**
-       * コピーのクリックフラグ
+       * メールアドレス関連データ
        */
-      copied: true,
+      mail: {
+        address: '',
+        message: '',
+        complate: false,
+      },
     }
   },
 
   beforeMount() {
+    this.mail.address = this.messages.Information.MailAddress;
+
     const config = this.$data.config;
     const messages = this.$data.messages;
 
@@ -140,6 +148,25 @@ export default {
         return obj[key];
       })
     },
+
+    /**
+     * クリップボードにコピー
+     * ライブラリ > vue-clipboard2
+     */
+    successful() {
+      this.mail.complate = true;
+
+      setTimeout(() => {
+        this.mail.complate = false;
+      }, 1500);
+
+      this.mail.message = 'Copied'
+    },
+
+    err() {
+      this.mail.message = 'Error'
+    }
+
   },
 }
 </script>

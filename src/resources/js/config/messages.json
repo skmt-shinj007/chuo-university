@@ -4,10 +4,6 @@
   "Copyright": "@ Chuo University Soft Tennis Team",
   "LeadContact": "中央大学ソフトテニス部へのお問い合わせは、こちらから承ります。\nお問い合わせ内容を確認次第、担当者からご連絡させていただきますのでお気軽にご連絡ください。",
 
-  "ui": {
-    "copied": "Copied"
-  },
-
   "Error": {
     "NotFound": {
       "Num": [
