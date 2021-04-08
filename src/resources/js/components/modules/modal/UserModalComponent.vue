@@ -125,10 +125,6 @@ export default {
         key: "成績",
         value: this.item.record
       },
-      {
-        key: "メッセージ",
-        value: this.item.message
-      },
     ];
     lists.forEach(element => this.lists.push(element));
   },

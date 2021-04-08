@@ -2230,11 +2230,7 @@
       "position": "前衛",
       "grade": 4,
       "undergraduate": "経済学部",
-      "record": "戦績が入ります。",
-      "active": {
-
-      },
-      "message": "メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。"
+      "record": "戦績が入ります。"
     },
 
     {
@@ -2263,8 +2259,7 @@
       "position": "後衛",
       "grade": 4,
       "undergraduate": "経済学部",
-      "record": "2016年ハイスクールジャパンカップ ダブルス準優勝",
-      "message": "メッセージが入ります。"
+      "record": "2016年ハイスクールジャパンカップ ダブルス準優勝"
     },
 
     {
@@ -2293,8 +2288,7 @@
       "position": "前衛",
       "grade": 4,
       "undergraduate": "法学部",
-      "record": "2016年国民体育大会 少年の部 優勝",
-      "message": "メッセージが入ります。"
+      "record": "2016年国民体育大会 少年の部 優勝"
     },
 
     {
@@ -2323,8 +2317,7 @@
       "position": "後衛",
       "grade": 4,
       "undergraduate": "理工学部",
-      "record": "2016年ハイスクールジャパンカップ ベスト8",
-      "message": "メッセージが入ります。"
+      "record": "2016年ハイスクールジャパンカップ ベスト8"
     },
 
     {
@@ -2349,8 +2342,7 @@
       "position": "後衛",
       "grade": 3,
       "undergraduate": "経済学部",
-      "record": "2016年ハイスクールジャパンカップ ベスト4",
-      "message": "メッセージが入ります。"
+      "record": "2016年ハイスクールジャパンカップ ベスト4"
     },
 
     {
@@ -2379,8 +2371,7 @@
       "position": "後衛",
       "grade": 3,
       "undergraduate": "文学部",
-      "record": "2017年ハイスクールジャパンカップ ベスト4",
-      "message": "メッセージが入ります。"
+      "record": "2017年ハイスクールジャパンカップ ベスト4"
     },
 
     {
@@ -2409,8 +2400,7 @@
       "position": "前衛",
       "grade": 3,
       "undergraduate": "理工学部",
-      "record": "2016年ハイスクールジャパンカップ ベスト8",
-      "message": "メッセージが入ります。"
+      "record": "2016年ハイスクールジャパンカップ ベスト8"
     },
 
     {
@@ -2439,8 +2429,7 @@
       "position": null,
       "grade": null,
       "undergraduate": null,
-      "record": "女子日本代表監督 兼 ナガセケンコー監督",
-      "message": "メッセージが入ります。"
+      "record": "女子日本代表監督 兼 ナガセケンコー監督"
     },
 
     {
@@ -2469,8 +2458,7 @@
       "position": null,
       "grade": null,
       "undergraduate": "法学部教授",
-      "record": null,
-      "message": "メッセージが入ります。"
+      "record": null
     },
 
     {
@@ -2499,8 +2487,7 @@
       "position": "後衛",
       "grade": null,
       "undergraduate": null,
-      "record": "第16回世界選手権国別対抗戦 優勝",
-      "message": "メッセージが入ります。"
+      "record": "第16回世界選手権国別対抗戦 優勝"
     },
 
     {
@@ -2529,8 +2516,7 @@
       "position": "前衛",
       "grade": null,
       "undergraduate": null,
-      "record": "第16回世界選手権国別対抗戦 優勝",
-      "message": "メッセージが入ります。"
+      "record": "第16回世界選手権国別対抗戦 優勝"
     },
 
     {
@@ -2559,8 +2545,7 @@
       "position": "日本代表監督",
       "grade": null,
       "undergraduate": null,
-      "record": "第16回世界選手権国別対抗戦 優勝",
-      "message": "メッセージが入ります。"
+      "record": "第16回世界選手権国別対抗戦 優勝"
     },
 
     {
@@ -2590,8 +2575,7 @@
       "grade": null,
       "undergraduate": null,
       "schoolPost": "学員会体育顧問",
-      "record": null,
-      "message": null
+      "record": null
     },
 
     {
@@ -2621,8 +2605,7 @@
       "grade": null,
       "undergraduate": null,
       "schoolPost": "学員会体育顧問",
-      "record": null,
-      "message": null
+      "record": null
     },
 
     {
@@ -2652,8 +2635,7 @@
       "grade": null,
       "undergraduate": null,
       "schoolPost": "学員会体育顧問",
-      "record": null,
-      "message": null
+      "record": null
     }
   ],
 
