@@ -142,7 +142,7 @@ export default {
   }
 
   &__tennis-ball {
-    @include ball(interval(12), 'SORRY,\ANOT FOUND', 8);
+    @include ball(interval(12), 'SORRY\ANOT FOUND', 8);
     transform: translateX(-50rem) rotate(0deg);
     animation: rotation 5s ease-out forwards;
     margin-right: interval(3);

@@ -166,6 +166,11 @@ export default {
   &__text {
     font-weight: bold;
     text-align: center;
+
+    @include mq(sm) {
+      max-width: interval(80);
+      margin: 0 auto;
+    }
   }
 }
 
