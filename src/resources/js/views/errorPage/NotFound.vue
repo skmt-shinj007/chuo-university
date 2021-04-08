@@ -67,7 +67,6 @@ export default {
 <style lang="scss" scoped>
 .err {
   @include flex(column nowrap, center, center);
-  // background-color: color(lightgray);
 
   @include mq(md) {
     width: 100%;
