@@ -67,7 +67,6 @@ export default {
 <style lang="scss" scoped>
 .err {
   @include flex(column nowrap, center, center);
-  background-color: color(lightgray);
 
   @include mq(md) {
     width: 100%;
@@ -146,6 +145,10 @@ export default {
     transform: translateX(-50rem) rotate(0deg);
     animation: rotation 5s ease-out forwards;
     margin-right: interval(3);
+
+    @include mq(md) {
+      margin: 0;
+    }
   }
 
   &__guide {
