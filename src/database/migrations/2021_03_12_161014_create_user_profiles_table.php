@@ -27,7 +27,7 @@ class CreateUserProfilesTable extends Migration
             $table->unsignedSmallInteger('prefecture_id')->nullable()->comment('都道府県ID');
             $table->text('alma_mater')->nullable()->comment('出身校');
             $table->text('achievement')->nullable()->comment('功績');
-
+            
             // 外部キー
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });

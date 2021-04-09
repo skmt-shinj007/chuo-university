@@ -22,7 +22,9 @@ class User extends Authenticatable
 
     protected $primaryKey = 'user_id';
 
-    public function profile() {
+    public function profile() 
+    {
         return $this->hasOne(UserProfile::class, 'user_id', 'user_id');
     }
+
 }
