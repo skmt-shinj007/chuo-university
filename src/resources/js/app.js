@@ -22,6 +22,13 @@ import VuePrlx from 'vue-prlx';
 Vue.use(VuePrlx);
 
 /**
+ * vue-clipboard2
+ */
+import Clipboard from 'vue-clipboard2';
+Clipboard.config.autoSetContainer = true  // 現在の要素にvue-clipboardコンテナを自動設定
+Vue.use(Clipboard);
+
+/**
  * global methods (全コンポーネントで使うオプション)
  */
 import global from './config/global';

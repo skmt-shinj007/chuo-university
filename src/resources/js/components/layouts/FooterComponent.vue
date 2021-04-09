@@ -23,17 +23,39 @@
 
   <section class="footer__address">
     <address>
-      <h3 class="address__title">
-        <router-link to="/">{{ messages.Information.ClubName }}</router-link>
-      </h3>
+      <div class="address__wrap">
+        <svg-vue icon="groups" class="address__icon"/>
+        <h3 class="address__title"><router-link to="/">{{ messages.Information.ClubName }}</router-link></h3>
+      </div>
 
-      <span class="address__item">{{ messages.Information.Address }}</span>
+      <div class="address__wrap">
+        <svg-vue icon="place" class="address__icon"/>
+        <span>{{ messages.Information.Address }}</span>
+      </div>
 
-      <a class="address__telephone" :href="`tel:+${telephoneNum}`">
-        {{ messages.Information.TelephoneNumber }}
-      </a>
+      <div class="address__wrap">
+        <svg-vue icon="phone" class="address__icon"/>
+        <a class="address__telephone" :href="`tel:+${telephoneNum}`">
+          {{ messages.Information.TelephoneNumber }}
+        </a>
+      </div>
 
-      <span class="address__item">{{ messages.Information.MailAddress }}</span>
+      <div class="address__wrap">
+        <svg-vue icon="mail_outline" class="address__icon"/>
+        <span class="address__mail"
+          v-clipboard:copy="mail.address"
+          v-clipboard:success="successful"
+          v-clipboard:error="err">
+
+          {{ mail.address }}
+
+          <transition name="copyComplate">
+            <div class="address__copy" v-if="mail.complate">
+              <span class="address__copy-message">{{ mail.message }}</span>
+            </div>
+          </transition>
+        </span>
+      </div>
     </address>
   </section>
 
@@ -44,14 +66,14 @@
 </template>
 
 <script>
+// config / data
+import Data from '../../config/data.json';
+import Config from '../../config/config.json';
+
 // component import
 import AccordionLink from '../modules/accordion/AccordionLinkComponent.vue';
 import LinkButton from '../modules/button/LinkButtonComponent';
 import ContentsTitle from '../modules/ContentsTitleComponent.vue';
-
-// data import
-import Data from '../../config/data.json';
-import Config from '../../config/config.json';
 
 export default {
   components: {
@@ -76,10 +98,21 @@ export default {
        * @type {Number}
        */
       telephoneNum: '',
+
+      /**
+       * メールアドレス関連データ
+       */
+      mail: {
+        address: '',
+        message: '',
+        complate: false,
+      },
     }
   },
 
   beforeMount() {
+    this.mail.address = this.messages.Information.MailAddress;
+
     const config = this.$data.config;
     const messages = this.$data.messages;
 
@@ -115,6 +148,25 @@ export default {
         return obj[key];
       })
     },
+
+    /**
+     * クリップボードにコピー
+     * ライブラリ > vue-clipboard2
+     */
+    successful() {
+      this.mail.complate = true;
+
+      setTimeout(() => {
+        this.mail.complate = false;
+      }, 1500);
+
+      this.mail.message = 'Copied'
+    },
+
+    err() {
+      this.mail.message = 'Error'
+    }
+
   },
 }
 </script>
@@ -158,30 +210,96 @@ export default {
   &__copyright {
     font-size: font(10);
     text-align: center;
-    margin: interval(3) auto 0 auto;
+    margin: interval(5) auto 0 auto;
   }
 }
 
 .address {
+  &__wrap {
+    @include flex(row nowrap, flex-start, center);
+    margin-bottom: interval(.5);
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & > span {
+      line-height: 1.8;
+      letter-spacing: 1.1px;
+    }
+  }
+
+  &__icon {
+    width: interval(2);
+    height: interval(2);
+    fill: color(darkblue);
+    margin-right: interval(1);
+  }
+
   &__title {
     line-height: 2;
   }
 
-  &__item {
-    display: block;
+  &__telephone {
     font-weight: bold;
     line-height: 1.8;
     letter-spacing: 1.2px;
-  }
-
-  &__telephone {
-    @extend .address__item;
     text-decoration: underline;
 
     @include mq(sm) {
       pointer-events: none;
       text-decoration: none;
     }
+  }
+
+  &__mail {
+    position: relative;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  $size: interval(8);
+  &__copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(70%, -100%);
+
+    &-message {
+      position: relative;
+      display: inline-block;
+      width: $size;
+      height: $size;
+      line-height: $size;
+      text-align: center;
+      color: color(white);
+      background: color(darkblue);
+      border-radius: radius(circle);
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: - interval(1.5);
+        left: - interval(1.5);
+        border: interval(2) solid transparent;
+        border-left: interval(2) solid color(darkblue);
+        transform: rotate(135deg);
+      }
+    }
+  }
+}
+
+// transition
+.copyComplate {
+  &-enter-active,
+  &-leave-active {
+    transition: opacity .5s;
+  }
+
+  &-enter,
+  &-leave-to {
+    opacity: 0;
   }
 }
 </style>

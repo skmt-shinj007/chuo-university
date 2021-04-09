@@ -45,13 +45,12 @@ export default {
   width: 100%;
   height: 100%;
   padding: interval(1);
-  background-color: color(orange);
+  background-color: rgba($color: color(orange), $alpha: .7);
   border-radius: radius(circle);
   @include flex(row nowrap, center, center);
   cursor: pointer;
 
   @include mq(md) {
-    background-color: rgba($color: color(orange), $alpha: .7);
     transition: background-color .3s ease-out, animation .5s;
   }
 
