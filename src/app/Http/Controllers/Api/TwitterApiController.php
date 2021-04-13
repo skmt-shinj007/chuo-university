@@ -11,6 +11,7 @@ class TwitterApiController extends Controller
 {
   /**
    * Twitter Apiに接続
+   * バージョン：1.1
    */
   private function connection()
   {
@@ -60,7 +61,6 @@ class TwitterApiController extends Controller
 
     // 現在日時取得のため、CarbonControllerからメソッドを呼ぶ
     $response[0]->current_date = (new CarbonController)->getCurrentDate();
-    dump($response[0]->current_date);
 
     // データをjson形式に変換
     $response = json_encode($response);
@@ -73,12 +73,30 @@ class TwitterApiController extends Controller
 
   /**
    * アカウント情報
-   *
+   * @return Object アカウント情報
    */
   public function account()
   {
     $request = $this->connection()->get('account/verify_credentials');
     $user = json_encode($request);
     return $user;
+  }
+
+  /**
+   * プロバイダーのユーザー情報取得
+   * @return Array ユーザー情報
+   */
+  public function getProvider()
+  {
+    $providers = config('constants.providers.twitter_user_id');
+    $provider_ids = array_values($providers);
+
+    $params = [
+      'user_id' => $provider_ids
+    ];
+    $response = $this->connection()->get('users/lookup', $params);
+    json_encode($response);
+
+    return $response;
   }
 }
