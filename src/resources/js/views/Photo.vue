@@ -18,12 +18,13 @@
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
         class="enpty"
-        v-for="n in ticketNumber"
+        v-for="n in ticket.number"
         :key="`enpty-${n}`"
-        :style="{ width: `${ticketWidth}px` }"/>
+        :style="{ width: `${ticket.width}px` }"/>
     </div>
 
-    <user-modal v-if="showModal" @close="closeModal" :item="clickElement">
+    <!-- モーダル -->
+    <user-modal v-if="modal.show" @close="closeModal" :item="modal.element">
       <template v-slot:content>
         <div class="provider">
           <!-- TODO:ここに出すコンテンツを考える。 -->
@@ -87,27 +88,24 @@ export default {
       providers: [],
 
       /**
-       * [チケットの要素数]
+       * [チケット]
+       * width, 個数
        * @type { Number }
        */
-      ticketNumber: 0,
+      ticket: {
+        width: 0,
+        number: 0,
+      },
 
       /**
-       * [チケットのwidth]
-       * @type { Number }
+       * modalデータ
+       * show: @type { Boolean }
+       * element: @type { Object }
        */
-      wicketWidth: 0,
-
-      /**
-       * [モーダル展開フラグ]
-       */
-      showModal: false,
-
-      /**
-       * [モーダルに渡すデータ]
-       */
-      clickElement: null,
-
+      modal: {
+        show: false,
+        element: null
+      }
     }
   },
 
@@ -124,7 +122,7 @@ export default {
     const ticket = this.$refs.providerTicket;
 
     // チケットの要素数を取得 (チケットが一枚の時はenpty要素を増やさない)
-    if(ticket.length > 1) this.ticketNumber = ticket.length;
+    if(ticket.length > 1) this.ticket.number = ticket.length;
 
     // 初期描画時のチケットwidthを取得
     this.getTicketWidth();
@@ -136,19 +134,19 @@ export default {
      * リサイズイベントに登録するため、メソッドにする。
      */
     getTicketWidth() {
-      this.ticketWidth = this.$refs.providerTicket[0].offsetWidth;
+      this.ticket.width = this.$refs.providerTicket[0].offsetWidth;
     },
 
     /**
      * [モーダル開閉処理]
      */
     openModal(el) {
-      this.showModal = true;
-      this.clickElement = el;
+      this.modal.show = true;
+      this.modal.element = el;
       document.body.classList.add("modal-open");
     },
     closeModal() {
-      this.showModal = false;
+      this.modal.show = false;
       document.body.classList.remove("modal-open");
     },
   },
