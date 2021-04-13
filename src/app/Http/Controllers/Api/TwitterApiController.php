@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CarbonController;
 use Illuminate\Http\Request;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -58,14 +59,14 @@ class TwitterApiController extends Controller
     $response[0]->created_date = $created_date;
 
     // 現在日時取得のため、CarbonControllerからメソッドを呼ぶ
-    $carbon_controller = app()->make('App\Http\Controllers\CarbonController');
-    $response[0]->current_date = $carbon_controller->getCurrentDate();
+    $response[0]->current_date = (new CarbonController)->getCurrentDate();
+    dump($response[0]->current_date);
 
     // データをjson形式に変換
     $response = json_encode($response);
 
     /**
-     * URL直打ちしたら情報出てきてしまうので対策する。（http://localhost:8080/api/twitter）
+     * TODO:URL直打ちしたら情報出てきてしまうので対策する。（http://localhost:8080/api/twitter）
      */
     return $response;
   }
