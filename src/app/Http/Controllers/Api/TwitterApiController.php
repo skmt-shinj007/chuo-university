@@ -75,10 +75,10 @@ class TwitterApiController extends Controller
    * アカウント情報
    * @return Object アカウント情報
    */
-  public function account()
+  public function getAccount()
   {
-    $request = $this->connection()->get('account/verify_credentials');
-    $user = json_encode($request);
+    $response = $this->connection()->get('account/verify_credentials');
+    $user = json_encode($response);
     return $user;
   }
 

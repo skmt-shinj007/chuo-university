@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/twitter/timeline', 'App\Http\Controllers\Api\TwitterApiController@getTimeline');
-Route::get('/twitter/account', 'App\Http\Controllers\Api\TwitterApiController@account');
+Route::get('/twitter/account', 'App\Http\Controllers\Api\TwitterApiController@getAccount');
 Route::get('/twitter/provider', 'App\Http\Controllers\Api\TwitterApiController@getProvider');
