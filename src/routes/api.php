@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\TwitterApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/twitter/timeline', 'App\Http\Controllers\Api\TwitterApiController@getTimeline');
-Route::get('/twitter/account', 'App\Http\Controllers\Api\TwitterApiController@getAccount');
-Route::get('/twitter/provider', 'App\Http\Controllers\Api\TwitterApiController@getProvider');
+Route::group(['prefix' => 'twitter'], function () {
+    Route::get('/timeline', [TwitterApiController::class, 'getTimeline']);
+    Route::get('/account', [TwitterApiController::class, 'getAccount']);
+    Route::get('/provider', [TwitterApiController::class, 'getProvider']);
+});
