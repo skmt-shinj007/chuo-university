@@ -20,15 +20,15 @@
         class="enpty"
         v-for="n in ticket.number"
         :key="`enpty-${n}`"
-        :style="{ width: `${ticket.width}px` }"/>
+        :style="{ width: `${ticket.width}px` }"
+      />
     </div>
 
     <!-- モーダル -->
     <user-modal v-if="modal.show" @close="closeModal" :item="modal.element">
       <template v-slot:content>
         <div class="provider">
-          <!-- TODO:ここに出すコンテンツを考える。 -->
-          ここに出すコンテンツを考える。
+          {{ provider.response }}
         </div>
       </template>
     </user-modal>
@@ -44,6 +44,7 @@
 // config json import
 import Data from '../config/data.json';
 import Config from '../config/config.json';
+import Twitter from '../config/api/twitter/index';
 
 // mixin
 import Animation from '../config/animation';
@@ -105,6 +106,16 @@ export default {
       modal: {
         show: false,
         element: null
+      },
+
+      /**
+       * providerの情報
+       * response : @type { Object }
+       * err      : @type { Boolean }
+       */
+      provider: {
+        response: null,
+        err: false,
       }
     }
   },
@@ -115,22 +126,20 @@ export default {
   },
 
   mounted() {
+    this.getProvider();
+
     /**
      * [チケットの配置を左揃えするための処理]
-     * 同一の処理 -> Member.vue 参照
      */
     const ticket = this.$refs.providerTicket;
-
     // チケットの要素数を取得 (チケットが一枚の時はenpty要素を増やさない)
     if(ticket.length > 1) this.ticket.number = ticket.length;
-
-    // 初期描画時のチケットwidthを取得
     this.getTicketWidth();
   },
 
   methods: {
     /**
-     * [チケットの幅を変数にぶち込む]
+     * [チケットの幅を変数に格納]
      * リサイズイベントに登録するため、メソッドにする。
      */
     getTicketWidth() {
@@ -149,6 +158,20 @@ export default {
       this.modal.show = false;
       document.body.classList.remove("modal-open");
     },
+
+    // Twitter Apiからデータを取得
+    async getProvider() {
+      // await Twitter.getResponse('/api/twitter/provider', this.setProvider);
+      const response = await Twitter.getResponse('/api/twitter/provider');
+
+      // 予期しない型が返却された場合
+      if (!response || !Array.isArray(response.data)) {
+        this.provider.err = true;
+        return
+      }
+
+      this.provider.response = response.data;
+    }
   },
 
   watch: {
