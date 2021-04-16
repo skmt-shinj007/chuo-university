@@ -126,6 +126,7 @@ export default {
   },
 
   mounted() {
+    // Api叩く
     this.getProvider();
 
     /**
@@ -161,7 +162,6 @@ export default {
 
     // Twitter Apiからデータを取得
     async getProvider() {
-      // await Twitter.getResponse('/api/twitter/provider', this.setProvider);
       const response = await Twitter.getResponse('/api/twitter/provider');
 
       // 予期しない型が返却された場合
