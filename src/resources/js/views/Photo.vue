@@ -28,7 +28,8 @@
     <user-modal v-if="modal.show" @close="closeModal" :item="modal.element">
       <template v-slot:content>
         <div class="provider">
-          {{ provider.response }}
+          <!-- TODO:ここに出すコンテンツを考える。 -->
+          ここに出すコンテンツを考える。
         </div>
       </template>
     </user-modal>
