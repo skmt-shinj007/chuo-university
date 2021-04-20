@@ -18,12 +18,14 @@
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
         class="enpty"
-        v-for="n in ticketNumber"
+        v-for="n in ticket.number"
         :key="`enpty-${n}`"
-        :style="{ width: `${ticketWidth}px` }"/>
+        :style="{ width: `${ticket.width}px` }"
+      />
     </div>
 
-    <user-modal v-if="showModal" @close="closeModal" :item="clickElement">
+    <!-- モーダル -->
+    <user-modal v-if="modal.show" @close="closeModal" :item="modal.element">
       <template v-slot:content>
         <div class="provider">
           <!-- TODO:ここに出すコンテンツを考える。 -->
@@ -43,6 +45,7 @@
 // config json import
 import Data from '../config/data.json';
 import Config from '../config/config.json';
+import Twitter from '../config/api/twitter/index';
 
 // mixin
 import Animation from '../config/animation';
@@ -87,27 +90,34 @@ export default {
       providers: [],
 
       /**
-       * [チケットの要素数]
+       * [チケット]
+       * width, 個数
        * @type { Number }
        */
-      ticketNumber: 0,
+      ticket: {
+        width: 0,
+        number: 0,
+      },
 
       /**
-       * [チケットのwidth]
-       * @type { Number }
+       * modalデータ
+       * show: @type { Boolean }
+       * element: @type { Object }
        */
-      wicketWidth: 0,
+      modal: {
+        show: false,
+        element: null
+      },
 
       /**
-       * [モーダル展開フラグ]
+       * providerの情報
+       * response : @type { Object }
+       * err      : @type { Boolean }
        */
-      showModal: false,
-
-      /**
-       * [モーダルに渡すデータ]
-       */
-      clickElement: null,
-
+      provider: {
+        response: null,
+        err: false,
+      }
     }
   },
 
@@ -117,40 +127,52 @@ export default {
   },
 
   mounted() {
+    // Api叩く
+    this.getProvider();
+
     /**
      * [チケットの配置を左揃えするための処理]
-     * 同一の処理 -> Member.vue 参照
      */
     const ticket = this.$refs.providerTicket;
-
     // チケットの要素数を取得 (チケットが一枚の時はenpty要素を増やさない)
-    if(ticket.length > 1) this.ticketNumber = ticket.length;
-
-    // 初期描画時のチケットwidthを取得
+    if(ticket.length > 1) this.ticket.number = ticket.length;
     this.getTicketWidth();
   },
 
   methods: {
     /**
-     * [チケットの幅を変数にぶち込む]
+     * [チケットの幅を変数に格納]
      * リサイズイベントに登録するため、メソッドにする。
      */
     getTicketWidth() {
-      this.ticketWidth = this.$refs.providerTicket[0].offsetWidth;
+      this.ticket.width = this.$refs.providerTicket[0].offsetWidth;
     },
 
     /**
      * [モーダル開閉処理]
      */
     openModal(el) {
-      this.showModal = true;
-      this.clickElement = el;
+      this.modal.show = true;
+      this.modal.element = el;
       document.body.classList.add("modal-open");
     },
     closeModal() {
-      this.showModal = false;
+      this.modal.show = false;
       document.body.classList.remove("modal-open");
     },
+
+    // Twitter Apiからデータを取得
+    async getProvider() {
+      const response = await Twitter.getResponse('/api/twitter/provider');
+
+      // 予期しない型が返却された場合
+      if (!response || !Array.isArray(response.data)) {
+        this.provider.err = true;
+        return
+      }
+
+      this.provider.response = response.data;
+    }
   },
 
   watch: {
