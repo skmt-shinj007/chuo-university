@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\CarbonController;
 use Illuminate\Http\Request;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
@@ -10,6 +11,7 @@ class TwitterApiController extends Controller
 {
   /**
    * Twitter Apiに接続
+   * バージョン：1.1
    */
   private function connection()
   {
@@ -58,26 +60,43 @@ class TwitterApiController extends Controller
     $response[0]->created_date = $created_date;
 
     // 現在日時取得のため、CarbonControllerからメソッドを呼ぶ
-    $carbon_controller = app()->make('App\Http\Controllers\CarbonController');
-    $response[0]->current_date = $carbon_controller->getCurrentDate();
+    $response[0]->current_date = (new CarbonController)->getCurrentDate();
 
     // データをjson形式に変換
     $response = json_encode($response);
 
     /**
-     * URL直打ちしたら情報出てきてしまうので対策する。（http://localhost:8080/api/twitter）
+     * TODO:URL直打ちしたら情報出てきてしまうので対策する。（http://localhost:8080/api/twitter）
      */
     return $response;
   }
 
   /**
    * アカウント情報
-   *
+   * @return Object アカウント情報
    */
-  public function account()
+  public function getAccount()
   {
-    $request = $this->connection()->get('account/verify_credentials');
-    $user = json_encode($request);
+    $response = $this->connection()->get('account/verify_credentials');
+    $user = json_encode($response);
     return $user;
+  }
+
+  /**
+   * プロバイダーのユーザー情報取得
+   * @return Array ユーザー情報
+   */
+  public function getProvider()
+  {
+    $providers = config('constants.providers.twitter_user_id');
+    $provider_ids = array_values($providers);
+
+    $params = [
+      'user_id' => $provider_ids
+    ];
+    $response = $this->connection()->get('users/lookup', $params);
+    json_encode($response);
+
+    return $response;
   }
 }
