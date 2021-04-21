@@ -20,11 +20,30 @@ class User extends Authenticatable
         'user_id',
     ];
 
+    /**
+     * primary key
+     * 
+     * @var string
+     */
     protected $primaryKey = 'user_id';
 
-    public function profile() 
+    /**
+     * userProfile relation
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function userProfile(): HasOne
     {
         return $this->hasOne(UserProfile::class, 'user_id', 'user_id');
     }
 
+    /**
+     * tags riration
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

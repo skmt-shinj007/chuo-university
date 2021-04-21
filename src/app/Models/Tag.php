@@ -8,4 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+    
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'tag_id',
+        'name_ja',
+        'name_en'
+    ];
+
+    /**
+     * primary key
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'tag_id';
+
+    /**
+     * user riration
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
+    }
+
 }

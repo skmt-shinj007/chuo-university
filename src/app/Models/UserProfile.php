@@ -28,8 +28,33 @@ class UserProfile extends Model
 
     protected $primaryKey = 'user_id';
 
-    public function user() 
+    /**
+     * user rilation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
+
+    /**
+     * position rilation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function position(): BelongsTo
+    {
+        return $this->belongsTo(Position::class, 'position_id', 'position_id');
+    }
+
+    /**
+     * prefecture rilation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function prefecture(): BelongsTo
+    {
+        return $this->belongsTo(Prefecture::class, 'prefecture_id', 'prefecture_id');
     }
 }
