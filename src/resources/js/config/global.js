@@ -25,4 +25,13 @@ export default {
       alumniNum: 5
     }
   },
+
+  /**
+   * 文字列に対する型チェックと空文字の判定
+   * @param {String} target
+   * @returns Boolean
+   */
+  isStringEmpty(target) {
+    return ((typeof (target) === "string") || (target instanceof String) || (target !== ''))
+  },
 }

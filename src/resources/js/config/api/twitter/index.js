@@ -1,4 +1,6 @@
 import axios from 'axios';
+import config from '../../config.json';
+import global from '../../global';
 
 /**
  * 環境判定  @type { Boolean }
@@ -28,5 +30,25 @@ export default {
 
     return data;
   },
+
+  async generationLink() {
+    const baseUrl = config.twitter.baseUrl;
+    let screenName = '';
+    const response = await this.getResponse('api/twitter/account');
+
+    if (global.isStringEmpty(screenName)) {
+      screenName = response.data.screen_name;
+    }
+    else {
+      return baseUrl;
+    }
+
+    return baseUrl + screenName;
+  },
+
+  async getAccount() {
+    const response = await this.getResponse('api/twitter/account');
+    console.log(response);
+  }
 
 }

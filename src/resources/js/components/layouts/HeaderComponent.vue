@@ -14,9 +14,11 @@
           <svg-vue icon="menu" class="header__icon"/>
         </button>
 
-        <a class="header__button" :href="twitter.link" target="_blank">
-          <svg-vue icon="twitter" class="header__icon"/>
-        </a>
+        <transition name='button'>
+            <a class="header__button" :href="twitter.link" target="_blank" v-if="twitter.link">
+              <svg-vue icon="twitter" class="header__icon"/>
+            </a>
+        </transition>
       </div>
     </div>
   </div>
@@ -31,12 +33,12 @@
 // data import
 import Data from '../../config/data.json';
 import Config from '../../config/config.json';
+import Twitter from '../../config/api/twitter/index';
 
 // component import
 import NavModal from '../modules/modal/NavModalComponent.vue';
 
 // mixin
-import TwitterAccount from '../../config/api/TwitterAccount';
 import Scroll from '../../config/scroll';
 
 export default {
@@ -44,7 +46,7 @@ export default {
     NavModal,
   },
 
-  mixins: [TwitterAccount, Scroll],
+  mixins: [Scroll],
 
   data() {
     return {
@@ -70,11 +72,19 @@ export default {
        * @type { Boolean }
        */
       navShow: false,
+
+      /**
+       * Twitterオブジェクト
+       * @type { Object }
+       */
+      twitter: {
+        link: '',
+      }
     }
   },
 
-  beforeMount() {
-    this.getTwitterAccount();
+  mounted() {
+    this.setLink();
   },
 
   watch: {
@@ -107,6 +117,10 @@ export default {
       this.navShow = false;
       document.body.classList.remove("modal-open");
     },
+
+    async setLink() {
+      this.twitter.link = await Twitter.generationLink();
+    }
   },
 }
 </script>
@@ -270,6 +284,23 @@ export default {
     fill: color(white);
     color: color(white);
     transition: .3s all ease-out;
+  }
+}
+
+.button {
+  &-enter-active,
+  &-leave-active {
+    transition: .5s transform ease-out;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: scale3d(0, 0, 1);
+  }
+
+  &-enter-to,
+  &-leave {
+    transform: scale3d(1, 1, 1);
   }
 }
 </style>
