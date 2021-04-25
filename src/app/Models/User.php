@@ -38,12 +38,12 @@ class User extends Authenticatable
     }
 
     /**
-     * tags riration
+     * tags rilation
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'user_tags', 'tag_id', 'tag_id');
     }
 }

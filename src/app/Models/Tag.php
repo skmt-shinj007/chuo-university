@@ -28,13 +28,13 @@ class Tag extends Model
     protected $primaryKey = 'tag_id';
 
     /**
-     * user riration
+     * user rilation
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'user_tags', 'user_id', 'user_id');
     }
 
 }
