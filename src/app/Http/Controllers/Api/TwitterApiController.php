@@ -78,6 +78,9 @@ class TwitterApiController extends Controller
   public function getAccount()
   {
     $response = $this->connection()->get('account/verify_credentials');
+    $baseUrl = config('constants.twitter.baseUrl');
+    $response->link = $baseUrl . $response->screen_name;
+
     $user = json_encode($response);
     return $user;
   }
@@ -88,7 +91,7 @@ class TwitterApiController extends Controller
    */
   public function getProvider()
   {
-    $providers = config('constants.providers.twitter_user_id');
+    $providers = config('constants.twitter.providers');
     $provider_ids = array_values($providers);
 
     $params = [

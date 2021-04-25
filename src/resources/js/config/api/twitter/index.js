@@ -11,11 +11,11 @@ const debug = !process.env.MIX_PRODUCTION;
 
 export default {
   async getResponse(url) {
-    let data = null;
+    let response = null;
 
     await axios.get(url)
       .then(function (res) {
-        data = res;
+        response = res;
       })
 
       .catch(function (err) {
@@ -25,30 +25,23 @@ export default {
           console.log(err.response);
         }
 
-        return data;
+        return response;
       });
 
-    return data;
+    return response;
   },
 
-  async generationLink() {
-    const baseUrl = config.twitter.baseUrl;
-    let screenName = '';
-    const response = await this.getResponse('api/twitter/account');
+  async getProfileLink() {
+    let link = config.twitter.baseUrl;
+    const response = await this.getResponse('api/twitter/accoun');
 
-    if (global.isStringEmpty(screenName)) {
-      screenName = response.data.screen_name;
+    if (global.getType(response.data) === 'object') {
+      link = response.data.link;
     }
     else {
-      return baseUrl;
+      console.error('Error: 想定したデータ型で返却されませんでした。');
     }
 
-    return baseUrl + screenName;
+    return link;
   },
-
-  async getAccount() {
-    const response = await this.getResponse('api/twitter/account');
-    console.log(response);
-  }
-
 }

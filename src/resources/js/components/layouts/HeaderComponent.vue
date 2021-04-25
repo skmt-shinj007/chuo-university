@@ -119,7 +119,7 @@ export default {
     },
 
     async setLink() {
-      this.twitter.link = await Twitter.generationLink();
+      this.twitter.link = await Twitter.getProfileLink();
     }
   },
 }

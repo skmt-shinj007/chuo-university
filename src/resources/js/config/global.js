@@ -34,4 +34,8 @@ export default {
   isStringEmpty(target) {
     return ((typeof (target) === "string") || (target instanceof String) || (target !== ''))
   },
+
+  getType(target) {
+    return toString.call(target).slice(8, -1).toLowerCase();
+  },
 }
