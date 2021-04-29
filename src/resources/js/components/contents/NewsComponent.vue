@@ -107,7 +107,7 @@ export default {
       // ロード開始
       this.loading = true;
 
-      await axios.get('/api/twitter/timeline')
+      await this.$axios.get('/api/twitter/timeline')
 
       .then(function (response) {
         // 返答がオブジェクト形式ではない場合にエラー画面を出す。

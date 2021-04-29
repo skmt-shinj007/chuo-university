@@ -1,5 +1,12 @@
+
 import Vue from 'vue';
 import router from './router';  // vueルーターをインポート
+
+/**
+ * axios
+ */
+import axios from 'axios';
+Vue.prototype.$axios = axios;
 
 /**
  * laravel-mix-svg-vue (svgファイルをVueコンポーネントとして使えるようにするライブラリ)
@@ -34,12 +41,7 @@ Vue.use(Clipboard);
 import global from './config/global';
 Vue.mixin(global);
 
-/**
- * axios import
- */
-import axios from 'axios';
-import vueAxios from 'vue-axios';
-Vue.use(vueAxios, axios);
+
 
 /**
  * スクロールのカスタムディレクティブを作成。
