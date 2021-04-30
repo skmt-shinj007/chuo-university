@@ -81,8 +81,7 @@ class TwitterApiController extends Controller
     $baseUrl = config('constants.twitter.baseUrl');
     $response->link = $baseUrl . $response->screen_name;
 
-    $user = json_encode($response);
-    return $user;
+    return response()->json($response);
   }
 
   /**

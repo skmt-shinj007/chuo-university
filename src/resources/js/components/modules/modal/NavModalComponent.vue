@@ -33,16 +33,16 @@
             </button>
           </div>
 
-          <transition name="slide" tag="div">
-            <div class="nav-modal__sns" v-if="!loading && !err">
-              <!-- snsの各プロフィールページに遷移するように修正 -->
-              <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
+          <div class="nav-modal__sns" v-if="snsPanels">
+            <!-- snsの各プロフィールページに遷移するように修正 -->
+            <transition name="slide" tag="div">
+              <div class="nav-modal__sns-item" v-for="(item, n) in cutSnsPanels" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
                 <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
                   <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
                 </a>
               </div>
-            </div>
-          </transition>
+            </transition>
+          </div>
         </nav>
 
         <footer class="nav-modal__footer">
@@ -60,16 +60,12 @@ import AccordionLink from '../accordion/AccordionLinkComponent';
 
 // data
 import Config from '../../../config/config.json';
-
-// mixin
-import TwitterAccount from '../../../config/api/TwitterAccount';
+import Twitter from '../../../config/api/twitter/index';
 
 export default {
   components: {
     AccordionLink,
   },
-
-  mixins: [TwitterAccount],
 
   data() {
     return {
@@ -79,13 +75,13 @@ export default {
        * snsのメニューパネルを生成する配列
        * @type { Array }
        */
-      sns: [],
+      snsPanels: [],
 
       /**
        * アコーディオンコンポーネントに渡すデータ
        * @type { Array }
        */
-      links: []
+      links: [],
     }
   },
 
@@ -93,12 +89,12 @@ export default {
     /**
      * sns配列の要素が3以上になったらカットする。
      */
-    filteringSns() {
-      if (this.sns.length > 3) {
-        return this.sns.slice(0, 3);
+    cutSnsPanels() {
+      if (this.snsPanels.length > 3) {
+        return this.snsPanels.slice(0, 3);
       }
       else {
-        return this.sns;
+        return this.snsPanels;
       }
     }
   },
@@ -118,19 +114,7 @@ export default {
     externalLink.childrenMenus = this.convertArray(config.links);
     this.links.push(externalLink);
 
-    /**
-     * sns データ生成
-     */
-    this.getTwitterAccount(() => {
-      // apiレスポンスと保持データの結合
-      const apiResponse = this.twitter;
-      const retained = this.config.twitter;
-      this.twitter = {...apiResponse, ...retained};
-
-      // sns配列に格納
-      this.sns.push(this.twitter);
-    });
-
+    this.putPanel(Twitter.getServiceInfo());
   },
 
   methods: {
@@ -142,6 +126,14 @@ export default {
       return Object.keys(obj).map(function (key) {
         return obj[key];
       })
+    },
+
+    /**
+     * SNSパネルのデータを生成する。
+     * 複数のSNSを出力することを想定してメソッド化。
+     */
+    async putPanel(promise) {
+      this.snsPanels.push(await promise);
     },
   },
 }

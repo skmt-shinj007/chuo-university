@@ -24,6 +24,7 @@ export default {
           console.log(`エラーメッセージ：${err.message}`);
           console.log(err.response);
         }
+        // TODO:エラーページへリダイレクト
 
         return response;
       });
@@ -33,7 +34,7 @@ export default {
 
   async getProfileLink() {
     let link = config.twitter.baseUrl;
-    const response = await this.getResponse('api/twitter/accoun');
+    const response = await this.getResponse('api/twitter/account');
 
     if (global.getType(response.data) === 'object') {
       link = response.data.link;
@@ -43,5 +44,15 @@ export default {
     }
 
     return link;
+  },
+
+  async getServiceInfo() {
+    let info = config.twitter;
+    const response = await this.getResponse('api/twitter/account');
+
+    if (global.getType(response.data) !== 'object') return;
+    info['link'] = response.data.link;
+
+    return info;
   },
 }
