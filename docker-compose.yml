@@ -26,6 +26,6 @@ services:
       - "33306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: nJVxSSDw8rmuWPuV
-      MYSQL_DATABASE: chuo-db
-      MYSQL_USER: chuo-user
-      MYSQL_PASSWORD: chuo-pass
+      MYSQL_DATABASE: chuodb
+      MYSQL_USER: chuouser
+      MYSQL_PASSWORD: chuopass
