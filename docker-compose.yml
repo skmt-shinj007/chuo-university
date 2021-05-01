@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   web:
@@ -9,9 +9,6 @@ services:
       - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
     ports:
       - "8080:80"
-    # environment:
-    #   - NGINX_HOST=localhost
-    #   - NGINX_PORT=80
     depends_on:
       - app
       - db
@@ -29,6 +26,6 @@ services:
       - "33306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: nJVxSSDw8rmuWPuV
-      MYSQL_DATABASE: chuodb
+      MYSQL_DATABASE: chuo-db
       MYSQL_USER: chuo-user
       MYSQL_PASSWORD: chuo-pass
