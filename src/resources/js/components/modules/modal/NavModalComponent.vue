@@ -35,13 +35,16 @@
 
           <div class="nav-modal__sns" v-if="snsPanels">
             <!-- snsの各プロフィールページに遷移するように修正 -->
-            <transition name="slide" tag="div">
-              <div class="nav-modal__sns-item" v-for="(item, n) in cutSnsPanels" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
-                <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
-                  <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
-                </a>
-              </div>
-            </transition>
+            <a
+              class="nav-modal__sns-item"
+              :class="`nav-modal__sns-item--${item.name.en}`"
+              v-for="(item, i) in cutSnsPanels" :key="i"
+              :href="item.link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
+            </a>
           </div>
         </nav>
 
@@ -261,40 +264,18 @@ export default {
 
   &__sns {
     @include flex(row wrap, flex-start, center);
-    border: 1px solid rgba(color(lightgray), .1);
-    margin-top: interval(5);
-
-    @include mq(sm) {
-      max-width: interval(40);
-      margin: interval(5) 0 0 auto;
-    }
+    max-width: interval(40);
+    margin: interval(5) 0 0 auto;
   }
 
   &__sns-item {
+    @include flex(row nowrap, center, center);
     width: calc(100% / 3);
-    border-right: 1px solid darken( color(lightgray), 60%);
+    background-color: transparent;
+    transition: all .3s ease-out;
 
     &--twitter {
-      background-color: color(twitter);
-    }
-
-    &--instagram {
-      position: relative;
-      background: linear-gradient(200deg, #5478f2 0%, #f23f79 60%, orange 100%);
-    }
-
-    &--facebook {
-      background-color: color(facebook);
-    }
-  }
-
-  &__sns-link {
-    @include flex(row nowrap, center, center);
-    transition: all .3s ease-out;
-    background-color: darken( color(lightgray), 70%);
-
-    @include hover {
-      background-color: rgba( darken( color(lightgray), 70%) , 0);
+      @include panel-item(color(twitter));
     }
 
     &::before {
@@ -305,7 +286,7 @@ export default {
   }
 
   &__sns-icon {
-    width: interval(4);
+    width: 30%;
   }
 
   &__footer {
