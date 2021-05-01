@@ -37,4 +37,14 @@ class Prefecture extends Model
     {
         return $this->hasMany(UserProfile::class, 'prefecture_id', 'prefecture_id');
     }
+
+    // /**
+    //  * UserProfile rilation
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  */
+    // public function userProfile(): BelongsTo
+    // {
+    //     return $this->belongsTo(UserProfile::class, 'prefecture_id', 'prefecture_id')->withDefault();
+    // }
 }

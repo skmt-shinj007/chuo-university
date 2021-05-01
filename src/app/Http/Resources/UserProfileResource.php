@@ -8,7 +8,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Models\Prefecture;
 use App\Http\Resources\PrefectureResource;
 
-class MemberResource extends JsonResource
+class UserProfileResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -30,7 +30,7 @@ class MemberResource extends JsonResource
                     'alt' => null,
                 ],
                 'from' => [
-                    'place' => Prefecture::find($this->prefecture_id),
+                    'place' => $this->prefecture(),
                     'alma_mater' => $this->alma_mater,
                 ],
                 'post' => [

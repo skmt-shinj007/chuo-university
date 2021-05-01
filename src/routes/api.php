@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TwitterApiController;
 
-use App\Http\Resources\MemberResource;
+use App\Http\Resources\UserProfileResource;
 use App\Models\UserProfile;
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +29,5 @@ Route::group(['prefix' => 'twitter'], function () {
 
 // endpoint: /member
 Route::get('member', function () {
-    return MemberResource::collection(UserProfile::all());
+    return UserProfileResource::collection(UserProfile::all());
 });

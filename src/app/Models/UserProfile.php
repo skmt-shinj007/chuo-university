@@ -35,7 +35,7 @@ class UserProfile extends Model
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id', 'user_id');
+        return $this->belongsTo(User::class)->withDefault();
     }
 
     /**
@@ -45,16 +45,26 @@ class UserProfile extends Model
      */
     public function position(): BelongsTo
     {
-        return $this->belongsTo(Position::class, 'position_id', 'position_id');
+        return $this->belongsTo(Position::class)->withDefault();
     }
 
     /**
-     * prefecture rilation
+     * UserProfile rilation
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function prefecture(): BelongsTo
+    public function userProfile(): BelongsTo
     {
-        return $this->belongsTo(Prefecture::class, 'prefecture_id', 'prefecture_id');
+        return $this->belongsTo(UserProfile::class, 'prefecture_id', 'prefecture_id')->withDefault();
     }
+
+    // /**
+    //  * prefecture relation
+    //  *
+    //  * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    //  */
+    // public function prefecture(): HasMany
+    // {
+    //     return $this->hasMany(Prefecture::class);
+    // }
 }
