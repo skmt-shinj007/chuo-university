@@ -300,21 +300,4 @@ export default {
     transition: .3s all ease-out;
   }
 }
-
-.button {
-  &-enter-active,
-  &-leave-active {
-    transition: .5s transform ease-out;
-  }
-
-  &-enter,
-  &-leave-to {
-    transform: scale3d(0, 0, 1);
-  }
-
-  &-enter-to,
-  &-leave {
-    transform: scale3d(1, 1, 1);
-  }
-}
 </style>
