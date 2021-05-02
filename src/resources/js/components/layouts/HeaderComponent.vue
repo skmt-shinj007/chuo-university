@@ -14,7 +14,7 @@
           <svg-vue icon="menu" class="header__icon"/>
         </button>
 
-        <a class="header__button" :href="twitter.link" target="_blank">
+        <a class="header__button" :href="twitterProfileLink" target="_blank">
           <svg-vue icon="twitter" class="header__icon"/>
         </a>
       </div>
@@ -22,7 +22,7 @@
   </div>
 
   <!-- グローバルナビ（モーダル） -->
-  <nav-modal v-if="navShow" @close="closeModal"/>
+  <nav-modal v-if="navShow" @close="closeModal" :twitter="twitter"/>
 
 </header>
 </template>
@@ -31,12 +31,12 @@
 // data import
 import Data from '../../config/data.json';
 import Config from '../../config/config.json';
+import Twitter from '../../config/api/twitter/index';
 
 // component import
 import NavModal from '../modules/modal/NavModalComponent.vue';
 
 // mixin
-import TwitterAccount from '../../config/api/TwitterAccount';
 import Scroll from '../../config/scroll';
 
 export default {
@@ -44,7 +44,7 @@ export default {
     NavModal,
   },
 
-  mixins: [TwitterAccount, Scroll],
+  mixins: [Scroll],
 
   data() {
     return {
@@ -70,11 +70,24 @@ export default {
        * @type { Boolean }
        */
       navShow: false,
+
+      /**
+       * Twitterレスポンス
+       * @type {object}
+       */
+      twitter: null,
     }
   },
 
-  beforeMount() {
-    this.getTwitterAccount();
+  computed: {
+    twitterProfileLink() {
+      let link = 'https://twitter.com/'
+      return (this.twitter) ? this.twitter.link : link;
+    }
+  },
+
+  created() {
+    this.setTwitter();
   },
 
   watch: {
@@ -107,6 +120,21 @@ export default {
       this.navShow = false;
       document.body.classList.remove("modal-open");
     },
+
+    /**
+     * APIレスポンスを変数にセットする。 [Twitter]
+     */
+    async setTwitter() {
+      const response = await Twitter.getResponse('api/twitter/account');
+
+      if (this.getType(response) !== 'object') {
+        console.error('ERROR:オブジェクトで返却されませんでした。');
+        return;
+      }
+
+      this.twitter = response;
+    }
+
   },
 }
 </script>
@@ -270,6 +298,23 @@ export default {
     fill: color(white);
     color: color(white);
     transition: .3s all ease-out;
+  }
+}
+
+.button {
+  &-enter-active,
+  &-leave-active {
+    transition: .5s transform ease-out;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: scale3d(0, 0, 1);
+  }
+
+  &-enter-to,
+  &-leave {
+    transform: scale3d(1, 1, 1);
   }
 }
 </style>

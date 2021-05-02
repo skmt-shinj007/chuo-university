@@ -77,9 +77,14 @@ class TwitterApiController extends Controller
    */
   public function getAccount()
   {
+    $data = config('constants.twitter');
     $response = $this->connection()->get('account/verify_credentials');
-    $user = json_encode($response);
-    return $user;
+
+    $response->service_name = (object) $data['name'];
+    $response->link = $data['base_uri'] . $response->screen_name;
+    $response->icon_name = $data['icon_name'];
+
+    return response()->json($response);
   }
 
   /**
@@ -88,7 +93,7 @@ class TwitterApiController extends Controller
    */
   public function getProvider()
   {
-    $providers = config('constants.providers.twitter_user_id');
+    $providers = config('constants.twitter.providers');
     $provider_ids = array_values($providers);
 
     $params = [
