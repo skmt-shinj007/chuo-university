@@ -18,6 +18,9 @@ class CreatePositionsTable extends Migration
             $table->string('name_ja')->nullable()->comment('ポジション名：日本語表記');
             $table->string('name_en')->nullable()->comment('ポジション名：英語表記');
             $table->string('color_name')->nullable()->comment('カラー名');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->softDeletes();
         });
     }
 

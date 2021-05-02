@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TwitterApiController;
 
+use App\Http\Resources\UserProfileResource;
+use App\Models\UserProfile;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,12 +17,17 @@ use App\Http\Controllers\Api\TwitterApiController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::group(['prefix' => 'twitter'], function () {
     Route::get('/timeline', [TwitterApiController::class, 'getTimeline']);
     Route::get('/account', [TwitterApiController::class, 'getAccount']);
     Route::get('/provider', [TwitterApiController::class, 'getProvider']);
+});
+
+// endpoint: /member
+Route::get('member', function () {
+    return UserProfileResource::collection(UserProfile::all());
 });
