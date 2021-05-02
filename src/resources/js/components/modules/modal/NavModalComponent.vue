@@ -96,7 +96,9 @@ export default {
      */
     snsPanels() {
       let snsPanels = [];
-      snsPanels.push(this.twitter);
+      if (this.twitter) {
+        snsPanels.push(this.twitter);
+      }
       return snsPanels;
     }
   },
