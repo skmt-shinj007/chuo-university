@@ -1,7 +1,12 @@
 <?php
 return [
   'twitter' => [
-    'baseUrl' => 'https://twitter.com/',
+    'name' => [
+      'ja' => 'ツイッター',
+      'en' => 'twitter',
+    ],
+    'base_uri' => 'https://twitter.com/',
+    'icon_name' => 'twitter',
 
     /**
      * [プロバイダーのTwitterユーザーID]
