@@ -15,7 +15,7 @@ export default {
 
     await axios.get(url)
       .then(function (res) {
-        response = res;
+        response = res.data;
       })
 
       .catch(function (err) {
@@ -30,29 +30,5 @@ export default {
       });
 
     return response;
-  },
-
-  async getProfileLink() {
-    let link = config.twitter.baseUrl;
-    const response = await this.getResponse('api/twitter/account');
-
-    if (global.getType(response.data) === 'object') {
-      link = response.data.link;
-    }
-    else {
-      console.error('Error: 想定したデータ型で返却されませんでした。');
-    }
-
-    return link;
-  },
-
-  async getServiceInfo() {
-    let info = config.twitter;
-    const response = await this.getResponse('api/twitter/account');
-
-    if (global.getType(response.data) !== 'object') return;
-    info['link'] = response.data.link;
-
-    return info;
   },
 }

@@ -26,21 +26,14 @@ export default {
     }
   },
 
-  /**
-   * 文字列に対する型チェックと空文字の判定
-   * @param {string} target
-   * @returns Boolean
-   */
-  isStringEmpty(target) {
-    return ((typeof (target) === "string") || (target instanceof String) || (target !== ''))
-  },
-
-  /**
-   * データ型を文字列で返す。
-   * @param {*} target
-   * @returns {string}
-   */
-  getType(target) {
-    return toString.call(target).slice(8, -1).toLowerCase();
+  methods: {
+    /**
+     * データ型を文字列で返す。
+     * @param {*} target
+     * @returns {string}
+     */
+    getType(target) {
+      return toString.call(target).slice(8, -1).toLowerCase();
+    },
   },
 }

@@ -14,17 +14,15 @@
           <svg-vue icon="menu" class="header__icon"/>
         </button>
 
-        <transition name='button'>
-            <a class="header__button" :href="twitter.link" target="_blank" v-if="twitter.link">
-              <svg-vue icon="twitter" class="header__icon"/>
-            </a>
-        </transition>
+        <a class="header__button" :href="twitterProfileLink" target="_blank">
+          <svg-vue icon="twitter" class="header__icon"/>
+        </a>
       </div>
     </div>
   </div>
 
   <!-- グローバルナビ（モーダル） -->
-  <nav-modal v-if="navShow" @close="closeModal"/>
+  <nav-modal v-if="navShow" @close="closeModal" :twitter="twitter"/>
 
 </header>
 </template>
@@ -74,17 +72,22 @@ export default {
       navShow: false,
 
       /**
-       * Twitterオブジェクト
-       * @type { Object }
+       * Twitterレスポンス
+       * @type {object}
        */
-      twitter: {
-        link: '',
-      }
+      twitter: null,
     }
   },
 
-  mounted() {
-    this.setLink();
+  computed: {
+    twitterProfileLink() {
+      let link = 'https://twitter.com/'
+      return (this.twitter) ? this.twitter.link : link;
+    }
+  },
+
+  created() {
+    this.setTwitter();
   },
 
   watch: {
@@ -118,9 +121,20 @@ export default {
       document.body.classList.remove("modal-open");
     },
 
-    async setLink() {
-      this.twitter.link = await Twitter.getProfileLink();
+    /**
+     * APIレスポンスを変数にセットする。 [Twitter]
+     */
+    async setTwitter() {
+      const response = await Twitter.getResponse('api/twitter/account');
+
+      if (this.getType(response) !== 'object') {
+        console.error('ERROR:オブジェクトで返却されませんでした。');
+        return;
+      }
+
+      this.twitter = response;
     }
+
   },
 }
 </script>

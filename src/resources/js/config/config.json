@@ -69,15 +69,6 @@
     }
   },
 
-  "twitter": {
-    "name": {
-      "ja": "ツイッター",
-      "en": "twitter"
-    },
-    "icon": "twitter",
-    "baseUrl": "https://twitter.com/"
-  },
-
   "instagram": {
     "name": {
       "ja": "インスタグラム",
