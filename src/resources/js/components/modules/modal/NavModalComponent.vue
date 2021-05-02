@@ -37,13 +37,13 @@
             <!-- snsの各プロフィールページに遷移するように修正 -->
             <a
               class="nav-modal__sns-item"
-              :class="`nav-modal__sns-item--${item.name.en}`"
-              v-for="(item, i) in cutSnsPanels" :key="i"
+              :class="`nav-modal__sns-item--${item.service_name.en}`"
+              v-for="(item, i) in snsPanels" :key="i"
               :href="item.link"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
+              <svg-vue :icon="item.icon_name" class="nav-modal__sns-icon"/>
             </a>
           </div>
         </nav>
@@ -63,7 +63,6 @@ import AccordionLink from '../accordion/AccordionLinkComponent';
 
 // data
 import Config from '../../../config/config.json';
-import Twitter from '../../../config/api/twitter/index';
 
 export default {
   components: {
@@ -75,12 +74,6 @@ export default {
       config: Config,
 
       /**
-       * snsのメニューパネルを生成する配列
-       * @type { Array }
-       */
-      snsPanels: [],
-
-      /**
        * アコーディオンコンポーネントに渡すデータ
        * @type { Array }
        */
@@ -88,17 +81,23 @@ export default {
     }
   },
 
+  props: {
+    twitter: {
+      type: Object,
+      deafult: null,
+    }
+  },
+
   computed: {
     /**
-     * sns配列の要素が3以上になったらカットする。
+     * snsのメニューパネル配列を生成。
+     * パネル配列の要素は3つまで。
+     * @return {Array}
      */
-    cutSnsPanels() {
-      if (this.snsPanels.length > 3) {
-        return this.snsPanels.slice(0, 3);
-      }
-      else {
-        return this.snsPanels;
-      }
+    snsPanels() {
+      let snsPanels = [];
+      snsPanels.push(this.twitter);
+      return snsPanels;
     }
   },
 
@@ -116,8 +115,6 @@ export default {
     externalLink.name = messages.externalLink.name;
     externalLink.childrenMenus = this.convertArray(config.links);
     this.links.push(externalLink);
-
-    this.putPanel(Twitter.getServiceInfo());
   },
 
   methods: {
@@ -129,14 +126,6 @@ export default {
       return Object.keys(obj).map(function (key) {
         return obj[key];
       })
-    },
-
-    /**
-     * SNSパネルのデータを生成する。
-     * 複数のSNSを出力することを想定してメソッド化。
-     */
-    async putPanel(promise) {
-      this.snsPanels.push(await promise);
     },
   },
 }
