@@ -33,42 +33,28 @@ class TwitterApiController extends Controller
   public function getTimeline()
   {
     // 直近3投稿の取得をリクエスト
-    $request = $this->connection()->get('statuses/user_timeline',
+    $response = $this->connection()->get('statuses/user_timeline',
       array(
         'count' => '3',
       )
     );
 
-    // フロントに返すレスポンスを定義
-    $response = $request;
-
-    /**
-     * ツイート時間を datetime に変換。
-     * この時点で日本時間に修正済（APIレスポンス -> UTCタイムスタンプ）
-     * 時間まで知りたいとき -> @param1 に 'Y-m-d H:i:s' を入れる。
-     */
-    $created_at = date('Y-m-d', strtotime((string) $request[0]->created_at));
-    $separate_created = explode("-", $created_at);
-
-    $created_date = array(
-      'year'  => $separate_created[0],
-      'month' => $separate_created[1],
-      'date'  => $separate_created[2],
-    );
-
-    // レスポンスにデータを格納
-    $response[0]->created_date = $created_date;
-
     // 現在日時取得のため、CarbonControllerからメソッドを呼ぶ
-    $response[0]->current_date = (new CarbonController)->getCurrentDate();
+    $current_date = CarbonController::getCurrentDate('Y-m');
+    $base_uri = config('constants.twitter.base_uri');
 
-    // データをjson形式に変換
-    $response = json_encode($response);
+    foreach ($response as $index => $value) {
+      $created_date = date('Y-m', strtotime((string) $value->created_at));
+
+      $value->link = $base_uri . $value->id_str;
+      $value->created_date = $created_date;
+      $value->new = ($created_date === $current_date) ? true : false;
+    };
 
     /**
      * TODO:URL直打ちしたら情報出てきてしまうので対策する。（http://localhost:8080/api/twitter）
      */
-    return $response;
+    return response()->json($response);
   }
 
   /**
