@@ -252,7 +252,7 @@ export default {
   }
 
   &__sns {
-    @include flex(row wrap, flex-start, center);
+    @include flex(row wrap, flex-end, center);
     max-width: interval(40);
     margin: interval(5) 0 0 auto;
   }
