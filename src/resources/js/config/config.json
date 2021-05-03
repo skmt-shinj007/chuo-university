@@ -67,23 +67,5 @@
       "label": "関東学生ソフトテニス連盟",
       "to": "https://kssta.net/"
     }
-  },
-
-  "twitter": {
-    "name": {
-      "ja": "ツイッター",
-      "en": "twitter"
-    },
-    "icon": "twitter",
-    "baseUrl": "https://twitter.com/"
-  },
-
-  "instagram": {
-    "name": {
-      "ja": "インスタグラム",
-      "en": "instagram"
-    },
-    "icon": "instagram",
-    "baseUrl": "https://www.instagram.com/"
   }
 }

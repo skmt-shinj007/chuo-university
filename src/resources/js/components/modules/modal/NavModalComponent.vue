@@ -33,16 +33,19 @@
             </button>
           </div>
 
-          <transition name="slide" tag="div">
-            <div class="nav-modal__sns" v-if="!loading && !err">
-              <!-- snsの各プロフィールページに遷移するように修正 -->
-              <div class="nav-modal__sns-item" v-for="(item, n) in filteringSns" :key="n" :class="`nav-modal__sns-item--${item.name.en}`">
-                <a :href="item.link" class="nav-modal__sns-link" target="_blank" rel="noopener noreferrer">
-                  <svg-vue :icon="item.icon" class="nav-modal__sns-icon" :class="`nav-modal__sns-icon--${item.name.en}`"/>
-                </a>
-              </div>
-            </div>
-          </transition>
+          <div class="nav-modal__sns" v-if="snsPanels">
+            <!-- snsの各プロフィールページに遷移するように修正 -->
+            <a
+              class="nav-modal__sns-item"
+              :class="`nav-modal__sns-item--${item.service_name.en}`"
+              v-for="(item, i) in snsPanels" :key="i"
+              :href="item.link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg-vue :icon="item.icon_name" class="nav-modal__sns-icon"/>
+            </a>
+          </div>
         </nav>
 
         <footer class="nav-modal__footer">
@@ -61,45 +64,40 @@ import AccordionLink from '../accordion/AccordionLinkComponent';
 // data
 import Config from '../../../config/config.json';
 
-// mixin
-import TwitterAccount from '../../../config/api/TwitterAccount';
-
 export default {
   components: {
     AccordionLink,
   },
-
-  mixins: [TwitterAccount],
 
   data() {
     return {
       config: Config,
 
       /**
-       * snsのメニューパネルを生成する配列
-       * @type { Array }
-       */
-      sns: [],
-
-      /**
        * アコーディオンコンポーネントに渡すデータ
        * @type { Array }
        */
-      links: []
+      links: [],
+    }
+  },
+
+  props: {
+    twitter: {
+      type: Object,
+      deafult: null,
     }
   },
 
   computed: {
     /**
-     * sns配列の要素が3以上になったらカットする。
+     * snsのメニューパネル配列を生成。
+     * パネル配列の要素は3つまで。
+     * @return {Array}
      */
-    filteringSns() {
-      if (this.sns.length > 3) {
-        return this.sns.slice(0, 3);
-      }
-      else {
-        return this.sns;
-      }
+    snsPanels() {
+      let snsPanels = [];
+      snsPanels.push(this.twitter);
+      return snsPanels;
     }
   },
 
@@ -117,20 +115,6 @@ export default {
     externalLink.name = messages.externalLink.name;
     externalLink.childrenMenus = this.convertArray(config.links);
     this.links.push(externalLink);
-
-    /**
-     * sns データ生成
-     */
-    this.getTwitterAccount(() => {
-      // apiレスポンスと保持データの結合
-      const apiResponse = this.twitter;
-      const retained = this.config.twitter;
-      this.twitter = {...apiResponse, ...retained};
-
-      // sns配列に格納
-      this.sns.push(this.twitter);
-    });
-
   },
 
   methods: {
@@ -268,41 +252,19 @@ export default {
   }
 
   &__sns {
-    @include flex(row wrap, flex-start, center);
-    border: 1px solid rgba(color(lightgray), .1);
-    margin-top: interval(5);
-
-    @include mq(sm) {
-      max-width: interval(40);
-      margin: interval(5) 0 0 auto;
-    }
+    @include flex(row wrap, flex-end, center);
+    max-width: interval(40);
+    margin: interval(5) 0 0 auto;
   }
 
   &__sns-item {
+    @include flex(row nowrap, center, center);
     width: calc(100% / 3);
-    border-right: 1px solid darken( color(lightgray), 60%);
+    background-color: transparent;
+    transition: all .3s ease-out;
 
     &--twitter {
-      background-color: color(twitter);
-    }
-
-    &--instagram {
-      position: relative;
-      background: linear-gradient(200deg, #5478f2 0%, #f23f79 60%, orange 100%);
-    }
-
-    &--facebook {
-      background-color: color(facebook);
-    }
-  }
-
-  &__sns-link {
-    @include flex(row nowrap, center, center);
-    transition: all .3s ease-out;
-    background-color: darken( color(lightgray), 70%);
-
-    @include hover {
-      background-color: rgba( darken( color(lightgray), 70%) , 0);
+      @include panel-item(color(twitter));
     }
 
     &::before {
@@ -313,7 +275,7 @@ export default {
   }
 
   &__sns-icon {
-    width: interval(4);
+    width: 30%;
   }
 
   &__footer {
