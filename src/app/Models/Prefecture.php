@@ -13,6 +13,11 @@ class Prefecture extends Model
     use HasFactory;
 
     /**
+     * table name
+     */
+    protected $table = 'prefectures';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

@@ -10,6 +10,11 @@ class UserProfileTag extends Model
     use HasFactory;
 
     /**
+     * table name
+     */
+    protected $table = 'user_tags';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
