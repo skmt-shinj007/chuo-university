@@ -4,10 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
+use App\Models\Prefecture;
 
 class UserProfile extends Model
 {
     use HasFactory;
+
+    /**
+     * table name
+     */
+    protected $table = 'user_profiles';
 
     protected $fillable = [
         'user_id',
@@ -35,7 +44,7 @@ class UserProfile extends Model
      */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class)->withDefault();
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
 
     /**
@@ -45,7 +54,7 @@ class UserProfile extends Model
      */
     public function position(): BelongsTo
     {
-        return $this->belongsTo(Position::class)->withDefault();
+        return $this->belongsTo(Position::class, 'position_id', 'position_id');
     }
 
     /**
@@ -53,18 +62,18 @@ class UserProfile extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function userProfile(): BelongsTo
+    public function prefecture(): BelongsTo
     {
-        return $this->belongsTo(UserProfile::class, 'prefecture_id', 'prefecture_id')->withDefault();
+        return $this->belongsTo(Prefecture::class, 'prefecture_id', 'prefecture_id');
     }
 
-    // /**
-    //  * prefecture relation
-    //  *
-    //  * @return \Illuminate\Database\Eloquent\Relations\HasMany
-    //  */
-    // public function prefecture(): HasMany
-    // {
-    //     return $this->hasMany(Prefecture::class);
-    // }
+    /**
+     * tags rilation
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class, 'user_tags', 'user_id', 'tag_id');
+    }
 }
