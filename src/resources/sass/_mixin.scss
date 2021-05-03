@@ -294,6 +294,21 @@
   }
 }
 
+// panel item
+@mixin panel-item($color) {
+  background: $color;
+
+  @include mq(md) {
+    background: transparent;
+    border: 1px solid rgba(color(lightgray), $alpha: .1);
+  }
+
+  @include hover {
+    background: $color;
+    border: none;
+  }
+}
+
 /**
  * swiper
  */

@@ -25,4 +25,15 @@ export default {
       alumniNum: 5
     }
   },
+
+  methods: {
+    /**
+     * データ型を文字列で返す。
+     * @param {*} target
+     * @returns {string}
+     */
+    getType(target) {
+      return toString.call(target).slice(8, -1).toLowerCase();
+    },
+  },
 }

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import config from '../../config.json';
+import global from '../../global';
 
 /**
  * 環境判定  @type { Boolean }
@@ -9,11 +11,11 @@ const debug = !process.env.MIX_PRODUCTION;
 
 export default {
   async getResponse(url) {
-    let data = null;
+    let response = null;
 
     await axios.get(url)
       .then(function (res) {
-        data = res;
+        response = res.data;
       })
 
       .catch(function (err) {
@@ -22,11 +24,11 @@ export default {
           console.log(`エラーメッセージ：${err.message}`);
           console.log(err.response);
         }
+        // TODO:エラーページへリダイレクト
 
-        return data;
+        return response;
       });
 
-    return data;
+    return response;
   },
-
 }
