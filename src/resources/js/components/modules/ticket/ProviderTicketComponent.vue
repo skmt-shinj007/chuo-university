@@ -1,13 +1,13 @@
 <template>
-<div class="provider-ticket" ref="targetElement">
+<div class="provider-ticket" ref="targetElement" @click="openModal">
   <div class="provider-ticket-thumbnail-border">
     <figure class="provider-ticket-thumbnail">
-      <img :src="`/image/${providerObj.img.src}`" alt="userObj.img.alt">
+      <img :src="provider.profile_image_url_original" :alt="`${provider.name}のプロフィール画像`">
     </figure>
   </div>
 
   <div class="provider-ticket-item">
-    <span class="provider-ticket__name">{{ providerObj.name.ja }}</span>
+    <span class="provider-ticket__name">{{ provider.name }}</span>
 
     <!-- SNSタグは 2つ まで -->
     <div class="provider-ticket-tag-group">
@@ -22,27 +22,51 @@
     <svg-vue class="provider-ticket-icon" icon="angle_right"/>
   </div>
 
+  <!-- モーダル -->
+  <provider-modal v-if="isShow" :item="provider"/>
 </div>
 </template>
 
 <script>
 // component import
 import SnsTag from '../tag/SnsTagComponent';
+import ProviderModal from '../modal/ProviderModalComponent';
 
 export default {
   components: {
     SnsTag,
+    ProviderModal,
+  },
+
+  data() {
+    return {
+      /**
+       * モーダルの開閉判定フラグ
+       * @type { Boolean }
+       */
+      isShow: false,
+    }
   },
 
   props: {
-    providerObj: {
+    provider: {
       type: Object,
       default: null
     }
   },
 
-  computed: {
-
+  methods: {
+    /**
+     * [モーダル開閉処理]
+     */
+    openModal() {
+      this.isShow = true;
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.isShow = false;
+      document.body.classList.remove("modal-open");
+    },
   },
 }
 </script>
