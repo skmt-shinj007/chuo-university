@@ -25,14 +25,8 @@
     </div>
 
     <!-- モーダル -->
-    <user-modal v-if="modal.show" @close="closeModal" :item="modal.element">
-      <template v-slot:content>
-        <div class="provider">
-          <!-- TODO:ここに出すコンテンツを考える。 -->
-          ここに出すコンテンツを考える。
-        </div>
-      </template>
-    </user-modal>
+    <provider-modal v-if="modal.show" :item="modal.element"/>
+
   </section>
 
   <div class="photo__scroll-top">
@@ -54,14 +48,14 @@ import Animation from '../config/animation';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import Images from '../components/contents/ImagesComponent';
 import ProviderTicket from '../components/modules/ticket/ProviderTicketComponent';
-import UserModal from '../components/modules/modal/UserModalComponent';
+import ProviderModal from '../components/modules/modal/ProviderModalComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
     ContentsTitle,
     Images,
-    UserModal,
+    ProviderModal,
     ProviderTicket,
     ScrollTopButton,
   },
@@ -121,15 +115,16 @@ export default {
     }
   },
 
+  created() {
+    this.getProvider();
+  },
+
   beforeMount() {
     this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
     this.$data.data.Provider.forEach(element => this.providers.push(element));
   },
 
   mounted() {
-    // Api叩く
-    this.getProvider();
-
     /**
      * [チケットの配置を左揃えするための処理]
      */
@@ -164,6 +159,7 @@ export default {
     // Twitter Apiからデータを取得
     async getProvider() {
       const response = await Twitter.getResponse('/api/twitter/provider');
+      console.log(response);
 
       // 予期しない型が返却された場合
       if (!response || !Array.isArray(response.data)) {
