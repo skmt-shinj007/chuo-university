@@ -39,15 +39,16 @@ class TwitterApiController extends Controller
       )
     );
 
-    // 現在日時取得のため、CarbonControllerからメソッドを呼ぶ
+    // APIにデータを追加するために扱う変数を定義。
     $current_date = CarbonController::getCurrentDate('Y-m');
-    $base_uri = config('constants.twitter.base_uri');
+    $base_link_uri = config('constants.twitter.base_uri');
 
     foreach ($response as $index => $value) {
       $created_date = date('Y-m', strtotime((string) $value->created_at));
+      $screen_name = $value->user->screen_name;
 
-      $value->link = $base_uri . $value->id_str;
       $value->created_date = $created_date;
+      $value->link = $base_link_uri . $screen_name . '/status/' . $value->id_str;
       $value->new = ($created_date === $current_date) ? true : false;
     };
 
