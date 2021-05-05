@@ -82,13 +82,16 @@ class TwitterApiController extends Controller
   {
     $providers = config('constants.twitter.providers');
     $provider_ids = array_values($providers);
+    $base_link_uri = config('constants.twitter.base_uri');
 
     $params = [
       'user_id' => $provider_ids
     ];
     $response = $this->connection()->get('users/lookup', $params);
-    json_encode($response);
+    foreach ($response as $index => $value) {
+      $value->link = $base_link_uri . $value->screen_name;
+    }
 
-    return $response;
+    return response()->json($response);
   }
 }
