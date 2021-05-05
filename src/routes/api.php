@@ -3,9 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TwitterApiController;
+use App\Http\Controllers\Api\PlayerController;
+use App\Http\Controllers\Api\StaffController;
+use App\Http\Controllers\Api\ObController;
+use App\Http\Controllers\Api\ActiveObController;
 
-use App\Http\Resources\UserProfileResource;
-use App\Models\UserProfile;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -27,7 +30,7 @@ Route::group(['prefix' => 'twitter'], function () {
     Route::get('/provider', [TwitterApiController::class, 'getProvider']);
 });
 
-// endpoint: /member
-Route::get('member', function () {
-    return UserProfileResource::collection(UserProfile::all());
-});
+Route::get('/player', [PlayerController::class, 'index']);
+Route::get('/active_ob', [ActiveObController::class, 'index']);
+Route::get('/staff', [StaffController::class, 'index']);
+Route::get('/ob', [ObController::class, 'index']);

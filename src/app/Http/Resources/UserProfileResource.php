@@ -7,6 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 // 使用するリソース
 use App\Http\Resources\PrefectureResource;
 use App\Http\Resources\PositionResource;
+use App\Http\Resources\TagResource;
 
 class UserProfileResource extends JsonResource
 {
@@ -23,15 +24,12 @@ class UserProfileResource extends JsonResource
             'name_ja' => $this->last_name_ja.' '.$this->first_name_ja,
             'name_kana' => $this->last_name_kana.' '.$this->first_name_kana,
             'name_en' => $this->last_name_en.' '.$this->first_name_en,
+            // [TODO:] テスト
             'img' => [
                 'src' => 'test.jpg',
                 'alt' => 'テストaltタグ',
             ],
-            // [TODO:] 確認中。不必要であれば削除
-            'post' => [
-                'club' => null,
-                'alumni' => null
-            ],
+            'tags' => TagResource::collection($this->tags),
             'graduate_date' => $this->graduation_year,
             'alma_mater' => $this->alma_mater,
             'prefecture' => PrefectureResource::make($this->prefecture),
