@@ -5,9 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserTag extends Model
+class UserProfileTag extends Model
 {
     use HasFactory;
+
+    /**
+     * table name
+     */
+    protected $table = 'user_tags';
 
     /**
      * The attributes that are mass assignable.

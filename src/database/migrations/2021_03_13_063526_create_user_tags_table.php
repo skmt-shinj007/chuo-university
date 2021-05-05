@@ -14,7 +14,8 @@ class CreateUserTagsTable extends Migration
     public function up()
     {
         Schema::create('user_tags', function (Blueprint $table) {
-            $table->id()->comment('primarykey');
+            // $table->id()->comment('primarykey');
+            $table->primary(['user_id', 'tag_id']);
             $table->foreignId('user_id')->comment('ユーザーID');
             $table->foreignId('tag_id')->comment('タグID');
             $table->timestamp('created_at')->nullable();
@@ -22,7 +23,7 @@ class CreateUserTagsTable extends Migration
             $table->softDeletes();
 
             // 外部キー制約
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('user_id')->on('user_profiles')->onDelete('cascade');
             $table->foreign('tag_id')->references('tag_id')->on('tags')->onDelete('cascade');
         });
     }

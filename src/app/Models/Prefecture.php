@@ -4,10 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+use App\Models\UserProfile;
 
 class Prefecture extends Model
 {
     use HasFactory;
+
+    /**
+     * table name
+     */
+    protected $table = 'prefectures';
 
     /**
      * The attributes that are mass assignable.
@@ -33,18 +41,8 @@ class Prefecture extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function userProfiles(): HasMany
+    public function profile(): HasMany
     {
         return $this->hasMany(UserProfile::class, 'prefecture_id', 'prefecture_id');
     }
-
-    // /**
-    //  * UserProfile rilation
-    //  *
-    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    //  */
-    // public function userProfile(): BelongsTo
-    // {
-    //     return $this->belongsTo(UserProfile::class, 'prefecture_id', 'prefecture_id')->withDefault();
-    // }
 }

@@ -4,9 +4,10 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-// rilations
-use App\Models\Prefecture;
+// 使用するリソース
 use App\Http\Resources\PrefectureResource;
+use App\Http\Resources\PositionResource;
+use App\Http\Resources\TagResource;
 
 class UserProfileResource extends JsonResource
 {
@@ -20,27 +21,20 @@ class UserProfileResource extends JsonResource
     {
         return [
             'id' => $this->user_id,
-                'name' => [
-                    'ja' => $this->last_name_ja.' '.$this->first_name_ja,
-                    'kana' => $this->last_name_kana.' '.$this->first_name_kana,
-                    'en' => $this->last_name_en.' '.$this->first_name_en,
-                ],
-                'img' => [
-                    'src' => 'hogehoge.jpg',
-                    'alt' => null,
-                ],
-                'from' => [
-                    'place' => $this->prefecture(),
-                    'alma_mater' => $this->alma_mater,
-                ],
-                'post' => [
-                    'club' => null,
-                    'alumni' => null
-                ],
-                'graduate' => [
-                    'age' => null,
-                    'year' => null,
-                ]
+            'name_ja' => $this->last_name_ja.' '.$this->first_name_ja,
+            'name_kana' => $this->last_name_kana.' '.$this->first_name_kana,
+            'name_en' => $this->last_name_en.' '.$this->first_name_en,
+            // [TODO:] テスト
+            'img' => [
+                'src' => 'test.jpg',
+                'alt' => 'テストaltタグ',
+            ],
+            'tags' => TagResource::collection($this->tags),
+            'graduate_date' => $this->graduation_year,
+            'alma_mater' => $this->alma_mater,
+            'prefecture' => PrefectureResource::make($this->prefecture),
+            'position' => PositionResource::make($this->position),
+            'grade' => $this->grade,
         ];
     }
 }

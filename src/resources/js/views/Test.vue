@@ -38,21 +38,27 @@ export default {
     WindowWidthResize() {
       this.windowWidth = window.innerWidth;
     },
-    async getMember() {
-      await this.$axios.get('/api/member')
+    /**
+     * 作成したAPIを叩くメソッド（テスト）
+     *
+     * @param {String} エンドポイント
+     * @return {Object}
+     */
+    async getApiResponce($endPoint) {
+      await this.$axios.get(`/api${$endPoint}`)
         .then((response) => {
           console.log(response.data);
-          // this.api = response;
         })
         .catch((error) => {
-          console.log('ERROR! member api resource');
           console.log(error);
         });
-    }
+    },
   },
   mounted() {
-    this.getMember();
-    
+    this.getApiResponce('/player');
+    this.getApiResponce('/staff');
+    this.getApiResponce('/ob');
+    this.getApiResponce('/active_ob');
   }
 }
 </script>

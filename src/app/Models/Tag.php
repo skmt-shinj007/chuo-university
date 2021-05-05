@@ -4,11 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
     use HasFactory;
     
+    /**
+     * table name
+     */
+    protected $table = 'tags';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -28,13 +34,13 @@ class Tag extends Model
     protected $primaryKey = 'tag_id';
 
     /**
-     * user rilation
+     * UserProfile rilation
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'user_tags', 'user_id', 'user_id');
+        return $this->belongsToMany(UserProfile::class, 'user_tags', 'tag_id', 'user_id');
     }
 
 }
