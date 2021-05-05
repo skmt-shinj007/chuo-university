@@ -9,20 +9,12 @@ class CarbonController extends Controller
 {
   /**
    * 現在日付取得
+   * @param string format
    */
-  public function getCurrentDate()
+  public static function getCurrentDate($format)
   {
     // dateインスタンス
     $date = Carbon::now('Asia/Tokyo');
-    $separate_date = explode('-', $date->toDateString());
-
-    // 扱いやすい配列に整形
-    $current_date = array(
-      'year'  => $separate_date[0],
-      'month' => $separate_date[1],
-      'date'  => $separate_date[2],
-    );
-
-    return $current_date;
+    return $date->format($format);
   }
 }
