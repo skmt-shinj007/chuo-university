@@ -1,13 +1,11 @@
 import axios from 'axios';
-import config from '../../config.json';
-import global from '../../global';
 
 /**
  * 環境判定  @type { Boolean }
- * [本番]false
- * [開発]true
+ * [本番]:false
+ * [開発]:true
  */
-const debug = !process.env.MIX_PRODUCTION;
+const debug = !process.env.PRODUCTION;
 
 export default {
   async getResponse(url) {
@@ -19,9 +17,9 @@ export default {
       })
 
       .catch(function (err) {
+        console.log(err.message);
         if (debug) {
           console.log(err);
-          console.log(`エラーメッセージ：${err.message}`);
           console.log(err.response);
         }
         // TODO:エラーページへリダイレクト

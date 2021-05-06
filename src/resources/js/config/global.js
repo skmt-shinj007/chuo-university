@@ -35,5 +35,15 @@ export default {
     getType(target) {
       return toString.call(target).slice(8, -1).toLowerCase();
     },
+
+    /**
+     * 現在のページをリロード
+     */
+    reload() {
+      this.$router.go({
+        path: this.$router.currentRoute.path,
+        force: true,
+      })
+    }
   },
 }
