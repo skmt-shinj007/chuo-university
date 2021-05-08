@@ -1,6 +1,6 @@
 <template>
-<div class="provider-ticket" ref="targetElement" @click="openModal">
-  <div class="provider-ticket__ticket">
+<div class="provider-ticket" ref="targetElement">
+  <div class="provider-ticket__ticket" @click="openModal">
     <div class="provider-ticket-thumbnail-border">
       <figure class="provider-ticket-thumbnail">
         <img :src="provider.profile_image_url_original" :alt="`${provider.name}のプロフィール画像`">
@@ -12,9 +12,7 @@
 
       <!-- SNSタグは 2つ まで -->
       <div class="provider-ticket-tag-group">
-        <!-- twitter -->
         <sns-tag sns="twitter" content="Twitter"/>
-        <!-- instagram -->
         <sns-tag sns="instagram" content="Instagram"/>
       </div>
     </div>
@@ -25,7 +23,7 @@
   </div>
 
   <!-- モーダル -->
-  <provider-modal v-if="isShow" :item="provider"/>
+  <provider-modal v-if="isShow" :item="provider" @close="closeModal"/>
 </div>
 </template>
 

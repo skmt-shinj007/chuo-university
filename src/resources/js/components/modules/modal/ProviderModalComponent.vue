@@ -7,13 +7,13 @@
 
             <div class="provider-modal__thumbnail">
               <figure class="provider-modal__image">
-                <!-- <img :src="item.profile_image_url" :alt="`${item.name}のプロフィール画像`"> -->
+                <img :src="item.profile_image_url_original" :alt="`${item.name}のプロフィール画像`">
               </figure>
             </div>
 
             <div class="provider-modal__info">
               <div class="provider-modal__name">
-                <!-- <h4 class="provider-modal__name-main">{{ item.name }}</h4> -->
+                <h4 class="provider-modal__name-main">{{ item.name }}</h4>
               </div>
             </div>
           </header>
@@ -49,10 +49,6 @@ export default {
       type: Object,
       default: null,
     },
-  },
-
-  computed: {
-
   },
 
   beforeMount() {
