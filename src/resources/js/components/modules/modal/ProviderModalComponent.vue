@@ -52,7 +52,7 @@ export default {
   },
 
   beforeMount() {
-    console.log(this.item);
+    // console.log(this.item);
   },
 
   methods: {
