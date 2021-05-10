@@ -13,7 +13,6 @@
 
     <div class="ticket-group">
       <div class="ticket" v-for="(provider, n) in provider.response" :key="n" ref="providerTicket">
-        {{ provider.response }}
         <provider-ticket :provider="provider"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
