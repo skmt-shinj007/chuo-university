@@ -33,42 +33,29 @@ class TwitterApiController extends Controller
   public function getTimeline()
   {
     // 直近3投稿の取得をリクエスト
-    $request = $this->connection()->get('statuses/user_timeline',
+    $response = $this->connection()->get('statuses/user_timeline',
       array(
         'count' => '3',
       )
     );
 
-    // フロントに返すレスポンスを定義
-    $response = $request;
+    // APIにデータを追加するために扱う変数を定義。
+    $current_date = CarbonController::getCurrentDate('Y-m');
+    $base_link_uri = config('constants.twitter.base_uri');
 
-    /**
-     * ツイート時間を datetime に変換。
-     * この時点で日本時間に修正済（APIレスポンス -> UTCタイムスタンプ）
-     * 時間まで知りたいとき -> @param1 に 'Y-m-d H:i:s' を入れる。
-     */
-    $created_at = date('Y-m-d', strtotime((string) $request[0]->created_at));
-    $separate_created = explode("-", $created_at);
+    foreach ($response as $index => $value) {
+      $created_date = date('Y-m', strtotime((string) $value->created_at));
+      $screen_name = $value->user->screen_name;
 
-    $created_date = array(
-      'year'  => $separate_created[0],
-      'month' => $separate_created[1],
-      'date'  => $separate_created[2],
-    );
-
-    // レスポンスにデータを格納
-    $response[0]->created_date = $created_date;
-
-    // 現在日時取得のため、CarbonControllerからメソッドを呼ぶ
-    $response[0]->current_date = (new CarbonController)->getCurrentDate();
-
-    // データをjson形式に変換
-    $response = json_encode($response);
+      $value->created_date = $created_date;
+      $value->link = $base_link_uri . $screen_name . '/status/' . $value->id_str;
+      $value->new = ($created_date === $current_date) ? true : false;
+    };
 
     /**
      * TODO:URL直打ちしたら情報出てきてしまうので対策する。（http://localhost:8080/api/twitter）
      */
-    return $response;
+    return response()->json($response);
   }
 
   /**
@@ -95,13 +82,17 @@ class TwitterApiController extends Controller
   {
     $providers = config('constants.twitter.providers');
     $provider_ids = array_values($providers);
+    $base_link_uri = config('constants.twitter.base_uri');
 
     $params = [
       'user_id' => $provider_ids
     ];
     $response = $this->connection()->get('users/lookup', $params);
-    json_encode($response);
+    foreach ($response as $index => $val) {
+      $val->link = $base_link_uri . $val->screen_name;
+      $val->profile_image_url_original = str_replace('_normal', '', $val->profile_image_url);
+    }
 
-    return $response;
+    return response()->json($response);
   }
 }
