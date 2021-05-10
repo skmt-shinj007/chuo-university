@@ -12,27 +12,19 @@
     <contents-title :title="messages.SectionTitles.Provider"/>
 
     <div class="ticket-group">
-      <div class="ticket" v-for="(provider, n) in providers" :key="n" ref="providerTicket" @click="openModal(provider)">
-        <provider-ticket :providerObj="provider"/>
+      <div class="ticket" v-for="(provider, n) in provider.response" :key="n" ref="providerTicket">
+        {{ provider.response }}
+        <provider-ticket :provider="provider"/>
       </div>
       <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
       <div
-        class="enpty"
+        class="empty"
         v-for="n in ticket.number"
-        :key="`enpty-${n}`"
+        :key="`empty-${n}`"
         :style="{ width: `${ticket.width}px` }"
       />
     </div>
 
-    <!-- モーダル -->
-    <user-modal v-if="modal.show" @close="closeModal" :item="modal.element">
-      <template v-slot:content>
-        <div class="provider">
-          <!-- TODO:ここに出すコンテンツを考える。 -->
-          ここに出すコンテンツを考える。
-        </div>
-      </template>
-    </user-modal>
   </section>
 
   <div class="photo__scroll-top">
@@ -54,14 +46,12 @@ import Animation from '../config/animation';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import Images from '../components/contents/ImagesComponent';
 import ProviderTicket from '../components/modules/ticket/ProviderTicketComponent';
-import UserModal from '../components/modules/modal/UserModalComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
   components: {
     ContentsTitle,
     Images,
-    UserModal,
     ProviderTicket,
     ScrollTopButton,
   },
@@ -84,12 +74,6 @@ export default {
       images: [],
 
       /**
-       * [写真提供者の情報]
-       * @type { Array }
-       */
-      providers: [],
-
-      /**
        * [チケット]
        * width, 個数
        * @type { Number }
@@ -97,16 +81,6 @@ export default {
       ticket: {
         width: 0,
         number: 0,
-      },
-
-      /**
-       * modalデータ
-       * show: @type { Boolean }
-       * element: @type { Object }
-       */
-      modal: {
-        show: false,
-        element: null
       },
 
       /**
@@ -121,44 +95,36 @@ export default {
     }
   },
 
-  beforeMount() {
+  created() {
+    this.getProvider();
     this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
-    this.$data.data.Provider.forEach(element => this.providers.push(element));
   },
 
-  mounted() {
-    // Api叩く
-    this.getProvider();
-
-    /**
-     * [チケットの配置を左揃えするための処理]
-     */
-    const ticket = this.$refs.providerTicket;
-    // チケットの要素数を取得 (チケットが一枚の時はenpty要素を増やさない)
-    if(ticket.length > 1) this.ticket.number = ticket.length;
-    this.getTicketWidth();
+  /**
+   * TODO:改修が必要。
+   * APIの返却値で構成しているチケットの幅が読み取れない。
+   * チケットは、APIが返却され次第レンダリングが実行されるので、幅や個数の初期値が設定できない。
+   * そもそもの配置（CSS）から考える必要がある。
+   */
+  updated() {
+    this.$nextTick(function () {
+      if (this.$refs.providerTicket !== undefined) {
+        this.setEmptyTicketData();
+      }
+    })
   },
 
   methods: {
     /**
-     * [チケットの幅を変数に格納]
-     * リサイズイベントに登録するため、メソッドにする。
+     * 空要素を生成するデータを格納。
+     * チケットの並びを左揃えにするために追加。
      */
-    getTicketWidth() {
-      this.ticket.width = this.$refs.providerTicket[0].offsetWidth;
-    },
-
-    /**
-     * [モーダル開閉処理]
-     */
-    openModal(el) {
-      this.modal.show = true;
-      this.modal.element = el;
-      document.body.classList.add("modal-open");
-    },
-    closeModal() {
-      this.modal.show = false;
-      document.body.classList.remove("modal-open");
+    setEmptyTicketData() {
+      const ticket = this.$refs.providerTicket;
+      if(ticket.length > 1) {
+        this.ticket.number = ticket.length;
+        this.ticket.width = this.$refs.providerTicket[0].offsetWidth;
+      }
     },
 
     // Twitter Apiからデータを取得
@@ -166,19 +132,21 @@ export default {
       const response = await Twitter.getResponse('/api/twitter/provider');
 
       // 予期しない型が返却された場合
-      if (!response || !Array.isArray(response.data)) {
+      if (!response || !Array.isArray(response)) {
         this.provider.err = true;
-        return
+        throw new Error('予期しないデータ型で返却されました。');
       }
-
-      this.provider.response = response.data;
+      this.provider.response = response;
     }
   },
 
   watch: {
     windowWidth() {
-      this.getTicketWidth();
-    }
+      if (this.ticket.width) {
+        console.log(this.ticket.width);
+        this.ticket.width = this.$refs.providerTicket[0].offsetWidth;
+      }
+    },
   },
 }
 
