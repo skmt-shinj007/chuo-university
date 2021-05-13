@@ -49,8 +49,7 @@
         class="member__ticket"
         ref="staffTicket"
         v-for="user in staff"
-        :key="user.id"
-        @click="openModal(user)">
+        :key="user.id">
 
           <user-ticket :userObj="user"/>
       </div>
