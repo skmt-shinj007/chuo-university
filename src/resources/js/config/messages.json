@@ -257,5 +257,9 @@
     "OfficerTable": {
       "Heading": ["白門会役職", "名前", "卒業年", "学員会役職"]
     }
+  },
+
+  "provider": {
+    "profile": "プロフィール"
   }
 }

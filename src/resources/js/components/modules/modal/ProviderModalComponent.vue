@@ -20,7 +20,7 @@
 
           <div class="provider-modal__contents">
             <div class="provider-modal__description">
-              <h5 class="provider-modal__description-title">プロフィール</h5>
+              <h5 class="provider-modal__description-title">{{ messages.provider.profile }}</h5>
               <p class="provider-modal__description-text">{{ item.description }}</p>
             </div>
             <div class="provider-modal__button">
