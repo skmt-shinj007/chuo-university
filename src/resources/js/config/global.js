@@ -37,13 +37,23 @@ export default {
     },
 
     /**
-     * 現在のページをリロード
+     * 現在のページをリロード。
      */
     reload() {
       this.$router.go({
         path: this.$router.currentRoute.path,
         force: true,
       })
+    },
+
+    /**
+     * 外部サイトに別タブで遷移させる。
+     * 脆弱性に対応するため、noopenerとnoreferrerを付与する。
+     * @param {string} url
+     */
+    externalLink(url) {
+      const option = 'noopener, noreferrer';
+      window.open(url, '_blank', option);
     }
   },
 }

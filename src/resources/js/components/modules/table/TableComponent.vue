@@ -63,7 +63,7 @@ export default {
 
   computed: {
     /**
-     * 背景を透過にするクラスを付与
+     * テーブルセルの幅割合を指定する。
      */
     rating() {
       return (this.ratio) ? `common-table--${this.ratio}` : null;

@@ -158,10 +158,9 @@
   },
 
   "ButtonName": {
-    "Member":  "メンバーを見る",
-    "Hakumonkai": "白門会を知る",
-    "ToContact": "お問い合わせへ",
-    "NewsRequest": "ニュースを取得"
+    "Member"      :  "メンバーを見る",
+    "Hakumonkai"  : "白門会を知る",
+    "ToContact"   : "お問い合わせへ"
   },
 
   "sitemap": {
@@ -207,8 +206,12 @@
 
   "Button": {
     "NewsRequest": {
-      "Name" : "ニュースを取得",
-      "Type" : "button"
+      "Name": "ニュースを取得",
+      "Type": "button"
+    },
+    "Twitter": {
+      "Name": "Twitterを見る",
+      "Type": "button"
     }
   },
 
