@@ -1,51 +1,66 @@
 <template>
 <div class="user-ticket">
-  <div class="user-ticket-thumbnail-border" :class="borderColor">
-    <figure class="user-ticket-thumbnail">
-      <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
-    </figure>
-  </div>
+  <div class="user-ticket__ticket" @click="openModal">
+    <div class="user-ticket-thumbnail-border" :class="borderColor">
+      <figure class="user-ticket-thumbnail">
+        <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
+      </figure>
+    </div>
 
-  <div class="user-ticket-item">
-    <span class="user-ticket__name">{{ userObj.name.ja }}</span>
-    <span class="user-ticket__name">{{ userObj.name.en }}</span>
+    <div class="user-ticket-item">
+      <span class="user-ticket__name">{{ userObj.name.ja }}</span>
+      <span class="user-ticket__name">{{ userObj.name.en }}</span>
 
-    <!-- ユーザーカテゴリーが選手の場合 -->
-    <div v-if="userObj.category === 1" class="user-ticket-tag-group">
-      <div class="user-ticket-tag">
-        <position-tag :position="userObj.position"/>
+      <!-- ユーザーカテゴリーが選手の場合 -->
+      <div v-if="userObj.category === 1" class="user-ticket-tag-group">
+        <div class="user-ticket-tag">
+          <position-tag :position="userObj.position"/>
+        </div>
+        <div class="user-ticket-tag">
+          <grade-tag :grade="userObj.grade"/>
+        </div>
       </div>
-      <div class="user-ticket-tag">
-        <grade-tag :grade="userObj.grade"/>
+
+      <!-- 選手ではない場合（スタッフ）は役職を出す -->
+      <div v-else class="user-ticket-tag-group">
+        <div class="user-ticket-tag">
+          <tag :content="userObj.post.club"/>
+        </div>
       </div>
     </div>
 
-    <!-- 選手ではない場合（スタッフ）は役職を出す -->
-    <div v-else class="user-ticket-tag-group">
-      <div class="user-ticket-tag">
-        <tag :content="userObj.post.club"/>
-      </div>
+    <div class="user-ticket-item">
+      <svg-vue class="user-ticket-icon" icon="angle_right"/>
     </div>
   </div>
 
-  <div class="user-ticket-item">
-    <svg-vue class="user-ticket-icon" icon="angle_right"/>
-  </div>
-
+  <user-modal v-if="showModal" @close="closeModal" :item="userObj"/>
 </div>
 </template>
 
 <script>
 // component import
+import UserModal from '../modal/UserModalComponent';
 import Tag from '../tag/TagComponent';
 import PositionTag from '../tag/PositionTagComponent';
 import GradeTag from '../tag/GradeTagComponent';
 
 export default {
   components: {
+    UserModal,
     Tag,
     PositionTag,
     GradeTag,
+  },
+
+  data() {
+    return {
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      showModal: false,
+    }
   },
 
   props: {
@@ -61,32 +76,42 @@ export default {
       return (this.userObj.position === "前衛") ? `${borderClass}--orange` : (this.userObj.position === "後衛") ? `${borderClass}--green` : `${borderClass}--blue`;
     },
   },
+
+  methods: {
+    /**
+     * [モーダル開閉処理]
+     */
+    openModal() {
+      this.showModal = true;
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.showModal = false;
+      document.body.classList.remove("modal-open");
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 .user-ticket {
-  @include flex(row nowrap, space-between, center);
-  box-shadow: 0 3px 5px 3px color(darkShadow);
   background-color: color(white);
-  border: 2px solid color(light);
-  border-radius: 100px;
-  padding: interval(1);
-  position: relative;
   width: interval(34);
 
-  @include mq(md) {
-    cursor: pointer;
+  &__ticket {
+    @include flex(row nowrap, space-between, center);
+    padding: interval(1);
     box-shadow: 0 1px 3px 1px color(darkShadow);
-    transition: all .3s ease-out;
-  }
+    border-radius: 100px;
 
-  @include hover {
-    box-shadow: 0 3px 5px 3px color(darkShadow);
-    transform: translateY(-2px);
+    @include mq(md) {
+      cursor: pointer;
+      transition: all .3s ease-out;
+    }
 
-    .user-ticket-icon {
-      animation: iconSlide 1.5s infinite;
+    @include hover {
+      box-shadow: 0 3px 5px 3px color(darkShadow);
+      transform: translateY(-2px);
     }
   }
 
