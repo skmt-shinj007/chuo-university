@@ -64,8 +64,9 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
-// data import
+// config import
 import Data from '../config/data.json';
+import Api from '../config/api/index';
 
 export default {
   components: {
@@ -93,6 +94,10 @@ export default {
     }
   },
 
+  created() {
+    this.getPlayer();
+  },
+
   beforeMount() {
     // TODO:以下DBから情報を引っ張る
 
@@ -112,18 +117,11 @@ export default {
     this.texts = this.messages.MainVisual.Member;
   },
 
-  mounted() {
-    /**
-     * [チケットレイアウトの配置]
-     * justify-content: center; は余った要素が真ん中よりになるので、左寄せに揃えるための処理
-     * 解決策 -> チケットの数だけ空divを追加する。
-     */
-    const playerTicket = this.$refs.playerTicket;
-    const staffTicket = this.$refs.staffTicket;
-
-    // チケットの個数を変数に格納
-    this.playerTicketNumber = playerTicket.length;
-    this.staffTicketNumber = staffTicket.length;
+  methods: {
+    async getPlayer() {
+      const player = await Api.getResponse('/player');
+      console.log(player);
+    }
   },
 }
 </script>

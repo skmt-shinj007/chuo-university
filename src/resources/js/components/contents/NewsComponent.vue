@@ -73,7 +73,7 @@ export default {
 
   methods: {
     async getTweets() {
-      const tweets = await Api.getResponse('/api/twitter/timeline');
+      const tweets = await Api.getResponse('/twitter/timeline');
 
       if (this.getType(tweets) === 'array') {
         this.twitter.timelines = tweets;

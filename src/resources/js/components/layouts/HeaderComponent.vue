@@ -122,10 +122,10 @@ export default {
     },
 
     /**
-     * APIレスポンスを変数にセットする。 [Twitter]
+     * APIレスポンスを変数にセットする。
      */
     async setTwitter() {
-      const response = await Api.getResponse('api/twitter/account');
+      const response = await Api.getResponse('/twitter/account');
 
       if (this.getType(response) !== 'object') {
         console.error('ERROR:オブジェクトで返却されませんでした。');

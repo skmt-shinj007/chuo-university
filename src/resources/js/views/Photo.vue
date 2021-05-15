@@ -128,7 +128,7 @@ export default {
 
     // Twitter Apiからデータを取得
     async getProvider() {
-      const response = await Api.getResponse('/api/twitter/provider');
+      const response = await Api.getResponse('/twitter/provider');
 
       // 予期しない型が返却された場合
       if (!response || !Array.isArray(response)) {
