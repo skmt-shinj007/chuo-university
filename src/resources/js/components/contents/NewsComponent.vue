@@ -43,7 +43,7 @@
 import ContentsTitle from '../modules/ContentsTitleComponent';
 import PrimaryButton from '../modules/button/PrimaryButtonComponent.vue';
 
-import Twitter from '../../config/api/twitter/index';
+import Api from '../../config/api/index';
 
 export default {
   components: {
@@ -73,7 +73,7 @@ export default {
 
   methods: {
     async getTweets() {
-      const tweets = await Twitter.getResponse('/api/twitter/timeline');
+      const tweets = await Api.getResponse('/api/twitter/timeline');
 
       if (this.getType(tweets) === 'array') {
         this.twitter.timelines = tweets;
