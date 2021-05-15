@@ -1,22 +1,20 @@
 <template>
 <div class="user-ticket">
   <div class="user-ticket__ticket" @click="openModal">
-    <div class="user-ticket-thumbnail-border" :class="borderColor">
-      <figure class="user-ticket-thumbnail">
-        <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
-      </figure>
+    <div class="user-ticket__thumbnail">
+      <user-thumbnail :image="thumbnail" :borderColor='positionColor'/>
     </div>
 
-    <div class="user-ticket-item">
-      <span class="user-ticket__name">{{ userObj.name.ja }}</span>
-      <span class="user-ticket__name">{{ userObj.name.en }}</span>
+    <div class="user-ticket__profile">
+      <span class="user-ticket__profile-name">{{ userObj.name.ja }}</span>
+      <span class="user-ticket__profile-name">{{ userObj.name.en }}</span>
 
       <!-- ユーザーカテゴリーが選手の場合 -->
-      <div v-if="userObj.category === 1" class="user-ticket-tag-group">
-        <div class="user-ticket-tag">
+      <div v-if="userObj.category === 1" class="user-ticket__profile-tag-group">
+        <div class="user-ticket__profile-tag">
           <position-tag :position="userObj.position"/>
         </div>
-        <div class="user-ticket-tag">
+        <div class="user-ticket__profile-tag">
           <grade-tag :grade="userObj.grade"/>
         </div>
       </div>
@@ -29,9 +27,7 @@
       </div>
     </div>
 
-    <div class="user-ticket-item">
-      <svg-vue class="user-ticket-icon" icon="angle_right"/>
-    </div>
+    <div class="user-ticket__border" :class="`user-ticket__border--${positionColor}`"/>
   </div>
 
   <user-modal v-if="showModal" @close="closeModal" :item="userObj"/>
@@ -44,6 +40,7 @@ import UserModal from '../modal/UserModalComponent';
 import Tag from '../tag/TagComponent';
 import PositionTag from '../tag/PositionTagComponent';
 import GradeTag from '../tag/GradeTagComponent';
+import UserThumbnail from '../UserThumbnailComponent';
 
 export default {
   components: {
@@ -51,6 +48,7 @@ export default {
     Tag,
     PositionTag,
     GradeTag,
+    UserThumbnail,
   },
 
   data() {
@@ -60,6 +58,15 @@ export default {
        * @type { Boolean }
        */
       showModal: false,
+
+      /**
+       * imageコンポーネントに渡すオブジェクト
+       * @type {object}
+       */
+      thumbnail: {
+        img: '',
+        alt: ''
+      },
     }
   },
 
@@ -71,10 +78,15 @@ export default {
   },
 
   computed: {
-    borderColor() {
-      const borderClass = 'user-ticket-thumbnail-border';
-      return (this.userObj.position === "前衛") ? `${borderClass}--orange` : (this.userObj.position === "後衛") ? `${borderClass}--green` : `${borderClass}--blue`;
+    positionColor() {
+      const position = this.userObj.position;
+      return (position === '後衛') ? 'lightgreen' : (position === '前衛') ? 'orange' : null;
     },
+  },
+
+  beforeMount() {
+    this.thumbnail.img = this.userObj.img.src;
+    this.thumbnail.alt = this.userObj.img.alt;
   },
 
   methods: {
@@ -96,13 +108,13 @@ export default {
 <style lang="scss">
 .user-ticket {
   background-color: color(white);
-  width: interval(34);
+  position: relative;
 
   &__ticket {
-    @include flex(row nowrap, space-between, center);
-    padding: interval(1);
+    @include flex(row nowrap, flex-start, center);
     box-shadow: 0 1px 3px 1px color(darkShadow);
-    border-radius: 100px;
+    border-radius: radius(soft);
+    padding: interval(1);
 
     @include mq(md) {
       cursor: pointer;
@@ -115,65 +127,55 @@ export default {
     }
   }
 
-  &-thumbnail-border {
-    width: interval(9);
-    height: interval(9);
-
-    &--blue {
-      @include thumbnail-border();
-    }
-
-    &--orange {
-      @include thumbnail-border($color: color(orange));
-    }
-
-    &--green {
-      @include thumbnail-border($color: color(lightGreen));
-    }
+  &__thumbnail {
+    width: interval(10);
   }
 
-  &-thumbnail {
-    width: 100%;
-    @include trimming(aspect(square));
+  &__profile {
+    margin-left: 5%;
 
-    @include mq(sm) {
-      width: interval(10);
+    &-name {
+      display: block;
+      font-size: font(14);
+
+      &:last-of-type {
+        font-size: font(12);
+      }
     }
 
-    & > img {
-      border-radius: radius(circle);
+    &-tag-group {
+      @include flex(row wrap, flex-start, center);
     }
-  }
 
-  &__name {
-    display: block;
-    font-size: font(14);
+    &-tag {
+      margin: interval(.5) interval(.5) 0 0;
 
-    &:first-of-type {
-      display: none;
-
-      @include mq(sm) {
-        display: block;
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
 
-  &-tag-group {
-    @include flex(row wrap, flex-start, center);
-  }
+  &__border {
+    @include gradient(color(lightDarkblue), color(blue), horizontal);
+    width: 10%;
+    height: pixel(.5);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(25%, -50%);
 
-  &-tag {
-    margin: interval(.5) interval(.5) 0 0;
-
-    &:last-child {
-      margin-right: 0;
+    &--lightgreen {
+      @include gradient(color(lightDarkblue), color(lightgreen), horizontal);
     }
-  }
 
-  &-icon {
-    width: interval(1.5);
-    height: interval(1.5);
-    fill: color(darkblue);
+    &--orange {
+      @include gradient(color(lightDarkblue), color(orange), horizontal);
+    }
+
+    @include mq(md) {
+      display: none;
+    }
   }
 }
 

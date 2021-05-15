@@ -21,7 +21,6 @@
 
   <section class="member__players">
     <contents-title :title="messages.SectionTitles.Players"/>
-
     <div class="member__ticket-group">
       <div
         class="member__ticket"
@@ -31,19 +30,11 @@
 
           <user-ticket :userObj="player"/>
       </div>
-
-      <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
-      <div
-        class="enpty"
-        v-for="n in playerTicketNumber"
-        :key="`enpty-${n}`"
-        :style="{ width: `${ticketWidth}px` }"/>
     </div>
   </section>
 
   <section class="member__staff">
     <contents-title :title="messages.SectionTitles.Staff"/>
-
     <div class="member__ticket-group">
       <div
         class="member__ticket"
@@ -53,14 +44,6 @@
 
           <user-ticket :userObj="user"/>
       </div>
-
-      <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
-      <div
-        class="enpty"
-        v-for="n in staffTicketNumber"
-        :key="`enpty-${n}`"
-        :style="{ width: `${ticketWidth}px` }"
-      />
     </div>
   </section>
 
@@ -107,19 +90,6 @@ export default {
       users: [],     // 全ユーザー
       players: [],  // プレイヤー
       staff: [],    // スタッフ
-
-      /**
-       * [各チケットの要素数]
-       * @type { Number }
-       */
-      playerTicketNumber: 0,
-      staffTicketNumber: 0,
-
-      /**
-       * [チケットのwidth]
-       * @type { Number }
-       */
-      ticketWidth: 0,
     }
   },
 
@@ -154,34 +124,12 @@ export default {
     // チケットの個数を変数に格納
     this.playerTicketNumber = playerTicket.length;
     this.staffTicketNumber = staffTicket.length;
-
-    /**
-     * 初期描画時のにチケットの幅を取得
-     */
-    this.getTicketWidth();
   },
-
-  methods: {
-    /**
-     * [チケットの幅を変数にぶち込む]
-     * removeEventListener > 無名関数だと解除できないので処理をメソッドとして登録
-     */
-    getTicketWidth() {
-      this.ticketWidth = this.$refs.playerTicket[0].offsetWidth;
-    },
-  },
-
-  watch: {
-    windowWidth() {
-      this.getTicketWidth();
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 .member {
-
   &__players {
     margin-top: interval(5);
   }
@@ -193,18 +141,29 @@ export default {
 
   &__ticket-group {
     @include flex(column nowrap, center, center);
+    max-width: pixel(50);
+    margin: 0 auto;
 
     @include mq(sm) {
-      @include flex(row wrap, center, center);
+      @include flex(row wrap);
+      max-width: pixel(60);
+    }
+
+    @include mq(md) {
+      max-width: none;
     }
   }
 
   &__ticket {
-    margin-bottom: interval(5);
+    padding: interval(1);
+    width: 100%;
 
-    @include mq(sm) {
-      margin-bottom: 0;
-      padding: interval(1);
+    @include mq(md) {
+      width: calc(100% / 3);
+    }
+
+    @include mq(lg) {
+      width: calc(100% / 4);
     }
   }
 
@@ -214,7 +173,6 @@ export default {
 }
 
 .main-visual {
-
   &__wrap {
     @include flex(column nowrap, center, center);
 
