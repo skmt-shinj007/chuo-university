@@ -6,23 +6,16 @@
     </div>
 
     <div class="user-ticket__profile">
-      <span class="user-ticket__profile-name">{{ userObj.name.ja }}</span>
-      <span class="user-ticket__profile-name">{{ userObj.name.en }}</span>
+      <span class="user-ticket__profile-name">{{ user.name_ja }}</span>
+      <span class="user-ticket__profile-name">{{ user.name_en }}</span>
 
-      <!-- ユーザーカテゴリーが選手の場合 -->
-      <div v-if="userObj.category === 1" class="user-ticket__profile-tag-group">
+      <!-- TODO：タグの改修 -->
+      <div class="user-ticket__profile-tag-group">
         <div class="user-ticket__profile-tag">
-          <position-tag :position="userObj.position"/>
+          <!-- <position-tag :position="userObj.position"/> -->
         </div>
         <div class="user-ticket__profile-tag">
-          <grade-tag :grade="userObj.grade"/>
-        </div>
-      </div>
-
-      <!-- 選手ではない場合（スタッフ）は役職を出す -->
-      <div v-else class="user-ticket-tag-group">
-        <div class="user-ticket-tag">
-          <tag :content="userObj.post.club"/>
+          <!-- <grade-tag :grade="user.grade"/> -->
         </div>
       </div>
     </div>
@@ -30,7 +23,7 @@
     <div class="user-ticket__border" :class="`user-ticket__border--${positionColor}`"/>
   </div>
 
-  <user-modal v-if="showModal" @close="closeModal" :item="userObj"/>
+  <user-modal v-if="showModal" @close="closeModal" :item="user"/>
 </div>
 </template>
 
@@ -60,7 +53,7 @@ export default {
       showModal: false,
 
       /**
-       * imageコンポーネントに渡すオブジェクト
+       * thumbnailコンポーネントに渡すオブジェクト
        * @type {object}
        */
       thumbnail: {
@@ -71,7 +64,7 @@ export default {
   },
 
   props: {
-    userObj: {
+    user: {
       type: Object,
       default: null
     }
@@ -79,14 +72,16 @@ export default {
 
   computed: {
     positionColor() {
-      const position = this.userObj.position;
-      return (position === '後衛') ? 'lightgreen' : (position === '前衛') ? 'orange' : null;
-    },
+      return (this.user.position) ? this.user.position.color : 'blue';
+    }
   },
 
-  beforeMount() {
-    this.thumbnail.img = this.userObj.img.src;
-    this.thumbnail.alt = this.userObj.img.alt;
+  created() {
+    let image = this.user.img;
+    if (image) {
+      this.thumbnail.img = image.src;
+      this.thumbnail.alt = image.alt;
+    }
   },
 
   methods: {
@@ -157,13 +152,16 @@ export default {
   }
 
   &__border {
-    @include gradient(color(lightDarkblue), color(blue), horizontal);
     width: 10%;
     height: pixel(.5);
     position: absolute;
     top: 50%;
     right: 0;
     transform: translate(25%, -50%);
+
+    &--blue {
+      @include gradient(color(lightDarkblue), color(blue), horizontal);
+    }
 
     &--lightgreen {
       @include gradient(color(lightDarkblue), color(lightgreen), horizontal);

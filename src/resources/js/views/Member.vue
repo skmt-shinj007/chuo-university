@@ -25,10 +25,10 @@
       <div
         class="member__ticket"
         ref="playerTicket"
-        v-for="player in players"
+        v-for="player in user.players"
         :key="player.id">
 
-          <user-ticket :userObj="player"/>
+          <user-ticket :user="player"/>
       </div>
     </div>
   </section>
@@ -39,10 +39,10 @@
       <div
         class="member__ticket"
         ref="staffTicket"
-        v-for="user in staff"
-        :key="user.id">
+        v-for="staff in user.staff"
+        :key="staff.id">
 
-          <user-ticket :userObj="user"/>
+          <user-ticket :user="staff"/>
       </div>
     </div>
   </section>
@@ -88,40 +88,32 @@ export default {
        */
       texts: {},
 
-      users: [],     // 全ユーザー
-      players: [],  // プレイヤー
-      staff: [],    // スタッフ
+      user: {
+        players: [],
+        staff: [],
+      }
     }
   },
 
   created() {
     this.getPlayer();
-  },
-
-  beforeMount() {
-    // TODO:以下DBから情報を引っ張る
-
-    // 全ユーザーを取得
-    this.$data.data.Users.forEach(element => this.users.push(element));
-
-    // usersプロパティから選手のみを抽出
-    this.users.forEach(element => {
-      (element.category === this.playerNum) ? this.players.push(element) : null;
-    });
-
-    // usersプロパティからスタッフのみを抽出
-    this.users.forEach(element => {
-      (element.category === this.staffNum) ? this.staff.push(element) : null;
-    });
-
-    this.texts = this.messages.MainVisual.Member;
+    this.getStaff();
   },
 
   methods: {
+    /**
+     * ユーザー取得
+     * TODO：引数を使用して1つの関数にできそう。
+     * どこに代入するかの指定を引数でできれば解決。
+     */
     async getPlayer() {
-      const player = await Api.getResponse('/player');
-      console.log(player);
-    }
+      const response = await Api.getResponse('/player');
+      (this.getType(response.data) === 'array') ? this.user.players = response.data : new Error('player:レスポンスが配列ではありません。');
+    },
+    async getStaff() {
+      const response = await Api.getResponse('/staff');
+      (this.getType(response.data) === 'array') ? this.user.staff = response.data : new Error('staff:レスポンスが配列ではありません。');
+    },
   },
 }
 </script>

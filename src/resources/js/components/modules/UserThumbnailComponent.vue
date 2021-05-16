@@ -3,7 +3,7 @@
     <picture class="user-thumbnail__picture">
       <!-- <source v-if="image.source" :media="mq" :srcset="image.source.sp">
       <source v-if="image.source" :media="mq" :srcset="image.source.pc"> -->
-      <img :src="`/image/${image.img}`" :alt="image.alt">
+      <img :src="image.img" :alt="image.alt" @error="noImage">
     </picture>
   </div>
 </template>
@@ -50,6 +50,16 @@ export default {
   computed: {
     color() {
       return (this.borderColor) ? `user-thumbnail--${this.borderColor}` : null;
+    },
+  },
+
+  methods: {
+    /**
+     * 画像のロードエラーハンドリング
+     * デフォルトの画像パスに置き換える。
+     */
+    noImage(element) {
+      element.target.src = '/image/asahi_emu.jpg';
     }
   },
 }
