@@ -169,7 +169,7 @@ export default {
   }
 
   &__icon {
-    width: interval(30);
+    width: interval(28);
     fill: color(white);
     stroke: color(orange);
     stroke-width: pixel(1);
@@ -178,10 +178,6 @@ export default {
   &__text {
     margin-top: interval(2);
     text-align: center;
-
-    @include mq(sm) {
-      width: auto;
-    }
   }
 
   &__character {
