@@ -59,7 +59,7 @@ export default {
      * デフォルトの画像パスに置き換える。
      */
     noImage(element) {
-      element.target.src = '/image/asahi_emu.jpg';
+      element.target.src = '/image/noimage.png';
     }
   },
 }
