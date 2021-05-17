@@ -5,14 +5,14 @@
       <template v-slot:inner>
         <div class="main-visual__wrap">
           <svg-vue class="main-visual__icon" icon="chuo-logo"/>
-          <div class="main-visual__text-group">
-            <div class="main-visual__text" v-for="(text, n) in texts" :key="n">
-              <span
-                class="main-visual__item delay"
-                v-for="(t, n) in text"
-                :key="n"
-                v-text="t"/>
-            </div>
+          <div class="main-visual__text">
+            <span
+              class="main-visual__character delay"
+              v-for="(t, i) in mvText"
+              :key="i"
+              v-text="t"
+              :style="{ animationDelay: i*150+'ms' }"
+            />
           </div>
         </div>
       </template>
@@ -84,9 +84,9 @@ export default {
 
       /**
        * メインビジュアルのテキスト
-       * @type { Object }
+       * @type { string }
        */
-      texts: {},
+      mvText: '',
 
       user: {
         players: [],
@@ -98,6 +98,7 @@ export default {
   created() {
     this.getPlayer();
     this.getStaff();
+    this.mvText = this.messages.MainVisual.Member.Text;
   },
 
   methods: {
@@ -165,79 +166,39 @@ export default {
 .main-visual {
   &__wrap {
     @include flex(column nowrap, center, center);
-
-    @include mq(sm) {
-      flex-direction: row;
-    }
   }
 
   &__icon {
-    width: interval(36);
+    width: interval(30);
     fill: color(white);
     stroke: color(orange);
     stroke-width: pixel(1);
-
-    @include mq(sm) {
-      width: interval(28);
-    }
-  }
-
-  &__text-group {
-    margin-top: interval(2);
-
-    @include mq(sm) {
-      margin: 0 0 0 interval(1);
-      flex-grow: 2;
-    }
-
-    @include mq(md) {
-      margin-left: interval(3);
-    }
   }
 
   &__text {
+    margin-top: interval(2);
     text-align: center;
 
     @include mq(sm) {
-      text-align: left;
+      width: auto;
     }
   }
 
-  &__item {
-    text-shadow: none;
+  &__character {
+    display: inline-block;
     line-height: 1.2;
-    font-size: font(40);
-    margin-right: interval(1);
+    font-size: font(30);
+    margin-right: interval(.5);
+    color: color(white);
+    animation: textIn .8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
+
+    &:nth-child(4) {
+      margin-right: interval(1);
+    }
 
     &:last-child {
       margin-right: 0;
     }
-
-    @include mq(sm) {
-      font-size: font(36);
-      margin-right: interval(.5);
-    }
-
-    @include mq(md) {
-      font-size: font(48);
-    }
-  }
-
-  @for $i from 1 through 2 {
-    &__item:nth-child(#{$i}) {
-      animation-delay: $i * 100ms + 200ms;
-    }
-  }
-}
-
-.ticket {
-  &-enter-active {
-    transition: opacity .5s, transform .5s ease-out;
-  }
-
-  &-enter {
-    transform: translateY(-50px);
-    opacity: 0;
   }
 }
 </style>
