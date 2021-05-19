@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Tag extends Model
 {
     use HasFactory;
-    
+
     /**
      * table name
      */
@@ -28,13 +28,13 @@ class Tag extends Model
 
     /**
      * primary key
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'tag_id';
 
     /**
-     * UserProfile rilation
+     * UserProfile relation
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
