@@ -158,10 +158,9 @@
   },
 
   "ButtonName": {
-    "Member":  "メンバーを見る",
-    "Hakumonkai": "白門会を知る",
-    "ToContact": "お問い合わせへ",
-    "NewsRequest": "ニュースを取得"
+    "Member"      :  "メンバーを見る",
+    "Hakumonkai"  : "白門会を知る",
+    "ToContact"   : "お問い合わせへ"
   },
 
   "sitemap": {
@@ -207,8 +206,12 @@
 
   "Button": {
     "NewsRequest": {
-      "Name" : "ニュースを取得",
-      "Type" : "button"
+      "Name": "ニュースを取得",
+      "Type": "button"
+    },
+    "Twitter": {
+      "Name": "Twitterを見る",
+      "Type": "button"
     }
   },
 
@@ -254,5 +257,9 @@
     "OfficerTable": {
       "Heading": ["白門会役職", "名前", "卒業年", "学員会役職"]
     }
+  },
+
+  "provider": {
+    "profile": "プロフィール"
   }
 }
