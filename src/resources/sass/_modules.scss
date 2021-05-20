@@ -66,45 +66,6 @@ $arrow-right-darkblue: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 
 
 $arrow-left-darkblue: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18"><path d="M0 0h24v24H0z" fill="none"/><path fill="%2310334e" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>';
 
-/**
- * @keyframes
- */
-@keyframes iconSlide {
-  0% {
-    transform: translateX(0);
-  }
-  10% {
-    transform: translateX(10%);
-  }
-  20% {
-    transform: translateX(20%);
-  }
-  30% {
-    transform: translateX(30%);
-  }
-  40% {
-    transform: translateX(40%);
-  }
-  50% {
-    transform: translateX(50%);
-  }
-  60% {
-    transform: translateX(40%);
-  }
-  70% {
-    transform: translateX(30%);
-  }
-  80% {
-    transform: translateX(20%);
-  }
-  90% {
-    transform: translateX(10%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 // main visual text
 @keyframes textIn {
   0% {
