@@ -27,8 +27,7 @@
         class="member__ticket"
         ref="playerTicket"
         v-for="player in players"
-        :key="player.id"
-        @click="openModal(player)">
+        :key="player.id">
 
           <user-ticket :userObj="player"/>
       </div>
@@ -50,8 +49,7 @@
         class="member__ticket"
         ref="staffTicket"
         v-for="user in staff"
-        :key="user.id"
-        @click="openModal(user)">
+        :key="user.id">
 
           <user-ticket :userObj="user"/>
       </div>
@@ -65,8 +63,6 @@
       />
     </div>
   </section>
-
-  <user-modal v-if="showModal" @close="closeModal" :item="clickElement"/>
 
   <div class="member__scroll-top">
     <scroll-top-button/>
@@ -83,8 +79,6 @@ import Risize from '../config/resize';
 import MainVisual from '../components/contents/MainVisualComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
-import UserModal from '../components/modules/modal/UserModalComponent.vue';
-import TableComponent from '../components/modules/table/TableComponent.vue';
 import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
 // data import
@@ -95,8 +89,6 @@ export default {
     MainVisual,
     ContentsTitle,
     UserTicket,
-    UserModal,
-    TableComponent,
     ScrollTopButton,
   },
 
@@ -115,18 +107,6 @@ export default {
       users: [],     // 全ユーザー
       players: [],  // プレイヤー
       staff: [],    // スタッフ
-
-      /**
-       * [モーダル表示フラグ]
-       * @type { Boolean }
-       */
-      showModal: false,
-
-      /**
-       * [モーダルに渡すデータ]
-       * @type { Object }
-       */
-      clickElement: null,
 
       /**
        * [各チケットの要素数]
@@ -182,19 +162,6 @@ export default {
   },
 
   methods: {
-    /**
-     * [モーダル開閉処理]
-     */
-    openModal(el) {
-      this.showModal = true;
-      this.clickElement = el;
-      document.body.classList.add("modal-open");
-    },
-    closeModal() {
-      this.showModal = false;
-      document.body.classList.remove("modal-open");
-    },
-
     /**
      * [チケットの幅を変数にぶち込む]
      * removeEventListener > 無名関数だと解除できないので処理をメソッドとして登録

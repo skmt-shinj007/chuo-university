@@ -4,26 +4,29 @@
       <div class="provider-modal">
         <div class="provider-modal__container">
           <header class="provider-modal__header">
-
             <div class="provider-modal__thumbnail">
-              <figure class="provider-modal__image">
+              <figure class="provider-modal__thumbnail-image">
                 <img :src="item.profile_image_url_original" :alt="`${item.name}のプロフィール画像`">
               </figure>
             </div>
 
-            <div class="provider-modal__info">
-              <div class="provider-modal__name">
-                <h4 class="provider-modal__name-main">{{ item.name }}</h4>
+            <div class="provider-modal__profile">
+              <h4 class="provider-modal__name">{{ item.name }}</h4>
+              <div class="provider-modal__information-table">
+                <table-component :tableItems="tableData" :ratio="5"/>
               </div>
             </div>
           </header>
 
-          <div class="provider-modal__line"/>
-
           <div class="provider-modal__contents">
-
+            <div class="provider-modal__description">
+              <h5 class="provider-modal__description-title">{{ messages.provider.profile }}</h5>
+              <p class="provider-modal__description-text">{{ item.description }}</p>
+            </div>
+            <div class="provider-modal__button">
+              <primary-button :btn="messages.Button.Twitter" @clickEvent="externalLink(item.link)"/>
+            </div>
           </div>
-
         </div>
       </div>
     </template>
@@ -33,17 +36,29 @@
 <script>
 // component import
 import Modal from '../modal/ModalComponent';
-import TableComponent from '../table/TableComponent.vue';
+import TableComponent from '../table/TableComponent';
+import PrimaryButton from '../button/PrimaryButtonComponent';
 
 export default {
   components: {
     Modal,
     TableComponent,
+    PrimaryButton,
+  },
+
+  data() {
+    return {
+      /**
+       * テーブルコンポーネントに渡す配列
+       * @type {array}
+       */
+      tableData: [],
+    }
   },
 
   props: {
     /**
-     * [クリックしたチケットのデータ]
+     * TwitterAPIのproviderレスポンス
      */
     item: {
       type: Object,
@@ -51,14 +66,30 @@ export default {
     },
   },
 
-  beforeMount() {
-    // console.log(this.item);
+  created() {
+    // テーブルコンポーネントに送るデータに値を挿入する。
+    this.pushTableData('ユーザーネーム', this.item.screen_name);
+    this.pushTableData('フォロワー', this.item.followers_count);
+    this.pushTableData('フォロー中', this.item.friends_count);
+    this.pushTableData('ツイート数', this.item.statuses_count);
   },
 
   methods: {
     close() {
       this.$emit('close');
     },
+
+    /**
+     * テーブルに渡す配列にオブジェクトを格納する。
+     * @param1 key [テーブル項目のタイトル]
+     * @param2 value [テーブル項目の内容]
+     */
+    pushTableData(key, value) {
+      this.tableData.push({
+        key: key,
+        value: value,
+      });
+    }
   },
 }
 </script>
@@ -73,72 +104,72 @@ export default {
 
   @include mq(sm) {
     width: 80%;
+    max-width: pixel(150);
   }
 
   &__container {
-    padding: interval(2);
-
-    @include mq(md) {
-      padding: interval(3)
-    }
+    padding: interval(5) interval(2);
   }
 
-  &__header {
-    @include flex(column nowrap, center, center);
-    padding: interval(5) 0;
-
-    @include mq(sm) {
-      @include flex(row nowrap, center, center);
-    }
-  }
-
-  &__info {
+  &__profile {
     margin-top: interval(3);
-
-    @include mq(sm) {
-      margin-top: 0;
-      margin-left: interval(3);
-    }
   }
 
   &__thumbnail {
     width: interval(20);
+    margin: 0 auto;
     @include thumbnail-border();
 
     @include mq(sm) {
       width: interval(18);
     }
-  }
 
-  &__image {
-    @include trimming(aspect(square));
-    width: 100%;
+    &-image {
+      @include trimming(aspect(square));
+      width: 100%;
 
-    & > img {
-      border-radius: radius(circle);
+      & > img {
+        border-radius: radius(circle);
+      }
     }
   }
 
   &__name {
     text-align: center;
-
-    @include mq(sm) {
-      text-align: left;
-    }
-  }
-
-  &__name-sub {
-    font-size: font(14);
-  }
-
-  &__name-main {
     font-size: font(18);
   }
 
-  &__line {
+  &__information-table {
     width: 100%;
-    height: 2px;
-    background-color: color(lightgray);
+    margin-top: interval(3);
+  }
+
+  &__contents {
+    margin-top: interval(5);
+  }
+
+  &__description {
+    border-top: 2px solid color(lightgray);
+    border-bottom: 2px solid color(lightgray);
+
+    &-title {
+      padding: interval(1) 0;
+      text-align: center;
+      background-color: color(light);
+    }
+    &-text {
+      margin: interval(1) 0;
+    }
+  }
+
+  &__button {
+    margin-top: interval(5);
+
+    @include mq(sm) {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: interval(50);
+    }
   }
 }
 </style>
