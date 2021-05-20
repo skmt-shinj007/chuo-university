@@ -1,56 +1,44 @@
 <template>
 <div class="user-ticket">
   <div class="user-ticket__ticket" @click="openModal">
-    <div class="user-ticket-thumbnail-border" :class="borderColor">
-      <figure class="user-ticket-thumbnail">
-        <img :src="`/image/${userObj.img.src}`" :alt="userObj.img.alt">
-      </figure>
+    <div class="user-ticket__thumbnail">
+      <user-thumbnail :image="thumbnail" :borderColor='positionColor'/>
     </div>
 
-    <div class="user-ticket-item">
-      <span class="user-ticket__name">{{ userObj.name.ja }}</span>
-      <span class="user-ticket__name">{{ userObj.name.en }}</span>
+    <div class="user-ticket__profile">
+      <span class="user-ticket__profile-name">{{ user.name_ja }}</span>
+      <span class="user-ticket__profile-name">{{ user.name_en }}</span>
 
-      <!-- ユーザーカテゴリーが選手の場合 -->
-      <div v-if="userObj.category === 1" class="user-ticket-tag-group">
-        <div class="user-ticket-tag">
-          <position-tag :position="userObj.position"/>
-        </div>
-        <div class="user-ticket-tag">
-          <grade-tag :grade="userObj.grade"/>
-        </div>
-      </div>
-
-      <!-- 選手ではない場合（スタッフ）は役職を出す -->
-      <div v-else class="user-ticket-tag-group">
-        <div class="user-ticket-tag">
-          <tag :content="userObj.post.club"/>
+      <!-- TODO：タグの改修 -->
+      <div class="user-ticket__profile-tag-group">
+        <div class="user-ticket__profile-tag" v-for="(label, i) in labels" :key="i">
+          <label-component :label="label"/>
         </div>
       </div>
     </div>
 
-    <div class="user-ticket-item">
-      <svg-vue class="user-ticket-icon" icon="angle_right"/>
-    </div>
+    <div class="user-ticket__border" :class="`user-ticket__border--${positionColor}`"/>
   </div>
 
-  <user-modal v-if="showModal" @close="closeModal" :item="userObj"/>
+  <user-modal v-if="showModal" @close="closeModal" :item="user"/>
 </div>
 </template>
 
 <script>
 // component import
 import UserModal from '../modal/UserModalComponent';
-import Tag from '../tag/TagComponent';
 import PositionTag from '../tag/PositionTagComponent';
 import GradeTag from '../tag/GradeTagComponent';
+import UserThumbnail from '../UserThumbnailComponent';
+import LabelComponent from '../label/LabelComponent';
 
 export default {
   components: {
     UserModal,
-    Tag,
+    LabelComponent,
     PositionTag,
     GradeTag,
+    UserThumbnail,
   },
 
   data() {
@@ -60,21 +48,59 @@ export default {
        * @type { Boolean }
        */
       showModal: false,
+
+      /**
+       * thumbnailコンポーネントに渡すオブジェクト
+       * @type {Object}
+       */
+      thumbnail: {
+        img: '',
+        alt: ''
+      },
+
+      /**
+       * LabelComponentに渡すデータ
+       * @type {Array}
+       */
+      labels: [],
     }
   },
 
   props: {
-    userObj: {
+    user: {
       type: Object,
       default: null
     }
   },
 
   computed: {
-    borderColor() {
-      const borderClass = 'user-ticket-thumbnail-border';
-      return (this.userObj.position === "前衛") ? `${borderClass}--orange` : (this.userObj.position === "後衛") ? `${borderClass}--green` : `${borderClass}--blue`;
+    /**
+     * playerのみサムネイルを色分けする。
+     * @return {String} css class
+     */
+    positionColor() {
+      return (this.user.position && this.userType(1)) ? this.user.position.color : 'blue';
     },
+  },
+
+  created() {
+    const user = this.user;
+    this.thumbnail.img = user.img.src;
+    this.thumbnail.alt = user.img.alt;
+
+    // playerのみポジションラベルをつける。
+    if (user.position && this.userType(1)) {
+      this.labels.push(this.inputTag(user.position.color, user.position.name_ja));
+    }
+
+    // Labelに表示するタグを絞り込み
+    const labelTagId = [2, 3, 4, 5, 6, 8, 9, 10];
+    labelTagId.forEach(id => {
+      let tag = this.pickUpTag(id);
+      if (tag) {
+        this.labels.push(this.inputTag('darkblue', tag.name_ja));
+      }
+    })
   },
 
   methods: {
@@ -89,6 +115,41 @@ export default {
       this.showModal = false;
       document.body.classList.remove("modal-open");
     },
+
+    /**
+     * タグコンポーネントに渡すオブジェクトを生成する。
+     * @param1 {string} tag color
+     * @param2 {string} tag text
+     * @return {Object} ラベルコンポーネントに渡すオブジェクト
+     */
+    inputTag(color, text) {
+      let data = {};
+      data.color = color;
+      data.text = text;
+      return data;
+    },
+
+    /**
+     * ラベルに出力するタグをIDで抽出する。
+     * @param {Number} 抽出したいタグのid
+     * @return {Object} tag object
+     */
+    pickUpTag(id) {
+      return this.user.tags.find(el => {
+        return (el.tag_id === id);
+      })
+    },
+
+    /**
+     * ユーザータイプをタグで判定する。
+     * [1]:部員
+     * [7]:スタッフ
+     * @param {Number} tag_id
+     * @return {Boolean}
+     */
+    userType(id) {
+      return this.user.tags.some(tag => tag.tag_id === id);
+    }
   },
 }
 </script>
@@ -96,13 +157,13 @@ export default {
 <style lang="scss">
 .user-ticket {
   background-color: color(white);
-  width: interval(34);
+  position: relative;
 
   &__ticket {
-    @include flex(row nowrap, space-between, center);
-    padding: interval(1);
+    @include flex(row nowrap, flex-start, center);
     box-shadow: 0 1px 3px 1px color(darkShadow);
-    border-radius: 100px;
+    border-radius: radius(soft);
+    padding: interval(1);
 
     @include mq(md) {
       cursor: pointer;
@@ -115,65 +176,54 @@ export default {
     }
   }
 
-  &-thumbnail-border {
-    width: interval(9);
-    height: interval(9);
-
-    &--blue {
-      @include thumbnail-border();
-    }
-
-    &--orange {
-      @include thumbnail-border($color: color(orange));
-    }
-
-    &--green {
-      @include thumbnail-border($color: color(lightGreen));
-    }
+  &__thumbnail {
+    width: interval(10);
   }
 
-  &-thumbnail {
-    width: 100%;
-    @include trimming(aspect(square));
+  &__profile {
+    margin-left: 5%;
 
-    @include mq(sm) {
-      width: interval(10);
+    &-name {
+      display: block;
+      font-size: font(14);
+
+      &:last-of-type {
+        font-size: font(12);
+      }
     }
 
-    & > img {
-      border-radius: radius(circle);
+    &-tag-group {
+      @include flex(row wrap, flex-start, center);
     }
-  }
 
-  &__name {
-    display: block;
-    font-size: font(14);
+    &-tag {
+      margin: interval(.5) interval(.5) 0 0;
 
-    &:first-of-type {
-      display: none;
-
-      @include mq(sm) {
-        display: block;
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
 
-  &-tag-group {
-    @include flex(row wrap, flex-start, center);
-  }
+  &__border {
+    width: 10%;
+    height: pixel(.5);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(25%, -50%);
 
-  &-tag {
-    margin: interval(.5) interval(.5) 0 0;
-
-    &:last-child {
-      margin-right: 0;
+    &--blue {
+      @include gradient(color(lightDarkblue), color(blue), horizontal);
     }
-  }
 
-  &-icon {
-    width: interval(1.5);
-    height: interval(1.5);
-    fill: color(darkblue);
+    &--lightgreen {
+      @include gradient(color(lightDarkblue), color(lightgreen), horizontal);
+    }
+
+    &--orange {
+      @include gradient(color(lightDarkblue), color(orange), horizontal);
+    }
   }
 }
 

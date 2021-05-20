@@ -36,7 +36,7 @@
 // config json import
 import Data from '../config/data.json';
 import Config from '../config/config.json';
-import Twitter from '../config/api/twitter/index';
+import Api from '../config/api/index';
 
 // mixin
 import Animation from '../config/animation';
@@ -128,7 +128,7 @@ export default {
 
     // Twitter Apiからデータを取得
     async getProvider() {
-      const response = await Twitter.getResponse('/api/twitter/provider');
+      const response = await Api.getResponse('/twitter/provider');
 
       // 予期しない型が返却された場合
       if (!response || !Array.isArray(response)) {

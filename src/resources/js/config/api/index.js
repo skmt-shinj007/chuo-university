@@ -8,10 +8,15 @@ import axios from 'axios';
 const debug = !process.env.PRODUCTION;
 
 export default {
-  async getResponse(url) {
+  /**
+   * APIレスポンス取得
+   * @param {string} endPoint
+   * @returns response
+   */
+  async getResponse(endPoint) {
     let response = null;
 
-    await axios.get(url)
+    await axios.get(`/api${endPoint}`)
       .then(function (res) {
         response = res.data;
       })

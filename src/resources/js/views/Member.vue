@@ -5,14 +5,14 @@
       <template v-slot:inner>
         <div class="main-visual__wrap">
           <svg-vue class="main-visual__icon" icon="chuo-logo"/>
-          <div class="main-visual__text-group">
-            <div class="main-visual__text" v-for="(text, n) in texts" :key="n">
-              <span
-                class="main-visual__item delay"
-                v-for="(t, n) in text"
-                :key="n"
-                v-text="t"/>
-            </div>
+          <div class="main-visual__text">
+            <span
+              class="main-visual__character delay"
+              v-for="(t, i) in mvText"
+              :key="i"
+              v-text="t"
+              :style="{ animationDelay: i*150+'ms' }"
+            />
           </div>
         </div>
       </template>
@@ -21,47 +21,32 @@
 
   <section class="member__players">
     <contents-title :title="messages.SectionTitles.Players"/>
+    <transition-group
+      name="ticket"
+      class="member__ticket-group"
+      tag="div"
+      @before-enter="delay"
+      @after-enter="cancelDelay">
 
-    <div class="member__ticket-group">
-      <div
-        class="member__ticket"
-        ref="playerTicket"
-        v-for="player in players"
-        :key="player.id">
-
-          <user-ticket :userObj="player"/>
+      <div class="member__ticket" v-for="(player, i) in user.players" :key="player.id" :data-index="i">
+        <user-ticket :user="player"/>
       </div>
-
-      <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
-      <div
-        class="enpty"
-        v-for="n in playerTicketNumber"
-        :key="`enpty-${n}`"
-        :style="{ width: `${ticketWidth}px` }"/>
-    </div>
+    </transition-group>
   </section>
 
   <section class="member__staff">
     <contents-title :title="messages.SectionTitles.Staff"/>
+    <transition-group
+      name="ticket"
+      class="member__ticket-group"
+      tag="div"
+      @before-enter="delay"
+      @after-enter="cancelDelay">
 
-    <div class="member__ticket-group">
-      <div
-        class="member__ticket"
-        ref="staffTicket"
-        v-for="user in staff"
-        :key="user.id">
-
-          <user-ticket :userObj="user"/>
+      <div class="member__ticket" v-for="(staff, i) in user.staff" :key="staff.id" :data-index="i">
+        <user-ticket :user="staff"/>
       </div>
-
-      <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
-      <div
-        class="enpty"
-        v-for="n in staffTicketNumber"
-        :key="`enpty-${n}`"
-        :style="{ width: `${ticketWidth}px` }"
-      />
-    </div>
+    </transition-group>
   </section>
 
   <div class="member__scroll-top">
@@ -81,8 +66,9 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
-// data import
+// config import
 import Data from '../config/data.json';
+import Api from '../config/api/index';
 
 export default {
   components: {
@@ -100,88 +86,53 @@ export default {
 
       /**
        * メインビジュアルのテキスト
-       * @type { Object }
+       * @type { string }
        */
-      texts: {},
+      mvText: '',
 
-      users: [],     // 全ユーザー
-      players: [],  // プレイヤー
-      staff: [],    // スタッフ
-
-      /**
-       * [各チケットの要素数]
-       * @type { Number }
-       */
-      playerTicketNumber: 0,
-      staffTicketNumber: 0,
-
-      /**
-       * [チケットのwidth]
-       * @type { Number }
-       */
-      ticketWidth: 0,
+      user: {
+        players: [],
+        staff: [],
+      }
     }
   },
 
-  beforeMount() {
-    // TODO:以下DBから情報を引っ張る
-
-    // 全ユーザーを取得
-    this.$data.data.Users.forEach(element => this.users.push(element));
-
-    // usersプロパティから選手のみを抽出
-    this.users.forEach(element => {
-      (element.category === this.playerNum) ? this.players.push(element) : null;
-    });
-
-    // usersプロパティからスタッフのみを抽出
-    this.users.forEach(element => {
-      (element.category === this.staffNum) ? this.staff.push(element) : null;
-    });
-
-    this.texts = this.messages.MainVisual.Member;
-  },
-
-  mounted() {
-    /**
-     * [チケットレイアウトの配置]
-     * justify-content: center; は余った要素が真ん中よりになるので、左寄せに揃えるための処理
-     * 解決策 -> チケットの数だけ空divを追加する。
-     */
-    const playerTicket = this.$refs.playerTicket;
-    const staffTicket = this.$refs.staffTicket;
-
-    // チケットの個数を変数に格納
-    this.playerTicketNumber = playerTicket.length;
-    this.staffTicketNumber = staffTicket.length;
-
-    /**
-     * 初期描画時のにチケットの幅を取得
-     */
-    this.getTicketWidth();
+  created() {
+    this.getPlayer();
+    this.getStaff();
+    this.mvText = this.messages.MainVisual.Member.Text;
   },
 
   methods: {
     /**
-     * [チケットの幅を変数にぶち込む]
-     * removeEventListener > 無名関数だと解除できないので処理をメソッドとして登録
+     * ユーザー取得
+     * TODO：引数を使用して1つの関数にできそう。
+     * どこに代入するかの指定を引数でできれば解決。
      */
-    getTicketWidth() {
-      this.ticketWidth = this.$refs.playerTicket[0].offsetWidth;
+    async getPlayer() {
+      const response = await Api.getResponse('/player');
+      (this.getType(response.data) === 'array') ? this.user.players = response.data : new Error('player:レスポンスが配列ではありません。');
     },
-  },
+    async getStaff() {
+      const response = await Api.getResponse('/staff');
+      (this.getType(response.data) === 'array') ? this.user.staff = response.data : new Error('staff:レスポンスが配列ではありません。');
+    },
 
-  watch: {
-    windowWidth() {
-      this.getTicketWidth();
+    /**
+     * transition methods
+     */
+    delay(el) {
+      el.style.transitionDelay = 120 * parseInt(el.dataset.index, 10) + 'ms';
+    },
+    cancelDelay(el) {
+      el.style.transitionDelay = '';
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .member {
-
   &__players {
     margin-top: interval(5);
   }
@@ -193,18 +144,33 @@ export default {
 
   &__ticket-group {
     @include flex(column nowrap, center, center);
+    max-width: pixel(50);
+    margin: 0 auto;
 
     @include mq(sm) {
-      @include flex(row wrap, center, center);
+      @include flex(row wrap);
+      max-width: none;
     }
   }
 
+  // カード幅の計算に使うために変数に格納
+  $card-margin: interval(.5);
+
   &__ticket {
-    margin-bottom: interval(5);
+    padding: interval(1);
+    margin: $card-margin;
+    width: 100%;
 
     @include mq(sm) {
-      margin-bottom: 0;
-      padding: interval(1);
+      width: calc((100% / 2) - (#{$card-margin} * 2));
+    }
+
+    @include mq(md) {
+      width: calc((100% / 3) - (#{$card-margin} * 2));
+    }
+
+    @include mq(lg) {
+      width: calc((100% / 4) - (#{$card-margin} * 2));
     }
   }
 
@@ -214,81 +180,47 @@ export default {
 }
 
 .main-visual {
-
   &__wrap {
     @include flex(column nowrap, center, center);
-
-    @include mq(sm) {
-      flex-direction: row;
-    }
   }
 
   &__icon {
-    width: interval(36);
+    width: interval(28);
     fill: color(white);
     stroke: color(orange);
     stroke-width: pixel(1);
-
-    @include mq(sm) {
-      width: interval(28);
-    }
-  }
-
-  &__text-group {
-    margin-top: interval(2);
-
-    @include mq(sm) {
-      margin: 0 0 0 interval(1);
-      flex-grow: 2;
-    }
-
-    @include mq(md) {
-      margin-left: interval(3);
-    }
   }
 
   &__text {
+    margin-top: interval(2);
     text-align: center;
-
-    @include mq(sm) {
-      text-align: left;
-    }
   }
 
-  &__item {
-    text-shadow: none;
+  &__character {
+    display: inline-block;
     line-height: 1.2;
-    font-size: font(40);
-    margin-right: interval(1);
+    font-size: font(30);
+    margin-right: interval(.5);
+    color: color(white);
+    animation: textIn .8s cubic-bezier(0.22, 0.15, 0.25, 1.43) 0s backwards;
+
+    &:nth-child(4) {
+      margin-right: interval(1);
+    }
 
     &:last-child {
       margin-right: 0;
     }
-
-    @include mq(sm) {
-      font-size: font(36);
-      margin-right: interval(.5);
-    }
-
-    @include mq(md) {
-      font-size: font(48);
-    }
-  }
-
-  @for $i from 1 through 2 {
-    &__item:nth-child(#{$i}) {
-      animation-delay: $i * 100ms + 200ms;
-    }
   }
 }
 
+// チケットの表示アニメーション
 .ticket {
   &-enter-active {
-    transition: opacity .5s, transform .5s ease-out;
+    transition: opacity .5s;
   }
 
   &-enter {
-    transform: translateY(-50px);
     opacity: 0;
   }
 }

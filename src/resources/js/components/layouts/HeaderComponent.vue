@@ -31,7 +31,7 @@
 // data import
 import Data from '../../config/data.json';
 import Config from '../../config/config.json';
-import Twitter from '../../config/api/twitter/index';
+import Api from '../../config/api/index';
 
 // component import
 import NavModal from '../modules/modal/NavModalComponent.vue';
@@ -122,10 +122,10 @@ export default {
     },
 
     /**
-     * APIレスポンスを変数にセットする。 [Twitter]
+     * APIレスポンスを変数にセットする。
      */
     async setTwitter() {
-      const response = await Twitter.getResponse('api/twitter/account');
+      const response = await Api.getResponse('/twitter/account');
 
       if (this.getType(response) !== 'object') {
         console.error('ERROR:オブジェクトで返却されませんでした。');
