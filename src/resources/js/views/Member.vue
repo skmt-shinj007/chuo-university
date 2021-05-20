@@ -21,30 +21,32 @@
 
   <section class="member__players">
     <contents-title :title="messages.SectionTitles.Players"/>
-    <div class="member__ticket-group">
-      <div
-        class="member__ticket"
-        ref="playerTicket"
-        v-for="player in user.players"
-        :key="player.id">
+    <transition-group
+      name="ticket"
+      class="member__ticket-group"
+      tag="div"
+      @before-enter="delay"
+      @after-enter="cancelDelay">
 
-          <user-ticket :user="player"/>
+      <div class="member__ticket" v-for="(player, i) in user.players" :key="player.id" :data-index="i">
+        <user-ticket :user="player"/>
       </div>
-    </div>
+    </transition-group>
   </section>
 
   <section class="member__staff">
     <contents-title :title="messages.SectionTitles.Staff"/>
-    <div class="member__ticket-group">
-      <div
-        class="member__ticket"
-        ref="staffTicket"
-        v-for="staff in user.staff"
-        :key="staff.id">
+    <transition-group
+      name="ticket"
+      class="member__ticket-group"
+      tag="div"
+      @before-enter="delay"
+      @after-enter="cancelDelay">
 
-          <user-ticket :user="staff"/>
+      <div class="member__ticket" v-for="(staff, i) in user.staff" :key="staff.id" :data-index="i">
+        <user-ticket :user="staff"/>
       </div>
-    </div>
+    </transition-group>
   </section>
 
   <div class="member__scroll-top">
@@ -115,6 +117,16 @@ export default {
       const response = await Api.getResponse('/staff');
       (this.getType(response.data) === 'array') ? this.user.staff = response.data : new Error('staff:レスポンスが配列ではありません。');
     },
+
+    /**
+     * transition methods
+     */
+    delay(el) {
+      el.style.transitionDelay = 120 * parseInt(el.dataset.index, 10) + 'ms';
+    },
+    cancelDelay(el) {
+      el.style.transitionDelay = '';
+    }
   },
 }
 </script>
@@ -137,24 +149,28 @@ export default {
 
     @include mq(sm) {
       @include flex(row wrap);
-      max-width: pixel(60);
-    }
-
-    @include mq(md) {
       max-width: none;
     }
   }
 
+  // カード幅の計算に使うために変数に格納
+  $card-margin: interval(.5);
+
   &__ticket {
     padding: interval(1);
+    margin: $card-margin;
     width: 100%;
 
+    @include mq(sm) {
+      width: calc((100% / 2) - (#{$card-margin} * 2));
+    }
+
     @include mq(md) {
-      width: calc(100% / 3);
+      width: calc((100% / 3) - (#{$card-margin} * 2));
     }
 
     @include mq(lg) {
-      width: calc(100% / 4);
+      width: calc((100% / 4) - (#{$card-margin} * 2));
     }
   }
 
@@ -195,6 +211,17 @@ export default {
     &:last-child {
       margin-right: 0;
     }
+  }
+}
+
+// チケットの表示アニメーション
+.ticket {
+  &-enter-active {
+    transition: opacity .5s;
+  }
+
+  &-enter {
+    opacity: 0;
   }
 }
 </style>

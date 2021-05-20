@@ -11,11 +11,8 @@
 
       <!-- TODO：タグの改修 -->
       <div class="user-ticket__profile-tag-group">
-        <div class="user-ticket__profile-tag">
-          <!-- <position-tag :position="userObj.position"/> -->
-        </div>
-        <div class="user-ticket__profile-tag">
-          <!-- <grade-tag :grade="user.grade"/> -->
+        <div class="user-ticket__profile-tag" v-for="(label, i) in labels" :key="i">
+          <label-component :label="label"/>
         </div>
       </div>
     </div>
@@ -30,15 +27,15 @@
 <script>
 // component import
 import UserModal from '../modal/UserModalComponent';
-import Tag from '../tag/TagComponent';
 import PositionTag from '../tag/PositionTagComponent';
 import GradeTag from '../tag/GradeTagComponent';
 import UserThumbnail from '../UserThumbnailComponent';
+import LabelComponent from '../label/LabelComponent';
 
 export default {
   components: {
     UserModal,
-    Tag,
+    LabelComponent,
     PositionTag,
     GradeTag,
     UserThumbnail,
@@ -54,12 +51,18 @@ export default {
 
       /**
        * thumbnailコンポーネントに渡すオブジェクト
-       * @type {object}
+       * @type {Object}
        */
       thumbnail: {
         img: '',
         alt: ''
       },
+
+      /**
+       * LabelComponentに渡すデータ
+       * @type {Array}
+       */
+      labels: [],
     }
   },
 
@@ -71,17 +74,33 @@ export default {
   },
 
   computed: {
+    /**
+     * playerのみサムネイルを色分けする。
+     * @return {String} css class
+     */
     positionColor() {
-      return (this.user.position) ? this.user.position.color : 'blue';
-    }
+      return (this.user.position && this.userType(1)) ? this.user.position.color : 'blue';
+    },
   },
 
   created() {
-    let image = this.user.img;
-    if (image) {
-      this.thumbnail.img = image.src;
-      this.thumbnail.alt = image.alt;
+    const user = this.user;
+    this.thumbnail.img = user.img.src;
+    this.thumbnail.alt = user.img.alt;
+
+    // playerのみポジションラベルをつける。
+    if (user.position && this.userType(1)) {
+      this.labels.push(this.inputTag(user.position.color, user.position.name_ja));
     }
+
+    // Labelに表示するタグを絞り込み
+    const labelTagId = [2, 3, 4, 5, 6, 8, 9, 10];
+    labelTagId.forEach(id => {
+      let tag = this.pickUpTag(id);
+      if (tag) {
+        this.labels.push(this.inputTag('darkblue', tag.name_ja));
+      }
+    })
   },
 
   methods: {
@@ -96,6 +115,41 @@ export default {
       this.showModal = false;
       document.body.classList.remove("modal-open");
     },
+
+    /**
+     * タグコンポーネントに渡すオブジェクトを生成する。
+     * @param1 {string} tag color
+     * @param2 {string} tag text
+     * @return {Object} ラベルコンポーネントに渡すオブジェクト
+     */
+    inputTag(color, text) {
+      let data = {};
+      data.color = color;
+      data.text = text;
+      return data;
+    },
+
+    /**
+     * ラベルに出力するタグをIDで抽出する。
+     * @param {Number} 抽出したいタグのid
+     * @return {Object} tag object
+     */
+    pickUpTag(id) {
+      return this.user.tags.find(el => {
+        return (el.tag_id === id);
+      })
+    },
+
+    /**
+     * ユーザータイプをタグで判定する。
+     * [1]:部員
+     * [7]:スタッフ
+     * @param {Number} tag_id
+     * @return {Boolean}
+     */
+    userType(id) {
+      return this.user.tags.some(tag => tag.tag_id === id);
+    }
   },
 }
 </script>
@@ -169,10 +223,6 @@ export default {
 
     &--orange {
       @include gradient(color(lightDarkblue), color(orange), horizontal);
-    }
-
-    @include mq(md) {
-      display: none;
     }
   }
 }
