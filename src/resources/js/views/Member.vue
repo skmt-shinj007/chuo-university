@@ -4,7 +4,7 @@
     <main-visual>
       <template v-slot:inner>
         <div class="main-visual__wrap">
-          <svg-vue class="main-visual__icon" icon="chuo-logo"/>
+          <svg-vue class="main-visual__logo" icon="chuo-logo"/>
           <div class="main-visual__text">
             <span
               class="main-visual__character delay"
@@ -184,7 +184,7 @@ export default {
     @include flex(column nowrap, center, center);
   }
 
-  &__icon {
+  &__logo {
     width: interval(28);
     fill: color(white);
     stroke: color(orange);
