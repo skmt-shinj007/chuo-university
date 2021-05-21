@@ -49,10 +49,8 @@
 </template>
 
 <script>
-// data
-import Data from '../config/data/data.json';
-
-// mixin
+// config
+import Data from '../config/data/homeViewData.json';
 import Animation from '../config/animation';
 
 // component import
