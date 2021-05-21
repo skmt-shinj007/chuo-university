@@ -67,7 +67,7 @@
 
 <script>
 // config / data
-import Data from '../../config/data.json';
+import Data from '../../config/data/data.json';
 import Config from '../../config/config.json';
 
 // component import

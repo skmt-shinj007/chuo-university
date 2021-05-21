@@ -122,7 +122,7 @@
 
 <script>
 // data
-import Data from '../config/data.json';
+import Data from '../config/data/data.json';
 
 // mixin
 import Animation from '../config/animation';
@@ -182,7 +182,7 @@ export default {
     dormitoryImageApiResponse.forEach(element => this.roomImages.push(element));
     this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
 
-    // config/data.jsonから引っ張る
+    // jsonから引っ張る
     this.$data.data.concepts.forEach(element => this.concepts.push(element));
     this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
     this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));

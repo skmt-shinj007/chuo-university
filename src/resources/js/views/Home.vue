@@ -50,7 +50,7 @@
 
 <script>
 // data
-import Data from '../config/data.json';
+import Data from '../config/data/data.json';
 
 // mixin
 import Animation from '../config/animation';

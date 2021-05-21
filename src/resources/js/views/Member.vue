@@ -67,7 +67,7 @@ import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
 // config import
-import Data from '../config/data.json';
+import Data from '../config/data/data.json';
 import Api from '../config/api/index';
 
 export default {
