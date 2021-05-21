@@ -87,7 +87,7 @@
 
 <script>
 // data
-import Data from '../config/data/data.json';
+import Data from '../config/data/historyViewData.json';
 
 /**
  * mixin

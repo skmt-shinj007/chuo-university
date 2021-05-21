@@ -34,11 +34,9 @@
 
 <script>
 // config json import
-import Data from '../config/data/data.json';
+import Mock from '../config/data/mock.json';
 import Config from '../config/config.json';
 import Api from '../config/api/index';
-
-// mixin
 import Animation from '../config/animation';
 
 // component import
@@ -63,7 +61,7 @@ export default {
        * [各データ]
        * @type { object }
        */
-      data: Data,
+      mock: Mock,
       config: Config,
 
       /**
@@ -96,7 +94,7 @@ export default {
 
   created() {
     this.getProvider();
-    this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
+    this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
   },
 
   /**
