@@ -121,10 +121,9 @@
 </template>
 
 <script>
-// data
-import Data from '../config/data/data.json';
-
-// mixin
+// config
+import Data from '../config/data/clubViewData.json';
+import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
 
 // component import
@@ -162,6 +161,7 @@ export default {
   data() {
     return {
       data: Data,
+      mock: Mock,
       mainVisualImages: [],
       concepts: [],
       practiceInformations: [],
@@ -180,17 +180,17 @@ export default {
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
     courtImageApiResponse.forEach(element => this.courtImages.push(element));
     dormitoryImageApiResponse.forEach(element => this.roomImages.push(element));
-    this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
+    this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
 
     // jsonから引っ張る
     this.$data.data.concepts.forEach(element => this.concepts.push(element));
-    this.$data.data.PracticeTable.forEach(element => this.practiceInformations.push(element));
-    this.$data.data.ScheduleTable.forEach(element => this.schedule.push(element));
-    this.$data.data.Dormitory.forEach(element => this.dormitoryInformations.push(element));
+    this.$data.data.practiceTable.forEach(element => this.practiceInformations.push(element));
+    this.$data.data.scheduleTable.forEach(element => this.schedule.push(element));
+    this.$data.data.dormitory.forEach(element => this.dormitoryInformations.push(element));
 
     // TODO:DBから情報を引っ張る
     // ユーザーカテゴリーで [選手] を抽出
-    this.$data.data.Users.forEach(element => {
+    this.$data.mock.Users.forEach(element => {
       (element.category === this.playerNum) ? this.players.push(element) : null;
     });
     memberNumberData.forEach(element => this.memberNumber.push(element));
