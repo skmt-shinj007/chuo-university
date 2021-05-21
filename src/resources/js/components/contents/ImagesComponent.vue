@@ -94,14 +94,6 @@ export default {
       type: Array,
       default: null
     },
-
-    /**
-     * 各絞り込みの情報（絞り込みメニューのタイトルなど）
-     */
-    filter: {
-      type: Object,
-      default: null
-    }
   },
 
   beforeMount() {

@@ -1,14 +1,4 @@
 {
-  "filter": {
-
-    "year": {
-      "select": {
-        "name": "year",
-        "title": "年月"
-      }
-    }
-  },
-
   "route": {
     "home": {
       "label": "ホーム",

@@ -4,7 +4,7 @@
   <section class="photo__gallery">
     <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <images :images="images" :filter="config.filter"/>
+    <images :images="images"/>
   </section>
 
   <!-- プロバイダー -->
