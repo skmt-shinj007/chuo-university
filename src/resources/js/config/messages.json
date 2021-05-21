@@ -260,5 +260,10 @@
 
   "provider": {
     "profile": "プロフィール"
+  },
+
+  "yearFilter": {
+    "name": "year",
+    "title": "年月"
   }
 }

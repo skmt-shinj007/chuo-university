@@ -29,15 +29,12 @@
 
 <script>
 // data import
-import Data from '../../config/data/data.json';
+import Scroll from '../../config/scroll';
 import Config from '../../config/config.json';
 import Api from '../../config/api/index';
 
 // component import
 import NavModal from '../modules/modal/NavModalComponent.vue';
-
-// mixin
-import Scroll from '../../config/scroll';
 
 export default {
   components: {
@@ -48,7 +45,6 @@ export default {
 
   data() {
     return {
-      data: Data,
       config: Config,
 
       /**

@@ -4,7 +4,7 @@
   <!-- フィルター機能 -->
   <div class="images__filter">
     <span class="images__filter-name">{{ messages.FunctionName.Filter }}</span>
-    <pull-down-table :titles="filter.year" :menus="menus" @select="select = $event"/>
+    <pull-down-table :settings="messages.yearFilter" :menus="menus" @select="select = $event"/>
   </div>
 
   <!-- 写真 -->
