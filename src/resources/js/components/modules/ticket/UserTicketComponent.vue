@@ -10,8 +10,8 @@
       <span class="user-ticket__profile-name">{{ user.name_en }}</span>
 
       <!-- TODO：タグの改修 -->
-      <div class="user-ticket__profile-tag-group">
-        <div class="user-ticket__profile-tag" v-for="(label, i) in labels" :key="i">
+      <div class="user-ticket__label-group">
+        <div class="user-ticket__label" v-for="(label, i) in labels" :key="i">
           <label-component :label="label"/>
         </div>
       </div>
@@ -27,8 +27,6 @@
 <script>
 // component import
 import UserModal from '../modal/UserModalComponent';
-import PositionTag from '../tag/PositionTagComponent';
-import GradeTag from '../tag/GradeTagComponent';
 import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
 
@@ -36,8 +34,6 @@ export default {
   components: {
     UserModal,
     LabelComponent,
-    PositionTag,
-    GradeTag,
     UserThumbnail,
   },
 
@@ -90,7 +86,7 @@ export default {
 
     // playerのみポジションラベルをつける。
     if (user.position && this.userType(1)) {
-      this.labels.push(this.inputTag(user.position.color, user.position.name_ja));
+      this.labels.push(this.formatToLabel(user.position.color, user.position.name_ja));
     }
 
     // Labelに表示するタグを絞り込み
@@ -98,7 +94,7 @@ export default {
     labelTagId.forEach(id => {
       let tag = this.pickUpTag(id);
       if (tag) {
-        this.labels.push(this.inputTag('darkblue', tag.name_ja));
+        this.labels.push(this.formatToLabel('darkblue', tag.name_ja));
       }
     })
   },
@@ -122,7 +118,7 @@ export default {
      * @param2 {string} tag text
      * @return {Object} ラベルコンポーネントに渡すオブジェクト
      */
-    inputTag(color, text) {
+    formatToLabel(color, text) {
       let data = {};
       data.color = color;
       data.text = text;
@@ -191,17 +187,17 @@ export default {
         font-size: font(12);
       }
     }
+  }
 
-    &-tag-group {
-      @include flex(row wrap, flex-start, center);
-    }
+  &__label-group {
+    @include flex(row wrap, flex-start, center);
+  }
 
-    &-tag {
-      margin: interval(.5) interval(.5) 0 0;
+  &__label {
+    margin: interval(.5) interval(.5) 0 0;
 
-      &:last-child {
-        margin-right: 0;
-      }
+    &:last-child {
+      margin-right: 0;
     }
   }
 
