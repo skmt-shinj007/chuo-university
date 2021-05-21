@@ -1,7 +1,6 @@
 html {
 
   @include mq(sm) {
-    font-size: 20px;
     width: 100vw;
   }
 
