@@ -262,8 +262,7 @@
     "profile": "プロフィール"
   },
 
-  "yearFilter": {
-    "name": "year",
-    "title": "年月"
+  "filter": {
+    "year": { "name": "year", "title": "年月" }
   }
 }
