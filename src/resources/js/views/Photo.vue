@@ -35,7 +35,6 @@
 <script>
 // config json import
 import Mock from '../config/data/mock.json';
-import Config from '../config/config.json';
 import Api from '../config/api/index';
 import Animation from '../config/animation';
 
@@ -62,7 +61,6 @@ export default {
        * @type { object }
        */
       mock: Mock,
-      config: Config,
 
       /**
        * [イメージデータ]

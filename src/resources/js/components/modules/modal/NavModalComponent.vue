@@ -61,9 +61,6 @@
 // component import
 import AccordionLink from '../accordion/AccordionLinkComponent';
 
-// data
-import Config from '../../../config/config.json';
-
 export default {
   components: {
     AccordionLink,
@@ -71,8 +68,6 @@ export default {
 
   data() {
     return {
-      config: Config,
-
       /**
        * アコーディオンコンポーネントに渡すデータ
        * @type { Array }
@@ -104,29 +99,42 @@ export default {
   },
 
   beforeMount() {
-    // アコーディオンリンクのデータを生成
-    const config = this.$data.config;
     const messages = this.$data.messages;
+    const routes = this.pickUpRoute('label');
 
+    // リンクデータを生成
     let sitemap = {};
     sitemap.name = messages.sitemap.name;
-    sitemap.childrenMenus = this.convertArray(config.route);
+    sitemap.childrenMenus = this.isExternalRoute(routes, false);
     this.links.push(sitemap);
 
     let externalLink = {};
     externalLink.name = messages.externalLink.name;
-    externalLink.childrenMenus = this.convertArray(config.links);
+    externalLink.childrenMenus = this.isExternalRoute(routes, true);
     this.links.push(externalLink);
   },
 
   methods: {
     /**
-     * オブジェクトから配列に変換する処理
-     * @param { Object }
+     * リンクデータを生成
+     * @param {String} 絞り込むプロパティ名
+     * @return {Array} 引数に指定したプロパティをもつルート要素を抽出。
      */
-    convertArray(obj) {
-      return Object.keys(obj).map(function (key) {
-        return obj[key];
+    pickUpRoute(prop) {
+      return this.$router.options.routes.filter(route => {
+        return (route.hasOwnProperty(prop));
+      })
+    },
+
+    /**
+     * 外部リンクかを判別する。
+     * @param {Array} routes
+     * @param {Boolean} flag 外部リンクを取得したい時はtrue。
+     * @return {Array} 引数のフラグに応じて、一致した要素の配列を返す。
+     */
+    isExternalRoute(routes, flag = false) {
+      return routes.filter(route => {
+        return route.external === flag;
       })
     },
   },

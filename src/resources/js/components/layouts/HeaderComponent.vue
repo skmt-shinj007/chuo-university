@@ -30,7 +30,6 @@
 <script>
 // data import
 import Scroll from '../../config/scroll';
-import Config from '../../config/config.json';
 import Api from '../../config/api/index';
 
 // component import
@@ -45,8 +44,6 @@ export default {
 
   data() {
     return {
-      config: Config,
-
       /**
        * [ヘッダーの表示を制御するフラグ]
        * クラスの付与で表示切り替え
