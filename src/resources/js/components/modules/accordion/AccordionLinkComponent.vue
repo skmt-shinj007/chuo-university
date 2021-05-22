@@ -16,8 +16,8 @@
         <!-- 別タブ遷移の場合は、<a> -->
         <a class="accordion-link__link"
           target="_blank" rel="noopener noreferrer"
-          :href="menu.to"
-          v-if="isExternal"
+          :href="menu.url"
+          v-if="menu.external"
           @click="accordionReset(); $emit('navClose')">
 
           <label class="accordion-link__children-label">{{ menu.label }}</label>
@@ -25,7 +25,7 @@
         </a>
 
         <!-- 同タブ遷移の場合は、<router-link> -->
-        <router-link class="accordion-link__link" :to="menu.to" @click.native="accordionReset(); $emit('navClose')" v-else>
+        <router-link class="accordion-link__link" :to="menu.path" @click.native="accordionReset(); $emit('navClose')" v-else>
           <label class="accordion-link__children-label">{{ menu.label }}</label>
           <svg-vue class="accordion-link__children-icon" icon="angle_right"/>
         </router-link>
@@ -56,12 +56,6 @@ export default {
        * @type { Boolean }
        */
       isOpened: false,
-
-      /**
-       * [外部リンクかを判定]
-       * @type { Boolean }
-       */
-      isExternal: false,
     }
   },
 
@@ -79,16 +73,6 @@ export default {
       type: String,
       default: null
     }
-  },
-
-  beforeMount() {
-    /**
-     * 外部リンクの判定
-     * 'http'で始まる宛先を外部リンクと判定する。
-     */
-    this.item.childrenMenus.forEach(el => {
-      if (el.to.startsWith('http')) this.isExternal = true;
-    })
   },
 
   methods: {

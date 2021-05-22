@@ -29,32 +29,44 @@ export default new VueRouter({
     {
       path: '/',        // routeのパス設定
       name: 'home',      // 名前付きルートを設定したい場合付与
-      component: Home    // コンポーネントの指定
+      component: Home,    // コンポーネントの指定
+      label: 'ホーム',
+      external: false,
     },
     {
       path: '/club',
       name: 'club',
-      component: Club
+      component: Club,
+      label: 'クラブ',
+      external: false,
     },
     {
       path: '/member',
       name: 'member',
-      component: Member
+      component: Member,
+      label: 'メンバー',
+      external: false,
     },
     {
       path: '/Hakumonkai',
       name: 'hakumonkai',
-      component: Hakumonkai
+      component: Hakumonkai,
+      label: '白門会',
+      external: false,
     },
     {
       path: '/history',
       name: 'history',
-      component: History
+      component: History,
+      label: '歴史',
+      external: false,
     },
     {
       path: '/photo',
       name: 'photo',
-      component: Photo
+      component: Photo,
+      label: 'フォトギャラリー',
+      external: false,
     },
     {
       path: '/test',
@@ -83,27 +95,27 @@ export default new VueRouter({
      */
     {
       path: '/chuo',
-      beforeEnter: () => {
-        location.href = 'https://www.chuo-u.ac.jp/'
-      },
+      url: 'https://www.chuo-u.ac.jp/',
+      external: true,
+      label: '中央大学ホームページ'
     },
     {
       path: '/ritsumeikan',
-      beforeEnter: () => {
-        location.href = 'http://www5c.biglobe.ne.jp/~rst/'
-      },
+      url: 'http://www5c.biglobe.ne.jp/~rst/',
+      external: true,
+      label: '立命館大学ホームページ'
     },
     {
-      path: '/japan-softtennis-student',
-      beforeEnter: () => {
-        location.href = 'https://www.jssta.jp/'
-      },
+      path: '/japan-student-federation',
+      url: 'https://www.jssta.jp/',
+      external: true,
+      label: '日本学生ソフトテニス連盟'
     },
     {
-      path: '/kantou-softtennis-student',
-      beforeEnter: () => {
-        location.href = 'https://kssta.net/'
-      },
+      path: '/kanto-student-federation',
+      url: 'https://kssta.net/',
+      external: true,
+      label: '関東学生ソフトテニス連盟'
     }
   ],
 

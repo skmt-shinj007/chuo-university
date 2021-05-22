@@ -4,7 +4,7 @@
   <section class="photo__gallery">
     <contents-title :title="messages.SectionTitles.Photo"/>
 
-    <images :images="images" :filter="config.filter"/>
+    <images :images="images"/>
   </section>
 
   <!-- プロバイダー -->
@@ -34,11 +34,8 @@
 
 <script>
 // config json import
-import Data from '../config/data.json';
-import Config from '../config/config.json';
+import Mock from '../config/data/mock.json';
 import Api from '../config/api/index';
-
-// mixin
 import Animation from '../config/animation';
 
 // component import
@@ -63,8 +60,7 @@ export default {
        * [各データ]
        * @type { object }
        */
-      data: Data,
-      config: Config,
+      mock: Mock,
 
       /**
        * [イメージデータ]
@@ -96,7 +92,7 @@ export default {
 
   created() {
     this.getProvider();
-    this.$data.data.ImageApiResponse.forEach(element => this.images.push(element));
+    this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
   },
 
   /**

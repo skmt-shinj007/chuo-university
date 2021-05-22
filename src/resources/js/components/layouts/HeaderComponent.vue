@@ -29,15 +29,11 @@
 
 <script>
 // data import
-import Data from '../../config/data.json';
-import Config from '../../config/config.json';
+import Scroll from '../../config/scroll';
 import Api from '../../config/api/index';
 
 // component import
 import NavModal from '../modules/modal/NavModalComponent.vue';
-
-// mixin
-import Scroll from '../../config/scroll';
 
 export default {
   components: {
@@ -48,9 +44,6 @@ export default {
 
   data() {
     return {
-      data: Data,
-      config: Config,
-
       /**
        * [ヘッダーの表示を制御するフラグ]
        * クラスの付与で表示切り替え
