@@ -23,7 +23,7 @@
 
     <ul class="err__sitemap">
       <li class="err__sitemap-item" v-for="(menu, n) in menus" :key="n">
-        <router-link class="err__link" :to="menu.to">{{ menu.label }}</router-link>
+        <router-link class="err__link" :to="menu.path">{{ menu.label }}</router-link>
       </li>
     </ul>
   </section>
@@ -31,33 +31,22 @@
 </template>
 
 <script>
-// import
-import Config from '../../config/config.json';
 export default {
-  data() {
-    return {
-      config: Config,
-
-      /**
-       * サイトマップを生成するデータ
-       * @type { Object }
-       */
-      menus: [],
+  computed: {
+    menus() {
+      return this.pickUpRoute('label');
     }
-  },
-
-  mounted() {
-    this.menus = this.convertArray(this.config.route);
   },
 
   methods: {
     /**
-     * オブジェクトから配列に変換する処理
-     * @param { Object }
+     * リンクデータを生成
+     * @param {String} 絞り込むプロパティ名
+     * @return {Array} 引数に指定したプロパティをもつルート要素を抽出。
      */
-    convertArray(obj) {
-      return Object.keys(obj).map(function (key) {
-        return obj[key];
+    pickUpRoute(prop) {
+      return this.$router.options.routes.filter(route => {
+        return (route.hasOwnProperty(prop) && !route.external);
       })
     },
   },

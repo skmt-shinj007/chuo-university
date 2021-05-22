@@ -57,18 +57,15 @@
 </template>
 
 <script>
-// mixin
-import Risize from '../config/resize';
-
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import UserTicket from '../components/modules/ticket/UserTicketComponent';
 
-// config import
-import Data from '../config/data.json';
+// config
 import Api from '../config/api/index';
+import Risize from '../config/resize';
 
 export default {
   components: {
@@ -82,8 +79,6 @@ export default {
 
   data() {
     return {
-      data: Data,
-
       /**
        * メインビジュアルのテキスト
        * @type { string }

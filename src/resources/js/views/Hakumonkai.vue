@@ -44,11 +44,9 @@ import LinkButton from '../components/modules/button/LinkButtonComponent';
 import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
-// data import
-import Data from '../config/data.json';
-
-// mixin
+// config
 import Animation from '../config/animation';
+import Mock from '../config/data/mock.json';
 
 export default {
   components: {
@@ -64,7 +62,7 @@ export default {
 
   data() {
     return {
-      data:Data,
+      mock: Mock,
       tableHeading: [],
       officer: [],
       activeAlumni: [],
@@ -76,12 +74,12 @@ export default {
     this.$data.messages.Hakumonkai.OfficerTable.Heading.forEach(element => this.tableHeading.push(element));
 
     // ユーザーカテゴリーで [役職OB] を抽出
-    this.$data.data.Users.forEach(element => {
+    this.$data.mock.Users.forEach(element => {
       (element.category === this.officerNum) ? this.officer.push(element) : null;
     });
 
     // ユーザーカテゴリーで [現役OB] を抽出
-    this.$data.data.Users.forEach(element => {
+    this.$data.mock.Users.forEach(element => {
       (element.category === this.activeAlumniNum) ? this.activeAlumni.push(element) : null;
     });
   },
