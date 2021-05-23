@@ -2,22 +2,30 @@
 <div class="user-ticket">
   <div class="user-ticket__ticket" @click="openModal">
     <div class="user-ticket__thumbnail">
-      <user-thumbnail :image="thumbnail" :borderColor='positionColor'/>
+      <slot name="thumbnail" :user="user">
+        <user-thumbnail :image="thumbnail" :borderColor='positionColor'/>
+      </slot>
     </div>
 
     <div class="user-ticket__profile">
-      <span class="user-ticket__profile-name">{{ user.name_ja }}</span>
-      <span class="user-ticket__profile-name">{{ user.name_en }}</span>
+      <slot name="name" :user="user">
+        <span class="user-ticket__profile-name">{{ user.name_ja }}</span>
+        <span class="user-ticket__profile-name">{{ user.name_en }}</span>
+      </slot>
 
       <div class="user-ticket__label-group">
-        <div class="user-ticket__label" v-for="(label, i) in labels" :key="i">
-          <label-component :label="label"/>
-        </div>
+        <slot name="label" :user="user">
+          <div class="user-ticket__label" v-for="(label, i) in labels" :key="i">
+            <label-component :label="label"/>
+          </div>
+        </slot>
       </div>
     </div>
   </div>
 
-  <user-modal v-if="showModal" @close="closeModal" :item="user"/>
+  <slot name="modal" :user="user">
+    <user-modal v-if="showModal" @close="closeModal" :item="user"/>
+  </slot>
 </div>
 </template>
 
@@ -78,7 +86,7 @@ export default {
 
   created() {
     const user = this.user;
-    this.thumbnail.img = user.img.src;
+    this.thumbnail.src = user.img.src;
     this.thumbnail.alt = user.img.alt;
 
     // playerのみポジションラベルをつける。
