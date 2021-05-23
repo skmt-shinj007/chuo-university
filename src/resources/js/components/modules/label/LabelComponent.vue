@@ -66,6 +66,10 @@ export default {
     &--red {
       background-color: color(japanRed);
     }
+
+    &--twitter {
+      background-color: color(twitter);
+    }
   }
 
   &__text {

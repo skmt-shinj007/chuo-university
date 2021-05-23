@@ -10,20 +10,18 @@
   <!-- プロバイダー -->
   <section class="photo__provider">
     <contents-title :title="messages.SectionTitles.Provider"/>
+    <transition-group
+      class="photo__ticket-group"
+      name="ticket"
+      tag="div"
+      @before-enter="delay"
+      @after-enter="cancelDelay"
+      >
 
-    <div class="ticket-group">
-      <div class="ticket" v-for="(provider, n) in provider.response" :key="n" ref="providerTicket">
+      <div class="photo__ticket" v-for="(provider, i) in provider.response" :key="i" :data-index="i">
         <provider-ticket :provider="provider"/>
       </div>
-      <!-- 左寄せに並べたいので空の要素をチケット分追加 -->
-      <div
-        class="empty"
-        v-for="n in ticket.number"
-        :key="`empty-${n}`"
-        :style="{ width: `${ticket.width}px` }"
-      />
-    </div>
-
+    </transition-group>
   </section>
 
   <div class="photo__scroll-top">
@@ -69,16 +67,6 @@ export default {
       images: [],
 
       /**
-       * [チケット]
-       * width, 個数
-       * @type { Number }
-       */
-      ticket: {
-        width: 0,
-        number: 0,
-      },
-
-      /**
        * providerの情報
        * response : @type { Object }
        * err      : @type { Boolean }
@@ -95,33 +83,7 @@ export default {
     this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
   },
 
-  /**
-   * TODO:改修が必要。
-   * APIの返却値で構成しているチケットの幅が読み取れない。
-   * チケットは、APIが返却され次第レンダリングが実行されるので、幅や個数の初期値が設定できない。
-   * そもそもの配置（CSS）から考える必要がある。
-   */
-  updated() {
-    this.$nextTick(function () {
-      if (this.$refs.providerTicket !== undefined) {
-        this.setEmptyTicketData();
-      }
-    })
-  },
-
   methods: {
-    /**
-     * 空要素を生成するデータを格納。
-     * チケットの並びを左揃えにするために追加。
-     */
-    setEmptyTicketData() {
-      const ticket = this.$refs.providerTicket;
-      if(ticket.length > 1) {
-        this.ticket.number = ticket.length;
-        this.ticket.width = this.$refs.providerTicket[0].offsetWidth;
-      }
-    },
-
     // Twitter Apiからデータを取得
     async getProvider() {
       const response = await Api.getResponse('/twitter/provider');
@@ -132,16 +94,17 @@ export default {
         throw new Error('予期しないデータ型で返却されました。');
       }
       this.provider.response = response;
-    }
-  },
-
-  watch: {
-    windowWidth() {
-      if (this.ticket.width) {
-        console.log(this.ticket.width);
-        this.ticket.width = this.$refs.providerTicket[0].offsetWidth;
-      }
     },
+
+    /**
+     * transition methods
+     */
+    delay(el) {
+      el.style.transitionDelay = 120 * parseInt(el.dataset.index, 10) + 'ms';
+    },
+    cancelDelay(el) {
+      el.style.transitionDelay = '';
+    }
   },
 }
 
@@ -164,7 +127,6 @@ export default {
 
 <style lang="scss" scoped>
 .photo {
-
   &__gallery {
     margin-top: interval(5);
 
@@ -173,25 +135,51 @@ export default {
     }
   }
 
+  &__ticket-group {
+    @include flex(column nowrap, center, center);
+    max-width: pixel(50);
+    margin: 0 auto;
+
+    @include mq(sm) {
+      @include flex(row wrap);
+      max-width: none;
+    }
+  }
+
+  // カード幅の計算に使うために変数に格納
+  $card-margin: interval(.5);
+
+  &__ticket {
+    padding: interval(1);
+    margin: $card-margin;
+    width: 100%;
+
+    @include mq(sm) {
+      width: calc((100% / 2) - (#{$card-margin} * 2));
+    }
+
+    @include mq(md) {
+      width: calc((100% / 3) - (#{$card-margin} * 2));
+    }
+
+    @include mq(lg) {
+      width: calc((100% / 4) - (#{$card-margin} * 2));
+    }
+  }
+
   &__scroll-top {
     @include scroll-top();
   }
 }
 
-.ticket-group {
-  @include flex(column nowrap, center, center);
-
-  @include mq(sm) {
-    @include flex(row wrap, center, center);
-  }
-}
-
+// チケットの表示アニメーション
 .ticket {
-  margin-bottom: interval(5);
+  &-enter-active {
+    transition: opacity .5s;
+  }
 
-  @include mq(sm) {
-    margin-bottom: 0;
-    padding: interval(1);
+  &-enter {
+    opacity: 0;
   }
 }
 </style>

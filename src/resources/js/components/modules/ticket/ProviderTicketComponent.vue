@@ -1,41 +1,38 @@
 <template>
-<div class="provider-ticket" ref="targetElement">
-  <div class="provider-ticket__ticket" @click="openModal">
-    <div class="provider-ticket-thumbnail-border">
-      <figure class="provider-ticket-thumbnail">
-        <img :src="provider.profile_image_url_original" :alt="`${provider.name}のプロフィール画像`">
-      </figure>
-    </div>
+  <user-ticket :user="provider">
+    <template v-slot:thumbnail="provider">
+      <user-thumbnail :image="provider.user.img"/>
+    </template>
 
-    <div class="provider-ticket-item">
-      <span class="provider-ticket__name">{{ provider.name }}</span>
+    <template v-slot:name="provider">
+      <span class="provider-ticket__name">{{ provider.user.name }}</span>
+    </template>
 
-      <!-- SNSタグは 2つ まで -->
-      <div class="provider-ticket-tag-group">
-        <sns-tag sns="twitter" content="Twitter"/>
-        <sns-tag sns="instagram" content="Instagram"/>
+    <template v-slot:label>
+      <div class="provider-ticket__label" v-for="(label, i) in labels" :key="i">
+        <label-component :label="label"/>
       </div>
-    </div>
+    </template>
 
-    <div class="provider-ticket-item">
-      <svg-vue class="provider-ticket-icon" icon="angle_right"/>
-    </div>
-  </div>
-
-  <!-- モーダル -->
-  <provider-modal v-if="isShow" :item="provider" @close="closeModal"/>
-</div>
+    <template v-slot:modal="provider">
+      <provider-modal v-if="isShow" :item="provider.user" @close="closeModal"/>
+    </template>
+  </user-ticket>
 </template>
 
 <script>
 // component import
-import SnsTag from '../tag/SnsTagComponent';
+import UserTicket from '../ticket/UserTicketComponent';
+import UserThumbnail from '../UserThumbnailComponent';
+import LabelComponent from '../label/LabelComponent';
 import ProviderModal from '../modal/ProviderModalComponent';
 
 export default {
   components: {
-    SnsTag,
+    UserTicket,
+    LabelComponent,
     ProviderModal,
+    UserThumbnail,
   },
 
   data() {
@@ -45,6 +42,12 @@ export default {
        * @type { Boolean }
        */
       isShow: false,
+
+      /**
+       * labelData
+       * @type {object}
+       */
+      labels: [],
     }
   },
 
@@ -55,17 +58,31 @@ export default {
     }
   },
 
+  created() {
+    console.log(this.provider);
+    this.labels.push(this.formatToLabel('twitter', 'Twitter'));
+  },
+
   methods: {
     /**
-     * [モーダル開閉処理]
+     * [モーダル閉じる]
      */
-    openModal() {
-      this.isShow = true;
-      document.body.classList.add("modal-open");
-    },
     closeModal() {
       this.isShow = false;
       document.body.classList.remove("modal-open");
+    },
+
+    /**
+     * ラベルコンポーネントに渡すオブジェクトを生成する。
+     * @param1 {string} tag color
+     * @param2 {string} tag text
+     * @return {Object} ラベルコンポーネントに渡すオブジェクト
+     */
+    formatToLabel(color, text) {
+      let data = {};
+      data.color = color;
+      data.text = text;
+      return data;
     },
   },
 }
@@ -73,63 +90,17 @@ export default {
 
 <style lang="scss">
 .provider-ticket {
-  width: interval(34);
-
-  @include mq(md) {
-    cursor: pointer;
-  }
-
-  &__ticket {
-    @include flex(row nowrap, space-between, center);
-    padding: interval(1);
-    box-shadow: 0 3px 5px 3px color(darkShadow);
-    border-radius: 100px;
-
-    @include mq(md) {
-      box-shadow: 0 1px 3px 1px color(darkShadow);
-      transition: all .3s ease-out;
-    }
-
-    @include hover {
-      box-shadow: 0 3px 5px 3px color(darkShadow);
-      transform: translateY(-2px);
-    }
-  }
-
-  &-thumbnail-border {
-    @include thumbnail-border();
-    width: interval(9);
-    height: interval(9);
-  }
-
-  &-thumbnail {
-    width: 100%;
-    @include trimming(aspect(square));
-
-    @include mq(sm) {
-      width: interval(10);
-    }
-
-    & > img {
-      border-radius: radius(circle);
-    }
-  }
-
   &__name {
     display: block;
     font-size: font(14);
-    padding-left: interval(.5);
   }
 
-  &-tag-group {
-    @include flex(row wrap, flex-start, center);
-  }
+  &__label {
+    margin: interval(.5) interval(.5) 0 0;
 
-  &-icon {
-    width: interval(1.5);
-    height: interval(1.5);
-    fill: color(darkblue);
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
-
 </style>

@@ -88,9 +88,17 @@ class TwitterApiController extends Controller
       'user_id' => $provider_ids
     ];
     $response = $this->connection()->get('users/lookup', $params);
+
+    // データ整形・作成
     foreach ($response as $index => $val) {
       $val->link = $base_link_uri . $val->screen_name;
-      $val->profile_image_url_original = str_replace('_normal', '', $val->profile_image_url);
+
+      $image_url = str_replace('_normal', '', $val->profile_image_url);
+      $images = (object) [
+        'src' => $image_url,
+        'alt' => $val->name . 'のプロフィール画像',
+      ];
+      $val->img = $images;
     }
 
     return response()->json($response);
