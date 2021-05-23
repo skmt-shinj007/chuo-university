@@ -9,15 +9,12 @@
       <span class="user-ticket__profile-name">{{ user.name_ja }}</span>
       <span class="user-ticket__profile-name">{{ user.name_en }}</span>
 
-      <!-- TODO：タグの改修 -->
       <div class="user-ticket__label-group">
         <div class="user-ticket__label" v-for="(label, i) in labels" :key="i">
           <label-component :label="label"/>
         </div>
       </div>
     </div>
-
-    <div class="user-ticket__border" :class="`user-ticket__border--${positionColor}`"/>
   </div>
 
   <user-modal v-if="showModal" @close="closeModal" :item="user"/>
@@ -113,7 +110,7 @@ export default {
     },
 
     /**
-     * タグコンポーネントに渡すオブジェクトを生成する。
+     * ラベルコンポーネントに渡すオブジェクトを生成する。
      * @param1 {string} tag color
      * @param2 {string} tag text
      * @return {Object} ラベルコンポーネントに渡すオブジェクト
@@ -158,7 +155,7 @@ export default {
   &__ticket {
     @include flex(row nowrap, flex-start, center);
     box-shadow: 0 1px 3px 1px color(darkShadow);
-    border-radius: radius(soft);
+    border-radius: radius(normal);
     padding: interval(1);
 
     @include mq(md) {
@@ -198,27 +195,6 @@ export default {
 
     &:last-child {
       margin-right: 0;
-    }
-  }
-
-  &__border {
-    width: 10%;
-    height: pixel(.5);
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(25%, -50%);
-
-    &--blue {
-      @include gradient(color(lightDarkblue), color(blue), horizontal);
-    }
-
-    &--lightgreen {
-      @include gradient(color(lightDarkblue), color(lightgreen), horizontal);
-    }
-
-    &--orange {
-      @include gradient(color(lightDarkblue), color(orange), horizontal);
     }
   }
 }
