@@ -3,7 +3,7 @@
     <picture class="user-thumbnail__picture">
       <!-- <source v-if="image.source" :media="mq" :srcset="image.source.sp">
       <source v-if="image.source" :media="mq" :srcset="image.source.pc"> -->
-      <img :src="image.img" :alt="image.alt" @error="noImage">
+      <img :src="image.src" :alt="image.alt" @error="noImage">
     </picture>
   </div>
 </template>
@@ -29,13 +29,13 @@ export default {
      *     sp: 'url' {String},
      *     pc: 'url' {String},
      *   },
-     *   image: 'url' {String},
+     *   src: 'url' {String},
      *   alt: 'url' {String},
      * }
      */
     image: {
       type: Object,
-      default: {},
+      default: null,
     },
 
     /**
