@@ -1,20 +1,25 @@
 <template>
   <div class="user-ticket">
-    <!-- 子コンポーネントにあるモーダルフラグをいじる -->
     <div class="user-ticket__ticket" @click="$emit('openModal')">
       <div class="user-ticket__thumbnail">
+        <!-- サムネイル：userThumbnailComponentを想定 -->
         <slot name="thumbnail"/>
       </div>
 
       <div class="user-ticket__profile">
-        <slot name="name"/>
+        <div class="user-ticket__name-wrap">
+          <!-- 名前 -->
+          <slot name="name"/>
+        </div>
 
         <div class="user-ticket__label-group">
+          <!-- ラベル：LabelComponentを想定 -->
           <slot name="label"/>
         </div>
       </div>
     </div>
 
+    <!-- モーダル -->
     <slot name="modal"/>
   </div>
 </template>
