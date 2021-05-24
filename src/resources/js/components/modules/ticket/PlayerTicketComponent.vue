@@ -26,14 +26,12 @@
 import UserTicket from './UserTicketComponent';
 import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
-import ProviderModal from '../modal/ProviderModalComponent';
 import UserModal from '../modal/UserModalComponent';
 
 export default {
   components: {
     UserTicket,
     LabelComponent,
-    ProviderModal,
     UserThumbnail,
     UserModal,
   },
