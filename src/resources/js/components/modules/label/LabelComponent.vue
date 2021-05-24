@@ -2,7 +2,9 @@
   <div class="label">
     <div class="label__wrap" :class="colorModifier">
       <slot name="labelText">
-        <span class="label__text">{{ label.text }}</span>
+        <span class="label__text" :class="{'label__text-en': isAlphanumeric(label.text)}">
+          {{ label.text }}
+        </span>
       </slot>
     </div>
   </div>
@@ -25,6 +27,17 @@ export default {
     colorModifier() {
       return (this.label.color) ? `label__wrap--${this.label.color}` : null;
     },
+  },
+
+  methods: {
+    /**
+     * 半角英数字かをチェックする。
+     * @param {String} チェック対象の文字列
+     * @return {Boolean} 半角英数字ならtrue。そ以外ならfalse。
+     */
+    isAlphanumeric(str) {
+      return /^[A-Za-z0-9]*$/.test(str);
+    }
   },
 }
 
@@ -76,6 +89,10 @@ export default {
     font-size: font(10);
     letter-spacing: 1.8px;
     line-height: 2;
+
+    &-en {
+      letter-spacing: 1px;
+    }
   }
 }
 </style>

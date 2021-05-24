@@ -1,11 +1,11 @@
 <template>
-  <user-ticket :user="provider">
-    <template v-slot:thumbnail="provider">
-      <user-thumbnail :image="provider.user.img"/>
+  <user-ticket @openModal="openModal">
+    <template v-slot:thumbnail>
+      <user-thumbnail :image="provider.img"/>
     </template>
 
-    <template v-slot:name="provider">
-      <span class="provider-ticket__name">{{ provider.user.name }}</span>
+    <template v-slot:name>
+      <span class="player-ticket__name">{{ provider.name }}</span>
     </template>
 
     <template v-slot:label>
@@ -15,7 +15,7 @@
     </template>
 
     <template v-slot:modal="provider">
-      <provider-modal v-if="isShow" :item="provider.user" @close="closeModal"/>
+      <provider-modal v-if="showModal" :item="provider" @close="closeModal"/>
     </template>
   </user-ticket>
 </template>
@@ -41,7 +41,7 @@ export default {
        * モーダルの開閉判定フラグ
        * @type { Boolean }
        */
-      isShow: false,
+      showModal: false,
 
       /**
        * labelData
@@ -59,16 +59,19 @@ export default {
   },
 
   created() {
-    console.log(this.provider);
     this.labels.push(this.formatToLabel('twitter', 'Twitter'));
   },
 
   methods: {
     /**
-     * [モーダル閉じる]
+     * モーダル開閉処理
      */
+    openModal() {
+      this.showModal = true;
+      document.body.classList.add("modal-open");
+    },
     closeModal() {
-      this.isShow = false;
+      this.showModal = false;
       document.body.classList.remove("modal-open");
     },
 
