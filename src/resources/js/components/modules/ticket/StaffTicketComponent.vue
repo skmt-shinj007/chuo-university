@@ -1,7 +1,7 @@
 <template>
   <user-ticket @openModal="openModal">
     <template v-slot:thumbnail>
-      <user-thumbnail :image="thumbnail"/>
+      <user-thumbnail :image="staff.img"/>
     </template>
 
     <template v-slot:name>
@@ -45,15 +45,6 @@ export default {
       showModal: false,
 
       /**
-       * thumbnailコンポーネントに渡すオブジェクト
-       * @type {Object}
-       */
-      thumbnail: {
-        img: '',
-        alt: ''
-      },
-
-      /**
        * LabelComponentに渡すデータ
        * @type {Array}
        */
@@ -70,8 +61,6 @@ export default {
 
   created() {
     const staff = this.staff;
-    this.thumbnail.src = staff.img.src;
-    this.thumbnail.alt = staff.img.alt;
 
     /**
      * Labelに表示するタグを絞り込み

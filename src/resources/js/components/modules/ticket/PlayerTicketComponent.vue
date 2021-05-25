@@ -1,7 +1,7 @@
 <template>
   <user-ticket @openModal="openModal">
     <template v-slot:thumbnail>
-      <user-thumbnail :image="thumbnail" :borderColor='positionColor'/>
+      <user-thumbnail :image="player.img" :borderColor='positionColor'/>
     </template>
 
     <template v-slot:name>
@@ -45,15 +45,6 @@ export default {
       showModal: false,
 
       /**
-       * thumbnailコンポーネントに渡すオブジェクト
-       * @type {Object}
-       */
-      thumbnail: {
-        img: '',
-        alt: ''
-      },
-
-      /**
        * LabelComponentに渡すデータ
        * @type {Array}
        */
@@ -80,8 +71,6 @@ export default {
 
   created() {
     const player = this.player;
-    this.thumbnail.src = player.img.src;
-    this.thumbnail.alt = player.img.alt;
 
     // ポジションラベルのデータを作成。
     if (player.position) {
