@@ -1,7 +1,7 @@
 <template>
   <user-ticket @openModal="openModal">
     <template v-slot:thumbnail>
-      <user-thumbnail :image="player.img" :borderColor='positionColor'/>
+      <user-thumbnail :image="player.img" :borderColor='player.position.color'/>
     </template>
 
     <template v-slot:name>
@@ -16,7 +16,12 @@
     </template>
 
     <template v-slot:modal>
-      <user-modal v-if="showModal" @close="closeModal" :item="player"/>
+      <player-modal
+        v-if="showModal"
+        @close="closeModal"
+        :player="player"
+        :labels="labels"
+      />
     </template>
   </user-ticket>
 </template>
@@ -26,14 +31,14 @@
 import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
-import UserModal from '../modal/UserModalComponent';
+import PlayerModal from '../modal/PlayerModalComponent';
 
 export default {
   components: {
     UserTicket,
     LabelComponent,
     UserThumbnail,
-    UserModal,
+    PlayerModal,
   },
 
   data() {
@@ -57,16 +62,6 @@ export default {
       type: Object,
       default: null
     }
-  },
-
-  computed: {
-    /**
-     * ポジションでサムネイルを色分けする。
-     * @return {String} css class
-     */
-    positionColor() {
-      return (this.player.position) ? this.player.position.color : 'blue';
-    },
   },
 
   created() {

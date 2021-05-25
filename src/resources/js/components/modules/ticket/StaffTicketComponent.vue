@@ -16,7 +16,7 @@
     </template>
 
     <template v-slot:modal>
-      <user-modal v-if="showModal" @close="closeModal" :item="staff"/>
+      <!-- <user-modal v-if="showModal" @close="closeModal" :item="staff"/> -->
     </template>
   </user-ticket>
 </template>
@@ -26,7 +26,7 @@
 import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
-import UserModal from '../modal/UserModalComponent';
+import UserModal from '../modal/UserModalFrameComponent';
 
 export default {
   components: {
