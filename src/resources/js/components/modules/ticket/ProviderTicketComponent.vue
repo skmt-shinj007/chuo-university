@@ -22,7 +22,7 @@
 
 <script>
 // component import
-import UserTicket from '../ticket/UserTicketComponent';
+import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
 import ProviderModal from '../modal/ProviderModalComponent';
