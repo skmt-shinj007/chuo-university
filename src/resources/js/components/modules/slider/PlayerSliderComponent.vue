@@ -18,19 +18,19 @@
     </swiper>
 
     <!-- pleyerCardにモーダルを描画すると、swiperのtransformが邪魔してモーダルがバグる -->
-    <user-modal v-if="showModal" @close="closeModal" :item="clickEl"/>
+    <!-- <user-modal v-if="showModal" @close="closeModal" :item="clickEl"/> -->
   </div>
 </template>
 
 <script>
 // components import
 import PlayerCard from '../card/PlayerCardComponent';
-import UserModal from '../modal/UserModalComponent';
+// import UserModal from '../modal/UserModalComponent';
 
 export default {
   components: {
     PlayerCard,
-    UserModal,
+    // UserModal,
   },
 
   props: {

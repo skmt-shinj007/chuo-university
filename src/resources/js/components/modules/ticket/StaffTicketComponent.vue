@@ -1,7 +1,7 @@
 <template>
   <user-ticket @openModal="openModal">
     <template v-slot:thumbnail>
-      <user-thumbnail :image="thumbnail"/>
+      <user-thumbnail :image="staff.img"/>
     </template>
 
     <template v-slot:name>
@@ -16,7 +16,12 @@
     </template>
 
     <template v-slot:modal>
-      <user-modal v-if="showModal" @close="closeModal" :item="staff"/>
+      <staff-modal
+        v-if="showModal"
+        @close="closeModal"
+        :staff="staff"
+        :labels="labels"
+      />
     </template>
   </user-ticket>
 </template>
@@ -26,14 +31,14 @@
 import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
-import UserModal from '../modal/UserModalComponent';
+import StaffModal from '../modal/StaffModalComponent';
 
 export default {
   components: {
     UserTicket,
     LabelComponent,
     UserThumbnail,
-    UserModal,
+    StaffModal,
   },
 
   data() {
@@ -43,15 +48,6 @@ export default {
        * @type { Boolean }
        */
       showModal: false,
-
-      /**
-       * thumbnailコンポーネントに渡すオブジェクト
-       * @type {Object}
-       */
-      thumbnail: {
-        img: '',
-        alt: ''
-      },
 
       /**
        * LabelComponentに渡すデータ
@@ -70,8 +66,6 @@ export default {
 
   created() {
     const staff = this.staff;
-    this.thumbnail.src = staff.img.src;
-    this.thumbnail.alt = staff.img.alt;
 
     /**
      * Labelに表示するタグを絞り込み
