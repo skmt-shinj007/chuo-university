@@ -11,7 +11,7 @@
               </slot>
             </div>
 
-            <div class="user-modal__info">
+            <div class="user-modal__profile">
               <div class="user-modal__name">
                 <slot name="name">
                   <!-- 名前 -->
@@ -91,7 +91,7 @@ export default {
     padding: interval(5) 0;
   }
 
-  &__info {
+  &__profile {
     margin-top: interval(3);
   }
 
