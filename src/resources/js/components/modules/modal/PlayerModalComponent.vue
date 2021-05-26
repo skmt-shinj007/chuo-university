@@ -78,23 +78,15 @@ export default {
 
     /**
      * テーブルのデータを作成する
-     */
-    pushList(key, value) {
-      this.lists.push(this.tableElement(key, value));
-    },
-
-    /**
-     * listsに格納するオブジェクトを作成する。
      * @param {String} key テーブルの左辺に該当する文字列
      * @param {String} value テーブルの右辺に該当する文字列
-     * @return {Object} listsに格納するオブジェクト
      */
-    tableElement(key, value) {
-      let el = {};
-      el["key"] = key;
-      el["value"] = value;
-      return el;
-    }
+    pushList(key, value) {
+      this.lists.push({
+        key: key,
+        value: value,
+      });
+    },
   },
 }
 </script>
