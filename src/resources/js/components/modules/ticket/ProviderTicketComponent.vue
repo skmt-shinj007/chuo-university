@@ -14,8 +14,13 @@
       </div>
     </template>
 
-    <template v-slot:modal="provider">
-      <provider-modal v-if="showModal" :item="provider" @close="closeModal"/>
+    <template v-slot:modal>
+      <provider-modal
+        v-if="showModal"
+        :provider="provider"
+        :labels="labels"
+        @close="closeModal"
+      />
     </template>
   </user-ticket>
 </template>
@@ -60,6 +65,7 @@ export default {
 
   created() {
     this.labels.push(this.formatToLabel('twitter', 'Twitter'));
+    console.log(this.provider);
   },
 
   methods: {
