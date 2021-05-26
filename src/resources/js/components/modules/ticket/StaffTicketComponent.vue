@@ -16,7 +16,12 @@
     </template>
 
     <template v-slot:modal>
-      <!-- <user-modal v-if="showModal" @close="closeModal" :item="staff"/> -->
+      <staff-modal
+        v-if="showModal"
+        @close="closeModal"
+        :staff="staff"
+        :labels="labels"
+      />
     </template>
   </user-ticket>
 </template>
@@ -26,14 +31,14 @@
 import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
-import UserModal from '../modal/UserModalFrameComponent';
+import StaffModal from '../modal/StaffModalComponent';
 
 export default {
   components: {
     UserTicket,
     LabelComponent,
     UserThumbnail,
-    UserModal,
+    StaffModal,
   },
 
   data() {
