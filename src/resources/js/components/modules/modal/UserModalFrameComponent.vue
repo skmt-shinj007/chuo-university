@@ -6,26 +6,33 @@
           <header class="user-modal__header">
 
             <div class="user-modal__thumbnail">
-              <slot name="thumbnail"/>
+              <slot name="thumbnail">
+                <!-- サムネイル -->
+              </slot>
             </div>
 
             <div class="user-modal__info">
               <div class="user-modal__name">
                 <slot name="name">
+                  <!-- 名前 -->
                   <h4 class="user-modal__name-ja">{{ user.name_ja }}</h4>
                   <span class="user-modal__name-en">{{ user.name_en }}</span>
                 </slot>
               </div>
 
               <div class="user-modal__label-group">
-                <slot name="label"/>
+                <slot name="label">
+                  <!-- ラベル -->
+                </slot>
               </div>
             </div>
           </header>
 
           <div class="user-modal__line"/>
 
-          <slot name="content"/>
+          <slot name="content">
+            <!-- コンテンツ -->
+          </slot>
         </div>
       </div>
     </template>
@@ -106,6 +113,7 @@ export default {
 
     &-ja {
       font-size: font(18);
+      line-height: 1;
 
       @include mq(md) {
         display: inline-block;
@@ -123,7 +131,7 @@ export default {
   }
 
   &__label-group {
-    margin-top: interval(2);
+    margin-top: interval(1);
     @include flex(row wrap, center, center);
   }
 
