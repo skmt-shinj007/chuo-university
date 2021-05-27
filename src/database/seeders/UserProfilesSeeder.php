@@ -899,7 +899,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
-                'achievement' => null,
+                'achievement' => '2014年天皇杯 第3位',
             ],
             [
                 'user_id' => 60,

@@ -18,7 +18,7 @@
       @after-enter="cancelDelay"
       >
 
-      <div class="photo__ticket" v-for="(provider, i) in provider.response" :key="i" :data-index="i">
+      <div class="photo__ticket" v-for="(provider, i) in provider.response" :key="provider.id" :data-index="i">
         <provider-ticket :provider="provider"/>
       </div>
     </transition-group>

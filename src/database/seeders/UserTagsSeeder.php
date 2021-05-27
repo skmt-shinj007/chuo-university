@@ -16,7 +16,7 @@ class UserTagsSeeder extends Seeder
     public function run()
     {
         $current_date = Carbon::now();
-        
+
         DB::table('user_tags')->insert([
             [ 'user_id' => 1, 'tag_id' => 13, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
             [ 'user_id' => 2, 'tag_id' => 13, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
@@ -117,7 +117,13 @@ class UserTagsSeeder extends Seeder
             [ 'user_id' => 58, 'tag_id' => 13, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
             [ 'user_id' => 58, 'tag_id' => 21, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
             [ 'user_id' => 59, 'tag_id' => 13, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
-            [ 'user_id' => 59, 'tag_id' => 21, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ]
+            [ 'user_id' => 59, 'tag_id' => 21, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
+            [ 'user_id' => 60, 'tag_id' => 1, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
+            [ 'user_id' => 61, 'tag_id' => 1, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
+            [ 'user_id' => 62, 'tag_id' => 1, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
+            [ 'user_id' => 63, 'tag_id' => 1, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
+            [ 'user_id' => 64, 'tag_id' => 1, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
+            [ 'user_id' => 65, 'tag_id' => 1, 'created_at' => $current_date, 'updated_at' => $current_date, 'deleted_at' => null ],
         ]);
     }
 }
