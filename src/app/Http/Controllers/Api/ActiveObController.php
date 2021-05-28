@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 
 class ActiveObController extends Controller
 {
+    /**
+     * user_id(51:丸中 52:鈴木)のプロフィールリソースを返す
+     */
     public function index()
     {
-        // user_idを利用した直検索　51:丸中 52:鈴木
         $active_user = UserProfile::find([51,52]);
         return UserProfileResource::collection($active_user);
     }
