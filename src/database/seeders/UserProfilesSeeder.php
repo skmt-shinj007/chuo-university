@@ -734,7 +734,7 @@ class UserProfilesSeeder extends Seeder
                 'prefecture_id' => null,
                 'alma_mater' => null,
                 'affiliation' => null,
-                'achievement' => null,
+                'achievement' => '茨城県国体成年男子監督',
             ],
             [
                 'user_id' => 46,
