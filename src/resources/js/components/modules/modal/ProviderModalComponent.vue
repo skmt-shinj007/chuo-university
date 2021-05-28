@@ -15,16 +15,18 @@
     </template>
 
     <template v-slot:content>
-      <div class="provider-modal__lists">
-        <table-component :tableItems="lists" :ratio="4"/>
-      </div>
       <div class="provider-modal__contents">
-        <div class="provider-modal__description">
-          <h5 class="provider-modal__description-title">{{ messages.provider.profile }}</h5>
-          <p class="provider-modal__description-text">{{ provider.description }}</p>
+        <div class="provider-modal__lists">
+          <table-component :tableItems="lists" :ratio="4"/>
         </div>
-        <div class="provider-modal__button">
-          <primary-button :btn="messages.Button.Twitter" @clickEvent="externalLink(provider.link)"/>
+        <div class="provider-modal__profile">
+          <div class="provider-modal__description">
+            <h5 class="provider-modal__description-title">{{ messages.provider.profile }}</h5>
+            <p class="provider-modal__description-text">{{ provider.description }}</p>
+          </div>
+          <div class="provider-modal__button">
+            <primary-button :btn="messages.Button.Twitter" @clickEvent="externalLink(provider.link)"/>
+          </div>
         </div>
       </div>
     </template>
@@ -122,12 +124,12 @@ export default {
     }
   }
 
-  &__lists {
-    padding-top: interval(5);
+  &__contents {
+    padding: interval(5) 0;
   }
 
-  &__contents {
-    margin-top: interval(5);
+  &__profile {
+    margin-top: interval(2);
   }
 
   &__description {

@@ -10,9 +10,11 @@ use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
+    /**
+     * 部員タグを持っているユーザーのプロフィールリソースを返す
+     */
     public function index()
     {
-        // tag_id:1（部員タグ）を持っている全ユーザー
         $club_member_user = Tag::find(1)->users()->get();
         return UserProfileResource::collection($club_member_user);
     }
