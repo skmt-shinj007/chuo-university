@@ -62,9 +62,11 @@ export default {
   created() {
     const player = this.player;
     this.pushList('学年', `${player.grade}年生`);
+    this.pushList('所属学部', `${player.affiliation}学部`);
     this.pushList('ポジション', player.position.name_ja);
     this.pushList('出身校', player.alma_mater);
     this.pushList('出身地', player.prefecture.name_ja);
+    this.pushList('実績', player.achievement);
   },
 
   methods: {

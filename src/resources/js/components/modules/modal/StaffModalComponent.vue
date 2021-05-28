@@ -63,7 +63,7 @@ export default {
     const staff = this.staff;
     if (staff.graduate_date) this.pushList('卒業年', `${staff.graduate_date}年卒業`);
     if (staff.affiliation) this.pushList('所属', staff.affiliation);
-    if (staff.achivement) this.pushList('実績', staff.achivement);
+    if (staff.achievement) this.pushList('実績', staff.achievement);
   },
 
   methods: {
