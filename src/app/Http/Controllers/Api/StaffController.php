@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 class StaffController extends Controller
 {
+    /**
+     * スタッフタグを持っているユーザーのプロフィールリソースを返す
+     */
     public function index()
     {
         $staff_tag_user = Tag::find(7)->users()->get();
