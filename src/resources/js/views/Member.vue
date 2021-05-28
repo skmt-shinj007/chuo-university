@@ -29,7 +29,7 @@
       @after-enter="cancelDelay">
 
       <div class="member__ticket" v-for="(player, i) in user.players" :key="player.id" :data-index="i">
-        <user-ticket :user="player"/>
+        <player-ticket :player="player"/>
       </div>
     </transition-group>
   </section>
@@ -44,7 +44,7 @@
       @after-enter="cancelDelay">
 
       <div class="member__ticket" v-for="(staff, i) in user.staff" :key="staff.id" :data-index="i">
-        <user-ticket :user="staff"/>
+        <staff-ticket :staff="staff"/>
       </div>
     </transition-group>
   </section>
@@ -61,7 +61,8 @@
 import MainVisual from '../components/contents/MainVisualComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
-import UserTicket from '../components/modules/ticket/UserTicketComponent';
+import PlayerTicket from '../components/modules/ticket/PlayerTicketComponent';
+import StaffTicket from '../components/modules/ticket/StaffTicketComponent';
 
 // config
 import Api from '../config/api/index';
@@ -71,7 +72,8 @@ export default {
   components: {
     MainVisual,
     ContentsTitle,
-    UserTicket,
+    PlayerTicket,
+    StaffTicket,
     ScrollTopButton,
   },
 
