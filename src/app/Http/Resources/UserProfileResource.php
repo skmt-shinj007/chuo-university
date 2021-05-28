@@ -35,6 +35,7 @@ class UserProfileResource extends JsonResource
             'prefecture' => PrefectureResource::make($this->prefecture),
             'position' => PositionResource::make($this->position),
             'grade' => $this->grade,
+            'affiliation' => $this->affiliation,
             'achievement' => $this->achievement
         ];
     }
