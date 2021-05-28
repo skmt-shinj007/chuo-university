@@ -32,6 +32,7 @@ class UserProfile extends Model
         'position_id',
         'prefecture_id',
         'alma_mater',
+        'affiliation',
         'achievement',
     ];
 

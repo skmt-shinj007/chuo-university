@@ -29,6 +29,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 6,
                 'alma_mater' => '山形県羽黒高等学校',
+                'affiliation' => null,
                 'achievement' => '2016ハイスクールジャパンカップ ダブルス 準優勝',
             ],
             [
@@ -44,6 +45,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 1,
                 'alma_mater' => '北海道科学大学高等学校',
+                'affiliation' => null,
                 'achievement' => '2016全日本高校選抜 3位',
             ],
             [
@@ -59,6 +61,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 7,
                 'alma_mater' => '三重県三重高等学校',
+                'affiliation' => null,
                 'achievement' => '2016岩手国体少年男子 優勝',
             ],
             [
@@ -74,6 +77,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 12,
                 'alma_mater' => '千葉県昭和学院高等学校',
+                'affiliation' => null,
                 'achievement' => '2016ハイスクールジャパンカップ ダブルス ベスト8',
             ],
             [
@@ -89,6 +93,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 40,
                 'alma_mater' => '香川県尽誠学園高等学校',
+                'affiliation' => '経済',
                 'achievement' => '2016ハイスクールジャパンカップ ダブルス 3位',
             ],
             [
@@ -104,6 +109,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 34,
                 'alma_mater' => '広島県尾道高等学校',
+                'affiliation' => '文',
                 'achievement' => '2017ハイスクールジャパンカップ ダブルス 3位',
             ],
             [
@@ -119,6 +125,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 30,
                 'alma_mater' => '和歌山県和歌山北高等学校',
+                'affiliation' => '文',
                 'achievement' => '2011全日本小学生ソフトテニス選手権大会 優勝',
             ],
             [
@@ -134,6 +141,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 8,
                 'alma_mater' => '千葉県昭和学院高等学校',
+                'affiliation' => '理工',
                 'achievement' => '2016ハイスクールジャパンカップ ダブルス ベスト8',
             ],
             [
@@ -149,6 +157,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 8,
                 'alma_mater' => '千葉県木更津総合高等学校',
+                'affiliation' => '経済',
                 'achievement' => '2017福島インターハイ 団体戦 3位',
             ],
             [
@@ -164,6 +173,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 7,
                 'alma_mater' => '宮城県東北高等学校',
+                'affiliation' => '法',
                 'achievement' => '2016岡山インターハイ 団体戦 優勝',
             ],
             [
@@ -179,6 +189,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 22,
                 'alma_mater' => '静岡県加藤学園高等学校',
+                'affiliation' => '理工',
                 'achievement' => '2017 インターハイ出場',
             ],
             [
@@ -194,6 +205,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 6,
                 'alma_mater' => '山形県羽黒高等学校',
+                'affiliation' => '法',
                 'achievement' => '2018三重インターハイ 団体戦 準優勝',
             ],
             [
@@ -209,6 +221,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 2,
                 'alma_mater' => '宮城県東北高等学校',
+                'affiliation' => '経済',
                 'achievement' => '2018三重インターハイ 第9位',
             ],
             [
@@ -224,6 +237,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 7,
                 'alma_mater' => '宮城県東北高等学校',
+                'affiliation' => '法',
                 'achievement' => '2018全日本高校選抜 優勝',
             ],
             [
@@ -239,6 +253,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 1,
                 'alma_mater' => '北海道とわの森三愛高等学校',
+                'affiliation' => '文',
                 'achievement' => '2018福井国体少年男子 準優勝',
             ],
             [
@@ -254,6 +269,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 22,
                 'alma_mater' => '静岡県富士宮北高等学校',
+                'affiliation' => '経済',
                 'achievement' => '2018ハイスクールジャパンカップ シングルス 準優勝',
             ],
             [
@@ -269,6 +285,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 4,
                 'alma_mater' => '宮城県東北高等学校',
+                'affiliation' => '経済',
                 'achievement' => '2019全日本高校選抜 準優勝',
             ],
             [
@@ -284,6 +301,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 8,
                 'alma_mater' => '茨城県霞ヶ浦高等学校',
+                'affiliation' => '法',
                 'achievement' => '2019ハイスクールジャパンカップ ダブルス 準優勝',
             ],
             [
@@ -299,6 +317,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 22,
                 'alma_mater' => '三重県三重高等学校',
+                'affiliation' => '文',
                 'achievement' => '2019全日本高校選抜 ベスト8',
             ],
             [
@@ -314,6 +333,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 4,
                 'alma_mater' => '宮城県東北高等学校',
+                'affiliation' => '文',
                 'achievement' => '2019全日本高校選抜 準優勝',
             ],
             [
@@ -329,6 +349,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 12,
                 'alma_mater' => '奈良県高田商業高等学校',
+                'affiliation' => '経済',
                 'achievement' => '2019茨城国体少年男子 優勝',
             ],
             [
@@ -344,6 +365,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 11,
                 'alma_mater' => '埼玉県立川越高等学校',
+                'affiliation' => '法',
                 'achievement' => '2019インターハイ個人戦 出場',
             ],
             [
@@ -359,6 +381,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => null,
                 'alma_mater' => '中央大学附属高校',
+                'affiliation' => null,
                 'achievement' => 'アジア選手権・東アジア競技大会 日本代表優勝監督',
             ],
             [
@@ -374,6 +397,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => '中央大学大学院法務研究科',
                 'achievement' => '中央大学大学院法務研究科教授',
             ],
             [
@@ -389,6 +413,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -404,6 +429,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -419,6 +445,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -434,6 +461,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -449,6 +477,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -464,6 +493,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -479,6 +509,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -494,6 +525,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -509,6 +541,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -524,6 +557,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -539,6 +573,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -554,6 +589,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -569,6 +605,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -584,6 +621,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -599,6 +637,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -614,6 +653,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -629,6 +669,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -644,6 +685,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -659,6 +701,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -674,6 +717,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -689,6 +733,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -704,6 +749,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -719,6 +765,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -734,6 +781,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -749,6 +797,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -764,6 +813,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 12,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => '第16回世界選手権大会 国別対抗戦 優勝（監督）',
             ],
             [
@@ -779,6 +829,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 4,
                 'alma_mater' => '宮城県東北高等学校',
+                'affiliation' => 'NTT西日本広島',
                 'achievement' => '第16回世界選手権大会 国別対抗戦 優勝',
             ],
             [
@@ -794,6 +845,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 7,
                 'alma_mater' => '宮城県東北高等学校',
+                'affiliation' => '福島県庁',
                 'achievement' => '第16回世界選手権大会 国別対抗戦 優勝',
             ],
             [
@@ -809,6 +861,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -824,6 +877,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -839,6 +893,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -854,6 +909,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -869,6 +925,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -884,6 +941,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
+                'affiliation' => null,
                 'achievement' => null,
             ],
             [
@@ -899,7 +957,8 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => null,
                 'prefecture_id' => null,
                 'alma_mater' => null,
-                'achievement' => null,
+                'affiliation' => null,
+                'achievement' => '2014年天皇杯 第3位',
             ],
             [
                 'user_id' => 60,
@@ -914,6 +973,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 24,
                 'alma_mater' => '三重県三重高等学校',
+                'affiliation' => '文',
                 'achievement' => 'インターハイ個人戦 ベスト32',
             ],
             [
@@ -929,6 +989,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 13,
                 'alma_mater' => '奈良県高田商業高等学校',
+                'affiliation' => '経済',
                 'achievement' => '近畿インドア個人戦 第3位',
             ],
             [
@@ -944,6 +1005,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 17,
                 'alma_mater' => '奈良県高田商業高等学校',
+                'affiliation' => '経済',
                 'achievement' => '近畿インドア個人戦 第9位',
             ],
             [
@@ -959,6 +1021,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 11,
                 'alma_mater' => '奈良県高田商業高等学校',
+                'affiliation' => '法',
                 'achievement' => 'JOC杯 U17 シングルス優勝',
             ],
             [
@@ -974,6 +1037,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 1,
                 'prefecture_id' => 30,
                 'alma_mater' => '和歌山県和歌山北高等学校',
+                'affiliation' => '経済',
                 'achievement' => 'インターハイ出場',
             ],
             [
@@ -989,6 +1053,7 @@ class UserProfilesSeeder extends Seeder
                 'position_id' => 2,
                 'prefecture_id' => 16,
                 'alma_mater' => '富山県高岡商業高等学校',
+                'affiliation' => '経済',
                 'achievement' => '2019 茨城国体少年男子 第7位',
             ],
         ]);
