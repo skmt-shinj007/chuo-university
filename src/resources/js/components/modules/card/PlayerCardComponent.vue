@@ -22,10 +22,6 @@
     <div class="player-card__post" v-if="player.post.club">
       <label class="player-card__post-label">{{ player.post.club }}</label>
     </div>
-
-    <slot name="addCardContents" :player="player">
-      <!-- 差し込み：カードに追加したい内容を親コンポーネントで記述 -->
-    </slot>
   </div>
 </div>
 </template>
