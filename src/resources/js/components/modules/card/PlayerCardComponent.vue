@@ -1,26 +1,20 @@
 <template>
+<!-- APIレスポンスを使う から -->
 <div class="player-card" @click="open">
   <figure class="player-card__figure">
-    <img :src="`/image/${player.img.src}`" :alt="player.img.alt">
+    <img :src="player.img.src" :alt="player.img.alt" @error="noImage">
   </figure>
 
   <div class="player-card__information">
     <div class="player-card__name">
-      <span class="player-card__name-ja">{{ player.name.ja }}</span>
-      <span class="player-card__name-en">{{ player.name.en }}</span>
+      <span class="player-card__name-ja">{{ player.name_ja }}</span>
+      <span class="player-card__name-en">{{ player.name_en }}</span>
     </div>
 
-    <div class="player-card__tag-group">
-      <div class="player-card__tag">
-        <position-tag :position="player.position"/>
+    <div class="player-card__label-group">
+      <div class="player-card__label" v-for="(label, i) in labels" :key="i">
+        <label-component :label="label"/>
       </div>
-      <div class="player-card__tag">
-        <grade-tag v-if="player.grade" :grade="player.grade"/>
-      </div>
-    </div>
-
-    <div class="player-card__post" v-if="player.post.club">
-      <label class="player-card__post-label">{{ player.post.club }}</label>
     </div>
   </div>
 </div>
@@ -28,13 +22,11 @@
 
 <script>
 // component import
-import PositionTag from '../tag/PositionTagComponent';
-import GradeTag from '../tag/GradeTagComponent';
+import LabelComponent from '../label/LabelComponent';
 
 export default {
   components: {
-    PositionTag,
-    GradeTag,
+    LabelComponent
   },
 
   props: {
@@ -44,6 +36,37 @@ export default {
     }
   },
 
+  data() {
+    return {
+      /**
+       * LabelComponentに渡すデータ
+       * @type {Array}
+       */
+      labels: [],
+    }
+  },
+
+  created() {
+    const player = this.player;
+
+    // ポジションラベルのデータを作成。
+    if (player.position) {
+      this.labels.push(this.formatToLabel(player.position.color, player.position.name_ja));
+    }
+
+    /**
+     * Labelに表示するタグを絞り込み
+     * [主将, 主務, 副主将, 会計, 寮長]
+     */
+    const labelTagId = [2, 3, 4, 5, 6];
+    labelTagId.forEach(id => {
+      let tag = this.pickUpTag(id);
+      if (tag) {
+        this.labels.push(this.formatToLabel('darkblue', tag.name_ja));
+      }
+    })
+  },
+
   methods: {
     /**
      * [モーダルを開ける]
@@ -51,6 +74,38 @@ export default {
     open() {
       this.$emit('modal', this.player);
     },
+
+    /**
+     * ラベルコンポーネントに渡すオブジェクトを生成する。
+     * @param1 {string} tag color
+     * @param2 {string} tag text
+     * @return {Object} ラベルコンポーネントに渡すオブジェクト
+     */
+    formatToLabel(color, text) {
+      let data = {};
+      data.color = color;
+      data.text = text;
+      return data;
+    },
+
+    /**
+     * ラベルに出力するタグをIDで抽出する。
+     * @param {Number} 抽出したいタグのid
+     * @return {Object} tag object
+     */
+    pickUpTag(id) {
+      return this.player.tags.find(el => {
+        return (el.tag_id === id);
+      })
+    },
+
+    /**
+     * 画像のロードエラーハンドリング
+     * デフォルトの画像パスに置き換える。
+     */
+    noImage(element) {
+      element.target.src = '/image/noimage.png';
+    }
   },
 }
 </script>
@@ -77,42 +132,22 @@ export default {
     padding: interval(1);
   }
 
-  &__name-ja {
-    display: block;
-    margin-left: interval(.5);
+  &__name {
+    &-ja {
+      display: block;
+      margin-left: interval(.5);
+    }
+    &-en {
+      @extend .player-card__name-ja;
+      font-size: font(10);
+    }
   }
 
-  &__name-en {
-    @extend .player-card__name-ja;
-    font-size: font(10);
-  }
-
-  &__tag-group {
+  &__label-group {
     @include flex(row wrap);
     align-content: space-around;
-    padding: interval(1) 0;
-  }
-
-  &__tag {
-    margin: interval(.5);
-  }
-
-  &__post {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: color(darkblue);
-    width: interval(6);
-    height: interval(6);
-    border: 2px solid color(white);
-    border-radius: radius(circle);
-    @include flex(row nowrap, center, center);
-  }
-
-  &__post-label {
-    color: color(white);
-    font-size: font(12);
-    line-height: 1;
+    gap: interval(.5);
+    margin-top: interval(1);
   }
 }
 </style>

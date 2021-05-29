@@ -91,7 +91,7 @@
   <div class="background-darkblue">
     <section class="club__member fade" v-scroll="fade">
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
-      <player-slider :players="players"/>
+      <player-slider :players="highestGradePlayer"/>
 
       <div class="member__number">
         <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
@@ -125,6 +125,7 @@
 import Data from '../config/data/clubViewData.json';
 import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
+import Api from '../config/api/index';
 
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
@@ -175,6 +176,10 @@ export default {
     }
   },
 
+  created() {
+    this.setPlayers();
+  },
+
   beforeMount() {
     // TODO:画像を格納するクラウドストレージからApiで取得する
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
@@ -188,12 +193,26 @@ export default {
     this.$data.data.scheduleTable.forEach(element => this.schedule.push(element));
     this.$data.data.dormitory.forEach(element => this.dormitoryInformations.push(element));
 
-    // TODO:DBから情報を引っ張る
-    // ユーザーカテゴリーで [選手] を抽出
-    this.$data.mock.Users.forEach(element => {
-      (element.category === this.playerNum) ? this.players.push(element) : null;
-    });
     memberNumberData.forEach(element => this.memberNumber.push(element));
+  },
+
+  computed: {
+    /**
+     * 4年生の部員を返す。
+     */
+    highestGradePlayer() {
+      return this.players.filter(el => el.grade === 4);
+    }
+  },
+
+  methods: {
+    /**
+     * 部員取得
+     */
+    async setPlayers() {
+      const response = await Api.getResponse('/player');
+      (this.getType(response.data) === 'array') ? this.players = response.data : new Error('player:レスポンスが配列ではありません。');
+    },
   },
 }
 
