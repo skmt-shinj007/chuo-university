@@ -16,7 +16,7 @@
 
   <section class="hakumonkai__active fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
-    <player-slider :players="activeAlumni" color="darkblue" :option="swiperOptions"/>
+    <player-slider :players="activeAlumni" color="darkblue"/>
   </section>
 
   <section class="hakumonkai__message" v-fade:[dir.up]>
@@ -71,7 +71,7 @@ export default {
   },
 
   created() {
-    this.setActiveAlumni();
+    this.getActiveAlumni();
   },
 
   beforeMount() {
@@ -84,49 +84,18 @@ export default {
     });
   },
 
-  computed: {
-    swiperOptions() {
-      return {
-        speed: 1000,
-        autoHeight: true,
-        spaceBetween: 16,
-
-        autoplay: {
-          delay: 2500,
-        },
-
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          type: 'bullets',
-        },
-
-        breakpoints: {
-          560: {
-            slidesPerView: 2,
-            slidesPerGroup: 1,
-          },
-          860: {
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-          }
-        },
-      }
-    }
-  },
-
   methods: {
     /**
      * ユーザー取得
      */
-    async setActiveAlumni() {
+    async getActiveAlumni() {
       const response = await Api.getResponse('/active_ob');
-      (this.getType(response.data) === 'array') ? this.activeAlumni = response.data : new Error('player:レスポンスが配列ではありません。');
+      if (this.getType(response.data) === 'array') {
+        this.activeAlumni = response.data;
+      }
+      else {
+        new Error('player:レスポンスが配列ではありません。');
+      }
     },
   },
 }
