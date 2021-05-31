@@ -27,12 +27,12 @@
     <div class="practice__images">
       <!-- スマホ -->
       <div class="practice__slider" v-if="windowWidth < breakpoints.md">
-        <image-slider :images="courtImages"/>
+        <image-slider :images="data.homeCourt"/>
       </div>
 
       <!-- PC -->
       <div class="practice__image-group" v-else>
-        <div class="practice__image" v-for="(image, n) in courtImages" :key="n">
+        <div class="practice__image" v-for="(image, n) in data.homeCourt" :key="n">
           <caption-image :image="image"/>
         </div>
       </div>
@@ -129,7 +129,6 @@ import Api from '../config/api/index';
 
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
-import GoogleMap from '../components/modules/GoogleMapComponent';
 import Concept from '../components/contents/ConceptComponent';
 import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
@@ -147,7 +146,6 @@ export default {
     Concept,
     MainVisualSlider,
     TableComponent,
-    GoogleMap,
     ImageSlider,
     CaptionImage,
     DormitoryTicket,
@@ -166,7 +164,6 @@ export default {
       mainVisualImages: [],
       concepts: [],
       practiceInformations: [],
-      courtImages: [],
       schedule: [],
       dormitoryInformations: [],
       roomImages: [],
@@ -177,13 +174,12 @@ export default {
   },
 
   created() {
-    this.setPlayers();
+    this.getPlayers();
   },
 
   beforeMount() {
     // TODO:画像を格納するクラウドストレージからApiで取得する
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
-    courtImageApiResponse.forEach(element => this.courtImages.push(element));
     dormitoryImageApiResponse.forEach(element => this.roomImages.push(element));
     this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
 
@@ -209,9 +205,14 @@ export default {
     /**
      * 部員取得
      */
-    async setPlayers() {
+    async getPlayers() {
       const response = await Api.getResponse('/player');
-      (this.getType(response.data) === 'array') ? this.players = response.data : new Error('player:レスポンスが配列ではありません。');
+      if (this.getType(response.data) === 'array') {
+        this.players = response.data;
+      }
+      else {
+        new Error('player:レスポンスが配列ではありません。');
+      }
     },
   },
 }
@@ -238,27 +239,6 @@ const mainVisualApiResponse = [
     alt     : 'altテキストを入れます',
     caption : 'テキストは AMAZON EC2 を使用します。',
   },
-];
-
-/**
- * test api response : コート写真
- */
-const courtImageApiResponse = [
-  {
-    src     : 'court05.jpg',
-    alt     : '中央大学多摩キャンパスソフトテニスコート',
-    caption : '多摩校舎ソフトテニスコート（第二体育館）',
-  },
-  {
-    src     : 'court03.jpg',
-    alt     : '中央大学多摩キャンパスソフトテニスコート',
-    caption : 'ソフトテニスコート（1,2,3）',
-  },
-  {
-    src     : 'court04.jpg',
-    alt     : '中央大学多摩キャンパスソフトテニスコート',
-    caption : 'ソフトテニスコート（4,5,6）',
-  }
 ];
 
 /**

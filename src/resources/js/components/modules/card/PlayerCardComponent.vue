@@ -1,23 +1,22 @@
 <template>
-<!-- APIレスポンスを使う から -->
-<div class="player-card" @click="open">
-  <figure class="player-card__figure">
-    <img :src="player.img.src" :alt="player.img.alt" @error="noImage">
-  </figure>
+  <div class="player-card" @click="openModal">
+    <figure class="player-card__figure">
+      <img :src="player.img.src" :alt="player.img.alt" @error="noImage">
+    </figure>
 
-  <div class="player-card__information">
-    <div class="player-card__name">
-      <span class="player-card__name-ja">{{ player.name_ja }}</span>
-      <span class="player-card__name-en">{{ player.name_en }}</span>
-    </div>
+    <div class="player-card__information">
+      <div class="player-card__name">
+        <span class="player-card__name-ja">{{ player.name_ja }}</span>
+        <span class="player-card__name-en">{{ player.name_en }}</span>
+      </div>
 
-    <div class="player-card__label-group">
-      <div class="player-card__label" v-for="(label, i) in labels" :key="i">
-        <label-component :label="label"/>
+      <div class="player-card__label-group">
+        <div class="player-card__label" v-for="(label, i) in labels" :key="i">
+          <label-component :label="label"/>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -26,7 +25,7 @@ import LabelComponent from '../label/LabelComponent';
 
 export default {
   components: {
-    LabelComponent
+    LabelComponent,
   },
 
   props: {
@@ -71,8 +70,8 @@ export default {
     /**
      * [モーダルを開ける]
      */
-    open() {
-      this.$emit('modal', this.player);
+    openModal() {
+      this.$emit('open', this.player, this.labels);
     },
 
     /**

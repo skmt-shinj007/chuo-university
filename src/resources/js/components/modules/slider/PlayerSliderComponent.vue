@@ -2,9 +2,17 @@
   <div class="player-slider">
     <slider :options="options" :items="players" :color="color">
       <template v-slot:slideContents="player">
-        <player-card :player="player.item" @modal="openModal($event)"/>
+        <player-card :player="player.item" @open="openModal"/>
       </template>
     </slider>
+
+    <!-- modal -->
+    <player-modal
+      v-if="modal.isShow"
+      @close="closeModal"
+      :player="modal.el"
+      :labels="modal.labels"
+    />
   </div>
 </template>
 
@@ -12,15 +20,17 @@
 // components import
 import PlayerCard from '../card/PlayerCardComponent';
 import slider from './SliderComponent';
+import PlayerModal from '../modal/PlayerModalComponent';
 
 export default {
   components: {
     PlayerCard,
     slider,
+    PlayerModal,
   },
 
   props: {
-    // playerCardに受け渡す選手データ
+    // Api Response [user data]
     players: Array,
 
     color: {
@@ -29,12 +39,22 @@ export default {
     },
   },
 
+  data() {
+    return {
+      /**
+       * [モーダル表示フラグ]
+       * @type { Boolean }
+       */
+      modal: {
+        isShow: false,
+        el: null,
+      }
+    }
+  },
+
   computed: {
     options() {
       return {
-        /**
-         * ループさせると仮想的なDOMが作られるので、スライド内のクリックイベントが動作しない。
-         */
         speed: 1000,
         autoHeight: true,
         spaceBetween: 16,
@@ -70,6 +90,22 @@ export default {
         },
       }
     }
+  },
+
+  methods: {
+    /**
+     * モーダル開閉処理。
+     */
+    openModal(el, labels) {
+      this.modal.isShow = true;
+      this.modal.el = el;
+      this.modal.labels = labels;
+      document.body.classList.add("modal-open");
+    },
+    closeModal() {
+      this.modal.isShow = false;
+      document.body.classList.remove("modal-open");
+    },
   },
 }
 </script>
