@@ -2,7 +2,7 @@
 <!-- ※ オブジェクトの中身は、「key」と「value」で構成し、タイトルになるカラムには key の値が入る。 -->
 <template>
   <table class="common-table">
-    <tr class="common-table__record" :class="[sizing, rating]" v-for="(tableItem, n) in levelingItems" :key="n">
+    <tr class="common-table__record" :class="[sizing, rating]" v-for="(tableItem, n) in tableItems" :key="n">
       <th class="common-table__key">{{ tableItem.key }}{{ addKeyText }}</th>
       <td class="common-table__value">{{ tableItem.value }}{{ addValueText }}</td>
     </tr>
@@ -11,22 +11,15 @@
 
 <script>
 export default {
-  data() {
-    return {
-      /**
-       * 整地された tableItems が入る
-       */
-      levelingItems: [],
-    }
-  },
-
   props: {
     /**
      * テーブルを作成する配列
      */
     tableItems: {
       type: Array,
-      default: []
+      default: () => {
+        return [];
+      }
     },
 
     /**
@@ -75,27 +68,6 @@ export default {
     sizing() {
       return (this.size) ? `common-table__record--${this.size}` : null;
     },
-
-    /**
-     * 配列を整地する
-     */
-    leveling() {
-      this.tableItems = this.tableItems
-    }
-  },
-
-  beforeMount() {
-    /**
-     * 1.value値がnullの要素
-     * 2.value値に「null」という文字列が入っている要素
-     * 上記をフィルターした配列を[levelingItems]に代入する。
-     */
-    this.levelingItems = this.tableItems.filter(element => {
-      if (typeof element.value === 'string') {
-        if(element.value.indexOf('null') !== -1) element.value = null;
-      }
-      return (element.value !== null);
-    });
   },
 }
 </script>

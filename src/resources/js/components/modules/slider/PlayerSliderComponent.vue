@@ -1,90 +1,42 @@
 <template>
-  <div class="slider">
-    <swiper :options="option" :class="coloring">
-      <swiper-slide v-for="(player, n) in players" :key="n">
-        <player-card :player="player" @modal="openModal($event)">
-          <template v-slot:addCardContents="player" v-if="player.category === activeAlumniNum">
-            <div class="alumni__record">
-              <span class="alumni__record-text">{{ player.player.record }}</span>
-            </div>
-          </template>
-        </player-card>
-      </swiper-slide>
+  <div class="player-slider">
+    <slider :options="options" :items="players" :color="color">
+      <template v-slot:slideContents="player">
+        <player-card :player="player.item" @open="openModal"/>
+      </template>
+    </slider>
 
-      <!-- swiper components -->
-      <div class="swiper-button swiper-button-prev" slot="button-prev"/>
-      <div class="swiper-button swiper-button-next" slot="button-next"/>
-      <div class="swiper-pagination" slot="pagination"/>
-    </swiper>
-
-    <!-- pleyerCardにモーダルを描画すると、swiperのtransformが邪魔してモーダルがバグる -->
-    <!-- <user-modal v-if="showModal" @close="closeModal" :item="clickEl"/> -->
+    <!-- modal -->
+    <player-modal
+      v-if="modal.isShow"
+      @close="closeModal"
+      :player="modal.el"
+      :labels="modal.labels"
+    />
   </div>
 </template>
 
 <script>
 // components import
 import PlayerCard from '../card/PlayerCardComponent';
-// import UserModal from '../modal/UserModalComponent';
+import slider from './SliderComponent';
+import PlayerModal from '../modal/PlayerModalComponent';
 
 export default {
   components: {
     PlayerCard,
-    // UserModal,
+    slider,
+    PlayerModal,
   },
 
   props: {
-    // playerCardに受け渡す選手データ
+    // Api Response [user data]
     players: Array,
 
     color: {
       type: String,
       default: '',
     },
-
-    option: {
-      type: Object,
-      default: () => {
-        return {
-          /**
-           * ループさせると仮想的なDOMが作られるので、スライド内のクリックイベントが動作しない。
-           */
-          speed: 1000,
-          autoHeight: true,
-          spaceBetween: 16,
-
-          autoplay: {
-            delay: 2500,
-          },
-
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            type: 'bullets',
-          },
-
-          breakpoints: {
-            500: {
-              slidesPerView: 2,
-              slidesPerGroup: 2,
-            },
-            860: {
-              slidesPerView: 3,
-              slidesPerGroup: 1,
-            },
-            1440: {
-              slidesPerView: 5,
-              slidesPerGroup: 1,
-            },
-          },
-        }
-      },
-    }
   },
 
   data() {
@@ -93,31 +45,65 @@ export default {
        * [モーダル表示フラグ]
        * @type { Boolean }
        */
-      showModal: false,
-
-      /**
-       * クリックしたカードのデータを格納
-       * @type { Object }
-       */
-      clickEl: null,
+      modal: {
+        isShow: false,
+        el: null,
+      }
     }
   },
 
   computed: {
-    coloring() {
-      return (this.color) ? `swiper--${this.color}` : null;
+    options() {
+      return {
+        speed: 1000,
+        autoHeight: true,
+        spaceBetween: 16,
+
+        autoplay: {
+          delay: 2500,
+        },
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'bullets',
+        },
+
+        breakpoints: {
+          500: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+          860: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+          },
+          1440: {
+            slidesPerView: 5,
+            slidesPerGroup: 1,
+          },
+        },
+      }
     }
   },
 
   methods: {
-    // モーダル開閉処理
-    openModal(el) {
-      this.showModal = true;
-      this.clickEl = el;
+    /**
+     * モーダル開閉処理。
+     */
+    openModal(el, labels) {
+      this.modal.isShow = true;
+      this.modal.el = el;
+      this.modal.labels = labels;
       document.body.classList.add("modal-open");
     },
     closeModal() {
-      this.showModal = false;
+      this.modal.isShow = false;
       document.body.classList.remove("modal-open");
     },
   },
@@ -125,31 +111,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.slider {
-  height: auto;
+// .player-slider {
 
-  .swiper {
-    @include swiper-pagination(color(white), interval(3));
-    @include swiper-button();
-  }
-
-  // swiper modifier
-  .swiper--darkblue {
-    .swiper {
-      @include swiper-pagination();
-      @include swiper-button(color(lightDarkblue));
-    }
-  }
-}
-
-// slotで差し込んだ部分のスタイル
-.alumni__record {
-  margin-left: interval(.5);
-
-  &-text {
-    font-size: font(12);
-    letter-spacing: 1.1px;
-  }
-}
-
+// }
 </style>

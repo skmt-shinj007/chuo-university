@@ -16,7 +16,7 @@
 
   <section class="hakumonkai__active fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
-    <player-slider :players="activeAlumni" color="darkblue" :option="swiperOptions"/>
+    <player-slider :players="activeAlumni" color="darkblue"/>
   </section>
 
   <section class="hakumonkai__message" v-fade:[dir.up]>
@@ -47,6 +47,7 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 // config
 import Animation from '../config/animation';
 import Mock from '../config/data/mock.json';
+import Api from '../config/api/index';
 
 export default {
   components: {
@@ -69,6 +70,10 @@ export default {
     }
   },
 
+  created() {
+    this.getActiveAlumni();
+  },
+
   beforeMount() {
     // 役員テーブルの [見出し] 配列を取得
     this.$data.messages.Hakumonkai.OfficerTable.Heading.forEach(element => this.tableHeading.push(element));
@@ -77,47 +82,21 @@ export default {
     this.$data.mock.Users.forEach(element => {
       (element.category === this.officerNum) ? this.officer.push(element) : null;
     });
-
-    // ユーザーカテゴリーで [現役OB] を抽出
-    this.$data.mock.Users.forEach(element => {
-      (element.category === this.activeAlumniNum) ? this.activeAlumni.push(element) : null;
-    });
   },
 
-  computed: {
-    swiperOptions() {
-      return {
-        speed: 1000,
-        autoHeight: true,
-        spaceBetween: 16,
-
-        autoplay: {
-          delay: 2500,
-        },
-
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          type: 'bullets',
-        },
-
-        breakpoints: {
-          560: {
-            slidesPerView: 2,
-            slidesPerGroup: 1,
-          },
-          860: {
-            slidesPerView: 3,
-            slidesPerGroup: 1,
-          }
-        },
+  methods: {
+    /**
+     * ユーザー取得
+     */
+    async getActiveAlumni() {
+      const response = await Api.getResponse('/active_ob');
+      if (this.getType(response.data) === 'array') {
+        this.activeAlumni = response.data;
       }
-    }
+      else {
+        new Error('player:レスポンスが配列ではありません。');
+      }
+    },
   },
 }
 </script>
