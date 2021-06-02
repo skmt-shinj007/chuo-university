@@ -219,32 +219,6 @@ export default {
     },
 
     /**
-     * 学年毎の部員数が格納された配列を作成する。
-     * @param {Str or Num} key テーブルの左列に入る値
-     * @param {Str or Num} value テーブルの右列に入る値
-     * @return {Object} レコードの要素
-     */
-    createTableBody(key, value) {
-      return {
-        key: key,
-        value: value,
-      };
-    },
-
-    /**
-     * テーブルのデータを作成する。
-     * @param {String} title テーブルのタイトル
-     * @param {Array} body テーブルのレコード
-     * @return {Object} テーブルコンポーネントに渡すデータ
-     */
-    createTableData(title, body) {
-      let data = {};
-      data['title'] = title;
-      data['body'] = body;
-      return data;
-    },
-
-    /**
      * 学年毎の部員数を返す。
      * @param {Number} num 検索したい学年
      * @return {Number} 引数に指定した学年に一致する配列の要素数

@@ -12,7 +12,7 @@
 
     <template v-slot:content>
       <div class="player-modal__lists">
-        <table-component :tableItems="lists"/>
+        <table-component :table="table"/>
       </div>
     </template>
   </user-modal>
@@ -52,21 +52,24 @@ export default {
   data() {
     return {
       /**
-       * リストのデーブルデータ
+       * デーブルデータ
        * @type {Array}
        */
-      lists: [],
+      table: null,
     }
   },
 
   created() {
     const player = this.player;
-    this.pushList('学年', `${player.grade}年生`);
-    this.pushList('所属学部', `${player.affiliation}学部`);
-    this.pushList('ポジション', player.position.name_ja);
-    this.pushList('出身校', player.alma_mater);
-    this.pushList('出身地', player.prefecture.name_ja);
-    this.pushList('実績', player.achievement);
+    let records = [
+      this.createTableBody('学年', `${player.grade}年生`),
+      this.createTableBody('所属学部', `${player.affiliation}学部`),
+      this.createTableBody('ポジション', player.position.name_ja),
+      this.createTableBody('出身校', player.alma_mater),
+      this.createTableBody('出身地', player.prefecture.name_ja),
+      this.createTableBody('実績', player.achievement),
+    ];
+    this.table = this.createTableData(null, records);
   },
 
   methods: {
@@ -76,18 +79,6 @@ export default {
      */
     close() {
       this.$emit('close');
-    },
-
-    /**
-     * テーブルのデータを作成する
-     * @param {String} key テーブルの左辺に該当する文字列
-     * @param {String} value テーブルの右辺に該当する文字列
-     */
-    pushList(key, value) {
-      this.lists.push({
-        key: key,
-        value: value,
-      });
     },
   },
 }
