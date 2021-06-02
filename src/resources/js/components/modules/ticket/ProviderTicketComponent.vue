@@ -65,7 +65,6 @@ export default {
 
   created() {
     this.labels.push(this.formatToLabel('twitter', 'Twitter'));
-    console.log(this.provider);
   },
 
   methods: {
