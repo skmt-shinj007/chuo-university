@@ -62,6 +62,7 @@ export default {
 
 // 想定データ
 // const table = {
+//   title: "",
 //   body: [
 //     { key: "", value: "" },
 //     { key: "", value: "" },
@@ -73,7 +74,7 @@ export default {
 .table {
   &__title {
     @include middle-line-text(2, 1px, color(darkblue));
-    margin-bottom: interval(2);
+    margin-bottom: interval(1);
 
     &--white {
       @include middle-line-text(2, 1px, color(white));

@@ -9,9 +9,12 @@
     <modal @close="closeModal">
       <template v-slot:content>
         <div class="record-modal">
-          <div class="record-modal__box" v-for="(item, n) in data.Records" :key="n">
-            <h4 class="record-modal__year">{{ data.age + item.year }}年度</h4>
-            <table-component :tableItems="item.result" :ratio="5"/>
+          <div class="record-modal__box" v-for="(item, n) in data.records" :key="n">
+            <table-component
+              :table="createTableData(`${data.age + item.year}年度`, item.result)"
+              :ratio="5"
+              titleColor="white"
+            />
           </div>
         </div>
       </template>
@@ -79,7 +82,7 @@ export default {
       let start = String(data.term.start);
       if (start === '1') start = '元';
       return `${data.age} ${start}年 - ${data.term.end}年`;
-    }
+    },
   },
 
   methods: {
@@ -176,7 +179,7 @@ export default {
   }
 
   &__box {
-    margin-bottom: interval(3);
+    margin-bottom: interval(5);
   }
 
   &__year {

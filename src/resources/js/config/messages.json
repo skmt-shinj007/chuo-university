@@ -141,12 +141,9 @@
     }
   },
 
-  "ContentsTitles": {
-    "TournamentInformation" : "大会情報"
-  },
-
   "tableTitle": {
-    "memberNumber": "現在の部員数"
+    "memberNumber": "現在の部員数",
+    "tournamentInformation" : "大会情報"
   },
 
   "FunctionName": {
