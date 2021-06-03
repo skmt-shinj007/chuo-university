@@ -109,10 +109,10 @@ export default {
   // セル幅 割合
   @for $i from 1 to 10 {
     .table--#{$i} {
-      &__key {
+      .table__body-key {
         width: calc(#{$i} * 10%);
       }
-      &__value {
+      .table__body-value {
         width: calc(100% - (#{$i} * 10%));
       }
     }
