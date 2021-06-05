@@ -141,10 +141,9 @@
     }
   },
 
-  "ContentsTitles": {
-    "Schedule"              : "年間スケジュール",
-    "Numbers"               : "現在の部員数",
-    "TournamentInformation" : "大会情報"
+  "tableTitle": {
+    "memberNumber": "現在の部員数",
+    "tournamentInformation" : "大会情報"
   },
 
   "FunctionName": {

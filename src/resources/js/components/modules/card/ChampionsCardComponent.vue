@@ -9,25 +9,21 @@
   <div class="champions-card__pair">
     <!-- 後衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ cardElement.player01.name }}</span>
-      <span class="champions-card__player-name">({{ cardElement.player01.belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.player01.OB"/>
+      <span class="champions-card__player-name">{{ item.player01.name }}</span>
+      <span class="champions-card__player-name">({{ item.player01.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="item.player01.OB"/>
     </div>
 
     <!-- 前衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ cardElement.player02.name }}</span>
-      <span class="champions-card__player-name">({{ cardElement.player02.belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="cardElement.player02.OB"/>
+      <span class="champions-card__player-name">{{ item.player02.name }}</span>
+      <span class="champions-card__player-name">({{ item.player02.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="item.player02.OB"/>
     </div>
   </div>
 
-  <div class="champions-card__tournament-info">
-    <span class="champions-card__tournament-info-title">
-      {{ messages.ContentsTitles.TournamentInformation }}
-    </span>
-
-    <table-component :tableItems="cardElement.information"/>
+  <div class="champions-card__tournament-table">
+    <table-component :table="createTableData(messages.tableTitle.tournamentInformation, item.information)"/>
   </div>
 
 </div>
@@ -42,7 +38,7 @@ export default {
   },
 
   props: {
-    cardElement: {
+    item: {
       type: Object,
       default: null
     }
@@ -104,13 +100,6 @@ export default {
     width: interval(3);
     margin-left: interval(.5);
     fill: color(darkblue);
-  }
-
-  &__tournament-info-title {
-    display: block;
-    margin-bottom: interval(.5);
-    font-size: font(14);
-    @include middle-line-text(2, 1px, color(darkblue));
   }
 }
 </style>

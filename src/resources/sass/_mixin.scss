@@ -260,19 +260,6 @@
  * component
  */
 
-// table cell width (セル幅が可変する)
-@mixin rating($ratio) {
-  .common-table {
-    &__key {
-      width: calc(#{$ratio} * 10%);
-    }
-
-    &__value {
-      width: calc(100% - (#{$ratio} * 10%));
-    }
-  }
-}
-
 // ticket thumbnail border
 @mixin thumbnail-border($c: white, $color: color(blue), $direction: diagonal) {
   border-radius: radius(circle);

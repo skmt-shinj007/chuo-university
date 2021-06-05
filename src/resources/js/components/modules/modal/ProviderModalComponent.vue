@@ -16,17 +16,15 @@
 
     <template v-slot:content>
       <div class="provider-modal__contents">
-        <div class="provider-modal__lists">
-          <table-component :tableItems="lists" :ratio="4"/>
+        <div class="provider-modal__description">
+          <h5 class="provider-modal__description-title">{{ messages.provider.profile }}</h5>
+          <p class="provider-modal__description-text">{{ provider.description }}</p>
         </div>
-        <div class="provider-modal__profile">
-          <div class="provider-modal__description">
-            <h5 class="provider-modal__description-title">{{ messages.provider.profile }}</h5>
-            <p class="provider-modal__description-text">{{ provider.description }}</p>
-          </div>
-          <div class="provider-modal__button">
-            <primary-button :btn="messages.Button.Twitter" @clickEvent="externalLink(provider.link)"/>
-          </div>
+        <div class="provider-modal__lists">
+          <table-component :table="table" :ratio="4"/>
+        </div>
+        <div class="provider-modal__button">
+          <primary-button :btn="messages.Button.Twitter" @clickEvent="externalLink(provider.link)"/>
         </div>
       </div>
     </template>
@@ -72,17 +70,20 @@ export default {
        * リストのデーブルデータ
        * @type {Array}
        */
-      lists: [],
+      table: null,
     }
   },
 
   created() {
     const provider = this.provider;
-    console.log(this.provider);
-    this.pushList('ユーザーネーム', provider.screen_name);
-    this.pushList('フォロワー', provider.followers_count);
-    this.pushList('フォロー中', provider.friends_count);
-    this.pushList('ツイート数', `${provider.statuses_count} ツイート`);
+
+    let records = [
+      this.createTableBody('ユーザーネーム', provider.screen_name),
+      this.createTableBody('フォロワー', provider.followers_count),
+      this.createTableBody('フォロー中', provider.friends_count),
+      this.createTableBody('ツイート数', `${provider.statuses_count} ツイート`),
+    ];
+    this.table = this.createTableData(null, records);
   },
 
   methods: {
@@ -128,10 +129,6 @@ export default {
     padding: interval(5) 0;
   }
 
-  &__profile {
-    margin-top: interval(2);
-  }
-
   &__description {
     border-top: 2px solid color(lightgray);
     border-bottom: 2px solid color(lightgray);
@@ -145,6 +142,10 @@ export default {
     &-text {
       margin: interval(1) 0;
     }
+  }
+
+  &__lists {
+    margin-top: interval(5);
   }
 
   &__button {

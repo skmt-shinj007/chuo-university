@@ -12,7 +12,7 @@
 
     <template v-slot:content>
       <div class="staff-modal__lists">
-        <table-component :tableItems="lists"/>
+        <table-component :table="table"/>
       </div>
     </template>
   </user-modal>
@@ -52,18 +52,27 @@ export default {
   data() {
     return {
       /**
-       * リストのデーブルデータ
+       * デーブルデータ
        * @type {Array}
        */
-      lists: [],
+      table: null,
     }
   },
 
   created() {
     const staff = this.staff;
-    if (staff.graduate_date) this.pushList('卒業年', `${staff.graduate_date}年卒業`);
-    if (staff.affiliation) this.pushList('所属', staff.affiliation);
-    if (staff.achievement) this.pushList('実績', staff.achievement);
+    let records = [];
+    if (staff.graduate_date) {
+      records.push(this.createTableBody('卒業年', `${staff.graduate_date}年卒業`));
+    }
+    if (staff.affiliation) {
+      records.push(this.createTableBody('所属', staff.affiliation));
+    }
+    if (staff.achievement) {
+      records.push(this.createTableBody('実績', staff.achievement));
+    }
+
+    this.table = this.createTableData(null, records);
   },
 
   methods: {
@@ -73,18 +82,6 @@ export default {
      */
     close() {
       this.$emit('close');
-    },
-
-    /**
-     * テーブルのデータを作成する
-     * @param {String} key テーブルの左辺に該当する文字列
-     * @param {String} value テーブルの右辺に該当する文字列
-     */
-    pushList(key, value) {
-      this.lists.push({
-        key: key,
-        value: value,
-      });
     },
   },
 }

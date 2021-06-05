@@ -15,7 +15,7 @@
   <section class="club__practice" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Practice"/>
     <div class="practice__table">
-      <table-component :tableItems="table.practice"/>
+      <table-component :table="viewData.practiceTable"/>
     </div>
 
     <div class="practice__map">
@@ -39,11 +39,7 @@
     </div>
 
     <div class="practice__schedule" v-fade:[dir.up]>
-      <h3 class="practice__schedule-title">{{ messages.ContentsTitles.Schedule }}</h3>
-
-      <div class="practice__schedule-table">
-        <table-component :tableItems="table.schedule"/>
-      </div>
+      <table-component :table="viewData.scheduleTable"/>
     </div>
   </section>
 
@@ -94,9 +90,8 @@
       <player-slider :players="highestGradePlayer"/>
 
       <div class="member__number">
-        <h3 class="member__number-title">{{ messages.ContentsTitles.Numbers }}</h3>
         <div class="member__number-table">
-          <table-component :tableItems="table.memberNumbers"/>
+          <table-component :table="response.numbersData" titleColor="white"/>
         </div>
         <div class="member__button">
           <link-button :link="messages.Links.Member"/>
@@ -168,23 +163,28 @@ export default {
       dormitoryImages: [],
       players: [],
 
-      table: {
-        practice: [],
-        schedule: [],
-        memberNumbers: [],
+      response: {
+        players: [],
+        numbersData: {},
       },
       images: [],
+
+      test: [],
     }
   },
 
   created() {
     this.getPlayers().then(res => {
-      this.players = res;
+      this.response.players = res;
 
-      this.pushMemberNumber('4年生', `${this.eachGradeNumber(4)}名`);
-      this.pushMemberNumber('3年生', `${this.eachGradeNumber(3)}名`);
-      this.pushMemberNumber('2年生', `${this.eachGradeNumber(2)}名`);
-      this.pushMemberNumber('1年生', `${this.eachGradeNumber(1)}名`);
+      const tableTitle = this.$data.messages.tableTitle.memberNumber;
+      const tableBodies = [
+        this.createTableBody('4年生', `${this.eachGradeNumber(4)}名`),
+        this.createTableBody('3年生', `${this.eachGradeNumber(3)}名`),
+        this.createTableBody('2年生', `${this.eachGradeNumber(2)}名`),
+        this.createTableBody('1年生', `${this.eachGradeNumber(1)}名`),
+      ];
+      this.response.numbersData = this.createTableData(tableTitle, tableBodies);
     });
 
     // TODO:画像を格納するクラウドストレージからApiで取得する
@@ -192,8 +192,6 @@ export default {
     this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
 
     this.$data.viewData.concepts.forEach(element => this.concepts.push(element));
-    this.$data.viewData.practiceTable.forEach(element => this.table.practice.push(element));
-    this.$data.viewData.scheduleTable.forEach(element => this.table.schedule.push(element));
     this.$data.viewData.dormitory.forEach(element => this.dormitoryInformations.push(element));
   },
 
@@ -202,7 +200,7 @@ export default {
      * 4年生の部員を返す。
      */
     highestGradePlayer() {
-      return this.players.filter(el => el.grade === 4);
+      return this.response.players.filter(el => el.grade === 4);
     }
   },
 
@@ -221,22 +219,12 @@ export default {
     },
 
     /**
-     * 学年毎の部員数が格納された配列を作成する。
-     */
-    pushMemberNumber(key, value) {
-      this.table.memberNumbers.push({
-        key: key,
-        value: value,
-      });
-    },
-
-    /**
      * 学年毎の部員数を返す。
      * @param {Number} num 検索したい学年
      * @return {Number} 引数に指定した学年に一致する配列の要素数
      */
     eachGradeNumber(num) {
-      return this.players.filter(el => el.grade === num).length;
+      return this.response.players.filter(el => el.grade === num).length;
     }
   },
 }
@@ -438,14 +426,6 @@ const mainVisualApiResponse = [
 .member {
   &__number {
     margin-top: interval(10);
-  }
-
-  &__number-title {
-    @include middle-line-text(2, 1px, color(white));
-  }
-
-  &__number-table {
-    margin-top: interval(2);
   }
 
   &__button {

@@ -64,8 +64,8 @@
       <contents-title :title="messages.SectionTitles.Champions" color="white"/>
 
       <div class="winner__card-group">
-        <div class="winner__card" v-for="(champion, n) in champions" :key="n" ref="championCard">
-          <champions-card :cardElement="champion"/>
+        <div class="winner__card" v-for="(champion, n) in viewData.champions" :key="n" ref="championCard">
+          <champions-card :item="champion"/>
         </div>
         <!-- カード配置を左揃えにするため、空の要素を追加 -->
         <div
@@ -87,7 +87,7 @@
 
 <script>
 // data
-import Data from '../config/data/historyViewData.json';
+import ViewData from '../config/data/historyViewData.json';
 
 /**
  * mixin
@@ -116,7 +116,7 @@ export default {
 
   data() {
     return {
-      data: Data,
+      viewData: ViewData,
 
       /**
        * 沿革 (大正時代のみオブジェクト形式)
@@ -153,22 +153,15 @@ export default {
        * @type { Array }
        */
       trophies: [],
-
-      /**
-       * 天皇杯優勝者（中大出身）
-       * @type { Array }
-       */
-      champions: [],
     }
   },
 
   beforeMount() {
     // 各データを挿入
-    this.taisho = this.$data.data.Taisho;
-    this.$data.data.Showa.forEach(element => this.showa.push(element));
-    this.$data.data.Heisei.forEach(element => this.heisei.push(element));
-    this.$data.data.Trophies.forEach(element => this.trophies.push(element));
-    this.$data.data.champions.forEach(element => this.champions.push(element));
+    this.taisho = this.$data.viewData.Taisho;
+    this.$data.viewData.Showa.forEach(element => this.showa.push(element));
+    this.$data.viewData.Heisei.forEach(element => this.heisei.push(element));
+    this.$data.viewData.Trophies.forEach(element => this.trophies.push(element));
   },
 
   mounted() {
