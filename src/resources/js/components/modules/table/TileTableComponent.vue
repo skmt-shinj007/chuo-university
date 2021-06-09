@@ -1,16 +1,21 @@
 <template>
 <table class="tile-table">
 
-  <tr class="tile-table__heading">
-    <th class="tile-table__title" v-for="(heading, n) in tableItemHeading" :key="n">{{ heading }}</th>
-  </tr>
+  <thead class="tile-table__head">
+    <tr class="tile-table__head-record">
+      <th class="tile-table__cell" v-for="column in columns" :key="column.id">
+        {{ column.label }}
+      </th>
+    </tr>
+  </thead>
 
-  <tr class="tile-table__body" v-for="(tableItem, i) in tableItems" :key="i">
-    <td class="tile-table__el">{{ tableItem.post.alumni }}</td>
-    <td class="tile-table__el">{{ tableItem.name.ja }}</td>
-    <td class="tile-table__el">{{ tableItem.graduate.age }}{{ tableItem.graduate.year }}年</td>
-    <td class="tile-table__el">{{ tableItem.schoolPost }}</td>
-  </tr>
+  <tbody class="tile-table__body">
+    <tr class="tile-table__body-record" v-for="(body, i) in columnBodies" :key="i">
+      <td class="tile-table__cell" v-for="column in columns" :key="column.id">
+        {{ body[column.prop] }}
+      </td>
+    </tr>
+  </tbody>
 
 </table>
 </template>
@@ -18,15 +23,24 @@
 <script>
 export default {
   props: {
-    tableItems: {
+    /**
+     * カラム情報
+     * id: {Num}
+     * prop: {Str} プロパティ名
+     * label: {Str}
+     */
+    columns: {
       type: Array,
       default: null
     },
 
-    tableItemHeading: {
+    /**
+     * カラムのボディ
+     */
+    columnBodies: {
       type: Array,
       default: null
-    }
+    },
   },
 }
 </script>
@@ -36,32 +50,27 @@ export default {
   width: 100%;
   color: color(white);
 
-  &__heading {
-    background-color: color(darkblue);
-    border-bottom: 8px solid color(white);
-  }
+  &__head {
+    border-bottom: interval(1) solid color(white);
 
-  &__title {
-    text-align: center;
-    font-size: font(10);
-
-    @include mq(sm) {
-      font-size: font(12);
-      border: 2px solid color(white);
+    &-record {
+      background-color: color(darkblue);
     }
   }
 
   &__body {
-    background-color: color(lightDarkblue);
+    &-record {
+      background-color: color(lightDarkblue);
+    }
   }
 
-  &__el {
+  &__cell {
     text-align: center;
     font-size: font(10);
+    border: 2px solid color(white);
 
     @include mq(sm) {
       font-size: font(12);
-      border: 2px solid color(white);
     }
   }
 }
