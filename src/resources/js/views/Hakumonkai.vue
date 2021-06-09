@@ -11,12 +11,12 @@
 
   <section class="hakumonkai__officer" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Officer"/>
-    <tile-table :tableItemHeading="tableHeading" :tableItems="officer"/>
+    <tile-table :columns="viewData.officersTableColumn" :columnBodies="officersForTable"/>
   </section>
 
   <section class="hakumonkai__active fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
-    <player-slider :players="activeAlumni" color="darkblue"/>
+    <player-slider :players="users.activeAlumni" color="darkblue"/>
   </section>
 
   <section class="hakumonkai__message" v-fade:[dir.up]>
@@ -48,6 +48,7 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 import Animation from '../config/animation';
 import Mock from '../config/data/mock.json';
 import Api from '../config/api/index';
+import ViewData from '../config/data/viewData';
 
 export default {
   components: {
@@ -64,39 +65,103 @@ export default {
   data() {
     return {
       mock: Mock,
-      tableHeading: [],
-      officer: [],
-      activeAlumni: [],
+      viewData: ViewData,
+
+      users: {
+        officers: [],
+        activeAlumni: [],
+      },
     }
   },
 
-  created() {
-    this.getActiveAlumni();
+  computed: {
+    /**
+     * テーブル表示用にレスポンスをカスタムする
+     * @return {Array} officers テーブル表示用にカスタマイズされたuserレスポンス
+     */
+    officersForTable() {
+      let officers = [];
+      const officerTagsId = Object.values(this.$data.viewData.officerTags);
+
+      this.users.officers.forEach(alumnus => {
+        officers.push(this.customResponseForTable(alumnus, officerTagsId));
+      });
+
+      // 役員順に並び替え
+      officers.sort((filst, second) => {
+        if (filst.sortNumber < second.sortNumber) return -1;
+        if (filst.sortNumber > second.sortNumber) return 1;
+        return 0;
+      });
+
+      return officers;
+    },
   },
 
-  beforeMount() {
-    // 役員テーブルの [見出し] 配列を取得
-    this.$data.messages.Hakumonkai.OfficerTable.Heading.forEach(element => this.tableHeading.push(element));
+  created() {
+    const viewData = this.$data.viewData;
+    const officerTagsId = Object.values(viewData.officerTags);
 
-    // ユーザーカテゴリーで [役職OB] を抽出
-    this.$data.mock.Users.forEach(element => {
-      (element.category === this.officerNum) ? this.officer.push(element) : null;
+    Api.getResponse('/active_ob').then(res => {
+      const data = res.data;
+      if (this.getType(data) === 'array') {
+        this.users.activeAlumni = data;
+      }
+      else {
+        new Error('active ob response :レスポンスが配列ではありません。');
+      }
+    });
+
+    Api.getResponse('/ob').then(res => {
+      const data = res.data;
+      // dataが配列であることを保証する
+      if (this.getType(data) !== 'array') new Error('ob officer response :レスポンスが配列ではありません。');
+      // 役員持ちのOBを抽出
+      const officers = data.filter(el => {
+        return el.tags.find(tag => officerTagsId.includes(tag.tag_id));
+      });
+      this.users.officers = officers;
     });
   },
 
   methods: {
     /**
-     * ユーザー取得
+     * テーブルデータのプロパティを取得
+     * @param {Array} tableData テーブルのコンテンツ情報
+     * @param {Number} id 要素のプロパティ値を返す id を指定する。
+     * @return {String} propName idに一致したpropキーの値
      */
-    async getActiveAlumni() {
-      const response = await Api.getResponse('/active_ob');
-      if (this.getType(response.data) === 'array') {
-        this.activeAlumni = response.data;
-      }
-      else {
-        new Error('player:レスポンスが配列ではありません。');
-      }
+    pickupTableColumnProp(tableData, id) {
+      let propName = null;
+      tableData.forEach(el => {
+        if (el.id === id) {
+          propName = el.prop;
+        }
+      });
+      return propName;
     },
+
+    /**
+     * userレスポンスにテーブル表示に必要なプロパティを追加する
+     * @param {Object} user userオブジェクト
+     * @param {Array} tagIds 検索する配列
+     * @param {String} propName userオブジェクトに追加するプロパティ名
+     * @return {Object} user object
+     */
+    customResponseForTable(user, tagIds) {
+      const tagCloumnProp = this.pickupTableColumnProp(this.$data.viewData.officersTableColumn, 1);
+
+      // 並び替えに必要なtag_idと役員名をレスポンスの第一階層に追加する。
+      user.tags.forEach(tag => {
+        if (tagIds.includes(tag.tag_id)) {
+          user[tagCloumnProp] = tag.name_ja;
+          user['sortNumber'] = tag.tag_id;
+        }
+      });
+
+      user['graduate_date_str'] = `${user.graduate_date}年卒`;
+      return user;
+    }
   },
 }
 </script>
