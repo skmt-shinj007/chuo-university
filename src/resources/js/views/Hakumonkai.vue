@@ -11,7 +11,7 @@
 
   <section class="hakumonkai__officer" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Officer"/>
-    <tile-table :columns="viewData.officersTableColumn" :columnBodies="officersForTable"/>
+    <tile-table :columns="viewdata.officersTableColumn" :columnBodies="officersForTable"/>
   </section>
 
   <section class="hakumonkai__active fade" v-scroll="fade">
@@ -48,7 +48,7 @@ import ScrollTopButton from '../components/modules/button/ScrollTopButtonCompone
 import Animation from '../config/animation';
 import Mock from '../config/data/mock.json';
 import Api from '../config/api/index';
-import ViewData from '../config/data/viewData';
+import ViewData from '../config/data/viewdata';
 
 export default {
   components: {
@@ -65,7 +65,7 @@ export default {
   data() {
     return {
       mock: Mock,
-      viewData: ViewData,
+      viewdata: ViewData,
 
       users: {
         officers: [],
@@ -81,7 +81,7 @@ export default {
      */
     officersForTable() {
       let officers = [];
-      const officerTagsId = Object.values(this.$data.viewData.officerTags);
+      const officerTagsId = Object.values(this.$data.viewdata.officerTags);
 
       this.users.officers.forEach(alumnus => {
         officers.push(this.customResponseForTable(alumnus, officerTagsId));
@@ -99,8 +99,8 @@ export default {
   },
 
   created() {
-    const viewData = this.$data.viewData;
-    const officerTagsId = Object.values(viewData.officerTags);
+    const viewdata = this.$data.viewdata;
+    const officerTagsId = Object.values(viewdata.officerTags);
 
     Api.getResponse('/active_ob').then(res => {
       const data = res.data;
@@ -149,7 +149,7 @@ export default {
      * @return {Object} user object
      */
     customResponseForTable(user, tagIds) {
-      const tagCloumnProp = this.pickupTableColumnProp(this.$data.viewData.officersTableColumn, 1);
+      const tagCloumnProp = this.pickupTableColumnProp(this.$data.viewdata.officersTableColumn, 1);
 
       // 並び替えに必要なtag_idと役員名をレスポンスの第一階層に追加する。
       user.tags.forEach(tag => {
