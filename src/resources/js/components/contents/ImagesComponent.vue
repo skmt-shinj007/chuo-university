@@ -50,6 +50,7 @@ export default {
   data() {
     return {
       viewdata: ViewData,
+
       /**
        * 絞り込みの選択値
        * @default all
@@ -101,9 +102,9 @@ export default {
      * @param1 配列の要素 比較対象 1つ目
      * @param2 配列の要素 比較対象 2つ目
      */
-    this.images.sort((firstEl,secondEl) => {
-      if (firstEl.shooting.year > secondEl.shooting.year) return -1;
-      if(firstEl.shooting.year < secondEl.shooting.year) return 1;
+    this.images.sort((first,second) => {
+      if (first.shooting.year > second.shooting.year) return -1;
+      if(first.shooting.year < second.shooting.year) return 1;
       return 0;
     });
 
