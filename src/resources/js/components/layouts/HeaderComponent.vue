@@ -98,6 +98,11 @@ export default {
 
       // 最後のスクロール位置を更新
       this.lastScrollPosition = this.scrollY;
+    },
+
+    // ブラウザバック時にナビモーダルを閉じる
+    '$route' (to, from) {
+      this.closeModal();
     }
   },
 
@@ -124,10 +129,8 @@ export default {
         console.error('ERROR:オブジェクトで返却されませんでした。');
         return;
       }
-
       this.twitter = response;
     }
-
   },
 }
 </script>
