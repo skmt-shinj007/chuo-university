@@ -35,7 +35,7 @@
 <script>
 // component import
 import ViewAllButton from '../modules/button/ViewAllButtonComponent';
-import PullDownTable from '../modules/table/PulldownTable';
+import PullDownTable from '../modules/table/PulldownTableComponent';
 import ImageModal from '../modules/modal/ImageModalComponent';
 
 import ViewData from '../../config/data/viewdata';
