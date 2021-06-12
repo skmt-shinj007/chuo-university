@@ -160,5 +160,174 @@ const viewData = {
     auditor: 22,
     counsellor: 23
   },
+
+  achievementsTable: {
+    title: null,
+    body: [
+      { key: "全日本大学対抗戦", value: 8 },
+      { key: "東日本大学対抗戦", value: 11 },
+      { key: "全日本大学王座決定戦", value: 4 },
+      { key: "全日本学生選手権", value: 4 },
+    ]
+  },
+
+  champions: [
+    {
+      player1: { name_ja: "岩佐 正治", belong: "東京", isOB: true },
+      player2: { name_ja: "石川 長一", belong: "東京", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "昭和23年" },
+          { key: "日付", value: "8/28-29" },
+          { key: "場所", value: "名古屋" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "岩佐 正治", belong: "東京", isOB: true },
+      player2: { name_ja: "安友 省三", belong: "東京", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "昭和24年" },
+          { key: "日付", value: "8/27-28" },
+          { key: "場所", value: "東京後楽園コート" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "石川 恵脩", belong: "東京", isOB: true },
+      player2: { name_ja: "右近 義信", belong: "東京", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "昭和42年" },
+          { key: "日付", value: "8/12-13" },
+          { key: "場所", value: "伊勢市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "竹島 満", belong: "山口", isOB: true },
+      player2: { name_ja: "小林 元治", belong: "東京", isOB: true },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "昭和45年" },
+          { key: "日付", value: "8/21-23" },
+          { key: "場所", value: "いわき市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成7年" },
+          { key: "日付", value: "9/29 - 10/30" },
+          { key: "場所", value: "浜松市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成8年" },
+          { key: "日付", value: "9/27-29" },
+          { key: "場所", value: "川口市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成9年" },
+          { key: "日付", value: "9/26-28" },
+          { key: "場所", value: "鈴鹿市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成11年" },
+          { key: "日付", value: "9/21-24" },
+          { key: "場所", value: "佐賀市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成13年" },
+          { key: "日付", value: "9/21-23" },
+          { key: "場所", value: "松山市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成17年" },
+          { key: "日付", value: "9/23-25" },
+          { key: "場所", value: "厚木市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成18年" },
+          { key: "日付", value: "10/20-25" },
+          { key: "場所", value: "福岡市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成21年" },
+          { key: "日付", value: "10/16-18" },
+          { key: "場所", value: "三木市" }
+        ]
+      }
+    },
+    {
+      player1: { name_ja: "中堀 成生", belong: "広島", isOB: true },
+      player2: { name_ja: "高川 経生", belong: "広島", isOB: false },
+      table: {
+        title: messages.tableTitle.tournamentInformation,
+        body: [
+          { key: "年度", value: "平成22年" },
+          { key: "日付", value: "10/15-17" },
+          { key: "場所", value: "徳島市" }
+        ]
+      }
+    },
+  ],
 }
 export default viewData;

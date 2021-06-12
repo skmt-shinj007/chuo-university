@@ -2,28 +2,28 @@
 <div class="champions-card">
   <div class="champions-card__background"/>
 
-  <div class="champions-card__title-wrapper">
-    <h5 class="champions-card__title">{{ messages.card.winner }}</h5>
+  <div class="champions-card__title">
+    <h5 class="champions-card__title-text">{{ messages.card.winner }}</h5>
   </div>
 
   <div class="champions-card__pair">
     <!-- 後衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ item.player01.name }}</span>
-      <span class="champions-card__player-name">({{ item.player01.belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="item.player01.OB"/>
+      <span class="champions-card__player-name">{{ item.player1.name_ja }}</span>
+      <span class="champions-card__player-belong">({{ item.player1.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="item.player1.isOB"/>
     </div>
 
     <!-- 前衛 -->
     <div class="champions-card__player">
-      <span class="champions-card__player-name">{{ item.player02.name }}</span>
-      <span class="champions-card__player-name">({{ item.player02.belong }})</span>
-      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="item.player02.OB"/>
+      <span class="champions-card__player-name">{{ item.player2.name_ja }}</span>
+      <span class="champions-card__player-belong">({{ item.player2.belong }})</span>
+      <svg-vue class="champions-card__icon" icon="chuo-logo" v-if="item.player2.isOB"/>
     </div>
   </div>
 
   <div class="champions-card__tournament-table">
-    <table-component :table="createTableData(messages.tableTitle.tournamentInformation, item.information)"/>
+    <table-component :table="item.table"/>
   </div>
 
 </div>
@@ -64,13 +64,13 @@ export default {
     @include background-image('/svg/trophy-solid-gold.svg');
   }
 
-  &__title-wrapper {
-    padding-bottom: interval(1);
-  }
-
   &__title {
-    @include bangers(font(26), 1.5px);
-    line-height: 1;
+    padding-bottom: interval(1);
+
+    &-text {
+      @include bangers(font(26), 1.5px);
+      line-height: 1;
+    }
   }
 
   &__pair {
@@ -90,10 +90,11 @@ export default {
     &:first-child {
       margin-top: 0;
     }
-  }
 
-  &__player-name {
-    letter-spacing: 1.8px;
+    &-name,
+    &-belong {
+      letter-spacing: 1.8px;
+    }
   }
 
   &__icon {
