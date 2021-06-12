@@ -9,7 +9,7 @@
         @click="change(item.id)">
 
         <input type="radio" :value="item.id" class="concept__radio" v-model="currentId">
-        <label class="concept__ball-label" :for="item.label.en">{{ upperCase(item.label.en) }}</label>
+        <label class="concept__ball-label" :for="item.title.en">{{ upperCase(item.title.en) }}</label>
       </div>
     </div>
 
@@ -23,7 +23,7 @@
           :class="{ 'active': currentId === item.id }">
 
           <input type="radio" :value="item.id" class="concept__radio" v-model="currentId">
-          <label class="concept__label" :for="item.label.en">{{ item.label.ja }}</label>
+          <label class="concept__label" :for="item.title.en">{{ item.title.ja }}</label>
         </div>
       </div>
 

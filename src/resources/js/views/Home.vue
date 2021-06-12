@@ -9,7 +9,7 @@
     </section>
 
     <section class="home__about">
-      <div class="about" v-for="(item, n) in aboutContents" :key="n" ref="about">
+      <div class="about" v-for="(item, n) in viewdata.about" :key="n" ref="about">
 
         <figure class="about__img" v-fade:[dir.left]>
           <img :src="`/image/${item.img.src}.jpg`" :alt="item.img.alt">
@@ -49,9 +49,8 @@
 </template>
 
 <script>
-// config
-import Data from '../config/data/homeViewData.json';
 import Animation from '../config/animation';
+import ViewData from '../config/data/viewdata';
 
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
@@ -73,46 +72,8 @@ export default {
 
   data() {
     return {
-      data: Data,
-
-      /**
-       * アバウトセクションを生成するデータ
-       */
-      aboutContents: [],
+      viewdata: ViewData,
     }
-  },
-
-  beforeMount() {
-    // アバウトセクションを生成するデータを挿入
-    this.$data.data.about.forEach(element => this.aboutContents.push(element));
-
-    // タイトルとボタンのデータを置き換える。
-    this.aboutContents.forEach(element => {
-      let el = element;
-
-      // messagesのutton, title オブジェクトを配列に変換する。
-      let LinkLists = this.convertArray(this.$data.messages.Links);
-      let titles = this.convertArray(this.$data.messages.SectionTitles);
-
-      LinkLists.forEach(element => {
-        if (el.button === element.key) el.button = element.value;
-      });
-
-      titles.forEach(element => {
-        if (el.title === element.key) el.title = element.value;
-      });
-    });
-  },
-
-  methods: {
-    /**
-     * オブジェクトから配列に変換する処理
-     * @param { Object }
-     * @return [{key:hoge, value:hoge}, {key:hoge, value:hoge}, ...]
-     */
-    convertArray(obj) {
-      return Object.entries(obj).map(([key, value]) => ({key, value}));
-    },
   },
 }
 </script>

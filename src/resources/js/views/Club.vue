@@ -8,14 +8,14 @@
   <section class="club__concept" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Concept"/>
     <div class="club__concept-content">
-      <concept :items="concepts"/>
+      <concept :items="viewdata.concepts"/>
     </div>
   </section>
 
   <section class="club__practice" v-fade:[dir.up]>
     <contents-title :title="messages.SectionTitles.Practice"/>
     <div class="practice__table">
-      <table-component :table="viewData.practiceTable"/>
+      <table-component :table="viewdata.practiceTable"/>
     </div>
 
     <div class="practice__map">
@@ -27,19 +27,19 @@
     <div class="practice__images">
       <!-- スマホ -->
       <div class="practice__slider" v-if="windowWidth < breakpoints.md">
-        <image-slider :images="viewData.homeCourt"/>
+        <image-slider :images="viewdata.homeCourt"/>
       </div>
 
       <!-- PC -->
       <div class="practice__image-group" v-else>
-        <div class="practice__image" v-for="(image, n) in viewData.homeCourt" :key="n">
+        <div class="practice__image" v-for="(image, n) in viewdata.homeCourt" :key="n">
           <caption-image :image="image"/>
         </div>
       </div>
     </div>
 
     <div class="practice__schedule" v-fade:[dir.up]>
-      <table-component :table="viewData.scheduleTable"/>
+      <table-component :table="viewdata.scheduleTable"/>
     </div>
   </section>
 
@@ -50,19 +50,29 @@
     </div>
 
     <div class="dormitory__ticket-group" v-fade:[dir.up]>
-      <div
-        class="dormitory__ticket"
-        v-for="(information, n) in dormitoryInformations"
-        :key="n">
-
-        <dormitory-ticket :information="information"/>
+      <div class="dormitory__ticket" v-for="(info, n) in viewdata.dormitory" :key="n">
+        <div class="dormitory__ticket-inner">
+          <div class="dormitory__ticket-icon-wrap">
+            <svg-vue class="dormitory__ticket-icon" :icon="info.icon.src" :alt="info.icon.alt"/>
+          </div>
+          <div class="dormitory__ticket-text-wrap">
+            <p class="dormitory__ticket-text nl2br" v-text="info.text"/>
+            <template v-if="info.attributes">
+              <div class="dormitory__ticket-supplement">
+                <span class="dormitory__ticket-supplement-text" v-for="(attribute, n) in info.attributes" :key="n">
+                  {{ attribute }}
+                </span>
+              </div>
+            </template>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="dormitory__images">
       <!-- スマホ -->
       <div class="dormitory__slider" v-if="windowWidth < breakpoints.md">
-        <image-slider :images="viewData.dormitoryImages">
+        <image-slider :images="viewdata.roomImages">
           <template v-slot:caption="image">
             <span class="dormitory__caption">{{ image.image.caption }}</span>
             <span class="dormitory__caption-sub">人部屋</span>
@@ -72,7 +82,7 @@
 
       <!-- PC -->
       <div class="dormitory__image-group" v-else>
-        <div class="dormitory__image" v-for="(image, n) in viewData.dormitoryImages" :key="n">
+        <div class="dormitory__image" v-for="(image, n) in viewdata.roomImages" :key="n">
           <caption-image :image="image">
             <template v-slot:caption="image">
               <span class="dormitory__caption">{{ image.image.caption }}</span>
@@ -117,7 +127,7 @@
 
 <script>
 // config
-import ViewData from '../config/data/clubViewData.json';
+import ViewData from '../config/data/viewdata';
 import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
 import Api from '../config/api/index';
@@ -129,7 +139,6 @@ import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
 import CaptionImage from '../components/modules/CaptionImageComponent';
-import DormitoryTicket from '../components/modules/ticket/DormitoryTicketComponent';
 import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ImagesList from '../components/contents/ImagesListComponent';
@@ -143,7 +152,6 @@ export default {
     TableComponent,
     ImageSlider,
     CaptionImage,
-    DormitoryTicket,
     PlayerSlider,
     LinkButton,
     ImagesList,
@@ -154,12 +162,11 @@ export default {
 
   data() {
     return {
-      viewData: ViewData,
+      viewdata: ViewData,
       mock: Mock,
       mainVisualImages: [],
       concepts: [],
       practiceInformations: [],
-      dormitoryInformations: [],
       dormitoryImages: [],
       players: [],
 
@@ -190,9 +197,6 @@ export default {
     // TODO:画像を格納するクラウドストレージからApiで取得する
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
     this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
-
-    this.$data.viewData.concepts.forEach(element => this.concepts.push(element));
-    this.$data.viewData.dormitory.forEach(element => this.dormitoryInformations.push(element));
   },
 
   computed: {
@@ -398,6 +402,51 @@ const mainVisualApiResponse = [
     &:nth-child(odd) {
       @include mq(md) {
         padding-right: interval(3);
+      }
+    }
+
+    &-inner {
+      width: 100%;
+      margin: 0 auto interval(2) auto;
+      padding: interval(1) 0;
+      @include flex($align-items: center);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-icon-wrap {
+      @include flex(row nowrap, center, center);
+      border: 2px solid color(darkblue);
+      border-radius: radius(circle);
+      padding: interval(1.5);
+    }
+
+    &-icon {
+      width: interval(3);
+      fill: color(lightDarkblue);
+    }
+
+    &-text-wrap {
+      margin-left: interval(1);
+    }
+
+    &-text {
+      font-size: font(12);
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    &-supplement {
+      margin-top: interval(0.5);
+      @include flex(row wrap);
+      gap: interval(.5);
+
+      &-text {
+        padding: interval(.5) interval(1);
+        background-color: color(lightgray);
+        border-radius: 1000px;
       }
     }
   }

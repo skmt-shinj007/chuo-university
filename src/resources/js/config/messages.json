@@ -7,18 +7,9 @@
   "Error": {
     "NotFound": {
       "Num": [
-        {
-          "key": 1,
-          "Number": 4
-        },
-        {
-          "key": 2,
-          "Number": 0
-        },
-        {
-          "key": 3,
-          "Number": 4
-        }
+        { "key": 1, "Number": 4 },
+        { "key": 2, "Number": 0 },
+        { "key": 3, "Number": 4 }
       ],
       "Message": "ページが見つかりませんでした。",
       "Guide": "お探しのページはこちらにございませんか？"
@@ -55,104 +46,42 @@
   },
 
   "SectionTitles": {
-    "News": {
-      "Main": "news",
-      "Sub" : "ニュース"
-    },
-    "Team": {
-      "Main": "team",
-      "Sub" : "チーム紹介"
-    },
-    "Result": {
-      "Main": "result",
-      "Sub" : "大会結果"
-    },
-    "Activity": {
-      "Main": "active",
-      "Sub" : "活動詳細"
-    },
-    "Support": {
-      "Main": "support",
-      "Sub" : "サポート"
-    },
-    "Hakumonkai": {
-      "Main": "hakumonkai",
-      "Sub" : "白門会"
-    },
-    "Concept": {
-      "Main": "concept",
-      "Sub" : "方針"
-    },
-    "Practice": {
-      "Main": "practice",
-      "Sub" : "練習"
-    },
-    "Dormitory": {
-      "Main": "dormitory life",
-      "Sub" : "寮生活"
-    },
-    "Member": {
-      "Main": "member",
-      "Sub" : "メンバー"
-    },
-    "Photo": {
-      "Main": "photo",
-      "Sub" : "フォトギャラリー"
-    },
-    "History": {
-      "Main": "club history",
-      "Sub" : "沿革"
-    },
-    "PrimaryTitles": {
-      "Main": "primary titles",
-      "Sub" : "主要タイトル"
-    },
-    "Champions": {
-      "Main": "champions",
-      "Sub" : "天皇杯優勝者"
-    },
-    "Players": {
-      "Main": "players",
-      "Sub" : "選手"
-    },
-    "Staff": {
-      "Main": "staff",
-      "Sub" : "スタッフ"
-    },
-    "Officer": {
-      "Main": "officer",
-      "Sub" : "白門会役員"
-    },
-    "ActiveAlumni": {
-      "Main": "active OB",
-      "Sub" : "活躍中の卒業生"
-    },
-    "Message": {
-      "Main": "message",
-      "Sub" : "OBの方へ"
-    },
-    "Provider": {
-      "Main": "provider",
-      "Sub" : "写真提供"
-    },
-    "Contact": {
-      "Main": "contact",
-      "Sub" : "お問い合わせ"
-    }
+    "News"         : { "Main": "news", "Sub" : "ニュース" },
+    "Team"         : { "Main": "team", "Sub" : "チーム紹介" },
+    "Photo"        : { "Main": "photo", "Sub" : "フォトギャラリー" },
+    "Staff"        : { "Main": "staff", "Sub" : "スタッフ" },
+    "Result"       : { "Main": "result", "Sub" : "大会結果" },
+    "Member"       : { "Main": "member", "Sub" : "メンバー" },
+    "Contact"      : { "Main": "contact", "Sub" : "お問い合わせ" },
+    "Concept"      : { "Main": "concept", "Sub" : "方針" },
+    "Message"      : { "Main": "message", "Sub" : "OBの方へ" },
+    "Support"      : { "Main": "support", "Sub" : "サポート" },
+    "History"      : { "Main": "club history", "Sub" : "沿革" },
+    "Players"      : { "Main": "players", "Sub" : "選手" },
+    "Officer"      : { "Main": "officer", "Sub" : "白門会役員" },
+    "Provider"     : { "Main": "provider", "Sub" : "写真提供" },
+    "Activity"     : { "Main": "active", "Sub" : "活動詳細" },
+    "Practice"     : { "Main": "practice", "Sub" : "練習" },
+    "Champions"    : { "Main": "champions", "Sub" : "天皇杯優勝者" },
+    "Dormitory"    : { "Main": "dormitory life", "Sub" : "寮生活" },
+    "Hakumonkai"   : { "Main": "hakumonkai", "Sub" : "白門会" },
+    "ActiveAlumni" : { "Main": "active OB", "Sub" : "活躍中の卒業生" },
+    "PrimaryTitles": { "Main": "primary titles", "Sub" : "主要タイトル" }
   },
 
   "tableTitle": {
     "memberNumber": "現在の部員数",
-    "tournamentInformation" : "大会情報"
+    "tournamentInformation" : "大会情報",
+    "schedule": "年間スケジュール"
   },
 
-  "FunctionName": {
-    "Filter" : "絞り込み"
+  "filters": {
+    "name": "絞り込み",
+    "defaultSelected": { "ja": "全て", "en": "all" }
   },
 
-  "Filter": {
-    "All": "全て",
-    "Years": "年月"
+  "year": {
+    "name": { "ja": "年月", "en": "year" }
   },
 
   "ButtonName": {
@@ -162,55 +91,33 @@
   },
 
   "sitemap": {
-    "name": {
-      "ja": "サイトマップ",
-      "en": "Site Map"
-    }
+    "name": { "ja": "サイトマップ", "en": "Site Map" }
   },
 
   "externalLink": {
-    "name": {
-      "ja": "外部リンク",
-      "en": "External Link"
-    }
+    "name": { "ja": "外部リンク", "en": "External Link" }
+  },
+
+  "about": {
+    "team": "中央大学では、20名前後の選手が在籍し、全国各地から個性的な選手が集まっています。強みや特徴は個人によって様々、まさに十人十色といったチームです。メリハリをつけ「やるときはやる」という雰囲気や、先輩方々が育んだ伝統を大切にしながら活動しています。\nソフトテニスと向き合い、活躍してきた選手達が一致団結し目標に向かって突き進んでいます。",
+    "hakumonkai": "本大学を卒業した先輩達で構成されるOBのグループを本大学は「白門会」と名付けています。\n白門とは昭和初年頃からの中央大学の象徴です。長い歴史の中でも白門は色あせず、現代でも根付く中央大学の誇りです。ソフトテニス部白門会は、「納会」などのイベント運営を始めとした部活動への援助を行っています。我々は、歴史と伝統を受け継ぎ、中央大学の名を背負い戦う現役選手たちを応援しています。",
+    "result": "中央大学選手の大会情報はTwitterで発信しています。\n当アカウントでは、大会速報を中心としたつぶやきをしていますが、他にも簡単な観戦記やイベント開催、皆様へのお知らせ等様々な発信をしていますのでぜひご覧ください。\nDMの返信は原則致しませんが、選手達への応援の声をお待ちしています。",
+    "activity": "中央大学ソフトテニス部の活動は、選手主体で行う特徴があり、やらされる練習ではなくやりたい練習に時間を割ける体制を構築しています。\n平日練習では、授業優先の体制を取りながらも個人の空きコマや時間に合わせて練習時間を設定しています。休日は、試合形式や展開練習など平日では行えないような練習に取り組み、技術向上に力を入れています。基本的に短期集中型の練習を取り入れ、定められた時間のなかで100%の集中を求めています。",
+    "photo": "中央大学ソフトテニス部のフォトギャラリーです。プレー写真や集合写真もございますが、選手自身が撮影した個人的な写真もあり、メンバーの笑顔が溢れたコンテンツになっています。是非ご覧ください。\nまた、フォトギャラリーに掲載する写真を提供をしてくださる方を募集しています。中央大学ソフトテニス部に関連のある写真を提供してくださる方は、お問い合わせフォームからご連絡お待ちしております。"
   },
 
   "Links": {
-    "Member": {
-      "Name" : "メンバーを見る",
-      "To"   : "member"
-    },
-    "Hakumonkai": {
-      "Name" : "白門会を知る",
-      "To"   : "hakumonkai"
-    },
-    "ToContact": {
-      "Name" : "お問い合わせ",
-      "To"   : "contact"
-    },
-    "TournamentResult": {
-      "Name" : "大会結果を見る",
-      "To"   : "https://twitter.com/SoftTennis_Chuo"
-    },
-    "Activity": {
-      "Name" : "活動詳細を見る",
-      "To"   : "club"
-    },
-    "Photo": {
-      "Name": "写真を見る",
-      "To": "photo"
-    }
+    "Member"    : { "Name": "メンバーを見る", "To": "member" },
+    "Hakumonkai": { "Name": "白門会を知る", "To": "hakumonkai" },
+    "ToContact" : { "Name": "お問い合わせ", "To": "contact" },
+    "Activity"  : { "Name": "活動詳細を見る", "To": "club" },
+    "Photo"     : { "Name": "写真を見る", "To": "photo" },
+    "TournamentResult": { "Name": "大会結果を見る", "To": "https://twitter.com/SoftTennis_Chuo" }
   },
 
   "Button": {
-    "NewsRequest": {
-      "Name": "ニュースを取得",
-      "Type": "button"
-    },
-    "Twitter": {
-      "Name": "Twitterを見る",
-      "Type": "button"
-    }
+    "NewsRequest": { "Name": "ニュースを取得", "Type": "button" },
+    "Twitter"    : { "Name": "Twitterを見る", "Type": "button" }
   },
 
   "TagTitles": {
@@ -258,7 +165,23 @@
     "profile": "プロフィール"
   },
 
-  "filter": {
-    "year": { "name": "year", "title": "年月" }
+  "concept": {
+    "keyword": {
+      "target" : "インカレ優勝",
+      "mission": "ソフトテニスを通じた人間育成",
+      "symbol" : "メリハリのある行動"
+    },
+    "text": {
+      "target" : "我々の目標は、全日本大学対抗戦優勝、すなわちインカレ制覇を目標としています。過去には、インカレ制覇を8回経験していますが、完全制覇を経験した年は未だありません。近年は各大学の実力が拮抗しており、タイトル競争が非常に激しい時代になっています。中央大学を日本一の大学にするべく、チーム一丸となりインカレ制覇に向かって努力しています。",
+      "mission": "部活動としての活動意義は、人間育成にあると考えています。我々の大学では、練習でも生活でも自主性や自律を重んじています。大学生活を通してこれらを学んでいき、社会人として幅広く活躍できる人間を輩出したいと考えています。",
+      "symbol" : "テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
+    }
+  },
+
+  "dormitoryText": {
+    "restaurant": "食堂は、朝昼夜と利用することができます。寮食は中央大学のヒルトップ3Fで営業している「芭巣亭」が運営しています。",
+    "bath": "南平寮の大浴場は立ち風呂になっており、水風呂とサウナを完備しています。入浴時間は以下の通りです。",
+    "room": "ソフトテニス部には、3・4人部屋が割り当たっています。\n上級生と下級生が自然とコミュニケーションをとれるよう同年で固まらないよう配置しています。",
+    "laundry": "洗濯機は、ソフトテニス部の部屋がある階に4台ございます。同階に住んでいる他部活生との供用になります。"
   }
 }

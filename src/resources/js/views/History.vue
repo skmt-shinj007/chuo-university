@@ -53,10 +53,17 @@
     </div>
   </section>
 
-  <section class="history__trophies">
+  <section class="history__titles">
     <contents-title :title="messages.SectionTitles.PrimaryTitles"/>
-
-    <icon-table :tableItems="trophies"/>
+    <table-component :table="viewdata.achievementsTable">
+      <template v-slot:cell="body">
+        <th class="titles__key">{{ body.item.key }}</th>
+        <td class="titles__value">
+          <svg-vue class="titles__icon" icon="trophy-solid" alt="トロフィーのアイコン"/>
+          <span class="titles__unit" v-text="`× ${body.item.value}`"/>
+        </td>
+      </template>
+    </table-component>
   </section>
 
   <div class="background-darkblue">
@@ -64,16 +71,9 @@
       <contents-title :title="messages.SectionTitles.Champions" color="white"/>
 
       <div class="winner__card-group">
-        <div class="winner__card" v-for="(champion, n) in viewData.champions" :key="n" ref="championCard">
+        <div class="winner__card" v-for="(champion, n) in viewdata.champions" :key="n">
           <champions-card :item="champion"/>
         </div>
-        <!-- カード配置を左揃えにするため、空の要素を追加 -->
-        <div
-          class="enpty"
-          v-for="n in card.length"
-          :key="`enpty-${n}`"
-          :style="{ width: `${card.width}px` }"
-        />
       </div>
     </section>
   </div>
@@ -87,7 +87,8 @@
 
 <script>
 // data
-import ViewData from '../config/data/historyViewData.json';
+import HistoryData from '../config/data/historyData.json';
+import ViewData from '../config/data/viewdata';
 
 /**
  * mixin
@@ -99,7 +100,7 @@ import Animation from '../config/animation';
 // import components
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import HistoryBox from '../components/contents/HistoryBoxComponent';
-import IconTable from '../components/modules/table/IconTableComponent';
+import TableComponent from '../components/modules/table/TableComponent';
 import ChampionsCard from '../components/modules/card/ChampionsCardComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
@@ -109,14 +110,15 @@ export default {
   components: {
     ContentsTitle,
     HistoryBox,
-    IconTable,
+    TableComponent,
     ChampionsCard,
     ScrollTopButton,
   },
 
   data() {
     return {
-      viewData: ViewData,
+      historyData: HistoryData,
+      viewdata: ViewData,
 
       /**
        * 沿革 (大正時代のみオブジェクト形式)
@@ -137,44 +139,18 @@ export default {
        * @type { Object }
        */
       elementsHeight: {},
-
-      /**
-       * カード
-       * width: カード幅
-       * length: 要素数
-       */
-      card: {
-        width: 0,
-        length: 0,
-      },
-
-      /**
-       * 過去に獲得したタイトル
-       * @type { Array }
-       */
-      trophies: [],
     }
   },
 
   beforeMount() {
     // 各データを挿入
-    this.taisho = this.$data.viewData.Taisho;
-    this.$data.viewData.Showa.forEach(element => this.showa.push(element));
-    this.$data.viewData.Heisei.forEach(element => this.heisei.push(element));
-    this.$data.viewData.Trophies.forEach(element => this.trophies.push(element));
+    this.taisho = this.$data.historyData.Taisho;
+    this.$data.historyData.Showa.forEach(element => this.showa.push(element));
+    this.$data.historyData.Heisei.forEach(element => this.heisei.push(element));
   },
 
   mounted() {
     this.getTargetHeight();
-
-    /**
-     * チャンピオンカードの配置を揃えるための処理
-     */
-    const card = this.$refs.championCard;
-
-    // 初期描画時の個数と幅を取得
-    this.card.length = card.length;
-    this.getCardWidth();
   },
 
   computed: {
@@ -217,13 +193,6 @@ export default {
 
   methods: {
     /**
-     * カード幅を取得
-     */
-    getCardWidth() {
-      this.card.width = this.$refs.championCard[0].offsetWidth;
-    },
-
-    /**
      * 要素の高さを取得
      */
     getTargetHeight() {
@@ -245,7 +214,6 @@ export default {
   watch: {
     windowWidth() {
       this.getTargetHeight();
-      this.getCardWidth();
     }
   }
 }
@@ -261,7 +229,7 @@ export default {
     }
   }
 
-  &__trophies {
+  &__titles {
     margin-bottom: interval(10);
   }
 
@@ -333,14 +301,52 @@ export default {
   }
 }
 
+.titles {
+  &__key {
+    width: 50%;
+    background-color: color(light);
+    text-align: center;
+    vertical-align: middle;
+  }
+  &__value {
+    background-color: color(white);
+    @include flex($align-items: center);
+  }
+  &__icon {
+    width: interval(2.5);
+    fill: #e3aa00;
+  }
+  &__unit {
+    font-size: font(14);
+    margin-left: interval(1);
+  }
+}
+
 .winner {
   &__card-group {
-    @include flex(row wrap, center, center);
+    @include mq(sm) {
+      @include flex(row wrap, flex-start, center);
+      gap: interval(1);
+    }
   }
 
   &__card {
-    width: interval(32);
-    padding: interval(1);
+    $margin: interval(1);
+    width: interval(30);
+    margin: 0 auto $margin auto;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include mq(sm) {
+      width: calc((100% / 2) - #{$margin});
+      margin: 0;
+    }
+
+    @include mq(md) {
+      width: calc((100% / 4) - #{$margin});
+    }
   }
 }
 </style>

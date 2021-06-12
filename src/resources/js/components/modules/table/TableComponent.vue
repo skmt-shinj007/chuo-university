@@ -12,8 +12,10 @@
         v-for="(body, i) in table.body"
         :key="i"
       >
-        <th class="table__body-key">{{ body.key }}</th>
-        <td class="table__body-value">{{ body.value }}</td>
+        <slot name="cell" :item="body">
+          <th class="table__body-key">{{ body.key }}</th>
+          <td class="table__body-value">{{ body.value }}</td>
+        </slot>
       </tr>
     </tbody>
   </table>
@@ -53,10 +55,6 @@ export default {
     color() {
       return (this.titleColor) ? `table__title--${this.titleColor}` : null;
     },
-  },
-
-  created() {
-    // console.log(this.tableItems);
   },
 }
 
