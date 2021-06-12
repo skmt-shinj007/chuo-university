@@ -324,12 +324,29 @@ export default {
 
 .winner {
   &__card-group {
-    @include flex(row wrap, center, center);
-    gap: interval(1);
+    @include mq(sm) {
+      @include flex(row wrap, flex-start, center);
+      gap: interval(1);
+    }
   }
 
   &__card {
-    width: interval(32);
+    $margin: interval(1);
+    width: interval(30);
+    margin: 0 auto $margin auto;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include mq(sm) {
+      width: calc((100% / 2) - #{$margin});
+      margin: 0;
+    }
+
+    @include mq(md) {
+      width: calc((100% / 4) - #{$margin});
+    }
   }
 }
 </style>
