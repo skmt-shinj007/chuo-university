@@ -56,10 +56,6 @@ export default {
       return (this.titleColor) ? `table__title--${this.titleColor}` : null;
     },
   },
-
-  created() {
-    // console.log(this.tableItems);
-  },
 }
 
 // 想定データ

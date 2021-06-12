@@ -75,17 +75,13 @@
     "schedule": "年間スケジュール"
   },
 
-  "FunctionName": {
-    "Filter" : "絞り込み"
+  "filters": {
+    "name": "絞り込み",
+    "defaultSelected": { "ja": "全て", "en": "all" }
   },
 
-  "Filter": {
-    "All": "全て",
-    "Years": "年月"
-  },
-
-  "filter": {
-    "year": { "name": "year", "title": "年月" }
+  "year": {
+    "name": { "ja": "年月", "en": "year" }
   },
 
   "ButtonName": {

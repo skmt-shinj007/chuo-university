@@ -329,5 +329,19 @@ const viewData = {
       }
     },
   ],
+
+  imageFilterTable: {
+    title: messages.filters.name,
+    body: [
+      {
+        key: messages.year.name.ja,
+        value: {
+          name: messages.year.name.en,
+          menus: [],
+        }
+      },
+    ]
+  }
+
 }
 export default viewData;

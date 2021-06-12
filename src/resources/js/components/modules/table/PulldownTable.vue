@@ -1,47 +1,45 @@
 <template>
-  <div class="pull-down-table">
-    <tr class="pull-down-table__record">
-
-      <th class="pull-down-table__key">{{ settings.title }}</th>
-
+  <table-component :table="setting">
+    <template v-slot:cell="table">
+      <th class="pull-down-table__key">{{ table.item.key }}</th>
       <td class="pull-down-table__value">
-        <select class="pull-down-table__select" :name="settings.name" v-model="select">
-          <option value="all" selected>{{ messages.Filter.All }}</option>
-          <option v-for="(menu, n) in menus" :key="n" :value="menu">{{ menu }}</option>
+        <select class="pull-down-table__select" :name="table.item.value.name" v-model="select">
+          <option :value="defaultSelected.en" selected>
+            {{ defaultSelected.ja }}
+          </option>
+          <option v-for="(menu, n) in table.item.value.menus" :key="n" :value="menu">
+            {{ menu }}
+          </option>
         </select>
       </td>
-    </tr>
-  </div>
+    </template>
+  </table-component>
 </template>
 
 <script>
+import TableComponent from './TableComponent';
+
 export default {
+  components: { TableComponent },
+
   data() {
     return {
       // プルダウンの初期値は all
-      select: "all"
+      select: "all",
+      defaultSelected: {},
     }
   },
 
   props: {
-    /**
-     * 1:プルダウンのタイトル
-     * 2:selectタグに指定するname属性
-     * 上記のデータを持ったオブジェクトの配列
-     */
-    settings: {
+    // プルダウンのテーブルを描画するためのデータ
+    setting: {
       type: Object,
       require: true
     },
+  },
 
-    /**
-     * プルダウンのメニューが入った配列
-     * <option>に入る
-     */
-    menus: {
-      type: Array,
-      require: true
-    }
+  created() {
+    this.defaultSelected = this.$data.messages.filters.defaultSelected;
   },
 
   watch: {

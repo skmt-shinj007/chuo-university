@@ -3,8 +3,7 @@
 
   <!-- フィルター機能 -->
   <div class="images__filter">
-    <span class="images__filter-name">{{ messages.FunctionName.Filter }}</span>
-    <pull-down-table :settings="messages.filter.year" :menus="menus" @select="select = $event"/>
+    <pull-down-table :setting="viewdata.imageFilterTable" @select="select = $event"/>
   </div>
 
   <!-- 写真 -->
@@ -36,8 +35,10 @@
 <script>
 // component import
 import ViewAllButton from '../modules/button/ViewAllButtonComponent';
-import PullDownTable from '../modules/table/PullDownTableComponent';
+import PullDownTable from '../modules/table/PulldownTable';
 import ImageModal from '../modules/modal/ImageModalComponent';
+
+import ViewData from '../../config/data/viewdata';
 
 export default {
   components: {
@@ -48,12 +49,7 @@ export default {
 
   data() {
     return {
-      /**
-       * 絞り込みのメニュー
-       * @type { Array }
-       */
-      menus: [],
-
+      viewdata: ViewData,
       /**
        * 絞り込みの選択値
        * @default all
@@ -96,7 +92,8 @@ export default {
     },
   },
 
-  beforeMount() {
+  created() {
+    const viewdata = this.$data.viewdata;
     /**
      * [images配列を降順でソート]
      * フォトギャラリーは新しい写真から表示させる。
@@ -104,23 +101,19 @@ export default {
      * @param1 配列の要素 比較対象 1つ目
      * @param2 配列の要素 比較対象 2つ目
      */
-    this.images.sort( function(firstEl,secondEl) {
+    this.images.sort((firstEl,secondEl) => {
       if (firstEl.shooting.year > secondEl.shooting.year) return -1;
       if(firstEl.shooting.year < secondEl.shooting.year) return 1;
       return 0;
     });
 
-    /**
-     * [絞り込みメニュー生成]
-     * 1:撮影年を抽出
-     * 2:メニューデータの重複した値を削除
-     */
-    this.images.forEach(element => this.menus.push(element.shooting.year));
-    this.menus = Array.from(new Set(this.menus));
+    // 絞り込みメニュー「年月」生成
+    // 撮影年を抽出してからメニューデータの重複した値を削除
+    const imageYears = [];
+    this.images.forEach(element => imageYears.push(element.shooting.year));
+    viewdata.imageFilterTable.body[0].value.menus = Array.from(new Set(imageYears));
 
-    /**
-     * 初期描画時のリスト表示枚数を代入
-     */
+    // 初期描画時のリスト表示枚数を代入
     this.count.current = this.count.default;
   },
 
@@ -208,12 +201,6 @@ export default {
     @include mq(md) {
       width: 70%;
     }
-  }
-
-  &__filter-name {
-    margin-bottom: interval(2);
-    font-size: font(16);
-    @include middle-line-text(2, 1px, color(darkblue));
   }
 
   &__group {
