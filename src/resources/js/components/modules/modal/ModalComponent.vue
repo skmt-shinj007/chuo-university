@@ -1,8 +1,7 @@
 <template>
   <transition name="modal" appear>
     <div class="modal" @click.self="$emit('close')">
-      <div class="modal-window" @click.self="$emit('close')">
-
+      <div class="modal-window" @click.self="$emit('close')" :class="onScroll">
         <div class="modal__close">
           <button class="modal__button" @click="$emit('close')">
             <svg-vue icon="close"/>
@@ -18,7 +17,22 @@
 
 <script>
 export default {
+  props: {
+    isScroll: {
+      type: Boolean,
+      default: true
+    }
+  },
 
+  computed: {
+    onScroll() {
+      return (!this.isScroll) ? 'modal-window--disable-scroll' : null;
+    }
+  },
+
+  beforeDestroy() {
+    this.$emit('close');
+  },
 }
 </script>
 
@@ -41,6 +55,11 @@ export default {
     // ↓ モーダルがスクロールできない問題を解消
     max-height: 100%;
     overflow-y: auto;
+
+    &--disable-scroll {
+      overflow-y: visible;
+      max-height: none;
+    }
   }
 
   &__close {
