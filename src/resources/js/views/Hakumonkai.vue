@@ -19,9 +19,7 @@
     <div class="hakumonkai__player-slider">
       <slider :options="playerSliderOptions" :items="users.activeAlumni" color="darkblue">
         <template v-slot:slideContents="player">
-          <slot name="card">
-            <player-card :player="player.item" @open="openPlayerCardModal"/>
-          </slot>
+          <player-card :player="player.item" @open="openPlayerCardModal"/>
         </template>
       </slider>
       <!-- modal -->

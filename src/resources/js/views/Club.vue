@@ -100,9 +100,7 @@
       <div class="member__player-slider">
         <slider :options="playerSliderOptions" :items="highestGradePlayer">
           <template v-slot:slideContents="player">
-            <slot name="card">
-              <player-card :player="player.item" @open="openPlayerCardModal"/>
-            </slot>
+            <player-card :player="player.item" @open="openPlayerCardModal"/>
           </template>
         </slider>
         <!-- modal -->
