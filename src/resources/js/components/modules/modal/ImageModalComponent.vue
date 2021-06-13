@@ -1,49 +1,40 @@
 <template>
-  <transition name="modal" appear>
-    <div class="modal" @click.self="$emit('close')">
-      <div class="modal__window">
+  <modal @close="close" :isScroll="false">
+    <template v-slot:content>
+      <div class="image-modal">
+        <transition :name="transitionName">
+          <figure class="image-modal__img-wrap" :key="item.id">
+            <img class="image-modal__img" :src="`/image/${item.src}`" :alt="item.alt">
+          </figure>
+        </transition>
 
-        <div class="image-modal">
-          <header class="image-modal__header">
-            <button class="image-modal__button" @click="$emit('close')">
-              <svg-vue icon="close"/>
-            </button>
-          </header>
-
-          <transition :name="transitionName">
-            <figure class="image-modal__img-wrap" :key="item.id">
-              <img class="image-modal__img" :src="`/image/${item.src}`" :alt="item.alt">
-            </figure>
+        <footer class="image-modal__footer" v-if="footerShow">
+          <transition name="button">
+            <div class="image-modal__prev-btn-area" @click="prevImage" v-if="showPrevBtn">
+                <button class="image-modal__prev-btn">
+                  <svg-vue icon="arrow_left" class="image-modal__icon"/>
+                </button>
+            </div>
           </transition>
-
-          <footer class="image-modal__footer" v-if="footerShow">
-
-            <transition name="button">
-              <div class="image-modal__prev-btn-area" @click="prevImage" v-if="showPrevBtn">
-                  <button class="image-modal__prev-btn">
-                    <svg-vue icon="arrow_left" class="image-modal__icon"/>
-                  </button>
-              </div>
-            </transition>
-
-            <transition name="button">
-              <div class="image-modal__next-btn-area" @click="nextImage" v-if="showNextBtn">
-                  <button class="image-modal__next-btn">
-                    <svg-vue icon="arrow_right" class="image-modal__icon"/>
-                  </button>
-              </div>
-            </transition>
-
-          </footer>
-        </div>
-
+          <transition name="button">
+            <div class="image-modal__next-btn-area" @click="nextImage" v-if="showNextBtn">
+                <button class="image-modal__next-btn">
+                  <svg-vue icon="arrow_right" class="image-modal__icon"/>
+                </button>
+            </div>
+          </transition>
+        </footer>
       </div>
-    </div>
-  </transition>
+    </template>
+  </modal>
 </template>
 
 <script>
+import Modal from './ModalComponent';
+
 export default {
+  components: { Modal },
+
   data() {
     return {
       /**
@@ -194,43 +185,20 @@ export default {
 
       return maxIndex;
     },
+
+    // モーダル閉じる
+    close() {
+      this.$emit('close');
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.modal {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: rgba(color(deepDarkblue), $alpha: .9);
-  @include flex(column nowrap);
-
-  &__window {
-    height: 100%;
-    padding: 0 interval(2);
-    position: relative;
-  }
-}
-
 .image-modal {
   width: 100%;
   height: 100%;
   @include flex(column nowrap, center, center);
-
-  &__header {
-    @include flex(row nowrap, flex-end, center);
-    padding: 0 interval(2);
-    position: fixed;
-    top: interval(2);
-  }
-
-  &__button {
-    @include close-button;
-  }
 
   &__img-wrap {
     @include flex(column nowrap, center, center);
@@ -320,25 +288,6 @@ export default {
 }
 
 // vue transitionのアニメーション
-.modal-enter-active, .modal-leave-active {
-  transition: opacity .5s;
-  transform: scale(1);
-}
-
-.modal-leave-active {
-  transition: opacity .3s ease .1s;
-}
-
-.modal-enter, .modal-leave-to {
-  opacity: 0;
-  transform: scale(0);
-  transition: opacity .5s, transform 0s .5s;
-
-  .modal-window {
-    opacity: 0;
-  }
-}
-
 .next-enter-active,
 .prev-enter-active {
   transition: all .5s ease-out;
