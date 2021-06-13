@@ -341,7 +341,38 @@ const viewData = {
         }
       },
     ]
-  }
+  },
 
+  playerSliderOptions: {
+    speed: 1000,
+    autoHeight: true,
+    spaceBetween: 16,
+    autoplay: {
+      delay: 2500,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      860: {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+      },
+      1440: {
+        slidesPerView: 5,
+        slidesPerGroup: 1,
+      }
+    },
+  },
 }
 export default viewData;

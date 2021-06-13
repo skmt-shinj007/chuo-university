@@ -97,7 +97,22 @@
   <div class="background-darkblue">
     <section class="club__member fade" v-scroll="fade">
       <contents-title :title="messages.SectionTitles.Member" color="white"/>
-      <player-slider :players="highestGradePlayer"/>
+      <div class="member__player-slider">
+        <slider :options="playerSliderOptions" :items="highestGradePlayer">
+          <template v-slot:slideContents="player">
+            <slot name="card">
+              <player-card :player="player.item" @open="openPlayerCardModal"/>
+            </slot>
+          </template>
+        </slider>
+        <!-- modal -->
+        <player-modal
+          v-if="playerCard.modal.isShow"
+          @close="closePlayerCardModal"
+          :player="playerCard.modal.el"
+          :labels="playerCard.modal.labels"
+        />
+      </div>
 
       <div class="member__number">
         <div class="member__number-table">
@@ -139,10 +154,12 @@ import ImageSlider from '../components/modules/slider/ImageSliderComponent';
 import MainVisualSlider from '../components/modules/slider/MainVisualSliderComponent';
 import TableComponent from '../components/modules/table/TableComponent';
 import CaptionImage from '../components/modules/CaptionImageComponent';
-import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ImagesList from '../components/contents/ImagesListComponent';
-import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent'
+import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
+import PlayerCard from '../components/modules/card/PlayerCardComponent';
+import Slider from '../components/modules/slider/SliderComponent';
+import PlayerModal from '../components/modules/modal/PlayerModalComponent';
 
 export default {
   components: {
@@ -152,10 +169,12 @@ export default {
     TableComponent,
     ImageSlider,
     CaptionImage,
-    PlayerSlider,
     LinkButton,
     ImagesList,
     ScrollTopButton,
+    PlayerCard,
+    Slider,
+    PlayerModal,
   },
 
   mixins: [Animation],
@@ -165,18 +184,25 @@ export default {
       viewdata: ViewData,
       mock: Mock,
       mainVisualImages: [],
-      concepts: [],
-      practiceInformations: [],
       dormitoryImages: [],
-      players: [],
+      images: [],
 
+      /**
+       * Api Response
+       * @type {Obj/Ary}
+       */
       response: {
         players: [],
         numbersData: {},
       },
-      images: [],
 
-      test: [],
+      // player card section data
+      playerCard: {
+        modal: {
+          isShow: false,
+          el: null,
+        },
+      }
     }
   },
 
@@ -200,11 +226,17 @@ export default {
   },
 
   computed: {
-    /**
-     * 4年生の部員を返す。
-     */
+    // 4年生の部員を返す。
     highestGradePlayer() {
       return this.response.players.filter(el => el.grade === 4);
+    },
+
+    /**
+     * swiperのオプションを返す。
+     * @return swiper option
+     */
+    playerSliderOptions() {
+      return this.$data.viewdata.playerSliderOptions;
     }
   },
 
@@ -229,7 +261,21 @@ export default {
      */
     eachGradeNumber(num) {
       return this.response.players.filter(el => el.grade === num).length;
-    }
+    },
+
+    /**
+     * モーダル開閉処理。
+     */
+    openPlayerCardModal(el, labels) {
+      this.playerCard.modal.isShow = true;
+      this.playerCard.modal.el = el;
+      this.playerCard.modal.labels = labels;
+      document.body.classList.add("modal-open");
+    },
+    closePlayerCardModal() {
+      this.playerCard.modal.isShow = false;
+      document.body.classList.remove("modal-open");
+    },
   },
 }
 
