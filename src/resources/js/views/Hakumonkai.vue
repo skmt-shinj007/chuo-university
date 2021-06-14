@@ -16,7 +16,20 @@
 
   <section class="hakumonkai__active fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
-    <player-slider :players="users.activeAlumni" color="darkblue"/>
+    <div class="hakumonkai__player-slider">
+      <slider :options="playerSliderOptions" :items="users.activeAlumni" color="darkblue">
+        <template v-slot:slideContents="player">
+          <player-card :player="player.item" @open="openPlayerCardModal"/>
+        </template>
+      </slider>
+      <!-- modal -->
+      <player-modal
+        v-if="playerCard.modal.isShow"
+        @close="closePlayerCardModal"
+        :player="playerCard.modal.el"
+        :labels="playerCard.modal.labels"
+      />
+    </div>
   </section>
 
   <section class="hakumonkai__message" v-fade:[dir.up]>
@@ -41,8 +54,9 @@ import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import TileTable from '../components/modules/table/TileTableComponent';
 import PlayerCard from '../components/modules/card/PlayerCardComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
-import PlayerSlider from '../components/modules/slider/PlayerSliderComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
+import Slider from '../components/modules/slider/SliderComponent';
+import PlayerModal from '../components/modules/modal/PlayerModalComponent';
 
 // config
 import Animation from '../config/animation';
@@ -56,8 +70,9 @@ export default {
     TileTable,
     PlayerCard,
     LinkButton,
-    PlayerSlider,
     ScrollTopButton,
+    Slider,
+    PlayerModal,
   },
 
   mixins: [Animation],
@@ -71,6 +86,14 @@ export default {
         officers: [],
         activeAlumni: [],
       },
+
+      // player card section data
+      playerCard: {
+        modal: {
+          isShow: false,
+          el: null,
+        },
+      }
     }
   },
 
@@ -95,6 +118,14 @@ export default {
       });
 
       return officers;
+    },
+
+    /**
+     * swiperのオプションを返す。
+     * @return swiper option
+     */
+    playerSliderOptions() {
+      return this.$data.viewdata.playerSliderOptions;
     },
   },
 
@@ -161,7 +192,21 @@ export default {
 
       user['graduate_date_str'] = `${user.graduate_date}年卒`;
       return user;
-    }
+    },
+
+    /**
+     * モーダル開閉処理。
+     */
+    openPlayerCardModal(el, labels) {
+      this.playerCard.modal.isShow = true;
+      this.playerCard.modal.el = el;
+      this.playerCard.modal.labels = labels;
+      document.body.classList.add("modal-open");
+    },
+    closePlayerCardModal() {
+      this.playerCard.modal.isShow = false;
+      document.body.classList.remove("modal-open");
+    },
   },
 }
 </script>

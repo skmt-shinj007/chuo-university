@@ -9,9 +9,6 @@ export default {
   data() {
     return {
       messages: Messages,
-
-      // Api responseに切り替えた時点で削除
-      officerNum: 3,
     }
   },
 
