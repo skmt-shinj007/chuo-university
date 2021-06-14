@@ -61,7 +61,7 @@ import PlayerModal from '../components/modules/modal/PlayerModalComponent';
 // config
 import Animation from '../config/animation';
 import Mock from '../config/data/mock.json';
-import Api from '../config/api/index';
+import Api from '../api/index';
 import ViewData from '../config/data/viewdata';
 
 export default {

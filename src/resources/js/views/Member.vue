@@ -65,7 +65,7 @@ import PlayerTicket from '../components/modules/ticket/PlayerTicketComponent';
 import StaffTicket from '../components/modules/ticket/StaffTicketComponent';
 
 // config
-import Api from '../config/api/index';
+import Api from '../api/index';
 import Risize from '../config/resize';
 
 export default {

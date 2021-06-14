@@ -143,7 +143,7 @@
 import ViewData from '../config/data/viewdata';
 import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
-import Api from '../config/api/index';
+import Api from '../api/index';
 
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';

@@ -43,7 +43,7 @@
 import ContentsTitle from '../modules/ContentsTitleComponent';
 import PrimaryButton from '../modules/button/PrimaryButtonComponent.vue';
 
-import Api from '../../config/api/index';
+import Api from '../../api/index';
 
 export default {
   components: {

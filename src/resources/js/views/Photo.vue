@@ -32,7 +32,7 @@
 <script>
 // config json import
 import Mock from '../config/data/mock.json';
-import Api from '../config/api/index';
+import Api from '../api/index';
 import Animation from '../config/animation';
 
 // component import
