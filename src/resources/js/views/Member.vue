@@ -88,9 +88,7 @@ export default {
   },
 
   computed: {
-    /**
-     * app.jsのUserAPIレスポンスを取りに行く。
-     */
+    // app.jsのUserAPIレスポンスを取りに行く。
     players() {
       return this.$options.parent.users.players;
     },
