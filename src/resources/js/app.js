@@ -85,6 +85,11 @@ Vue.directive('fade', {
 })
 
 /**
+ * user API
+ */
+import userApi from './api/user';
+
+/**
  * components (全ページで使う共通コンポーネント)
  */
 import HeaderComponent from './components/layouts/HeaderComponent';
@@ -98,6 +103,36 @@ new Vue({
   components: {
     HeaderComponent,
     FooterComponent
+  },
+
+  data() {
+    return {
+      users: {
+        players: [],
+        staff: [],
+        officers: [],
+        alumni: [],
+        activeAlumni: [],
+      }
+    }
+  },
+
+  created() {
+    userApi.getPlayer(res => {
+      this.users.players = res;
+    });
+    userApi.getStaff(res => {
+      this.users.staff = res;
+    });
+    userApi.getAlumni(res => {
+      this.users.alumni = res;
+    });
+    userApi.getOfficer(res => {
+      this.users.officers = res;
+    });
+    userApi.getActiveOb(res => {
+      this.users.activeAlumni = res;
+    })
   },
 
   /**
