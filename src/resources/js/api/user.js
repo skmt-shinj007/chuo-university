@@ -12,7 +12,7 @@ export default {
    */
   async getPlayer(setCallback) {
     const response = await index.getResponse('/player');
-    let players = (Array.isArray(response.data)) ? response.data : [];
+    const players = (Array.isArray(response.data)) ? response.data : [];
     setCallback(players);
   },
 
@@ -22,7 +22,7 @@ export default {
    */
   async getStaff(setCallback) {
     const response = await index.getResponse('/staff');
-    let staff = (Array.isArray(response.data)) ? response.data : [];
+    const staff = (Array.isArray(response.data)) ? response.data : [];
     setCallback(staff);
   },
 
@@ -32,7 +32,7 @@ export default {
    */
   async getAlumni(setCallback) {
     const response = await index.getResponse('/ob');
-    let alumni = (Array.isArray(response.data)) ? response.data : [];
+    const alumni = (Array.isArray(response.data)) ? response.data : [];
     setCallback(alumni);
   },
 
@@ -57,7 +57,7 @@ export default {
    */
   async getActiveOb(setCallback) {
     const response = await index.getResponse('/active_ob');
-    let activeAlumni = (Array.isArray(response.data)) ? response.data : [];
+    const activeAlumni = (Array.isArray(response.data)) ? response.data : [];
     setCallback(activeAlumni);
   },
 }
