@@ -85,9 +85,10 @@ Vue.directive('fade', {
 })
 
 /**
- * user API
+ * import API
  */
 import userApi from './api/user';
+import twitter from './api/twitter';
 
 /**
  * components (全ページで使う共通コンポーネント)
@@ -113,11 +114,16 @@ new Vue({
         officers: [],
         alumni: [],
         activeAlumni: [],
+      },
+      twitter: {
+        timelines: [],
+        providers: [],
       }
     }
   },
 
   created() {
+    // set user API response
     userApi.getPlayer(res => {
       this.users.players = res;
     });
@@ -132,7 +138,15 @@ new Vue({
     });
     userApi.getActiveOb(res => {
       this.users.activeAlumni = res;
-    })
+    });
+
+    // set twitter API response
+    twitter.getTimeline(res => {
+      this.twitter.timelines = res;
+    });
+    twitter.getProvider(res => {
+      this.twitter.providers = res;
+    });
   },
 
   /**

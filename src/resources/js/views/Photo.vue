@@ -17,7 +17,7 @@
       @after-enter="cancelDelay"
       >
 
-      <div class="photo__ticket" v-for="(provider, i) in provider.response" :key="provider.id" :data-index="i">
+      <div class="photo__ticket" v-for="(provider, i) in providers" :key="provider.id" :data-index="i">
         <provider-ticket :provider="provider"/>
       </div>
     </transition-group>
@@ -32,7 +32,6 @@
 <script>
 // config json import
 import Mock from '../config/data/mock.json';
-import Api from '../api/index';
 import Animation from '../config/animation';
 
 // component import
@@ -64,37 +63,20 @@ export default {
        * @type { Array }
        */
       images: [],
+    }
+  },
 
-      /**
-       * providerの情報
-       * response : @type { Object }
-       * err      : @type { Boolean }
-       */
-      provider: {
-        response: null,
-        err: false,
-      }
+  computed: {
+    providers() {
+      return this.$options.parent.twitter.providers;
     }
   },
 
   created() {
-    this.getProvider();
     this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
   },
 
   methods: {
-    // Twitter Apiからデータを取得
-    async getProvider() {
-      const response = await Api.getResponse('/twitter/provider');
-
-      // 予期しない型が返却された場合
-      if (!response || !Array.isArray(response)) {
-        this.provider.err = true;
-        throw new Error('予期しないデータ型で返却されました。');
-      }
-      this.provider.response = response;
-    },
-
     /**
      * transition methods
      */
