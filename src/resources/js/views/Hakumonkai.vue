@@ -81,11 +81,6 @@ export default {
       mock: Mock,
       viewdata: ViewData,
 
-      users: {
-        officers: [],
-        activeAlumni: [],
-      },
-
       // player card section data
       playerCard: {
         modal: {
