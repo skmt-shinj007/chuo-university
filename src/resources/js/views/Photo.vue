@@ -68,7 +68,7 @@ export default {
 
   computed: {
     providers() {
-      return this.$options.parent.twitter.providers;
+      return this.$parent.twitter.providers;
     }
   },
 

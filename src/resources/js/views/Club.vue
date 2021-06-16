@@ -203,7 +203,7 @@ export default {
   computed: {
     // app.jsのUserAPIレスポンスを取りに行く。
     players() {
-      return this.$options.parent.users.players;
+      return this.$parent.users.players;
     },
 
     // 4年生の部員を返す。
