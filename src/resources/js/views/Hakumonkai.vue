@@ -23,10 +23,10 @@
         </template>
       </slider>
       <!-- modal -->
-      <player-modal
+      <active-alumni-modal
         v-if="playerCard.modal.isShow"
         @close="closePlayerCardModal"
-        :player="playerCard.modal.el"
+        :activeAlumni="playerCard.modal.el"
         :labels="playerCard.modal.labels"
       />
     </div>
@@ -56,7 +56,7 @@ import PlayerCard from '../components/modules/card/PlayerCardComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 import Slider from '../components/modules/slider/SliderComponent';
-import PlayerModal from '../components/modules/modal/PlayerModalComponent';
+import ActiveAlumniModal from '../components/modules/modal/ActiveAlumniModal';
 
 // config
 import Animation from '../config/animation';
@@ -71,7 +71,7 @@ export default {
     LinkButton,
     ScrollTopButton,
     Slider,
-    PlayerModal,
+    ActiveAlumniModal,
   },
 
   mixins: [Animation],
