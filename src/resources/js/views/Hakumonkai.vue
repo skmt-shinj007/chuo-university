@@ -94,10 +94,10 @@ export default {
   computed: {
     // app.jsのUserAPIレスポンスを取りに行く。
     officers() {
-      return this.$parent.users.officers;
+      return this.$root.users.officers;
     },
     activeAlumni() {
-      return this.$parent.users.activeAlumni;
+      return this.$root.users.activeAlumni;
     },
 
     /**

@@ -90,10 +90,10 @@ export default {
   computed: {
     // app.jsのUserAPIレスポンスを取りに行く。
     players() {
-      return this.$parent.users.players;
+      return this.$root.users.players;
     },
     staff() {
-      return this.$parent.users.staff;
+      return this.$root.users.staff;
     },
   },
 
