@@ -5,7 +5,7 @@
     </div>
 
     <section class="home__news">
-      <news keep-alive/>
+      <news/>
     </section>
 
     <section class="home__about">
