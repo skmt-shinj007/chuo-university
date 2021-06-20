@@ -42,8 +42,6 @@
 import ContentsTitle from '../modules/ContentsTitleComponent';
 import PrimaryButton from '../modules/button/PrimaryButtonComponent.vue';
 
-import twitter from '../../api/twitter';
-
 export default {
   components: {
     ContentsTitle,
