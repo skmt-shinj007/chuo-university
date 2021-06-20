@@ -28,7 +28,7 @@
       @before-enter="delay"
       @after-enter="cancelDelay">
 
-      <div class="member__ticket" v-for="(player, i) in user.players" :key="player.id" :data-index="i">
+      <div class="member__ticket" v-for="(player, i) in players" :key="player.id" :data-index="i">
         <player-ticket :player="player"/>
       </div>
     </transition-group>
@@ -43,7 +43,7 @@
       @before-enter="delay"
       @after-enter="cancelDelay">
 
-      <div class="member__ticket" v-for="(staff, i) in user.staff" :key="staff.id" :data-index="i">
+      <div class="member__ticket" v-for="(staff, i) in staff" :key="staff.id" :data-index="i">
         <staff-ticket :staff="staff"/>
       </div>
     </transition-group>
@@ -64,8 +64,6 @@ import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import PlayerTicket from '../components/modules/ticket/PlayerTicketComponent';
 import StaffTicket from '../components/modules/ticket/StaffTicketComponent';
 
-// config
-import Api from '../config/api/index';
 import Risize from '../config/resize';
 
 export default {
@@ -86,35 +84,24 @@ export default {
        * @type { string }
        */
       mvText: '',
-
-      user: {
-        players: [],
-        staff: [],
-      }
     }
   },
 
+  computed: {
+    // app.jsのUserAPIレスポンスを取りに行く。
+    players() {
+      return this.$root.users.players;
+    },
+    staff() {
+      return this.$root.users.staff;
+    },
+  },
+
   created() {
-    this.getPlayer();
-    this.getStaff();
     this.mvText = this.messages.MainVisual.Member.Text;
   },
 
   methods: {
-    /**
-     * ユーザー取得
-     * TODO：引数を使用して1つの関数にできそう。
-     * どこに代入するかの指定を引数でできれば解決。
-     */
-    async getPlayer() {
-      const response = await Api.getResponse('/player');
-      (this.getType(response.data) === 'array') ? this.user.players = response.data : new Error('player:レスポンスが配列ではありません。');
-    },
-    async getStaff() {
-      const response = await Api.getResponse('/staff');
-      (this.getType(response.data) === 'array') ? this.user.staff = response.data : new Error('staff:レスポンスが配列ではありません。');
-    },
-
     /**
      * transition methods
      */

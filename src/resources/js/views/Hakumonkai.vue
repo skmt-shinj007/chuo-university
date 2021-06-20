@@ -17,7 +17,7 @@
   <section class="hakumonkai__active fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
     <div class="hakumonkai__player-slider">
-      <slider :options="playerSliderOptions" :items="users.activeAlumni" color="darkblue">
+      <slider :options="playerSliderOptions" :items="activeAlumni" color="darkblue">
         <template v-slot:slideContents="player">
           <player-card :player="player.item" @open="openPlayerCardModal"/>
         </template>
@@ -61,7 +61,6 @@ import PlayerModal from '../components/modules/modal/PlayerModalComponent';
 // config
 import Animation from '../config/animation';
 import Mock from '../config/data/mock.json';
-import Api from '../config/api/index';
 import ViewData from '../config/data/viewdata';
 
 export default {
@@ -82,11 +81,6 @@ export default {
       mock: Mock,
       viewdata: ViewData,
 
-      users: {
-        officers: [],
-        activeAlumni: [],
-      },
-
       // player card section data
       playerCard: {
         modal: {
@@ -98,6 +92,14 @@ export default {
   },
 
   computed: {
+    // app.jsのUserAPIレスポンスを取りに行く。
+    officers() {
+      return this.$root.users.officers;
+    },
+    activeAlumni() {
+      return this.$root.users.activeAlumni;
+    },
+
     /**
      * テーブル表示用にレスポンスをカスタムする
      * @return {Array} officers テーブル表示用にカスタマイズされたuserレスポンス
@@ -105,18 +107,15 @@ export default {
     officersForTable() {
       let officers = [];
       const officerTagsId = Object.values(this.$data.viewdata.officerTags);
-
-      this.users.officers.forEach(alumnus => {
+      this.officers.forEach(alumnus => {
         officers.push(this.customResponseForTable(alumnus, officerTagsId));
       });
-
       // 役員順に並び替え
       officers.sort((filst, second) => {
         if (filst.sortNumber < second.sortNumber) return -1;
         if (filst.sortNumber > second.sortNumber) return 1;
         return 0;
       });
-
       return officers;
     },
 
@@ -127,32 +126,6 @@ export default {
     playerSliderOptions() {
       return this.$data.viewdata.playerSliderOptions;
     },
-  },
-
-  created() {
-    const viewdata = this.$data.viewdata;
-    const officerTagsId = Object.values(viewdata.officerTags);
-
-    Api.getResponse('/active_ob').then(res => {
-      const data = res.data;
-      if (this.getType(data) === 'array') {
-        this.users.activeAlumni = data;
-      }
-      else {
-        new Error('active ob response :レスポンスが配列ではありません。');
-      }
-    });
-
-    Api.getResponse('/ob').then(res => {
-      const data = res.data;
-      // dataが配列であることを保証する
-      if (this.getType(data) !== 'array') new Error('ob officer response :レスポンスが配列ではありません。');
-      // 役員持ちのOBを抽出
-      const officers = data.filter(el => {
-        return el.tags.find(tag => officerTagsId.includes(tag.tag_id));
-      });
-      this.users.officers = officers;
-    });
   },
 
   methods: {
@@ -176,7 +149,6 @@ export default {
      * userレスポンスにテーブル表示に必要なプロパティを追加する
      * @param {Object} user userオブジェクト
      * @param {Array} tagIds 検索する配列
-     * @param {String} propName userオブジェクトに追加するプロパティ名
      * @return {Object} user object
      */
     customResponseForTable(user, tagIds) {

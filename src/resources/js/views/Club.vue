@@ -49,7 +49,7 @@
       <p class="nl2br" v-text="messages.Club.Dormitory.LeadText"/>
     </div>
 
-    <div class="dormitory__ticket-group" v-fade:[dir.up]>
+    <div class="dormitory__ticket-group">
       <div class="dormitory__ticket" v-for="(info, n) in viewdata.dormitory" :key="n">
         <div class="dormitory__ticket-inner">
           <div class="dormitory__ticket-icon-wrap">
@@ -114,7 +114,7 @@
 
       <div class="member__number">
         <div class="member__number-table">
-          <table-component :table="response.numbersData" titleColor="white"/>
+          <table-component :table="playersNumberTable" titleColor="white"/>
         </div>
         <div class="member__button">
           <link-button :link="messages.Links.Member"/>
@@ -143,7 +143,6 @@
 import ViewData from '../config/data/viewdata';
 import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
-import Api from '../config/api/index';
 
 // component import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
@@ -185,15 +184,6 @@ export default {
       dormitoryImages: [],
       images: [],
 
-      /**
-       * Api Response
-       * @type {Obj/Ary}
-       */
-      response: {
-        players: [],
-        numbersData: {},
-      },
-
       // player card section data
       playerCard: {
         modal: {
@@ -205,28 +195,31 @@ export default {
   },
 
   created() {
-    this.getPlayers().then(res => {
-      this.response.players = res;
-
-      const tableTitle = this.$data.messages.tableTitle.memberNumber;
-      const tableBodies = [
-        this.createTableBody('4年生', `${this.eachGradeNumber(4)}名`),
-        this.createTableBody('3年生', `${this.eachGradeNumber(3)}名`),
-        this.createTableBody('2年生', `${this.eachGradeNumber(2)}名`),
-        this.createTableBody('1年生', `${this.eachGradeNumber(1)}名`),
-      ];
-      this.response.numbersData = this.createTableData(tableTitle, tableBodies);
-    });
-
     // TODO:画像を格納するクラウドストレージからApiで取得する
     mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
     this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
   },
 
   computed: {
+    // app.jsのUserAPIレスポンスを取りに行く。
+    players() {
+      return this.$root.users.players;
+    },
+
     // 4年生の部員を返す。
     highestGradePlayer() {
-      return this.response.players.filter(el => el.grade === 4);
+      return this.players.filter(el => el.grade === 4);
+    },
+
+    playersNumberTable() {
+      const tableTitle = this.$data.messages.tableTitle.memberNumber;
+      let tableBodies = [
+        this.createTableBody('4年生', `${this.eachGradeNumber(4)}名`),
+        this.createTableBody('3年生', `${this.eachGradeNumber(3)}名`),
+        this.createTableBody('2年生', `${this.eachGradeNumber(2)}名`),
+        this.createTableBody('1年生', `${this.eachGradeNumber(1)}名`),
+      ];
+      return this.createTableData(tableTitle, tableBodies);
     },
 
     /**
@@ -235,30 +228,17 @@ export default {
      */
     playerSliderOptions() {
       return this.$data.viewdata.playerSliderOptions;
-    }
+    },
   },
 
   methods: {
-    /**
-     * 部員取得
-     */
-    async getPlayers() {
-      const response = await Api.getResponse('/player');
-      if (this.getType(response.data) === 'array') {
-        return response.data;
-      }
-      else {
-        new Error('player:レスポンスが配列ではありません。');
-      }
-    },
-
     /**
      * 学年毎の部員数を返す。
      * @param {Number} num 検索したい学年
      * @return {Number} 引数に指定した学年に一致する配列の要素数
      */
     eachGradeNumber(num) {
-      return this.response.players.filter(el => el.grade === num).length;
+      return this.players.filter(el => el.grade === num).length;
     },
 
     /**

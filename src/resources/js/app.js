@@ -85,6 +85,12 @@ Vue.directive('fade', {
 })
 
 /**
+ * import API
+ */
+import userApi from './api/user';
+import twitter from './api/twitter';
+
+/**
  * components (全ページで使う共通コンポーネント)
  */
 import HeaderComponent from './components/layouts/HeaderComponent';
@@ -98,6 +104,56 @@ new Vue({
   components: {
     HeaderComponent,
     FooterComponent
+  },
+
+  data() {
+    return {
+      // user API data
+      users: {
+        players: [],
+        staff: [],
+        officers: [],
+        alumni: [],
+        activeAlumni: [],
+      },
+
+      // twitter API data
+      twitter: {
+        timeline: {
+          loading: true,
+          tweets: [],
+        },
+        providers: [],
+      }
+    }
+  },
+
+  created() {
+    // set user API response
+    userApi.getPlayer(res => {
+      this.users.players = res;
+    });
+    userApi.getStaff(res => {
+      this.users.staff = res;
+    });
+    userApi.getAlumni(res => {
+      this.users.alumni = res;
+    });
+    userApi.getOfficer(res => {
+      this.users.officers = res;
+    });
+    userApi.getActiveOb(res => {
+      this.users.activeAlumni = res;
+    });
+
+    // set twitter API response
+    twitter.getTimeline(res => {
+      this.twitter.timeline.tweets = res;
+      this.twitter.timeline.loading = false;
+    });
+    twitter.getProvider(res => {
+      this.twitter.providers = res;
+    });
   },
 
   /**

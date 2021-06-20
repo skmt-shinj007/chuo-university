@@ -30,7 +30,7 @@
 <script>
 // data import
 import Scroll from '../../config/scroll';
-import Api from '../../config/api/index';
+import Api from '../../api/index';
 
 // component import
 import NavModal from '../modules/modal/NavModalComponent.vue';

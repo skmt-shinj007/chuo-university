@@ -10,11 +10,9 @@
 
     <section class="home__about">
       <div class="about" v-for="(item, n) in viewdata.about" :key="n" ref="about">
-
         <figure class="about__img" v-fade:[dir.left]>
           <img :src="`/image/${item.img.src}.jpg`" :alt="item.img.alt">
         </figure>
-
         <div class="about__box">
           <div class="about__content" v-fade:[dir.up]>
             <div class="about__title">
@@ -27,7 +25,6 @@
               <link-button :link="item.button"/>
             </div>
           </div>
-
         </div>
       </div>
     </section>
