@@ -1,17 +1,17 @@
 <template>
-  <div class="player-card" @click="openModal">
-    <figure class="player-card__figure">
-      <img :src="player.img.src" :alt="player.img.alt" @error="noImage">
+  <div class="user-card" @click="openModal">
+    <figure class="user-card__figure">
+      <img :src="user.img.src" :alt="user.img.alt" @error="noImage">
     </figure>
 
-    <div class="player-card__information">
-      <div class="player-card__name">
-        <span class="player-card__name-ja">{{ player.name_ja }}</span>
-        <span class="player-card__name-en">{{ player.name_en }}</span>
+    <div class="user-card__information">
+      <div class="user-card__name">
+        <span class="user-card__name-ja">{{ user.name_ja }}</span>
+        <span class="user-card__name-en">{{ user.name_en }}</span>
       </div>
 
-      <div class="player-card__label-group">
-        <div class="player-card__label" v-for="(label, i) in labels" :key="i">
+      <div class="user-card__label-group">
+        <div class="user-card__label" v-for="(label, i) in labels" :key="i">
           <label-component :label="label"/>
         </div>
       </div>
@@ -29,7 +29,7 @@ export default {
   },
 
   props: {
-    player: {
+    user: {
       type: Object,
       default: null,
     }
@@ -46,11 +46,11 @@ export default {
   },
 
   created() {
-    const player = this.player;
+    const user = this.user;
 
     // ポジションラベルのデータを作成。
-    if (player.position) {
-      this.labels.push(this.formatToLabel(player.position.color, player.position.name_ja));
+    if (user.position) {
+      this.labels.push(this.formatToLabel(user.position.color, user.position.name_ja));
     }
 
     /**
@@ -71,7 +71,7 @@ export default {
      * [モーダルを開ける]
      */
     openModal() {
-      this.$emit('open', this.player, this.labels);
+      this.$emit('open', this.user, this.labels);
     },
 
     /**
@@ -93,7 +93,7 @@ export default {
      * @return {Object} tag object
      */
     pickUpTag(id) {
-      return this.player.tags.find(el => {
+      return this.user.tags.find(el => {
         return (el.tag_id === id);
       })
     },
@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style lang="scss">
-.player-card {
+.user-card {
   position: relative;
   cursor: pointer;
   border-radius: radius(hard);
@@ -137,7 +137,7 @@ export default {
       margin-left: interval(.5);
     }
     &-en {
-      @extend .player-card__name-ja;
+      @extend .user-card__name-ja;
       font-size: font(10);
     }
   }

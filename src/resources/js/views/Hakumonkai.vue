@@ -19,15 +19,15 @@
     <div class="hakumonkai__player-slider">
       <slider :options="playerSliderOptions" :items="activeAlumni" color="darkblue">
         <template v-slot:slideContents="player">
-          <player-card :player="player.item" @open="openPlayerCardModal"/>
+          <user-card :user="player.item" @open="openCardModal"/>
         </template>
       </slider>
       <!-- modal -->
       <active-alumni-modal
-        v-if="playerCard.modal.isShow"
-        @close="closePlayerCardModal"
-        :activeAlumni="playerCard.modal.el"
-        :labels="playerCard.modal.labels"
+        v-if="card.modal.isShow"
+        @close="closeCardModal"
+        :activeAlumni="card.modal.el"
+        :labels="card.modal.labels"
       />
     </div>
   </section>
@@ -52,7 +52,7 @@
 // components import
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import TileTable from '../components/modules/table/TileTableComponent';
-import PlayerCard from '../components/modules/card/PlayerCardComponent';
+import UserCard from '../components/modules/card/UserCardComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 import Slider from '../components/modules/slider/SliderComponent';
@@ -67,7 +67,7 @@ export default {
   components: {
     ContentsTitle,
     TileTable,
-    PlayerCard,
+    UserCard,
     LinkButton,
     ScrollTopButton,
     Slider,
@@ -81,8 +81,8 @@ export default {
       mock: Mock,
       viewdata: ViewData,
 
-      // player card section data
-      playerCard: {
+      // user card section data
+      card: {
         modal: {
           isShow: false,
           el: null,
@@ -169,14 +169,14 @@ export default {
     /**
      * モーダル開閉処理。
      */
-    openPlayerCardModal(el, labels) {
-      this.playerCard.modal.isShow = true;
-      this.playerCard.modal.el = el;
-      this.playerCard.modal.labels = labels;
+    openCardModal(el, labels) {
+      this.card.modal.isShow = true;
+      this.card.modal.el = el;
+      this.card.modal.labels = labels;
       document.body.classList.add("modal-open");
     },
-    closePlayerCardModal() {
-      this.playerCard.modal.isShow = false;
+    closeCardModal() {
+      this.card.modal.isShow = false;
       document.body.classList.remove("modal-open");
     },
   },
