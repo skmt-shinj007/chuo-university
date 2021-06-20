@@ -18,7 +18,7 @@ export default {
    */
   async getTimeline(setCallback) {
     const res = await index.getResponse('/twitter/timeline');
-    const providers = (Array.isArray(res.data)) ? res.data : [];
-    setCallback(providers);
+    const timelines = (Array.isArray(res)) ? res : [];
+    setCallback(timelines);
   }
 }

@@ -108,6 +108,7 @@ new Vue({
 
   data() {
     return {
+      // user API data
       users: {
         players: [],
         staff: [],
@@ -115,8 +116,13 @@ new Vue({
         alumni: [],
         activeAlumni: [],
       },
+
+      // twitter API data
       twitter: {
-        timelines: [],
+        timeline: {
+          loading: true,
+          tweets: [],
+        },
         providers: [],
       }
     }
@@ -142,7 +148,8 @@ new Vue({
 
     // set twitter API response
     twitter.getTimeline(res => {
-      this.twitter.timelines = res;
+      this.twitter.timeline.tweets = res;
+      this.twitter.timeline.loading = false;
     });
     twitter.getProvider(res => {
       this.twitter.providers = res;

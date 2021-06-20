@@ -1,40 +1,39 @@
 <template>
 <div class="news">
-
   <contents-title :title="messages.SectionTitles.News"/>
-
-  <!-- ローディング画面 -->
-  <div class="news__loading" v-if="loading">
+  <template v-if="timeline.loading">
+    <!-- ローディング画面 -->
+    <div class="news__loading">
       <div class="loading">
         <div class="loading__obj" v-for="i in 8" :key="i"/>
       </div>
-  </div>
-
-  <!-- ニュースリスト -->
-  <div class="news__wrap" v-else>
-    <ul class="news__list" v-if="!twitter.err">
-      <li class="news__item" v-for="(tweet, i) in twitter.timelines" :key="i">
-        <a class="news__link" :href="tweet.link" target="_blank" rel="noopener noreferrer">
-          {{ tweet.text }}
-        </a>
-
-        <!-- NEW ラベル -->
-        <span class="news__latest-label" v-if="tweet.new">
-          {{ messages.Label.Latest }}
-        </span>
-      </li>
-    </ul>
-
-    <!-- エラー画面 -->
-    <div class="err" v-if="twitter.err">
-      <span class="err__text">{{ messages.Error.Api.News }}</span>
-
-      <div class="err__btn">
-        <primary-button :btn="messages.Button.NewsRequest" @clickEvent="reload"/>
-      </div>
     </div>
-  </div>
+  </template>
 
+  <template v-else>
+    <!-- ニュースリスト -->
+    <!-- timelines配列が空かどうかでエラー画面を出し分ける -->
+    <template v-if="timeline.tweets.length">
+      <ul class="news__list">
+        <li class="news__item" v-for="(tweet, i) in timeline.tweets" :key="i">
+          <a class="news__link" :href="tweet.link" target="_blank" rel="noopener noreferrer">
+            {{ tweet.text }}
+          </a>
+          <!-- NEW ラベル -->
+          <span class="news__latest-label" v-if="tweet.new">
+            {{ messages.Label.Latest }}
+          </span>
+        </li>
+      </ul>
+    </template>
+
+    <!-- 表示するニュースがない場合 -->
+    <template v-else>
+      <div class="news__none">
+        <span class="news__none-text">{{ messages.Error.Api.News }}</span>
+      </div>
+    </template>
+  </template>
 </div>
 </template>
 
@@ -43,7 +42,7 @@
 import ContentsTitle from '../modules/ContentsTitleComponent';
 import PrimaryButton from '../modules/button/PrimaryButtonComponent.vue';
 
-import Api from '../../api/index';
+import twitter from '../../api/twitter';
 
 export default {
   components: {
@@ -51,39 +50,17 @@ export default {
     PrimaryButton,
   },
 
-  data() {
-    return {
-      twitter: {
-        timelines: null,
-        err: false,
-        loading: true,
-      },
-    }
-  },
-
   computed: {
-    loading() {
-      return (this.twitter.timelines) ? false : true;
-    }
-  },
-
-  created() {
-    this.getTweets();
-  },
-
-  methods: {
-    async getTweets() {
-      const tweets = await Api.getResponse('/twitter/timeline');
-
-      if (this.getType(tweets) === 'array') {
-        this.twitter.timelines = tweets;
-      }
-      else {
-        this.twitter.timelines = {};
-        this.twitter.err = true;
-      }
+    /**
+     * timeline: {
+     *    loading: {Boolean}
+     *    tweets: {Array}
+     * }
+     */
+    timeline() {
+      return this.$root.twitter.timeline;
     },
-  }
+  },
 }
 </script>
 
@@ -133,6 +110,18 @@ export default {
     left: interval(1);
     transform: translate(- interval(2), - interval(1)) rotate(-15deg);
   }
+
+  &__none {
+    &-text {
+      display: block;
+      font-size: font(12);
+      margin-bottom: interval(5);
+
+      @include mq(sm) {
+        text-align: center;
+      }
+    }
+  }
 }
 
 .loading {
@@ -157,26 +146,6 @@ export default {
       }
     }
 
-  }
-}
-
-.err {
-
-  &__text {
-    display: block;
-    font-size: font(12);
-    margin-bottom: interval(5);
-
-    @include mq(sm) {
-      text-align: center;
-    }
-  }
-
-  &__btn {
-    @include mq(sm) {
-      max-width: interval(50);
-      margin: 0 auto;
-    }
   }
 }
 </style>
