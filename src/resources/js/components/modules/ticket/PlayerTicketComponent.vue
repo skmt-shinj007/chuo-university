@@ -33,6 +33,8 @@ import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
 import PlayerModal from '../modal/PlayerModalComponent';
 
+import { viewData } from '../../../config/data/viewdata';
+
 export default {
   components: {
     UserTicket,
@@ -76,8 +78,8 @@ export default {
      * Labelに表示するタグを絞り込み
      * [主将, 主務, 副主将, 会計, 寮長]
      */
-    const labelTagId = [2, 3, 4, 5, 6];
-    labelTagId.forEach(id => {
+    const displayTags = Object.values(viewData.playerCardDisplayTagId);
+    displayTags.forEach(id => {
       let tag = this.pickUpTag(id);
       if (tag) {
         this.labels.push(this.formatToLabel('darkblue', tag.name_ja));

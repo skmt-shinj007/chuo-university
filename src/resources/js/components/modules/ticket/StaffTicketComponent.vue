@@ -33,6 +33,8 @@ import UserThumbnail from '../UserThumbnailComponent';
 import LabelComponent from '../label/LabelComponent';
 import StaffModal from '../modal/StaffModalComponent';
 
+import { viewData } from '../../../config/data/viewdata';
+
 export default {
   components: {
     UserTicket,
@@ -65,14 +67,12 @@ export default {
   },
 
   created() {
-    const staff = this.staff;
-
     /**
      * Labelに表示するタグを絞り込み
      * [監督, 部長, コーチ]
      */
-    const labelTagId = [8, 9, 10];
-    labelTagId.forEach(id => {
+    const displayTags = Object.values(viewData.staffCardDisplayTagId);
+    displayTags.forEach(id => {
       let tag = this.pickUpTag(id);
       if (tag) {
         this.labels.push(this.formatToLabel('darkblue', tag.name_ja));
