@@ -47,7 +47,7 @@
 
 <script>
 import Animation from '../config/animation';
-import ViewData from '../config/data/viewdata';
+import { viewData } from '../config/data/viewdata';
 
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
@@ -69,7 +69,7 @@ export default {
 
   data() {
     return {
-      viewdata: ViewData,
+      viewdata: viewData,
     }
   },
 }

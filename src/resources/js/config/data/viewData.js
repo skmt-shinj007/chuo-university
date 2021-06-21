@@ -3,8 +3,8 @@
  * @exports {Object} viewData
  */
 import messages from '../messages.json';
-const viewData = {
 
+export const viewData = {
   about: [
     {
       title: messages.SectionTitles.Team,
@@ -374,5 +374,18 @@ const viewData = {
       }
     },
   },
+
+  playerCardDisplayTagId: {
+    captain: 2,
+    competent: 3,
+    viceCaptain: 4,
+    treasurer: 5,
+    dormitoryLeader: 6,
+  },
+
+  staffCardDisplayTagId: {
+    headCoach: 8,
+    director: 9,
+    coach: 10,
+  }
 }
-export default viewData;

@@ -38,7 +38,7 @@ import ViewAllButton from '../modules/button/ViewAllButtonComponent';
 import PullDownTable from '../modules/table/PulldownTableComponent';
 import ImageModal from '../modules/modal/ImageModalComponent';
 
-import ViewData from '../../config/data/viewdata';
+import { viewData } from '../../config/data/viewdata';
 
 export default {
   components: {
@@ -49,8 +49,7 @@ export default {
 
   data() {
     return {
-      viewdata: ViewData,
-
+      viewdata: viewData,
       /**
        * 絞り込みの選択値
        * @default all
@@ -94,7 +93,6 @@ export default {
   },
 
   created() {
-    const viewdata = this.$data.viewdata;
     /**
      * [images配列を降順でソート]
      * フォトギャラリーは新しい写真から表示させる。
@@ -112,7 +110,7 @@ export default {
     // 撮影年を抽出してからメニューデータの重複した値を削除
     const imageYears = [];
     this.images.forEach(element => imageYears.push(element.shooting.year));
-    viewdata.imageFilterTable.body[0].value.menus = Array.from(new Set(imageYears));
+    viewData.imageFilterTable.body[0].value.menus = Array.from(new Set(imageYears));
 
     // 初期描画時のリスト表示枚数を代入
     this.count.current = this.count.default;

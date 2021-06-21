@@ -61,7 +61,7 @@ import ActiveAlumniModal from '../components/modules/modal/ActiveAlumniModal';
 // config
 import Animation from '../config/animation';
 import Mock from '../config/data/mock.json';
-import ViewData from '../config/data/viewdata';
+import { viewData } from '../config/data/viewdata';
 
 export default {
   components: {
@@ -79,7 +79,7 @@ export default {
   data() {
     return {
       mock: Mock,
-      viewdata: ViewData,
+      viewdata: viewData,
 
       // user card section data
       card: {
@@ -106,7 +106,7 @@ export default {
      */
     officersForTable() {
       let officers = [];
-      const officerTagsId = Object.values(this.$data.viewdata.officerTags);
+      const officerTagsId = Object.values(viewData.officerTags);
       this.officers.forEach(alumnus => {
         officers.push(this.customResponseForTable(alumnus, officerTagsId));
       });
@@ -124,7 +124,7 @@ export default {
      * @return swiper option
      */
     playerSliderOptions() {
-      return this.$data.viewdata.playerSliderOptions;
+      return viewData.playerSliderOptions;
     },
   },
 
@@ -152,7 +152,7 @@ export default {
      * @return {Object} user object
      */
     customResponseForTable(user, tagIds) {
-      const tagCloumnProp = this.pickupTableColumnProp(this.$data.viewdata.officersTableColumn, 1);
+      const tagCloumnProp = this.pickupTableColumnProp(viewData.officersTableColumn, 1);
 
       // 並び替えに必要なtag_idと役員名をレスポンスの第一階層に追加する。
       user.tags.forEach(tag => {

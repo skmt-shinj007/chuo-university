@@ -140,7 +140,7 @@
 
 <script>
 // config
-import ViewData from '../config/data/viewdata';
+import { viewData } from '../config/data/viewdata';
 import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
 
@@ -178,8 +178,8 @@ export default {
 
   data() {
     return {
-      viewdata: ViewData,
       mock: Mock,
+      viewdata: viewData,
       mainVisualImages: [],
       dormitoryImages: [],
       images: [],
@@ -227,7 +227,7 @@ export default {
      * @return swiper option
      */
     playerSliderOptions() {
-      return this.$data.viewdata.playerSliderOptions;
+      return viewData.playerSliderOptions;
     },
   },
 

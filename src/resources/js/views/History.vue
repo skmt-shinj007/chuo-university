@@ -88,7 +88,7 @@
 <script>
 // data
 import HistoryData from '../config/data/historyData.json';
-import ViewData from '../config/data/viewdata';
+import { viewData } from '../config/data/viewdata';
 
 /**
  * mixin
@@ -118,7 +118,7 @@ export default {
   data() {
     return {
       historyData: HistoryData,
-      viewdata: ViewData,
+      viewdata: viewData,
 
       /**
        * 沿革 (大正時代のみオブジェクト形式)
