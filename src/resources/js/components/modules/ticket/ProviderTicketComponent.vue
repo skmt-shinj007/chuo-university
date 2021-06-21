@@ -8,9 +8,9 @@
       <span class="player-ticket__name">{{ provider.name }}</span>
     </template>
 
-    <template v-slot:label>
-      <div class="provider-ticket__label" v-for="(label, i) in labels" :key="i">
-        <label-component :label="label"/>
+    <template v-slot:tag>
+      <div class="provider-ticket__tag" v-for="(tag, i) in tags" :key="i">
+        <tag :tag="tag"/>
       </div>
     </template>
 
@@ -18,7 +18,7 @@
       <provider-modal
         v-if="showModal"
         :provider="provider"
-        :labels="labels"
+        :tags="tags"
         @close="closeModal"
       />
     </template>
@@ -29,13 +29,13 @@
 // component import
 import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
-import LabelComponent from '../label/LabelComponent';
+import Tag from '../tag/TagComponent';
 import ProviderModal from '../modal/ProviderModalComponent';
 
 export default {
   components: {
     UserTicket,
-    LabelComponent,
+    Tag,
     ProviderModal,
     UserThumbnail,
   },
@@ -48,11 +48,7 @@ export default {
        */
       showModal: false,
 
-      /**
-       * labelData
-       * @type {object}
-       */
-      labels: [],
+      tags: [],
     }
   },
 
@@ -64,7 +60,7 @@ export default {
   },
 
   created() {
-    this.labels.push(this.formatToLabel('twitter', 'Twitter'));
+    this.tags.push(this.formatTag('twitter', 'Twitter'));
   },
 
   methods: {
@@ -79,19 +75,6 @@ export default {
       this.showModal = false;
       document.body.classList.remove("modal-open");
     },
-
-    /**
-     * ラベルコンポーネントに渡すオブジェクトを生成する。
-     * @param1 {string} tag color
-     * @param2 {string} tag text
-     * @return {Object} ラベルコンポーネントに渡すオブジェクト
-     */
-    formatToLabel(color, text) {
-      let data = {};
-      data.color = color;
-      data.text = text;
-      return data;
-    },
   },
 }
 </script>
@@ -103,7 +86,7 @@ export default {
     font-size: font(14);
   }
 
-  &__label {
+  &__tag {
     margin: interval(.5) interval(.5) 0 0;
 
     &:last-child {

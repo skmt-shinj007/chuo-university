@@ -20,8 +20,8 @@
                 </slot>
               </div>
 
-              <div class="user-modal__label-group">
-                <slot name="label">
+              <div class="user-modal__tag-group">
+                <slot name="tag">
                   <!-- ラベル -->
                 </slot>
               </div>
@@ -130,7 +130,7 @@ export default {
     }
   }
 
-  &__label-group {
+  &__tag-group {
     margin-top: interval(1);
     @include flex(row wrap, center, center);
   }

@@ -10,9 +10,9 @@
         <span class="user-card__name-en">{{ user.name_en }}</span>
       </div>
 
-      <div class="user-card__label-group">
-        <div class="user-card__label" v-for="(label, i) in labels" :key="i">
-          <label-component :label="label"/>
+      <div class="user-card__tag-group">
+        <div class="user-card__tag" v-for="(tag, i) in tags" :key="i">
+          <tag :tag="tag"/>
         </div>
       </div>
     </div>
@@ -21,13 +21,13 @@
 
 <script>
 // component import
-import LabelComponent from '../label/LabelComponent';
+import Tag from '../tag/TagComponent';
 
 import { viewData } from '../../../config/data/viewdata';
 
 export default {
   components: {
-    LabelComponent,
+    Tag,
   },
 
   props: {
@@ -40,10 +40,10 @@ export default {
   data() {
     return {
       /**
-       * LabelComponentに渡すデータ
+       * カードに表示させるタグ
        * @type {Array}
        */
-      labels: [],
+      tags: [],
     }
   },
 
@@ -52,18 +52,18 @@ export default {
 
     // ポジションラベルのデータを作成。
     if (user.position) {
-      this.labels.push(this.formatToLabel(user.position.color, user.position.name_ja));
+      this.tags.push(this.formatTag(user.position.color, user.position.name_ja));
     }
 
     /**
-     * Labelに表示するタグを絞り込み
+     * カードに表示するタグを絞り込み
      * [主将, 主務, 副主将, 会計, 寮長]
      */
     let displayTags = Object.values(viewData.playerCardDisplayTagId);
     displayTags.forEach(id => {
       let tag = this.pickUpTag(id);
       if (tag) {
-        this.labels.push(this.formatToLabel('darkblue', tag.name_ja));
+        this.tags.push(this.formatTag('darkblue', tag.name_ja));
       }
     })
   },
@@ -73,20 +73,7 @@ export default {
      * [モーダルを開ける]
      */
     openModal() {
-      this.$emit('open', this.user, this.labels);
-    },
-
-    /**
-     * ラベルコンポーネントに渡すオブジェクトを生成する。
-     * @param1 {string} tag color
-     * @param2 {string} tag text
-     * @return {Object} ラベルコンポーネントに渡すオブジェクト
-     */
-    formatToLabel(color, text) {
-      let data = {};
-      data.color = color;
-      data.text = text;
-      return data;
+      this.$emit('open', this.user, this.tags);
     },
 
     /**
@@ -144,7 +131,7 @@ export default {
     }
   }
 
-  &__label-group {
+  &__tag-group {
     @include flex(row wrap);
     align-content: space-around;
     gap: interval(.5);

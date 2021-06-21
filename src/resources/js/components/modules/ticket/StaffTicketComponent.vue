@@ -9,9 +9,9 @@
       <span class="staff-ticket__name">{{ staff.name_en }}</span>
     </template>
 
-    <template v-slot:label>
-      <div class="staff-ticket__label" v-for="(label, i) in labels" :key="i">
-        <label-component :label="label"/>
+    <template v-slot:tag>
+      <div class="staff-ticket__tag" v-for="(tag, i) in tags" :key="i">
+        <tag :tag="tag"/>
       </div>
     </template>
 
@@ -20,7 +20,7 @@
         v-if="showModal"
         @close="closeModal"
         :staff="staff"
-        :labels="labels"
+        :tags="tags"
       />
     </template>
   </user-ticket>
@@ -30,7 +30,7 @@
 // component import
 import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
-import LabelComponent from '../label/LabelComponent';
+import Tag from '../tag/TagComponent';
 import StaffModal from '../modal/StaffModalComponent';
 
 import { viewData } from '../../../config/data/viewdata';
@@ -38,7 +38,7 @@ import { viewData } from '../../../config/data/viewdata';
 export default {
   components: {
     UserTicket,
-    LabelComponent,
+    Tag,
     UserThumbnail,
     StaffModal,
   },
@@ -51,11 +51,7 @@ export default {
        */
       showModal: false,
 
-      /**
-       * LabelComponentに渡すデータ
-       * @type {Array}
-       */
-      labels: [],
+      tags: [],
     }
   },
 
@@ -68,14 +64,14 @@ export default {
 
   created() {
     /**
-     * Labelに表示するタグを絞り込み
+     * チケットに表示するタグを絞り込み
      * [監督, 部長, コーチ]
      */
     const displayTags = Object.values(viewData.staffCardDisplayTagId);
     displayTags.forEach(id => {
       let tag = this.pickUpTag(id);
       if (tag) {
-        this.labels.push(this.formatToLabel('darkblue', tag.name_ja));
+        this.tags.push(this.formatTag('darkblue', tag.name_ja));
       }
     })
   },
@@ -91,19 +87,6 @@ export default {
     closeModal() {
       this.showModal = false;
       document.body.classList.remove("modal-open");
-    },
-
-    /**
-     * ラベルコンポーネントに渡すオブジェクトを生成する。
-     * @param1 {string} tag color
-     * @param2 {string} tag text
-     * @return {Object} ラベルコンポーネントに渡すオブジェクト
-     */
-    formatToLabel(color, text) {
-      let data = {};
-      data.color = color;
-      data.text = text;
-      return data;
     },
 
     /**
@@ -131,7 +114,7 @@ export default {
     }
   }
 
-  &__label {
+  &__tag {
     margin: interval(.5) interval(.5) 0 0;
 
     &:last-child {

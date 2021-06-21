@@ -9,9 +9,9 @@
     <modal @close="closeModal">
       <template v-slot:content>
         <div class="record-modal">
-          <div class="record-modal__box" v-for="(item, n) in data.records" :key="n">
+          <div class="record-modal__box" v-for="(item, n) in history.records" :key="n">
             <table-component
-              :table="createTableData(`${data.age + item.year}年度`, item.result)"
+              :table="createTableData(`${history.age + item.year}年度`, item.result)"
               :ratio="5"
               titleColor="white"
             />
@@ -22,16 +22,16 @@
   </div>
 
   <div class="history-box__title">
-    <span class="history-box__title-sub">{{ data.title.sub }}</span>
-    <h3 class="history-box__title-main">{{data.title.main }}</h3>
+    <span class="history-box__title-sub">{{ history.title.sub }}</span>
+    <h3 class="history-box__title-main">{{ history.title.main }}</h3>
   </div>
 
-  <div class="history-box__tag">
-    <tag color="outline-orange" :content="term" size="md"/>
+  <div class="history-box__term">
+    <tag :tag="termTag"/>
   </div>
 
   <div class="history-box__text-container">
-    <p class="history-box__text nl2br" v-text="data.text"/>
+    <p class="history-box__text nl2br" v-text="history.text"/>
   </div>
 
 </div>
@@ -66,7 +66,7 @@ export default {
     /**
      * 歴史のブロックデータ
      */
-    data: {
+    history: {
       type: Object,
       default: null
     }
@@ -74,15 +74,11 @@ export default {
 
   computed: {
     /**
-     * [タグ]:歴史カードの期間
-     * @return { String }  ex) 昭和7年 - 昭和23年
+     * TagComponentに渡す形に整形する
      */
-    term() {
-      const data = this.data;
-      let start = String(data.term.start);
-      if (start === '1') start = '元';
-      return `${data.age} ${start}年 - ${data.term.end}年`;
-    },
+    termTag() {
+      return this.formatTag('outline-orange', this.termTagText());
+    }
   },
 
   methods: {
@@ -97,6 +93,17 @@ export default {
       this.showModal = false;
       document.body.classList.remove("modal-open");
     },
+
+    /**
+     * 歴史ブロックの期間をテキスト化する。
+     * @return { String }  ex) 昭和7年 - 昭和23年
+     */
+    termTagText() {
+      const history = this.history;
+      let start = String(history.term.start);
+      if (start === '1') start = '元';
+      return `${history.age} ${start}年 - ${history.term.end}年`;
+    }
   },
 }
 </script>
@@ -119,7 +126,7 @@ export default {
     }
   }
 
-  &__tag {
+  &__term {
     margin: interval(1) 0;
 
     @include mq(sm) {

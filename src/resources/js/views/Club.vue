@@ -108,7 +108,7 @@
           v-if="card.modal.isShow"
           @close="closeCardModal"
           :player="card.modal.el"
-          :labels="card.modal.labels"
+          :tags="card.modal.tags"
         />
       </div>
 
@@ -244,10 +244,10 @@ export default {
     /**
      * モーダル開閉処理。
      */
-    openCardModal(el, labels) {
+    openCardModal(el, tags) {
       this.card.modal.isShow = true;
       this.card.modal.el = el;
-      this.card.modal.labels = labels;
+      this.card.modal.tags = tags;
       document.body.classList.add("modal-open");
     },
     closeCardModal() {

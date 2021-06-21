@@ -19,7 +19,7 @@
         <!-- 大正の歴史 -->
         <div class="archive__wrap" ref="taisho">
           <div class="archive__content">
-            <history-box :data="taisho"/>
+            <history-box :history="taisho"/>
           </div>
         </div>
 
@@ -31,7 +31,7 @@
             :key="`showa-${i}`"
             v-scroll="fade">
 
-            <history-box :data="showaHistory"/>
+            <history-box :history="showaHistory"/>
           </div>
         </div>
 
@@ -44,7 +44,7 @@
               :key="`heisei-${i}`"
               v-scroll="fade">
 
-              <history-box :data="heiseiHistory"/>
+              <history-box :history="heiseiHistory"/>
             </div>
           </transition>
         </div>

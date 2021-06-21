@@ -8,9 +8,9 @@
       <h4 class="provider-modal__name">{{ provider.name }}</h4>
     </template>
 
-    <template v-slot:label>
-      <div class="provider-modal__label" v-for="(label, i) in labels" :key="i">
-        <label-component :label="label"/>
+    <template v-slot:tag>
+      <div class="provider-modal__tag" v-for="(tag, i) in tags" :key="i">
+        <tag :tag="tag"/>
       </div>
     </template>
 
@@ -35,7 +35,7 @@
 // component import
 import UserModal from './UserModalFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
-import LabelComponent from '../label/LabelComponent';
+import Tag from '../tag/TagComponent';
 import TableComponent from '../table/TableComponent';
 import PrimaryButton from '../button/PrimaryButtonComponent';
 
@@ -43,7 +43,7 @@ export default {
   components: {
     UserModal,
     UserThumbnail,
-    LabelComponent,
+    Tag,
     TableComponent,
     PrimaryButton,
   },
@@ -54,11 +54,7 @@ export default {
       required: true,
     },
 
-    /**
-     * labelデータ
-     * @type {Array}
-     */
-    labels: {
+    tags: {
       type: Array,
       default: null,
     },
@@ -117,7 +113,7 @@ export default {
     line-height: 1;
   }
 
-  &__label {
+  &__tag {
     margin: interval(.5) interval(.5) 0 0;
 
     &:last-child {
