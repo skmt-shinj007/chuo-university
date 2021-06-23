@@ -63,9 +63,7 @@ export default {
   },
 
   props: {
-    /**
-     * 歴史のブロックデータ
-     */
+    // 歴史のオブジェクト
     history: {
       type: Object,
       default: null
@@ -75,6 +73,7 @@ export default {
   computed: {
     /**
      * TagComponentに渡す形に整形する
+     * @returns {Object} タグオブジェクト
      */
     termTag() {
       return this.formatTag('outline-orange', this.termTagText());
