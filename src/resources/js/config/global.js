@@ -67,5 +67,18 @@ export default {
       data['body'] = body;
       return data;
     },
+
+    /**
+     * TagComponentに渡すオブジェクトにフォーマットする。
+     * @param1 {string} tag color
+     * @param2 {string} tag text
+     * @return {Object} TagComponent渡すオブジェクト
+     */
+    formatTag(color, text) {
+      let data = {};
+      data.color = color;
+      data.text = text;
+      return data;
+    },
   },
 }

@@ -100,15 +100,15 @@
       <div class="member__player-slider">
         <slider :options="playerSliderOptions" :items="highestGradePlayer">
           <template v-slot:slideContents="player">
-            <player-card :player="player.item" @open="openPlayerCardModal"/>
+            <user-card :user="player.item" :showTagIds="showPlayerTagIds" @open="openCardModal"/>
           </template>
         </slider>
         <!-- modal -->
         <player-modal
-          v-if="playerCard.modal.isShow"
-          @close="closePlayerCardModal"
-          :player="playerCard.modal.el"
-          :labels="playerCard.modal.labels"
+          v-if="card.modal.isShow"
+          @close="closeCardModal"
+          :player="card.modal.el"
+          :tags="card.modal.tags"
         />
       </div>
 
@@ -140,7 +140,7 @@
 
 <script>
 // config
-import ViewData from '../config/data/viewdata';
+import { viewData } from '../config/data/viewdata';
 import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
 
@@ -154,7 +154,7 @@ import CaptionImage from '../components/modules/CaptionImageComponent';
 import LinkButton from '../components/modules/button/LinkButtonComponent';
 import ImagesList from '../components/contents/ImagesListComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
-import PlayerCard from '../components/modules/card/PlayerCardComponent';
+import UserCard from '../components/modules/card/UserCardComponent';
 import Slider from '../components/modules/slider/SliderComponent';
 import PlayerModal from '../components/modules/modal/PlayerModalComponent';
 
@@ -169,7 +169,7 @@ export default {
     LinkButton,
     ImagesList,
     ScrollTopButton,
-    PlayerCard,
+    UserCard,
     Slider,
     PlayerModal,
   },
@@ -178,14 +178,14 @@ export default {
 
   data() {
     return {
-      viewdata: ViewData,
       mock: Mock,
+      viewdata: viewData,
       mainVisualImages: [],
       dormitoryImages: [],
       images: [],
 
-      // player card section data
-      playerCard: {
+      // user card section data
+      card: {
         modal: {
           isShow: false,
           el: null,
@@ -227,8 +227,16 @@ export default {
      * @return swiper option
      */
     playerSliderOptions() {
-      return this.$data.viewdata.playerSliderOptions;
+      return viewData.playerSliderOptions;
     },
+
+    /**
+     * カードに表示するタグのIDを返す。
+     * @return {Array} ids
+     */
+    showPlayerTagIds() {
+      return Object.values(viewData.playerCardDisplayTagId);
+    }
   },
 
   methods: {
@@ -244,14 +252,14 @@ export default {
     /**
      * モーダル開閉処理。
      */
-    openPlayerCardModal(el, labels) {
-      this.playerCard.modal.isShow = true;
-      this.playerCard.modal.el = el;
-      this.playerCard.modal.labels = labels;
+    openCardModal(el, tags) {
+      this.card.modal.isShow = true;
+      this.card.modal.el = el;
+      this.card.modal.tags = tags;
       document.body.classList.add("modal-open");
     },
-    closePlayerCardModal() {
-      this.playerCard.modal.isShow = false;
+    closeCardModal() {
+      this.card.modal.isShow = false;
       document.body.classList.remove("modal-open");
     },
   },

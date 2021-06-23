@@ -4,9 +4,9 @@
       <user-thumbnail :image="staff.img"/>
     </template>
 
-    <template v-slot:label>
-      <div class="staff-modal__label" v-for="(label, i) in labels" :key="i">
-        <label-component :label="label"/>
+    <template v-slot:tag>
+      <div class="staff-modal__tag" v-for="(tag, i) in tags" :key="i">
+        <tag :tag="tag"/>
       </div>
     </template>
 
@@ -22,14 +22,14 @@
 // component import
 import UserModal from './UserModalFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
-import LabelComponent from '../label/LabelComponent';
+import Tag from '../tag/TagComponent';
 import TableComponent from '../table/TableComponent';
 
 export default {
   components: {
     UserModal,
     UserThumbnail,
-    LabelComponent,
+    Tag,
     TableComponent,
   },
 
@@ -39,11 +39,7 @@ export default {
       required: true,
     },
 
-    /**
-     * labelデータ
-     * @type {Array}
-     */
-    labels: {
+    tags: {
       type: Array,
       default: null,
     },
@@ -89,7 +85,7 @@ export default {
 
 <style lang="scss" scoped>
 .staff-modal {
-  &__label {
+  &__tag {
     margin: interval(.5) interval(.5) 0 0;
 
     &:last-child {

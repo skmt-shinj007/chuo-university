@@ -9,9 +9,9 @@
       <span class="player-ticket__name">{{ player.name_en }}</span>
     </template>
 
-    <template v-slot:label>
-      <div class="player-ticket__label" v-for="(label, i) in labels" :key="i">
-        <label-component :label="label"/>
+    <template v-slot:tag>
+      <div class="player-ticket__tag" v-for="(tag, i) in tags" :key="i">
+        <tag :tag="tag"/>
       </div>
     </template>
 
@@ -20,7 +20,7 @@
         v-if="showModal"
         @close="closeModal"
         :player="player"
-        :labels="labels"
+        :tags="tags"
       />
     </template>
   </user-ticket>
@@ -30,13 +30,15 @@
 // component import
 import UserTicket from './UserTicketFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
-import LabelComponent from '../label/LabelComponent';
+import Tag from '../tag/TagComponent';
 import PlayerModal from '../modal/PlayerModalComponent';
+
+import { viewData } from '../../../config/data/viewdata';
 
 export default {
   components: {
     UserTicket,
-    LabelComponent,
+    Tag,
     UserThumbnail,
     PlayerModal,
   },
@@ -49,11 +51,7 @@ export default {
        */
       showModal: false,
 
-      /**
-       * LabelComponentに渡すデータ
-       * @type {Array}
-       */
-      labels: [],
+      tags: [],
     }
   },
 
@@ -69,18 +67,18 @@ export default {
 
     // ポジションラベルのデータを作成。
     if (player.position) {
-      this.labels.push(this.formatToLabel(player.position.color, player.position.name_ja));
+      this.tags.push(this.formatTag(player.position.color, player.position.name_ja));
     }
 
     /**
-     * Labelに表示するタグを絞り込み
+     * Tagに表示するタグを絞り込み
      * [主将, 主務, 副主将, 会計, 寮長]
      */
-    const labelTagId = [2, 3, 4, 5, 6];
-    labelTagId.forEach(id => {
+    const displayTags = Object.values(viewData.playerCardDisplayTagId);
+    displayTags.forEach(id => {
       let tag = this.pickUpTag(id);
       if (tag) {
-        this.labels.push(this.formatToLabel('darkblue', tag.name_ja));
+        this.tags.push(this.formatTag('darkblue', tag.name_ja));
       }
     })
   },
@@ -96,19 +94,6 @@ export default {
     closeModal() {
       this.showModal = false;
       document.body.classList.remove("modal-open");
-    },
-
-    /**
-     * ラベルコンポーネントに渡すオブジェクトを生成する。
-     * @param1 {string} tag color
-     * @param2 {string} tag text
-     * @return {Object} ラベルコンポーネントに渡すオブジェクト
-     */
-    formatToLabel(color, text) {
-      let data = {};
-      data.color = color;
-      data.text = text;
-      return data;
     },
 
     /**
@@ -136,7 +121,7 @@ export default {
     }
   }
 
-  &__label {
+  &__tag {
     margin: interval(.5) interval(.5) 0 0;
 
     &:last-child {

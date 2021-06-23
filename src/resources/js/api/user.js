@@ -3,7 +3,7 @@
  * ユーザーデータ取得APIの処理を記述します。
  */
 import index from './index';
-import viewData from '../config/data/viewData';
+import { viewData } from '../config/data/viewData';
 
 export default {
   /**

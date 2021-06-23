@@ -1,5 +1,4 @@
 import index from './index';
-import viewData from '../config/data/viewData';
 
 export default {
   /**

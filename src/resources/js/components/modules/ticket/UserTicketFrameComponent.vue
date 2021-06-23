@@ -12,9 +12,9 @@
           <slot name="name"/>
         </div>
 
-        <div class="user-ticket__label-group">
-          <!-- ラベル：LabelComponentを想定 -->
-          <slot name="label"/>
+        <div class="user-ticket__tag-group">
+          <!-- TagComponentを想定 -->
+          <slot name="tag"/>
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
     }
   }
 
-  &__label-group {
+  &__tag-group {
     @include flex(row wrap, flex-start, center);
   }
 }

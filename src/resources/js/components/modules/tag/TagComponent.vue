@@ -1,9 +1,9 @@
 <template>
   <div class="tag">
-    <div class="tag__color" :class="colorClass">
-      <slot>
-        <span class="tag__content" :class="[sizing, { 'tag__content--responsive': responsive }]">
-          {{ content }}
+    <div class="tag__wrap" :class="colorModifier">
+      <slot name="tagText">
+        <span class="tag__text" :class="{'tag__text-en': isAlphanumeric(tag.text)}">
+          {{ tag.text }}
         </span>
       </slot>
     </div>
@@ -13,89 +13,54 @@
 <script>
 export default {
   props: {
-    // タグサイズ
-    size: {
-      type: String,
-      default: null,
-    },
-
-    // タグの色
-    color: {
-      type: String,
-      default: '',
-    },
-
-    // レスポンシブのフラグ
-    responsive: {
-      type: Boolean,
-      default: false
-    },
-
-    // タグの内容（文字列）
-    content: {
-      type: String,
-      default: 'タグ',
-    },
+    tag: {
+      type: Object,
+      required: true,
+    }
   },
+
   computed: {
     /**
-     * [色によってクラスをつける]
-     * @return { string } クラス名が文字列として返る
+     * カラーバリエーションクラス
+     * @return { string } class名
      */
-    colorClass() {
-      return (this.color) ? `tag__color--${this.color}` : null;
+    colorModifier() {
+      return (this.tag.color) ? `tag__wrap--${this.tag.color}` : null;
     },
+  },
 
+  methods: {
     /**
-     * [サイズクラスをつける]
-     * @return { string } クラス名が文字列として返る
+     * 半角英数字かをチェックする。
+     * @param {String} チェック対象の文字列
+     * @return {Boolean} 半角英数字ならtrue。そ以外ならfalse。
      */
-    sizing() {
-      return (this.size) ? `tag__content--${this.size}` : null;
-    },
-  }
+    isAlphanumeric(str) {
+      return /^[A-Za-z0-9]*$/.test(str);
+    }
+  },
 }
+
+// [props example]
+// tag: {
+//   color: 'String',
+//   text: 'String',
+// }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .tag {
   color: color(white);
-  letter-spacing: 1.8px;
-  line-height: 1.9;
 
-  &__content {
-    font-size: font(10);
-
-    // レスポンシブがtrueの時
-    &--responsive {
-
-      @include mq(sm) {
-        font-size: font(12);
-        line-height: 2;
-      }
-
-      @include mq(md) {
-        font-size: font(16);
-      }
-    }
-
-    // サイズ スタイル
-    &--md {
-      font-size: font(14);
-      line-height: 2;
-    }
-
-    &--lg {
-      font-size: font(16);
-      line-height: 2;
-    }
-  }
-
-  &__color {
+  &__wrap {
     padding: 0 interval(1.5);
     border-radius: radius(normal);
-    background-color: color(darkblue);
+    background-color: color(light);
     @include flex(row wrap, center, center);
+
+    &--darkblue {
+      background-color: color(darkblue);
+    }
 
     &--lightgreen {
       background-color: color(lightGreen);
@@ -113,6 +78,20 @@ export default {
 
     &--red {
       background-color: color(japanRed);
+    }
+
+    &--twitter {
+      background-color: color(twitter);
+    }
+  }
+
+  &__text {
+    font-size: font(10);
+    letter-spacing: 1.8px;
+    line-height: 2;
+
+    &-en {
+      letter-spacing: 1px;
     }
   }
 }
