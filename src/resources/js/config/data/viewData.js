@@ -387,5 +387,9 @@ export const viewData = {
     headCoach: 8,
     director: 9,
     coach: 10,
+  },
+
+  activeAlumniDisplayId: {
+    headCoach: 8,
   }
 }

@@ -31,9 +31,16 @@ export default {
   },
 
   props: {
+    // ユーザーオブジェクト
     user: {
       type: Object,
       default: null,
+    },
+
+    // カードに表示するタグのID
+    showTagIds: {
+      type: Array,
+      default: []
     }
   },
 
@@ -56,11 +63,9 @@ export default {
     }
 
     /**
-     * カードに表示するタグを絞り込み
-     * [主将, 主務, 副主将, 会計, 寮長]
+     * カードに表示するタグをidで絞り込む
      */
-    let displayTags = Object.values(viewData.playerCardDisplayTagId);
-    displayTags.forEach(id => {
+    this.showTagIds.forEach(id => {
       let tag = this.pickUpTag(id);
       if (tag) {
         this.tags.push(this.formatTag('darkblue', tag.name_ja));
@@ -69,9 +74,7 @@ export default {
   },
 
   methods: {
-    /**
-     * [モーダルを開ける]
-     */
+    // モーダルを開ける
     openModal() {
       this.$emit('open', this.user, this.tags);
     },
@@ -98,7 +101,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .user-card {
   position: relative;
   cursor: pointer;

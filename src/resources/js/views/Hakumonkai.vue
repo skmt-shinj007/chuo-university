@@ -19,7 +19,7 @@
     <div class="hakumonkai__player-slider">
       <slider :options="playerSliderOptions" :items="activeAlumni" color="darkblue">
         <template v-slot:slideContents="player">
-          <user-card :user="player.item" @open="openCardModal"/>
+          <user-card :user="player.item" :showTagIds="showActiveAlumniTagIds" @open="openCardModal"/>
         </template>
       </slider>
       <!-- modal -->
@@ -126,6 +126,14 @@ export default {
     playerSliderOptions() {
       return viewData.playerSliderOptions;
     },
+
+    /**
+     * カードに表示するタグのIDを返す。
+     * @return {Array} ids
+     */
+    showActiveAlumniTagIds() {
+      return Object.values(viewData.activeAlumniDisplayId);
+    }
   },
 
   methods: {

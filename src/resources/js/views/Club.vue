@@ -100,7 +100,7 @@
       <div class="member__player-slider">
         <slider :options="playerSliderOptions" :items="highestGradePlayer">
           <template v-slot:slideContents="player">
-            <user-card :user="player.item" @open="openCardModal"/>
+            <user-card :user="player.item" :showTagIds="showPlayerTagIds" @open="openCardModal"/>
           </template>
         </slider>
         <!-- modal -->
@@ -229,6 +229,14 @@ export default {
     playerSliderOptions() {
       return viewData.playerSliderOptions;
     },
+
+    /**
+     * カードに表示するタグのIDを返す。
+     * @return {Array} ids
+     */
+    showPlayerTagIds() {
+      return Object.values(viewData.playerCardDisplayTagId);
+    }
   },
 
   methods: {
