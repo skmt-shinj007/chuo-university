@@ -1,6 +1,6 @@
 import index from './index';
 
-export default {
+export const twitterApi = {
   /**
    * provider取得
    * @param {function} setCallback 任意のオブジェクトに代入する処理
