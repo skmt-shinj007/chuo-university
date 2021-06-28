@@ -5,7 +5,7 @@
 import index from './index';
 import { viewData } from '../config/data/viewData';
 
-export default {
+export const userApi =  {
   /**
    * 選手取得
    * @param {function} setCallback 任意のオブジェクトに代入する処理
