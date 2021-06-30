@@ -33,7 +33,7 @@ import UserThumbnail from '../UserThumbnailComponent';
 import Tag from '../tag/TagComponent';
 import StaffModal from '../modal/StaffModalComponent';
 
-import { viewData } from '../../../config/data/viewdata';
+import { viewData } from '../../../config/data/viewData';
 
 export default {
   components: {

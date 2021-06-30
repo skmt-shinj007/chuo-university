@@ -140,7 +140,7 @@
 
 <script>
 // config
-import { viewData } from '../config/data/viewdata';
+import { viewData } from '../config/data/viewData';
 import Mock from '../config/data/mock.json';
 import Animation from '../config/animation';
 

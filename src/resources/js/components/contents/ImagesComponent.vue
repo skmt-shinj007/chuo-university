@@ -38,7 +38,7 @@ import ViewAllButton from '../modules/button/ViewAllButtonComponent';
 import PullDownTable from '../modules/table/PulldownTableComponent';
 import ImageModal from '../modules/modal/ImageModalComponent';
 
-import { viewData } from '../../config/data/viewdata';
+import { viewData } from '../../config/data/viewData';
 
 export default {
   components: {

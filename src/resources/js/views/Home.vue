@@ -47,7 +47,7 @@
 
 <script>
 import Animation from '../config/animation';
-import { viewData } from '../config/data/viewdata';
+import { viewData } from '../config/data/viewData';
 
 // component import
 import MainVisual from '../components/contents/MainVisualComponent';
