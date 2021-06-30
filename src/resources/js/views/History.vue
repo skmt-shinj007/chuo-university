@@ -67,15 +67,7 @@
   </section>
 
   <div class="background-darkblue">
-    <section class="history__winner">
-      <contents-title :title="messages.SectionTitles.Champions" color="white"/>
-
-      <div class="winner__card-group">
-        <div class="winner__card" v-for="(champion, n) in viewdata.champions" :key="n">
-          <champions-card :item="champion"/>
-        </div>
-      </div>
-    </section>
+    <champions/>
   </div>
 
   <div class="history__scroll-top">
@@ -88,7 +80,7 @@
 <script>
 // data
 import HistoryData from '../config/data/historyData.json';
-import { viewData } from '../config/data/viewdata';
+import { viewData } from '../config/data/viewData';
 
 /**
  * mixin
@@ -98,10 +90,10 @@ import Scroll from '../config/scroll';
 import Animation from '../config/animation';
 
 // import components
+import Champions from '../components/contents/Champions';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import HistoryBox from '../components/contents/HistoryBoxComponent';
 import TableComponent from '../components/modules/table/TableComponent';
-import ChampionsCard from '../components/modules/card/ChampionsCardComponent';
 import ScrollTopButton from '../components/modules/button/ScrollTopButtonComponent';
 
 export default {
@@ -111,8 +103,8 @@ export default {
     ContentsTitle,
     HistoryBox,
     TableComponent,
-    ChampionsCard,
     ScrollTopButton,
+    Champions,
   },
 
   data() {
@@ -319,34 +311,6 @@ export default {
   &__unit {
     font-size: font(14);
     margin-left: interval(1);
-  }
-}
-
-.winner {
-  &__card-group {
-    @include mq(sm) {
-      @include flex(row wrap, flex-start, center);
-      gap: interval(1);
-    }
-  }
-
-  &__card {
-    $margin: interval(1);
-    width: interval(30);
-    margin: 0 auto $margin auto;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    @include mq(sm) {
-      width: calc((100% / 2) - #{$margin});
-      margin: 0;
-    }
-
-    @include mq(md) {
-      width: calc((100% / 4) - #{$margin});
-    }
   }
 }
 </style>

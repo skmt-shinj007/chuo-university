@@ -391,5 +391,78 @@ export const viewData = {
 
   activeAlumniDisplayId: {
     headCoach: 8,
+  },
+
+  swiperOptions: {
+    champions: {
+      autoHeight: true,
+      spaceBetween: 16,
+      loop: true,
+      autoplay: {
+        delay: 2500,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        type: 'bullets',
+      },
+      breakpoints: {
+        500: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          speed: 1000,
+        },
+        860: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          speed: 1500,
+        },
+        1440: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          speed: 2000,
+        }
+      },
+    }
+  },
+
+  /**
+   * swiperパーツのUIオプション
+   * ! default内に指定しているプロパティは必須
+   */
+  sliderPartsOption: {
+    default: {
+      buttonPosition: 'middle',
+      color: {
+        pagination: 'white',
+        navigation: 'white',
+      },
+      showPagination: true,
+      showNavigation: true,
+    },
+
+    championsSection: {
+      buttonPosition: 'bottom',
+      color: {
+        pagination: 'white',
+        navigation: 'white',
+      },
+      showPagination: true,
+      showNavigation: false,
+    },
+
+    activeAlumniCard: {
+      buttonPosition: 'middle',
+      color: {
+        pagination: 'darkblue',
+        navigation: 'darkblue',
+      },
+      showPagination: true,
+      showNavigation: true,
+    }
   }
 }
