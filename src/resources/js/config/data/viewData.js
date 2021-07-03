@@ -411,19 +411,17 @@ export const viewData = {
       slidesPerView: 1.5,
       loop: true,
       freeMode: true,
+      speed: 1500,
       autoplay: { delay: 2500 },
       breakpoints: {
         560: {
           slidesPerView: 2.5,
-          speed: 1000,
         },
         860: {
           slidesPerView: 3.5,
-          speed: 1500,
         },
         1025: {
           slidesPerView: 4.5,
-          speed: 2000,
         }
       },
     },
