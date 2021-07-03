@@ -180,6 +180,10 @@ export default {
       left: interval(.5);
     }
 
+    &-disabled {
+      opacity: 0;
+    }
+
     // navigation modifier
     &--bottom {
       top: calc(100% + #{interval(4)});
