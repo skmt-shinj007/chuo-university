@@ -2,14 +2,16 @@
   <section class="champions">
     <contents-title :title="messages.SectionTitles.Champions" color="white"/>
 
-    <div class="champions__card-sliders">
+    <div class="champions__card-slider">
       <slider
         :options="viewdata.swiperOptions.champions"
         :items="viewdata.champions"
-        :viewOptions="viewdata.sliderPartsOption.championsSection"
+        :viewOptions="viewdata.sliderPartsOption.allPartsHidden"
       >
         <template v-slot:slideContents="slide">
-          <champions-card :item="slide.item"/>
+          <div class="champions__card">
+            <champions-card :item="slide.item"/>
+          </div>
         </template>
       </slider>
     </div>
@@ -39,8 +41,8 @@ export default {
 
 <style lang='scss' scoped>
 .champions {
-  &__card-sliders {
-
+  &__card-slider {
+    @include full-width;
   }
 }
 </style>

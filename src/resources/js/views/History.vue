@@ -66,7 +66,7 @@
     </table-component>
   </section>
 
-  <div class="background-darkblue">
+  <div class="history__champions">
     <champions/>
   </div>
 
@@ -90,7 +90,7 @@ import Scroll from '../config/scroll';
 import Animation from '../config/animation';
 
 // import components
-import Champions from '../components/contents/Champions';
+import Champions from '../components/contents/ChampionsComponent';
 import ContentsTitle from '../components/modules/ContentsTitleComponent';
 import HistoryBox from '../components/contents/HistoryBoxComponent';
 import TableComponent from '../components/modules/table/TableComponent';
@@ -225,8 +225,9 @@ export default {
     margin-bottom: interval(10);
   }
 
-  &__winner {
-    margin: 0 auto;
+  &__champions {
+    @include gradient(color(lightDarkblue), color(deepDarkblue), horizontal);
+    padding: interval(5) 0;
   }
 
   &__scroll-top {

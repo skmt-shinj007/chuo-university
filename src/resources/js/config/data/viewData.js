@@ -347,9 +347,7 @@ export const viewData = {
     speed: 1000,
     autoHeight: true,
     spaceBetween: 16,
-    autoplay: {
-      delay: 2500,
-    },
+    autoplay: { delay: 2500 },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -393,76 +391,87 @@ export const viewData = {
     headCoach: 8,
   },
 
+  requireSwiperOption: {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+    }
+  },
+
   swiperOptions: {
     champions: {
       autoHeight: true,
+      centeredSlides: true,
       spaceBetween: 16,
+      slidesPerView: 1.5,
       loop: true,
-      autoplay: {
-        delay: 2500,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        type: 'bullets',
-      },
+      freeMode: true,
+      autoplay: { delay: 2500 },
       breakpoints: {
-        500: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
+        560: {
+          slidesPerView: 2.5,
           speed: 1000,
         },
         860: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
+          slidesPerView: 3.5,
           speed: 1500,
         },
-        1440: {
-          slidesPerView: 4,
-          slidesPerGroup: 4,
+        1025: {
+          slidesPerView: 4.5,
           speed: 2000,
         }
       },
-    }
+    },
+
+    imageSlider: {
+      autoHeight: true,
+      spaceBetween: 16,
+      loop: true,
+      autoplay: { delay: 2500 },
+      effect: "fade",
+    },
   },
 
   /**
    * swiperパーツのUIオプション
-   * ! default内に指定しているプロパティは必須
    */
   sliderPartsOption: {
     default: {
       buttonPosition: 'middle',
-      color: {
-        pagination: 'white',
-        navigation: 'white',
-      },
-      showPagination: true,
-      showNavigation: true,
+      color: { pagination: 'white', navigation: 'white' },
+      showPagination: true, // require
+      showNavigation: true, // require
+    },
+
+    allPartsHidden: {
+      showPagination: false,
+      showNavigation: false,
     },
 
     championsSection: {
       buttonPosition: 'bottom',
-      color: {
-        pagination: 'white',
-        navigation: 'white',
-      },
+      color: { pagination: 'white', navigation: 'white' },
       showPagination: true,
       showNavigation: false,
     },
 
     activeAlumniCard: {
       buttonPosition: 'middle',
-      color: {
-        pagination: 'darkblue',
-        navigation: 'darkblue',
-      },
+      color: { pagination: 'darkblue', navigation: 'darkblue' },
       showPagination: true,
       showNavigation: true,
+    },
+
+    onlyPaginationDarkblue: {
+      buttonPosition: 'middle',
+      color: { pagination: 'darkblue', navigation: 'darkblue' },
+      showPagination: true,
+      showNavigation: false,
     }
   }
 }

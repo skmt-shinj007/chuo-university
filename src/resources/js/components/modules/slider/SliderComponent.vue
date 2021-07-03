@@ -1,22 +1,22 @@
 <template>
   <div class="slider">
-    <swiper :options="options">
+    <swiper :options="swiperOptions" ref="swiper">
       <swiper-slide v-for="(item, n) in items" :key="n">
         <slot name="slideContents" :item="item">
           <!-- スライド要素 -->
         </slot>
       </swiper-slide>
+
+      <!-- pagination -->
+      <template v-if="viewOptions.showPagination">
+        <div class="swiper-pagination" slot="pagination" :class="pagination"/>
+      </template>
     </swiper>
 
     <!-- navigation -->
     <template v-if="viewOptions.showNavigation">
       <div class="swiper-button swiper-button-prev" slot="button-prev" :class="navigation"/>
       <div class="swiper-button swiper-button-next" slot="button-next" :class="navigation"/>
-    </template>
-
-    <!-- pagination -->
-    <template v-if="viewOptions.showPagination">
-      <div class="swiper-pagination" slot="pagination" :class="pagination"/>
     </template>
   </div>
 </template>
@@ -30,6 +30,7 @@ export default {
     options: {
       type: Object,
       default: null,
+      require: true,
     },
 
     /**
@@ -48,6 +49,12 @@ export default {
       type: Array,
       require: true,
     },
+
+    // item width
+    slideItemWidth: {
+      type: Object,
+      default: null,
+    }
   },
 
   computed: {
@@ -57,11 +64,11 @@ export default {
      * @return {String} 'class1 class2'
      */
     pagination() {
-      const delimiter = ' ';
+      if (!this.viewOptions.color) return;
       let classes = [
         `swiper-pagination--${this.viewOptions.color.pagination}`,
       ];
-      return classes.join(delimiter);
+      return classes.join(' ');
     },
 
     /**
@@ -70,13 +77,21 @@ export default {
      * @return {String} 'class1 class2'
      */
     navigation() {
-      const delimiter = ' ';
+      if (!this.viewOptions.color && !this.viewOptions.buttonPosition) return;
       let classes = [
         `swiper-button--${this.viewOptions.buttonPosition}`,
         `swiper-button--${this.viewOptions.color.navigation}`
       ];
-      return classes.join(delimiter);
-    }
+      return classes.join(' ');
+    },
+
+    /**
+     * 必須オプションと任意オプションを結合させたオブジェクトを返す。
+     * @return {Object} options
+     */
+    swiperOptions() {
+      return {...viewData.requireSwiperOption, ...this.options};
+    },
   },
 }
 </script>
@@ -85,20 +100,29 @@ export default {
 .slider {
   position: relative;
   height: auto;
+  padding-bottom: interval(3);
+  overflow: hidden;
 }
 
 .swiper {
   &-container {
-    padding-bottom: interval(3);
+    overflow: visible;
+
+    // swiper css の上書き
+    &-horizontal > .swiper-pagination-bullets {
+      bottom: - interval(3);
+      left: 50%;
+    }
   }
 
   &-pagination {
     width: 100%;
+    bottom: - interval(3);
     left: 50%;
     transform: translate3d(-50%, 0, 0);
 
     &-bullets {
-      // ページネーションの丸は、スロットで読まれるためディープセレクタにする
+      // ページネーションのHTMLはスロット配信のためディープセレクタにする
       &::v-deep .swiper-pagination-bullet {
         opacity: 1;
         position: relative;
