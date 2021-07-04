@@ -1,5 +1,23 @@
 {
-  "ImageApiResponse": [
+  "mainVisualImages": [
+    {
+      "id": 1,
+      "img": { "src": "player41.jpg", "alt": "altテキストを入れます" },
+      "caption": "感謝と謙虚な心を忘れずに、日本一"
+    },
+    {
+      "id": 2,
+      "img": { "src": "training01.jpg", "alt": "altテキストを入れます" },
+      "caption": "テキストは AMAZON EC2 を使用します"
+    },
+    {
+      "id": 3,
+      "img": { "src": "player43.jpg", "alt": "altテキストを入れます" },
+      "caption": "キャプションが入ります"
+    }
+  ],
+
+  "imageApiResponse": [
     {
       "id": 1,
       "src": "player01.jpg",

@@ -433,6 +433,25 @@ export const viewData = {
       autoplay: { delay: 2500 },
       effect: "fade",
     },
+
+    mainVisual: {
+      loop: true,
+      speed: 400,
+      effect: "fade",
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+      },
+      on: {
+        // cssアニメーションに合わせる
+        // slideChange() {
+        //   if (this.realIndex > 0) {
+        //     this.params.autoplay.delay = 4100;
+        //   }
+        // },
+      },
+      allowTouchMove: false,
+    }
   },
 
   /**

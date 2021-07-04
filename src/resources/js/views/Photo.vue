@@ -73,7 +73,7 @@ export default {
   },
 
   created() {
-    this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
+    this.$data.mock.imageApiResponse.forEach(element => this.images.push(element));
   },
 
   methods: {

@@ -2,7 +2,7 @@
 <div class="club">
 
   <div class="club__mainVisualSlider">
-    <main-visual-slider :images="mainVisualImages"/>
+    <main-visual-slider :images="mock.mainVisualImages"/>
   </div>
 
   <section class="club__concept" v-fade:[dir.up]>
@@ -125,7 +125,7 @@
 
   <section class="club__photo fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.Photo"/>
-    <images-list :images="images"/>
+    <images-list :images="mock.imageApiResponse"/>
 
     <div class="photo__button">
       <link-button :link="messages.Links.Photo"/>
@@ -180,9 +180,6 @@ export default {
     return {
       mock: Mock,
       viewdata: viewData,
-      mainVisualImages: [],
-      dormitoryImages: [],
-      images: [],
 
       // user card section data
       card: {
@@ -192,12 +189,6 @@ export default {
         },
       }
     }
-  },
-
-  created() {
-    // TODO:画像を格納するクラウドストレージからApiで取得する
-    mainVisualApiResponse.forEach(element => this.mainVisualImages.push(element));
-    this.$data.mock.ImageApiResponse.forEach(element => this.images.push(element));
   },
 
   computed: {
@@ -264,30 +255,6 @@ export default {
     },
   },
 }
-
-/**
- * test api response : メインビジュアル画像
- */
-const mainVisualApiResponse = [
-  {
-    id      : 1,
-    src     : 'player41.jpg',
-    alt     : 'altテキストを入れます',
-    caption : '感謝と謙虚な心を忘れずに、日本一。',
-  },
-  {
-    id      : 2,
-    src     : 'training01.jpg',
-    alt     : 'altテキストを入れます',
-    caption : 'テキストは AMAZON EC2 を使用します。',
-  },
-  {
-    id      : 3,
-    src     : 'player43.jpg',
-    alt     : 'altテキストを入れます',
-    caption : 'テキストは AMAZON EC2 を使用します。',
-  },
-];
 </script>
 
 <style lang="scss" scoped>

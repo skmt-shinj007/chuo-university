@@ -49,12 +49,6 @@ export default {
       type: Array,
       require: true,
     },
-
-    // item width
-    slideItemWidth: {
-      type: Object,
-      default: null,
-    }
   },
 
   computed: {
