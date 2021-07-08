@@ -343,36 +343,6 @@ export const viewData = {
     ]
   },
 
-  playerSliderOptions: {
-    speed: 1000,
-    autoHeight: true,
-    spaceBetween: 16,
-    autoplay: { delay: 2500 },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      type: 'bullets',
-    },
-    breakpoints: {
-      500: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-      },
-      860: {
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-      },
-      1440: {
-        slidesPerView: 5,
-        slidesPerGroup: 1,
-      }
-    },
-  },
-
   playerCardDisplayTagId: {
     captain: 2,
     competent: 3,
@@ -391,11 +361,11 @@ export const viewData = {
     headCoach: 8,
   },
 
+  /**
+   * 必須のswiperオプション
+   */
   requireSwiperOption: {
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -403,6 +373,9 @@ export const viewData = {
     }
   },
 
+  /**
+   * swiperオプションを定義。
+   */
   swiperOptions: {
     champions: {
       autoHeight: true,
@@ -414,15 +387,9 @@ export const viewData = {
       speed: 1500,
       autoplay: { delay: 2500 },
       breakpoints: {
-        560: {
-          slidesPerView: 2.5,
-        },
-        860: {
-          slidesPerView: 3.5,
-        },
-        1025: {
-          slidesPerView: 4.5,
-        }
+        560: { slidesPerView: 2.5 },
+        860: { slidesPerView: 3.5 },
+        1025: { slidesPerView: 4.5 }
       },
     },
 
@@ -437,11 +404,20 @@ export const viewData = {
     mainVisual: {
       speed: 400,
       effect: "fade",
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-      },
+      autoplay: { delay: 4500, disableOnInteraction: false },
       allowTouchMove: false,
+    },
+
+    userCardSlider: {
+      speed: 1000,
+      autoHeight: true,
+      spaceBetween: 16,
+      autoplay: { delay: 2500 },
+      breakpoints: {
+        500: { slidesPerView: 2, slidesPerGroup: 2 },
+        860: { slidesPerView: 3, slidesPerGroup: 1 },
+        1440: { slidesPerView: 5, slidesPerGroup: 1 }
+      },
     }
   },
 

@@ -128,7 +128,7 @@ export default {
      * @return swiper option
      */
     playerSliderOptions() {
-      return viewData.playerSliderOptions;
+      return viewData.swiperOptions.userCardSlider;
     },
 
     /**

@@ -79,7 +79,7 @@ export default {
      */
     currentIndex() {
       return (i) => {
-        return `0${i}`;
+        return `0${i + 1}`;
       };
     },
 
@@ -89,7 +89,7 @@ export default {
      */
     nextIndex() {
       return (i) => {
-        const next = i + 1;
+        const next = (i + 1) + 1;
         const max = this.images.length;
         return (max >= next) ? `0${next}` : `01`;
       }
