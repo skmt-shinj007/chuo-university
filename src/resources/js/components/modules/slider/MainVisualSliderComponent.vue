@@ -1,79 +1,125 @@
 <template>
-<div class="main-visual-slider">
-    <swiper ref="mainVisualSwiper" :options="params">
-      <swiper-slide v-for="(image,i) in images" :key="i">
-        <img class="main-visual-slider__image" :src="`/image/${image.src}`" :alt="image.alt">
-
-        <div class="main-visual-slider__box">
-          <span class="main-visual-slider__text">{{ image.caption }}</span>
-
-          <div class="main-visual-slider__pagination">
-            <span class="main-visual-slider__num">{{ convert(i) }}</span>
-            <div class="main-visual-slider__bar"/>
-            <span class="main-visual-slider__num">{{ next(i + 1) }}</span>
-          </div>
+  <div class="main-visual-slider">
+    <swiper
+      :options="options"
+      ref="swiper"
+      @slideChange="getRealIndex"
+      @slideChangeTransitionStart="resetProgress"
+      @slideChangeTransitionEnd="startProgress"
+    >
+      <!-- スライド -->
+      <swiper-slide v-for="image in images" :key="image.id">
+        <img class="main-visual-slider__image" :src="`/image/${image.img.src}`" :alt="image.img.alt">
+        <div class="main-visual-slider__contents">
+          <template v-if="image.caption">
+            <span class="main-visual-slider__text">{{ image.caption }}</span>
+          </template>
         </div>
-
       </swiper-slide>
     </swiper>
+
+    <!-- プログレスバー -->
+    <div class="main-visual-slider__progress-bar">
+      <span class="main-visual-slider__num">{{ currentIndex(realIndex) }}</span>
+      <div class="main-visual-slider__gauge">
+        <span class="main-visual-slider__gauge-active" ref="swiper-progress-bar"/>
+      </div>
+      <span class="main-visual-slider__num">{{ nextIndex(realIndex) }}</span>
+    </div>
   </div>
 </template>
 
 <script>
+import { viewData } from '../../../config/data/viewData';
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css'
+
 export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+
   data() {
     return {
+      viewdata: viewData,
+
       /**
-       * images配列の最大個数を格納
+       * デフォルトのスライドインデックス
+       * @type {Number}
        */
-      max: [],
+      realIndex: 0,
     }
   },
 
   props: {
-    images: Array,
-  },
+    // slide images
+    images: {
+      type: Array,
+      require: true
+    },
 
-  mounted() {
-    this.max = this.images.length;
+    /**
+     * swiper options
+     * loopをtrueにするとクローンされたスライドに到達した時にスライドが止まるので注意。
+     */
+    options: {
+      type: Object,
+      default: () => {
+        return viewData.swiperOptions.mainVisual;
+      }
+    }
   },
 
   computed: {
-    params() {
-      return {
-        loop: true,
-        speed: 400,
-        effect: "fade",
-        autoplay: {
-          delay: 4500,
-          disableOnInteraction: false,
-        },
-        on: {
-          // cssアニメーションに合わせる
-          // slideChange() {
-          //   if (this.realIndex > 0) {
-          //     this.params.autoplay.delay = 4100;
-          //   }
-          // },
-        },
-        allowTouchMove: false,
-      }
-    },
-
-    convert() {
+    /**
+     * 現在表示されているスライドが何枚目かを返す。
+     * @return {String} 現在の表示されているスライド番号 "01"
+     */
+    currentIndex() {
       return (i) => {
-        let index = i + 1;
-        return ("00" + index).slice(-2);
+        return `0${i + 1}`;
       };
     },
 
-    next() {
+    /**
+     * 次に表示されるスライド番号
+     * @return {String} 次に表示されるスライド番号 "01"
+     */
+    nextIndex() {
       return (i) => {
-        let nextIndex = i + 1;
-        return (this.max >= nextIndex) ? ("00" + nextIndex).slice(-2) : ("00" + 1).slice(-2);
+        const next = (i + 1) + 1;
+        const max = this.images.length;
+        return (max >= next) ? `0${next}` : `01`;
       }
     },
+  },
 
+  mounted() {
+    // スライドの初期表示（1枚目）でプログレスバーをアニメーションさせる
+    this.startProgress();
+  },
+
+  methods: {
+    // プログレスバーをリセット
+    resetProgress() {
+      const bar = this.$refs['swiper-progress-bar'];
+      bar.style.transitionDuration = '0s';
+      bar.style.transform = 'scaleX(0)';
+    },
+
+    // プログレスバーのアニメーションを開始
+    startProgress() {
+      const bar = this.$refs['swiper-progress-bar'];
+      bar.style.transitionDuration = '4500ms';
+      bar.style.transform = 'scaleX(1)';
+    },
+
+    // 現在のアクティブなインデックスを取得する
+    getRealIndex() {
+      this.realIndex = this.$refs.swiper.$swiper.realIndex;
+    },
   },
 }
 </script>
@@ -97,7 +143,8 @@ export default {
     object-position: 50% 50%;
   }
 
-  &__box {
+  &__contents {
+    width: 60%;
     position: absolute;
     top: 50%;
     left: interval(2);
@@ -109,32 +156,46 @@ export default {
   }
 
   &__text {
+    white-space: pre-wrap;
+    line-break: normal;
     font-size: font(14);
   }
 
-  &__pagination {
+  &__progress-bar {
+    position: absolute;
+    top: 60%;
+    left: interval(2);
+    z-index: 2;
     @include flex(row nowrap, flex-start, center);
-    margin-top: interval(.5);
+
+    @include mq(md) {
+      left: interval(10);
+    }
   }
 
-  &__bar {
+  &__gauge {
     position: relative;
+    overflow: hidden;
     width: interval(8);
     height: pixel(.5);
     margin: 0 interval(1);
     background-color: rgba($color: color(darkblue), $alpha: .5);
     border-radius: 1000px;
 
-    &::before {
-      content: '';
+    &-active {
       display: block;
+      width: 100%;
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      width: 50%;
-      height: 100%;
       background-color: color(white);
       border-radius: 1000px 0 0 1000px;
+      transform: scaleX(0);
+      transform-origin: 0 100%;
+
+      // swiperのアニメーションスピードに合わせる
+      transition: transform 4500ms linear;
     }
   }
 

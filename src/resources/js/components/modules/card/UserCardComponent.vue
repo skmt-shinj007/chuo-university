@@ -23,8 +23,6 @@
 // component import
 import Tag from '../tag/TagComponent';
 
-import { viewData } from '../../../config/data/viewdata';
-
 export default {
   components: {
     Tag,

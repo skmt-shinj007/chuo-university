@@ -1,4 +1,6 @@
-
+/**
+ * Vue
+ */
 import Vue from 'vue';
 import router from './router';  // vueルーターをインポート
 
@@ -13,13 +15,6 @@ Vue.prototype.$axios = axios;
  */
 import SvgVue from 'svg-vue';  // laravel-mix-svg-vueのインポート
 Vue.use(SvgVue);
-
-/**
- * swiper (global mount)
- */
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-import 'swiper/css/swiper.css';  // swiper ~version5.x
-Vue.use(VueAwesomeSwiper);
 
 /**
  * vue-prlx

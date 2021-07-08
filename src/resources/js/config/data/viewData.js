@@ -343,38 +343,6 @@ export const viewData = {
     ]
   },
 
-  playerSliderOptions: {
-    speed: 1000,
-    autoHeight: true,
-    spaceBetween: 16,
-    autoplay: {
-      delay: 2500,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      type: 'bullets',
-    },
-    breakpoints: {
-      500: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-      },
-      860: {
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-      },
-      1440: {
-        slidesPerView: 5,
-        slidesPerGroup: 1,
-      }
-    },
-  },
-
   playerCardDisplayTagId: {
     captain: 2,
     competent: 3,
@@ -391,5 +359,103 @@ export const viewData = {
 
   activeAlumniDisplayId: {
     headCoach: 8,
+  },
+
+  /**
+   * 必須のswiperオプション
+   */
+  requireSwiperOption: {
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+    }
+  },
+
+  /**
+   * swiperオプションを定義。
+   */
+  swiperOptions: {
+    champions: {
+      autoHeight: true,
+      centeredSlides: true,
+      spaceBetween: 16,
+      slidesPerView: 1.5,
+      loop: true,
+      freeMode: true,
+      speed: 1500,
+      autoplay: { delay: 2500 },
+      breakpoints: {
+        560: { slidesPerView: 2.5 },
+        860: { slidesPerView: 3.5 },
+        1025: { slidesPerView: 4.5 }
+      },
+    },
+
+    imageSlider: {
+      autoHeight: true,
+      spaceBetween: 16,
+      loop: true,
+      autoplay: { delay: 2500 },
+      effect: "fade",
+    },
+
+    mainVisual: {
+      speed: 400,
+      effect: "fade",
+      autoplay: { delay: 4500, disableOnInteraction: false },
+      allowTouchMove: false,
+    },
+
+    userCardSlider: {
+      speed: 1000,
+      autoHeight: true,
+      spaceBetween: 16,
+      autoplay: { delay: 2500 },
+      breakpoints: {
+        500: { slidesPerView: 2, slidesPerGroup: 2 },
+        860: { slidesPerView: 3, slidesPerGroup: 1 },
+        1440: { slidesPerView: 5, slidesPerGroup: 1 }
+      },
+    }
+  },
+
+  /**
+   * swiperパーツのUIオプション
+   */
+  sliderPartsOption: {
+    default: {
+      buttonPosition: 'middle',
+      color: { pagination: 'white', navigation: 'white' },
+      showPagination: true, // require
+      showNavigation: true, // require
+    },
+
+    allPartsHidden: {
+      showPagination: false,
+      showNavigation: false,
+    },
+
+    championsSection: {
+      buttonPosition: 'bottom',
+      color: { pagination: 'white', navigation: 'white' },
+      showPagination: true,
+      showNavigation: false,
+    },
+
+    activeAlumniCard: {
+      buttonPosition: 'middle',
+      color: { pagination: 'darkblue', navigation: 'darkblue' },
+      showPagination: true,
+      showNavigation: true,
+    },
+
+    onlyPaginationDarkblue: {
+      buttonPosition: 'middle',
+      color: { pagination: 'darkblue', navigation: 'darkblue' },
+      showPagination: true,
+      showNavigation: false,
+    }
   }
 }

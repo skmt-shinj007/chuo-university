@@ -1,54 +1,41 @@
 <template>
   <div class="image-slider">
-    <swiper :options="params">
-      <swiper-slide v-for="(image, n) in images" :key="n">
+    <slider
+      :options="viewdata.swiperOptions.imageSlider"
+      :viewOptions="viewdata.sliderPartsOption.onlyPaginationDarkblue"
+      :items="images"
+    >
+      <template v-slot:slideContents="props">
         <figure class="image-slider__container">
-
-          <img class="image-slider__image" :src="`/image/${image.src}`" :alt="image.alt">
-
-          <figcaption class="image-slider__bar">
-            <slot name="caption" :image="image">
-              <span class="image-slider__caption">{{ image.caption }}</span>
+          <img class="image-slider__image" :src="`/image/${props.item.src}`" :alt="props.item.alt">
+          <figcaption class="image-slider__caption">
+            <slot name="caption" :image="props.item">
+              <span class="image-slider__caption-text">{{ props.item.caption }}</span>
             </slot>
           </figcaption>
-
         </figure>
-      </swiper-slide>
-
-      <!-- swiper components -->
-      <div class="swiper-button swiper-button-prev" slot="button-prev"/>
-      <div class="swiper-button swiper-button-next" slot="button-next"/>
-      <div class="swiper-pagination" slot="pagination"/>
-    </swiper>
+      </template>
+    </slider>
   </div>
 </template>
 
 <script>
+import Slider from '../slider/SliderComponent';
+import { viewData } from '../../../config/data/viewData';
+
 export default {
-  props: {
-    images: Array,
+  components: {
+    Slider,
   },
 
-  computed: {
-    params() {
-      return {
-        loop: true, // ループ
-        speed: 800,  // スライドする時間
-        effect: "fade",  // スライドタイプ
-        autoHeight: true,
-
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          type: 'bullets',
-        }
-      }
+  data() {
+    return {
+      viewdata: viewData,
     }
+  },
+
+  props: {
+    images: Array,
   },
 }
 </script>
@@ -67,7 +54,7 @@ export default {
     border-radius: radius(soft);
   }
 
-  &__bar {
+  &__caption {
     width: 90%;
     background-color: rgba($color: color(white), $alpha: .6);
     border-radius: radius(normal);
@@ -81,11 +68,6 @@ export default {
     @include mq(sm) {
       line-height: 2;
     }
-  }
-
-  .swiper {
-    @include swiper-pagination();
-    @include swiper-button();
   }
 }
 </style>

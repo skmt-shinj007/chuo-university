@@ -17,7 +17,11 @@
   <section class="hakumonkai__active fade" v-scroll="fade">
     <contents-title :title="messages.SectionTitles.ActiveAlumni"/>
     <div class="hakumonkai__player-slider">
-      <slider :options="playerSliderOptions" :items="activeAlumni" color="darkblue">
+      <slider
+        :options="playerSliderOptions"
+        :items="activeAlumni"
+        :viewOptions="viewdata.sliderPartsOption.activeAlumniCard"
+      >
         <template v-slot:slideContents="player">
           <user-card :user="player.item" :showTagIds="showActiveAlumniTagIds" @open="openCardModal"/>
         </template>
@@ -61,7 +65,7 @@ import ActiveAlumniModal from '../components/modules/modal/ActiveAlumniModal';
 // config
 import Animation from '../config/animation';
 import Mock from '../config/data/mock.json';
-import { viewData } from '../config/data/viewdata';
+import { viewData } from '../config/data/viewData';
 
 export default {
   components: {
@@ -124,7 +128,7 @@ export default {
      * @return swiper option
      */
     playerSliderOptions() {
-      return viewData.playerSliderOptions;
+      return viewData.swiperOptions.userCardSlider;
     },
 
     /**

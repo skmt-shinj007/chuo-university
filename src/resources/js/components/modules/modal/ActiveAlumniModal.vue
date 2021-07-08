@@ -22,7 +22,7 @@
 // component import
 import UserModal from './UserModalFrameComponent';
 import UserThumbnail from '../UserThumbnailComponent';
-import Tag from '../Tag/TagComponent';
+import Tag from '../tag/TagComponent';
 import TableComponent from '../table/TableComponent';
 
 export default {
