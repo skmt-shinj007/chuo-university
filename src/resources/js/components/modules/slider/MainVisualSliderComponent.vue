@@ -1,50 +1,69 @@
 <template>
   <div class="main-visual-slider">
-    <slider
+    <swiper
       :options="options"
-      :viewOptions="viewdata.sliderPartsOption.allPartsHidden"
-      :items="images"
+      ref="swiper"
+      @slideChange="getRealIndex"
+      @slideChangeTransitionStart="resetProgress"
+      @slideChangeTransitionEnd="startProgress"
     >
-      <template v-slot:slideContents="prop">
-        <img class="main-visual-slider__image" :src="`/image/${prop.item.img.src}`" :alt="prop.item.img.alt">
+      <!-- スライド -->
+      <swiper-slide v-for="image in images" :key="image.id">
+        <img class="main-visual-slider__image" :src="`/image/${image.img.src}`" :alt="image.img.alt">
         <div class="main-visual-slider__contents">
-          <template v-if="prop.item.caption">
-            <span class="main-visual-slider__text">{{ prop.item.caption }}</span>
+          <template v-if="image.caption">
+            <span class="main-visual-slider__text">{{ image.caption }}</span>
           </template>
-          <div class="main-visual-slider__pagination">
-            <span class="main-visual-slider__num">{{ currentIndex(prop.item.id) }}</span>
-            <div class="main-visual-slider__gauge">
-              <span class="main-visual-slider__gauge-active"></span>
-            </div>
-            <span class="main-visual-slider__num">{{ nextIndex(prop.item.id) }}</span>
-          </div>
         </div>
-      </template>
-    </slider>
+      </swiper-slide>
+    </swiper>
+
+    <!-- プログレスバー -->
+    <div class="main-visual-slider__progress-bar">
+      <span class="main-visual-slider__num">{{ currentIndex(realIndex) }}</span>
+      <div class="main-visual-slider__gauge">
+        <span class="main-visual-slider__gauge-active" ref="swiper-progress-bar"/>
+      </div>
+      <span class="main-visual-slider__num">{{ nextIndex(realIndex) }}</span>
+    </div>
   </div>
 </template>
 
 <script>
 import { viewData } from '../../../config/data/viewData';
-import Slider from '../slider/SliderComponent';
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css'
 
 export default {
   components: {
-    Slider,
+    Swiper,
+    SwiperSlide
   },
 
   data() {
     return {
       viewdata: viewData,
+
+      /**
+       * デフォルトのスライドインデックス
+       * @type {Number}
+       */
+      realIndex: 0,
     }
   },
 
   props: {
+    // slide images
     images: {
       type: Array,
       require: true
     },
 
+    /**
+     * swiper options
+     * loopをtrueにするとクローンされたスライドに到達した時にスライドが止まるので注意。
+     */
     options: {
       type: Object,
       default: () => {
@@ -54,18 +73,52 @@ export default {
   },
 
   computed: {
+    /**
+     * 現在表示されているスライドが何枚目かを返す。
+     * @return {String} 現在の表示されているスライド番号 "01"
+     */
     currentIndex() {
       return (i) => {
-        return ("00" + i).slice(-2);
+        return `0${i}`;
       };
     },
 
+    /**
+     * 次に表示されるスライド番号
+     * @return {String} 次に表示されるスライド番号 "01"
+     */
     nextIndex() {
       return (i) => {
         const next = i + 1;
         const max = this.images.length;
         return (max >= next) ? `0${next}` : `01`;
       }
+    },
+  },
+
+  mounted() {
+    // スライドの初期表示（1枚目）でプログレスバーをアニメーションさせる
+    this.startProgress();
+  },
+
+  methods: {
+    // プログレスバーをリセット
+    resetProgress() {
+      const bar = this.$refs['swiper-progress-bar'];
+      bar.style.transitionDuration = '0s';
+      bar.style.transform = 'scaleX(0)';
+    },
+
+    // プログレスバーのアニメーションを開始
+    startProgress() {
+      const bar = this.$refs['swiper-progress-bar'];
+      bar.style.transitionDuration = '4500ms';
+      bar.style.transform = 'scaleX(1)';
+    },
+
+    // 現在のアクティブなインデックスを取得する
+    getRealIndex() {
+      this.realIndex = this.$refs.swiper.$swiper.realIndex;
     },
   },
 }
@@ -108,9 +161,16 @@ export default {
     font-size: font(14);
   }
 
-  &__pagination {
+  &__progress-bar {
+    position: absolute;
+    top: 60%;
+    left: interval(2);
+    z-index: 2;
     @include flex(row nowrap, flex-start, center);
-    margin-top: interval(.5);
+
+    @include mq(md) {
+      left: interval(10);
+    }
   }
 
   &__gauge {
@@ -124,13 +184,18 @@ export default {
 
     &-active {
       display: block;
+      width: 100%;
+      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      width: 50%;
-      height: 100%;
       background-color: color(white);
       border-radius: 1000px 0 0 1000px;
+      transform: scaleX(0);
+      transform-origin: 0 100%;
+
+      // swiperのアニメーションスピードに合わせる
+      transition: transform 4500ms linear;
     }
   }
 

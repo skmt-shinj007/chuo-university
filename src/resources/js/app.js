@@ -1,10 +1,3 @@
-
-/**
- * swiper
- * cssコンパイル順を考慮してVueより先に読み込む。
- */
-import 'swiper/css/swiper.css';  // swiper ~version5.x
-
 /**
  * Vue
  */
@@ -22,12 +15,6 @@ Vue.prototype.$axios = axios;
  */
 import SvgVue from 'svg-vue';  // laravel-mix-svg-vueのインポート
 Vue.use(SvgVue);
-
-/**
- * vue-awesome-swiper (global mount)
- */
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-Vue.use(VueAwesomeSwiper);
 
 /**
  * vue-prlx

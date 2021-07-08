@@ -24,7 +24,17 @@
 <script>
 import { viewData } from '../../../config/data/viewData';
 
+// swiper
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+// import style (<= Swiper 5.x)
+import 'swiper/css/swiper.css'
+
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+
   props: {
     // swiper option
     options: {
@@ -52,6 +62,10 @@ export default {
   },
 
   computed: {
+    swiper() {
+      return this.$refs.swiper.$swiper;
+    },
+
     /**
      * pagination custom class
      * 複数クラスの付与に対応
